@@ -1,0 +1,87 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\Procesador\procesor parts\SCCBdrive\simulation\modelsim
+Ep2sreg
+Z1 w1713650394
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\Procesador\procesor parts\SCCBdrive\simulation\modelsim
+Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd
+Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd
+l0
+L6
+Vm<NY09IQFQl^k7aFz9iAO2
+!s100 =hRnV:G]Rk;nO@JzeH_?A3
+Z10 OV;C;10.1d;51
+31
+!i10b 1
+Z11 !s108 1713734474.891000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd|
+Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 p2sreg 0 22 m<NY09IQFQl^k7aFz9iAO2
+l26
+L19
+VfJCMV2cf[kSXlHFE`TSQh1
+!s100 2fgP;`8K3L4;13g;:TOlH0
+R10
+31
+!i10b 1
+R11
+R12
+R13
+R14
+R15
+Esccbdrive
+Z16 w1713734400
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd
+Z18 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd
+l0
+L8
+VaMcf5Wd2Rh2XI=WiWN;N_1
+R10
+31
+Z19 !s108 1713734474.835000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd|
+Z21 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd|
+R14
+R15
+!s100 Ahl>b8A^aN3ARePzX4k@m2
+!i10b 1
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 sccbdrive 0 22 aMcf5Wd2Rh2XI=WiWN;N_1
+l63
+L26
+V^C4OznFgHn=8C@jn>T:`X0
+R10
+31
+R19
+R20
+R21
+R14
+R15
+!s100 OjcQmzMSO2[I9^1=MS^`i2
+!i10b 1

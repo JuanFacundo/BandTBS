@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity P2Sreg is
+	port(
+		mssg		: in std_logic_vector(26 downto 0);
+		E			: in std_logic;
+		clk		: in std_logic;
+		
+		S			: out std_logic;
+		endFlag	: out std_logic
+	);
+end entity
+
+
+architecture shape of P2Sreg is
+
+signal D : std_logic_vector(26 downto 0);
+signal Q	: std_logic_vector(26 downto 0);
+
+begin
+
+	Q <=
+		D when rising_edge(clk);
+	
+	D(26 downto 0) <=
+		Q(25 downto 0) & '0' when E else
+		mssg	when not(E);
+	
+	S <= D(26);
+		

@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity SCCBdrive is
+	port(
+		clk400	: in std_logic;
+		E			: in std_logic;
+		
+		SIO_C		: out std_logic;
+		SIO_D		: out std_logic;
+	);
+end entity;
+
+architecture shape of SCCBdrive is
+	
