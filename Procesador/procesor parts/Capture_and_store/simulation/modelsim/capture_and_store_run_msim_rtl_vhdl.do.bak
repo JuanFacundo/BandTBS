@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/RegisterPP.vhd}
+vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/div_clk.vhd}
+vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/capture_and_store.vhd}
+
