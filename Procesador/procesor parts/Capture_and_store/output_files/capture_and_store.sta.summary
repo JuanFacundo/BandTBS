@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'PCLK'
+Slack : -1.717
+TNS   : -61.628
+
+Type  : Slow 1200mV 85C Model Setup 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -0.466
+TNS   : -1.613
+
+Type  : Slow 1200mV 85C Model Hold 'PCLK'
+Slack : -0.480
+TNS   : -1.964
+
+Type  : Slow 1200mV 85C Model Hold 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -55.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -1.000
+TNS   : -11.000
+
+Type  : Slow 1200mV 0C Model Setup 'PCLK'
+Slack : -1.399
+TNS   : -49.709
+
+Type  : Slow 1200mV 0C Model Setup 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -0.300
+TNS   : -0.976
+
+Type  : Slow 1200mV 0C Model Hold 'PCLK'
+Slack : -0.513
+TNS   : -2.267
+
+Type  : Slow 1200mV 0C Model Hold 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -55.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -1.000
+TNS   : -11.000
+
+Type  : Fast 1200mV 0C Model Setup 'PCLK'
+Slack : -0.504
+TNS   : -15.152
+
+Type  : Fast 1200mV 0C Model Setup 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -0.277
+TNS   : -0.780
+
+Type  : Fast 1200mV 0C Model Hold 'PCLK'
+Slack : -0.593
+TNS   : -3.049
+
+Type  : Fast 1200mV 0C Model Hold 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -58.780
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'capture_driver:Cap|div_clk:DIV|Clk_aux'
+Slack : -1.000
+TNS   : -11.000
+
+------------------------------------------------------------
