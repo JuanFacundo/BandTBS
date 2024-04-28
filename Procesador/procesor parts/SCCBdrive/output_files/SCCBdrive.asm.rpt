@@ -1,5 +1,5 @@
 Assembler report for SCCBdrive
-Sun Apr 28 00:52:18 2024
+Sun Apr 28 00:57:32 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Apr 28 00:52:18 2024 ;
+; Assembler Status      ; Successful - Sun Apr 28 00:57:32 2024 ;
 ; Revision Name         ; SCCBdrive                             ;
 ; Top-level Entity Name ; SCCBdrive                             ;
 ; Family                ; Cyclone III                           ;
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Apr 28 00:52:17 2024
+    Info: Processing started: Sun Apr 28 00:57:32 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SCCBdrive -c SCCBdrive
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4592 megabytes
-    Info: Processing ended: Sun Apr 28 00:52:18 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Sun Apr 28 00:57:32 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 

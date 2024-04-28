@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SCCBdrive
-Sun Apr 28 00:52:21 2024
+Sun Apr 28 00:57:36 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Apr 28 00:52:21 2024 ;
+; EDA Netlist Writer Status ; Successful - Sun Apr 28 00:57:36 2024 ;
 ; Revision Name             ; SCCBdrive                             ;
 ; Top-level Entity Name     ; SCCBdrive                             ;
 ; Family                    ; Cyclone III                           ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Apr 28 00:52:21 2024
+    Info: Processing started: Sun Apr 28 00:57:36 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SCCBdrive -c SCCBdrive
 Info (204019): Generated file SCCBdrive_6_1200mv_85c_slow.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file SCCBdrive_6_1200mv_0c_slow.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/simulation/modelsim/" for EDA simulation tool
@@ -99,8 +99,8 @@ Info (204019): Generated file SCCBdrive_6_1200mv_0c_vhd_slow.sdo in folder "C:/U
 Info (204019): Generated file SCCBdrive_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file SCCBdrive_vhd.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4557 megabytes
-    Info: Processing ended: Sun Apr 28 00:52:21 2024
+    Info: Peak virtual memory: 4561 megabytes
+    Info: Processing ended: Sun Apr 28 00:57:36 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

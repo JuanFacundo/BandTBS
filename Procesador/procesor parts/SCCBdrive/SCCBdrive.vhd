@@ -21,7 +21,7 @@ end entity;
 
 
 
-
+--Por ahora el LIVE funciona como un aviso. Si se deja el enable prendido se va arepetir la secuencia.
 
 architecture shape of SCCBdrive is
 
