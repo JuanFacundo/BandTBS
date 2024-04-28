@@ -13,7 +13,7 @@ entity SCCBdrive is
 		
 		SIO_C		: out std_logic;
 		SIO_D		: out std_logic;
-		PWDN		: out std_logic;
+--		PWDN		: out std_logic;
 		LIVE		: out std_logic
 	);
 end entity;
@@ -40,7 +40,11 @@ end component;
 
 
 
-	
+signal eInd,DeInd				: std_logic;	
+signal Q0,Q1,D0,D1			: std_logic;
+signal mssgCount				: integer;
+
+signal nullMssg				: std_logic_vector(26 downto 0) := "000000000000000000000000000";
 signal COM7 					: std_logic_vector(26 downto 0) := "010000100000100100000001010";
 signal COM15 					: std_logic_vector(26 downto 0) := "010000100001000000110100000";
 signal RGB444					: std_logic_vector(26 downto 0) := "010000100100011000000000110";
@@ -66,13 +70,43 @@ begin
 	EE <= E and ready;
 	
 
-	clkE <= not(EE) or not(clk400);
+	D0 <= EE and ((Q1 and not(Q0 xor eInd)) or (not(Q1) and (eInd or not(Q0))));
+	
+	Q0 <=
+		'0' when rst='1' else
+		D0 when rising_edge(clk800);
+	
+	D1 <= EE and ((Q0 and not(Q1 xor eInd)) or (Q1 and not(Q0)));
+	
+	Q1 <=
+		'0' when rst='1' else
+		D1 when rising_edge(clk800);
+	
+	mailbox <=
+		nullMssg	when (not(Q0) and not(Q1))='1' 	else
+		COM7		when (not(Q1) and Q0)='1' 			else
+		COM15		when (Q1 and not(Q0))='1'			else
+		RGB444	when (Q1 and Q0)='1';
+		
+	
+	DeInd <= EE and not(eInd xor C_Esync);
+	
+	eInd <=
+		'0' when rst='1' else
+		DeInd when falling_edge(clk800);
+		
+
+
+
+
+
+	clkE <= not(eInd) or not(clk400);
 	
 	clk400 <= 
 		'0' when (rst = '1') else
 		(clkE) when rising_edge(clk800);
 		
-	C_Eedge <= (EE and not(C_E)) or (not(mssgGO) and C_E);
+	C_Eedge <= (eInd and not(C_E)) or (not(mssgGO) and C_E);
 	
 	C_E <=	--SIO_C Enable
 		'0' when rst = '1' else
@@ -83,7 +117,7 @@ begin
 	
 	
 	
-	C_Esync <= S
+	C_Esync <=
 		'0' when rst = '1' else
 		C_E when rising_edge(clk800);
 	
@@ -110,13 +144,16 @@ begin
 		'0' when (rst = '1') else
 		not(mssgGO) when falling_edge(dataEedge);
 		
-	
-	mailbox <= RGB444;
-		
+--	mailbox <= RGB444;
 	
 	SIO_D <= not(mssgGO) or regOUT;
 	
 	
 	
+	
+	
+	LIVE <=
+		'0' when rst = '1' else
+		(eInd or (Q0 xor Q1)) when rising_edge(clk800);
 	
 end shape;

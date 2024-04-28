@@ -10,7 +10,7 @@
 # ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd}
+# vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -20,7 +20,7 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity SCCBdrive
 # -- Compiling architecture shape of SCCBdrive
-# vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd}
+# vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -42,23 +42,19 @@ vsim work.sccbdrive
 # Loading work.sccbdrive(shape)
 # Loading work.p2sreg(shape)
 wave create -driver freeze -pattern clock -initialvalue 0 -period 1250ns -dutycycle 50 -starttime 0us -endtime 1000us sim:/sccbdrive/clk800
-wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/sccbdrive/E
 wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/sccbdrive/rst
-add wave -position 1 -format Logic -height 17 -editable 2 Edit:/sccbdrive/rst
-wave edit invert -start 2232023ps -end 5176394ps Edit:/sccbdrive/rst
-wave edit invert -start 10447768ps -end 126512974ps Edit:/sccbdrive/E
+wave edit invert -start 1471066ps -end 4192539ps Edit:/sccbdrive/rst
+wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/sccbdrive/E
+wave edit invert -start 9120611ps -end 857762607ps Edit:/sccbdrive/E
 add wave -position end  sim:/sccbdrive/SIO_C
 add wave -position end  sim:/sccbdrive/SIO_D
-add wave -position end  sim:/sccbdrive/RGB444
-add wave -position end  sim:/sccbdrive/regOUT
-add wave -position end  sim:/sccbdrive/clk400
-add wave -position end  sim:/sccbdrive/clk400data
+add wave -position end  sim:/sccbdrive/LIVE
+add wave -position end  sim:/sccbdrive/mailbox
+add wave -position end  sim:/sccbdrive/Q0
+add wave -position end  sim:/sccbdrive/Q1
 add wave -position end  sim:/sccbdrive/C_E
-add wave -position end  sim:/sccbdrive/C_Eedge
-add wave -position end  sim:/sccbdrive/regLIVE
 add wave -position end  sim:/sccbdrive/C_Esync
-add wave -position end  sim:/sccbdrive/mssgGO
-add wave -position end  sim:/sccbdrive/dataEedge
+restart
 run
 run
 run
@@ -189,7 +185,6 @@ run
 run
 run
 run
-wave edit invert -start 180228017ps -end 286985211ps Edit:/sccbdrive/E
 run
 run
 run
@@ -298,3 +293,194 @@ run
 run
 run
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+wave edit invert -start 458347717ps -end 487916148ps Edit:/sccbdrive/E
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -all

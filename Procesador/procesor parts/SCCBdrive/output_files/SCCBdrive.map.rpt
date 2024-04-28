@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCCBdrive
-Sun Apr 21 18:20:09 2024
+Sun Apr 28 00:52:11 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -43,16 +43,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 21 18:20:09 2024      ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 28 00:52:11 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; SCCBdrive                                  ;
 ; Top-level Entity Name              ; SCCBdrive                                  ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 62                                         ;
-;     Total combinational functions  ; 60                                         ;
-;     Dedicated logic registers      ; 57                                         ;
-; Total registers                    ; 57                                         ;
-; Total pins                         ; 7                                          ;
+; Total logic elements               ; 68                                         ;
+;     Total combinational functions  ; 65                                         ;
+;     Dedicated logic registers      ; 63                                         ;
+; Total registers                    ; 63                                         ;
+; Total pins                         ; 6                                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -164,14 +164,14 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                             ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; SCCBdrive.vhd                    ; yes             ; User VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd ;         ;
-; P2Sreg.vhd                       ; yes             ; User VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                        ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                                                 ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; SCCBdrive.vhd                    ; yes             ; User VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/SCCBdrive.vhd ;         ;
+; P2Sreg.vhd                       ; yes             ; User VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/SCCBdrive/P2Sreg.vhd    ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -179,28 +179,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 62        ;
+; Estimated Total logic elements              ; 68        ;
 ;                                             ;           ;
-; Total combinational functions               ; 60        ;
+; Total combinational functions               ; 65        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2         ;
-;     -- 3 input functions                    ; 1         ;
-;     -- <=2 input functions                  ; 57        ;
+;     -- 4 input functions                    ; 17        ;
+;     -- 3 input functions                    ; 3         ;
+;     -- <=2 input functions                  ; 45        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 60        ;
+;     -- normal mode                          ; 65        ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 57        ;
-;     -- Dedicated logic registers            ; 57        ;
+; Total registers                             ; 63        ;
+;     -- Dedicated logic registers            ; 63        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 7         ;
+; I/O pins                                    ; 6         ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 59        ;
-; Total fan-out                               ; 302       ;
-; Average fan-out                             ; 2.31      ;
+; Maximum fan-out                             ; 65        ;
+; Total fan-out                               ; 363       ;
+; Average fan-out                             ; 2.59      ;
 +---------------------------------------------+-----------+
 
 
@@ -209,8 +209,8 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
-; |SCCBdrive                 ; 60 (9)            ; 57 (5)       ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |SCCBdrive             ; work         ;
-;    |P2Sreg:REGS|           ; 51 (51)           ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCCBdrive|P2Sreg:REGS ; work         ;
+; |SCCBdrive                 ; 65 (13)           ; 63 (9)       ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |SCCBdrive             ; work         ;
+;    |P2Sreg:REGS|           ; 52 (52)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SCCBdrive|P2Sreg:REGS ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -222,9 +222,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; ready                                 ; Stuck at VCC due to stuck port data_in ;
 ; P2Sreg:REGS|Q[0]                      ; Stuck at GND due to stuck port data_in ;
-; P2Sreg:REGS|cQ[0]                     ; Merged with P2Sreg:REGS|Q[1]           ;
-; P2Sreg:REGS|cQ[1]                     ; Merged with P2Sreg:REGS|Q[2]           ;
-; Total Number of Removed Registers = 4 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -233,10 +231,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 57    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 57    ;
+; Number of registers using Asynchronous Clear ; 63    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -248,16 +246,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+-------+----------+--------------+
 ; Port         ; Type  ; Severity ; Details      ;
 +--------------+-------+----------+--------------+
-; mssg[13..12] ; Input ; Info     ; Stuck at VCC ;
-; mssg[2..1]   ; Input ; Info     ; Stuck at VCC ;
 ; mssg[24..21] ; Input ; Info     ; Stuck at GND ;
 ; mssg[19..18] ; Input ; Info     ; Stuck at GND ;
-; mssg[16..14] ; Input ; Info     ; Stuck at GND ;
-; mssg[11..3]  ; Input ; Info     ; Stuck at GND ;
+; mssg[10..9]  ; Input ; Info     ; Stuck at GND ;
 ; mssg[26]     ; Input ; Info     ; Stuck at GND ;
-; mssg[25]     ; Input ; Info     ; Stuck at VCC ;
-; mssg[20]     ; Input ; Info     ; Stuck at VCC ;
-; mssg[17]     ; Input ; Info     ; Stuck at VCC ;
+; mssg[16]     ; Input ; Info     ; Stuck at GND ;
+; mssg[6]      ; Input ; Info     ; Stuck at GND ;
+; mssg[4]      ; Input ; Info     ; Stuck at GND ;
 ; mssg[0]      ; Input ; Info     ; Stuck at GND ;
 +--------------+-------+----------+--------------+
 
@@ -277,7 +272,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Apr 21 18:20:08 2024
+    Info: Processing started: Sun Apr 28 00:52:10 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCCBdrive -c SCCBdrive
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file sccbdrive.vhd
@@ -287,25 +282,50 @@ Info (12021): Found 2 design units, including 1 entities, in source file p2sreg.
     Info (12022): Found design unit 1: P2Sreg-shape
     Info (12023): Found entity 1: P2Sreg
 Info (12127): Elaborating entity "SCCBdrive" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at SCCBdrive.vhd(16): used implicit default value for signal "PWDN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at SCCBdrive.vhd(17): used implicit default value for signal "LIVE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10540): VHDL Signal Declaration warning at SCCBdrive.vhd(46): used explicit default value for signal "RGB444" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at SCCBdrive.vhd(47): used explicit default value for signal "nullMssg" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at SCCBdrive.vhd(48): used explicit default value for signal "COM7" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at SCCBdrive.vhd(49): used explicit default value for signal "COM15" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at SCCBdrive.vhd(50): used explicit default value for signal "RGB444" because signal was never assigned a value
+Info (10041): Inferred latch for "mailbox[0]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[1]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[2]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[3]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[4]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[5]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[6]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[7]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[8]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[9]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[10]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[11]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[12]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[13]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[14]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[15]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[16]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[17]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[18]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[19]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[20]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[21]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[22]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[23]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[24]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[25]" at SCCBdrive.vhd(85)
+Info (10041): Inferred latch for "mailbox[26]" at SCCBdrive.vhd(85)
 Info (12128): Elaborating entity "P2Sreg" for hierarchy "P2Sreg:REGS"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer C_Eedge~0
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "PWDN" is stuck at GND
-    Warning (13410): Pin "LIVE" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 62 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 68 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4682 megabytes
-    Info: Processing ended: Sun Apr 21 18:20:09 2024
+    Info: Processing ended: Sun Apr 28 00:52:11 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
