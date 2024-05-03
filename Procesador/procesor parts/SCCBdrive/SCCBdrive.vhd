@@ -8,20 +8,19 @@ use ieee.std_logic_unsigned.all;
 entity SCCBdrive is
 	port(
 		clk800	: in std_logic;
-		E			: in std_logic;
-		rst		: in std_logic;
+		E			: in std_logic; --solo se envian mensajes mientras que este esté prendido
 		
 		SIO_C		: out std_logic;
 		SIO_D		: out std_logic;
 --		PWDN		: out std_logic;
-		LIVE		: out std_logic
+		LIVE		: out std_logic --El LIVE corta cuando se enviaron los tres mensajes y no vuelve a enviar hasta que se reinicie E
 	);
 end entity;
 
 
 
 
---Por ahora el LIVE funciona como un aviso. Si se deja el enable prendido se va arepetir la secuencia.
+
 
 architecture shape of SCCBdrive is
 
@@ -31,7 +30,6 @@ component P2Sreg is
 		mssg		: in std_logic_vector(26 downto 0);
 		E			: in std_logic;
 		clk		: in std_logic;
-		rst		: in std_logic;
 		
 		S			: out std_logic;
 		sending	: out std_logic
@@ -63,24 +61,24 @@ signal mssgGO					: std_logic;
 signal dataEedge				: std_logic;
 
 begin
-
-	ready <= --señal que indica que ya se resetearon los registros
-		'1' when falling_edge(rst);
 	
-	EE <= E and ready;
+	EE <= 
+		'0' when E='0' else
+		E when falling_edge(clk800);
 	
-
-	D0 <= EE and ((Q1 and not(Q0 xor eInd)) or (not(Q1) and (eInd or not(Q0))));
+	--mssg counter
+	D0 <= EE and ((Q1 and not(eInd)) or ((not(Q1) and not(Q0)) or (eInd and Q0)));
 	
 	Q0 <=
-		'0' when rst='1' else
+		'0' when E='0' else
 		D0 when rising_edge(clk800);
 	
-	D1 <= EE and ((Q0 and not(Q1 xor eInd)) or (Q1 and not(Q0)));
+	D1 <= EE and (Q1 or (not(eInd) and Q0));
 	
 	Q1 <=
-		'0' when rst='1' else
+		'0' when E='0' else
 		D1 when rising_edge(clk800);
+	--\mssg counter
 	
 	mailbox <=
 		nullMssg	when (not(Q0) and not(Q1))='1' 	else
@@ -89,10 +87,10 @@ begin
 		RGB444	when (Q1 and Q0)='1';
 		
 	
-	DeInd <= EE and not(eInd xor C_Esync);
+	DeInd <= (EE and not(eInd xor C_Esync)) and not(Q0 and Q1);
 	
 	eInd <=
-		'0' when rst='1' else
+		'0' when E='0' else
 		DeInd when falling_edge(clk800);
 		
 
@@ -103,13 +101,13 @@ begin
 	clkE <= not(eInd) or not(clk400);
 	
 	clk400 <= 
-		'0' when (rst = '1') else
+		'0' when (E = '0') else
 		(clkE) when rising_edge(clk800);
 		
 	C_Eedge <= (eInd and not(C_E)) or (not(mssgGO) and C_E);
 	
 	C_E <=	--SIO_C Enable
-		'0' when rst = '1' else
+		'0' when E = '0' else
 		not(C_E) when rising_edge(C_Eedge);
 	
 	SIO_C <= not(C_E) or clk400;
@@ -118,13 +116,13 @@ begin
 	
 	
 	C_Esync <=
-		'0' when rst = '1' else
+		'0' when E = '0' else
 		C_E when rising_edge(clk800);
 	
 	clk400D <= C_Esync and not(clk400data);
 	
 	clk400data <=
-		'0' when (rst = '1') else
+		'0' when (E = '0') else
 		clk400D when falling_edge(clk800);
 		
 	
@@ -136,15 +134,13 @@ begin
 	
 	
 	
-	REGS: P2sreg port map(mssg => mailbox, E => mssgGO, clk => clk400data, rst => rst, S => regOUT, sending => regLIVE);
+	REGS: P2sreg port map(mssg => mailbox, E => mssgGO, clk => clk400data, S => regOUT, sending => regLIVE);
 	
 	dataEedge <= (clk400data and clk400) and not(regLIVE);
 		
 	mssgGO <=
-		'0' when (rst = '1') else
+		'0' when (E = '0') else
 		not(mssgGO) when falling_edge(dataEedge);
-		
---	mailbox <= RGB444;
 	
 	SIO_D <= not(mssgGO) or regOUT;
 	
@@ -153,7 +149,7 @@ begin
 	
 	
 	LIVE <=
-		'0' when rst = '1' else
+		'0' when E = '0' else
 		(eInd or (Q0 xor Q1)) when rising_edge(clk800);
 	
 end shape;

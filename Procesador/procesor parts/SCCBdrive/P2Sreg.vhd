@@ -8,7 +8,6 @@ entity P2Sreg is
 		mssg		: in std_logic_vector(26 downto 0);
 		E			: in std_logic;
 		clk		: in std_logic;
-		rst		: in std_logic;
 		
 		S			: out std_logic;
 		sending	: out std_logic
@@ -25,11 +24,11 @@ signal cD, cQ	: std_logic_vector(26 downto 0);
 
 begin
 	Esync <=
-		'0' when (rst = '1') else
+		'0' when (E = '0') else
 		E when rising_edge(clk);
 	
 	Q <=
-		"000000000000000000000000000" when (rst = '1') else
+		"000000000000000000000000000" when (E = '0') else
 		D when rising_edge(clk);
 	
 	D(26 downto 0) <=
@@ -37,14 +36,14 @@ begin
 		mssg	when (Esync='0');
 	
 	S <= 
-		Q(26) when (Esync and not(rst))='1' else
-		'0';
+		'0' when E='0' else
+		Q(26);
 	
 	
 	
 	
 	cQ <=
-		"000000000000000000000000000" when (rst = '1') else
+		"000000000000000000000000000" when (E = '0') else
 		cD when rising_edge(clk);
 		
 	cD <=
@@ -52,8 +51,8 @@ begin
 		"111111111111111111111111111" when (Esync='0');
 	
 	sending <= 
-		cQ(26) when (Esync and not(rst))='1' else
-		'0';
+		'0' when E='0' else
+		cQ(26);
 	
 
 end shape;

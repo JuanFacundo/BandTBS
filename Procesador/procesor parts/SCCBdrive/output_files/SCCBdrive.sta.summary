@@ -3,87 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk400data'
-Slack : -1.520
-TNS   : -28.635
+Slack : -1.498
+TNS   : -23.300
 
 Type  : Slow 1200mV 85C Model Setup 'clk800'
 Slack : -1.059
-TNS   : -4.389
+TNS   : -3.789
 
 Type  : Slow 1200mV 85C Model Hold 'clk800'
-Slack : -0.099
-TNS   : -0.099
+Slack : -0.107
+TNS   : -0.108
 
 Type  : Slow 1200mV 85C Model Hold 'clk400data'
-Slack : 0.026
+Slack : 0.372
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk400data'
+Slack : -1.240
+TNS   : -5.620
+
+Type  : Slow 1200mV 85C Model Removal 'clk400data'
+Slack : 0.197
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk800'
 Slack : -3.000
-TNS   : -10.000
+TNS   : -11.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk400data'
 Slack : -1.000
 TNS   : -55.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'C_E'
-Slack : 0.464
+Slack : 0.480
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk400data'
-Slack : -1.241
-TNS   : -21.266
+Slack : -1.227
+TNS   : -14.901
 
 Type  : Slow 1200mV 0C Model Setup 'clk800'
-Slack : -0.972
-TNS   : -3.797
+Slack : -0.843
+TNS   : -3.068
 
 Type  : Slow 1200mV 0C Model Hold 'clk800'
-Slack : -0.090
-TNS   : -0.090
+Slack : -0.111
+TNS   : -0.162
 
 Type  : Slow 1200mV 0C Model Hold 'clk400data'
-Slack : 0.017
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk400data'
+Slack : -1.041
+TNS   : -3.678
+
+Type  : Slow 1200mV 0C Model Removal 'clk400data'
+Slack : 0.241
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk800'
 Slack : -3.000
-TNS   : -10.000
+TNS   : -11.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk400data'
 Slack : -1.000
 TNS   : -55.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'C_E'
-Slack : 0.475
+Slack : 0.487
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'clk800'
-Slack : -0.662
-TNS   : -2.338
-
 Type  : Fast 1200mV 0C Model Setup 'clk400data'
-Slack : -0.499
-TNS   : -1.134
+Slack : -0.442
+TNS   : -0.469
+
+Type  : Fast 1200mV 0C Model Setup 'clk800'
+Slack : -0.414
+TNS   : -1.410
 
 Type  : Fast 1200mV 0C Model Hold 'clk800'
-Slack : -0.170
-TNS   : -0.283
+Slack : -0.229
+TNS   : -0.322
 
 Type  : Fast 1200mV 0C Model Hold 'clk400data'
-Slack : -0.092
-TNS   : -0.407
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk400data'
+Slack : -0.495
+TNS   : -0.495
+
+Type  : Fast 1200mV 0C Model Removal 'clk400data'
+Slack : 0.252
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk800'
 Slack : -3.000
-TNS   : -10.323
+TNS   : -11.501
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk400data'
 Slack : -1.000
 TNS   : -55.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'C_E'
-Slack : 0.468
+Slack : 0.481
 TNS   : 0.000
 
 ------------------------------------------------------------
