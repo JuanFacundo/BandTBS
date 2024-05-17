@@ -1,0 +1,329 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[5]'
+Slack : -1.735
+TNS   : -5.147
+
+Type  : Slow 1200mV 85C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -1.662
+TNS   : -25.536
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[0]'
+Slack : 0.016
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[1]'
+Slack : 0.044
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[2]'
+Slack : 0.059
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[4]'
+Slack : 0.078
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'div800k:DIV800|Qaux[3]'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[5]'
+Slack : -0.243
+TNS   : -0.446
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : -0.093
+TNS   : -0.093
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[2]'
+Slack : 0.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[1]'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[4]'
+Slack : 0.033
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[3]'
+Slack : 0.035
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'div800k:DIV800|Qaux[0]'
+Slack : 0.119
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -0.925
+TNS   : -4.023
+
+Type  : Slow 1200mV 85C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -1.000
+TNS   : -55.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[5]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[0]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[1]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[2]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[3]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div800k:DIV800|Qaux[4]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
+Slack : 0.472
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[5]'
+Slack : -1.515
+TNS   : -4.261
+
+Type  : Slow 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -1.374
+TNS   : -17.458
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[0]'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[1]'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[2]'
+Slack : 0.125
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[4]'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'div800k:DIV800|Qaux[3]'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : 0.259
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[5]'
+Slack : -0.171
+TNS   : -0.305
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.149
+TNS   : -0.149
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[2]'
+Slack : -0.027
+TNS   : -0.027
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[1]'
+Slack : -0.014
+TNS   : -0.014
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[4]'
+Slack : -0.002
+TNS   : -0.002
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[3]'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'div800k:DIV800|Qaux[0]'
+Slack : 0.102
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.284
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -0.765
+TNS   : -2.158
+
+Type  : Slow 1200mV 0C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -1.000
+TNS   : -55.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[5]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[0]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[1]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[2]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[3]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[4]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
+Slack : 0.483
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[5]'
+Slack : -0.759
+TNS   : -1.848
+
+Type  : Fast 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -0.581
+TNS   : -2.310
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[0]'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[1]'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[2]'
+Slack : 0.262
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[4]'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'div800k:DIV800|Qaux[3]'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[5]'
+Slack : -0.206
+TNS   : -0.410
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.148
+TNS   : -0.148
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[2]'
+Slack : -0.005
+TNS   : -0.005
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[3]'
+Slack : 0.001
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[1]'
+Slack : 0.010
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[4]'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'div800k:DIV800|Qaux[0]'
+Slack : 0.046
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.155
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -0.320
+TNS   : -0.320
+
+Type  : Fast 1200mV 0C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
+Slack : -1.000
+TNS   : -55.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[5]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[0]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[1]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[2]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[3]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div800k:DIV800|Qaux[4]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
+Slack : 0.473
+TNS   : 0.000
+
+------------------------------------------------------------

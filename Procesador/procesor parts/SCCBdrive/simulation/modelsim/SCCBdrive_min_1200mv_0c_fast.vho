@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/03/2024 18:17:50"
+-- DATE "05/17/2024 18:27:55"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,9 +37,9 @@ ENTITY 	SCCBdrive IS
     PORT (
 	clk800 : IN std_logic;
 	E : IN std_logic;
-	SIO_C : OUT std_logic;
-	SIO_D : OUT std_logic;
-	LIVE : OUT std_logic
+	SIO_C : BUFFER std_logic;
+	SIO_D : BUFFER std_logic;
+	LIVE : BUFFER std_logic
 	);
 END SCCBdrive;
 
@@ -158,8 +158,8 @@ SIGNAL \LIVE~0_combout\ : std_logic;
 SIGNAL \LIVE~reg0_q\ : std_logic;
 SIGNAL \REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \REGS|Q\ : std_logic_vector(26 DOWNTO 0);
-SIGNAL \ALT_INV_clk800~inputclkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_clk800~input_o\ : std_logic;
+SIGNAL \ALT_INV_clk800~inputclkctrl_outclk\ : std_logic;
 
 BEGIN
 
@@ -177,8 +177,8 @@ ww_devpor <= devpor;
 \clk400data~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk400data~q\);
 
 \E~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \E~input_o\);
-\ALT_INV_clk800~inputclkctrl_outclk\ <= NOT \clk800~inputclkctrl_outclk\;
 \ALT_INV_clk800~input_o\ <= NOT \clk800~input_o\;
+\ALT_INV_clk800~inputclkctrl_outclk\ <= NOT \clk800~inputclkctrl_outclk\;
 
 -- Location: IOOBUF_X0_Y12_N23
 \SIO_C~output\ : cycloneiii_io_obuf

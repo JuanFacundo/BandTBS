@@ -2,17 +2,17 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Proyecto BBTS\Capture_and_store\simulation\modelsim
+Z0 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\Capture_and_store\simulation\modelsim
 Ecapture_and_store
-Z1 w1714257481
+Z1 w1714276477
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z7 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Proyecto BBTS\Capture_and_store\simulation\modelsim
-Z8 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/capture_and_store.vhd
-Z9 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/capture_and_store.vhd
+Z7 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\Capture_and_store\simulation\modelsim
+Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/capture_and_store.vhd
+Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/capture_and_store.vhd
 l0
 L6
 Vdzi_oUcaaRb^127D1hTZ>0
@@ -20,9 +20,9 @@ Vdzi_oUcaaRb^127D1hTZ>0
 Z10 OV;C;10.1d;51
 31
 !i10b 1
-Z11 !s108 1714257604.212000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/capture_and_store.vhd|
-Z13 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/capture_and_store.vhd|
+Z11 !s108 1714848600.179000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/capture_and_store.vhd|
+Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/capture_and_store.vhd|
 Z14 o-93 -work work -O0
 Z15 tExplicit 1
 Abehavioral
@@ -45,23 +45,23 @@ R13
 R14
 R15
 Ecapture_driver
-Z16 w1714257516
+R1
 R2
 R3
 R4
 R5
 R6
 R7
-Z17 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/Capture_driver.vhd
-Z18 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/Capture_driver.vhd
+Z16 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/Capture_driver.vhd
+Z17 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/Capture_driver.vhd
 l0
 L6
 V8I2<:CM7T@37=j`SJGj3[1
 R10
 31
-Z19 !s108 1714257603.954000
-Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/Capture_driver.vhd|
-Z21 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/Capture_driver.vhd|
+Z18 !s108 1714848600.024000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/Capture_driver.vhd|
+Z20 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/Capture_driver.vhd|
 R14
 R15
 !s100 Ba@o:lLMfVV751[dK9[NI1
@@ -78,29 +78,29 @@ L25
 VOl_cJ]B75Uf=5ZFiD_<kK3
 R10
 31
+R18
 R19
 R20
-R21
 R14
 R15
 !s100 <jT:AI^YoW;XlHT6ifj2B3
 !i10b 1
 Edelayedoutput
-Z22 w1714254782
+R1
 R4
 R5
 R6
 R7
-Z23 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/DelayedOutput.vhd
-Z24 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/DelayedOutput.vhd
+Z21 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/DelayedOutput.vhd
+Z22 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/DelayedOutput.vhd
 l0
 L5
 VXc``gi_I]8Q0i4EgRmbPM0
 R10
 31
-Z25 !s108 1714257603.866000
-Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/DelayedOutput.vhd|
-Z27 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/DelayedOutput.vhd|
+Z23 !s108 1714848599.968000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/DelayedOutput.vhd|
+Z25 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/DelayedOutput.vhd|
 R14
 R15
 !s100 CohOWbbmb9MBIQlF?Sbc_2
@@ -115,30 +115,30 @@ L17
 VII00jd:0io=]oTh5Q`PET3
 R10
 31
+R23
+R24
 R25
-R26
-R27
 R14
 R15
 !s100 VhTZQ4C@mV<IS^d>azd`j2
 !i10b 1
 Ediv_clk
-Z28 w1713124752
+R1
 R3
 R2
 R5
 R6
 R7
-Z29 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/div_clk.vhd
-Z30 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/div_clk.vhd
+Z26 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/div_clk.vhd
+Z27 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/div_clk.vhd
 l0
 L6
 V>X2g7ZEEL@:8IRBWkZ6i^3
 R10
 31
-Z31 !s108 1714257604.122000
-Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/div_clk.vhd|
-Z33 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/div_clk.vhd|
+Z28 !s108 1714848600.128000
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/div_clk.vhd|
+Z30 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/div_clk.vhd|
 R14
 R15
 !s100 C2PE^]b9R55MiP[jN7?Td3
@@ -154,30 +154,30 @@ L16
 V1QRJ6_G@iOa8;n<:O95<^0
 R10
 31
-R31
-R32
-R33
+R28
+R29
+R30
 R14
 R15
 !s100 7LOTW3BknQo3C?QW13e9a1
 !i10b 1
 Ememory
-Z34 w1714241484
+R1
 R3
 R2
 R5
 R6
 R7
-Z35 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/memory.vhd
-Z36 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/memory.vhd
+Z31 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/memory.vhd
+Z32 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/memory.vhd
 l0
 L6
 VNI]c8:zl3<021WKLC^`=52
 R10
 31
-Z37 !s108 1714257603.754000
-Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/memory.vhd|
-Z39 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/memory.vhd|
+Z33 !s108 1714848599.893000
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/memory.vhd|
+Z35 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/memory.vhd|
 R14
 R15
 !s100 AGlU0n6U:_1=1:]hEK8Sl0
@@ -193,30 +193,30 @@ L24
 V=TRHPN][TC5eCF^V@m5U_2
 R10
 31
-R37
-R38
-R39
+R33
+R34
+R35
 R14
 R15
 !s100 9T7cM=:H=Fb[PkO9[3C7[0
 !i10b 1
 Eregisterpp
-Z40 w1713641890
+R1
 R3
 R2
 R5
 R6
 R7
-Z41 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/RegisterPP.vhd
-Z42 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/RegisterPP.vhd
+Z36 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/RegisterPP.vhd
+Z37 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/RegisterPP.vhd
 l0
 L6
 V3^EK?4I3Akk3o0ADR17Rn0
 R10
 31
-Z43 !s108 1714257604.040000
-Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/RegisterPP.vhd|
-Z45 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/Capture_and_store/RegisterPP.vhd|
+Z38 !s108 1714848600.077000
+Z39 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/RegisterPP.vhd|
+Z40 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Capture_and_store/RegisterPP.vhd|
 R14
 R15
 !s100 b^GKC24g2TVf7>QAlNS:C2
@@ -232,9 +232,9 @@ L19
 V;TORazkCD5:zW0^DWJTjd1
 R10
 31
-R43
-R44
-R45
+R38
+R39
+R40
 R14
 R15
 !s100 WBe>hSjKH<6NQ=zkH;a[O1

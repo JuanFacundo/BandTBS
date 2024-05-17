@@ -60,6 +60,7 @@ signal C_Esync					: std_logic;
 signal mssgGO					: std_logic;
 signal dataEedge				: std_logic;
 
+
 begin
 	
 	EE <= 

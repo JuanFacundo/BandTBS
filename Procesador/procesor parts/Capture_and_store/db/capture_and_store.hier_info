@@ -13,10 +13,10 @@ D_IN[4] => capture_driver:Cap.D_IN[4]
 D_IN[5] => capture_driver:Cap.D_IN[5]
 D_IN[6] => capture_driver:Cap.D_IN[6]
 D_IN[7] => capture_driver:Cap.D_IN[7]
-Q_OUT[0] <= memory:Load_Store.data_out[0]
-Q_OUT[1] <= memory:Load_Store.data_out[1]
-Q_OUT[2] <= memory:Load_Store.data_out[2]
-Q_OUT[3] <= memory:Load_Store.data_out[3]
+Q_OUT[0] << memory:Load_Store.data_out[0]
+Q_OUT[1] << memory:Load_Store.data_out[1]
+Q_OUT[2] << memory:Load_Store.data_out[2]
+Q_OUT[3] << memory:Load_Store.data_out[3]
 
 
 |capture_and_store|capture_driver:Cap
