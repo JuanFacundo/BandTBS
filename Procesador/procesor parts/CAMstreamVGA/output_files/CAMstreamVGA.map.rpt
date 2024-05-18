@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CAMstreamVGA
-Fri May 17 18:45:49 2024
+Sat May 18 11:27:00 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -15,9 +15,15 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "SCCBdrive:SCCBdriver|P2Sreg:REGS"
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:ER
+ 11. Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:ACC
+ 12. Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:BUF
+ 13. Parameter Settings for User Entity Instance: capture_driver:CAPdrive|div_clk:DIV
+ 14. Parameter Settings for User Entity Instance: capture_driver:CAPdrive|DelayedOutput:start_counting
+ 15. Port Connectivity Checks: "capture_driver:CAPdrive"
+ 16. Port Connectivity Checks: "SCCBdrive:SCCBdriver|P2Sreg:REGS"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +49,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 17 18:45:49 2024      ;
+; Analysis & Synthesis Status        ; Successful - Sat May 18 11:27:00 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; CAMstreamVGA                               ;
 ; Top-level Entity Name              ; CAMstreamVGA                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 75                                         ;
-;     Total combinational functions  ; 71                                         ;
-;     Dedicated logic registers      ; 70                                         ;
-; Total registers                    ; 70                                         ;
-; Total pins                         ; 31                                         ;
+; Total logic elements               ; 98                                         ;
+;     Total combinational functions  ; 82                                         ;
+;     Dedicated logic registers      ; 89                                         ;
+; Total registers                    ; 89                                         ;
+; Total pins                         ; 33                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -165,16 +171,20 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                                                       ; Library ;
-+----------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; CAMstreamVGA.vhd                 ; yes             ; User VHDL File        ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAMstreamVGA.vhd ;         ;
-; div800k.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/div800k.vhd      ;         ;
-; sccbdrive.vhd                    ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/sccbdrive.vhd    ;         ;
-; p2sreg.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/p2sreg.vhd       ;         ;
-+----------------------------------+-----------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                                                         ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; CAMstreamVGA.vhd                 ; yes             ; User VHDL File        ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAMstreamVGA.vhd   ;         ;
+; div800k.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/div800k.vhd        ;         ;
+; sccbdrive.vhd                    ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/sccbdrive.vhd      ;         ;
+; p2sreg.vhd                       ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/p2sreg.vhd         ;         ;
+; capture_driver.vhd               ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/capture_driver.vhd ;         ;
+; registerpp.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/registerpp.vhd     ;         ;
+; div_clk.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/div_clk.vhd        ;         ;
+; delayedoutput.vhd                ; yes             ; Auto-Found VHDL File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/delayedoutput.vhd  ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------+
@@ -182,52 +192,58 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 75                          ;
+; Estimated Total logic elements              ; 98                          ;
 ;                                             ;                             ;
-; Total combinational functions               ; 71                          ;
+; Total combinational functions               ; 82                          ;
 ; Logic element usage by number of LUT inputs ;                             ;
 ;     -- 4 input functions                    ; 17                          ;
-;     -- 3 input functions                    ; 2                           ;
-;     -- <=2 input functions                  ; 52                          ;
+;     -- 3 input functions                    ; 11                          ;
+;     -- <=2 input functions                  ; 54                          ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 71                          ;
-;     -- arithmetic mode                      ; 0                           ;
+;     -- normal mode                          ; 77                          ;
+;     -- arithmetic mode                      ; 5                           ;
 ;                                             ;                             ;
-; Total registers                             ; 70                          ;
-;     -- Dedicated logic registers            ; 70                          ;
+; Total registers                             ; 89                          ;
+;     -- Dedicated logic registers            ; 89                          ;
 ;     -- I/O registers                        ; 0                           ;
 ;                                             ;                             ;
-; I/O pins                                    ; 31                          ;
+; I/O pins                                    ; 33                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                           ;
 ; Maximum fan-out node                        ; SCCBdrive:SCCBdriver|mssgGO ;
 ; Maximum fan-out                             ; 58                          ;
-; Total fan-out                               ; 412                         ;
-; Average fan-out                             ; 2.03                        ;
+; Total fan-out                               ; 532                         ;
+; Average fan-out                             ; 2.24                        ;
 +---------------------------------------------+-----------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
-; |CAMstreamVGA              ; 71 (0)            ; 70 (0)       ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |CAMstreamVGA                                  ; work         ;
-;    |SCCBdrive:SCCBdriver|  ; 65 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver             ; work         ;
-;       |P2Sreg:REGS|        ; 52 (52)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver|P2Sreg:REGS ; work         ;
-;    |div800k:DIV800|        ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|div800k:DIV800                   ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; |CAMstreamVGA                ; 82 (0)            ; 89 (0)       ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |CAMstreamVGA                                        ; work         ;
+;    |SCCBdrive:SCCBdriver|    ; 65 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver                   ; work         ;
+;       |P2Sreg:REGS|          ; 52 (52)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver|P2Sreg:REGS       ; work         ;
+;    |capture_driver:CAPdrive| ; 11 (4)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|capture_driver:CAPdrive                ; work         ;
+;       |RegisterPP:ACC|       ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:ACC ; work         ;
+;       |RegisterPP:BUF|       ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:BUF ; work         ;
+;       |RegisterPP:ER|        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:ER  ; work         ;
+;       |div_clk:DIV|          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|capture_driver:CAPdrive|div_clk:DIV    ; work         ;
+;    |div800k:DIV800|          ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|div800k:DIV800                         ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0]       ; Stuck at GND due to stuck port data_in ;
+; capture_driver:CAPdrive|div_clk:DIV|counter ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2       ;                                        ;
++---------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -235,14 +251,75 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 70    ;
+; Total registers                              ; 89    ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 70    ;
+; Number of registers using Asynchronous Clear ; 88    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:ER ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:ACC ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; width          ; 6     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: capture_driver:CAPdrive|RegisterPP:BUF ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; width          ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: capture_driver:CAPdrive|div_clk:DIV ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; divider_value  ; 1     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: capture_driver:CAPdrive|DelayedOutput:start_counting ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; counter_limit  ; 1     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "capture_driver:CAPdrive"                                                                              ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                             ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; pixel_per_line_counter ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; line_counter           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; clk_div                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -276,16 +353,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri May 17 18:45:48 2024
+    Info: Processing started: Sat May 18 11:26:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CAMstreamVGA -c CAMstreamVGA
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file camstreamvga.vhd
     Info (12022): Found design unit 1: CAMstreamVGA-shape
     Info (12023): Found entity 1: CAMstreamVGA
 Info (12127): Elaborating entity "CAMstreamVGA" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at CAMstreamVGA.vhd(14): used implicit default value for signal "GPIO0_D0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at CAMstreamVGA.vhd(15): used implicit default value for signal "GPIO0_D1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at CAMstreamVGA.vhd(26): used implicit default value for signal "GPIO0_D10" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10873): Using initial value X (don't care) for net "LEDG[1]" at CAMstreamVGA.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[2]" at CAMstreamVGA.vhd(15)
 Warning (12125): Using design file div800k.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: div800k-shape
     Info (12023): Found entity 1: div800k
@@ -329,12 +405,29 @@ Warning (12125): Using design file p2sreg.vhd, which is not specified as a desig
     Info (12022): Found design unit 1: P2Sreg-shape
     Info (12023): Found entity 1: P2Sreg
 Info (12128): Elaborating entity "P2Sreg" for hierarchy "SCCBdrive:SCCBdriver|P2Sreg:REGS"
+Warning (12125): Using design file capture_driver.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: capture_driver-Behavioral
+    Info (12023): Found entity 1: capture_driver
+Info (12128): Elaborating entity "capture_driver" for hierarchy "capture_driver:CAPdrive"
+Warning (12125): Using design file registerpp.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: RegisterPP-Behavioral
+    Info (12023): Found entity 1: RegisterPP
+Info (12128): Elaborating entity "RegisterPP" for hierarchy "capture_driver:CAPdrive|RegisterPP:ER"
+Info (12128): Elaborating entity "RegisterPP" for hierarchy "capture_driver:CAPdrive|RegisterPP:ACC"
+Info (12128): Elaborating entity "RegisterPP" for hierarchy "capture_driver:CAPdrive|RegisterPP:BUF"
+Warning (12125): Using design file div_clk.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: div_clk-Behavioral
+    Info (12023): Found entity 1: div_clk
+Info (12128): Elaborating entity "div_clk" for hierarchy "capture_driver:CAPdrive|div_clk:DIV"
+Warning (12125): Using design file delayedoutput.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DelayedOutput-Behavioral
+    Info (12023): Found entity 1: DelayedOutput
+Info (12128): Elaborating entity "DelayedOutput" for hierarchy "capture_driver:CAPdrive|DelayedOutput:start_counting"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer SCCBdrive:SCCBdriver|C_Eedge~0
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "GPIO0_D0" is stuck at GND
-    Warning (13410): Pin "GPIO0_D1" is stuck at GND
-    Warning (13410): Pin "GPIO0_D10" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[2]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUTTON[0] -entity DE0_Default was ignored
@@ -617,38 +710,14 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 23 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "GPIO0_D2"
-    Warning (15610): No output dependent on input pin "GPIO0_D3"
-    Warning (15610): No output dependent on input pin "GPIO0_D4"
-    Warning (15610): No output dependent on input pin "GPIO0_D5"
-    Warning (15610): No output dependent on input pin "GPIO0_D6"
-    Warning (15610): No output dependent on input pin "GPIO0_D7"
-    Warning (15610): No output dependent on input pin "GPIO0_D8"
-    Warning (15610): No output dependent on input pin "GPIO0_D9"
-    Warning (15610): No output dependent on input pin "GPIO0_D11"
-    Warning (15610): No output dependent on input pin "GPIO0_D12"
-    Warning (15610): No output dependent on input pin "GPIO0_D13"
-    Warning (15610): No output dependent on input pin "GPIO1_D[0]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[1]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[2]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[3]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[4]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[5]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[6]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[7]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[8]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[9]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[10]"
-Info (21057): Implemented 106 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 25 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 319 warnings
-    Info: Peak virtual memory: 4678 megabytes
-    Info: Processing ended: Fri May 17 18:45:49 2024
-    Info: Elapsed time: 00:00:01
+Info (21057): Implemented 131 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 98 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 297 warnings
+    Info: Peak virtual memory: 4674 megabytes
+    Info: Processing ended: Sat May 18 11:27:00 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

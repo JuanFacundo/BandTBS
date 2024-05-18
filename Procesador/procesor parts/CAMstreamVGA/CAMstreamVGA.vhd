@@ -10,26 +10,33 @@ entity CAMstreamVGA is
 		CLOCK_50		: in std_logic;
 		
 		SW				: in std_logic_vector(1 downto 0);
-		
-		GPIO0_D0		: out std_logic;	--SIO_C
-		GPIO0_D1		: out std_logic;	--SIO_D
-		
-		GPIO0_D2		: in std_logic;	--D0
-		GPIO0_D3		: in std_logic;	--D1
-		GPIO0_D4		: in std_logic;	--D2
-		GPIO0_D5		: in std_logic;	--D3
-		GPIO0_D6		: in std_logic;	--D4
-		GPIO0_D7		: in std_logic;	--D5
-		GPIO0_D8		: in std_logic;	--D6
-		GPIO0_D9		: in std_logic;	--D7
-		
-		GPIO0_D10	: out std_logic;	--MCLK
-		GPIO0_D11	: in std_logic;	--PCLK
-		GPIO0_D12	: in std_logic;	--HREF
-		GPIO0_D13	: in std_logic;	--VREF
+		LEDG			: out std_logic_vector(1 downto 0);
 		
 		GPIO0_D		: out std_logic_vector(2 downto 0);
-		GPIO1_D		: in std_logic_vector(10 downto 0)
+		--GPIO0_D0	: SIO_C
+		--GPIO0_D1	: SIO_D
+		--GPIO0_D2	: MCLK
+		
+		GPIO1_D		: in std_logic_vector(10 downto 0);
+		--GPIO1_D0	: D0
+		--GPIO1_D1	: D1
+		--GPIO1_D2	: D2
+		--GPIO1_D3	: D3
+		--GPIO1_D4	: D4
+		--GPIO1_D5	: D5
+		--GPIO1_D6	: D6
+		--GPIO1_D7	: D7
+		--GPIO1_D8	: PCLK
+		--GPIO1_D9	: HREF
+		--GPIO1_D10	: VSYNC
+		
+		VGA_R			: out std_logic_vector(3 downto 0);
+		VGA_G			: out std_logic_vector(3 downto 0);
+		VGA_B			: out std_logic_vector(3 downto 0);
+		VGA_HS		: out std_logic;
+		VGA_VS		: out std_logic
+		
+		
 	);
 end entity;
 
@@ -47,8 +54,6 @@ component SCCBdrive is
 	);
 end component;
 
-
-
 component div800k is
 	port(
 		rst			: in std_logic;
@@ -58,10 +63,25 @@ component div800k is
 	);
 end component;
 
+component capture_driver is
+	port (
+		PCLK    						: in  std_logic;   
+		RST     						: in  std_logic;
+		HREF	 						: in  std_logic;
+		D_IN    						: in  std_logic_vector(7 downto 0);	--endiness? 
+		pixel_per_line_counter	: out std_logic_vector(1 downto 0):= (others => '0');
+		line_counter 				: out std_logic_vector(1 downto 0):= (others => '0');
+		CLK_DIV 						: out std_logic;
+		Q_OUT   						: out std_logic_vector(3 downto 0)  
+	);
+end component;
+
 signal clk800k			: std_logic;
 signal rstMssg			: std_logic;
-signal SIOC, SIOD		: std_logic;
 signal weLIVE			: std_logic;
+
+signal rstCAP			: std_logic;
+signal BWPixel			: std_logic_vector(3 downto 0);
 
 begin
 	
@@ -69,9 +89,28 @@ begin
 	
 	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
 
-	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => SIOC, SIO_D => SIOD, LIVE => weLIVE);
+	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
 
-	GPIO0_D(0) <= SIOC;
-	GPIO0_D(1) <= SIOD;
-	GPIO0_D(2) <= weLIVE;
+	LEDG(0) <= weLIVE;
+	
+	rstCAP <= not(SW(1));
+	CAPdrive: capture_driver 
+		port map(
+			PCLK => GPIO1_D(8), 
+			RST => rstCAP, 
+			HREF => GPIO1_D(9), 
+			D_IN => GPIO1_D(7 downto 0), 
+			pixel_per_line_counter => open,
+			line_counter => open,
+			CLK_DIV => open,
+			Q_OUT => BWPixel);
+	
+	VGA_R <= BWPixel;
+	VGA_G <= BWPixel;
+	VGA_B <= BWPixel;
+	
+	VGA_HS <= GPIO1_D(9);
+	VGA_VS <= GPIO1_D(10);
+	
+	
 end shape;
