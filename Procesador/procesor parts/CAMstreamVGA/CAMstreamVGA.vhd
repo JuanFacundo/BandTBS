@@ -36,7 +36,6 @@ entity CAMstreamVGA is
 		VGA_HS		: out std_logic;
 		VGA_VS		: out std_logic
 		
-		
 	);
 end entity;
 
@@ -76,6 +75,16 @@ component capture_driver is
 	);
 end component;
 
+component pll1 is
+	port(
+		areset		: in std_logic  := '0';
+		inclk0		: in std_logic  := '0';
+		c0				: out std_logic ;
+		locked		: out std_logic 
+	);
+end component;
+
+signal clk24M			: std_logic;
 signal clk800k			: std_logic;
 signal rstMssg			: std_logic;
 signal weLIVE			: std_logic;
@@ -84,6 +93,10 @@ signal rstCAP			: std_logic;
 signal BWPixel			: std_logic_vector(3 downto 0);
 
 begin
+	
+	CLK_24M: pll1 port map(areset => open, inclk0 => CLOCK_50, c0 => clk24M, locked => open);
+	
+	GPIO0_D(2) <= clk24M;
 	
 	rstMssg <= not(SW(0));
 	
