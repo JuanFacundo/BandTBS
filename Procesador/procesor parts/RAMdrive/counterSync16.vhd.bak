@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity counterSync16 is
+	generic(
+		
+	);
+	port(
+		clk		: in std_logic;
+		rst		: in std_logic;
+		
+		count		: out std_logic_vector()
+	);
+end entity;

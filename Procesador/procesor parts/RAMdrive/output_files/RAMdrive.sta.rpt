@@ -1,0 +1,1281 @@
+TimeQuest Timing Analyzer report for RAMdrive
+Tue May 21 20:17:39 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clkRead'
+ 13. Slow 1200mV 85C Model Hold: 'clkRead'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'clkRead'
+ 15. Slow 1200mV 85C Model Minimum Pulse Width: 'clkWrite'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Slow 1200mV 85C Model Metastability Report
+ 21. Slow 1200mV 0C Model Fmax Summary
+ 22. Slow 1200mV 0C Model Setup Summary
+ 23. Slow 1200mV 0C Model Hold Summary
+ 24. Slow 1200mV 0C Model Recovery Summary
+ 25. Slow 1200mV 0C Model Removal Summary
+ 26. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 27. Slow 1200mV 0C Model Setup: 'clkRead'
+ 28. Slow 1200mV 0C Model Hold: 'clkRead'
+ 29. Slow 1200mV 0C Model Minimum Pulse Width: 'clkRead'
+ 30. Slow 1200mV 0C Model Minimum Pulse Width: 'clkWrite'
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Slow 1200mV 0C Model Metastability Report
+ 36. Fast 1200mV 0C Model Setup Summary
+ 37. Fast 1200mV 0C Model Hold Summary
+ 38. Fast 1200mV 0C Model Recovery Summary
+ 39. Fast 1200mV 0C Model Removal Summary
+ 40. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 41. Fast 1200mV 0C Model Setup: 'clkRead'
+ 42. Fast 1200mV 0C Model Hold: 'clkRead'
+ 43. Fast 1200mV 0C Model Minimum Pulse Width: 'clkRead'
+ 44. Fast 1200mV 0C Model Minimum Pulse Width: 'clkWrite'
+ 45. Setup Times
+ 46. Hold Times
+ 47. Clock to Output Times
+ 48. Minimum Clock to Output Times
+ 49. Fast 1200mV 0C Model Metastability Report
+ 50. Multicorner Timing Analysis Summary
+ 51. Setup Times
+ 52. Hold Times
+ 53. Clock to Output Times
+ 54. Minimum Clock to Output Times
+ 55. Board Trace Model Assignments
+ 56. Input Transition Times
+ 57. Slow Corner Signal Integrity Metrics
+ 58. Fast Corner Signal Integrity Metrics
+ 59. Setup Transfers
+ 60. Hold Transfers
+ 61. Report TCCS
+ 62. Report RSKM
+ 63. Unconstrained Paths
+ 64. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; RAMdrive                                           ;
+; Device Family      ; Cyclone III                                        ;
+; Device Name        ; EP3C16F484C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; clkRead    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clkRead }  ;
+; clkWrite   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clkWrite } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 362.84 MHz ; 250.0 MHz       ; clkRead    ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++---------+--------+------------------+
+; Clock   ; Slack  ; End Point TNS    ;
++---------+--------+------------------+
+; clkRead ; -1.756 ; -8.398           ;
++---------+--------+------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++---------+-------+------------------+
+; Clock   ; Slack ; End Point TNS    ;
++---------+-------+------------------+
+; clkRead ; 1.173 ; 0.000            ;
++---------+-------+------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++----------+--------+-------------------------------+
+; Clock    ; Slack  ; End Point TNS                 ;
++----------+--------+-------------------------------+
+; clkRead  ; -3.000 ; -17.044                       ;
+; clkWrite ; -3.000 ; -9.522                        ;
++----------+--------+-------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clkRead'                                                                                                                                                                                                                                                                     ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.756 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 1.000        ; -0.035     ; 2.650      ;
+; -1.756 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 1.000        ; -0.035     ; 2.650      ;
+; -1.756 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 1.000        ; -0.035     ; 2.650      ;
+; -1.756 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 1.000        ; -0.035     ; 2.650      ;
+; -0.687 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 1.000        ; 0.197      ; 1.912      ;
+; -0.687 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 1.000        ; 0.197      ; 1.912      ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clkRead'                                                                                                                                                                                                                                                                     ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.173 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 0.000        ; 0.314      ; 1.674      ;
+; 1.173 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 0.000        ; 0.314      ; 1.674      ;
+; 2.365 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 0.000        ; 0.029      ; 2.553      ;
+; 2.365 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 0.000        ; 0.029      ; 2.553      ;
+; 2.365 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 0.000        ; 0.029      ; 2.553      ;
+; 2.365 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 0.000        ; 0.029      ; 2.553      ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clkRead'                                                                                                                                               ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkRead ; Rise       ; clkRead                                                                                                         ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.091  ; 0.321        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; 0.091  ; 0.321        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; 0.091  ; 0.321        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; 0.091  ; 0.321        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; 0.093  ; 0.323        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 0.093  ; 0.323        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.439  ; 0.669        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 0.439  ; 0.669        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; 0.442  ; 0.672        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; 0.442  ; 0.672        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; 0.442  ; 0.672        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; 0.442  ; 0.672        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clkWrite'                                                                                                                                               ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkWrite ; Rise       ; clkWrite                                                                                                        ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.080  ; 0.310        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 0.080  ; 0.310        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.080  ; 0.310        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.444  ; 0.674        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.446  ; 0.676        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 0.446  ; 0.676        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.643  ; 0.643        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; readEna   ; clkRead    ; 2.544 ; 2.977 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; 1.591 ; 2.102 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; 1.226 ; 1.622 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; 1.299 ; 1.712 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; 1.285 ; 1.688 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; 1.162 ; 1.556 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; 1.046 ; 1.452 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; 1.173 ; 1.572 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; 1.202 ; 1.598 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; 1.062 ; 1.482 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; 1.106 ; 1.530 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; 1.277 ; 1.675 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; 1.178 ; 1.595 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; 1.028 ; 1.437 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; 1.219 ; 1.614 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; 1.299 ; 1.701 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; 0.900 ; 1.333 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; 1.036 ; 1.444 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; 1.050 ; 1.464 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; 1.096 ; 1.522 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; 1.071 ; 1.489 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; 1.487 ; 1.888 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; 1.591 ; 2.102 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; 1.550 ; 1.950 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; 1.278 ; 1.681 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; 0.925 ; 1.353 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; 1.092 ; 1.510 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; 1.174 ; 1.575 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; 1.096 ; 1.520 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; 0.972 ; 1.381 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; 1.024 ; 1.431 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; 1.069 ; 1.495 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; 1.118 ; 1.538 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; 0.997 ; 1.404 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; 1.819 ; 2.223 ; Rise       ; clkWrite        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; readEna   ; clkRead    ; -0.965 ; -1.331 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; -0.555 ; -0.978 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; -0.869 ; -1.255 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; -0.938 ; -1.341 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; -0.924 ; -1.318 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; -0.806 ; -1.192 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; -0.697 ; -1.093 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; -0.817 ; -1.206 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; -0.845 ; -1.232 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; -0.710 ; -1.121 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; -0.753 ; -1.167 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; -0.916 ; -1.305 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; -0.823 ; -1.230 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; -0.680 ; -1.079 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; -0.862 ; -1.249 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; -0.938 ; -1.331 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; -0.555 ; -0.978 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; -0.687 ; -1.085 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; -0.699 ; -1.103 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; -0.742 ; -1.158 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; -0.719 ; -1.128 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; -1.118 ; -1.510 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; -1.217 ; -1.715 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; -1.179 ; -1.570 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; -0.918 ; -1.312 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; -0.579 ; -0.997 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; -0.739 ; -1.147 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; -0.818 ; -1.211 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; -0.743 ; -1.157 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; -0.624 ; -1.023 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; -0.676 ; -1.073 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; -0.717 ; -1.132 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; -0.765 ; -1.174 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; -0.648 ; -1.046 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; -0.949 ; -1.299 ; Rise       ; clkWrite        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 5.954 ; 5.873 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 5.884 ; 5.832 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 5.876 ; 5.827 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 5.954 ; 5.873 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 5.779 ; 5.706 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 5.671 ; 5.598 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 5.771 ; 5.719 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 5.764 ; 5.714 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 5.838 ; 5.757 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 5.671 ; 5.598 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 403.88 MHz ; 250.0 MHz       ; clkRead    ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++---------+--------+-----------------+
+; Clock   ; Slack  ; End Point TNS   ;
++---------+--------+-----------------+
+; clkRead ; -1.476 ; -6.976          ;
++---------+--------+-----------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++---------+-------+-----------------+
+; Clock   ; Slack ; End Point TNS   ;
++---------+-------+-----------------+
+; clkRead ; 1.063 ; 0.000           ;
++---------+-------+-----------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; clkRead  ; -3.000 ; -17.044                      ;
+; clkWrite ; -3.000 ; -9.522                       ;
++----------+--------+------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clkRead'                                                                                                                                                                                                                                                                      ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.476 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 1.000        ; -0.033     ; 2.381      ;
+; -1.476 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 1.000        ; -0.033     ; 2.381      ;
+; -1.476 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 1.000        ; -0.033     ; 2.381      ;
+; -1.476 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 1.000        ; -0.033     ; 2.381      ;
+; -0.536 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 1.000        ; 0.170      ; 1.726      ;
+; -0.536 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 1.000        ; 0.170      ; 1.726      ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clkRead'                                                                                                                                                                                                                                                                      ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.063 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 0.000        ; 0.277      ; 1.509      ;
+; 1.063 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 0.000        ; 0.277      ; 1.509      ;
+; 2.123 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 0.000        ; 0.028      ; 2.293      ;
+; 2.123 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 0.000        ; 0.028      ; 2.293      ;
+; 2.123 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 0.000        ; 0.028      ; 2.293      ;
+; 2.123 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 0.000        ; 0.028      ; 2.293      ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clkRead'                                                                                                                                                ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkRead ; Rise       ; clkRead                                                                                                         ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; 0.084  ; 0.314        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; 0.453  ; 0.683        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.656  ; 0.656        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.657  ; 0.657        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clkWrite'                                                                                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkWrite ; Rise       ; clkWrite                                                                                                        ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.174 ; 1.000        ; 3.174          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.075  ; 0.305        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 0.075  ; 0.305        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.077  ; 0.307        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.460  ; 0.690        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.462  ; 0.692        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 0.462  ; 0.692        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.651  ; 0.651        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.658  ; 0.658        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.661  ; 0.661        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; readEna   ; clkRead    ; 2.212 ; 2.552 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; 1.371 ; 1.800 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; 1.041 ; 1.359 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; 1.103 ; 1.442 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; 1.098 ; 1.419 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; 0.981 ; 1.307 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; 0.873 ; 1.210 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; 0.989 ; 1.314 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; 1.018 ; 1.339 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; 0.888 ; 1.237 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; 0.927 ; 1.275 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; 1.083 ; 1.406 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; 0.991 ; 1.343 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; 0.856 ; 1.198 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; 1.033 ; 1.355 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; 1.110 ; 1.431 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; 0.733 ; 1.105 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; 0.865 ; 1.204 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; 0.879 ; 1.222 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; 0.915 ; 1.273 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; 0.899 ; 1.244 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; 1.280 ; 1.602 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; 1.371 ; 1.800 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; 1.338 ; 1.650 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; 1.091 ; 1.414 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; 0.757 ; 1.124 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; 0.918 ; 1.261 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; 0.992 ; 1.314 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; 0.915 ; 1.276 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; 0.801 ; 1.143 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; 0.855 ; 1.193 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; 0.895 ; 1.250 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; 0.936 ; 1.290 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; 0.827 ; 1.165 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; 1.549 ; 1.889 ; Rise       ; clkWrite        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; readEna   ; clkRead    ; -0.792 ; -1.103 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; -0.420 ; -0.782 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; -0.716 ; -1.027 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; -0.775 ; -1.106 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; -0.769 ; -1.083 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; -0.658 ; -0.977 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; -0.556 ; -0.885 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; -0.666 ; -0.983 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; -0.694 ; -1.008 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; -0.569 ; -0.909 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; -0.606 ; -0.946 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; -0.755 ; -1.071 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; -0.669 ; -1.012 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; -0.540 ; -0.873 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; -0.709 ; -1.024 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; -0.782 ; -1.095 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; -0.420 ; -0.782 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; -0.547 ; -0.878 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; -0.561 ; -0.895 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; -0.594 ; -0.943 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; -0.580 ; -0.916 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; -0.944 ; -1.259 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; -1.031 ; -1.449 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; -1.001 ; -1.306 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; -0.764 ; -1.079 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; -0.444 ; -0.801 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; -0.597 ; -0.932 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; -0.669 ; -0.983 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; -0.595 ; -0.947 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; -0.485 ; -0.819 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; -0.539 ; -0.868 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; -0.575 ; -0.921 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; -0.615 ; -0.960 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; -0.510 ; -0.840 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; -0.775 ; -1.071 ; Rise       ; clkWrite        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 5.638 ; 5.522 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 5.574 ; 5.499 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 5.565 ; 5.496 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 5.638 ; 5.522 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 5.474 ; 5.377 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 5.375 ; 5.281 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 5.472 ; 5.397 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 5.463 ; 5.395 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 5.532 ; 5.419 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 5.375 ; 5.281 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++---------+--------+-----------------+
+; Clock   ; Slack  ; End Point TNS   ;
++---------+--------+-----------------+
+; clkRead ; -0.314 ; -1.256          ;
++---------+--------+-----------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++---------+-------+-----------------+
+; Clock   ; Slack ; End Point TNS   ;
++---------+-------+-----------------+
+; clkRead ; 0.684 ; 0.000           ;
++---------+-------+-----------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; clkRead  ; -3.000 ; -10.752                      ;
+; clkWrite ; -3.000 ; -6.361                       ;
++----------+--------+------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clkRead'                                                                                                                                                                                                                                                                      ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.314 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 1.000        ; -0.021     ; 1.248      ;
+; -0.314 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 1.000        ; -0.021     ; 1.248      ;
+; -0.314 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 1.000        ; -0.021     ; 1.248      ;
+; -0.314 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 1.000        ; -0.021     ; 1.248      ;
+; 0.033  ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 1.000        ; 0.107      ; 1.083      ;
+; 0.033  ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 1.000        ; 0.107      ; 1.083      ;
++--------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clkRead'                                                                                                                                                                                                                                                                      ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                 ; To Node                                                                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.684 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ; clkRead      ; clkRead     ; 0.000        ; 0.178      ; 0.966      ;
+; 0.684 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store              ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ; clkRead      ; clkRead     ; 0.000        ; 0.178      ; 0.966      ;
+; 1.059 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ; clkRead      ; clkRead     ; 0.000        ; 0.020      ; 1.169      ;
+; 1.059 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ; clkRead      ; clkRead     ; 0.000        ; 0.020      ; 1.169      ;
+; 1.059 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ; clkRead      ; clkRead     ; 0.000        ; 0.020      ; 1.169      ;
+; 1.059 ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ; clkRead      ; clkRead     ; 0.000        ; 0.020      ; 1.169      ;
++-------+-----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clkRead'                                                                                                                                                ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkRead ; Rise       ; clkRead                                                                                                         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; -0.116 ; 0.114        ; 0.230          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkRead ; Rise       ; clkRead~input|i                                                                                                 ;
+; 0.652  ; 0.882        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0                    ;
+; 0.652  ; 0.882        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1                    ;
+; 0.652  ; 0.882        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2                    ;
+; 0.652  ; 0.882        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3                    ;
+; 0.653  ; 0.883        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 0.653  ; 0.883        ; 0.230          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~portb_re_reg       ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clkRead ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store                    ;
+; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|inclk[0]                                                                                   ;
+; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~inputclkctrl|outclk                                                                                     ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk1                                                    ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; RAMdev|altsyncram_component|auto_generated|rden_b_store|clk                                                     ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; clkRead ; Rise       ; clkRead~input|o                                                                                                 ;
++--------+--------------+----------------+------------------+---------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clkWrite'                                                                                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clkWrite ; Rise       ; clkWrite                                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; -0.121 ; 0.109        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -0.121 ; 0.109        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; -0.119 ; 0.111        ; 0.230          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clkWrite ; Rise       ; clkWrite~input|i                                                                                                ;
+; 0.656  ; 0.886        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 0.656  ; 0.886        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 0.656  ; 0.886        ; 0.230          ; High Pulse Width ; clkWrite ; Rise       ; RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0~porta_we_reg       ;
+; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|inclk[0]                                                                                  ;
+; 0.867  ; 0.867        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~inputclkctrl|outclk                                                                                    ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; RAMdev|altsyncram_component|auto_generated|ram_block1a0|clk0                                                    ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; clkWrite ; Rise       ; clkWrite~input|o                                                                                                ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; readEna   ; clkRead    ; 1.391 ; 2.011 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; 0.930 ; 1.581 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; 0.680 ; 1.263 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; 0.724 ; 1.333 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; 0.705 ; 1.318 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; 0.641 ; 1.228 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; 0.593 ; 1.174 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; 0.644 ; 1.234 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; 0.667 ; 1.253 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; 0.595 ; 1.180 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; 0.624 ; 1.209 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; 0.686 ; 1.304 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; 0.678 ; 1.277 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; 0.586 ; 1.166 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; 0.679 ; 1.266 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; 0.715 ; 1.329 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; 0.513 ; 1.099 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; 0.585 ; 1.164 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; 0.594 ; 1.177 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; 0.604 ; 1.204 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; 0.604 ; 1.191 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; 0.820 ; 1.440 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; 0.930 ; 1.581 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; 0.862 ; 1.468 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; 0.705 ; 1.321 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; 0.533 ; 1.115 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; 0.612 ; 1.198 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; 0.649 ; 1.228 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; 0.620 ; 1.213 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; 0.532 ; 1.112 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; 0.584 ; 1.159 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; 0.592 ; 1.187 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; 0.633 ; 1.231 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; 0.550 ; 1.128 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; 1.020 ; 1.582 ; Rise       ; clkWrite        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; readEna   ; clkRead    ; -0.543 ; -1.083 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; -0.310 ; -0.887 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; -0.472 ; -1.046 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; -0.513 ; -1.112 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; -0.494 ; -1.097 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; -0.433 ; -1.011 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; -0.388 ; -0.961 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; -0.436 ; -1.017 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; -0.458 ; -1.036 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; -0.389 ; -0.965 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; -0.417 ; -0.993 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; -0.475 ; -1.083 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; -0.470 ; -1.060 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; -0.381 ; -0.953 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; -0.471 ; -1.049 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; -0.504 ; -1.108 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; -0.310 ; -0.887 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; -0.381 ; -0.951 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; -0.388 ; -0.962 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; -0.397 ; -0.987 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; -0.398 ; -0.976 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; -0.605 ; -1.214 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; -0.710 ; -1.350 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; -0.645 ; -1.242 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; -0.495 ; -1.100 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; -0.330 ; -0.903 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; -0.405 ; -0.982 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; -0.441 ; -1.012 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; -0.413 ; -0.996 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; -0.328 ; -0.899 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; -0.380 ; -0.946 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; -0.385 ; -0.972 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; -0.426 ; -1.014 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; -0.346 ; -0.915 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; -0.536 ; -1.062 ; Rise       ; clkWrite        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 3.515 ; 3.553 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 3.493 ; 3.541 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 3.496 ; 3.542 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 3.515 ; 3.553 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 3.427 ; 3.453 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 3.363 ; 3.387 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 3.426 ; 3.471 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 3.428 ; 3.473 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 3.446 ; 3.483 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 3.363 ; 3.387 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.756 ; 0.684 ; N/A      ; N/A     ; -3.000              ;
+;  clkRead         ; -1.756 ; 0.684 ; N/A      ; N/A     ; -3.000              ;
+;  clkWrite        ; N/A    ; N/A   ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -8.398 ; 0.0   ; 0.0      ; 0.0     ; -26.566             ;
+;  clkRead         ; -8.398 ; 0.000 ; N/A      ; N/A     ; -17.044             ;
+;  clkWrite        ; N/A    ; N/A   ; N/A      ; N/A     ; -9.522              ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; readEna   ; clkRead    ; 2.544 ; 2.977 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; 1.591 ; 2.102 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; 1.226 ; 1.622 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; 1.299 ; 1.712 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; 1.285 ; 1.688 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; 1.162 ; 1.556 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; 1.046 ; 1.452 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; 1.173 ; 1.572 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; 1.202 ; 1.598 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; 1.062 ; 1.482 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; 1.106 ; 1.530 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; 1.277 ; 1.675 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; 1.178 ; 1.595 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; 1.028 ; 1.437 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; 1.219 ; 1.614 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; 1.299 ; 1.701 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; 0.900 ; 1.333 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; 1.036 ; 1.444 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; 1.050 ; 1.464 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; 1.096 ; 1.522 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; 1.071 ; 1.489 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; 1.487 ; 1.888 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; 1.591 ; 2.102 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; 1.550 ; 1.950 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; 1.278 ; 1.681 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; 0.925 ; 1.353 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; 1.092 ; 1.510 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; 1.174 ; 1.575 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; 1.096 ; 1.520 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; 0.972 ; 1.381 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; 1.024 ; 1.431 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; 1.069 ; 1.495 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; 1.118 ; 1.538 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; 0.997 ; 1.404 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; 1.819 ; 2.223 ; Rise       ; clkWrite        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; readEna   ; clkRead    ; -0.543 ; -1.083 ; Rise       ; clkRead         ;
+; D_in[*]   ; clkWrite   ; -0.310 ; -0.782 ; Rise       ; clkWrite        ;
+;  D_in[0]  ; clkWrite   ; -0.472 ; -1.027 ; Rise       ; clkWrite        ;
+;  D_in[1]  ; clkWrite   ; -0.513 ; -1.106 ; Rise       ; clkWrite        ;
+;  D_in[2]  ; clkWrite   ; -0.494 ; -1.083 ; Rise       ; clkWrite        ;
+;  D_in[3]  ; clkWrite   ; -0.433 ; -0.977 ; Rise       ; clkWrite        ;
+;  D_in[4]  ; clkWrite   ; -0.388 ; -0.885 ; Rise       ; clkWrite        ;
+;  D_in[5]  ; clkWrite   ; -0.436 ; -0.983 ; Rise       ; clkWrite        ;
+;  D_in[6]  ; clkWrite   ; -0.458 ; -1.008 ; Rise       ; clkWrite        ;
+;  D_in[7]  ; clkWrite   ; -0.389 ; -0.909 ; Rise       ; clkWrite        ;
+;  D_in[8]  ; clkWrite   ; -0.417 ; -0.946 ; Rise       ; clkWrite        ;
+;  D_in[9]  ; clkWrite   ; -0.475 ; -1.071 ; Rise       ; clkWrite        ;
+;  D_in[10] ; clkWrite   ; -0.470 ; -1.012 ; Rise       ; clkWrite        ;
+;  D_in[11] ; clkWrite   ; -0.381 ; -0.873 ; Rise       ; clkWrite        ;
+;  D_in[12] ; clkWrite   ; -0.471 ; -1.024 ; Rise       ; clkWrite        ;
+;  D_in[13] ; clkWrite   ; -0.504 ; -1.095 ; Rise       ; clkWrite        ;
+;  D_in[14] ; clkWrite   ; -0.310 ; -0.782 ; Rise       ; clkWrite        ;
+;  D_in[15] ; clkWrite   ; -0.381 ; -0.878 ; Rise       ; clkWrite        ;
+;  D_in[16] ; clkWrite   ; -0.388 ; -0.895 ; Rise       ; clkWrite        ;
+;  D_in[17] ; clkWrite   ; -0.397 ; -0.943 ; Rise       ; clkWrite        ;
+;  D_in[18] ; clkWrite   ; -0.398 ; -0.916 ; Rise       ; clkWrite        ;
+;  D_in[19] ; clkWrite   ; -0.605 ; -1.214 ; Rise       ; clkWrite        ;
+;  D_in[20] ; clkWrite   ; -0.710 ; -1.350 ; Rise       ; clkWrite        ;
+;  D_in[21] ; clkWrite   ; -0.645 ; -1.242 ; Rise       ; clkWrite        ;
+;  D_in[22] ; clkWrite   ; -0.495 ; -1.079 ; Rise       ; clkWrite        ;
+;  D_in[23] ; clkWrite   ; -0.330 ; -0.801 ; Rise       ; clkWrite        ;
+;  D_in[24] ; clkWrite   ; -0.405 ; -0.932 ; Rise       ; clkWrite        ;
+;  D_in[25] ; clkWrite   ; -0.441 ; -0.983 ; Rise       ; clkWrite        ;
+;  D_in[26] ; clkWrite   ; -0.413 ; -0.947 ; Rise       ; clkWrite        ;
+;  D_in[27] ; clkWrite   ; -0.328 ; -0.819 ; Rise       ; clkWrite        ;
+;  D_in[28] ; clkWrite   ; -0.380 ; -0.868 ; Rise       ; clkWrite        ;
+;  D_in[29] ; clkWrite   ; -0.385 ; -0.921 ; Rise       ; clkWrite        ;
+;  D_in[30] ; clkWrite   ; -0.426 ; -0.960 ; Rise       ; clkWrite        ;
+;  D_in[31] ; clkWrite   ; -0.346 ; -0.840 ; Rise       ; clkWrite        ;
+; writeEna  ; clkWrite   ; -0.536 ; -1.062 ; Rise       ; clkWrite        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 5.954 ; 5.873 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 5.884 ; 5.832 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 5.876 ; 5.827 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 5.954 ; 5.873 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 5.779 ; 5.706 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; D_out[*]  ; clkRead    ; 3.363 ; 3.387 ; Rise       ; clkRead         ;
+;  D_out[0] ; clkRead    ; 3.426 ; 3.471 ; Rise       ; clkRead         ;
+;  D_out[1] ; clkRead    ; 3.428 ; 3.473 ; Rise       ; clkRead         ;
+;  D_out[2] ; clkRead    ; 3.446 ; 3.483 ; Rise       ; clkRead         ;
+;  D_out[3] ; clkRead    ; 3.363 ; 3.387 ; Rise       ; clkRead         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; D_out[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D_out[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D_out[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; D_out[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; rstCount16              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; rstCount19              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; writeEna                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; readEna                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clkWrite                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clkRead                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clear                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[0]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[4]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[8]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[12]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[16]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[20]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[24]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[28]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[1]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[5]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[9]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[13]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[17]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[21]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[25]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[29]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[2]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[6]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[10]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[14]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[18]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[22]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[26]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[30]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[3]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[7]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[11]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[15]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[19]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[23]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[27]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; D_in[31]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; D_out[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.68e-07 V                   ; 2.35 V              ; -0.0132 V           ; 0.2 V                                ; 0.027 V                              ; 5.26e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.68e-07 V                  ; 2.35 V             ; -0.0132 V          ; 0.2 V                               ; 0.027 V                             ; 5.26e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.36e-07 V                   ; 2.35 V              ; -0.00444 V          ; 0.18 V                               ; 0.019 V                              ; 7.23e-10 s                  ; 9.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.36e-07 V                  ; 2.35 V             ; -0.00444 V         ; 0.18 V                              ; 0.019 V                             ; 7.23e-10 s                 ; 9.82e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; D_out[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; D_out[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.72 V              ; -0.0747 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-10 s                   ; 3.01e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.72 V             ; -0.0747 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-10 s                  ; 3.01e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-08 V                   ; 2.7 V               ; -0.0212 V           ; 0.204 V                              ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-08 V                  ; 2.7 V              ; -0.0212 V          ; 0.204 V                             ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clkRead    ; clkRead  ; 6        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clkRead    ; clkRead  ; 6        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 35    ; 35   ;
+; Unconstrained Input Port Paths  ; 43    ; 43   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue May 21 20:17:38 2024
+Info: Command: quartus_sta RAMdrive -c RAMdrive
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RAMdrive.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clkRead clkRead
+    Info (332105): create_clock -period 1.000 -name clkWrite clkWrite
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.756
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.756              -8.398 clkRead 
+Info (332146): Worst-case hold slack is 1.173
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.173               0.000 clkRead 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -17.044 clkRead 
+    Info (332119):    -3.000              -9.522 clkWrite 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.476
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.476              -6.976 clkRead 
+Info (332146): Worst-case hold slack is 1.063
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.063               0.000 clkRead 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -17.044 clkRead 
+    Info (332119):    -3.000              -9.522 clkWrite 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.314
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.314              -1.256 clkRead 
+Info (332146): Worst-case hold slack is 0.684
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.684               0.000 clkRead 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -10.752 clkRead 
+    Info (332119):    -3.000              -6.361 clkWrite 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4696 megabytes
+    Info: Processing ended: Tue May 21 20:17:39 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

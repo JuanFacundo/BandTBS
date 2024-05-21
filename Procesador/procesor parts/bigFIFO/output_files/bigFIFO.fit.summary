@@ -1,0 +1,16 @@
+Fitter Status : Failed - Tue May 21 12:14:01 2024
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : bigFIFO
+Top-level Entity Name : ONEHOTshift
+Family : Cyclone III
+Device : EP3C16F484C6
+Timing Models : Final
+Total logic elements : 614,403 / 15,408 ( 3988 % )
+    Total combinational functions : 614,402 / 15,408 ( 3988 % )
+    Dedicated logic registers : 614,400 / 15,408 ( 3988 % )
+Total registers : 614400
+Total pins : 4 / 347 ( 1 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
