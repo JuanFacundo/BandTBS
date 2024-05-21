@@ -3,38 +3,41 @@ CLOCK_50 => pll1:CLK_24M.inclk0
 CLOCK_50 => div800k:DIV800.clk_50M
 SW[0] => SCCBdrive:SCCBdriver.E
 SW[0] => div800k:DIV800.rst
-SW[1] => capture_driver:CAPdrive.RST
-LEDG[0] << SCCBdrive:SCCBdriver.LIVE
-LEDG[1] << <GND>
-GPIO0_D[0] << SCCBdrive:SCCBdriver.SIO_C
-GPIO0_D[1] << SCCBdrive:SCCBdriver.SIO_D
-GPIO0_D[2] << pll1:CLK_24M.c0
-GPIO1_D[0] => capture_driver:CAPdrive.D_IN[0]
-GPIO1_D[1] => capture_driver:CAPdrive.D_IN[1]
-GPIO1_D[2] => capture_driver:CAPdrive.D_IN[2]
-GPIO1_D[3] => capture_driver:CAPdrive.D_IN[3]
-GPIO1_D[4] => capture_driver:CAPdrive.D_IN[4]
-GPIO1_D[5] => capture_driver:CAPdrive.D_IN[5]
-GPIO1_D[6] => capture_driver:CAPdrive.D_IN[6]
-GPIO1_D[7] => capture_driver:CAPdrive.D_IN[7]
-GPIO1_D[8] => capture_driver:CAPdrive.PCLK
-GPIO1_D[9] => capture_driver:CAPdrive.HREF
+SW[1] => GPIO0_D.IN1
+SW[1] => CAPdrive:CAPdriver.rst
+LEDG[0] <= SCCBdrive:SCCBdriver.LIVE
+LEDG[1] <= GPIO1_D[10].DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[0] <= SCCBdrive:SCCBdriver.SIO_C
+GPIO0_D[1] <= SCCBdrive:SCCBdriver.SIO_D
+GPIO0_D[2] <= GPIO0_D.DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[3] <= CAPdrive:CAPdriver.D_out[3]
+GPIO1_D[0] => CAPdrive:CAPdriver.D_in[0]
+GPIO1_D[1] => CAPdrive:CAPdriver.D_in[1]
+GPIO1_D[2] => CAPdrive:CAPdriver.D_in[2]
+GPIO1_D[3] => CAPdrive:CAPdriver.D_in[3]
+GPIO1_D[4] => CAPdrive:CAPdriver.D_in[4]
+GPIO1_D[5] => CAPdrive:CAPdriver.D_in[5]
+GPIO1_D[6] => CAPdrive:CAPdriver.D_in[6]
+GPIO1_D[7] => CAPdrive:CAPdriver.D_in[7]
+GPIO1_D[8] => CAPdrive:CAPdriver.PCLK
+GPIO1_D[9] => CAPdrive:CAPdriver.HREF
 GPIO1_D[9] => VGA_HS.DATAIN
 GPIO1_D[10] => VGA_VS.DATAIN
-VGA_R[0] << capture_driver:CAPdrive.Q_OUT[0]
-VGA_R[1] << capture_driver:CAPdrive.Q_OUT[1]
-VGA_R[2] << capture_driver:CAPdrive.Q_OUT[2]
-VGA_R[3] << capture_driver:CAPdrive.Q_OUT[3]
-VGA_G[0] << capture_driver:CAPdrive.Q_OUT[0]
-VGA_G[1] << capture_driver:CAPdrive.Q_OUT[1]
-VGA_G[2] << capture_driver:CAPdrive.Q_OUT[2]
-VGA_G[3] << capture_driver:CAPdrive.Q_OUT[3]
-VGA_B[0] << capture_driver:CAPdrive.Q_OUT[0]
-VGA_B[1] << capture_driver:CAPdrive.Q_OUT[1]
-VGA_B[2] << capture_driver:CAPdrive.Q_OUT[2]
-VGA_B[3] << capture_driver:CAPdrive.Q_OUT[3]
-VGA_HS << GPIO1_D[9].DB_MAX_OUTPUT_PORT_TYPE
-VGA_VS << GPIO1_D[10].DB_MAX_OUTPUT_PORT_TYPE
+GPIO1_D[10] => LEDG[1].DATAIN
+VGA_R[0] <= CAPdrive:CAPdriver.D_out[0]
+VGA_R[1] <= CAPdrive:CAPdriver.D_out[1]
+VGA_R[2] <= CAPdrive:CAPdriver.D_out[2]
+VGA_R[3] <= CAPdrive:CAPdriver.D_out[3]
+VGA_G[0] <= CAPdrive:CAPdriver.D_out[0]
+VGA_G[1] <= CAPdrive:CAPdriver.D_out[1]
+VGA_G[2] <= CAPdrive:CAPdriver.D_out[2]
+VGA_G[3] <= CAPdrive:CAPdriver.D_out[3]
+VGA_B[0] <= CAPdrive:CAPdriver.D_out[0]
+VGA_B[1] <= CAPdrive:CAPdriver.D_out[1]
+VGA_B[2] <= CAPdrive:CAPdriver.D_out[2]
+VGA_B[3] <= CAPdrive:CAPdriver.D_out[3]
+VGA_HS <= GPIO1_D[9].DB_MAX_OUTPUT_PORT_TYPE
+VGA_VS <= GPIO1_D[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CAMstreamVGA|pll1:CLK_24M
@@ -298,148 +301,122 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 sending <= sending.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CAMstreamVGA|capture_driver:CAPdrive
-PCLK => RegisterPP:ER.CLK
-PCLK => div_clk:DIV.Clk_In
-PCLK => RegisterPP:ACC.CLK
-PCLK => DelayedOutput:start_counting.clock
-RST => RegisterPP:ER.RESET
-RST => RegisterPP:ACC.RESET
-RST => RegisterPP:BUF.RESET
-RST => DelayedOutput:start_counting.reset
-HREF => Pixel_counter.IN1
-HREF => RegisterPP:ER.ENABLE
-HREF => RegisterPP:ACC.ENABLE
-HREF => RegisterPP:BUF.ENABLE
-D_IN[0] => RegisterPP:ER.D_IN[0]
-D_IN[1] => RegisterPP:ER.D_IN[1]
-D_IN[2] => RegisterPP:ER.D_IN[2]
-D_IN[3] => RegisterPP:ER.D_IN[3]
-D_IN[4] => RegisterPP:ER.D_IN[4]
-D_IN[5] => RegisterPP:ER.D_IN[5]
-D_IN[6] => RegisterPP:ER.D_IN[6]
-D_IN[7] => RegisterPP:ER.D_IN[7]
-pixel_per_line_counter[0] <= pixel_per_line_counter_aux[0].DB_MAX_OUTPUT_PORT_TYPE
-pixel_per_line_counter[1] <= pixel_per_line_counter_aux[1].DB_MAX_OUTPUT_PORT_TYPE
-line_counter[0] <= line_counter_aux[0].DB_MAX_OUTPUT_PORT_TYPE
-line_counter[1] <= line_counter_aux[1].DB_MAX_OUTPUT_PORT_TYPE
-CLK_DIV <= div_clk:DIV.Clk_Out
-Q_OUT[0] <= RegisterPP:BUF.Q_OUT[0]
-Q_OUT[1] <= RegisterPP:BUF.Q_OUT[1]
-Q_OUT[2] <= RegisterPP:BUF.Q_OUT[2]
-Q_OUT[3] <= RegisterPP:BUF.Q_OUT[3]
+|CAMstreamVGA|CAPdrive:CAPdriver
+rst => QinReg[0].ACLR
+rst => QinReg[1].ACLR
+rst => QinReg[2].ACLR
+rst => QinReg[3].ACLR
+rst => QinReg[4].ACLR
+rst => QinReg[5].ACLR
+rst => QinReg[6].ACLR
+rst => QinReg[7].ACLR
+D_in[0] => QinReg[0].DATAIN
+D_in[1] => QinReg[1].DATAIN
+D_in[2] => QinReg[2].DATAIN
+D_in[3] => QinReg[3].DATAIN
+D_in[4] => QinReg[4].DATAIN
+D_in[5] => QinReg[5].DATAIN
+D_in[6] => QinReg[6].DATAIN
+D_in[7] => QinReg[7].DATAIN
+PCLK => Z_1:DEPHASE.clk_in
+PCLK => dPCLK.IN0
+HREF => dPCLK.IN1
+HREF => Z_1:DEPHASE.rst
+HREF => Chewed[0].ACLR
+HREF => Chewed[1].ACLR
+HREF => Chewed[2].ACLR
+HREF => Chewed[3].ACLR
+HREF => takeTurn.ACLR
+HREF => QaddReg[0].ACLR
+HREF => QaddReg[1].ACLR
+HREF => QaddReg[2].ACLR
+HREF => QaddReg[3].ACLR
+HREF => QaddReg[4].ACLR
+HREF => QaddReg[5].ACLR
+D_out[0] <= Chewed[0].DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= Chewed[1].DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= Chewed[2].DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= Chewed[3].DB_MAX_OUTPUT_PORT_TYPE
+outCLK <= Z_1:DEPHASE.clk_out
 
 
-|CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:ER
-CLK => reg[0].CLK
-CLK => reg[1].CLK
-CLK => reg[2].CLK
-CLK => reg[3].CLK
-CLK => reg[4].CLK
-CLK => reg[5].CLK
-CLK => reg[6].CLK
-CLK => reg[7].CLK
-RESET => reg[0].ACLR
-RESET => reg[1].ACLR
-RESET => reg[2].ACLR
-RESET => reg[3].ACLR
-RESET => reg[4].ACLR
-RESET => reg[5].ACLR
-RESET => reg[6].ACLR
-RESET => reg[7].ACLR
-ENABLE => reg[0].ENA
-ENABLE => reg[1].ENA
-ENABLE => reg[2].ENA
-ENABLE => reg[3].ENA
-ENABLE => reg[4].ENA
-ENABLE => reg[5].ENA
-ENABLE => reg[6].ENA
-ENABLE => reg[7].ENA
-D_IN[0] => reg[0].DATAIN
-D_IN[1] => reg[1].DATAIN
-D_IN[2] => reg[2].DATAIN
-D_IN[3] => reg[3].DATAIN
-D_IN[4] => reg[4].DATAIN
-D_IN[5] => reg[5].DATAIN
-D_IN[6] => reg[6].DATAIN
-D_IN[7] => reg[7].DATAIN
-Q_OUT[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[4] <= reg[4].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[5] <= reg[5].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[6] <= reg[6].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[7] <= reg[7].DB_MAX_OUTPUT_PORT_TYPE
+|CAMstreamVGA|CAPdrive:CAPdriver|Z_1:DEPHASE
+rst => Qd[1].ACLR
+rst => Qd[0].ACLR
+rst => Qt.ACLR
+clk_in => Qd[1].CLK
+clk_in => Qd[0].CLK
+clk_in => Qt.CLK
+clk_out <= Qd[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:ACC
-CLK => reg[0].CLK
-CLK => reg[1].CLK
-CLK => reg[2].CLK
-CLK => reg[3].CLK
-CLK => reg[4].CLK
-CLK => reg[5].CLK
-RESET => reg[0].ACLR
-RESET => reg[1].ACLR
-RESET => reg[2].ACLR
-RESET => reg[3].ACLR
-RESET => reg[4].ACLR
-RESET => reg[5].ACLR
-ENABLE => reg[0].ENA
-ENABLE => reg[1].ENA
-ENABLE => reg[2].ENA
-ENABLE => reg[3].ENA
-ENABLE => reg[4].ENA
-ENABLE => reg[5].ENA
-D_IN[0] => reg[0].DATAIN
-D_IN[1] => reg[1].DATAIN
-D_IN[2] => reg[2].DATAIN
-D_IN[3] => reg[3].DATAIN
-D_IN[4] => reg[4].DATAIN
-D_IN[5] => reg[5].DATAIN
-Q_OUT[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[4] <= reg[4].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[5] <= reg[5].DB_MAX_OUTPUT_PORT_TYPE
+|CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:0:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CAMstreamVGA|capture_driver:CAPdrive|RegisterPP:BUF
-CLK => reg[0].CLK
-CLK => reg[1].CLK
-CLK => reg[2].CLK
-CLK => reg[3].CLK
-RESET => reg[0].ACLR
-RESET => reg[1].ACLR
-RESET => reg[2].ACLR
-RESET => reg[3].ACLR
-ENABLE => reg[0].ENA
-ENABLE => reg[1].ENA
-ENABLE => reg[2].ENA
-ENABLE => reg[3].ENA
-D_IN[0] => reg[0].DATAIN
-D_IN[1] => reg[1].DATAIN
-D_IN[2] => reg[2].DATAIN
-D_IN[3] => reg[3].DATAIN
-Q_OUT[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
-Q_OUT[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
+|CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:1:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CAMstreamVGA|capture_driver:CAPdrive|div_clk:DIV
-Clk_In => Clk_aux.CLK
-Clk_In => counter.CLK
-Clk_Out <= Clk_aux.DB_MAX_OUTPUT_PORT_TYPE
+|CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:2:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CAMstreamVGA|capture_driver:CAPdrive|DelayedOutput:start_counting
-clock => delayed_output.CLK
-clock => counter.CLK
-reset => delayed_output.ACLR
-reset => counter.ACLR
-output <= delayed_output.DB_MAX_OUTPUT_PORT_TYPE
+|CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:3:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 

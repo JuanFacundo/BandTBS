@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/20/2024 01:10:03"
+-- DATE "05/21/2024 09:34:54"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,23 +37,24 @@ ENTITY 	CAMstreamVGA IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	SW : IN std_logic_vector(1 DOWNTO 0);
-	LEDG : BUFFER std_logic_vector(1 DOWNTO 0);
-	GPIO0_D : BUFFER std_logic_vector(2 DOWNTO 0);
+	LEDG : OUT std_logic_vector(1 DOWNTO 0);
+	GPIO0_D : OUT std_logic_vector(3 DOWNTO 0);
 	GPIO1_D : IN std_logic_vector(10 DOWNTO 0);
-	VGA_R : BUFFER std_logic_vector(3 DOWNTO 0);
-	VGA_G : BUFFER std_logic_vector(3 DOWNTO 0);
-	VGA_B : BUFFER std_logic_vector(3 DOWNTO 0);
-	VGA_HS : BUFFER std_logic;
-	VGA_VS : BUFFER std_logic
+	VGA_R : OUT std_logic_vector(3 DOWNTO 0);
+	VGA_G : OUT std_logic_vector(3 DOWNTO 0);
+	VGA_B : OUT std_logic_vector(3 DOWNTO 0);
+	VGA_HS : OUT std_logic;
+	VGA_VS : OUT std_logic
 	);
 END CAMstreamVGA;
 
 -- Design Ports Information
 -- LEDG[0]	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LEDG[1]	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO0_D[0]	=>  Location: PIN_AB16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO0_D[1]	=>  Location: PIN_AA16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO0_D[2]	=>  Location: PIN_AA15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO0_D[0]	=>  Location: PIN_AB16,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
+-- GPIO0_D[1]	=>  Location: PIN_AA16,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
+-- GPIO0_D[2]	=>  Location: PIN_AA15,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
+-- GPIO0_D[3]	=>  Location: PIN_AB15,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
 -- VGA_R[0]	=>  Location: PIN_H19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- VGA_R[1]	=>  Location: PIN_H17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- VGA_R[2]	=>  Location: PIN_H20,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -68,20 +69,20 @@ END CAMstreamVGA;
 -- VGA_B[3]	=>  Location: PIN_K18,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- VGA_HS	=>  Location: PIN_L21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- VGA_VS	=>  Location: PIN_L22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[9]	=>  Location: PIN_W17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[10]	=>  Location: PIN_U15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO1_D[10]	=>  Location: PIN_U15,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- SW[1]	=>  Location: PIN_H5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO1_D[9]	=>  Location: PIN_W17,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
 -- SW[0]	=>  Location: PIN_J6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLOCK_50	=>  Location: PIN_G21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SW[1]	=>  Location: PIN_H5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[8]	=>  Location: PIN_Y17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[2]	=>  Location: PIN_AA19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[6]	=>  Location: PIN_AA17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[1]	=>  Location: PIN_AB20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[5]	=>  Location: PIN_AA18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[0]	=>  Location: PIN_AA20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[4]	=>  Location: PIN_AB18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[3]	=>  Location: PIN_AB19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO1_D[7]	=>  Location: PIN_AB17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO1_D[8]	=>  Location: PIN_Y17,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[7]	=>  Location: PIN_AB17,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[3]	=>  Location: PIN_AB19,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[6]	=>  Location: PIN_AA17,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[2]	=>  Location: PIN_AA19,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[0]	=>  Location: PIN_AA20,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[4]	=>  Location: PIN_AB18,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[1]	=>  Location: PIN_AB20,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- GPIO1_D[5]	=>  Location: PIN_AA18,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF CAMstreamVGA IS
@@ -97,7 +98,7 @@ SIGNAL ww_devpor : std_logic;
 SIGNAL ww_CLOCK_50 : std_logic;
 SIGNAL ww_SW : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_LEDG : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_GPIO0_D : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_GPIO0_D : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_GPIO1_D : std_logic_vector(10 DOWNTO 0);
 SIGNAL ww_VGA_R : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_VGA_G : std_logic_vector(3 DOWNTO 0);
@@ -106,9 +107,10 @@ SIGNAL ww_VGA_HS : std_logic;
 SIGNAL ww_VGA_VS : std_logic;
 SIGNAL \CLK_24M|altpll_component|auto_generated|pll1_INCLK_bus\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|pll1_CLK_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \DIV800|Qaux[5]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \CAPdriver|dPCLK~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \SCCBdriver|clk400data~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \CAPdrive|DIV|Clk_aux~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \CAPdriver|DEPHASE|Qd[1]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \DIV800|Qaux[5]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \GPIO1_D[8]~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \CLOCK_50~input_o\ : std_logic;
@@ -120,7 +122,6 @@ SIGNAL \DIV800|Qaux[2]~3_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[2]~feeder_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[3]~2_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[4]~1_combout\ : std_logic;
-SIGNAL \DIV800|Qaux[4]~feeder_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[5]~0_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[5]~feeder_combout\ : std_logic;
 SIGNAL \DIV800|Qaux[5]~clkctrl_outclk\ : std_logic;
@@ -131,9 +132,9 @@ SIGNAL \SCCBdriver|Q1~q\ : std_logic;
 SIGNAL \SCCBdriver|D0~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|Q0~q\ : std_logic;
 SIGNAL \SCCBdriver|clkE~combout\ : std_logic;
+SIGNAL \SCCBdriver|clk400~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|clk400~q\ : std_logic;
 SIGNAL \SCCBdriver|clk400D~combout\ : std_logic;
-SIGNAL \SCCBdriver|clk400data~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|clk400data~q\ : std_logic;
 SIGNAL \SCCBdriver|clk400data~clkctrl_outclk\ : std_logic;
 SIGNAL \SCCBdriver|REGS|Esync~feeder_combout\ : std_logic;
@@ -177,8 +178,8 @@ SIGNAL \SCCBdriver|DeInd~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|DeInd~1_combout\ : std_logic;
 SIGNAL \SCCBdriver|eInd~q\ : std_logic;
 SIGNAL \SCCBdriver|LIVE~0_combout\ : std_logic;
-SIGNAL \SCCBdriver|LIVE~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|LIVE~q\ : std_logic;
+SIGNAL \GPIO1_D[10]~input_o\ : std_logic;
 SIGNAL \SCCBdriver|SIO_C~combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[2]~24_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[3]~23_combout\ : std_logic;
@@ -206,58 +207,58 @@ SIGNAL \SCCBdriver|REGS|D[24]~2_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[25]~1_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[26]~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|SIO_D~combout\ : std_logic;
+SIGNAL \SW[1]~input_o\ : std_logic;
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_fbout\ : std_logic;
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
+SIGNAL \GPIO0_D~0_combout\ : std_logic;
 SIGNAL \GPIO1_D[8]~input_o\ : std_logic;
 SIGNAL \GPIO1_D[8]~inputclkctrl_outclk\ : std_logic;
-SIGNAL \CAPdrive|DIV|Clk_aux~0_combout\ : std_logic;
-SIGNAL \CAPdrive|DIV|Clk_aux~feeder_combout\ : std_logic;
-SIGNAL \CAPdrive|DIV|Clk_aux~q\ : std_logic;
-SIGNAL \CAPdrive|DIV|Clk_aux~clkctrl_outclk\ : std_logic;
-SIGNAL \GPIO1_D[6]~input_o\ : std_logic;
-SIGNAL \CAPdrive|ER|reg[6]~feeder_combout\ : std_logic;
-SIGNAL \SW[1]~input_o\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qt~0_combout\ : std_logic;
 SIGNAL \GPIO1_D[9]~input_o\ : std_logic;
-SIGNAL \GPIO1_D[2]~input_o\ : std_logic;
-SIGNAL \CAPdrive|mux_out[2]~0_combout\ : std_logic;
-SIGNAL \GPIO1_D[5]~input_o\ : std_logic;
-SIGNAL \CAPdrive|ER|reg[5]~feeder_combout\ : std_logic;
-SIGNAL \GPIO1_D[1]~input_o\ : std_logic;
-SIGNAL \GPIO1_D[0]~input_o\ : std_logic;
-SIGNAL \GPIO1_D[4]~input_o\ : std_logic;
-SIGNAL \CAPdrive|ER|reg[4]~feeder_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[0]~6_combout\ : std_logic;
-SIGNAL \CAPdrive|mux_out[0]~2_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[0]~7\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[1]~8_combout\ : std_logic;
-SIGNAL \CAPdrive|mux_out[1]~1_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[1]~9\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[2]~10_combout\ : std_logic;
-SIGNAL \CAPdrive|BUF|reg[0]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qt~q\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qd[0]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qd[1]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\ : std_logic;
+SIGNAL \CAPdriver|dPCLK~combout\ : std_logic;
+SIGNAL \CAPdriver|dPCLK~clkctrl_outclk\ : std_logic;
 SIGNAL \GPIO1_D[7]~input_o\ : std_logic;
-SIGNAL \CAPdrive|ER|reg[7]~feeder_combout\ : std_logic;
+SIGNAL \GPIO1_D[6]~input_o\ : std_logic;
+SIGNAL \CAPdriver|takeTurn~0_combout\ : std_logic;
+SIGNAL \CAPdriver|takeTurn~q\ : std_logic;
+SIGNAL \GPIO1_D[4]~input_o\ : std_logic;
+SIGNAL \CAPdriver|QinReg[4]~feeder_combout\ : std_logic;
+SIGNAL \GPIO1_D[0]~input_o\ : std_logic;
+SIGNAL \CAPdriver|RipCar:0:FA|s~0_combout\ : std_logic;
+SIGNAL \CAPdriver|B[0]~3_combout\ : std_logic;
+SIGNAL \GPIO1_D[5]~input_o\ : std_logic;
+SIGNAL \CAPdriver|RipCar:1:FA|s~combout\ : std_logic;
+SIGNAL \GPIO1_D[1]~input_o\ : std_logic;
+SIGNAL \CAPdriver|B[1]~4_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:1:FA|co~0_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:2:FA|s~combout\ : std_logic;
+SIGNAL \GPIO1_D[2]~input_o\ : std_logic;
+SIGNAL \CAPdriver|B[2]~2_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:2:FA|co~0_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:3:FA|s~combout\ : std_logic;
 SIGNAL \GPIO1_D[3]~input_o\ : std_logic;
-SIGNAL \CAPdrive|mux_out[3]~3_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[2]~11\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[3]~12_combout\ : std_logic;
-SIGNAL \CAPdrive|BUF|reg[1]~feeder_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[3]~13\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[4]~14_combout\ : std_logic;
-SIGNAL \CAPdrive|BUF|reg[2]~feeder_combout\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[4]~15\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg[5]~16_combout\ : std_logic;
-SIGNAL \CAPdrive|BUF|reg[3]~feeder_combout\ : std_logic;
-SIGNAL \GPIO1_D[10]~input_o\ : std_logic;
-SIGNAL \CAPdrive|ACC|reg\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \CAPdrive|BUF|reg\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \DIV800|Qaux\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
+SIGNAL \CAPdriver|B[3]~1_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:4:FA|s~combout\ : std_logic;
+SIGNAL \CAPdriver|B[4]~0_combout\ : std_logic;
+SIGNAL \CAPdriver|RipCar:4:FA|co~0_combout\ : std_logic;
+SIGNAL \CAPdriver|Chewed[3]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|Chewed[0]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|Chewed[1]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|Chewed[2]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|DEPHASE|Qd\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
-SIGNAL \CAPdrive|ER|reg\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \CAPdriver|QaddReg\ : std_logic_vector(5 DOWNTO 0);
+SIGNAL \DIV800|Qaux\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\ : std_logic;
+SIGNAL \CAPdriver|Chewed\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
+SIGNAL \CAPdriver|QinReg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \DIV800|ALT_INV_Qaux[5]~clkctrl_outclk\ : std_logic;
-SIGNAL \ALT_INV_SW[1]~input_o\ : std_logic;
+SIGNAL \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\ : std_logic;
 SIGNAL \DIV800|ALT_INV_Qaux\ : std_logic_vector(5 DOWNTO 5);
 
 BEGIN
@@ -284,18 +285,19 @@ ww_devpor <= devpor;
 \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\(3) <= \CLK_24M|altpll_component|auto_generated|pll1_CLK_bus\(3);
 \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\(4) <= \CLK_24M|altpll_component|auto_generated|pll1_CLK_bus\(4);
 
-\DIV800|Qaux[5]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \DIV800|Qaux\(5));
+\CAPdriver|dPCLK~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CAPdriver|dPCLK~combout\);
 
 \SCCBdriver|clk400data~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \SCCBdriver|clk400data~q\);
 
-\CAPdrive|DIV|Clk_aux~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CAPdrive|DIV|Clk_aux~q\);
+\CAPdriver|DEPHASE|Qd[1]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CAPdriver|DEPHASE|Qd\(1));
+
+\DIV800|Qaux[5]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \DIV800|Qaux\(5));
 
 \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\(0));
 
 \GPIO1_D[8]~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \GPIO1_D[8]~input_o\);
-\ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\ <= NOT \GPIO1_D[8]~inputclkctrl_outclk\;
 \DIV800|ALT_INV_Qaux[5]~clkctrl_outclk\ <= NOT \DIV800|Qaux[5]~clkctrl_outclk\;
-\ALT_INV_SW[1]~input_o\ <= NOT \SW[1]~input_o\;
+\CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\ <= NOT \CAPdriver|dPCLK~clkctrl_outclk\;
 \DIV800|ALT_INV_Qaux\(5) <= NOT \DIV800|Qaux\(5);
 
 -- Location: IOOBUF_X0_Y20_N9
@@ -318,7 +320,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \GPIO1_D[10]~input_o\,
 	devoe => ww_devoe,
 	o => ww_LEDG(1));
 
@@ -354,9 +356,21 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	i => \GPIO0_D~0_combout\,
 	devoe => ww_devoe,
 	o => ww_GPIO0_D(2));
+
+-- Location: IOOBUF_X26_Y0_N9
+\GPIO0_D[3]~output\ : cycloneiii_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \CAPdriver|Chewed\(3),
+	devoe => ww_devoe,
+	o => ww_GPIO0_D(3));
 
 -- Location: IOOBUF_X41_Y23_N23
 \VGA_R[0]~output\ : cycloneiii_io_obuf
@@ -366,7 +380,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(0),
+	i => \CAPdriver|Chewed\(0),
 	devoe => ww_devoe,
 	o => ww_VGA_R(0));
 
@@ -378,7 +392,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(1),
+	i => \CAPdriver|Chewed\(1),
 	devoe => ww_devoe,
 	o => ww_VGA_R(1));
 
@@ -390,7 +404,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(2),
+	i => \CAPdriver|Chewed\(2),
 	devoe => ww_devoe,
 	o => ww_VGA_R(2));
 
@@ -402,7 +416,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(3),
+	i => \CAPdriver|Chewed\(3),
 	devoe => ww_devoe,
 	o => ww_VGA_R(3));
 
@@ -414,7 +428,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(0),
+	i => \CAPdriver|Chewed\(0),
 	devoe => ww_devoe,
 	o => ww_VGA_G(0));
 
@@ -426,7 +440,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(1),
+	i => \CAPdriver|Chewed\(1),
 	devoe => ww_devoe,
 	o => ww_VGA_G(1));
 
@@ -438,7 +452,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(2),
+	i => \CAPdriver|Chewed\(2),
 	devoe => ww_devoe,
 	o => ww_VGA_G(2));
 
@@ -450,7 +464,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(3),
+	i => \CAPdriver|Chewed\(3),
 	devoe => ww_devoe,
 	o => ww_VGA_G(3));
 
@@ -462,7 +476,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(0),
+	i => \CAPdriver|Chewed\(0),
 	devoe => ww_devoe,
 	o => ww_VGA_B(0));
 
@@ -474,7 +488,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(1),
+	i => \CAPdriver|Chewed\(1),
 	devoe => ww_devoe,
 	o => ww_VGA_B(1));
 
@@ -486,7 +500,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(2),
+	i => \CAPdriver|Chewed\(2),
 	devoe => ww_devoe,
 	o => ww_VGA_B(2));
 
@@ -498,7 +512,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \CAPdrive|BUF|reg\(3),
+	i => \CAPdriver|Chewed\(3),
 	devoe => ww_devoe,
 	o => ww_VGA_B(3));
 
@@ -537,32 +551,32 @@ PORT MAP (
 	i => ww_CLOCK_50,
 	o => \CLOCK_50~input_o\);
 
--- Location: LCCOMB_X28_Y15_N0
+-- Location: LCCOMB_X28_Y24_N10
 \DIV800|Qaux[0]~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[0]~5_combout\ = !\DIV800|Qaux\(0)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001100110011",
+	lut_mask => "0000111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \DIV800|Qaux\(0),
+	datac => \DIV800|Qaux\(0),
 	combout => \DIV800|Qaux[0]~5_combout\);
 
--- Location: LCCOMB_X28_Y15_N10
+-- Location: LCCOMB_X28_Y24_N6
 \DIV800|Qaux[0]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[0]~feeder_combout\ = \DIV800|Qaux[0]~5_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101010",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \DIV800|Qaux[0]~5_combout\,
+	datac => \DIV800|Qaux[0]~5_combout\,
 	combout => \DIV800|Qaux[0]~feeder_combout\);
 
 -- Location: IOIBUF_X0_Y24_N1
@@ -576,7 +590,7 @@ PORT MAP (
 	i => ww_SW(0),
 	o => \SW[0]~input_o\);
 
--- Location: FF_X28_Y15_N11
+-- Location: FF_X28_Y24_N7
 \DIV800|Qaux[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -591,7 +605,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(0));
 
--- Location: LCCOMB_X28_Y15_N26
+-- Location: LCCOMB_X28_Y24_N26
 \DIV800|Qaux[1]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[1]~4_combout\ = !\DIV800|Qaux\(1)
@@ -605,7 +619,7 @@ PORT MAP (
 	datac => \DIV800|Qaux\(1),
 	combout => \DIV800|Qaux[1]~4_combout\);
 
--- Location: FF_X28_Y15_N5
+-- Location: FF_X28_Y24_N5
 \DIV800|Qaux[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -621,35 +635,35 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(1));
 
--- Location: LCCOMB_X27_Y15_N6
+-- Location: LCCOMB_X27_Y24_N28
 \DIV800|Qaux[2]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[2]~3_combout\ = !\DIV800|Qaux\(2)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010101010101",
+	lut_mask => "0011001100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \DIV800|Qaux\(2),
+	datab => \DIV800|Qaux\(2),
 	combout => \DIV800|Qaux[2]~3_combout\);
 
--- Location: LCCOMB_X27_Y15_N10
+-- Location: LCCOMB_X27_Y24_N8
 \DIV800|Qaux[2]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[2]~feeder_combout\ = \DIV800|Qaux[2]~3_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101010",
+	lut_mask => "1100110011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \DIV800|Qaux[2]~3_combout\,
+	datab => \DIV800|Qaux[2]~3_combout\,
 	combout => \DIV800|Qaux[2]~feeder_combout\);
 
--- Location: FF_X27_Y15_N11
+-- Location: FF_X27_Y24_N9
 \DIV800|Qaux[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -664,7 +678,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(2));
 
--- Location: LCCOMB_X27_Y15_N26
+-- Location: LCCOMB_X23_Y24_N0
 \DIV800|Qaux[3]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[3]~2_combout\ = !\DIV800|Qaux\(3)
@@ -678,7 +692,7 @@ PORT MAP (
 	datab => \DIV800|Qaux\(3),
 	combout => \DIV800|Qaux[3]~2_combout\);
 
--- Location: FF_X27_Y15_N21
+-- Location: FF_X23_Y24_N11
 \DIV800|Qaux[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -694,35 +708,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(3));
 
--- Location: LCCOMB_X23_Y15_N24
+-- Location: LCCOMB_X23_Y24_N14
 \DIV800|Qaux[4]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[4]~1_combout\ = !\DIV800|Qaux\(4)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011111111",
+	lut_mask => "0000111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \DIV800|Qaux\(4),
+	datac => \DIV800|Qaux\(4),
 	combout => \DIV800|Qaux[4]~1_combout\);
 
--- Location: LCCOMB_X23_Y15_N22
-\DIV800|Qaux[4]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \DIV800|Qaux[4]~feeder_combout\ = \DIV800|Qaux[4]~1_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \DIV800|Qaux[4]~1_combout\,
-	combout => \DIV800|Qaux[4]~feeder_combout\);
-
--- Location: FF_X23_Y15_N23
+-- Location: FF_X23_Y24_N5
 \DIV800|Qaux[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -731,41 +731,42 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \DIV800|Qaux\(3),
-	d => \DIV800|Qaux[4]~feeder_combout\,
+	asdata => \DIV800|Qaux[4]~1_combout\,
 	clrn => \SW[0]~input_o\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(4));
 
--- Location: LCCOMB_X21_Y15_N20
+-- Location: LCCOMB_X23_Y26_N24
 \DIV800|Qaux[5]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[5]~0_combout\ = !\DIV800|Qaux\(5)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100001111",
+	lut_mask => "0101010101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \DIV800|Qaux\(5),
+	dataa => \DIV800|Qaux\(5),
 	combout => \DIV800|Qaux[5]~0_combout\);
 
--- Location: LCCOMB_X21_Y15_N16
+-- Location: LCCOMB_X23_Y26_N20
 \DIV800|Qaux[5]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \DIV800|Qaux[5]~feeder_combout\ = \DIV800|Qaux[5]~0_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011001100",
+	lut_mask => "1010101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \DIV800|Qaux[5]~0_combout\,
+	dataa => \DIV800|Qaux[5]~0_combout\,
 	combout => \DIV800|Qaux[5]~feeder_combout\);
 
--- Location: FF_X21_Y15_N17
+-- Location: FF_X23_Y26_N21
 \DIV800|Qaux[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -780,7 +781,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \DIV800|Qaux\(5));
 
--- Location: CLKCTRL_G7
+-- Location: CLKCTRL_G14
 \DIV800|Qaux[5]~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -793,7 +794,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \DIV800|Qaux[5]~clkctrl_outclk\);
 
--- Location: LCCOMB_X19_Y15_N30
+-- Location: LCCOMB_X21_Y23_N24
 \SCCBdriver|EE~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|EE~feeder_combout\ = VCC
@@ -806,7 +807,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \SCCBdriver|EE~feeder_combout\);
 
--- Location: FF_X19_Y15_N31
+-- Location: FF_X21_Y23_N25
 \SCCBdriver|EE\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -821,7 +822,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|EE~q\);
 
--- Location: LCCOMB_X16_Y15_N22
+-- Location: LCCOMB_X24_Y23_N30
 \SCCBdriver|D1~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|D1~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|Q1~q\) # ((!\SCCBdriver|eInd~q\ & \SCCBdriver|Q0~q\))))
@@ -838,7 +839,7 @@ PORT MAP (
 	datad => \SCCBdriver|EE~q\,
 	combout => \SCCBdriver|D1~0_combout\);
 
--- Location: FF_X16_Y15_N23
+-- Location: FF_X24_Y23_N31
 \SCCBdriver|Q1\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -853,7 +854,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|Q1~q\);
 
--- Location: LCCOMB_X16_Y15_N14
+-- Location: LCCOMB_X24_Y23_N20
 \SCCBdriver|D0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|D0~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|eInd~q\ & ((\SCCBdriver|Q0~q\) # (!\SCCBdriver|Q1~q\))) # (!\SCCBdriver|eInd~q\ & ((\SCCBdriver|Q1~q\) # (!\SCCBdriver|Q0~q\)))))
@@ -870,7 +871,7 @@ PORT MAP (
 	datad => \SCCBdriver|EE~q\,
 	combout => \SCCBdriver|D0~0_combout\);
 
--- Location: FF_X16_Y15_N15
+-- Location: FF_X24_Y23_N21
 \SCCBdriver|Q0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -885,22 +886,36 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|Q0~q\);
 
--- Location: LCCOMB_X23_Y15_N14
+-- Location: LCCOMB_X23_Y26_N18
 \SCCBdriver|clkE\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|clkE~combout\ = (!\SCCBdriver|clk400~q\) # (!\SCCBdriver|eInd~q\)
+-- \SCCBdriver|clkE~combout\ = (!\SCCBdriver|eInd~q\) # (!\SCCBdriver|clk400~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011111100111111",
+	lut_mask => "0000111111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|eInd~q\,
 	datac => \SCCBdriver|clk400~q\,
+	datad => \SCCBdriver|eInd~q\,
 	combout => \SCCBdriver|clkE~combout\);
 
--- Location: FF_X23_Y15_N15
+-- Location: LCCOMB_X23_Y26_N22
+\SCCBdriver|clk400~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|clk400~feeder_combout\ = \SCCBdriver|clkE~combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \SCCBdriver|clkE~combout\,
+	combout => \SCCBdriver|clk400~feeder_combout\);
+
+-- Location: FF_X23_Y26_N23
 \SCCBdriver|clk400\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -909,13 +924,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \DIV800|Qaux\(5),
-	d => \SCCBdriver|clkE~combout\,
+	d => \SCCBdriver|clk400~feeder_combout\,
 	clrn => \SW[0]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|clk400~q\);
 
--- Location: LCCOMB_X19_Y15_N26
+-- Location: LCCOMB_X21_Y23_N4
 \SCCBdriver|clk400D\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|clk400D~combout\ = (!\SCCBdriver|clk400data~q\ & \SCCBdriver|C_Esync~q\)
@@ -930,21 +945,7 @@ PORT MAP (
 	datad => \SCCBdriver|C_Esync~q\,
 	combout => \SCCBdriver|clk400D~combout\);
 
--- Location: LCCOMB_X19_Y15_N14
-\SCCBdriver|clk400data~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|clk400data~feeder_combout\ = \SCCBdriver|clk400D~combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \SCCBdriver|clk400D~combout\,
-	combout => \SCCBdriver|clk400data~feeder_combout\);
-
--- Location: FF_X19_Y15_N15
+-- Location: FF_X21_Y23_N7
 \SCCBdriver|clk400data\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -953,13 +954,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \DIV800|ALT_INV_Qaux[5]~clkctrl_outclk\,
-	d => \SCCBdriver|clk400data~feeder_combout\,
+	asdata => \SCCBdriver|clk400D~combout\,
 	clrn => \SW[0]~input_o\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|clk400data~q\);
 
--- Location: CLKCTRL_G6
+-- Location: CLKCTRL_G12
 \SCCBdriver|clk400data~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -972,7 +974,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \SCCBdriver|clk400data~clkctrl_outclk\);
 
--- Location: LCCOMB_X20_Y15_N20
+-- Location: LCCOMB_X22_Y23_N2
 \SCCBdriver|REGS|Esync~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Esync~feeder_combout\ = VCC
@@ -985,7 +987,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \SCCBdriver|REGS|Esync~feeder_combout\);
 
--- Location: FF_X20_Y15_N21
+-- Location: FF_X22_Y23_N3
 \SCCBdriver|REGS|Esync\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1000,7 +1002,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Esync~q\);
 
--- Location: LCCOMB_X15_Y15_N22
+-- Location: LCCOMB_X22_Y24_N28
 \SCCBdriver|REGS|cQ[0]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cQ[0]~0_combout\ = !\SCCBdriver|REGS|Esync~q\
@@ -1014,7 +1016,7 @@ PORT MAP (
 	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cQ[0]~0_combout\);
 
--- Location: FF_X15_Y15_N23
+-- Location: FF_X22_Y24_N29
 \SCCBdriver|REGS|cQ[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1029,22 +1031,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(0));
 
--- Location: LCCOMB_X15_Y15_N4
+-- Location: LCCOMB_X22_Y24_N30
 \SCCBdriver|REGS|cD[1]~25\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[1]~25_combout\ = (\SCCBdriver|REGS|cQ\(0)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110101111",
+	lut_mask => "1111111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(0),
 	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(0),
 	combout => \SCCBdriver|REGS|cD[1]~25_combout\);
 
--- Location: FF_X15_Y15_N5
+-- Location: FF_X22_Y24_N31
 \SCCBdriver|REGS|cQ[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1059,22 +1061,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(1));
 
--- Location: LCCOMB_X15_Y15_N30
+-- Location: LCCOMB_X22_Y24_N24
 \SCCBdriver|REGS|cD[2]~24\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[2]~24_combout\ = (\SCCBdriver|REGS|cQ\(1)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111001111",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(1),
+	dataa => \SCCBdriver|REGS|cQ\(1),
 	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[2]~24_combout\);
 
--- Location: FF_X15_Y15_N31
+-- Location: FF_X22_Y24_N25
 \SCCBdriver|REGS|cQ[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1089,22 +1091,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(2));
 
--- Location: LCCOMB_X15_Y15_N12
+-- Location: LCCOMB_X22_Y24_N22
 \SCCBdriver|REGS|cD[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[3]~23_combout\ = (\SCCBdriver|REGS|cQ\(2)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110101111",
+	lut_mask => "1111111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(2),
 	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(2),
 	combout => \SCCBdriver|REGS|cD[3]~23_combout\);
 
--- Location: FF_X15_Y15_N13
+-- Location: FF_X22_Y24_N23
 \SCCBdriver|REGS|cQ[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1119,22 +1121,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(3));
 
--- Location: LCCOMB_X15_Y15_N6
+-- Location: LCCOMB_X22_Y24_N8
 \SCCBdriver|REGS|cD[4]~22\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[4]~22_combout\ = (\SCCBdriver|REGS|cQ\(3)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \SCCBdriver|REGS|cQ\(3),
 	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(3),
 	combout => \SCCBdriver|REGS|cD[4]~22_combout\);
 
--- Location: FF_X15_Y15_N7
+-- Location: FF_X22_Y24_N9
 \SCCBdriver|REGS|cQ[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1149,22 +1151,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(4));
 
--- Location: LCCOMB_X15_Y15_N24
+-- Location: LCCOMB_X22_Y24_N2
 \SCCBdriver|REGS|cD[5]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[5]~21_combout\ = (\SCCBdriver|REGS|cQ\(4)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	datab => \SCCBdriver|REGS|cQ\(4),
 	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(4),
 	combout => \SCCBdriver|REGS|cD[5]~21_combout\);
 
--- Location: FF_X15_Y15_N25
+-- Location: FF_X22_Y24_N3
 \SCCBdriver|REGS|cQ[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1179,7 +1181,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(5));
 
--- Location: LCCOMB_X15_Y15_N2
+-- Location: LCCOMB_X22_Y24_N12
 \SCCBdriver|REGS|cD[6]~20\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[6]~20_combout\ = (\SCCBdriver|REGS|cQ\(5)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1194,7 +1196,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(5),
 	combout => \SCCBdriver|REGS|cD[6]~20_combout\);
 
--- Location: FF_X15_Y15_N3
+-- Location: FF_X22_Y24_N13
 \SCCBdriver|REGS|cQ[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1209,7 +1211,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(6));
 
--- Location: LCCOMB_X15_Y15_N26
+-- Location: LCCOMB_X22_Y24_N26
 \SCCBdriver|REGS|cD[7]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[7]~19_combout\ = (\SCCBdriver|REGS|cQ\(6)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1224,7 +1226,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(6),
 	combout => \SCCBdriver|REGS|cD[7]~19_combout\);
 
--- Location: FF_X15_Y15_N27
+-- Location: FF_X22_Y24_N27
 \SCCBdriver|REGS|cQ[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1239,7 +1241,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(7));
 
--- Location: LCCOMB_X15_Y15_N20
+-- Location: LCCOMB_X22_Y24_N16
 \SCCBdriver|REGS|cD[8]~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[8]~18_combout\ = (\SCCBdriver|REGS|cQ\(7)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1254,7 +1256,7 @@ PORT MAP (
 	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[8]~18_combout\);
 
--- Location: FF_X15_Y15_N21
+-- Location: FF_X22_Y24_N17
 \SCCBdriver|REGS|cQ[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1269,7 +1271,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(8));
 
--- Location: LCCOMB_X15_Y15_N0
+-- Location: LCCOMB_X22_Y24_N10
 \SCCBdriver|REGS|cD[9]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[9]~17_combout\ = (\SCCBdriver|REGS|cQ\(8)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1284,7 +1286,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(8),
 	combout => \SCCBdriver|REGS|cD[9]~17_combout\);
 
--- Location: FF_X15_Y15_N1
+-- Location: FF_X22_Y24_N11
 \SCCBdriver|REGS|cQ[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1299,7 +1301,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(9));
 
--- Location: LCCOMB_X15_Y15_N18
+-- Location: LCCOMB_X22_Y24_N20
 \SCCBdriver|REGS|cD[10]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[10]~16_combout\ = (\SCCBdriver|REGS|cQ\(9)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1314,7 +1316,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(9),
 	combout => \SCCBdriver|REGS|cD[10]~16_combout\);
 
--- Location: FF_X15_Y15_N19
+-- Location: FF_X22_Y24_N21
 \SCCBdriver|REGS|cQ[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1329,7 +1331,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(10));
 
--- Location: LCCOMB_X15_Y15_N28
+-- Location: LCCOMB_X22_Y24_N18
 \SCCBdriver|REGS|cD[11]~15\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[11]~15_combout\ = (\SCCBdriver|REGS|cQ\(10)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1344,7 +1346,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(10),
 	combout => \SCCBdriver|REGS|cD[11]~15_combout\);
 
--- Location: FF_X15_Y15_N29
+-- Location: FF_X22_Y24_N19
 \SCCBdriver|REGS|cQ[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1359,7 +1361,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(11));
 
--- Location: LCCOMB_X15_Y15_N10
+-- Location: LCCOMB_X22_Y24_N0
 \SCCBdriver|REGS|cD[12]~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[12]~14_combout\ = (\SCCBdriver|REGS|cQ\(11)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1374,7 +1376,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(11),
 	combout => \SCCBdriver|REGS|cD[12]~14_combout\);
 
--- Location: FF_X15_Y15_N11
+-- Location: FF_X22_Y24_N1
 \SCCBdriver|REGS|cQ[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1389,7 +1391,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(12));
 
--- Location: LCCOMB_X20_Y15_N18
+-- Location: LCCOMB_X22_Y23_N6
 \SCCBdriver|REGS|cD[13]~13\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[13]~13_combout\ = (\SCCBdriver|REGS|cQ\(12)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1404,7 +1406,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(12),
 	combout => \SCCBdriver|REGS|cD[13]~13_combout\);
 
--- Location: FF_X20_Y15_N19
+-- Location: FF_X22_Y23_N7
 \SCCBdriver|REGS|cQ[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1419,22 +1421,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(13));
 
--- Location: LCCOMB_X20_Y15_N24
+-- Location: LCCOMB_X21_Y23_N10
 \SCCBdriver|REGS|cD[14]~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[14]~12_combout\ = (\SCCBdriver|REGS|cQ\(13)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(13),
 	combout => \SCCBdriver|REGS|cD[14]~12_combout\);
 
--- Location: FF_X20_Y15_N25
+-- Location: FF_X21_Y23_N11
 \SCCBdriver|REGS|cQ[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1449,22 +1451,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(14));
 
--- Location: LCCOMB_X20_Y15_N10
+-- Location: LCCOMB_X21_Y23_N22
 \SCCBdriver|REGS|cD[15]~11\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[15]~11_combout\ = (\SCCBdriver|REGS|cQ\(14)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(14),
 	combout => \SCCBdriver|REGS|cD[15]~11_combout\);
 
--- Location: FF_X20_Y15_N11
+-- Location: FF_X21_Y23_N23
 \SCCBdriver|REGS|cQ[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1479,22 +1481,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(15));
 
--- Location: LCCOMB_X20_Y15_N12
+-- Location: LCCOMB_X21_Y23_N20
 \SCCBdriver|REGS|cD[16]~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[16]~10_combout\ = (\SCCBdriver|REGS|cQ\(15)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(15),
+	datac => \SCCBdriver|REGS|cQ\(15),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[16]~10_combout\);
 
--- Location: FF_X20_Y15_N13
+-- Location: FF_X21_Y23_N21
 \SCCBdriver|REGS|cQ[16]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1509,22 +1511,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(16));
 
--- Location: LCCOMB_X20_Y15_N0
+-- Location: LCCOMB_X21_Y23_N26
 \SCCBdriver|REGS|cD[17]~9\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[17]~9_combout\ = (\SCCBdriver|REGS|cQ\(16)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(16),
 	combout => \SCCBdriver|REGS|cD[17]~9_combout\);
 
--- Location: FF_X20_Y15_N1
+-- Location: FF_X21_Y23_N27
 \SCCBdriver|REGS|cQ[17]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1539,22 +1541,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(17));
 
--- Location: LCCOMB_X20_Y15_N26
+-- Location: LCCOMB_X21_Y23_N8
 \SCCBdriver|REGS|cD[18]~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[18]~8_combout\ = (\SCCBdriver|REGS|cQ\(17)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(17),
+	datac => \SCCBdriver|REGS|cQ\(17),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[18]~8_combout\);
 
--- Location: FF_X20_Y15_N27
+-- Location: FF_X21_Y23_N9
 \SCCBdriver|REGS|cQ[18]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1569,22 +1571,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(18));
 
--- Location: LCCOMB_X20_Y15_N8
+-- Location: LCCOMB_X21_Y23_N12
 \SCCBdriver|REGS|cD[19]~7\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[19]~7_combout\ = (\SCCBdriver|REGS|cQ\(18)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110101111",
+	lut_mask => "1111010111110101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(18),
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|cQ\(18),
 	combout => \SCCBdriver|REGS|cD[19]~7_combout\);
 
--- Location: FF_X20_Y15_N9
+-- Location: FF_X21_Y23_N13
 \SCCBdriver|REGS|cQ[19]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1599,22 +1601,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(19));
 
--- Location: LCCOMB_X20_Y15_N14
+-- Location: LCCOMB_X21_Y23_N16
 \SCCBdriver|REGS|cD[20]~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[20]~6_combout\ = (\SCCBdriver|REGS|cQ\(19)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(19),
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(19),
 	combout => \SCCBdriver|REGS|cD[20]~6_combout\);
 
--- Location: FF_X20_Y15_N15
+-- Location: FF_X21_Y23_N17
 \SCCBdriver|REGS|cQ[20]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1629,22 +1631,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(20));
 
--- Location: LCCOMB_X20_Y15_N28
+-- Location: LCCOMB_X21_Y23_N28
 \SCCBdriver|REGS|cD[21]~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[21]~5_combout\ = (\SCCBdriver|REGS|cQ\(20)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(20),
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(20),
 	combout => \SCCBdriver|REGS|cD[21]~5_combout\);
 
--- Location: FF_X20_Y15_N29
+-- Location: FF_X21_Y23_N29
 \SCCBdriver|REGS|cQ[21]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1659,22 +1661,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(21));
 
--- Location: LCCOMB_X20_Y15_N4
+-- Location: LCCOMB_X21_Y23_N30
 \SCCBdriver|REGS|cD[22]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[22]~4_combout\ = (\SCCBdriver|REGS|cQ\(21)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111101010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(21),
 	combout => \SCCBdriver|REGS|cD[22]~4_combout\);
 
--- Location: FF_X20_Y15_N5
+-- Location: FF_X21_Y23_N31
 \SCCBdriver|REGS|cQ[22]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1689,22 +1691,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(22));
 
--- Location: LCCOMB_X20_Y15_N2
+-- Location: LCCOMB_X21_Y23_N14
 \SCCBdriver|REGS|cD[23]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[23]~3_combout\ = (\SCCBdriver|REGS|cQ\(22)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111001111",
+	lut_mask => "1111010111110101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(22),
-	datac => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|cQ\(22),
 	combout => \SCCBdriver|REGS|cD[23]~3_combout\);
 
--- Location: FF_X20_Y15_N3
+-- Location: FF_X21_Y23_N15
 \SCCBdriver|REGS|cQ[23]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1719,7 +1721,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(23));
 
--- Location: LCCOMB_X20_Y15_N6
+-- Location: LCCOMB_X22_Y23_N16
 \SCCBdriver|REGS|cD[24]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[24]~2_combout\ = (\SCCBdriver|REGS|cQ\(23)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1734,7 +1736,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|cQ\(23),
 	combout => \SCCBdriver|REGS|cD[24]~2_combout\);
 
--- Location: FF_X20_Y15_N7
+-- Location: FF_X22_Y23_N17
 \SCCBdriver|REGS|cQ[24]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1749,22 +1751,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(24));
 
--- Location: LCCOMB_X20_Y15_N22
+-- Location: LCCOMB_X22_Y23_N4
 \SCCBdriver|REGS|cD[25]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[25]~1_combout\ = (\SCCBdriver|REGS|cQ\(24)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(24),
 	combout => \SCCBdriver|REGS|cD[25]~1_combout\);
 
--- Location: FF_X20_Y15_N23
+-- Location: FF_X22_Y23_N5
 \SCCBdriver|REGS|cQ[25]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1779,7 +1781,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(25));
 
--- Location: LCCOMB_X20_Y15_N16
+-- Location: LCCOMB_X22_Y23_N10
 \SCCBdriver|REGS|cD[26]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[26]~0_combout\ = (\SCCBdriver|REGS|cQ\(25)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1794,7 +1796,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[26]~0_combout\);
 
--- Location: FF_X20_Y15_N17
+-- Location: FF_X22_Y23_N11
 \SCCBdriver|REGS|cQ[26]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1809,24 +1811,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(26));
 
--- Location: LCCOMB_X19_Y15_N28
+-- Location: LCCOMB_X21_Y23_N18
 \SCCBdriver|dataEedge\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|dataEedge~combout\ = LCELL((((\SCCBdriver|mssgGO~q\ & \SCCBdriver|REGS|cQ\(26))) # (!\SCCBdriver|clk400data~q\)) # (!\SCCBdriver|clk400~q\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011111100111111",
+	lut_mask => "1101010111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|mssgGO~q\,
-	datab => \SCCBdriver|clk400~q\,
-	datac => \SCCBdriver|clk400data~q\,
-	datad => \SCCBdriver|REGS|cQ\(26),
+	dataa => \SCCBdriver|clk400~q\,
+	datab => \SCCBdriver|mssgGO~q\,
+	datac => \SCCBdriver|REGS|cQ\(26),
+	datad => \SCCBdriver|clk400data~q\,
 	combout => \SCCBdriver|dataEedge~combout\);
 
--- Location: LCCOMB_X19_Y15_N6
+-- Location: LCCOMB_X23_Y23_N8
 \SCCBdriver|mssgGO~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|mssgGO~0_combout\ = !\SCCBdriver|mssgGO~q\
@@ -1840,7 +1842,7 @@ PORT MAP (
 	datac => \SCCBdriver|mssgGO~q\,
 	combout => \SCCBdriver|mssgGO~0_combout\);
 
--- Location: FF_X19_Y15_N7
+-- Location: FF_X23_Y23_N9
 \SCCBdriver|mssgGO\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1855,23 +1857,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|mssgGO~q\);
 
--- Location: LCCOMB_X22_Y15_N22
+-- Location: LCCOMB_X26_Y23_N0
 \SCCBdriver|C_Eedge\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|C_Eedge~combout\ = LCELL((\SCCBdriver|C_E~q\ & (!\SCCBdriver|mssgGO~q\)) # (!\SCCBdriver|C_E~q\ & ((\SCCBdriver|eInd~q\))))
+-- \SCCBdriver|C_Eedge~combout\ = LCELL((\SCCBdriver|C_E~q\ & ((!\SCCBdriver|mssgGO~q\))) # (!\SCCBdriver|C_E~q\ & (\SCCBdriver|eInd~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011111100110000",
+	lut_mask => "0000101011111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|mssgGO~q\,
+	dataa => \SCCBdriver|eInd~q\,
 	datac => \SCCBdriver|C_E~q\,
-	datad => \SCCBdriver|eInd~q\,
+	datad => \SCCBdriver|mssgGO~q\,
 	combout => \SCCBdriver|C_Eedge~combout\);
 
--- Location: LCCOMB_X22_Y15_N26
+-- Location: LCCOMB_X26_Y23_N30
 \SCCBdriver|C_E~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|C_E~0_combout\ = !\SCCBdriver|C_E~q\
@@ -1885,7 +1887,7 @@ PORT MAP (
 	datac => \SCCBdriver|C_E~q\,
 	combout => \SCCBdriver|C_E~0_combout\);
 
--- Location: FF_X22_Y15_N23
+-- Location: FF_X26_Y23_N1
 \SCCBdriver|C_E\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1901,21 +1903,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|C_E~q\);
 
--- Location: LCCOMB_X22_Y15_N20
+-- Location: LCCOMB_X24_Y23_N0
 \SCCBdriver|C_Esync~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|C_Esync~feeder_combout\ = \SCCBdriver|C_E~q\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1010101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|C_E~q\,
+	dataa => \SCCBdriver|C_E~q\,
 	combout => \SCCBdriver|C_Esync~feeder_combout\);
 
--- Location: FF_X22_Y15_N21
+-- Location: FF_X24_Y23_N1
 \SCCBdriver|C_Esync\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1930,7 +1932,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|C_Esync~q\);
 
--- Location: LCCOMB_X22_Y15_N18
+-- Location: LCCOMB_X24_Y23_N28
 \SCCBdriver|DeInd~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|DeInd~0_combout\ = \SCCBdriver|eInd~q\ $ (!\SCCBdriver|C_Esync~q\)
@@ -1945,24 +1947,24 @@ PORT MAP (
 	datad => \SCCBdriver|C_Esync~q\,
 	combout => \SCCBdriver|DeInd~0_combout\);
 
--- Location: LCCOMB_X21_Y15_N22
+-- Location: LCCOMB_X24_Y23_N24
 \SCCBdriver|DeInd~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|DeInd~1_combout\ = (\SCCBdriver|EE~q\ & (\SCCBdriver|DeInd~0_combout\ & ((!\SCCBdriver|Q1~q\) # (!\SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100110000000000",
+	lut_mask => "0010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|EE~q\,
+	dataa => \SCCBdriver|EE~q\,
+	datab => \SCCBdriver|Q0~q\,
 	datac => \SCCBdriver|Q1~q\,
 	datad => \SCCBdriver|DeInd~0_combout\,
 	combout => \SCCBdriver|DeInd~1_combout\);
 
--- Location: FF_X21_Y15_N23
+-- Location: FF_X24_Y23_N25
 \SCCBdriver|eInd\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1977,37 +1979,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|eInd~q\);
 
--- Location: LCCOMB_X16_Y15_N0
+-- Location: LCCOMB_X24_Y23_N26
 \SCCBdriver|LIVE~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|LIVE~0_combout\ = (\SCCBdriver|eInd~q\) # (\SCCBdriver|Q0~q\ $ (\SCCBdriver|Q1~q\))
+-- \SCCBdriver|LIVE~0_combout\ = (\SCCBdriver|eInd~q\) # (\SCCBdriver|Q1~q\ $ (\SCCBdriver|Q0~q\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111111111010",
+	lut_mask => "1100111111111100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
-	datac => \SCCBdriver|Q0~q\,
-	datad => \SCCBdriver|Q1~q\,
+	datab => \SCCBdriver|eInd~q\,
+	datac => \SCCBdriver|Q1~q\,
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|LIVE~0_combout\);
 
--- Location: LCCOMB_X11_Y20_N20
-\SCCBdriver|LIVE~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|LIVE~feeder_combout\ = \SCCBdriver|LIVE~0_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \SCCBdriver|LIVE~0_combout\,
-	combout => \SCCBdriver|LIVE~feeder_combout\);
-
--- Location: FF_X11_Y20_N21
+-- Location: FF_X24_Y23_N29
 \SCCBdriver|LIVE\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2016,28 +2004,40 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \DIV800|Qaux[5]~clkctrl_outclk\,
-	d => \SCCBdriver|LIVE~feeder_combout\,
+	asdata => \SCCBdriver|LIVE~0_combout\,
 	clrn => \SW[0]~input_o\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|LIVE~q\);
 
--- Location: LCCOMB_X23_Y15_N18
+-- Location: IOIBUF_X39_Y0_N29
+\GPIO1_D[10]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(10),
+	o => \GPIO1_D[10]~input_o\);
+
+-- Location: LCCOMB_X21_Y23_N6
 \SCCBdriver|SIO_C\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|SIO_C~combout\ = (\SCCBdriver|clk400~q\) # (!\SCCBdriver|C_E~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111001111",
+	lut_mask => "1010101011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|clk400~q\,
-	datac => \SCCBdriver|C_E~q\,
+	dataa => \SCCBdriver|clk400~q\,
+	datad => \SCCBdriver|C_E~q\,
 	combout => \SCCBdriver|SIO_C~combout\);
 
--- Location: FF_X16_Y15_N1
+-- Location: FF_X23_Y23_N29
 \SCCBdriver|REGS|Q[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2054,24 +2054,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(1));
 
--- Location: LCCOMB_X16_Y15_N10
+-- Location: LCCOMB_X23_Y23_N6
 \SCCBdriver|REGS|D[2]~24\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[2]~24_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(1))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[2]~24_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(1))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011100010001000",
+	lut_mask => "1100110010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(1),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(1),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[2]~24_combout\);
 
--- Location: FF_X16_Y15_N11
+-- Location: FF_X23_Y23_N7
 \SCCBdriver|REGS|Q[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2086,24 +2086,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(2));
 
--- Location: LCCOMB_X16_Y15_N2
+-- Location: LCCOMB_X23_Y23_N20
 \SCCBdriver|REGS|D[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[3]~23_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(2))) # (!\SCCBdriver|REGS|Esync~q\ & (((!\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[3]~23_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(2))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (!\SCCBdriver|Q1~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000101110001000",
+	lut_mask => "1100111000000010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(2),
+	dataa => \SCCBdriver|Q0~q\,
 	datab => \SCCBdriver|REGS|Esync~q\,
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Q\(2),
 	combout => \SCCBdriver|REGS|D[3]~23_combout\);
 
--- Location: FF_X16_Y15_N3
+-- Location: FF_X23_Y23_N21
 \SCCBdriver|REGS|Q[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2118,22 +2118,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(3));
 
--- Location: LCCOMB_X15_Y15_N8
+-- Location: LCCOMB_X22_Y23_N22
 \SCCBdriver|REGS|D[4]~22\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[4]~22_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(3))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(3),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(3),
 	combout => \SCCBdriver|REGS|D[4]~22_combout\);
 
--- Location: FF_X15_Y15_N9
+-- Location: FF_X22_Y23_N23
 \SCCBdriver|REGS|Q[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2148,24 +2148,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(4));
 
--- Location: LCCOMB_X16_Y15_N4
+-- Location: LCCOMB_X23_Y23_N12
 \SCCBdriver|REGS|D[5]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[5]~21_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(4))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[5]~21_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(4))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100010111000",
+	lut_mask => "1100110001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(4),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(4),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[5]~21_combout\);
 
--- Location: FF_X16_Y15_N5
+-- Location: FF_X23_Y23_N13
 \SCCBdriver|REGS|Q[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2180,22 +2180,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(5));
 
--- Location: LCCOMB_X15_Y15_N14
+-- Location: LCCOMB_X22_Y23_N28
 \SCCBdriver|REGS|D[6]~20\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[6]~20_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(5))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(5),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(5),
 	combout => \SCCBdriver|REGS|D[6]~20_combout\);
 
--- Location: FF_X15_Y15_N15
+-- Location: FF_X22_Y23_N29
 \SCCBdriver|REGS|Q[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2210,24 +2210,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(6));
 
--- Location: LCCOMB_X16_Y15_N12
+-- Location: LCCOMB_X23_Y23_N24
 \SCCBdriver|REGS|D[7]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[7]~19_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(6))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[7]~19_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(6))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100010111000",
+	lut_mask => "1100110001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(6),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(6),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[7]~19_combout\);
 
--- Location: FF_X16_Y15_N13
+-- Location: FF_X23_Y23_N25
 \SCCBdriver|REGS|Q[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2242,24 +2242,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(7));
 
--- Location: LCCOMB_X16_Y15_N24
+-- Location: LCCOMB_X23_Y23_N10
 \SCCBdriver|REGS|D[8]~18\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[8]~18_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(7))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[8]~18_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(7))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100010111000",
+	lut_mask => "1100110001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(7),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(7),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[8]~18_combout\);
 
--- Location: FF_X16_Y15_N25
+-- Location: FF_X23_Y23_N11
 \SCCBdriver|REGS|Q[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2274,22 +2274,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(8));
 
--- Location: LCCOMB_X17_Y15_N18
+-- Location: LCCOMB_X22_Y23_N24
 \SCCBdriver|REGS|D[9]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[9]~17_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(8))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(8),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(8),
 	combout => \SCCBdriver|REGS|D[9]~17_combout\);
 
--- Location: FF_X17_Y15_N19
+-- Location: FF_X22_Y23_N25
 \SCCBdriver|REGS|Q[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2304,7 +2304,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(9));
 
--- Location: LCCOMB_X17_Y15_N4
+-- Location: LCCOMB_X22_Y23_N30
 \SCCBdriver|REGS|D[10]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[10]~16_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(9))
@@ -2319,7 +2319,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Q\(9),
 	combout => \SCCBdriver|REGS|D[10]~16_combout\);
 
--- Location: FF_X17_Y15_N5
+-- Location: FF_X22_Y23_N31
 \SCCBdriver|REGS|Q[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2334,24 +2334,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(10));
 
--- Location: LCCOMB_X16_Y15_N6
+-- Location: LCCOMB_X23_Y23_N2
 \SCCBdriver|REGS|D[11]~15\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[11]~15_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(10))) # (!\SCCBdriver|REGS|Esync~q\ & (((!\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[11]~15_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(10))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q0~q\ & !\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000101110001000",
+	lut_mask => "1000100011011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(10),
-	datab => \SCCBdriver|REGS|Esync~q\,
-	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Q\(10),
+	datac => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|Q1~q\,
 	combout => \SCCBdriver|REGS|D[11]~15_combout\);
 
--- Location: FF_X16_Y15_N7
+-- Location: FF_X23_Y23_N3
 \SCCBdriver|REGS|Q[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2366,24 +2366,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(11));
 
--- Location: LCCOMB_X16_Y15_N30
+-- Location: LCCOMB_X23_Y23_N14
 \SCCBdriver|REGS|D[12]~14\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[12]~14_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(11))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[12]~14_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(11))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011100010001000",
+	lut_mask => "1100110010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(11),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(11),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[12]~14_combout\);
 
--- Location: FF_X16_Y15_N31
+-- Location: FF_X23_Y23_N15
 \SCCBdriver|REGS|Q[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2398,24 +2398,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(12));
 
--- Location: LCCOMB_X16_Y15_N8
+-- Location: LCCOMB_X23_Y23_N16
 \SCCBdriver|REGS|D[13]~13\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[13]~13_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(12))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[13]~13_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(12))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011100010001000",
+	lut_mask => "1100110010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(12),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(12),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[13]~13_combout\);
 
--- Location: FF_X16_Y15_N9
+-- Location: FF_X23_Y23_N17
 \SCCBdriver|REGS|Q[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2430,24 +2430,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(13));
 
--- Location: LCCOMB_X16_Y15_N26
+-- Location: LCCOMB_X23_Y23_N18
 \SCCBdriver|REGS|D[14]~12\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[14]~12_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(13))) # (!\SCCBdriver|REGS|Esync~q\ & (((!\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[14]~12_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(13))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((!\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000101110001000",
+	lut_mask => "1100110000001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(13),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(13),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[14]~12_combout\);
 
--- Location: FF_X16_Y15_N27
+-- Location: FF_X23_Y23_N19
 \SCCBdriver|REGS|Q[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2462,24 +2462,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(14));
 
--- Location: LCCOMB_X16_Y15_N20
+-- Location: LCCOMB_X23_Y23_N30
 \SCCBdriver|REGS|D[15]~11\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[15]~11_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(14))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[15]~11_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(14))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100010111000",
+	lut_mask => "1100110001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(14),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(14),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[15]~11_combout\);
 
--- Location: FF_X16_Y15_N21
+-- Location: FF_X23_Y23_N31
 \SCCBdriver|REGS|Q[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2494,22 +2494,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(15));
 
--- Location: LCCOMB_X15_Y15_N16
+-- Location: LCCOMB_X23_Y23_N4
 \SCCBdriver|REGS|D[16]~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[16]~10_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(15))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(15),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(15),
 	combout => \SCCBdriver|REGS|D[16]~10_combout\);
 
--- Location: FF_X15_Y15_N17
+-- Location: FF_X23_Y23_N5
 \SCCBdriver|REGS|Q[16]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2524,24 +2524,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(16));
 
--- Location: LCCOMB_X16_Y15_N18
+-- Location: LCCOMB_X23_Y23_N0
 \SCCBdriver|REGS|D[17]~9\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[17]~9_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(16))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[17]~9_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(16))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011100010001000",
+	lut_mask => "1100110010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(16),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(16),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[17]~9_combout\);
 
--- Location: FF_X16_Y15_N19
+-- Location: FF_X23_Y23_N1
 \SCCBdriver|REGS|Q[17]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2556,22 +2556,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(17));
 
--- Location: LCCOMB_X17_Y15_N10
+-- Location: LCCOMB_X22_Y23_N0
 \SCCBdriver|REGS|D[18]~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[18]~8_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(17))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(17),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(17),
 	combout => \SCCBdriver|REGS|D[18]~8_combout\);
 
--- Location: FF_X17_Y15_N11
+-- Location: FF_X22_Y23_N1
 \SCCBdriver|REGS|Q[18]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2586,22 +2586,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(18));
 
--- Location: LCCOMB_X17_Y15_N0
+-- Location: LCCOMB_X22_Y23_N18
 \SCCBdriver|REGS|D[19]~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[19]~7_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(18))
+-- \SCCBdriver|REGS|D[19]~7_combout\ = (\SCCBdriver|REGS|Q\(18) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(18),
+	datab => \SCCBdriver|REGS|Q\(18),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[19]~7_combout\);
 
--- Location: FF_X17_Y15_N1
+-- Location: FF_X22_Y23_N19
 \SCCBdriver|REGS|Q[19]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2616,24 +2616,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(19));
 
--- Location: LCCOMB_X16_Y15_N28
+-- Location: LCCOMB_X23_Y23_N22
 \SCCBdriver|REGS|D[20]~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[20]~6_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(19))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\) # (\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[20]~6_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(19))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101110111000",
+	lut_mask => "1100110011111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(19),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(19),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[20]~6_combout\);
 
--- Location: FF_X16_Y15_N29
+-- Location: FF_X23_Y23_N23
 \SCCBdriver|REGS|Q[20]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2648,7 +2648,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(20));
 
--- Location: LCCOMB_X17_Y15_N22
+-- Location: LCCOMB_X22_Y23_N14
 \SCCBdriver|REGS|D[21]~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[21]~5_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(20))
@@ -2663,7 +2663,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Q\(20),
 	combout => \SCCBdriver|REGS|D[21]~5_combout\);
 
--- Location: FF_X17_Y15_N23
+-- Location: FF_X22_Y23_N15
 \SCCBdriver|REGS|Q[21]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2678,22 +2678,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(21));
 
--- Location: LCCOMB_X17_Y15_N12
+-- Location: LCCOMB_X22_Y23_N8
 \SCCBdriver|REGS|D[22]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[22]~4_combout\ = (\SCCBdriver|REGS|Q\(21) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[22]~4_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(21))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000010100000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(21),
-	datac => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(21),
 	combout => \SCCBdriver|REGS|D[22]~4_combout\);
 
--- Location: FF_X17_Y15_N13
+-- Location: FF_X22_Y23_N9
 \SCCBdriver|REGS|Q[22]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2708,22 +2708,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(22));
 
--- Location: LCCOMB_X17_Y15_N2
+-- Location: LCCOMB_X22_Y23_N26
 \SCCBdriver|REGS|D[23]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[23]~3_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(22))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(22),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(22),
 	combout => \SCCBdriver|REGS|D[23]~3_combout\);
 
--- Location: FF_X17_Y15_N3
+-- Location: FF_X22_Y23_N27
 \SCCBdriver|REGS|Q[23]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2738,22 +2738,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(23));
 
--- Location: LCCOMB_X17_Y15_N20
+-- Location: LCCOMB_X22_Y23_N20
 \SCCBdriver|REGS|D[24]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[24]~2_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(23))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|Q\(23),
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(23),
 	combout => \SCCBdriver|REGS|D[24]~2_combout\);
 
--- Location: FF_X17_Y15_N21
+-- Location: FF_X22_Y23_N21
 \SCCBdriver|REGS|Q[24]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2768,24 +2768,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(24));
 
--- Location: LCCOMB_X16_Y15_N16
+-- Location: LCCOMB_X23_Y23_N26
 \SCCBdriver|REGS|D[25]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[25]~1_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(24))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\) # (\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[25]~1_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(24))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101110111000",
+	lut_mask => "1100110011111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(24),
-	datab => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(24),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|Q0~q\,
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[25]~1_combout\);
 
--- Location: FF_X16_Y15_N17
+-- Location: FF_X23_Y23_N27
 \SCCBdriver|REGS|Q[25]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2800,22 +2800,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(25));
 
--- Location: LCCOMB_X20_Y15_N30
+-- Location: LCCOMB_X22_Y23_N12
 \SCCBdriver|REGS|D[26]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[26]~0_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(25))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|Q\(25),
 	combout => \SCCBdriver|REGS|D[26]~0_combout\);
 
--- Location: FF_X20_Y15_N31
+-- Location: FF_X22_Y23_N13
 \SCCBdriver|REGS|Q[26]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2830,20 +2830,31 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(26));
 
--- Location: LCCOMB_X21_Y15_N6
+-- Location: LCCOMB_X23_Y23_N28
 \SCCBdriver|SIO_D\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|SIO_D~combout\ = (\SCCBdriver|REGS|Q\(26)) # (!\SCCBdriver|mssgGO~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|mssgGO~q\,
+	datab => \SCCBdriver|mssgGO~q\,
 	datad => \SCCBdriver|REGS|Q\(26),
 	combout => \SCCBdriver|SIO_D~combout\);
+
+-- Location: IOIBUF_X0_Y27_N1
+\SW[1]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(1),
+	o => \SW[1]~input_o\);
 
 -- Location: PLL_2
 \CLK_24M|altpll_component|auto_generated|pll1\ : cycloneiii_pll
@@ -2851,9 +2862,9 @@ PORT MAP (
 GENERIC MAP (
 	auto_settings => "false",
 	bandwidth_type => "medium",
-	c0_high => 5,
+	c0_high => 192,
 	c0_initial => 1,
-	c0_low => 5,
+	c0_low => 192,
 	c0_mode => "even",
 	c0_ph => 0,
 	c1_high => 0,
@@ -2882,9 +2893,9 @@ GENERIC MAP (
 	c4_use_casc_in => "off",
 	charge_pump_current_bits => 1,
 	clk0_counter => "c0",
-	clk0_divide_by => 25,
+	clk0_divide_by => 64,
 	clk0_duty_cycle => 50,
-	clk0_multiply_by => 12,
+	clk0_multiply_by => 1,
 	clk0_phase_shift => "0",
 	clk1_counter => "unused",
 	clk1_divide_by => 0,
@@ -2910,11 +2921,11 @@ GENERIC MAP (
 	inclk0_input_frequency => 10000,
 	inclk1_input_frequency => 0,
 	loop_filter_c_bits => 0,
-	loop_filter_r_bits => 24,
-	m => 24,
+	loop_filter_r_bits => 27,
+	m => 6,
 	m_initial => 1,
 	m_ph => 0,
-	n => 5,
+	n => 1,
 	operation_mode => "normal",
 	pfd_max => 200000,
 	pfd_min => 3076,
@@ -2928,7 +2939,7 @@ GENERIC MAP (
 	vco_max => 3333,
 	vco_min => 1538,
 	vco_multiply_by => 0,
-	vco_phase_shift_step => 260,
+	vco_phase_shift_step => 208,
 	vco_post_scale => 2)
 -- pragma translate_on
 PORT MAP (
@@ -2950,6 +2961,21 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	outclk => \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\);
+
+-- Location: LCCOMB_X32_Y10_N8
+\GPIO0_D~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \GPIO0_D~0_combout\ = (\SW[1]~input_o\ & GLOBAL(\CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW[1]~input_o\,
+	datad => \CLK_24M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	combout => \GPIO0_D~0_combout\);
 
 -- Location: IOIBUF_X35_Y0_N1
 \GPIO1_D[8]~input\ : cycloneiii_io_ibuf
@@ -2975,10 +3001,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \GPIO1_D[8]~inputclkctrl_outclk\);
 
--- Location: LCCOMB_X35_Y1_N30
-\CAPdrive|DIV|Clk_aux~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X40_Y15_N0
+\CAPdriver|DEPHASE|Qt~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|DIV|Clk_aux~0_combout\ = !\CAPdrive|DIV|Clk_aux~q\
+-- \CAPdriver|DEPHASE|Qt~0_combout\ = !\CAPdriver|DEPHASE|Qt~q\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2986,85 +3012,8 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \CAPdrive|DIV|Clk_aux~q\,
-	combout => \CAPdrive|DIV|Clk_aux~0_combout\);
-
--- Location: LCCOMB_X35_Y1_N14
-\CAPdrive|DIV|Clk_aux~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|DIV|Clk_aux~feeder_combout\ = \CAPdrive|DIV|Clk_aux~0_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \CAPdrive|DIV|Clk_aux~0_combout\,
-	combout => \CAPdrive|DIV|Clk_aux~feeder_combout\);
-
--- Location: FF_X35_Y1_N15
-\CAPdrive|DIV|Clk_aux\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|DIV|Clk_aux~feeder_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|DIV|Clk_aux~q\);
-
--- Location: CLKCTRL_G5
-\CAPdrive|DIV|Clk_aux~clkctrl\ : cycloneiii_clkctrl
--- pragma translate_off
-GENERIC MAP (
-	clock_type => "global clock",
-	ena_register_mode => "none")
--- pragma translate_on
-PORT MAP (
-	inclk => \CAPdrive|DIV|Clk_aux~clkctrl_INCLK_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	outclk => \CAPdrive|DIV|Clk_aux~clkctrl_outclk\);
-
--- Location: IOIBUF_X28_Y0_N8
-\GPIO1_D[6]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(6),
-	o => \GPIO1_D[6]~input_o\);
-
--- Location: LCCOMB_X36_Y1_N26
-\CAPdrive|ER|reg[6]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|ER|reg[6]~feeder_combout\ = \GPIO1_D[6]~input_o\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \GPIO1_D[6]~input_o\,
-	combout => \CAPdrive|ER|reg[6]~feeder_combout\);
-
--- Location: IOIBUF_X0_Y27_N1
-\SW[1]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_SW(1),
-	o => \SW[1]~input_o\);
+	datac => \CAPdriver|DEPHASE|Qt~q\,
+	combout => \CAPdriver|DEPHASE|Qt~0_combout\);
 
 -- Location: IOIBUF_X35_Y0_N8
 \GPIO1_D[9]~input\ : cycloneiii_io_ibuf
@@ -3077,8 +3026,8 @@ PORT MAP (
 	i => ww_GPIO1_D(9),
 	o => \GPIO1_D[9]~input_o\);
 
--- Location: FF_X36_Y1_N27
-\CAPdrive|ER|reg[6]\ : dffeas
+-- Location: FF_X40_Y15_N1
+\CAPdriver|DEPHASE|Qt\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3086,72 +3035,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ER|reg[6]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	d => \CAPdriver|DEPHASE|Qt~0_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(6));
+	q => \CAPdriver|DEPHASE|Qt~q\);
 
--- Location: IOIBUF_X35_Y0_N22
-\GPIO1_D[2]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(2),
-	o => \GPIO1_D[2]~input_o\);
-
--- Location: FF_X36_Y1_N21
-\CAPdrive|ER|reg[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	asdata => \GPIO1_D[2]~input_o\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	sload => VCC,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(2));
-
--- Location: LCCOMB_X36_Y1_N20
-\CAPdrive|mux_out[2]~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X40_Y15_N10
+\CAPdriver|DEPHASE|Qd[0]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|mux_out[2]~0_combout\ = (\CAPdrive|DIV|Clk_aux~q\ & ((\CAPdrive|ER|reg\(2)))) # (!\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ACC|reg\(2)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAPdrive|ACC|reg\(2),
-	datac => \CAPdrive|ER|reg\(2),
-	datad => \CAPdrive|DIV|Clk_aux~q\,
-	combout => \CAPdrive|mux_out[2]~0_combout\);
-
--- Location: IOIBUF_X35_Y0_N29
-\GPIO1_D[5]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(5),
-	o => \GPIO1_D[5]~input_o\);
-
--- Location: LCCOMB_X36_Y1_N22
-\CAPdrive|ER|reg[5]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|ER|reg[5]~feeder_combout\ = \GPIO1_D[5]~input_o\
+-- \CAPdriver|DEPHASE|Qd[0]~feeder_combout\ = \CAPdriver|DEPHASE|Qt~q\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3159,11 +3052,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \GPIO1_D[5]~input_o\,
-	combout => \CAPdrive|ER|reg[5]~feeder_combout\);
+	datad => \CAPdriver|DEPHASE|Qt~q\,
+	combout => \CAPdriver|DEPHASE|Qd[0]~feeder_combout\);
 
--- Location: FF_X36_Y1_N23
-\CAPdrive|ER|reg[5]\ : dffeas
+-- Location: FF_X40_Y15_N11
+\CAPdriver|DEPHASE|Qd[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3171,84 +3064,16 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ER|reg[5]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	d => \CAPdriver|DEPHASE|Qd[0]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(5));
+	q => \CAPdriver|DEPHASE|Qd\(0));
 
--- Location: IOIBUF_X37_Y0_N15
-\GPIO1_D[1]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(1),
-	o => \GPIO1_D[1]~input_o\);
-
--- Location: FF_X36_Y1_N25
-\CAPdrive|ER|reg[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	asdata => \GPIO1_D[1]~input_o\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	sload => VCC,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(1));
-
--- Location: IOIBUF_X37_Y0_N22
-\GPIO1_D[0]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(0),
-	o => \GPIO1_D[0]~input_o\);
-
--- Location: FF_X36_Y1_N13
-\CAPdrive|ER|reg[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	asdata => \GPIO1_D[0]~input_o\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	sload => VCC,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(0));
-
--- Location: IOIBUF_X32_Y0_N1
-\GPIO1_D[4]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(4),
-	o => \GPIO1_D[4]~input_o\);
-
--- Location: LCCOMB_X36_Y1_N18
-\CAPdrive|ER|reg[4]~feeder\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X40_Y15_N6
+\CAPdriver|DEPHASE|Qd[1]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ER|reg[4]~feeder_combout\ = \GPIO1_D[4]~input_o\
+-- \CAPdriver|DEPHASE|Qd[1]~feeder_combout\ = \CAPdriver|DEPHASE|Qd\(0)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3256,11 +3081,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \GPIO1_D[4]~input_o\,
-	combout => \CAPdrive|ER|reg[4]~feeder_combout\);
+	datad => \CAPdriver|DEPHASE|Qd\(0),
+	combout => \CAPdriver|DEPHASE|Qd[1]~feeder_combout\);
 
--- Location: FF_X36_Y1_N19
-\CAPdrive|ER|reg[4]\ : dffeas
+-- Location: FF_X40_Y15_N7
+\CAPdriver|DEPHASE|Qd[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -3268,179 +3093,52 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ER|reg[4]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	d => \CAPdriver|DEPHASE|Qd[1]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(4));
+	q => \CAPdriver|DEPHASE|Qd\(1));
 
--- Location: LCCOMB_X36_Y1_N0
-\CAPdrive|ACC|reg[0]~6\ : cycloneiii_lcell_comb
+-- Location: CLKCTRL_G5
+\CAPdriver|DEPHASE|Qd[1]~clkctrl\ : cycloneiii_clkctrl
+-- pragma translate_off
+GENERIC MAP (
+	clock_type => "global clock",
+	ena_register_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	inclk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_INCLK_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	outclk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\);
+
+-- Location: LCCOMB_X40_Y15_N4
+\CAPdriver|dPCLK\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ACC|reg[0]~6_combout\ = (\CAPdrive|mux_out[0]~2_combout\ & (\CAPdrive|ER|reg\(4) $ (VCC))) # (!\CAPdrive|mux_out[0]~2_combout\ & (\CAPdrive|ER|reg\(4) & VCC))
--- \CAPdrive|ACC|reg[0]~7\ = CARRY((\CAPdrive|mux_out[0]~2_combout\ & \CAPdrive|ER|reg\(4)))
+-- \CAPdriver|dPCLK~combout\ = LCELL((\GPIO1_D[9]~input_o\ & !\GPIO1_D[8]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110011010001000",
+	lut_mask => "0000000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAPdrive|mux_out[0]~2_combout\,
-	datab => \CAPdrive|ER|reg\(4),
-	datad => VCC,
-	combout => \CAPdrive|ACC|reg[0]~6_combout\,
-	cout => \CAPdrive|ACC|reg[0]~7\);
+	datab => \GPIO1_D[9]~input_o\,
+	datad => \GPIO1_D[8]~input_o\,
+	combout => \CAPdriver|dPCLK~combout\);
 
--- Location: FF_X36_Y1_N1
-\CAPdrive|ACC|reg[0]\ : dffeas
+-- Location: CLKCTRL_G6
+\CAPdriver|dPCLK~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
+	clock_type => "global clock",
+	ena_register_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[0]~6_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	inclk => \CAPdriver|dPCLK~clkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(0));
-
--- Location: LCCOMB_X36_Y1_N12
-\CAPdrive|mux_out[0]~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|mux_out[0]~2_combout\ = (\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ER|reg\(0))) # (!\CAPdrive|DIV|Clk_aux~q\ & ((\CAPdrive|ACC|reg\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|DIV|Clk_aux~q\,
-	datac => \CAPdrive|ER|reg\(0),
-	datad => \CAPdrive|ACC|reg\(0),
-	combout => \CAPdrive|mux_out[0]~2_combout\);
-
--- Location: LCCOMB_X36_Y1_N2
-\CAPdrive|ACC|reg[1]~8\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|ACC|reg[1]~8_combout\ = (\CAPdrive|ER|reg\(5) & ((\CAPdrive|mux_out[1]~1_combout\ & (\CAPdrive|ACC|reg[0]~7\ & VCC)) # (!\CAPdrive|mux_out[1]~1_combout\ & (!\CAPdrive|ACC|reg[0]~7\)))) # (!\CAPdrive|ER|reg\(5) & ((\CAPdrive|mux_out[1]~1_combout\ 
--- & (!\CAPdrive|ACC|reg[0]~7\)) # (!\CAPdrive|mux_out[1]~1_combout\ & ((\CAPdrive|ACC|reg[0]~7\) # (GND)))))
--- \CAPdrive|ACC|reg[1]~9\ = CARRY((\CAPdrive|ER|reg\(5) & (!\CAPdrive|mux_out[1]~1_combout\ & !\CAPdrive|ACC|reg[0]~7\)) # (!\CAPdrive|ER|reg\(5) & ((!\CAPdrive|ACC|reg[0]~7\) # (!\CAPdrive|mux_out[1]~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|ER|reg\(5),
-	datab => \CAPdrive|mux_out[1]~1_combout\,
-	datad => VCC,
-	cin => \CAPdrive|ACC|reg[0]~7\,
-	combout => \CAPdrive|ACC|reg[1]~8_combout\,
-	cout => \CAPdrive|ACC|reg[1]~9\);
-
--- Location: FF_X36_Y1_N3
-\CAPdrive|ACC|reg[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[1]~8_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(1));
-
--- Location: LCCOMB_X36_Y1_N24
-\CAPdrive|mux_out[1]~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|mux_out[1]~1_combout\ = (\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ER|reg\(1))) # (!\CAPdrive|DIV|Clk_aux~q\ & ((\CAPdrive|ACC|reg\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|DIV|Clk_aux~q\,
-	datac => \CAPdrive|ER|reg\(1),
-	datad => \CAPdrive|ACC|reg\(1),
-	combout => \CAPdrive|mux_out[1]~1_combout\);
-
--- Location: LCCOMB_X36_Y1_N4
-\CAPdrive|ACC|reg[2]~10\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|ACC|reg[2]~10_combout\ = ((\CAPdrive|ER|reg\(6) $ (\CAPdrive|mux_out[2]~0_combout\ $ (!\CAPdrive|ACC|reg[1]~9\)))) # (GND)
--- \CAPdrive|ACC|reg[2]~11\ = CARRY((\CAPdrive|ER|reg\(6) & ((\CAPdrive|mux_out[2]~0_combout\) # (!\CAPdrive|ACC|reg[1]~9\))) # (!\CAPdrive|ER|reg\(6) & (\CAPdrive|mux_out[2]~0_combout\ & !\CAPdrive|ACC|reg[1]~9\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|ER|reg\(6),
-	datab => \CAPdrive|mux_out[2]~0_combout\,
-	datad => VCC,
-	cin => \CAPdrive|ACC|reg[1]~9\,
-	combout => \CAPdrive|ACC|reg[2]~10_combout\,
-	cout => \CAPdrive|ACC|reg[2]~11\);
-
--- Location: FF_X36_Y1_N5
-\CAPdrive|ACC|reg[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[2]~10_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(2));
-
--- Location: LCCOMB_X37_Y1_N16
-\CAPdrive|BUF|reg[0]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|BUF|reg[0]~feeder_combout\ = \CAPdrive|ACC|reg\(2)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \CAPdrive|ACC|reg\(2),
-	combout => \CAPdrive|BUF|reg[0]~feeder_combout\);
-
--- Location: FF_X37_Y1_N17
-\CAPdrive|BUF|reg[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CAPdrive|DIV|Clk_aux~clkctrl_outclk\,
-	d => \CAPdrive|BUF|reg[0]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|BUF|reg\(0));
+	outclk => \CAPdriver|dPCLK~clkctrl_outclk\);
 
 -- Location: IOIBUF_X28_Y0_N1
 \GPIO1_D[7]~input\ : cycloneiii_io_ibuf
@@ -3453,10 +3151,93 @@ PORT MAP (
 	i => ww_GPIO1_D(7),
 	o => \GPIO1_D[7]~input_o\);
 
--- Location: LCCOMB_X36_Y1_N30
-\CAPdrive|ER|reg[7]~feeder\ : cycloneiii_lcell_comb
+-- Location: FF_X32_Y10_N5
+\CAPdriver|QinReg[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[7]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(7));
+
+-- Location: IOIBUF_X28_Y0_N8
+\GPIO1_D[6]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(6),
+	o => \GPIO1_D[6]~input_o\);
+
+-- Location: FF_X32_Y10_N25
+\CAPdriver|QinReg[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[6]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(6));
+
+-- Location: LCCOMB_X32_Y10_N2
+\CAPdriver|takeTurn~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ER|reg[7]~feeder_combout\ = \GPIO1_D[7]~input_o\
+-- \CAPdriver|takeTurn~0_combout\ = !\CAPdriver|takeTurn~q\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \CAPdriver|takeTurn~q\,
+	combout => \CAPdriver|takeTurn~0_combout\);
+
+-- Location: FF_X32_Y10_N3
+\CAPdriver|takeTurn\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|takeTurn~0_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|takeTurn~q\);
+
+-- Location: IOIBUF_X32_Y0_N1
+\GPIO1_D[4]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(4),
+	o => \GPIO1_D[4]~input_o\);
+
+-- Location: LCCOMB_X32_Y10_N0
+\CAPdriver|QinReg[4]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|QinReg[4]~feeder_combout\ = \GPIO1_D[4]~input_o\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3464,24 +3245,339 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \GPIO1_D[7]~input_o\,
-	combout => \CAPdrive|ER|reg[7]~feeder_combout\);
+	datad => \GPIO1_D[4]~input_o\,
+	combout => \CAPdriver|QinReg[4]~feeder_combout\);
 
--- Location: FF_X36_Y1_N31
-\CAPdrive|ER|reg[7]\ : dffeas
+-- Location: FF_X32_Y10_N1
+\CAPdriver|QinReg[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ER|reg[7]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|QinReg[4]~feeder_combout\,
+	clrn => \SW[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(7));
+	q => \CAPdriver|QinReg\(4));
+
+-- Location: IOIBUF_X37_Y0_N22
+\GPIO1_D[0]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(0),
+	o => \GPIO1_D[0]~input_o\);
+
+-- Location: FF_X32_Y10_N9
+\CAPdriver|QinReg[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[0]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(0));
+
+-- Location: LCCOMB_X32_Y10_N12
+\CAPdriver|RipCar:0:FA|s~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:0:FA|s~0_combout\ = \CAPdriver|QinReg\(4) $ (((\CAPdriver|takeTurn~q\ & ((\CAPdriver|QinReg\(0)))) # (!\CAPdriver|takeTurn~q\ & (\CAPdriver|QaddReg\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011011010011100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|takeTurn~q\,
+	datab => \CAPdriver|QinReg\(4),
+	datac => \CAPdriver|QaddReg\(0),
+	datad => \CAPdriver|QinReg\(0),
+	combout => \CAPdriver|RipCar:0:FA|s~0_combout\);
+
+-- Location: FF_X32_Y10_N13
+\CAPdriver|QaddReg[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:0:FA|s~0_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QaddReg\(0));
+
+-- Location: LCCOMB_X32_Y10_N10
+\CAPdriver|B[0]~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|B[0]~3_combout\ = (\CAPdriver|takeTurn~q\ & ((\CAPdriver|QinReg\(0)))) # (!\CAPdriver|takeTurn~q\ & (\CAPdriver|QaddReg\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|QaddReg\(0),
+	datac => \CAPdriver|QinReg\(0),
+	datad => \CAPdriver|takeTurn~q\,
+	combout => \CAPdriver|B[0]~3_combout\);
+
+-- Location: IOIBUF_X35_Y0_N29
+\GPIO1_D[5]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(5),
+	o => \GPIO1_D[5]~input_o\);
+
+-- Location: FF_X32_Y10_N19
+\CAPdriver|QinReg[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[5]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(5));
+
+-- Location: LCCOMB_X32_Y10_N16
+\CAPdriver|RipCar:1:FA|s\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:1:FA|s~combout\ = \CAPdriver|B[1]~4_combout\ $ (\CAPdriver|QinReg\(5) $ (((\CAPdriver|QinReg\(4) & \CAPdriver|B[0]~3_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001010101101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[1]~4_combout\,
+	datab => \CAPdriver|QinReg\(4),
+	datac => \CAPdriver|B[0]~3_combout\,
+	datad => \CAPdriver|QinReg\(5),
+	combout => \CAPdriver|RipCar:1:FA|s~combout\);
+
+-- Location: FF_X32_Y10_N17
+\CAPdriver|QaddReg[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:1:FA|s~combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QaddReg\(1));
+
+-- Location: IOIBUF_X37_Y0_N15
+\GPIO1_D[1]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(1),
+	o => \GPIO1_D[1]~input_o\);
+
+-- Location: FF_X32_Y10_N7
+\CAPdriver|QinReg[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[1]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(1));
+
+-- Location: LCCOMB_X32_Y10_N6
+\CAPdriver|B[1]~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|B[1]~4_combout\ = (\CAPdriver|takeTurn~q\ & ((\CAPdriver|QinReg\(1)))) # (!\CAPdriver|takeTurn~q\ & (\CAPdriver|QaddReg\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAPdriver|QaddReg\(1),
+	datac => \CAPdriver|QinReg\(1),
+	datad => \CAPdriver|takeTurn~q\,
+	combout => \CAPdriver|B[1]~4_combout\);
+
+-- Location: LCCOMB_X32_Y10_N18
+\CAPdriver|RipCar:1:FA|co~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:1:FA|co~0_combout\ = (\CAPdriver|QinReg\(5) & ((\CAPdriver|B[1]~4_combout\) # ((\CAPdriver|B[0]~3_combout\ & \CAPdriver|QinReg\(4))))) # (!\CAPdriver|QinReg\(5) & (\CAPdriver|B[0]~3_combout\ & (\CAPdriver|QinReg\(4) & 
+-- \CAPdriver|B[1]~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111100010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[0]~3_combout\,
+	datab => \CAPdriver|QinReg\(4),
+	datac => \CAPdriver|QinReg\(5),
+	datad => \CAPdriver|B[1]~4_combout\,
+	combout => \CAPdriver|RipCar:1:FA|co~0_combout\);
+
+-- Location: LCCOMB_X32_Y10_N20
+\CAPdriver|RipCar:2:FA|s\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:2:FA|s~combout\ = \CAPdriver|B[2]~2_combout\ $ (\CAPdriver|QinReg\(6) $ (\CAPdriver|RipCar:1:FA|co~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010101011010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[2]~2_combout\,
+	datac => \CAPdriver|QinReg\(6),
+	datad => \CAPdriver|RipCar:1:FA|co~0_combout\,
+	combout => \CAPdriver|RipCar:2:FA|s~combout\);
+
+-- Location: FF_X32_Y10_N21
+\CAPdriver|QaddReg[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:2:FA|s~combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QaddReg\(2));
+
+-- Location: IOIBUF_X35_Y0_N22
+\GPIO1_D[2]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(2),
+	o => \GPIO1_D[2]~input_o\);
+
+-- Location: FF_X32_Y10_N23
+\CAPdriver|QinReg[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
+	asdata => \GPIO1_D[2]~input_o\,
+	clrn => \SW[1]~input_o\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QinReg\(2));
+
+-- Location: LCCOMB_X32_Y10_N22
+\CAPdriver|B[2]~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|B[2]~2_combout\ = (\CAPdriver|takeTurn~q\ & ((\CAPdriver|QinReg\(2)))) # (!\CAPdriver|takeTurn~q\ & (\CAPdriver|QaddReg\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAPdriver|QaddReg\(2),
+	datac => \CAPdriver|QinReg\(2),
+	datad => \CAPdriver|takeTurn~q\,
+	combout => \CAPdriver|B[2]~2_combout\);
+
+-- Location: LCCOMB_X32_Y10_N24
+\CAPdriver|RipCar:2:FA|co~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:2:FA|co~0_combout\ = (\CAPdriver|B[2]~2_combout\ & ((\CAPdriver|QinReg\(6)) # (\CAPdriver|RipCar:1:FA|co~0_combout\))) # (!\CAPdriver|B[2]~2_combout\ & (\CAPdriver|QinReg\(6) & \CAPdriver|RipCar:1:FA|co~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[2]~2_combout\,
+	datac => \CAPdriver|QinReg\(6),
+	datad => \CAPdriver|RipCar:1:FA|co~0_combout\,
+	combout => \CAPdriver|RipCar:2:FA|co~0_combout\);
+
+-- Location: LCCOMB_X32_Y10_N30
+\CAPdriver|RipCar:3:FA|s\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:3:FA|s~combout\ = \CAPdriver|B[3]~1_combout\ $ (\CAPdriver|QinReg\(7) $ (\CAPdriver|RipCar:2:FA|co~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010101011010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[3]~1_combout\,
+	datac => \CAPdriver|QinReg\(7),
+	datad => \CAPdriver|RipCar:2:FA|co~0_combout\,
+	combout => \CAPdriver|RipCar:3:FA|s~combout\);
+
+-- Location: FF_X32_Y10_N31
+\CAPdriver|QaddReg[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:3:FA|s~combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|QaddReg\(3));
 
 -- Location: IOIBUF_X35_Y0_N15
 \GPIO1_D[3]~input\ : cycloneiii_io_ibuf
@@ -3494,27 +3590,26 @@ PORT MAP (
 	i => ww_GPIO1_D(3),
 	o => \GPIO1_D[3]~input_o\);
 
--- Location: FF_X36_Y1_N29
-\CAPdrive|ER|reg[3]\ : dffeas
+-- Location: FF_X32_Y10_N27
+\CAPdriver|QinReg[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \GPIO1_D[8]~inputclkctrl_outclk\,
+	clk => \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\,
 	asdata => \GPIO1_D[3]~input_o\,
-	clrn => \ALT_INV_SW[1]~input_o\,
+	clrn => \SW[1]~input_o\,
 	sload => VCC,
-	ena => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ER|reg\(3));
+	q => \CAPdriver|QinReg\(3));
 
--- Location: LCCOMB_X36_Y1_N28
-\CAPdrive|mux_out[3]~3\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X32_Y10_N26
+\CAPdriver|B[3]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|mux_out[3]~3_combout\ = (\CAPdrive|DIV|Clk_aux~q\ & ((\CAPdrive|ER|reg\(3)))) # (!\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ACC|reg\(3)))
+-- \CAPdriver|B[3]~1_combout\ = (\CAPdriver|takeTurn~q\ & ((\CAPdriver|QinReg\(3)))) # (!\CAPdriver|takeTurn~q\ & (\CAPdriver|QaddReg\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3522,116 +3617,96 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAPdrive|ACC|reg\(3),
-	datac => \CAPdrive|ER|reg\(3),
-	datad => \CAPdrive|DIV|Clk_aux~q\,
-	combout => \CAPdrive|mux_out[3]~3_combout\);
+	dataa => \CAPdriver|QaddReg\(3),
+	datac => \CAPdriver|QinReg\(3),
+	datad => \CAPdriver|takeTurn~q\,
+	combout => \CAPdriver|B[3]~1_combout\);
 
--- Location: LCCOMB_X36_Y1_N6
-\CAPdrive|ACC|reg[3]~12\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X32_Y10_N28
+\CAPdriver|RipCar:4:FA|s\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ACC|reg[3]~12_combout\ = (\CAPdrive|ER|reg\(7) & ((\CAPdrive|mux_out[3]~3_combout\ & (\CAPdrive|ACC|reg[2]~11\ & VCC)) # (!\CAPdrive|mux_out[3]~3_combout\ & (!\CAPdrive|ACC|reg[2]~11\)))) # (!\CAPdrive|ER|reg\(7) & 
--- ((\CAPdrive|mux_out[3]~3_combout\ & (!\CAPdrive|ACC|reg[2]~11\)) # (!\CAPdrive|mux_out[3]~3_combout\ & ((\CAPdrive|ACC|reg[2]~11\) # (GND)))))
--- \CAPdrive|ACC|reg[3]~13\ = CARRY((\CAPdrive|ER|reg\(7) & (!\CAPdrive|mux_out[3]~3_combout\ & !\CAPdrive|ACC|reg[2]~11\)) # (!\CAPdrive|ER|reg\(7) & ((!\CAPdrive|ACC|reg[2]~11\) # (!\CAPdrive|mux_out[3]~3_combout\))))
+-- \CAPdriver|RipCar:4:FA|s~combout\ = \CAPdriver|B[4]~0_combout\ $ (((\CAPdriver|B[3]~1_combout\ & ((\CAPdriver|QinReg\(7)) # (\CAPdriver|RipCar:2:FA|co~0_combout\))) # (!\CAPdriver|B[3]~1_combout\ & (\CAPdriver|QinReg\(7) & 
+-- \CAPdriver|RipCar:2:FA|co~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|ER|reg\(7),
-	datab => \CAPdrive|mux_out[3]~3_combout\,
-	datad => VCC,
-	cin => \CAPdrive|ACC|reg[2]~11\,
-	combout => \CAPdrive|ACC|reg[3]~12_combout\,
-	cout => \CAPdrive|ACC|reg[3]~13\);
-
--- Location: FF_X36_Y1_N7
-\CAPdrive|ACC|reg[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[3]~12_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(3));
-
--- Location: LCCOMB_X37_Y1_N22
-\CAPdrive|BUF|reg[1]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|BUF|reg[1]~feeder_combout\ = \CAPdrive|ACC|reg\(3)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "0001111001111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \CAPdrive|ACC|reg\(3),
-	combout => \CAPdrive|BUF|reg[1]~feeder_combout\);
+	dataa => \CAPdriver|B[3]~1_combout\,
+	datab => \CAPdriver|QinReg\(7),
+	datac => \CAPdriver|B[4]~0_combout\,
+	datad => \CAPdriver|RipCar:2:FA|co~0_combout\,
+	combout => \CAPdriver|RipCar:4:FA|s~combout\);
 
--- Location: FF_X37_Y1_N23
-\CAPdrive|BUF|reg[1]\ : dffeas
+-- Location: FF_X32_Y10_N29
+\CAPdriver|QaddReg[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \CAPdrive|DIV|Clk_aux~clkctrl_outclk\,
-	d => \CAPdrive|BUF|reg[1]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:4:FA|s~combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|BUF|reg\(1));
+	q => \CAPdriver|QaddReg\(4));
 
--- Location: LCCOMB_X36_Y1_N8
-\CAPdrive|ACC|reg[4]~14\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X32_Y10_N4
+\CAPdriver|B[4]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ACC|reg[4]~14_combout\ = (\CAPdrive|ACC|reg[3]~13\ & (!\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ACC|reg\(4) & VCC))) # (!\CAPdrive|ACC|reg[3]~13\ & ((((!\CAPdrive|DIV|Clk_aux~q\ & \CAPdrive|ACC|reg\(4))))))
--- \CAPdrive|ACC|reg[4]~15\ = CARRY((!\CAPdrive|DIV|Clk_aux~q\ & (\CAPdrive|ACC|reg\(4) & !\CAPdrive|ACC|reg[3]~13\)))
+-- \CAPdriver|B[4]~0_combout\ = (!\CAPdriver|takeTurn~q\ & \CAPdriver|QaddReg\(4))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100101100000100",
-	sum_lutc_input => "cin")
+	lut_mask => "0100010001000100",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAPdrive|DIV|Clk_aux~q\,
-	datab => \CAPdrive|ACC|reg\(4),
-	datad => VCC,
-	cin => \CAPdrive|ACC|reg[3]~13\,
-	combout => \CAPdrive|ACC|reg[4]~14_combout\,
-	cout => \CAPdrive|ACC|reg[4]~15\);
+	dataa => \CAPdriver|takeTurn~q\,
+	datab => \CAPdriver|QaddReg\(4),
+	combout => \CAPdriver|B[4]~0_combout\);
 
--- Location: FF_X36_Y1_N9
-\CAPdrive|ACC|reg[4]\ : dffeas
+-- Location: LCCOMB_X32_Y10_N14
+\CAPdriver|RipCar:4:FA|co~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|RipCar:4:FA|co~0_combout\ = (\CAPdriver|B[4]~0_combout\ & ((\CAPdriver|B[3]~1_combout\ & ((\CAPdriver|QinReg\(7)) # (\CAPdriver|RipCar:2:FA|co~0_combout\))) # (!\CAPdriver|B[3]~1_combout\ & (\CAPdriver|QinReg\(7) & 
+-- \CAPdriver|RipCar:2:FA|co~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAPdriver|B[3]~1_combout\,
+	datab => \CAPdriver|QinReg\(7),
+	datac => \CAPdriver|B[4]~0_combout\,
+	datad => \CAPdriver|RipCar:2:FA|co~0_combout\,
+	combout => \CAPdriver|RipCar:4:FA|co~0_combout\);
+
+-- Location: FF_X32_Y10_N15
+\CAPdriver|QaddReg[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[4]~14_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	clk => \CAPdriver|dPCLK~clkctrl_outclk\,
+	d => \CAPdriver|RipCar:4:FA|co~0_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(4));
+	q => \CAPdriver|QaddReg\(5));
 
--- Location: LCCOMB_X37_Y1_N24
-\CAPdrive|BUF|reg[2]~feeder\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X33_Y10_N8
+\CAPdriver|Chewed[3]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|BUF|reg[2]~feeder_combout\ = \CAPdrive|ACC|reg\(4)
+-- \CAPdriver|Chewed[3]~feeder_combout\ = \CAPdriver|QaddReg\(5)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3639,61 +3714,28 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \CAPdrive|ACC|reg\(4),
-	combout => \CAPdrive|BUF|reg[2]~feeder_combout\);
+	datad => \CAPdriver|QaddReg\(5),
+	combout => \CAPdriver|Chewed[3]~feeder_combout\);
 
--- Location: FF_X37_Y1_N25
-\CAPdrive|BUF|reg[2]\ : dffeas
+-- Location: FF_X33_Y10_N9
+\CAPdriver|Chewed[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \CAPdrive|DIV|Clk_aux~clkctrl_outclk\,
-	d => \CAPdrive|BUF|reg[2]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	clk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\,
+	d => \CAPdriver|Chewed[3]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|BUF|reg\(2));
+	q => \CAPdriver|Chewed\(3));
 
--- Location: LCCOMB_X36_Y1_N10
-\CAPdrive|ACC|reg[5]~16\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X33_Y10_N10
+\CAPdriver|Chewed[0]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAPdrive|ACC|reg[5]~16_combout\ = \CAPdrive|ACC|reg[4]~15\ $ (((\CAPdrive|ACC|reg\(5) & !\CAPdrive|DIV|Clk_aux~q\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000001011010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAPdrive|ACC|reg\(5),
-	datad => \CAPdrive|DIV|Clk_aux~q\,
-	cin => \CAPdrive|ACC|reg[4]~15\,
-	combout => \CAPdrive|ACC|reg[5]~16_combout\);
-
--- Location: FF_X36_Y1_N11
-\CAPdrive|ACC|reg[5]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \ALT_INV_GPIO1_D[8]~inputclkctrl_outclk\,
-	d => \CAPdrive|ACC|reg[5]~16_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAPdrive|ACC|reg\(5));
-
--- Location: LCCOMB_X37_Y1_N26
-\CAPdrive|BUF|reg[3]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAPdrive|BUF|reg[3]~feeder_combout\ = \CAPdrive|ACC|reg\(5)
+-- \CAPdriver|Chewed[0]~feeder_combout\ = \CAPdriver|QaddReg\(2)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3701,35 +3743,81 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \CAPdrive|ACC|reg\(5),
-	combout => \CAPdrive|BUF|reg[3]~feeder_combout\);
+	datad => \CAPdriver|QaddReg\(2),
+	combout => \CAPdriver|Chewed[0]~feeder_combout\);
 
--- Location: FF_X37_Y1_N27
-\CAPdrive|BUF|reg[3]\ : dffeas
+-- Location: FF_X33_Y10_N11
+\CAPdriver|Chewed[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \CAPdrive|DIV|Clk_aux~clkctrl_outclk\,
-	d => \CAPdrive|BUF|reg[3]~feeder_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \GPIO1_D[9]~input_o\,
+	clk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\,
+	d => \CAPdriver|Chewed[0]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \CAPdrive|BUF|reg\(3));
+	q => \CAPdriver|Chewed\(0));
 
--- Location: IOIBUF_X39_Y0_N29
-\GPIO1_D[10]~input\ : cycloneiii_io_ibuf
+-- Location: LCCOMB_X33_Y10_N16
+\CAPdriver|Chewed[1]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|Chewed[1]~feeder_combout\ = \CAPdriver|QaddReg\(3)
+
 -- pragma translate_off
 GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	i => ww_GPIO1_D(10),
-	o => \GPIO1_D[10]~input_o\);
+	datad => \CAPdriver|QaddReg\(3),
+	combout => \CAPdriver|Chewed[1]~feeder_combout\);
+
+-- Location: FF_X33_Y10_N17
+\CAPdriver|Chewed[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\,
+	d => \CAPdriver|Chewed[1]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|Chewed\(1));
+
+-- Location: LCCOMB_X33_Y10_N2
+\CAPdriver|Chewed[2]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAPdriver|Chewed[2]~feeder_combout\ = \CAPdriver|QaddReg\(4)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \CAPdriver|QaddReg\(4),
+	combout => \CAPdriver|Chewed[2]~feeder_combout\);
+
+-- Location: FF_X33_Y10_N3
+\CAPdriver|Chewed[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAPdriver|DEPHASE|Qd[1]~clkctrl_outclk\,
+	d => \CAPdriver|Chewed[2]~feeder_combout\,
+	clrn => \GPIO1_D[9]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAPdriver|Chewed\(2));
 END structure;
 
 

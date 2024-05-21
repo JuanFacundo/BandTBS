@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="CAMstream7SD">
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstream7SD|pll1:CLK_24M|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>

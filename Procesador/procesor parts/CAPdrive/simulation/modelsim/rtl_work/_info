@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\CAPdrive\simulation\modelsim
+Ecapdrive
+Z1 w1716267521
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\CAPdrive\simulation\modelsim
+Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/CAPdrive.vhd
+Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/CAPdrive.vhd
+l0
+L6
+V44mNg[A?G46OX9C1Nc2TQ3
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1716267596.820000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/CAPdrive.vhd|
+Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/CAPdrive.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 ]m2?A_GWdE?YTU=Ha8Kj?3
+!i10b 1
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 capdrive 0 22 44mNg[A?G46OX9C1Nc2TQ3
+l54
+L21
+VkiEQkH3la=n>PUj6bI@PE2
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 nIe2eci99iT951c8=@:Yj0
+!i10b 1
+Efulladd
+Z16 w1716263339
+R5
+R6
+R7
+Z17 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/fulladd.vhd
+Z18 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/fulladd.vhd
+l0
+L5
+VzUe<?2K`WUGZoIHOC[h9d2
+!s100 blH2UJB;S9W7:NgHSAdVd1
+R10
+31
+!i10b 1
+Z19 !s108 1716267596.931000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/fulladd.vhd|
+Z21 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/fulladd.vhd|
+R14
+R15
+Ashape
+R5
+R6
+DEx4 work 7 fulladd 0 22 zUe<?2K`WUGZoIHOC[h9d2
+l16
+L15
+V@:D^QCMH14=]U3m1<IYTj2
+!s100 OOgdk[5U@OzVTGBhlVEP41
+R10
+31
+!i10b 1
+R19
+R20
+R21
+R14
+R15
+Ez_1
+Z22 w1716265839
+R2
+R3
+R4
+R5
+R6
+R7
+Z23 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/Z_1.vhd
+Z24 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/Z_1.vhd
+l0
+L6
+VU581Q6^^eTlEz>>_Og^B_0
+R10
+31
+Z25 !s108 1716267596.880000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/Z_1.vhd|
+Z27 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAPdrive/Z_1.vhd|
+R14
+R15
+!s100 GcJ3NDTHeX@Wk@ik5?1G80
+!i10b 1
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 3 z_1 0 22 U581Q6^^eTlEz>>_Og^B_0
+l21
+L16
+V88j;O8kUEz;jmUkokk4NS1
+R10
+31
+R25
+R26
+R27
+R14
+R15
+!s100 56PT6=X7EF6XHNI;mgK=D1
+!i10b 1

@@ -1,5 +1,5 @@
 PLL_Name	pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated|pll1
-PLLJITTER	39
+PLLJITTER	29
 PLLSPEmax	84
 PLLSPEmin	-53
 

@@ -12,10 +12,11 @@ entity CAMstreamVGA is
 		SW				: in std_logic_vector(1 downto 0);
 		LEDG			: out std_logic_vector(1 downto 0);
 		
-		GPIO0_D		: out std_logic_vector(2 downto 0);
+		GPIO0_D		: out std_logic_vector(3 downto 0);
 		--GPIO0_D0	: SIO_C
 		--GPIO0_D1	: SIO_D
 		--GPIO0_D2	: MCLK
+		--GPIO0_D3	: multipurpose
 		
 		GPIO1_D		: in std_logic_vector(10 downto 0);
 		--GPIO1_D0	: D0
@@ -62,16 +63,15 @@ component div800k is
 	);
 end component;
 
-component capture_driver is
-	port (
-		PCLK    						: in  std_logic;   
-		RST     						: in  std_logic;
-		HREF	 						: in  std_logic;
-		D_IN    						: in  std_logic_vector(7 downto 0);	--endiness? 
-		pixel_per_line_counter	: out std_logic_vector(1 downto 0):= (others => '0');
-		line_counter 				: out std_logic_vector(1 downto 0):= (others => '0');
-		CLK_DIV 						: out std_logic;
-		Q_OUT   						: out std_logic_vector(3 downto 0)  
+component CAPdrive is
+	port(
+		rst		: in std_logic;
+		D_in		: in std_logic_vector(7 downto 0);
+		PCLK		: in std_logic;
+		HREF		: in std_logic;
+		
+		D_out		: out std_logic_vector(3 downto 0);
+		outCLK	: out std_logic
 	);
 end component;
 
@@ -96,7 +96,7 @@ begin
 	
 	CLK_24M: pll1 port map(areset => open, inclk0 => CLOCK_50, c0 => clk24M, locked => open);
 	
-	GPIO0_D(2) <= clk24M;
+	GPIO0_D(2) <= clk24M and SW(1);
 	
 	rstMssg <= not(SW(0));
 	
@@ -105,22 +105,24 @@ begin
 	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
 
 	LEDG(0) <= weLIVE;
+	LEDG(1) <= GPIO1_D(10);
 	
 	rstCAP <= not(SW(1));
-	CAPdrive: capture_driver 
+	CAPdriver: CAPdrive 
 		port map(
-			PCLK => GPIO1_D(8), 
-			RST => rstCAP, 
-			HREF => GPIO1_D(9), 
-			D_IN => GPIO1_D(7 downto 0), 
-			pixel_per_line_counter => open,
-			line_counter => open,
-			CLK_DIV => open,
-			Q_OUT => BWPixel);
+			rst		=> rstCAP,
+			D_in		=> GPIO1_D(7 downto 0),
+			PCLK		=> GPIO1_D(8),
+			HREF		=> GPIO1_D(9),
+			D_out		=> BWPixel,
+			outCLK	=> open);
+	
+	GPIO0_D(3) <= BWPixel(3);
 	
 	VGA_R <= BWPixel;
 	VGA_G <= BWPixel;
 	VGA_B <= BWPixel;
+	
 	
 	VGA_HS <= GPIO1_D(9);
 	VGA_VS <= GPIO1_D(10);

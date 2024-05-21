@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'PCLK'
+Slack : -3.566
+TNS   : -23.351
+
+Type  : Slow 1200mV 85C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : -2.356
+TNS   : -9.403
+
+Type  : Slow 1200mV 85C Model Setup 'HREF'
+Slack : -2.189
+TNS   : -12.468
+
+Type  : Slow 1200mV 85C Model Hold 'HREF'
+Slack : -1.554
+TNS   : -7.350
+
+Type  : Slow 1200mV 85C Model Hold 'PCLK'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 1.493
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'PCLK'
+Slack : -0.920
+TNS   : -2.875
+
+Type  : Slow 1200mV 85C Model Recovery 'Z_1:DEPHASE|Qd[1]'
+Slack : -0.776
+TNS   : -3.104
+
+Type  : Slow 1200mV 85C Model Recovery 'HREF'
+Slack : 1.662
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'HREF'
+Slack : -2.168
+TNS   : -14.042
+
+Type  : Slow 1200mV 85C Model Removal 'PCLK'
+Slack : -0.153
+TNS   : -0.153
+
+Type  : Slow 1200mV 85C Model Removal 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'HREF'
+Slack : -3.000
+TNS   : -18.645
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Setup 'PCLK'
+Slack : -3.095
+TNS   : -20.167
+
+Type  : Slow 1200mV 0C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : -2.037
+TNS   : -8.129
+
+Type  : Slow 1200mV 0C Model Setup 'HREF'
+Slack : -1.874
+TNS   : -10.618
+
+Type  : Slow 1200mV 0C Model Hold 'HREF'
+Slack : -1.323
+TNS   : -6.566
+
+Type  : Slow 1200mV 0C Model Hold 'PCLK'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 1.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'PCLK'
+Slack : -0.738
+TNS   : -2.239
+
+Type  : Slow 1200mV 0C Model Recovery 'Z_1:DEPHASE|Qd[1]'
+Slack : -0.640
+TNS   : -2.560
+
+Type  : Slow 1200mV 0C Model Recovery 'HREF'
+Slack : 1.583
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'HREF'
+Slack : -1.940
+TNS   : -12.524
+
+Type  : Slow 1200mV 0C Model Removal 'PCLK'
+Slack : -0.118
+TNS   : -0.166
+
+Type  : Slow 1200mV 0C Model Removal 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'HREF'
+Slack : -3.000
+TNS   : -18.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Setup 'PCLK'
+Slack : -1.689
+TNS   : -11.466
+
+Type  : Fast 1200mV 0C Model Setup 'HREF'
+Slack : -1.393
+TNS   : -8.055
+
+Type  : Fast 1200mV 0C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : -0.910
+TNS   : -3.622
+
+Type  : Fast 1200mV 0C Model Hold 'HREF'
+Slack : -1.053
+TNS   : -4.429
+
+Type  : Fast 1200mV 0C Model Hold 'PCLK'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 1.318
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'PCLK'
+Slack : -0.598
+TNS   : -1.928
+
+Type  : Fast 1200mV 0C Model Recovery 'Z_1:DEPHASE|Qd[1]'
+Slack : -0.546
+TNS   : -2.184
+
+Type  : Fast 1200mV 0C Model Recovery 'HREF'
+Slack : 0.846
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'HREF'
+Slack : -1.361
+TNS   : -8.513
+
+Type  : Fast 1200mV 0C Model Removal 'PCLK'
+Slack : -0.207
+TNS   : -0.207
+
+Type  : Fast 1200mV 0C Model Removal 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'HREF'
+Slack : -3.000
+TNS   : -23.466
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.967
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------

@@ -1,0 +1,119 @@
+|CAPdrive
+rst => QinReg[0].ACLR
+rst => QinReg[1].ACLR
+rst => QinReg[2].ACLR
+rst => QinReg[3].ACLR
+rst => QinReg[4].ACLR
+rst => QinReg[5].ACLR
+rst => QinReg[6].ACLR
+rst => QinReg[7].ACLR
+D_in[0] => QinReg[0].DATAIN
+D_in[1] => QinReg[1].DATAIN
+D_in[2] => QinReg[2].DATAIN
+D_in[3] => QinReg[3].DATAIN
+D_in[4] => QinReg[4].DATAIN
+D_in[5] => QinReg[5].DATAIN
+D_in[6] => QinReg[6].DATAIN
+D_in[7] => QinReg[7].DATAIN
+PCLK => Z_1:DEPHASE.clk_in
+PCLK => dPCLK.IN0
+HREF => dPCLK.IN1
+HREF => Z_1:DEPHASE.rst
+HREF => Chewed[0].ACLR
+HREF => Chewed[1].ACLR
+HREF => Chewed[2].ACLR
+HREF => Chewed[3].ACLR
+HREF => takeTurn.ACLR
+HREF => QaddReg[0].ACLR
+HREF => QaddReg[1].ACLR
+HREF => QaddReg[2].ACLR
+HREF => QaddReg[3].ACLR
+HREF => QaddReg[4].ACLR
+HREF => QaddReg[5].ACLR
+D_out[0] <= Chewed[0].DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= Chewed[1].DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= Chewed[2].DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= Chewed[3].DB_MAX_OUTPUT_PORT_TYPE
+outCLK <= Z_1:DEPHASE.clk_out
+
+
+|CAPdrive|Z_1:DEPHASE
+rst => Qd[1].ACLR
+rst => Qd[0].ACLR
+rst => Qt.ACLR
+clk_in => Qd[1].CLK
+clk_in => Qd[0].CLK
+clk_in => Qt.CLK
+clk_out <= Qd[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdrive|FullAdd:\RipCar:0:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdrive|FullAdd:\RipCar:1:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdrive|FullAdd:\RipCar:2:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdrive|FullAdd:\RipCar:3:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdrive|FullAdd:\RipCar:4:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
