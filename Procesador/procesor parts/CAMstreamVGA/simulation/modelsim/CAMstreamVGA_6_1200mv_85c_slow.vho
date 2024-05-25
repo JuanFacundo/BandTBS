@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/24/2024 18:14:55"
+-- DATE "05/25/2024 10:46:19"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -260,14 +260,14 @@ SIGNAL \CAPdriver|Chewed[2]~feeder_combout\ : std_logic;
 SIGNAL \CAPdriver|RipCar:4:FA|co~0_combout\ : std_logic;
 SIGNAL \CAPdriver|RipCar:4:FA|co~1_combout\ : std_logic;
 SIGNAL \CAPdriver|Chewed[3]~feeder_combout\ : std_logic;
+SIGNAL \CAPdriver|Chewed\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \CAPdriver|QaddReg\ : std_logic_vector(5 DOWNTO 0);
+SIGNAL \CAPdriver|QinReg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \CAPdriver|DEPHASE|Qd\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \DIV800|Qaux\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
-SIGNAL \CAPdriver|QaddReg\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
-SIGNAL \CAPdriver|QinReg\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \CAPdriver|Chewed\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \CAPdriver|ALT_INV_takeTurn~clkctrl_outclk\ : std_logic;
 SIGNAL \DIV800|ALT_INV_Qaux[5]~clkctrl_outclk\ : std_logic;
 SIGNAL \CAPdriver|ALT_INV_dPCLK~clkctrl_outclk\ : std_logic;
