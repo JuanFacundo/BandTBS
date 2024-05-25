@@ -9,8 +9,8 @@ entity CAMstreamVGA is
 	port(
 		CLOCK_50		: in std_logic;
 		
-		SW				: in std_logic_vector(1 downto 0);
-		LEDG			: out std_logic_vector(1 downto 0);
+		SW				: in std_logic_vector(5 downto 0);
+		LEDG			: out std_logic_vector(2 downto 0);
 		
 		GPIO0_D		: out std_logic_vector(3 downto 0);
 		--GPIO0_D0	: SIO_C
@@ -75,6 +75,35 @@ component CAPdrive is
 	);
 end component;
 
+component packer is
+	port(
+		rst		: in std_logic;
+		D_in		: in std_logic_vector(3 downto 0);
+		clk_in	: in std_logic;
+		
+		RAMpack	: out std_logic_vector(31 downto 0);
+		clk_out	: out std_logic
+	);
+end component;
+
+component RAMdrive is
+	port(
+		clkWrite			: in std_logic;
+		clkRead			: in std_logic;
+		
+		D_in				: in std_logic_vector(31 downto 0);
+		D_out				: out std_logic_vector(3 downto 0);
+		
+		writeEna			: in std_logic;
+		readEna			: in std_logic;
+		
+		clear				: in std_logic;
+		rstCount16		: in std_logic;
+		rstCount19		: in std_logic
+		
+	);
+end component;
+
 component pll1 is
 	port(
 		areset		: in std_logic  := '0';
@@ -91,6 +120,13 @@ signal weLIVE			: std_logic;
 
 signal rstCAP			: std_logic;
 signal BWPixel			: std_logic_vector(3 downto 0);
+signal MDR				: std_logic_vector(31 downto 0);
+
+signal sel				: std_logic;
+signal clkWriter		: std_logic;
+signal cleanUp			: std_logic;
+
+signal RAMin			: std_logic_vector(31 downto 0);
 
 begin
 	
@@ -105,7 +141,11 @@ begin
 	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
 
 	LEDG(0) <= weLIVE;
-	LEDG(1) <= GPIO1_D(10);
+	LEDG(1) <= GPIO1_D(9);
+	LEDG(2) <= GPIO1_D(10);
+	
+	
+	
 	
 	rstCAP <= not(SW(1));
 	CAPdriver: CAPdrive 
@@ -115,11 +155,55 @@ begin
 			PCLK		=> GPIO1_D(8),
 			HREF		=> GPIO1_D(9),
 			D_out		=> BWPixel,
-			outCLK	=> open);
+			outCLK	=> sel);
 	
-	GPIO0_D(3) <= BWPixel(3);
+	GPIO0_D(3) <= sel;
 	
-	VGA_R <= BWPixel;
+	
+	
+	
+	
+	
+	
+	packing: packer port map(
+		rst			=>	GPIO1_D(10),	--: in std_logic;
+		D_in			=> BWPixel,			--: in std_logic_vector(3 downto 0);
+		clk_in		=> sel,				--: in std_logic;
+		
+		RAMpack		=> RAMin,				--: out std_logic_vector(31 downto 0);
+		clk_out		=> clkWriter			--: out std_logic
+	);
+	
+	 
+	cleanUp <= not(SW(1));
+	RAMmy: RAMdrive port map(
+		clkWrite			=> clkWriter,		--: in std_logic;
+		clkRead			=> '0',				--: in std_logic;
+	
+		D_in				=>	RAMin,			--: in std_logic_vector(31 downto 0);
+		D_out				=> open,				--: out std_logic_vector(3 downto 0);
+		
+		writeEna			=> GPIO1_D(9),		--: in std_logic;
+		readEna			=> SW(1), 			--: in std_logic;
+		
+		clear				=> cleanUp,			--: in std_logic;
+		rstCount16		=> cleanUp,			--: in std_logic;
+		rstCount19		=> cleanUp			--: in std_logic
+	);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	VGA_R <= SW(5) & SW(4) & SW(3) & SW(2);
 	VGA_G <= BWPixel;
 	VGA_B <= BWPixel;
 	

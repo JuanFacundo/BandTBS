@@ -88,7 +88,7 @@ begin
 		rden			=> readEna,		--: in std_logic  := '1';						--High to enable reading?
 		wraddress	=> writeDir,	--: in std_logic_vector(15 downto 0);
 		wrclock		=> clkWrite,	--: in std_logic  := '1';
-		wren			=> writeEna,			--: in std_logic  := '0';						--High to enable writing
+		wren			=> writeEna,	--: in std_logic  := '0';						--High to enable writing
 		q				=> D_out			--: out std_logic_vector(3 downto 0)
 	);
 	

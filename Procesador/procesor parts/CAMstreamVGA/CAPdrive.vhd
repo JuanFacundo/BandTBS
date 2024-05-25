@@ -59,7 +59,7 @@ begin
 	
 	DEPHASE: Z_1 port map(
 		rst => HRST,
-		clk_in => PCLK,
+		clk_in => takeTurn,
 		clk_out => lateTurn
 	);
 	
@@ -89,16 +89,11 @@ begin
 	
 	ADDed(5) <= Caux(5);
 	
-	A(3 downto 0) <= QinReg(7 downto 4);
-	A(4) <= '0';
+	A <= '0' & QinReg(7 downto 4);
 	
-	B(3 downto 0) <= 
-		QinReg(3 downto 0) when takeTurn='1' else
-		QaddReg(3 downto 0) when takeTurn='0';
-	B(4) <=
-		'0' when takeTurn='1' else
-		QaddReg(4) when takeTurn='0';
-
+	B(4 downto 0) <= 
+		'0' & QinReg(3 downto 0) when takeTurn='1' else
+		QaddReg(4 downto 0) when takeTurn='0';
 	
 	QaddReg <=
 		"000000" when HREF='0' else
