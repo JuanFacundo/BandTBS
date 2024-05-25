@@ -22,7 +22,7 @@ begin
 	
 	Qt <=
 		'0' when rst='1' else
-		not(Qt) when rising_edge(clk_in);
+		not(Qt) when falling_edge(clk_in);
 		
 	Qd(0) <=
 		'0' when rst='1' else

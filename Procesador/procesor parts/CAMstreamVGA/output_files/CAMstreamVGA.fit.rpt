@@ -1,5 +1,5 @@
 Fitter report for CAMstreamVGA
-Tue May 21 09:34:48 2024
+Fri May 24 18:14:49 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -71,18 +71,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Tue May 21 09:34:48 2024      ;
+; Fitter Status                      ; Successful - Fri May 24 18:14:49 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; CAMstreamVGA                               ;
 ; Top-level Entity Name              ; CAMstreamVGA                               ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 105 / 15,408 ( < 1 % )                     ;
-;     Total combinational functions  ; 90 / 15,408 ( < 1 % )                      ;
+; Total logic elements               ; 109 / 15,408 ( < 1 % )                     ;
+;     Total combinational functions  ; 91 / 15,408 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 92 / 15,408 ( < 1 % )                      ;
 ; Total registers                    ; 92                                         ;
-; Total pins                         ; 34 / 347 ( 10 % )                          ;
+; Total pins                         ; 39 / 347 ( 11 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -158,12 +158,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.75        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  25.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -175,6 +175,7 @@ applicable agreement for further details.
 +------------+--------------------------------------+
 ; LEDG[0]    ; Missing drive strength and slew rate ;
 ; LEDG[1]    ; Missing drive strength and slew rate ;
+; LEDG[2]    ; Missing drive strength and slew rate ;
 ; GPIO0_D[0] ; Missing drive strength               ;
 ; GPIO0_D[1] ; Missing drive strength               ;
 ; GPIO0_D[2] ; Missing drive strength               ;
@@ -392,7 +393,6 @@ applicable agreement for further details.
 ; Location ;                ;              ; LCD_EN          ; PIN_E21       ; QSF Assignment ;
 ; Location ;                ;              ; LCD_RS          ; PIN_F22       ; QSF Assignment ;
 ; Location ;                ;              ; LCD_RW          ; PIN_E22       ; QSF Assignment ;
-; Location ;                ;              ; LEDG[2]         ; PIN_J3        ; QSF Assignment ;
 ; Location ;                ;              ; LEDG[3]         ; PIN_H1        ; QSF Assignment ;
 ; Location ;                ;              ; LEDG[4]         ; PIN_F2        ; QSF Assignment ;
 ; Location ;                ;              ; LEDG[5]         ; PIN_E1        ; QSF Assignment ;
@@ -409,10 +409,6 @@ applicable agreement for further details.
 ; Location ;                ;              ; SD_DAT0         ; PIN_AA22      ; QSF Assignment ;
 ; Location ;                ;              ; SD_DAT3         ; PIN_W21       ; QSF Assignment ;
 ; Location ;                ;              ; SD_WP_N         ; PIN_W20       ; QSF Assignment ;
-; Location ;                ;              ; SW[2]           ; PIN_H6        ; QSF Assignment ;
-; Location ;                ;              ; SW[3]           ; PIN_G4        ; QSF Assignment ;
-; Location ;                ;              ; SW[4]           ; PIN_G5        ; QSF Assignment ;
-; Location ;                ;              ; SW[5]           ; PIN_J7        ; QSF Assignment ;
 ; Location ;                ;              ; SW[6]           ; PIN_H7        ; QSF Assignment ;
 ; Location ;                ;              ; SW[7]           ; PIN_E3        ; QSF Assignment ;
 ; Location ;                ;              ; SW[8]           ; PIN_E4        ; QSF Assignment ;
@@ -430,8 +426,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 264 ) ; 0.00 % ( 0 / 264 )         ; 0.00 % ( 0 / 264 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 264 ) ; 0.00 % ( 0 / 264 )         ; 0.00 % ( 0 / 264 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 275 ) ; 0.00 % ( 0 / 275 )         ; 0.00 % ( 0 / 275 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 275 ) ; 0.00 % ( 0 / 275 )         ; 0.00 % ( 0 / 275 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -454,7 +450,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 254 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 265 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -470,28 +466,28 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 105 / 15,408 ( < 1 % ) ;
-;     -- Combinational with no register       ; 13                     ;
-;     -- Register only                        ; 15                     ;
-;     -- Combinational with a register        ; 77                     ;
+; Total logic elements                        ; 109 / 15,408 ( < 1 % ) ;
+;     -- Combinational with no register       ; 17                     ;
+;     -- Register only                        ; 18                     ;
+;     -- Combinational with a register        ; 74                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
 ;     -- 4 input functions                    ; 22                     ;
-;     -- 3 input functions                    ; 9                      ;
+;     -- 3 input functions                    ; 10                     ;
 ;     -- <=2 input functions                  ; 59                     ;
-;     -- Register only                        ; 15                     ;
+;     -- Register only                        ; 18                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 90                     ;
+;     -- normal mode                          ; 91                     ;
 ;     -- arithmetic mode                      ; 0                      ;
 ;                                             ;                        ;
 ; Total registers*                            ; 92 / 17,068 ( < 1 % )  ;
 ;     -- Dedicated logic registers            ; 92 / 15,408 ( < 1 % )  ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 13 / 963 ( 1 % )       ;
+; Total LABs:  partially or completely used   ; 14 / 963 ( 1 % )       ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 34 / 347 ( 10 % )      ;
+; I/O pins                                    ; 39 / 347 ( 11 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )          ;
 ;                                             ;                        ;
@@ -507,11 +503,11 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 1%           ;
+; Peak interconnect usage (total/H/V)         ; 1% / 0% / 1%           ;
 ; Maximum fan-out                             ; 58                     ;
 ; Highest non-global fan-out                  ; 58                     ;
-; Total fan-out                               ; 573                    ;
-; Average fan-out                             ; 2.07                   ;
+; Total fan-out                               ; 583                    ;
+; Average fan-out                             ; 2.02                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -524,29 +520,29 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 105 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 13                    ; 0                              ;
-;     -- Register only                        ; 15                    ; 0                              ;
-;     -- Combinational with a register        ; 77                    ; 0                              ;
+; Total logic elements                        ; 109 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
+;     -- Combinational with no register       ; 17                    ; 0                              ;
+;     -- Register only                        ; 18                    ; 0                              ;
+;     -- Combinational with a register        ; 74                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
 ;     -- 4 input functions                    ; 22                    ; 0                              ;
-;     -- 3 input functions                    ; 9                     ; 0                              ;
+;     -- 3 input functions                    ; 10                    ; 0                              ;
 ;     -- <=2 input functions                  ; 59                    ; 0                              ;
-;     -- Register only                        ; 15                    ; 0                              ;
+;     -- Register only                        ; 18                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 90                    ; 0                              ;
+;     -- normal mode                          ; 91                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 92                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 92 / 15408 ( < 1 % )  ; 0 / 15408 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 13 / 963 ( 1 % )      ; 0 / 963 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 14 / 963 ( 1 % )      ; 0 / 963 ( 0 % )                ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 34                    ; 0                              ;
+; I/O pins                                    ; 39                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )       ; 0 / 112 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -560,16 +556,16 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 567                   ; 8                              ;
-;     -- Registered Connections               ; 285                   ; 0                              ;
+;     -- Total Connections                    ; 577                   ; 8                              ;
+;     -- Registered Connections               ; 283                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 2                              ;
 ;     -- hard_block:auto_generated_inst       ; 2                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 14                    ; 1                              ;
-;     -- Output Ports                         ; 20                    ; 1                              ;
+;     -- Input Ports                          ; 18                    ; 1                              ;
+;     -- Output Ports                         ; 21                    ; 1                              ;
 ;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -603,10 +599,14 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; GPIO1_D[5]  ; AA18  ; 4        ; 35           ; 0            ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
 ; GPIO1_D[6]  ; AA17  ; 4        ; 28           ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
 ; GPIO1_D[7]  ; AB17  ; 4        ; 28           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
-; GPIO1_D[8]  ; Y17   ; 4        ; 35           ; 0            ; 0            ; 4                     ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
-; GPIO1_D[9]  ; W17   ; 4        ; 35           ; 0            ; 7            ; 16                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
+; GPIO1_D[8]  ; Y17   ; 4        ; 35           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
+; GPIO1_D[9]  ; W17   ; 4        ; 35           ; 0            ; 7            ; 17                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ;
 ; SW[0]       ; J6    ; 1        ; 0            ; 24           ; 0            ; 16                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[1]       ; H5    ; 1        ; 0            ; 27           ; 0            ; 9                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[2]       ; H6    ; 1        ; 0            ; 25           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[3]       ; G4    ; 1        ; 0            ; 23           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[4]       ; G5    ; 1        ; 0            ; 27           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[5]       ; J7    ; 1        ; 0            ; 22           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -621,6 +621,7 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; GPIO0_D[3] ; AB15  ; 4        ; 26           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVCMOS ; 2mA              ; Off                               ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDG[0]    ; J1    ; 1        ; 0            ; 20           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDG[1]    ; J2    ; 1        ; 0            ; 20           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; LEDG[2]    ; J3    ; 1        ; 0            ; 21           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_B[0]   ; K22   ; 6        ; 41           ; 19           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_B[1]   ; K21   ; 6        ; 41           ; 19           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_B[2]   ; J22   ; 6        ; 41           ; 19           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -667,7 +668,7 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 8 / 33 ( 24 % )  ; 2.5V          ; --           ;
+; 1        ; 13 / 33 ( 39 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
 ; 3        ; 0 / 46 ( 0 % )   ; 2.5V          ; --           ;
 ; 4        ; 15 / 41 ( 37 % ) ; 3.3V          ; --           ;
@@ -862,8 +863,8 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; G1       ; 39         ; 1        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; G2       ; 38         ; 1        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; G3       ; 18         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G4       ; 17         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G5       ; 3          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; G4       ; 17         ; 1        ; SW[3]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; G5       ; 3          ; 1        ; SW[4]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G6       ;            ; --       ; VCCA3                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; G7       ; 361        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G8       ; 353        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -886,7 +887,7 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; H3       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H4       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; H5       ; 0          ; 1        ; SW[1]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; H6       ; 11         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; H6       ; 11         ; 1        ; SW[2]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H7       ; 10         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; H8       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H9       ; 344        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -905,11 +906,11 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; H22      ; 245        ; 6        ; VGA_G[0]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J1       ; 29         ; 1        ; LEDG[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J2       ; 28         ; 1        ; LEDG[1]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J3       ; 27         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; J3       ; 27         ; 1        ; LEDG[2]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J4       ; 24         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J6       ; 12         ; 1        ; SW[0]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J7       ; 22         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; J7       ; 22         ; 1        ; SW[5]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J8       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J10      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -1226,16 +1227,16 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                           ; Library Name ;
 +---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------+--------------+
-; |CAMstreamVGA                         ; 105 (1)     ; 92 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 34   ; 0            ; 13 (0)       ; 15 (0)            ; 77 (1)           ; |CAMstreamVGA                                                                 ; work         ;
-;    |CAPdrive:CAPdriver|               ; 24 (21)     ; 22 (19)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 7 (5)             ; 15 (6)           ; |CAMstreamVGA|CAPdrive:CAPdriver                                              ; work         ;
-;       |FullAdd:\RipCar:0:FA|          ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:0:FA                         ; work         ;
-;       |FullAdd:\RipCar:1:FA|          ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:1:FA                         ; work         ;
+; |CAMstreamVGA                         ; 109 (1)     ; 92 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 39   ; 0            ; 17 (1)       ; 18 (0)            ; 74 (0)           ; |CAMstreamVGA                                                                 ; work         ;
+;    |CAPdrive:CAPdriver|               ; 26 (19)     ; 22 (19)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (1)        ; 9 (7)             ; 13 (6)           ; |CAMstreamVGA|CAPdrive:CAPdriver                                              ; work         ;
+;       |FullAdd:\RipCar:0:FA|          ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:0:FA                         ; work         ;
+;       |FullAdd:\RipCar:1:FA|          ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:1:FA                         ; work         ;
 ;       |FullAdd:\RipCar:2:FA|          ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:2:FA                         ; work         ;
 ;       |FullAdd:\RipCar:3:FA|          ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:3:FA                         ; work         ;
-;       |FullAdd:\RipCar:4:FA|          ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA                         ; work         ;
+;       |FullAdd:\RipCar:4:FA|          ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; |CAMstreamVGA|CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA                         ; work         ;
 ;       |Z_1:DEPHASE|                   ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 1 (1)            ; |CAMstreamVGA|CAPdrive:CAPdriver|Z_1:DEPHASE                                  ; work         ;
-;    |SCCBdrive:SCCBdriver|             ; 69 (15)     ; 64 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 2 (2)             ; 62 (9)           ; |CAMstreamVGA|SCCBdrive:SCCBdriver                                            ; work         ;
-;       |P2Sreg:REGS|                   ; 54 (54)     ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 54 (54)          ; |CAMstreamVGA|SCCBdrive:SCCBdriver|P2Sreg:REGS                                ; work         ;
+;    |SCCBdrive:SCCBdriver|             ; 70 (16)     ; 64 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 3 (2)             ; 61 (8)           ; |CAMstreamVGA|SCCBdrive:SCCBdriver                                            ; work         ;
+;       |P2Sreg:REGS|                   ; 54 (54)     ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 53 (53)          ; |CAMstreamVGA|SCCBdrive:SCCBdriver|P2Sreg:REGS                                ; work         ;
 ;    |div800k:DIV800|                   ; 12 (12)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 6 (6)             ; 0 (0)            ; |CAMstreamVGA|div800k:DIV800                                                  ; work         ;
 ;    |pll1:CLK_24M|                     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |CAMstreamVGA|pll1:CLK_24M                                                    ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |CAMstreamVGA|pll1:CLK_24M|altpll:altpll_component                            ; work         ;
@@ -1251,6 +1252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 ; LEDG[0]     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDG[1]     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; LEDG[2]     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO0_D[0]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO0_D[1]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO0_D[2]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1269,20 +1271,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_B[3]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_HS      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_VS      ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[10] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[9]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[10] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[1]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[9]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[2]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[3]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[4]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[5]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[0]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; CLOCK_50    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[8]  ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[7]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; GPIO1_D[3]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[6]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; GPIO1_D[2]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[0]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[8]  ; Input    ; --            ; (0) 0 ps      ; --                    ; --  ; --   ;
+; GPIO1_D[0]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; GPIO1_D[4]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; GPIO1_D[1]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; GPIO1_D[5]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[6]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[2]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[7]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[3]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1291,36 +1297,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------+---------+
 ; Source Pin / Fanout                         ; Pad To Core Index ; Setting ;
 +---------------------------------------------+-------------------+---------+
-; GPIO1_D[10]                                 ;                   ;         ;
+; GPIO1_D[9]                                  ;                   ;         ;
+;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1] ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Chewed[0]         ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Chewed[1]         ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Chewed[2]         ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Chewed[3]         ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[0] ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|takeTurn          ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[2]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[3]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[4]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[5]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qt    ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[0]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QaddReg[1]        ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|dPCLK             ; 1                 ; 6       ;
 ;      - LEDG[1]~output                       ; 1                 ; 6       ;
-;      - VGA_VS~output                        ; 1                 ; 6       ;
+;      - VGA_HS~output                        ; 1                 ; 6       ;
+; GPIO1_D[10]                                 ;                   ;         ;
+;      - LEDG[2]~output                       ; 0                 ; 6       ;
+;      - VGA_VS~output                        ; 0                 ; 6       ;
 ; SW[1]                                       ;                   ;         ;
 ;      - GPIO0_D~0                            ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QinReg[7]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QinReg[3]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QinReg[6]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QinReg[2]         ; 0                 ; 6       ;
 ;      - CAPdrive:CAPdriver|QinReg[0]         ; 0                 ; 6       ;
 ;      - CAPdrive:CAPdriver|QinReg[4]         ; 0                 ; 6       ;
 ;      - CAPdrive:CAPdriver|QinReg[1]         ; 0                 ; 6       ;
 ;      - CAPdrive:CAPdriver|QinReg[5]         ; 0                 ; 6       ;
-; GPIO1_D[9]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|Chewed[0]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Chewed[1]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Chewed[2]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Chewed[3]         ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[5]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1] ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[2]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[3]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[4]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|takeTurn          ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[0]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|QaddReg[1]        ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[0] ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|dPCLK             ; 0                 ; 6       ;
-;      - CAPdrive:CAPdriver|Z_1:DEPHASE|Qt    ; 0                 ; 6       ;
-;      - VGA_HS~output                        ; 0                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[6]         ; 0                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[2]         ; 0                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[7]         ; 0                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[3]         ; 0                 ; 6       ;
+; SW[2]                                       ;                   ;         ;
+;      - VGA_R[0]~output                      ; 1                 ; 6       ;
+; SW[3]                                       ;                   ;         ;
+;      - VGA_R[1]~output                      ; 0                 ; 6       ;
+; SW[4]                                       ;                   ;         ;
+;      - VGA_R[2]~output                      ; 1                 ; 6       ;
+; SW[5]                                       ;                   ;         ;
+;      - VGA_R[3]~output                      ; 1                 ; 6       ;
 ; SW[0]                                       ;                   ;         ;
 ;      - div800k:DIV800|Qaux[5]               ; 1                 ; 6       ;
 ;      - SCCBdrive:SCCBdriver|LIVE            ; 1                 ; 6       ;
@@ -1340,23 +1355,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - div800k:DIV800|Qaux[0]               ; 1                 ; 6       ;
 ; CLOCK_50                                    ;                   ;         ;
 ; GPIO1_D[8]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|dPCLK             ; 0                 ; 0       ;
-; GPIO1_D[7]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[7]         ; 1                 ; 6       ;
-; GPIO1_D[3]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[3]         ; 0                 ; 6       ;
-; GPIO1_D[6]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[6]         ; 1                 ; 6       ;
-; GPIO1_D[2]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[2]         ; 0                 ; 6       ;
+;      - CAPdrive:CAPdriver|dPCLK             ; 1                 ; 0       ;
 ; GPIO1_D[0]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[0]         ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[0]~feeder  ; 0                 ; 6       ;
 ; GPIO1_D[4]                                  ;                   ;         ;
-;      - CAPdrive:CAPdriver|QinReg[4]~feeder  ; 1                 ; 6       ;
+;      - CAPdrive:CAPdriver|QinReg[4]         ; 1                 ; 6       ;
 ; GPIO1_D[1]                                  ;                   ;         ;
 ;      - CAPdrive:CAPdriver|QinReg[1]         ; 0                 ; 6       ;
 ; GPIO1_D[5]                                  ;                   ;         ;
 ;      - CAPdrive:CAPdriver|QinReg[5]         ; 0                 ; 6       ;
+; GPIO1_D[6]                                  ;                   ;         ;
+;      - CAPdrive:CAPdriver|QinReg[6]         ; 0                 ; 6       ;
+; GPIO1_D[2]                                  ;                   ;         ;
+;      - CAPdrive:CAPdriver|QinReg[2]         ; 1                 ; 6       ;
+; GPIO1_D[7]                                  ;                   ;         ;
+;      - CAPdrive:CAPdriver|QinReg[7]         ; 1                 ; 6       ;
+; GPIO1_D[3]                                  ;                   ;         ;
+;      - CAPdrive:CAPdriver|QinReg[3]         ; 0                 ; 6       ;
 +---------------------------------------------+-------------------+---------+
 
 
@@ -1365,26 +1380,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                   ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1]   ; FF_X40_Y15_N7      ; 4       ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; CAPdrive:CAPdriver|dPCLK               ; LCCOMB_X40_Y15_N4  ; 15      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1]   ; FF_X26_Y8_N5       ; 4       ; Clock        ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; CAPdrive:CAPdriver|dPCLK               ; LCCOMB_X36_Y1_N28  ; 15      ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; CAPdrive:CAPdriver|takeTurn            ; FF_X35_Y1_N3       ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 ; CLOCK_50                               ; PIN_G21            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; GPIO1_D[8]                             ; PIN_Y17            ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; GPIO1_D[9]                             ; PIN_W17            ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|C_Eedge           ; LCCOMB_X26_Y23_N0  ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync ; FF_X22_Y23_N3      ; 53      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data        ; FF_X21_Y23_N7      ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data        ; FF_X21_Y23_N7      ; 53      ; Clock        ; yes    ; Global Clock         ; GCLK12           ; --                        ;
-; SCCBdrive:SCCBdriver|dataEedge         ; LCCOMB_X21_Y23_N18 ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|mssgGO            ; FF_X23_Y23_N9      ; 58      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; GPIO1_D[9]                             ; PIN_W17            ; 17      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|C_Eedge           ; LCCOMB_X22_Y22_N6  ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync ; FF_X24_Y21_N13     ; 53      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data        ; FF_X21_Y21_N25     ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data        ; FF_X21_Y21_N25     ; 53      ; Clock        ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; SCCBdrive:SCCBdriver|dataEedge         ; LCCOMB_X21_Y21_N28 ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|mssgGO            ; FF_X23_Y21_N7      ; 58      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 ; SW[0]                                  ; PIN_J6             ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 ; SW[1]                                  ; PIN_H5             ; 9       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[0]                 ; FF_X28_Y24_N7      ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[1]                 ; FF_X28_Y24_N5      ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[2]                 ; FF_X27_Y24_N9      ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[3]                 ; FF_X23_Y24_N11     ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[4]                 ; FF_X23_Y24_N5      ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[5]                 ; FF_X23_Y26_N21     ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; div800k:DIV800|Qaux[5]                 ; FF_X23_Y26_N21     ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; div800k:DIV800|Qaux[0]                 ; FF_X27_Y18_N31     ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[1]                 ; FF_X26_Y18_N25     ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[2]                 ; FF_X26_Y18_N21     ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[3]                 ; FF_X21_Y18_N5      ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[4]                 ; FF_X21_Y18_N17     ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[5]                 ; FF_X20_Y21_N27     ; 4       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; div800k:DIV800|Qaux[5]                 ; FF_X20_Y21_N27     ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK14           ; --                        ;
 +----------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1393,11 +1408,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                             ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1]                                             ; FF_X40_Y15_N7     ; 4       ; 4                                    ; Global Clock         ; GCLK5            ; --                        ;
-; CAPdrive:CAPdriver|dPCLK                                                         ; LCCOMB_X40_Y15_N4 ; 15      ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
-; GPIO1_D[8]                                                                       ; PIN_Y17           ; 3       ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data                                                  ; FF_X21_Y23_N7     ; 53      ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
-; div800k:DIV800|Qaux[5]                                                           ; FF_X23_Y26_N21    ; 6       ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1]                                             ; FF_X26_Y8_N5      ; 4       ; 4                                    ; Global Clock         ; GCLK18           ; --                        ;
+; CAPdrive:CAPdriver|dPCLK                                                         ; LCCOMB_X36_Y1_N28 ; 15      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
+; CAPdrive:CAPdriver|takeTurn                                                      ; FF_X35_Y1_N3      ; 3       ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data                                                  ; FF_X21_Y21_N25    ; 53      ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
+; div800k:DIV800|Qaux[5]                                                           ; FF_X20_Y21_N27    ; 6       ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
 ; pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2             ; 1       ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
 +----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
@@ -1410,65 +1425,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|mssgGO                                                     ; 58      ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync                                          ; 53      ;
 ; SCCBdrive:SCCBdriver|Q0                                                         ; 18      ;
+; GPIO1_D[9]~input                                                                ; 17      ;
 ; SCCBdrive:SCCBdriver|Q1                                                         ; 17      ;
 ; SW[0]~input                                                                     ; 16      ;
-; GPIO1_D[9]~input                                                                ; 16      ;
 ; SW[1]~input                                                                     ; 9       ;
 ; CAPdrive:CAPdriver|takeTurn                                                     ; 7       ;
 ; SCCBdrive:SCCBdriver|eInd                                                       ; 6       ;
-; CAPdrive:CAPdriver|Chewed[3]                                                    ; 4       ;
 ; SCCBdrive:SCCBdriver|C_E                                                        ; 4       ;
-; CAPdrive:CAPdriver|FullAdd:\RipCar:2:FA|co~0                                    ; 3       ;
-; CAPdrive:CAPdriver|QinReg[4]                                                    ; 3       ;
-; CAPdrive:CAPdriver|B[3]~1                                                       ; 3       ;
+; CAPdrive:CAPdriver|B[3]~3                                                       ; 3       ;
 ; CAPdrive:CAPdriver|QinReg[7]                                                    ; 3       ;
+; CAPdrive:CAPdriver|B[2]~2                                                       ; 3       ;
+; CAPdrive:CAPdriver|QinReg[6]                                                    ; 3       ;
+; CAPdrive:CAPdriver|FullAdd:\RipCar:1:FA|co~0                                    ; 3       ;
+; CAPdrive:CAPdriver|QinReg[4]                                                    ; 3       ;
 ; SCCBdrive:SCCBdriver|EE                                                         ; 3       ;
 ; SCCBdrive:SCCBdriver|clk400data                                                 ; 3       ;
 ; div800k:DIV800|Qaux[5]                                                          ; 3       ;
-; CAPdrive:CAPdriver|Chewed[2]                                                    ; 3       ;
-; CAPdrive:CAPdriver|Chewed[1]                                                    ; 3       ;
-; CAPdrive:CAPdriver|Chewed[0]                                                    ; 3       ;
 ; SCCBdrive:SCCBdriver|clk400                                                     ; 3       ;
 ; CLOCK_50~input                                                                  ; 2       ;
 ; GPIO1_D[10]~input                                                               ; 2       ;
 ; div800k:DIV800|Qaux[0]                                                          ; 2       ;
 ; div800k:DIV800|Qaux[1]                                                          ; 2       ;
 ; div800k:DIV800|Qaux[2]                                                          ; 2       ;
-; CAPdrive:CAPdriver|Z_1:DEPHASE|Qt                                               ; 2       ;
 ; div800k:DIV800|Qaux[3]                                                          ; 2       ;
-; CAPdrive:CAPdriver|FullAdd:\RipCar:1:FA|co~0                                    ; 2       ;
+; CAPdrive:CAPdriver|B[4]~4                                                       ; 2       ;
+; CAPdrive:CAPdriver|FullAdd:\RipCar:2:FA|co~0                                    ; 2       ;
 ; CAPdrive:CAPdriver|QinReg[5]                                                    ; 2       ;
-; CAPdrive:CAPdriver|B[1]~4                                                       ; 2       ;
-; CAPdrive:CAPdriver|B[0]~3                                                       ; 2       ;
+; CAPdrive:CAPdriver|B[1]~1                                                       ; 2       ;
+; CAPdrive:CAPdriver|B[0]~0                                                       ; 2       ;
 ; CAPdrive:CAPdriver|QaddReg[0]                                                   ; 2       ;
 ; CAPdrive:CAPdriver|QinReg[0]                                                    ; 2       ;
-; CAPdrive:CAPdriver|B[2]~2                                                       ; 2       ;
-; CAPdrive:CAPdriver|QinReg[6]                                                    ; 2       ;
-; CAPdrive:CAPdriver|B[4]~0                                                       ; 2       ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qt                                               ; 2       ;
 ; div800k:DIV800|Qaux[4]                                                          ; 2       ;
 ; SCCBdrive:SCCBdriver|C_Esync                                                    ; 2       ;
 ; CAPdrive:CAPdriver|QaddReg[4]                                                   ; 2       ;
 ; CAPdrive:CAPdriver|QaddReg[3]                                                   ; 2       ;
 ; CAPdrive:CAPdriver|QaddReg[2]                                                   ; 2       ;
+; CAPdrive:CAPdriver|Chewed[3]                                                    ; 2       ;
+; CAPdrive:CAPdriver|Chewed[2]                                                    ; 2       ;
+; CAPdrive:CAPdriver|Chewed[1]                                                    ; 2       ;
+; CAPdrive:CAPdriver|Chewed[0]                                                    ; 2       ;
 ; SCCBdrive:SCCBdriver|EE~feeder                                                  ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync~feeder                                   ; 1       ;
+; GPIO1_D[3]~input                                                                ; 1       ;
+; GPIO1_D[7]~input                                                                ; 1       ;
+; GPIO1_D[2]~input                                                                ; 1       ;
+; GPIO1_D[6]~input                                                                ; 1       ;
 ; GPIO1_D[5]~input                                                                ; 1       ;
 ; GPIO1_D[1]~input                                                                ; 1       ;
 ; GPIO1_D[4]~input                                                                ; 1       ;
 ; GPIO1_D[0]~input                                                                ; 1       ;
-; GPIO1_D[2]~input                                                                ; 1       ;
-; GPIO1_D[6]~input                                                                ; 1       ;
-; GPIO1_D[3]~input                                                                ; 1       ;
-; GPIO1_D[7]~input                                                                ; 1       ;
 ; GPIO1_D[8]~input                                                                ; 1       ;
+; SW[5]~input                                                                     ; 1       ;
+; SW[4]~input                                                                     ; 1       ;
+; SW[3]~input                                                                     ; 1       ;
+; SW[2]~input                                                                     ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[0]~0                                        ; 1       ;
 ; div800k:DIV800|Qaux[0]~5                                                        ; 1       ;
 ; div800k:DIV800|Qaux[1]~4                                                        ; 1       ;
 ; div800k:DIV800|Qaux[2]~3                                                        ; 1       ;
-; CAPdrive:CAPdriver|Z_1:DEPHASE|Qt~0                                             ; 1       ;
 ; div800k:DIV800|Qaux[3]~2                                                        ; 1       ;
-; CAPdrive:CAPdriver|takeTurn~0                                                   ; 1       ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qt~0                                             ; 1       ;
 ; div800k:DIV800|Qaux[4]~1                                                        ; 1       ;
+; CAPdrive:CAPdriver|takeTurn~0                                                   ; 1       ;
 ; div800k:DIV800|Qaux[5]~0                                                        ; 1       ;
 ; SCCBdrive:SCCBdriver|mssgGO~0                                                   ; 1       ;
 ; SCCBdrive:SCCBdriver|C_E~0                                                      ; 1       ;
@@ -1571,15 +1590,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[25]                                         ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|D[24]~2                                        ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[23]                                          ; 1       ;
+; CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA|co~1                                    ; 1       ;
+; CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA|co~0                                    ; 1       ;
 ; CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA|s                                       ; 1       ;
 ; CAPdrive:CAPdriver|FullAdd:\RipCar:3:FA|s                                       ; 1       ;
+; CAPdrive:CAPdriver|QinReg[3]                                                    ; 1       ;
 ; CAPdrive:CAPdriver|FullAdd:\RipCar:2:FA|s                                       ; 1       ;
-; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[0]                                            ; 1       ;
-; CAPdrive:CAPdriver|FullAdd:\RipCar:4:FA|co~0                                    ; 1       ;
+; CAPdrive:CAPdriver|QinReg[2]                                                    ; 1       ;
 ; CAPdrive:CAPdriver|QaddReg[1]                                                   ; 1       ;
 ; CAPdrive:CAPdriver|QinReg[1]                                                    ; 1       ;
-; CAPdrive:CAPdriver|QinReg[2]                                                    ; 1       ;
-; CAPdrive:CAPdriver|QinReg[3]                                                    ; 1       ;
 ; SCCBdrive:SCCBdriver|dataEedge                                                  ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[26]                                         ; 1       ;
 ; SCCBdrive:SCCBdriver|clk400D                                                    ; 1       ;
@@ -1591,10 +1610,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|DeInd~1                                                    ; 1       ;
 ; SCCBdrive:SCCBdriver|DeInd~0                                                    ; 1       ;
 ; CAPdrive:CAPdriver|QaddReg[5]                                                   ; 1       ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[0]                                            ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|D[26]~0                                        ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[25]                                          ; 1       ;
 ; SCCBdrive:SCCBdriver|clkE                                                       ; 1       ;
 ; SCCBdrive:SCCBdriver|LIVE~0                                                     ; 1       ;
+; CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1]                                            ; 1       ;
 ; GPIO0_D~0                                                                       ; 1       ;
 ; SCCBdrive:SCCBdriver|SIO_D                                                      ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[26]                                          ; 1       ;
@@ -1610,36 +1631,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 115 / 47,787 ( < 1 % ) ;
-; C16 interconnects     ; 25 / 1,804 ( 1 % )     ;
-; C4 interconnects      ; 55 / 31,272 ( < 1 % )  ;
-; Direct links          ; 38 / 47,787 ( < 1 % )  ;
+; Block interconnects   ; 137 / 47,787 ( < 1 % ) ;
+; C16 interconnects     ; 16 / 1,804 ( < 1 % )   ;
+; C4 interconnects      ; 82 / 31,272 ( < 1 % )  ;
+; Direct links          ; 45 / 47,787 ( < 1 % )  ;
 ; Global clocks         ; 6 / 20 ( 30 % )        ;
-; Local interconnects   ; 73 / 15,408 ( < 1 % )  ;
-; R24 interconnects     ; 11 / 1,775 ( < 1 % )   ;
-; R4 interconnects      ; 67 / 41,310 ( < 1 % )  ;
+; Local interconnects   ; 69 / 15,408 ( < 1 % )  ;
+; R24 interconnects     ; 20 / 1,775 ( 1 % )     ;
+; R4 interconnects      ; 74 / 41,310 ( < 1 % )  ;
 +-----------------------+------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 8.08) ; Number of LABs  (Total = 13) ;
+; Number of Logic Elements  (Average = 7.79) ; Number of LABs  (Total = 14) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 0                            ;
-; 2                                          ; 2                            ;
-; 3                                          ; 0                            ;
-; 4                                          ; 5                            ;
-; 5                                          ; 0                            ;
-; 6                                          ; 1                            ;
-; 7                                          ; 0                            ;
-; 8                                          ; 0                            ;
+; 1                                          ; 1                            ;
+; 2                                          ; 1                            ;
+; 3                                          ; 1                            ;
+; 4                                          ; 3                            ;
+; 5                                          ; 1                            ;
+; 6                                          ; 0                            ;
+; 7                                          ; 1                            ;
+; 8                                          ; 1                            ;
 ; 9                                          ; 0                            ;
-; 10                                         ; 0                            ;
+; 10                                         ; 1                            ;
 ; 11                                         ; 0                            ;
 ; 12                                         ; 0                            ;
 ; 13                                         ; 1                            ;
-; 14                                         ; 1                            ;
+; 14                                         ; 0                            ;
 ; 15                                         ; 0                            ;
 ; 16                                         ; 3                            ;
 +--------------------------------------------+------------------------------+
@@ -1648,92 +1669,99 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.92) ; Number of LABs  (Total = 13) ;
+; LAB-wide Signals  (Average = 1.79) ; Number of LABs  (Total = 14) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 11                           ;
+; 1 Async. clear                     ; 9                            ;
 ; 1 Clock                            ; 8                            ;
-; 2 Async. clears                    ; 2                            ;
-; 2 Clocks                           ; 4                            ;
+; 2 Async. clears                    ; 3                            ;
+; 2 Clocks                           ; 5                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.92) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced  (Average = 14.00) ; Number of LABs  (Total = 14) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 2                            ;
 ; 7                                            ; 1                            ;
-; 8                                            ; 1                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
+; 13                                           ; 1                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 0                            ;
+; 16                                           ; 1                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
+; 18                                           ; 1                            ;
 ; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
 ; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
+; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
-; 26                                           ; 2                            ;
+; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
+; 30                                           ; 1                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 2                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 3.46) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced Out  (Average = 3.86) ; Number of LABs  (Total = 14) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
 ; 1                                               ; 5                            ;
-; 2                                               ; 2                            ;
-; 3                                               ; 0                            ;
+; 2                                               ; 3                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 1                            ;
-; 5                                               ; 3                            ;
+; 5                                               ; 0                            ;
 ; 6                                               ; 0                            ;
 ; 7                                               ; 0                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 1                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 0                            ;
+; 10                                              ; 0                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 5.69) ; Number of LABs  (Total = 13) ;
+; Number of Distinct Inputs  (Average = 6.50) ; Number of LABs  (Total = 14) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 3                            ;
-; 3                                           ; 4                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 0                            ;
+; 2                                           ; 5                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
 ; 10                                          ; 1                            ;
 ; 11                                          ; 1                            ;
-; 12                                          ; 2                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1794,12 +1822,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 34        ; 0            ; 34        ; 0            ; 0            ; 34        ; 34        ; 0            ; 34        ; 34        ; 0            ; 16           ; 0            ; 0            ; 14           ; 0            ; 16           ; 14           ; 0            ; 0            ; 0            ; 16           ; 0            ; 0            ; 0            ; 0            ; 0            ; 34        ; 0            ; 0            ;
+; Total Pass         ; 39        ; 0            ; 39        ; 0            ; 0            ; 39        ; 39        ; 0            ; 39        ; 39        ; 0            ; 17           ; 0            ; 0            ; 18           ; 0            ; 17           ; 18           ; 0            ; 0            ; 0            ; 17           ; 0            ; 0            ; 0            ; 0            ; 0            ; 39        ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 34           ; 0         ; 34           ; 34           ; 0         ; 0         ; 34           ; 0         ; 0         ; 34           ; 18           ; 34           ; 34           ; 20           ; 34           ; 18           ; 20           ; 34           ; 34           ; 34           ; 18           ; 34           ; 34           ; 34           ; 34           ; 34           ; 0         ; 34           ; 34           ;
+; Total Inapplicable ; 0         ; 39           ; 0         ; 39           ; 39           ; 0         ; 0         ; 39           ; 0         ; 0         ; 39           ; 22           ; 39           ; 39           ; 21           ; 39           ; 22           ; 21           ; 39           ; 39           ; 39           ; 22           ; 39           ; 39           ; 39           ; 39           ; 39           ; 0         ; 39           ; 39           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; LEDG[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDG[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LEDG[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO0_D[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO0_D[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO0_D[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1818,20 +1847,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_B[3]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; VGA_HS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; VGA_VS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[9]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[10]        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO1_D[9]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[3]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[4]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[5]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[8]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO1_D[7]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO1_D[3]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO1_D[6]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO1_D[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[4]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO1_D[5]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[6]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[7]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[3]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1872,54 +1905,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                ;
-+------------------------+---------------------------------+-------------------+
-; Source Clock(s)        ; Destination Clock(s)            ; Delay Added in ns ;
-+------------------------+---------------------------------+-------------------+
-; GPIO1_D[8]             ; GPIO1_D[8]                      ; 4.4               ;
-; div800k:DIV800|Qaux[5] ; div800k:DIV800|Qaux[5]          ; 3.5               ;
-; div800k:DIV800|Qaux[5] ; SCCBdrive:SCCBdriver|clk400data ; 2.4               ;
-; CLOCK_50               ; CLOCK_50                        ; 2.3               ;
-; div800k:DIV800|Qaux[4] ; div800k:DIV800|Qaux[5]          ; 1.6               ;
-+------------------------+---------------------------------+-------------------+
++---------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                       ;
++------------------------+------------------------+-------------------+
+; Source Clock(s)        ; Destination Clock(s)   ; Delay Added in ns ;
++------------------------+------------------------+-------------------+
+; GPIO1_D[8]             ; GPIO1_D[8]             ; 29.5              ;
+; div800k:DIV800|Qaux[5] ; div800k:DIV800|Qaux[5] ; 3.8               ;
+; CLOCK_50               ; CLOCK_50               ; 1.8               ;
+; div800k:DIV800|Qaux[4] ; div800k:DIV800|Qaux[5] ; 1.7               ;
++------------------------+------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+---------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                               ;
-+---------------------------------+---------------------------------------+-------------------+
-; Source Register                 ; Destination Register                  ; Delay Added in ns ;
-+---------------------------------+---------------------------------------+-------------------+
-; div800k:DIV800|Qaux[0]          ; div800k:DIV800|Qaux[0]                ; 2.313             ;
-; SCCBdrive:SCCBdriver|clk400data ; SCCBdrive:SCCBdriver|clk400data       ; 1.902             ;
-; SCCBdrive:SCCBdriver|C_E        ; SCCBdrive:SCCBdriver|clk400data       ; 1.785             ;
-; div800k:DIV800|Qaux[5]          ; SCCBdrive:SCCBdriver|clk400           ; 1.614             ;
-; SCCBdrive:SCCBdriver|C_Esync    ; SCCBdrive:SCCBdriver|clk400data       ; 0.695             ;
-; SCCBdrive:SCCBdriver|eInd       ; SCCBdrive:SCCBdriver|Q0               ; 0.666             ;
-; div800k:DIV800|Qaux[3]          ; div800k:DIV800|Qaux[3]                ; 0.621             ;
-; div800k:DIV800|Qaux[2]          ; div800k:DIV800|Qaux[2]                ; 0.491             ;
-; CAPdrive:CAPdriver|QinReg[7]    ; VGA_B[3]                              ; 0.411             ;
-; CAPdrive:CAPdriver|QinReg[4]    ; CAPdrive:CAPdriver|QaddReg[1]         ; 0.409             ;
-; CAPdrive:CAPdriver|takeTurn     ; CAPdrive:CAPdriver|QaddReg[0]         ; 0.409             ;
-; CAPdrive:CAPdriver|QinReg[6]    ; CAPdrive:CAPdriver|QaddReg[2]         ; 0.407             ;
-; CAPdrive:CAPdriver|QinReg[0]    ; CAPdrive:CAPdriver|QaddReg[0]         ; 0.308             ;
-; CAPdrive:CAPdriver|QinReg[5]    ; CAPdrive:CAPdriver|QaddReg[1]         ; 0.297             ;
-; SCCBdrive:SCCBdriver|mssgGO     ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2] ; 0.258             ;
-; div800k:DIV800|Qaux[1]          ; div800k:DIV800|Qaux[1]                ; 0.208             ;
-; div800k:DIV800|Qaux[4]          ; div800k:DIV800|Qaux[4]                ; 0.208             ;
-; CAPdrive:CAPdriver|QinReg[3]    ; CAPdrive:CAPdriver|QaddReg[3]         ; 0.186             ;
-; CAPdrive:CAPdriver|QaddReg[3]   ; CAPdrive:CAPdriver|QaddReg[3]         ; 0.186             ;
-; CAPdrive:CAPdriver|QinReg[2]    ; CAPdrive:CAPdriver|QaddReg[2]         ; 0.186             ;
-; CAPdrive:CAPdriver|QaddReg[2]   ; CAPdrive:CAPdriver|QaddReg[2]         ; 0.186             ;
-; CAPdrive:CAPdriver|QaddReg[0]   ; CAPdrive:CAPdriver|QaddReg[1]         ; 0.184             ;
-; SCCBdrive:SCCBdriver|Q0         ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2] ; 0.160             ;
-; SCCBdrive:SCCBdriver|Q1         ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2] ; 0.088             ;
-; CAPdrive:CAPdriver|QinReg[1]    ; CAPdrive:CAPdriver|QaddReg[1]         ; 0.086             ;
-; CAPdrive:CAPdriver|QaddReg[1]   ; CAPdrive:CAPdriver|QaddReg[1]         ; 0.086             ;
-+---------------------------------+---------------------------------------+-------------------+
-Note: This table only shows the top 26 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                 ;
++---------------------------------+-----------------------------------------+-------------------+
+; Source Register                 ; Destination Register                    ; Delay Added in ns ;
++---------------------------------+-----------------------------------------+-------------------+
+; CAPdrive:CAPdriver|takeTurn     ; CAPdrive:CAPdriver|QaddReg[1]           ; 4.077             ;
+; SCCBdrive:SCCBdriver|clk400data ; SCCBdrive:SCCBdriver|clk400data         ; 2.036             ;
+; SCCBdrive:SCCBdriver|C_E        ; SCCBdrive:SCCBdriver|clk400data         ; 2.027             ;
+; div800k:DIV800|Qaux[0]          ; div800k:DIV800|Qaux[0]                  ; 1.850             ;
+; div800k:DIV800|Qaux[5]          ; SCCBdrive:SCCBdriver|clk400             ; 1.654             ;
+; SCCBdrive:SCCBdriver|C_Esync    ; SCCBdrive:SCCBdriver|clk400data         ; 0.995             ;
+; CAPdrive:CAPdriver|QinReg[1]    ; CAPdrive:CAPdriver|QaddReg[1]           ; 0.801             ;
+; CAPdrive:CAPdriver|QaddReg[1]   ; CAPdrive:CAPdriver|QaddReg[1]           ; 0.801             ;
+; SCCBdrive:SCCBdriver|eInd       ; SCCBdrive:SCCBdriver|Q0                 ; 0.782             ;
+; CAPdrive:CAPdriver|QinReg[0]    ; CAPdrive:CAPdriver|QaddReg[1]           ; 0.781             ;
+; CAPdrive:CAPdriver|QaddReg[0]   ; CAPdrive:CAPdriver|QaddReg[1]           ; 0.781             ;
+; div800k:DIV800|Qaux[3]          ; div800k:DIV800|Qaux[3]                  ; 0.636             ;
+; CAPdrive:CAPdriver|QinReg[4]    ; CAPdrive:CAPdriver|QaddReg[0]           ; 0.581             ;
+; CAPdrive:CAPdriver|QinReg[3]    ; CAPdrive:CAPdriver|QaddReg[5]           ; 0.459             ;
+; CAPdrive:CAPdriver|QaddReg[3]   ; CAPdrive:CAPdriver|QaddReg[5]           ; 0.459             ;
+; CAPdrive:CAPdriver|QaddReg[4]   ; CAPdrive:CAPdriver|QaddReg[4]           ; 0.434             ;
+; CAPdrive:CAPdriver|QinReg[2]    ; CAPdrive:CAPdriver|QaddReg[2]           ; 0.421             ;
+; CAPdrive:CAPdriver|QaddReg[2]   ; CAPdrive:CAPdriver|QaddReg[2]           ; 0.421             ;
+; div800k:DIV800|Qaux[1]          ; div800k:DIV800|Qaux[1]                  ; 0.394             ;
+; CAPdrive:CAPdriver|QinReg[5]    ; CAPdrive:CAPdriver|QaddReg[2]           ; 0.312             ;
+; SCCBdrive:SCCBdriver|mssgGO     ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[15] ; 0.219             ;
+; div800k:DIV800|Qaux[2]          ; div800k:DIV800|Qaux[2]                  ; 0.208             ;
+; div800k:DIV800|Qaux[4]          ; div800k:DIV800|Qaux[4]                  ; 0.208             ;
+; SCCBdrive:SCCBdriver|Q0         ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]   ; 0.090             ;
+; SCCBdrive:SCCBdriver|Q1         ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]   ; 0.030             ;
++---------------------------------+-----------------------------------------+-------------------+
+Note: This table only shows the top 25 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1954,10 +1985,6 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2)
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
-Info (176353): Automatically promoted node GPIO1_D[8]~input (placed in PIN Y17 (DIFFIO_B29n, DQS0B/CQ1B,CDPCLK3))
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G9
-    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node CAPdrive:CAPdriver|dPCLK
 Info (176353): Automatically promoted node SCCBdrive:SCCBdriver|clk400data 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
@@ -1974,6 +2001,18 @@ Info (176353): Automatically promoted node div800k:DIV800|Qaux[5]
         Info (176357): Destination node div800k:DIV800|Qaux[5]~0
 Info (176353): Automatically promoted node CAPdrive:CAPdriver|Z_1:DEPHASE|Qd[1] 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node GPIO0_D[3]~output
+Info (176353): Automatically promoted node CAPdrive:CAPdriver|takeTurn 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node CAPdrive:CAPdriver|B[0]~0
+        Info (176357): Destination node CAPdrive:CAPdriver|B[1]~1
+        Info (176357): Destination node CAPdrive:CAPdriver|B[2]~2
+        Info (176357): Destination node CAPdrive:CAPdriver|B[3]~3
+        Info (176357): Destination node CAPdrive:CAPdriver|B[4]~4
+        Info (176357): Destination node CAPdrive:CAPdriver|FullAdd:\RipCar:0:FA|s~0
+        Info (176357): Destination node CAPdrive:CAPdriver|takeTurn~0
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -2169,7 +2208,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "LCD_EN" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LCD_RS" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LCD_RW" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDG[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[5]" is assigned to location or region, but does not exist in design
@@ -2186,10 +2224,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SD_DAT0" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SD_DAT3" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SD_WP_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SW[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SW[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SW[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "SW[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[8]" is assigned to location or region, but does not exist in design
@@ -2206,34 +2240,34 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y20 to location X30_Y29
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X31_Y0 to location X41_Y9
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.17 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 11 pins must meet Altera requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone III Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin GPIO1_D[10] uses I/O standard 3.3-V LVCMOS at U15
     Info (169178): Pin GPIO1_D[9] uses I/O standard 3.3-V LVCMOS at W17
+    Info (169178): Pin GPIO1_D[10] uses I/O standard 3.3-V LVCMOS at U15
     Info (169178): Pin GPIO1_D[8] uses I/O standard 3.3-V LVCMOS at Y17
-    Info (169178): Pin GPIO1_D[7] uses I/O standard 3.3-V LVCMOS at AB17
-    Info (169178): Pin GPIO1_D[3] uses I/O standard 3.3-V LVCMOS at AB19
-    Info (169178): Pin GPIO1_D[6] uses I/O standard 3.3-V LVCMOS at AA17
-    Info (169178): Pin GPIO1_D[2] uses I/O standard 3.3-V LVCMOS at AA19
     Info (169178): Pin GPIO1_D[0] uses I/O standard 3.3-V LVCMOS at AA20
     Info (169178): Pin GPIO1_D[4] uses I/O standard 3.3-V LVCMOS at AB18
     Info (169178): Pin GPIO1_D[1] uses I/O standard 3.3-V LVCMOS at AB20
     Info (169178): Pin GPIO1_D[5] uses I/O standard 3.3-V LVCMOS at AA18
+    Info (169178): Pin GPIO1_D[6] uses I/O standard 3.3-V LVCMOS at AA17
+    Info (169178): Pin GPIO1_D[2] uses I/O standard 3.3-V LVCMOS at AA19
+    Info (169178): Pin GPIO1_D[7] uses I/O standard 3.3-V LVCMOS at AB17
+    Info (169178): Pin GPIO1_D[3] uses I/O standard 3.3-V LVCMOS at AB19
 Info (144001): Generated suppressed messages file C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/output_files/CAMstreamVGA.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 227 warnings
-    Info: Peak virtual memory: 5352 megabytes
-    Info: Processing ended: Tue May 21 09:34:48 2024
-    Info: Elapsed time: 00:00:05
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 222 warnings
+    Info: Peak virtual memory: 5372 megabytes
+    Info: Processing ended: Fri May 24 18:14:49 2024
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

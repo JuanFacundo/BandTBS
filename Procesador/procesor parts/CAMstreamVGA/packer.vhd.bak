@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+
+
+entity packer is
+	port(
+		rst		: in std_logic;
+		D_in		: in std_logic_vector(3 downto 0);
+		clk_in	: in std_logic;
+		
+		RAMpack	: out std_logic_vector(31 downto 0);
+		clk_out	: out std_logic
+	);
+end entity;
+
+
+
+architecture shape of packer is
+
+signal clk_chain			: std_logic_vector(2 downto 0);
+	
+begin
+
+	clk_chain(0) <=
+		'0' when rst='1' else
+		not(clk_chain(0)) when rising_edge(clk_in);
+		
+	clk_chain(1) <=
+		'0' when rst='1' else
+		not(clk_chain(1)) when rising_edge(clk_chain(0));
+		
+	clk_chain(2) <=
+		'0' when rst='1' else
+		not(clk_chain(2)) when rising_edge(clk_chain(1));
+
+end shape;
