@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="VGA_TEST">
+		<CBX_INST_ENTRY INSTANCE_NAME="|VGA_TEST|pll2:CLK25|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>
