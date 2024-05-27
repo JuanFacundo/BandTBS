@@ -1,5 +1,5 @@
 Flow report for VGA_TEST
-Mon May 27 12:09:49 2024
+Mon May 27 13:04:58 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon May 27 12:09:47 2024      ;
+; Flow Status                        ; Successful - Mon May 27 13:04:56 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGA_TEST                                   ;
 ; Top-level Entity Name              ; VGA_TEST                                   ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 58 / 15,408 ( < 1 % )                      ;
-;     Total combinational functions  ; 58 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 32 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 32                                         ;
+; Total logic elements               ; 41 / 15,408 ( < 1 % )                      ;
+;     Total combinational functions  ; 41 / 15,408 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 20 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 20                                         ;
 ; Total pins                         ; 21 / 347 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
@@ -64,31 +64,31 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/27/2024 12:09:39 ;
+; Start date & time ; 05/27/2024 13:04:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA_TEST            ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                              ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 279415871484.171682257823400 ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing            ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing            ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                   ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                   ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 14622752                     ; --            ; DE0_Default ; Top        ;
-; PARTITION_COLOR                     ; 16764057                     ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --            ; DE0_Default ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                 ; --            ; --          ; --         ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                 ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 119384633149492.171682588717944 ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing               ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing               ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                      ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 14622752                        ; --            ; DE0_Default ; Top        ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; DE0_Default ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,11 +96,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4669 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 4943 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4585 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4621 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4693 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 5332 MB             ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4600 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4675 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:01                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,10 +109,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; PCMat            ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; PCMat            ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; PCMat            ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; PCMat            ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; MOORE01          ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; MOORE01          ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; MOORE01          ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; MOORE01          ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

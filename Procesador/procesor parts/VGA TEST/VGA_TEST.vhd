@@ -45,19 +45,22 @@ end component;
 
 signal clk25M			: std_logic;
 signal ena				: std_logic;
+signal notSW			: std_logic;
 begin
 
+	
 	CLK25: pll2 port map(
-		areset		=> SW(1),
+		areset		=> notSW,
 		inclk0		=> CLOCK_50,
 		c0				=> clk25M
 	);
 	
+	notSW <= not(SW(1));
 	VGA_controller: VGA_driver port map(
 	clock_25MHz => clk25M,
-	rst			=> SW(1),
+	rst			=> notSW,
 	ena			=> '1',	  
-	data_in		=> (others => '1'),
+	data_in		=> (others => '0'),
 	red   		=> VGA_R,     
 	green			=> VGA_G,
 	blue        => VGA_B,

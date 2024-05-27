@@ -109,9 +109,9 @@ begin
 	end process;
 
 	 
-	red    <= "0000";--rojo;
-	green  <= "0010";--verde;
-	blue   <= "0000";--azul;
+	red    <= rojo;
+	green  <= verde;
+	blue   <= azul;
 	 
 	Hsync  <= Hsync_aux;
 	Vsync  <= Vsync_aux;
