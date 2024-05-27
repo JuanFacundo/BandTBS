@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'ena'
+Slack : -2.687
+TNS   : -7.425
+
+Type  : Slow 1200mV 85C Model Setup 'clock_25MHz'
+Slack : -1.896
+TNS   : -37.798
+
+Type  : Slow 1200mV 85C Model Hold 'clock_25MHz'
+Slack : 0.395
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ena'
+Slack : 1.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_25MHz'
+Slack : -3.000
+TNS   : -35.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ena'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'ena'
+Slack : -2.375
+TNS   : -6.515
+
+Type  : Slow 1200mV 0C Model Setup 'clock_25MHz'
+Slack : -1.634
+TNS   : -31.742
+
+Type  : Slow 1200mV 0C Model Hold 'clock_25MHz'
+Slack : 0.366
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ena'
+Slack : 1.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_25MHz'
+Slack : -3.000
+TNS   : -35.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ena'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'ena'
+Slack : -0.979
+TNS   : -2.581
+
+Type  : Fast 1200mV 0C Model Setup 'clock_25MHz'
+Slack : -0.634
+TNS   : -15.910
+
+Type  : Fast 1200mV 0C Model Hold 'clock_25MHz'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ena'
+Slack : 0.698
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_25MHz'
+Slack : -3.000
+TNS   : -36.841
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ena'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

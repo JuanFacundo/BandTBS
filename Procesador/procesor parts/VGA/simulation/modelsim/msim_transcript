@@ -1,0 +1,62 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do VGA_generator_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Proyecto BBTS/VGA/vga_generator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VGA_generator
+# -- Compiling architecture behaviour of VGA_generator
+# 
+vsim work.vga_generator
+# vsim work.vga_generator 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.vga_generator(behaviour)
+wave create -driver freeze -pattern clock -initialvalue 0 -period 40ps -dutycycle 50 -starttime 0us -endtime 32us sim:/vga_generator/clock_25MHz
+add wave -position insertpoint  \
+sim:/vga_generator/Vsync
+add wave -position insertpoint  \
+sim:/vga_generator/Hsync
+add wave -position insertpoint  \
+sim:/vga_generator/h_count
+add wave -position insertpoint  \
+sim:/vga_generator/v_count
+run -all
+add wave -position insertpoint  \
+sim:/vga_generator/Ena_datain
+run -all
+# 
+# Internal Error: In tclprim_ApplyStimulus for /vga_generator/clock_25MHz "Time value must be greater than "now": 32000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+restart
+run -all
+add wave -position insertpoint  \
+sim:/vga_generator/video_on_h
+add wave -position insertpoint  \
+sim:/vga_generator/video_on_v
+run -all
+# 
+# Internal Error: In tclprim_ApplyStimulus for /vga_generator/clock_25MHz "Time value must be greater than "now": 32000000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+restart
+run -all
