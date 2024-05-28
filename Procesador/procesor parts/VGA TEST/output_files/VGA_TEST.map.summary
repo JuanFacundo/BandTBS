@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Tue May 28 12:16:44 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : VGA_TEST
@@ -12,3 +13,19 @@ Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
+=======
+Analysis & Synthesis Status : Successful - Mon May 27 13:04:49 2024
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : VGA_TEST
+Top-level Entity Name : VGA_TEST
+Family : Cyclone III
+Total logic elements : 41
+    Total combinational functions : 41
+    Dedicated logic registers : 20
+Total registers : 20
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+>>>>>>> d271ee0bfb43a0af850c7548f27f75473003583f

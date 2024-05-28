@@ -41,14 +41,21 @@ component pll2 is
 end component;
 
 signal clk25M			: std_logic;
+<<<<<<< HEAD
 
+=======
+signal ena				: std_logic;
+signal notSW			: std_logic;
+>>>>>>> d271ee0bfb43a0af850c7548f27f75473003583f
 begin
 
+	
 	CLK25: pll2 port map(
-		areset		=> SW(1),
+		areset		=> notSW,
 		inclk0		=> CLOCK_50,
 		c0				=> clk25M
 	);
+<<<<<<< HEAD
 	
 	VGA_controller : VGA_generator port map(
 		clock_25MHz => clk25M, 
@@ -58,5 +65,21 @@ begin
 		blue 			=> VGA_B, 
 		Hsync 		=> VGA_HS, 
 		Vsync 		=> VGA_VS);
+=======
+	
+	notSW <= not(SW(1));
+	VGA_controller: VGA_driver port map(
+	clock_25MHz => clk25M,
+	rst			=> notSW,
+	ena			=> '1',	  
+	data_in		=> (others => '0'),
+	red   		=> VGA_R,     
+	green			=> VGA_G,
+	blue        => VGA_B,
+	Hsync			=> VGA_HS,      
+	Vsync       => VGA_VS,
+	Ena_datain  => ena
+	);
+>>>>>>> d271ee0bfb43a0af850c7548f27f75473003583f
     
 end behaviour;
