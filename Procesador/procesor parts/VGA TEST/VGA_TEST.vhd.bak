@@ -20,18 +20,15 @@ end VGA_TEST;
 
 architecture behaviour of VGA_TEST is
 
-component VGA_driver is
+component VGA_generator is
     port(
         clock_25MHz : in std_logic;
-		  rst 		  : in std_logic;
-		  ena 		  : in std_logic;
         data_in	  : in std_logic_vector(3 downto 0);
         red         : out std_logic_vector(3 downto 0);
         green       : out std_logic_vector(3 downto 0);
         blue        : out std_logic_vector(3 downto 0);
         Hsync       : out std_logic;
-        Vsync       : out std_logic;
-		  Ena_datain  : out std_logic
+        Vsync       : out std_logic
     );
 end component;
 
@@ -53,17 +50,13 @@ begin
 		c0				=> clk25M
 	);
 	
-	VGA_controller: VGA_driver port map(
-	clock_25MHz => clk25M,
-	rst			=> SW(1),
-	ena			=> '1'. 		  
-	data_in		=> (others => '1'),
-	red   		=> VGA_R,     
-	green			=> VGA_G,
-	blue        => VGA_B,
-	Hsync			=> VGA_HS,      
-	Vsync       => VGA_VS,
-	Ena_datain  => ena
-	) 
+	VGA_controller : VGA_generator port map(
+		clock_25MHz => clock_25M , 
+		data_in 		=> "0000", 
+		red 			=> VGA_R, 
+		green 		=> VGA_G, 
+		blue 			=> VGA_B, 
+		Hsync 		=> VGA_HS, 
+		Vsync 		=> VGA_VS);
     
 end behaviour;

@@ -2,25 +2,24 @@
 CLOCK_50 => pll2:CLK25.inclk0
 SW[0] => ~NO_FANOUT~
 SW[1] => pll2:CLK25.areset
-SW[1] => VGA_driver:VGA_controller.rst
 SW[2] => ~NO_FANOUT~
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
-VGA_R[0] << VGA_driver:VGA_controller.red[0]
-VGA_R[1] << VGA_driver:VGA_controller.red[1]
-VGA_R[2] << VGA_driver:VGA_controller.red[2]
-VGA_R[3] << VGA_driver:VGA_controller.red[3]
-VGA_G[0] << VGA_driver:VGA_controller.green[0]
-VGA_G[1] << VGA_driver:VGA_controller.green[1]
-VGA_G[2] << VGA_driver:VGA_controller.green[2]
-VGA_G[3] << VGA_driver:VGA_controller.green[3]
-VGA_B[0] << VGA_driver:VGA_controller.blue[0]
-VGA_B[1] << VGA_driver:VGA_controller.blue[1]
-VGA_B[2] << VGA_driver:VGA_controller.blue[2]
-VGA_B[3] << VGA_driver:VGA_controller.blue[3]
-VGA_HS << VGA_driver:VGA_controller.Hsync
-VGA_VS << VGA_driver:VGA_controller.Vsync
+VGA_R[0] << VGA_generator:VGA_controller.red[0]
+VGA_R[1] << VGA_generator:VGA_controller.red[1]
+VGA_R[2] << VGA_generator:VGA_controller.red[2]
+VGA_R[3] << VGA_generator:VGA_controller.red[3]
+VGA_G[0] << VGA_generator:VGA_controller.green[0]
+VGA_G[1] << VGA_generator:VGA_controller.green[1]
+VGA_G[2] << VGA_generator:VGA_controller.green[2]
+VGA_G[3] << VGA_generator:VGA_controller.green[3]
+VGA_B[0] << VGA_generator:VGA_controller.blue[0]
+VGA_B[1] << VGA_generator:VGA_controller.blue[1]
+VGA_B[2] << VGA_generator:VGA_controller.blue[2]
+VGA_B[3] << VGA_generator:VGA_controller.blue[3]
+VGA_HS << VGA_generator:VGA_controller.Hsync
+VGA_VS << VGA_generator:VGA_controller.Vsync
 
 
 |VGA_TEST|pll2:CLK25
@@ -100,7 +99,10 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|VGA_TEST|VGA_driver:VGA_controller
+|VGA_TEST|VGA_generator:VGA_controller
+clock_25MHz => video_on_v.CLK
+clock_25MHz => video_on_h.CLK
+clock_25MHz => Vsync_aux.CLK
 clock_25MHz => v_count[0].CLK
 clock_25MHz => v_count[1].CLK
 clock_25MHz => v_count[2].CLK
@@ -111,6 +113,7 @@ clock_25MHz => v_count[6].CLK
 clock_25MHz => v_count[7].CLK
 clock_25MHz => v_count[8].CLK
 clock_25MHz => v_count[9].CLK
+clock_25MHz => Hsync_aux.CLK
 clock_25MHz => h_count[0].CLK
 clock_25MHz => h_count[1].CLK
 clock_25MHz => h_count[2].CLK
@@ -121,53 +124,16 @@ clock_25MHz => h_count[6].CLK
 clock_25MHz => h_count[7].CLK
 clock_25MHz => h_count[8].CLK
 clock_25MHz => h_count[9].CLK
-rst => v_count[0].ACLR
-rst => v_count[1].ACLR
-rst => v_count[2].ACLR
-rst => v_count[3].ACLR
-rst => v_count[4].ACLR
-rst => v_count[5].ACLR
-rst => v_count[6].ACLR
-rst => v_count[7].ACLR
-rst => v_count[8].ACLR
-rst => v_count[9].ACLR
-rst => h_count[0].ACLR
-rst => h_count[1].ACLR
-rst => h_count[2].ACLR
-rst => h_count[3].ACLR
-rst => h_count[4].ACLR
-rst => h_count[5].ACLR
-rst => h_count[6].ACLR
-rst => h_count[7].ACLR
-rst => h_count[8].ACLR
-rst => h_count[9].ACLR
-rst => Hsync_aux.ACLR
-rst => Vsync_aux.ACLR
-rst => video_on.ACLR
-ena => vertical_counter.IN1
-ena => Hsync_aux.LATCH_ENABLE
-ena => Vsync_aux.LATCH_ENABLE
-ena => video_on.LATCH_ENABLE
-ena => h_count[0].ENA
-ena => h_count[1].ENA
-ena => h_count[2].ENA
-ena => h_count[3].ENA
-ena => h_count[4].ENA
-ena => h_count[5].ENA
-ena => h_count[6].ENA
-ena => h_count[7].ENA
-ena => h_count[8].ENA
-ena => h_count[9].ENA
 data_in[0] => ~NO_FANOUT~
 data_in[1] => ~NO_FANOUT~
 data_in[2] => ~NO_FANOUT~
 data_in[3] => ~NO_FANOUT~
-red[0] <= <GND>
-red[1] <= <GND>
-red[2] <= <GND>
-red[3] <= <GND>
+red[0] <= video_on.DB_MAX_OUTPUT_PORT_TYPE
+red[1] <= video_on.DB_MAX_OUTPUT_PORT_TYPE
+red[2] <= video_on.DB_MAX_OUTPUT_PORT_TYPE
+red[3] <= video_on.DB_MAX_OUTPUT_PORT_TYPE
 green[0] <= <GND>
-green[1] <= <VCC>
+green[1] <= <GND>
 green[2] <= <GND>
 green[3] <= <GND>
 blue[0] <= <GND>
@@ -176,6 +142,5 @@ blue[2] <= <GND>
 blue[3] <= <GND>
 Hsync <= Hsync_aux.DB_MAX_OUTPUT_PORT_TYPE
 Vsync <= Vsync_aux.DB_MAX_OUTPUT_PORT_TYPE
-Ena_datain <= video_on.DB_MAX_OUTPUT_PORT_TYPE
 
 
