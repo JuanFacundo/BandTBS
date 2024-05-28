@@ -8,7 +8,7 @@ void ADC_init(void)
 
 uint16_t ADC_read(uint8_t ch) 
 {
-	ch &= 0b00000111;
+	ch &= 0b00000011;
 	ADMUX = (ADMUX & 0xF8) | ch;
 	
 	// Start conversion
