@@ -1,5 +1,5 @@
 Flow report for VGA_TEST
-Mon May 27 12:09:49 2024
+Tue May 28 12:16:58 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon May 27 12:09:47 2024      ;
+; Flow Status                        ; Successful - Tue May 28 12:16:55 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGA_TEST                                   ;
 ; Top-level Entity Name              ; VGA_TEST                                   ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 58 / 15,408 ( < 1 % )                      ;
-;     Total combinational functions  ; 58 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 32 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 32                                         ;
+; Total logic elements               ; 56 / 15,408 ( < 1 % )                      ;
+;     Total combinational functions  ; 56 / 15,408 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 24 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 24                                         ;
 ; Total pins                         ; 21 / 347 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/27/2024 12:09:39 ;
+; Start date & time ; 05/28/2024 12:16:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA_TEST            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 279415871484.171682257823400 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 279415871484.171690940246700 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --            ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing            ; --            ; --          ; --         ;
@@ -96,11 +96,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4669 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 4943 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4585 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4621 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4666 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 4938 MB             ; 00:00:03                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4585 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4625 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
