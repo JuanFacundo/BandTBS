@@ -1,25 +1,22 @@
 |VGATEST2
 CLOCK_50 => pll2:CLK25.inclk0
-SW[0] => ~NO_FANOUT~
-SW[1] => pll2:CLK25.areset
-SW[2] => VGA_generator:VGA_controller.rst
-SW[3] => VGA_generator:VGA_controller.ena
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-VGA_R[0] << VGA_generator:VGA_controller.red[0]
-VGA_R[1] << VGA_generator:VGA_controller.red[1]
-VGA_R[2] << VGA_generator:VGA_controller.red[2]
-VGA_R[3] << VGA_generator:VGA_controller.red[3]
-VGA_G[0] << VGA_generator:VGA_controller.green[0]
-VGA_G[1] << VGA_generator:VGA_controller.green[1]
-VGA_G[2] << VGA_generator:VGA_controller.green[2]
-VGA_G[3] << VGA_generator:VGA_controller.green[3]
-VGA_B[0] << VGA_generator:VGA_controller.blue[0]
-VGA_B[1] << VGA_generator:VGA_controller.blue[1]
-VGA_B[2] << VGA_generator:VGA_controller.blue[2]
-VGA_B[3] << VGA_generator:VGA_controller.blue[3]
-VGA_HS << VGA_generator:VGA_controller.Hsync
-VGA_VS << VGA_generator:VGA_controller.Vsync
+SW[0] => pll2:CLK25.areset
+SW[1] => VGA_generator:VGA_controller.rst
+SW[2] => VGA_generator:VGA_controller.ena
+VGA_R[0] <= VGA_generator:VGA_controller.red[0]
+VGA_R[1] <= VGA_generator:VGA_controller.red[1]
+VGA_R[2] <= VGA_generator:VGA_controller.red[2]
+VGA_R[3] <= VGA_generator:VGA_controller.red[3]
+VGA_G[0] <= VGA_generator:VGA_controller.green[0]
+VGA_G[1] <= VGA_generator:VGA_controller.green[1]
+VGA_G[2] <= VGA_generator:VGA_controller.green[2]
+VGA_G[3] <= VGA_generator:VGA_controller.green[3]
+VGA_B[0] <= VGA_generator:VGA_controller.blue[0]
+VGA_B[1] <= VGA_generator:VGA_controller.blue[1]
+VGA_B[2] <= VGA_generator:VGA_controller.blue[2]
+VGA_B[3] <= VGA_generator:VGA_controller.blue[3]
+VGA_HS <= VGA_generator:VGA_controller.Hsync
+VGA_VS <= VGA_generator:VGA_controller.Vsync
 
 
 |VGATEST2|pll2:CLK25

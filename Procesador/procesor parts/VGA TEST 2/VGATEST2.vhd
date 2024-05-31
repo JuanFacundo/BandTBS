@@ -9,7 +9,7 @@ use altera_mf.all;
 entity VGATEST2 is
     port(
 		  CLOCK_50		: in std_logic;
-		  SW				: in std_logic_vector(5 downto 0);
+		  SW				: in std_logic_vector(2 downto 0);
 		  VGA_R			: out std_logic_vector(3 downto 0);
 		  VGA_G			: out std_logic_vector(3 downto 0);
 		  VGA_B			: out std_logic_vector(3 downto 0);
@@ -52,16 +52,16 @@ signal data							 : std_logic_vector(3 downto 0):= (others => '0');
 begin
 
 	CLK25: pll2 port map(
-		areset		=> SW(1),
+		areset		=> SW(0),
 		inclk0		=> CLOCK_50,
 		c0				=> clk25M
 	);
 	
 	VGA_controller : VGA_generator port map(
-		clock_25MHz => clk25M , 
+		clock_25MHz => clk25M, 
 		data_in 		=> data,
-		rst			=> SW(2),
-		ena			=> SW(3),
+		rst			=> SW(1),
+		ena			=> SW(2),
 		red 			=> VGA_R, 
 		green 		=> VGA_G, 
 		blue 			=> VGA_B, 
