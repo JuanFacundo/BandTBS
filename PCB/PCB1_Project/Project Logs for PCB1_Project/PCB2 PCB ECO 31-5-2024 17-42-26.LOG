@@ -1,0 +1,108 @@
+Removed Pin From Net: NetName=NetP7_30 Pin=P9-1
+Removed Pin From Net: NetName=NetP8_15 Pin=P9-2
+Removed Pin From Net: NetName=NetP8_13 Pin=P9-4
+Removed Pin From Net: NetName=NetP7_2 Pin=P9-6
+Removed Pin From Net: NetName=NetP7_30 Pin=P9-8
+Removed Pin From Net: NetName=NetP7_29 Pin=P9-9
+Removed Pin From Net: NetName=NetP8_2 Pin=P11-1
+Removed Pin From Net: NetName=NetP8_4 Pin=P11-2
+Removed Pin From Net: NetName=NetP8_5 Pin=P11-3
+Removed Pin From Net: NetName=NetP8_6 Pin=P11-4
+Removed Pin From Net: NetName=NetP8_7 Pin=P11-5
+Removed Pin From Net: NetName=NetP8_9 Pin=P11-7
+Removed Pin From Net: NetName=NetP7_29 Pin=P11-9
+Removed Pin From Net: NetName=NetP7_29 Pin=R1-2
+Added Component: Designator=Arduino Uno(ARDUINO UNO)
+Added Component: Designator=P1(HDR1X5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P3(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P4(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P6(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetArduino Uno_2 Pin=Arduino Uno-2
+Added Pin To Net: NetName=NetArduino Uno_3 Pin=Arduino Uno-3
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=Arduino Uno-5V
+Added Pin To Net: NetName=NetArduino Uno_9 Pin=Arduino Uno-9
+Added Pin To Net: NetName=NetArduino Uno_10 Pin=Arduino Uno-10
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=Arduino Uno-A0
+Added Pin To Net: NetName=NetArduino Uno_A1 Pin=Arduino Uno-A1
+Added Pin To Net: NetName=NetArduino Uno_A2 Pin=Arduino Uno-A2
+Added Pin To Net: NetName=GND Pin=Arduino Uno-GND2
+Added Pin To Net: NetName=NetArduino Uno_A2 Pin=P1-1
+Added Pin To Net: NetName=NetArduino Uno_A1 Pin=P1-2
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=P1-3
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=P1-4
+Added Pin To Net: NetName=GND Pin=P1-5
+Added Pin To Net: NetName=NetArduino Uno_10 Pin=P2-1
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=P2-2
+Added Pin To Net: NetName=GND Pin=P2-3
+Added Pin To Net: NetName=NetArduino Uno_9 Pin=P3-1
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=P3-2
+Added Pin To Net: NetName=GND Pin=P3-3
+Added Pin To Net: NetName=NetArduino Uno_5V Pin=P4-1
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=NetArduino Uno_2 Pin=P6-1
+Added Pin To Net: NetName=NetArduino Uno_3 Pin=P6-2
+Added Pin To Net: NetName=GND Pin=P7-12
+Added Pin To Net: NetName=NetP7_2 Pin=P9-2
+Added Pin To Net: NetName=NetP8_5 Pin=P9-3
+Added Pin To Net: NetName=NetP8_7 Pin=P9-4
+Added Pin To Net: NetName=NetP8_9 Pin=P9-5
+Added Pin To Net: NetName=NetP8_13 Pin=P9-7
+Added Pin To Net: NetName=NetP8_15 Pin=P9-8
+Added Pin To Net: NetName=NetP8_2 Pin=P10-1
+Added Pin To Net: NetName=NetP8_4 Pin=P10-2
+Added Pin To Net: NetName=NetP8_6 Pin=P10-3
+Added Pin To Net: NetName=NetP7_30 Pin=P11-1
+Added Pin To Net: NetName=GND Pin=P11-9
+Added Pin To Net: NetName=NetP7_20 Pin=P7-20
+Added Pin To Net: NetName=NetP7_20 Pin=P11-4
+Added Net: Name=NetP7_20
+Added Pin To Net: NetName=NetP7_38 Pin=P7-38
+Added Pin To Net: NetName=NetP7_38 Pin=P11-2
+Added Pin To Net: NetName=NetP7_38 Pin=R2-2
+Added Net: Name=NetP7_38
+Added Pin To Net: NetName=NetP8_11 Pin=P8-11
+Added Pin To Net: NetName=NetP8_11 Pin=P9-6
+Added Net: Name=NetP8_11
+Added Pin To Net: NetName=NetP8_29 Pin=P8-29
+Added Pin To Net: NetName=NetP8_29 Pin=P9-1
+Added Pin To Net: NetName=NetP8_29 Pin=P9-9
+Added Pin To Net: NetName=NetP8_29 Pin=R1-2
+Added Net: Name=NetP8_29
+Added Pin To Net: NetName=NetP8_31 Pin=P8-31
+Added Pin To Net: NetName=NetP8_31 Pin=P11-8
+Added Net: Name=NetP8_31
+Added Pin To Net: NetName=NetP8_33 Pin=P8-33
+Added Pin To Net: NetName=NetP8_33 Pin=P11-7
+Added Net: Name=NetP8_33
+Added Pin To Net: NetName=NetP8_35 Pin=P8-35
+Added Pin To Net: NetName=NetP8_35 Pin=P11-6
+Added Net: Name=NetP8_35
+Added Pin To Net: NetName=NetP8_37 Pin=P8-37
+Added Pin To Net: NetName=NetP8_37 Pin=P11-5
+Added Net: Name=NetP8_37
+Added Pin To Net: NetName=NetP8_39 Pin=P8-39
+Added Pin To Net: NetName=NetP8_39 Pin=P11-3
+Added Net: Name=NetP8_39
+Added Member To Class: ClassName=Sheet1 Member=Component Arduino Uno
+Added Member To Class: ClassName=Sheet1 Member=Component P1 joystik1
+Added Member To Class: ClassName=Sheet1 Member=Component P2 M2
+Added Member To Class: ClassName=Sheet1 Member=Component P3 M1
+Added Member To Class: ClassName=Sheet1 Member=Component P4 Fuente
+Added Member To Class: ClassName=Sheet1 Member=Component P6 fpga
+Added Member To Class: ClassName=Sheet2 Member=Component R2 Resistor
