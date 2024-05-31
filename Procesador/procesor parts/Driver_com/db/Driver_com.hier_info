@@ -1,0 +1,67 @@
+|Driver_com
+CLOCK_50 => div_clk:DIV.Clk_In
+GPIO0_D[0] <= GPIO0_D[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[1] <= com_serie:COM_X.data_out
+GPIO0_D[2] <= com_serie:COM_Y.data_out
+
+
+|Driver_com|div_clk:DIV
+Clk_In => Clk_aux.CLK
+Clk_In => counter[0].CLK
+Clk_In => counter[1].CLK
+Clk_In => counter[2].CLK
+Clk_Out <= Clk_aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Driver_com|com_serie:COM_X
+clk => sending.CLK
+clk => data_out~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => bit_counter[0].CLK
+clk => bit_counter[1].CLK
+reset => sending.ACLR
+reset => data_out~reg0.ACLR
+reset => shift_reg[0].ACLR
+reset => shift_reg[1].ACLR
+reset => shift_reg[2].ACLR
+reset => shift_reg[3].ACLR
+reset => bit_counter[0].ACLR
+reset => bit_counter[1].ACLR
+data_in[0] => shift_reg[0].DATAIN
+data_in[1] => shift_reg[1].DATAIN
+data_in[2] => shift_reg[2].DATAIN
+data_in[3] => shift_reg[3].DATAIN
+send => process_0.IN1
+send => process_0.IN1
+data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Driver_com|com_serie:COM_Y
+clk => sending.CLK
+clk => data_out~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => bit_counter[0].CLK
+clk => bit_counter[1].CLK
+reset => sending.ACLR
+reset => data_out~reg0.ACLR
+reset => shift_reg[0].ACLR
+reset => shift_reg[1].ACLR
+reset => shift_reg[2].ACLR
+reset => shift_reg[3].ACLR
+reset => bit_counter[0].ACLR
+reset => bit_counter[1].ACLR
+data_in[0] => shift_reg[0].DATAIN
+data_in[1] => shift_reg[1].DATAIN
+data_in[2] => shift_reg[2].DATAIN
+data_in[3] => shift_reg[3].DATAIN
+send => process_0.IN1
+send => process_0.IN1
+data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

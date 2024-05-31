@@ -113,7 +113,17 @@ component pll1 is
 	);
 end component;
 
+component pll2 is
+	port(
+		areset		: in std_logic := '0';
+		inclk0		: in std_logic := '0';
+		c0				: out std_logic
+	);
+end component;
+
+
 signal clk24M			: std_logic;
+signal clk25M			: std_logic;
 signal clk800k			: std_logic;
 signal rstMssg			: std_logic;
 signal weLIVE			: std_logic;
@@ -193,7 +203,11 @@ begin
 	
 	
 	
-	
+	CLK25: pll2 port map(
+		areset		=> SW(1),
+		inclk0		=> CLOCK_50,
+		c0				=> clk25M
+	);
 	
 	
 	

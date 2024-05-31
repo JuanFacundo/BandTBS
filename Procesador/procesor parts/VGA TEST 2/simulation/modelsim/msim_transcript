@@ -1,0 +1,61 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do VGATEST2_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/VGATEST2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VGATEST2
+# -- Compiling architecture behaviour of VGATEST2
+# vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/VGA_generator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity VGA_generator
+# -- Compiling architecture behaviour of VGA_generator
+# 
+vsim work.vgatest2
+# vsim work.vgatest2 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.vgatest2(behaviour)
+# Loading work.vga_generator(behaviour)
+wave create -driver freeze -pattern clock -initialvalue 0 -period 40ms -dutycycle 50 -starttime 0ms -endtime 32ms sim:/vgatest2/CLOCK_50
+add wave -position end  sim:/vgatest2/data
+wave create -driver freeze -pattern constant -value 000010 -range 5 0 -starttime 0ms -endtime 32ms sim:/vgatest2/SW
+add wave -position 1 -autoscale 1 -format Literal -height 17 -editable 2 Edit:/vgatest2/SW
+wave modify -driver freeze -pattern constant -value 000100 -range 5 0 -starttime 0ms -endtime 32ms Edit:/vgatest2/SW
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 40ns -dutycycle 50 -starttime 0ms -endtime 32ms Edit:/vgatest2/CLOCK_50
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 40ns -dutycycle 50 -starttime 0ms -endtime 32ms Edit:/vgatest2/CLOCK_50
+wave modify -driver freeze -pattern constant -value 001000 -range 5 0 -starttime 0ms -endtime 32ms Edit:/vgatest2/SW
+wave edit change_value -start 0ps -end 15203ps -value 000100 Edit:/vgatest2/SW
+wave edit change_value -start 14549ps -end 54600ps -value 000000 Edit:/vgatest2/SW
+add wave -position end  sim:/vgatest2/VGA_B
+add wave -position end  sim:/vgatest2/VGA_HS
+add wave -position end  sim:/vgatest2/VGA_VS
+add wave -position end  sim:/vgatest2/data
+add wave -position end  sim:/vgatest2/h_count
+add wave -position end  sim:/vgatest2/v_count
+add wave -position end  sim:/vgatest2/video_on
+run -all

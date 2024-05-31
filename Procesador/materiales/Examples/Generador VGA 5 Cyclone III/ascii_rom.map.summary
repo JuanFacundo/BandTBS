@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Aug 23 13:19:29 2016
+Quartus II Version : 10.1 Build 197 01/19/2011 SP 1 SJ Web Edition
+Revision Name : ascii_rom
+Top-level Entity Name : ascii_rom
+Family : Cyclone III
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 16,384
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

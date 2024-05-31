@@ -1,0 +1,124 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\13.1\taller de sistemas digitales\Driver_com\simulation\modelsim
+Ecom_serie
+Z1 w1716915802
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dD:\altera\13.1\taller de sistemas digitales\Driver_com\simulation\modelsim
+Z7 8D:/altera/13.1/taller de sistemas digitales/Driver_com/com_serie.vhd
+Z8 FD:/altera/13.1/taller de sistemas digitales/Driver_com/com_serie.vhd
+l0
+L6
+VaZ240g3jXUQQ9LPO1`WWK2
+!s100 =3QJHeeH3JAe:]kB_fmeC1
+Z9 OV;C;10.1d;51
+31
+!i10b 1
+Z10 !s108 1716925742.245000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/altera/13.1/taller de sistemas digitales/Driver_com/com_serie.vhd|
+Z12 !s107 D:/altera/13.1/taller de sistemas digitales/Driver_com/com_serie.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 9 com_serie 0 22 aZ240g3jXUQQ9LPO1`WWK2
+l23
+L19
+VAU_b87@nRa>kBVKXVDn5H2
+!s100 b;i`P[Ud2DUH_A24mAHbD3
+R9
+31
+!i10b 1
+R10
+R11
+R12
+R13
+R14
+Ediv_clk
+Z15 w1716907200
+R2
+R3
+R4
+R5
+R6
+Z16 8D:/altera/13.1/taller de sistemas digitales/Driver_com/div_clk.vhd
+Z17 FD:/altera/13.1/taller de sistemas digitales/Driver_com/div_clk.vhd
+l0
+L6
+V>X2g7ZEEL@:8IRBWkZ6i^3
+R9
+31
+Z18 !s108 1716925741.811000
+Z19 !s90 -reportprogress|300|-93|-work|work|D:/altera/13.1/taller de sistemas digitales/Driver_com/div_clk.vhd|
+Z20 !s107 D:/altera/13.1/taller de sistemas digitales/Driver_com/div_clk.vhd|
+R13
+R14
+!s100 C2PE^]b9R55MiP[jN7?Td3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 7 div_clk 0 22 >X2g7ZEEL@:8IRBWkZ6i^3
+l20
+L16
+V1QRJ6_G@iOa8;n<:O95<^0
+R9
+31
+R18
+R19
+R20
+R13
+R14
+!s100 7LOTW3BknQo3C?QW13e9a1
+!i10b 1
+Edriver_com
+Z21 w1716922372
+R3
+R2
+Z22 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R4
+R5
+R6
+Z23 8D:/altera/13.1/taller de sistemas digitales/Driver_com/Driver_com.vhd
+Z24 FD:/altera/13.1/taller de sistemas digitales/Driver_com/Driver_com.vhd
+l0
+L8
+VQLl^U38Vg_2:BTmi8Bc<h2
+R9
+31
+Z25 !s108 1716925741.481000
+Z26 !s90 -reportprogress|300|-93|-work|work|D:/altera/13.1/taller de sistemas digitales/Driver_com/Driver_com.vhd|
+Z27 !s107 D:/altera/13.1/taller de sistemas digitales/Driver_com/Driver_com.vhd|
+R13
+R14
+!s100 Y6Vk6Mg^16PRGaH:_MA<^2
+!i10b 1
+Ashape
+R3
+R2
+R22
+R4
+R5
+DEx4 work 10 driver_com 0 22 QLl^U38Vg_2:BTmi8Bc<h2
+l54
+L20
+V0=RLMGO_C`KG?7fMaQQgP2
+R9
+31
+R25
+R26
+R27
+R13
+R14
+!s100 :`<U>1NL@2[BIH:imXDlS2
+!i10b 1

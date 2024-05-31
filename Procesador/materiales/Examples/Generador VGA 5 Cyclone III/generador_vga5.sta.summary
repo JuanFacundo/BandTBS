@@ -1,0 +1,89 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.262
+TNS   : -6.752
+
+Type  : Slow 1200mV 85C Model Setup 'button1'
+Slack : 0.019
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'button1'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button1'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50MHz'
+Slack : 9.825
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.601
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.999
+TNS   : -5.964
+
+Type  : Slow 1200mV 0C Model Setup 'button1'
+Slack : 0.126
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'button1'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button1'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
+Slack : 9.785
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.608
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.306
+TNS   : -3.895
+
+Type  : Fast 1200mV 0C Model Setup 'button1'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'button1'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button1'
+Slack : -3.000
+TNS   : -6.213
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
+Slack : 9.585
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.613
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#define F_CPU 16000000UL
 #include <util/delay.h>
 #include "ADC.h"
 
@@ -17,9 +18,10 @@ void setupPWM()
 	ICR1 = 39999;                                               // Para una frecuencia de PWM de 50Hz (20ms periodo)
 }
 
-void setPWM(uint16_t pulse_width) 
+void setPWM(uint16_t pulse_widthx,uint16_t pulse_widthy) 
 {
-	OCR1A = pulse_width;
+	OCR1A = pulse_widthx;
+	OCR1B = pulse_widthy;
 }
 
 int main(void) 
@@ -31,11 +33,17 @@ int main(void)
 	{
 		uint16_t x_value = ADC_read(0);
 
-		uint16_t pulse_width = x_value*4 + 1000;
+		uint16_t pulse_widthx = (int)(x_value*(4000.0/1023.0) + 1000);
+		
+		uint16_t y_value = ADC_read(1);
 
-		setPWM(pulse_width);
+		uint16_t pulse_widthy = (int)(y_value*(4000.0/1023.0) + 1000);
 
-		_delay_ms(500);
+		setPWM(pulse_widthx,pulse_widthy);
+		
+		
+
+		_delay_ms(50);
 	}
 
 	return 0;
