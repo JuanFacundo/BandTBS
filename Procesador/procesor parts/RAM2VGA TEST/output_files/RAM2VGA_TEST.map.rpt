@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RAM2VGA_TEST
-Thu May 30 10:26:52 2024
+Fri May 31 12:38:32 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -43,7 +43,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 30 10:26:52 2024      ;
+; Analysis & Synthesis Status        ; Successful - Fri May 31 12:38:32 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; RAM2VGA_TEST                               ;
 ; Top-level Entity Name              ; VGA_generator                              ;
@@ -269,7 +269,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu May 30 10:26:51 2024
+    Info: Processing started: Fri May 31 12:38:29 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RAM2VGA_TEST -c RAM2VGA_TEST
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file ram2vga_test.vhd
@@ -301,9 +301,9 @@ Info (21057): Implemented 81 device resources after synthesis - the final resour
     Info (21059): Implemented 14 output pins
     Info (21061): Implemented 62 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4690 megabytes
-    Info: Processing ended: Thu May 30 10:26:52 2024
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4686 megabytes
+    Info: Processing ended: Fri May 31 12:38:32 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

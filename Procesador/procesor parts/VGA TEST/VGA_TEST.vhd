@@ -7,16 +7,17 @@ library altera_mf;
 use altera_mf.all;
 
 entity VGA_TEST is
-    port(
-		  CLOCK_50		: in std_logic;
-		  SW				: in std_logic_vector(5 downto 0);
-		  VGA_R			: out std_logic_vector(3 downto 0);
-		  VGA_G			: out std_logic_vector(3 downto 0);
-		  VGA_B			: out std_logic_vector(3 downto 0);
-		  VGA_HS			: out std_logic;
-		  VGA_VS			: out std_logic
-    );
-end VGA_TEST;
+	port(
+		CLOCK_50		: in std_logic;
+		SW				: in std_logic_vector(5 downto 0);
+		VGA_R			: out std_logic_vector(3 downto 0);
+		VGA_G			: out std_logic_vector(3 downto 0);
+		VGA_B			: out std_logic_vector(3 downto 0);
+		VGA_HS		: out std_logic;
+		VGA_VS		: out std_logic;
+		GPIO0_D		: out std_logic_vector(1 downto 0)
+   );
+end entity;
 
 architecture behaviour of VGA_TEST is
 
@@ -57,6 +58,10 @@ begin
 		green 		=> VGA_G, 
 		blue 			=> VGA_B, 
 		Hsync 		=> VGA_HS, 
-		Vsync 		=> VGA_VS);
+		Vsync 		=> VGA_VS
+	);
+		
+	GPIO0_D(0) <= clk25M;
+	--GPIO0_D(1) <= 
     
 end behaviour;

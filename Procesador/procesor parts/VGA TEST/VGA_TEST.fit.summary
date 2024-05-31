@@ -1,20 +1,16 @@
-Fitter Status : Successful - Tue May 28 13:46:46 2024
+Fitter Status : Successful - Fri May 31 17:07:54 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : VGA_TEST
 Top-level Entity Name : VGA_TEST
-Family : Cyclone IV GX
-Device : EP4CGX15BF14C6
+Family : Cyclone III
+Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 56 / 14,400 ( < 1 % )
-    Total combinational functions : 56 / 14,400 ( < 1 % )
-    Dedicated logic registers : 24 / 14,400 ( < 1 % )
+Total logic elements : 56 / 15,408 ( < 1 % )
+    Total combinational functions : 56 / 15,408 ( < 1 % )
+    Dedicated logic registers : 24 / 15,408 ( < 1 % )
 Total registers : 24
-Total pins : 21 / 81 ( 26 % )
+Total pins : 23 / 347 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 0 / 552,960 ( 0 % )
-Embedded Multiplier 9-bit elements : 0
-Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
-Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
-Total PLLs : 1 / 3 ( 33 % )
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

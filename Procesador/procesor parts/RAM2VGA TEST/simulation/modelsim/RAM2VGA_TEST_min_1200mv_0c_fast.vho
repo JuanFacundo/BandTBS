@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/30/2024 10:27:03"
+-- DATE "05/31/2024 12:38:45"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,11 +37,11 @@ ENTITY 	VGA_generator IS
     PORT (
 	clock_25MHz : IN std_logic;
 	data_in : IN std_logic_vector(3 DOWNTO 0);
-	red : OUT std_logic_vector(3 DOWNTO 0);
-	green : OUT std_logic_vector(3 DOWNTO 0);
-	blue : OUT std_logic_vector(3 DOWNTO 0);
-	Hsync : OUT std_logic;
-	Vsync : OUT std_logic
+	red : BUFFER std_logic_vector(3 DOWNTO 0);
+	green : BUFFER std_logic_vector(3 DOWNTO 0);
+	blue : BUFFER std_logic_vector(3 DOWNTO 0);
+	Hsync : BUFFER std_logic;
+	Vsync : BUFFER std_logic
 	);
 END VGA_generator;
 

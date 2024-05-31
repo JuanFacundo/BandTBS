@@ -79,7 +79,7 @@ begin
 				red(1)    <= '1' and video_on;
 				red(0)    <= '1' and video_on;
 				
-				green(3)    <= '0' and video_on;
+				green(3)		<= '0' and video_on;
 				green(2)    <= '0' and video_on;
 				green(1)    <= '0' and video_on;
 				green(0)    <= '0' and video_on;
