@@ -66,12 +66,13 @@ signal readDir				: std_logic_vector(18 downto 0);
 
 
 begin
-
+	
 	wC: counterSync16 port map(
 		clk	=> clkWrite,
 		rst	=>	rstCount16,
 		count => writeDir
 	);
+	
 	
 	rC: counterSync19 port map(
 		clk	=> clkRead,
@@ -83,7 +84,7 @@ begin
 	RAMdev: RAMdevice port map(
 		data			=> D_in,			--: in std_logic_vector(31 downto 0);
 		rd_aclr		=> clear,		--: in std_logic  := '0';						--High to clear?
-		rdaddress	=>	readDir,		--: in std_logic_vector(18 downto 0);
+		rdaddress	=>	readDir,		--std_logic_vector(readDir),		--: in std_logic_vector(18 downto 0);
 		rdclock		=> clkRead,		--: in std_logic;
 		rden			=> readEna,		--: in std_logic  := '1';						--High to enable reading?
 		wraddress	=> writeDir,	--: in std_logic_vector(15 downto 0);

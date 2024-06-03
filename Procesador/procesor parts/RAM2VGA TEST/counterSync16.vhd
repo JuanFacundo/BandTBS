@@ -13,42 +13,55 @@ entity counterSync16 is
 end entity;
 
 
+
+
+
+
 architecture shape of counterSync16 is
 
 component Ttype is
 	port(
 		clk		: in std_logic;
-		sync_rst	: in std_logic;
+		--sync_rst	: in std_logic;
 		rst		: in std_logic;
-		ena		: in std_logic;
+		--ena		: in std_logic;
 		T			: in std_logic;
 		
 		Q			: out std_logic
 	);
 end component;
 
-signal T_aux		: std_logic_vector(15 downto 0);
-signal Q_aux		: std_logic_vector(15 downto 0);
+type superand is
+	array (0 to 14) of std_logic_vector(14 downto 0);
+
+signal Taux		: std_logic_vector(15 downto 0);
+signal Qaux		: std_logic_vector(15 downto 0);
 signal rstSync		: std_logic;
+signal ander		: superand;
 
 begin
 
 	CONTR: for n in 0 to 15 generate
 		Treg: Ttype port map(
 			clk 		=> clk,
-			sync_rst => rstSync,
+			--sync_rst => rstSync,
 			rst		=> rst,
-			ena		=> '1',
-			T			=> T_aux(n),
-			Q			=> Q_aux(n)
+			--ena		=> '1',
+			T			=> Taux(n),
+			Q			=> Qaux(n)
 		);
 	end generate;
 
-
-	T_aux(15 downto 0) <= Q_aux(14 downto 0) & '1';
-
-	rstSync <= '0';
+	Taux(0) <= '1';
+	anderer: for n in 0 to 14 generate
+		ander(n)(0) <= Qaux(0);
+		single_ander: for m in 1 to n generate
+			ander(n)(m) <= Qaux(m) and ander(n)(m-1);
+		end generate;
+		Taux(n+1) <= ander(n)(n);
+	end generate;
 	
-	count <= Q_aux;
+	
+	count <= Qaux;
 
 end shape;

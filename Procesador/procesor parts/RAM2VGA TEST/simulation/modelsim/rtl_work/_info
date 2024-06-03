@@ -3,44 +3,79 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\RAM2VGA TEST\simulation\modelsim
-Evga_generator
-Z1 w1717075606
+Ecountersync19
+Z1 w1717427755
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z7 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\RAM2VGA TEST\simulation\modelsim
-Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/vga_generator.vhd
-Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/vga_generator.vhd
+Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/countersync19.vhd
+Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/countersync19.vhd
 l0
-L9
-V;QXfNLEikihhQ54UlaMPD0
-!s100 a?YeeeN`9EDDJMeJ:DozN3
+L6
+VCVJQ^:^Sd0IF@I2l0GDXB3
 Z10 OV;C;10.1d;51
 31
-!i10b 1
-Z11 !s108 1717075648.619000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/vga_generator.vhd|
-Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/vga_generator.vhd|
+Z11 !s108 1717427780.977000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/countersync19.vhd|
+Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/countersync19.vhd|
 Z14 o-93 -work work -O0
 Z15 tExplicit 1
-Abehaviour
+!s100 :hLAG_DJTRJE4bRg>[ijH1
+!i10b 1
+Ashape
 R2
 R3
 R4
 R5
 R6
-DEx4 work 13 vga_generator 0 22 ;QXfNLEikihhQ54UlaMPD0
-l27
-L21
-VC08?aGWX<8jP3oDXbklV`0
-!s100 hEzi]OIk=6Lb6Qd`;KcB02
+DEx4 work 13 countersync19 0 22 CVJQ^:^Sd0IF@I2l0GDXB3
+l38
+L16
+VGGT70HGNhOz5i2MaF?fj03
 R10
 31
-!i10b 1
 R11
 R12
 R13
+R14
+R15
+!s100 8o2c=a:_NI<Q6^GNb?mbd1
+!i10b 1
+Ettype
+Z16 w1717426371
+R5
+R6
+R7
+Z17 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/ttype.vhd
+Z18 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/ttype.vhd
+l0
+L4
+VoRnTeZZ`;8FgDTYjGaC]V2
+!s100 8iDcO=YSUYHIWDIPl2M@m0
+R10
+31
+!i10b 1
+Z19 !s108 1717427781.038000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/ttype.vhd|
+Z21 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/RAM2VGA TEST/ttype.vhd|
+R14
+R15
+Ashape
+R5
+R6
+DEx4 work 5 ttype 0 22 oRnTeZZ`;8FgDTYjGaC]V2
+l19
+L16
+VmLMfDg9Kc]Y:?F<>]J7Ej2
+!s100 Y>;T6NbI0^ajGL0Mjmdma3
+R10
+31
+!i10b 1
+R19
+R20
+R21
 R14
 R15

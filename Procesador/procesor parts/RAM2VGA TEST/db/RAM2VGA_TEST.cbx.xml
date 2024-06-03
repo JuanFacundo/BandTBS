@@ -2,6 +2,7 @@
 <LOG_ROOT>
 	<PROJECT NAME="RAM2VGA_TEST">
 		<CBX_INST_ENTRY INSTANCE_NAME="|RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_c7q3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAM2VGA_TEST|pll1:CLK24|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|RAM2VGA_TEST|pll2:CLK25|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
 	</PROJECT>
 </LOG_ROOT>
