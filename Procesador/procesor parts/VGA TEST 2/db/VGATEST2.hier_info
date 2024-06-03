@@ -17,6 +17,8 @@ VGA_B[2] <= VGA_generator:VGA_controller.blue[2]
 VGA_B[3] <= VGA_generator:VGA_controller.blue[3]
 VGA_HS <= VGA_generator:VGA_controller.Hsync
 VGA_VS <= VGA_generator:VGA_controller.Vsync
+GPIO0_D[0] <= VGA_generator:VGA_controller.Hsync
+GPIO0_D[1] <= cyclecount.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |VGATEST2|pll2:CLK25

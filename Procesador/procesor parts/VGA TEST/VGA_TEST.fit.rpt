@@ -1,5 +1,5 @@
 Fitter report for VGA_TEST
-Fri May 31 17:07:54 2024
+Fri May 31 17:46:35 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Fri May 31 17:07:54 2024      ;
+; Fitter Status                      ; Successful - Fri May 31 17:46:35 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGA_TEST                                   ;
 ; Top-level Entity Name              ; VGA_TEST                                   ;
@@ -155,12 +155,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.00        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  33.3%      ;
+;     Processors 2-4         ; < 0.1%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -521,8 +521,8 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
 ; Maximum fan-out                             ; 25                    ;
 ; Highest non-global fan-out                  ; 10                    ;
-; Total fan-out                               ; 254                   ;
-; Average fan-out                             ; 1.87                  ;
+; Total fan-out                               ; 260                   ;
+; Average fan-out                             ; 1.91                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -571,7 +571,7 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 248                  ; 33                             ;
+;     -- Total Connections                    ; 254                  ; 33                             ;
 ;     -- Registered Connections               ; 116                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -1309,6 +1309,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                          ; Fan-Out ;
 +-------------------------------------------------------------------------------+---------+
 ; VGA_generator:VGA_controller|v_count[9]~0                                     ; 10      ;
+; VGA_generator:VGA_controller|blue[0]                                          ; 10      ;
 ; VGA_generator:VGA_controller|process_0~13                                     ; 8       ;
 ; VGA_generator:VGA_controller|h_count[8]                                       ; 7       ;
 ; VGA_generator:VGA_controller|h_count[5]                                       ; 6       ;
@@ -1331,7 +1332,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGA_controller|v_count[7]                                       ; 4       ;
 ; VGA_generator:VGA_controller|v_count[6]                                       ; 4       ;
 ; VGA_generator:VGA_controller|v_count[5]                                       ; 4       ;
-; VGA_generator:VGA_controller|red[0]                                           ; 4       ;
 ; VGA_generator:VGA_controller|Equal0~2                                         ; 3       ;
 ; VGA_generator:VGA_controller|Equal0~0                                         ; 2       ;
 ; VGA_generator:VGA_controller|v_count[0]                                       ; 2       ;
@@ -1417,7 +1417,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------+
 ; Routing Resource Type ; Usage                 ;
 +-----------------------+-----------------------+
-; Block interconnects   ; 45 / 47,787 ( < 1 % ) ;
+; Block interconnects   ; 48 / 47,787 ( < 1 % ) ;
 ; C16 interconnects     ; 0 / 1,804 ( 0 % )     ;
 ; C4 interconnects      ; 23 / 31,272 ( < 1 % ) ;
 ; Direct links          ; 19 / 47,787 ( < 1 % ) ;
@@ -1938,7 +1938,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.03 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1947,8 +1947,8 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST/VGA_TEST.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 237 warnings
-    Info: Peak virtual memory: 5327 megabytes
-    Info: Processing ended: Fri May 31 17:07:55 2024
+    Info: Peak virtual memory: 5325 megabytes
+    Info: Processing ended: Fri May 31 17:46:36 2024
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 

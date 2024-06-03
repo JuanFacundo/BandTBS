@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGATEST2
-Fri May 31 17:46:26 2024
+Sun Jun 02 21:30:44 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,14 +14,12 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: pll2:CLK25|altpll:altpll_component
- 13. altpll Parameter Settings by Entity Instance
- 14. Port Connectivity Checks: "VGA_generator:VGA_controller"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: pll2:CLK25|altpll:altpll_component
+ 12. altpll Parameter Settings by Entity Instance
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +45,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 31 17:46:26 2024      ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 02 21:30:44 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGATEST2                                   ;
 ; Top-level Entity Name              ; VGATEST2                                   ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 118                                        ;
-;     Total combinational functions  ; 98                                         ;
-;     Dedicated logic registers      ; 49                                         ;
-; Total registers                    ; 49                                         ;
-; Total pins                         ; 18                                         ;
+; Total logic elements               ; 170                                        ;
+;     Total combinational functions  ; 138                                        ;
+;     Dedicated logic registers      ; 69                                         ;
+; Total registers                    ; 69                                         ;
+; Total pins                         ; 20                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -151,32 +149,38 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 16     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; VGATEST2.vhd                     ; yes             ; User VHDL File               ; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/VGATEST2.vhd      ;         ;
-; VGA_generator.vhd                ; yes             ; User VHDL File               ; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/VGA_generator.vhd ;         ;
-; pll2.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/pll2.vhd          ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                   ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                               ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                              ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                            ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                            ;         ;
-; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/db/pll2_altpll.v  ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; VGATEST2.vhd                     ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST 2/VGATEST2.vhd      ;         ;
+; VGA_generator.vhd                ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST 2/VGA_generator.vhd ;         ;
+; pll2.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST 2/pll2.vhd          ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                         ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                                     ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                                    ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                                  ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                                  ;         ;
+; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST 2/db/pll2_altpll.v  ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -184,31 +188,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                          ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 118                                                                            ;
+; Estimated Total logic elements              ; 170                                                                            ;
 ;                                             ;                                                                                ;
-; Total combinational functions               ; 98                                                                             ;
+; Total combinational functions               ; 138                                                                            ;
 ; Logic element usage by number of LUT inputs ;                                                                                ;
-;     -- 4 input functions                    ; 39                                                                             ;
-;     -- 3 input functions                    ; 20                                                                             ;
-;     -- <=2 input functions                  ; 39                                                                             ;
+;     -- 4 input functions                    ; 44                                                                             ;
+;     -- 3 input functions                    ; 31                                                                             ;
+;     -- <=2 input functions                  ; 63                                                                             ;
 ;                                             ;                                                                                ;
 ; Logic elements by mode                      ;                                                                                ;
-;     -- normal mode                          ; 80                                                                             ;
-;     -- arithmetic mode                      ; 18                                                                             ;
+;     -- normal mode                          ; 76                                                                             ;
+;     -- arithmetic mode                      ; 62                                                                             ;
 ;                                             ;                                                                                ;
-; Total registers                             ; 49                                                                             ;
-;     -- Dedicated logic registers            ; 49                                                                             ;
+; Total registers                             ; 69                                                                             ;
+;     -- Dedicated logic registers            ; 69                                                                             ;
 ;     -- I/O registers                        ; 0                                                                              ;
 ;                                             ;                                                                                ;
-; I/O pins                                    ; 18                                                                             ;
+; I/O pins                                    ; 20                                                                             ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                              ;
 ; Total PLLs                                  ; 1                                                                              ;
 ;     -- PLLs                                 ; 1                                                                              ;
 ;                                             ;                                                                                ;
 ; Maximum fan-out node                        ; pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 50                                                                             ;
-; Total fan-out                               ; 517                                                                            ;
-; Average fan-out                             ; 2.81                                                                           ;
+; Maximum fan-out                             ; 70                                                                             ;
+; Total fan-out                               ; 687                                                                            ;
+; Average fan-out                             ; 2.77                                                                           ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
 
 
@@ -217,8 +221,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Library Name ;
 +---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------+--------------+
-; |VGATEST2                             ; 98 (39)           ; 49 (0)       ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |VGATEST2                                                               ; work         ;
-;    |VGA_generator:VGA_controller|     ; 59 (59)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGATEST2|VGA_generator:VGA_controller                                  ; work         ;
+; |VGATEST2                             ; 138 (78)          ; 69 (10)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |VGATEST2                                                               ; work         ;
+;    |VGA_generator:VGA_controller|     ; 60 (60)           ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGATEST2|VGA_generator:VGA_controller                                  ; work         ;
 ;    |pll2:CLK25|                       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGATEST2|pll2:CLK25                                                    ; work         ;
 ;       |altpll:altpll_component|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGATEST2|pll2:CLK25|altpll:altpll_component                            ; work         ;
 ;          |pll2_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGATEST2|pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated ; work         ;
@@ -226,27 +230,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                     ;
-+--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance      ; IP Include File                                                                                                                                    ;
-+--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |VGATEST2|pll2:CLK25 ; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/VGA TEST 2/pll2.vhd ;
-+--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; data[0]                                            ; GND                 ; yes                    ;
-; data[1]                                            ; GND                 ; yes                    ;
-; data[2]                                            ; GND                 ; yes                    ;
-; data[3]                                            ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                           ;
++--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance      ; IP Include File                                                                                                                                          ;
++--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |VGATEST2|pll2:CLK25 ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/VGA TEST 2/pll2.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -254,12 +244,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 49    ;
+; Total registers                              ; 69    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 49    ;
+; Number of registers using Asynchronous Clear ; 69    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Clock Enable       ; 53    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -269,8 +259,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGATEST2|VGA_generator:VGA_controller|v_count[9] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |VGATEST2|data[0]                                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGATEST2|VGA_generator:VGA_controller|v_count[0] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |VGATEST2|data[0]                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -665,15 +655,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA_generator:VGA_controller"                                                         ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; vcount ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -689,9 +670,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri May 31 17:46:22 2024
+    Info: Processing started: Sun Jun 02 21:30:43 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGATEST2 -c VGATEST2
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file vgatest2.vhd
     Info (12022): Found design unit 1: VGATEST2-behaviour
     Info (12023): Found entity 1: VGATEST2
@@ -702,12 +683,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file pll2.vh
     Info (12022): Found design unit 1: pll2-SYN
     Info (12023): Found entity 1: pll2
 Info (12127): Elaborating entity "VGATEST2" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at VGATEST2.vhd(49): object "v_count" assigned a value but never read
-Warning (10631): VHDL Process Statement warning at VGATEST2.vhd(75): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "data[0]" at VGATEST2.vhd(75)
-Info (10041): Inferred latch for "data[1]" at VGATEST2.vhd(75)
-Info (10041): Inferred latch for "data[2]" at VGATEST2.vhd(75)
-Info (10041): Inferred latch for "data[3]" at VGATEST2.vhd(75)
+Warning (10492): VHDL Process Statement warning at VGATEST2.vhd(116): signal "Hsync" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VGATEST2.vhd(120): signal "Hsync" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at VGATEST2.vhd(125): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:CLK25"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll2:CLK25|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pll2:CLK25|altpll:altpll_component"
@@ -800,15 +778,15 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 142 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 123 logic cells
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 173 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4669 megabytes
-    Info: Processing ended: Fri May 31 17:46:26 2024
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 4685 megabytes
+    Info: Processing ended: Sun Jun 02 21:30:44 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

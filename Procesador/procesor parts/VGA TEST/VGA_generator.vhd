@@ -80,14 +80,14 @@ begin
 				red(0)    <= '1' and video_on;
 				
 				green(3)    <= '0' and video_on;
-				green(2)    <= '0' and video_on;
-				green(1)    <= '0' and video_on;
-				green(0)    <= '0' and video_on;
+				green(2)    <= '1' and video_on;
+				green(1)    <= '1' and video_on;
+				green(0)    <= '1' and video_on;
 				
 				blue(3)    <= '0' and video_on;
-				blue(2)    <= '0' and video_on;
-				blue(1)    <= '0' and video_on;
-				blue(0)    <= '0' and video_on;
+				blue(2)    <= '1' and video_on;
+				blue(1)    <= '1' and video_on;
+				blue(0)    <= '1' and video_on;
     
 				Hsync  <= Hsync_aux;
 				Vsync  <= Vsync_aux;

@@ -86,6 +86,7 @@ begin
 		green 		=> VGA_G, 
 		blue 			=> VGA_B, 
 		Hsync 		=> VGA_HS, 
-		Vsync 		=> VGA_VS);
+		Vsync 		=> VGA_VS
+	);
     
 end shape;

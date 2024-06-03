@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for VGA_TEST
-Fri May 31 17:07:58 2024
+Fri May 31 17:46:39 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -531,12 +531,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 2.163 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 2.163 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 4.336 ; 4.424 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 4.325 ; 4.416 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.278 ; 4.331 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.336 ; 4.424 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 3.649 ; 3.702 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]    ; CLOCK_50   ; 4.327 ; 4.396 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]    ; CLOCK_50   ; 4.356 ; 4.444 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 4.013 ; 4.079 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 4.267 ; 4.321 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 4.278 ; 4.343 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 4.327 ; 4.396 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.275 ; 4.330 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.291 ; 4.364 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.356 ; 4.444 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 3.768 ; 3.777 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 2.112 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 2.112 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -550,12 +558,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 1.791 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 1.791 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 3.254 ; 3.322 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 3.254 ; 3.322 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 3.254 ; 3.322 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 3.254 ; 3.322 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 3.217 ; 3.249 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 3.263 ; 3.331 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 3.217 ; 3.249 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 3.273 ; 3.339 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 3.214 ; 3.264 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_R[*]    ; CLOCK_50   ; 2.963 ; 3.008 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 2.963 ; 3.008 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 3.207 ; 3.239 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 3.217 ; 3.261 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 3.265 ; 3.313 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 3.214 ; 3.248 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 3.230 ; 3.281 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 3.293 ; 3.359 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 3.329 ; 3.336 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 1.741 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 1.741 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -968,12 +984,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 2.271 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 2.271 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 4.242 ; 4.278 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 4.242 ; 4.278 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 4.242 ; 4.278 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 4.242 ; 4.278 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 4.259 ; 4.293 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 4.251 ; 4.287 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.206 ; 4.208 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.259 ; 4.293 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 3.632 ; 3.648 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]    ; CLOCK_50   ; 4.251 ; 4.283 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]    ; CLOCK_50   ; 4.279 ; 4.313 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 3.963 ; 3.986 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 4.196 ; 4.209 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 4.205 ; 4.220 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 4.251 ; 4.283 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.204 ; 4.218 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.217 ; 4.240 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.279 ; 4.313 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 3.751 ; 3.749 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 2.200 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 2.200 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -987,12 +1011,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 1.942 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 1.942 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 3.283 ; 3.318 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 3.283 ; 3.318 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 3.283 ; 3.318 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 3.283 ; 3.318 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 3.248 ; 3.250 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 3.292 ; 3.327 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 3.248 ; 3.250 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 3.299 ; 3.332 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 3.246 ; 3.261 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_R[*]    ; CLOCK_50   ; 3.016 ; 3.037 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 3.016 ; 3.037 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 3.238 ; 3.250 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 3.247 ; 3.262 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 3.292 ; 3.322 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 3.246 ; 3.259 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 3.259 ; 3.280 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 3.319 ; 3.352 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 3.359 ; 3.357 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 1.872 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 1.872 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -1395,12 +1427,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 1.332 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 1.332 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 2.595 ; 2.708 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 2.595 ; 2.708 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 2.595 ; 2.708 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 2.595 ; 2.708 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 2.604 ; 2.717 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 2.604 ; 2.717 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 2.550 ; 2.654 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 2.590 ; 2.712 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 2.243 ; 2.298 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]    ; CLOCK_50   ; 2.593 ; 2.710 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]    ; CLOCK_50   ; 2.610 ; 2.732 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 2.405 ; 2.499 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 2.547 ; 2.649 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 2.551 ; 2.663 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 2.593 ; 2.710 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 2.552 ; 2.655 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 2.559 ; 2.675 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 2.610 ; 2.732 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 2.301 ; 2.365 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 1.354 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 1.354 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -1414,12 +1454,20 @@ No paths to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 1.108 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 1.108 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 1.950 ; 1.996 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 2.002 ; 2.057 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 1.950 ; 1.996 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 1.987 ; 2.052 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 1.982 ; 2.034 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_R[*]    ; CLOCK_50   ; 1.811 ; 1.847 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 1.811 ; 1.847 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 1.946 ; 1.991 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 1.951 ; 2.005 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 1.991 ; 2.051 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 1.951 ; 1.997 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 1.958 ; 2.016 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 2.007 ; 2.072 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 2.037 ; 2.098 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 1.128 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 1.128 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -1453,12 +1501,20 @@ No synchronizer chains to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 2.271 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 2.271 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 4.316 ; 4.407 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 4.336 ; 4.424 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 4.325 ; 4.416 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.278 ; 4.331 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.336 ; 4.424 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 3.649 ; 3.702 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-; VGA_R[*]    ; CLOCK_50   ; 4.327 ; 4.396 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_R[*]    ; CLOCK_50   ; 4.356 ; 4.444 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 4.013 ; 4.079 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 4.267 ; 4.321 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 4.278 ; 4.343 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 4.327 ; 4.396 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.275 ; 4.330 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.291 ; 4.364 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.356 ; 4.444 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 3.768 ; 3.777 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 2.200 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 2.200 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -1472,12 +1528,20 @@ No synchronizer chains to report.
 +-------------+------------+-------+-------+------------+---------------------------------------------------+
 ; GPIO0_D[*]  ; CLOCK_50   ; 1.108 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ; 1.108 ;       ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_B[*]    ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[0]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[1]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_B[2]   ; CLOCK_50   ; 1.993 ; 2.048 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+; VGA_G[*]    ; CLOCK_50   ; 1.950 ; 1.996 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[0]   ; CLOCK_50   ; 2.002 ; 2.057 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[1]   ; CLOCK_50   ; 1.950 ; 1.996 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_G[2]   ; CLOCK_50   ; 1.987 ; 2.052 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_HS      ; CLOCK_50   ; 1.982 ; 2.034 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_R[*]    ; CLOCK_50   ; 1.811 ; 1.847 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  VGA_R[0]   ; CLOCK_50   ; 1.811 ; 1.847 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[1]   ; CLOCK_50   ; 1.946 ; 1.991 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[2]   ; CLOCK_50   ; 1.951 ; 2.005 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
-;  VGA_R[3]   ; CLOCK_50   ; 1.991 ; 2.051 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[1]   ; CLOCK_50   ; 1.951 ; 1.997 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[2]   ; CLOCK_50   ; 1.958 ; 2.016 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
+;  VGA_R[3]   ; CLOCK_50   ; 2.007 ; 2.072 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; VGA_VS      ; CLOCK_50   ; 2.037 ; 2.098 ; Rise       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ; GPIO0_D[*]  ; CLOCK_50   ;       ; 1.128 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
 ;  GPIO0_D[0] ; CLOCK_50   ;       ; 1.128 ; Fall       ; CLK25|altpll_component|auto_generated|pll1|clk[0] ;
@@ -1618,8 +1682,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 7     ; 7    ;
-; Unconstrained Output Port Paths ; 11    ; 11   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 23    ; 23   ;
 +---------------------------------+-------+------+
 
 
@@ -1629,7 +1693,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri May 31 17:07:57 2024
+    Info: Processing started: Fri May 31 17:46:38 2024
 Info: Command: quartus_sta VGA_TEST -c VGA_TEST
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
@@ -1728,7 +1792,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 28 warnings
     Info: Peak virtual memory: 4675 megabytes
-    Info: Processing ended: Fri May 31 17:07:58 2024
+    Info: Processing ended: Fri May 31 17:46:39 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

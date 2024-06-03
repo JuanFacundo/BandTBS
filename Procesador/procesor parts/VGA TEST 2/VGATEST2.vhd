@@ -14,7 +14,9 @@ entity VGATEST2 is
 		  VGA_G			: out std_logic_vector(3 downto 0);
 		  VGA_B			: out std_logic_vector(3 downto 0);
 		  VGA_HS			: out std_logic;
-		  VGA_VS			: out std_logic
+		  VGA_VS			: out std_logic;
+		  
+		  GPIO0_D		: out std_logic_vector(1 downto 0)
     );
 end VGATEST2;
 
@@ -45,9 +47,13 @@ component pll2 is
 	);
 end component;
 
-signal clk25M,video_on			 : std_logic;
-signal h_count, v_count        : unsigned (9 downto 0) := (others => '0');
-signal data							 : std_logic_vector(3 downto 0):= (others => '0');
+signal clk25M,video_on			 	: std_logic;
+signal h_count, v_count        	: unsigned (9 downto 0) := (others => '0');
+signal data							 	: std_logic_vector(3 downto 0):= (others => '0');
+signal Hsync, Vsync					: std_logic;
+signal tap								: std_logic_vector(3 downto 0);
+signal m									: std_logic;
+signal count							: unsigned(9 downto 0) := (others => '0');
 
 begin
 
@@ -62,32 +68,66 @@ begin
 		data_in 		=> data,
 		rst			=> SW(1),
 		ena			=> SW(2),
-		red 			=> VGA_R, 
+		red 			=> tap, 
 		green 		=> VGA_G, 
 		blue 			=> VGA_B, 
-		Hsync 		=> VGA_HS, 
-		Vsync 		=> VGA_VS,
+		Hsync 		=> Hsync, 
+		Vsync 		=> Vsync,
 		Hcount		=> h_count,
 		Vcount		=> v_count,  
 		VideoOn	  	=> video_on
     );
 	 
+	 VGA_R <= tap;
+	 VGA_VS <= Vsync;
+	 VGA_HS <= Hsync;
+	 
 	 setcolor: process(h_count,v_count,video_on)
 	 begin
 	 
-		if video_on = '1' and h_count <= 60 then
-			data <= "0011";
-		elsif video_on = '1' and h_count > 60 and h_count <= 120 then
-			data <= "0000";
-		elsif video_on = '1' and h_count > 120 and h_count <= 180 then
-			data <= "0111";
-		elsif video_on = '1' and h_count > 180 and h_count <= 240 then
-			data <= "0010";
-		elsif video_on = '1' and h_count > 240 and h_count <= 300 then
+		if video_on = '1' and h_count <= 1 then
 			data <= "1111";
-		elsif video_on = '1' and h_count > 300 and h_count <= 480 then
-			data <= "0001";
+		elsif video_on = '1' and v_count = 0 then
+			data <= "1111";
+		elsif video_on = '1' and v_count = 479 then
+			data <= "1111";
+		elsif video_on = '1' and h_count - v_count - 80 < 3  and h_count >= 80 then
+			data <= "0011";
+		elsif video_on = '1' and 480 - h_count - v_count + 80 < 3  and h_count >= 80 then
+			data <= "0011";
+		elsif video_on = '1' and h_count = 80 then
+			data <= "1111";
+		elsif video_on = '1' and h_count = 560 then
+			data <= "1111";
+		elsif video_on = '1' and h_count >= 639 then
+			data <= "1111";
+		else
+			data <= "0000";
 		end if;
 	end process;
 	
+	GPIO0_D(0) <= Hsync;
+	--GPIO0_D(1) <= video_on;
+	
+	
+	
+	cyclecount: process(clk25M)
+	begin
+		if falling_edge(clk25M) and Hsync = '1' then
+			count <= count + 1;
+		end if;
+		
+		if Hsync = '0' then
+			count <= (others => '0');
+		end if;
+		
+		
+		if count >= 44 and count <= 683 then
+			m <= '1';
+		else
+			m <= '0';
+		end if;
+	end process;
+			
+	GPIO0_D(1) <= m;
 end behaviour;
