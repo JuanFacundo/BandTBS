@@ -104,7 +104,7 @@ signal ena				: std_logic;
 signal ena25M			: std_logic;
 signal RAMclk			: std_logic;
 signal Hcount,Vcount : unsigned (9 downto 0);
-signal fallN			: std_logic_vector(9 downto 0);
+signal fallCount		: std_logic_vector(9 downto 0);
 signal D_read			: std_logic;
 signal Hsync,Vsync	: std_logic;
 signal VGAdata			: std_logic_vector(3 downto 0);
@@ -180,7 +180,7 @@ begin
 		clk		=> nclk25,			--: in std_logic;
 		rst		=> nHsync,			--: in std_logic;
 		
-		count		=> fallN 			--: out std_logic_vector(9 downto 0)
+		count		=> fallCount		--: out std_logic_vector(9 downto 0)
 	);
 	
 	

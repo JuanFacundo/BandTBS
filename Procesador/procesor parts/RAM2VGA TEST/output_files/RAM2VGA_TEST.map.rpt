@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RAM2VGA_TEST
-Mon Jun 03 19:32:03 2024
+Mon Jun 03 20:32:01 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -15,23 +15,25 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated
- 13. Parameter Settings for User Entity Instance: pll1:CLK24|altpll:altpll_component
- 14. Parameter Settings for User Entity Instance: pll2:CLK25|altpll:altpll_component
- 15. Parameter Settings for User Entity Instance: RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component
- 16. altpll Parameter Settings by Entity Instance
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:0:Treg"
- 19. Port Connectivity Checks: "RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:0:Treg"
- 20. Port Connectivity Checks: "RAMdrive:RAMbus"
- 21. Port Connectivity Checks: "counterSync10:fallCnt|Ttype:\CONTR:0:Treg"
- 22. Port Connectivity Checks: "counterSync10:fallCnt"
- 23. Port Connectivity Checks: "VGA_generator:VGA_controller"
- 24. Port Connectivity Checks: "pll1:CLK24"
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated
+ 15. Parameter Settings for User Entity Instance: pll1:CLK24|altpll:altpll_component
+ 16. Parameter Settings for User Entity Instance: pll2:CLK25|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component
+ 18. altpll Parameter Settings by Entity Instance
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:0:Treg"
+ 21. Port Connectivity Checks: "RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:0:Treg"
+ 22. Port Connectivity Checks: "RAMdrive:RAMbus"
+ 23. Port Connectivity Checks: "counterSync10:fallCnt|Ttype:\CONTR:0:Treg"
+ 24. Port Connectivity Checks: "counterSync10:fallCnt"
+ 25. Port Connectivity Checks: "VGA_generator:VGA_controller"
+ 26. Port Connectivity Checks: "pll1:CLK24"
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -57,18 +59,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 03 19:32:03 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 03 20:32:01 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; RAM2VGA_TEST                               ;
 ; Top-level Entity Name              ; RAM2VGA_TEST                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 489                                        ;
-;     Total combinational functions  ; 472                                        ;
-;     Dedicated logic registers      ; 87                                         ;
-; Total registers                    ; 87                                         ;
+; Total logic elements               ; 92                                         ;
+;     Total combinational functions  ; 82                                         ;
+;     Dedicated logic registers      ; 54                                         ;
+; Total registers                    ; 54                                         ;
 ; Total pins                         ; 21                                         ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 2,097,152                                  ;
+; Total memory bits                  ; 32,768                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
 ; Total PLLs                         ; 2                                          ;
 +------------------------------------+--------------------------------------------+
@@ -170,12 +172,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -220,95 +221,71 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 489         ;
+; Estimated Total logic elements              ; 92          ;
 ;                                             ;             ;
-; Total combinational functions               ; 472         ;
+; Total combinational functions               ; 82          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 354         ;
-;     -- 3 input functions                    ; 58          ;
-;     -- <=2 input functions                  ; 60          ;
+;     -- 4 input functions                    ; 32          ;
+;     -- 3 input functions                    ; 14          ;
+;     -- <=2 input functions                  ; 36          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 454         ;
+;     -- normal mode                          ; 64          ;
 ;     -- arithmetic mode                      ; 18          ;
 ;                                             ;             ;
-; Total registers                             ; 87          ;
-;     -- Dedicated logic registers            ; 87          ;
+; Total registers                             ; 54          ;
+;     -- Dedicated logic registers            ; 54          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 21          ;
-; Total memory bits                           ; 2097152     ;
+; Total memory bits                           ; 32768       ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Total PLLs                                  ; 2           ;
 ;     -- PLLs                                 ; 2           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; SW[1]~input ;
-; Maximum fan-out                             ; 331         ;
-; Total fan-out                               ; 9456        ;
-; Average fan-out                             ; 11.01       ;
+; Maximum fan-out                             ; 60          ;
+; Total fan-out                               ; 532         ;
+; Average fan-out                             ; 2.89        ;
 +---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Library Name ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |RAM2VGA_TEST                                ; 472 (1)           ; 87 (0)       ; 2097152     ; 0            ; 0       ; 0         ; 21   ; 0            ; |RAM2VGA_TEST                                                                                                                          ; work         ;
-;    |RAMdrive:RAMbus|                         ; 334 (0)           ; 48 (0)       ; 2097152     ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus                                                                                                          ; work         ;
-;       |RAMdevice:RAMdev|                     ; 288 (0)           ; 13 (0)       ; 2097152     ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev                                                                                         ; work         ;
-;          |altsyncram:altsyncram_component|   ; 288 (0)           ; 13 (0)       ; 2097152     ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component                                                         ; work         ;
-;             |altsyncram_c7q3:auto_generated| ; 288 (7)           ; 13 (13)      ; 2097152     ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated                          ; work         ;
-;                |decode_7ta:decode2|          ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|decode_7ta:decode2       ; work         ;
-;                |decode_7ta:rden_decode_b|    ; 79 (79)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|decode_7ta:rden_decode_b ; work         ;
-;                |mux_jnb:mux3|                ; 129 (129)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|mux_jnb:mux3             ; work         ;
-;       |counterSync16:wC|                     ; 21 (5)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC                                                                                         ; work         ;
-;          |Ttype:\CONTR:0:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:0:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:10:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:10:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:11:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:11:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:12:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:12:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:13:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:13:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:14:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:14:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:15:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:15:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:1:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:1:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:2:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:2:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:3:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:3:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:4:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:4:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:5:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:5:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:6:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:6:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:7:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:7:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:8:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:8:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:9:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:9:Treg                                                                     ; work         ;
-;       |counterSync19:rC|                     ; 25 (6)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC                                                                                         ; work         ;
-;          |Ttype:\CONTR:0:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:0:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:10:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:10:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:11:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:11:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:12:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:12:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:13:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:13:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:14:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:14:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:15:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:15:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:16:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:16:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:17:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:17:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:18:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:18:Treg                                                                    ; work         ;
-;          |Ttype:\CONTR:1:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:1:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:2:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:2:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:3:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:3:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:4:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:4:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:5:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:5:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:6:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:6:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:7:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:7:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:8:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:8:Treg                                                                     ; work         ;
-;          |Ttype:\CONTR:9:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:9:Treg                                                                     ; work         ;
-;    |VGA_generator:VGA_controller|            ; 136 (136)         ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|VGA_generator:VGA_controller                                                                                             ; work         ;
-;    |counterSync10:fallCnt|                   ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|counterSync10:fallCnt                                                                                                    ; work         ;
-;       |Ttype:\CONTR:0:Treg|                  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|counterSync10:fallCnt|Ttype:\CONTR:0:Treg                                                                                ; work         ;
-;    |pll1:CLK24|                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24                                                                                                               ; work         ;
-;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24|altpll:altpll_component                                                                                       ; work         ;
-;          |pll1_altpll:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24|altpll:altpll_component|pll1_altpll:auto_generated                                                            ; work         ;
-;    |pll2:CLK25|                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25                                                                                                               ; work         ;
-;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25|altpll:altpll_component                                                                                       ; work         ;
-;          |pll2_altpll:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated                                                            ; work         ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                        ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                              ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |RAM2VGA_TEST                                ; 82 (1)            ; 54 (0)       ; 32768       ; 0            ; 0       ; 0         ; 21   ; 0            ; |RAM2VGA_TEST                                                                                                                    ; work         ;
+;    |RAMdrive:RAMbus|                         ; 22 (0)            ; 16 (0)       ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus                                                                                                    ; work         ;
+;       |RAMdevice:RAMdev|                     ; 2 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev                                                                                   ; work         ;
+;          |altsyncram:altsyncram_component|   ; 2 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component                                                   ; work         ;
+;             |altsyncram_c7q3:auto_generated| ; 2 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated                    ; work         ;
+;                |decode_7ta:decode2|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|decode_7ta:decode2 ; work         ;
+;       |counterSync16:wC|                     ; 20 (4)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC                                                                                   ; work         ;
+;          |Ttype:\CONTR:0:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:0:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:10:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:10:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:11:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:11:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:12:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:12:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:13:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:13:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:14:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:14:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:15:Treg|              ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:15:Treg                                                              ; work         ;
+;          |Ttype:\CONTR:1:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:1:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:2:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:2:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:3:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:3:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:4:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:4:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:5:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:5:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:6:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:6:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:7:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:7:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:8:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:8:Treg                                                               ; work         ;
+;          |Ttype:\CONTR:9:Treg|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|RAMdrive:RAMbus|counterSync16:wC|Ttype:\CONTR:9:Treg                                                               ; work         ;
+;    |VGA_generator:VGA_controller|            ; 59 (59)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|VGA_generator:VGA_controller                                                                                       ; work         ;
+;    |pll1:CLK24|                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24                                                                                                         ; work         ;
+;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24|altpll:altpll_component                                                                                 ; work         ;
+;          |pll1_altpll:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll1:CLK24|altpll:altpll_component|pll1_altpll:auto_generated                                                      ; work         ;
+;    |pll2:CLK25|                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25                                                                                                         ; work         ;
+;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25|altpll:altpll_component                                                                                 ; work         ;
+;          |pll2_altpll:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RAM2VGA_TEST|pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated                                                      ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -332,17 +309,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                             ;
++-------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; Register name                                                                                                           ; Reason for Removal                   ;
++-------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[0..5]     ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[0..5] ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|rden_b_store            ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:18:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:17:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:16:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:15:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:14:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:13:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:12:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:11:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:10:Treg|Qaux                                                              ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:9:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:8:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:7:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:6:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:5:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:4:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:3:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:2:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:1:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; RAMdrive:RAMbus|counterSync19:rC|Ttype:\CONTR:0:Treg|Qaux                                                               ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 32                                                                                  ;                                      ;
++-------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                    ; Reason for Removal      ; Registers Removed due to This Register                                                                               ;
++------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------+
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[5] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[5] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[4] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[4] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[3] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[3] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[2] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[2] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[1] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[1] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
+; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|address_reg_b[0] ; Stuck at GND            ; RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|out_address_reg_b[0] ;
+;                                                                                                                  ; due to stuck port clock ;                                                                                                                      ;
++------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 87    ;
+; Total registers                              ; 54    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 74    ;
+; Number of registers using Asynchronous Clear ; 54    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 38    ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1242,6 +1270,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+---------------+
 ; Port     ; Type  ; Severity ; Details       ;
 +----------+-------+----------+---------------+
+; clkread  ; Input ; Info     ; Stuck at GND  ;
 ; d_in     ; Input ; Info     ; Stuck at VCC  ;
 ; writeena ; Input ; Info     ; Stuck at VCC  ;
 +----------+-------+----------+---------------+
@@ -1256,13 +1285,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+---------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counterSync10:fallCnt"                                                                     ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; count[9..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counterSync10:fallCnt"                                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; count ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -1290,7 +1319,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1300,7 +1329,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 03 19:31:56 2024
+    Info: Processing started: Mon Jun 03 20:31:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RAM2VGA_TEST -c RAM2VGA_TEST
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file ram2vga_test.vhd
@@ -1311,8 +1340,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file counter
     Info (12022): Found design unit 1: counterSync10-shape
     Info (12023): Found entity 1: counterSync10
 Info (12127): Elaborating entity "RAM2VGA_TEST" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at RAM2VGA_TEST.vhd(104): used implicit default value for signal "ena25M" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at RAM2VGA_TEST.vhd(106): object "Hcount" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at RAM2VGA_TEST.vhd(106): object "Vcount" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at RAM2VGA_TEST.vhd(107): object "fallCount" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at RAM2VGA_TEST.vhd(108): object "D_read" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at RAM2VGA_TEST.vhd(115): object "more684" assigned a value but never read
 Warning (12125): Using design file pll1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -1534,6 +1565,260 @@ Info (12128): Elaborating entity "decode_7ta" for hierarchy "RAMdrive:RAMbus|RAM
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_jnb.tdf
     Info (12023): Found entity 1: mux_jnb
 Info (12128): Elaborating entity "mux_jnb" for hierarchy "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|mux_jnb:mux3"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a4"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a5"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a6"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a7"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a8"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a9"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a10"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a11"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a12"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a13"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a14"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a15"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a16"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a17"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a18"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a19"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a20"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a21"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a22"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a23"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a24"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a25"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a26"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a27"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a28"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a29"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a30"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a31"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a32"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a33"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a34"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a35"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a36"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a37"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a38"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a39"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a40"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a41"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a42"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a43"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a44"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a45"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a46"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a47"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a48"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a49"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a50"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a51"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a52"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a53"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a54"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a55"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a56"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a57"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a58"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a59"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a60"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a61"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a62"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a63"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a64"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a65"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a66"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a67"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a68"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a69"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a70"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a71"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a72"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a73"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a74"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a75"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a76"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a77"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a78"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a79"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a80"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a81"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a82"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a83"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a84"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a85"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a86"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a87"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a88"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a89"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a90"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a91"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a92"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a93"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a94"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a95"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a96"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a97"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a98"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a99"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a100"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a101"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a102"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a103"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a104"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a105"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a106"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a107"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a108"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a109"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a110"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a111"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a112"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a113"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a114"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a115"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a116"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a117"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a118"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a119"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a120"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a121"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a122"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a123"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a124"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a125"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a126"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a127"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a128"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a129"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a130"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a131"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a132"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a133"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a134"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a135"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a136"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a137"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a138"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a139"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a140"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a141"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a142"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a143"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a144"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a145"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a146"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a147"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a148"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a149"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a150"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a151"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a152"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a153"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a154"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a155"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a156"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a157"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a158"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a159"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a160"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a161"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a162"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a163"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a164"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a165"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a166"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a167"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a168"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a169"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a170"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a171"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a172"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a173"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a174"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a175"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a176"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a177"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a178"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a179"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a180"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a181"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a182"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a183"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a184"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a185"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a186"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a187"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a188"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a189"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a190"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a191"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a192"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a193"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a194"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a195"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a196"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a197"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a198"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a199"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a200"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a201"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a202"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a203"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a204"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a205"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a206"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a207"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a208"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a209"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a210"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a211"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a212"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a213"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a214"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a215"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a216"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a217"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a218"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a219"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a220"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a221"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a222"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a223"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a224"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a225"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a226"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a227"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a228"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a229"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a230"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a231"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a232"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a233"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a234"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a235"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a236"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a237"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a238"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a239"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a240"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a241"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a242"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a243"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a244"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a245"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a246"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a247"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a248"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a249"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a250"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a251"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a252"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a253"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a254"
+        Warning (14320): Synthesized away node "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a255"
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity DE0_Default -section_id "Root Region" was ignored
@@ -1564,21 +1849,25 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Warning (15400): WYSIWYG primitive "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a0" has a port clk1 that is stuck at GND
+Warning (15400): WYSIWYG primitive "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a1" has a port clk1 that is stuck at GND
+Warning (15400): WYSIWYG primitive "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a2" has a port clk1 that is stuck at GND
+Warning (15400): WYSIWYG primitive "RAMdrive:RAMbus|RAMdevice:RAMdev|altsyncram:altsyncram_component|altsyncram_c7q3:auto_generated|ram_block1a3" has a port clk1 that is stuck at GND
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[2]"
     Warning (15610): No output dependent on input pin "SW[3]"
     Warning (15610): No output dependent on input pin "SW[4]"
     Warning (15610): No output dependent on input pin "SW[5]"
-Info (21057): Implemented 779 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 500 logic cells
-    Info (21064): Implemented 256 RAM segments
+    Info (21061): Implemented 97 logic cells
+    Info (21064): Implemented 4 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4736 megabytes
-    Info: Processing ended: Mon Jun 03 19:32:03 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 308 warnings
+    Info: Peak virtual memory: 4719 megabytes
+    Info: Processing ended: Mon Jun 03 20:32:01 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
 
 
