@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="RAMCore2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_tup3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_sup3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iup3.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
