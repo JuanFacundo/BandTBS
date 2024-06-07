@@ -33,11 +33,11 @@ int main(void)
 	{
 		uint16_t x_value = ADC_read(0);
 
-		uint16_t pulse_widthx = (int)(x_value*(4000.0/1023.0) + 1000);
+		uint16_t pulse_widthx = (int)(x_value*(2000.0/1023.0) + 2000);
 		
 		uint16_t y_value = ADC_read(1);
 
-		uint16_t pulse_widthy = (int)(y_value*(4000.0/1023.0) + 1000);
+		uint16_t pulse_widthy = (int)(y_value*(2000.0/1023.0) + 2000);
 
 		setPWM(pulse_widthx,pulse_widthy);
 		

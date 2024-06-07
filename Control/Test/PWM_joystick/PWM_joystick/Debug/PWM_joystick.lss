@@ -175,19 +175,19 @@ int main(void)
   f2:	80 e0       	ldi	r24, 0x00	; 0
   f4:	0e 94 47 00 	call	0x8e	; 0x8e <ADC_read>
 
-		uint16_t pulse_widthx = (int)(x_value*(4000.0/1023.0) + 1000);
+		uint16_t pulse_widthx = (int)(x_value*(2000.0/1023.0) + 2000);
   f8:	bc 01       	movw	r22, r24
   fa:	80 e0       	ldi	r24, 0x00	; 0
   fc:	90 e0       	ldi	r25, 0x00	; 0
   fe:	0e 94 57 01 	call	0x2ae	; 0x2ae <__floatunsisf>
  102:	20 e9       	ldi	r18, 0x90	; 144
  104:	3e e3       	ldi	r19, 0x3E	; 62
- 106:	4a e7       	ldi	r20, 0x7A	; 122
- 108:	50 e4       	ldi	r21, 0x40	; 64
+ 106:	4a ef       	ldi	r20, 0xFA	; 250
+ 108:	5f e3       	ldi	r21, 0x3F	; 63
  10a:	0e 94 e5 01 	call	0x3ca	; 0x3ca <__mulsf3>
  10e:	20 e0       	ldi	r18, 0x00	; 0
  110:	30 e0       	ldi	r19, 0x00	; 0
- 112:	4a e7       	ldi	r20, 0x7A	; 122
+ 112:	4a ef       	ldi	r20, 0xFA	; 250
  114:	54 e4       	ldi	r21, 0x44	; 68
  116:	0e 94 b5 00 	call	0x16a	; 0x16a <__addsf3>
  11a:	0e 94 21 01 	call	0x242	; 0x242 <__fixsfsi>
@@ -198,19 +198,19 @@ int main(void)
  122:	81 e0       	ldi	r24, 0x01	; 1
  124:	0e 94 47 00 	call	0x8e	; 0x8e <ADC_read>
 
-		uint16_t pulse_widthy = (int)(y_value*(4000.0/1023.0) + 1000);
+		uint16_t pulse_widthy = (int)(y_value*(2000.0/1023.0) + 2000);
  128:	bc 01       	movw	r22, r24
  12a:	80 e0       	ldi	r24, 0x00	; 0
  12c:	90 e0       	ldi	r25, 0x00	; 0
  12e:	0e 94 57 01 	call	0x2ae	; 0x2ae <__floatunsisf>
  132:	20 e9       	ldi	r18, 0x90	; 144
  134:	3e e3       	ldi	r19, 0x3E	; 62
- 136:	4a e7       	ldi	r20, 0x7A	; 122
- 138:	50 e4       	ldi	r21, 0x40	; 64
+ 136:	4a ef       	ldi	r20, 0xFA	; 250
+ 138:	5f e3       	ldi	r21, 0x3F	; 63
  13a:	0e 94 e5 01 	call	0x3ca	; 0x3ca <__mulsf3>
  13e:	20 e0       	ldi	r18, 0x00	; 0
  140:	30 e0       	ldi	r19, 0x00	; 0
- 142:	4a e7       	ldi	r20, 0x7A	; 122
+ 142:	4a ef       	ldi	r20, 0xFA	; 250
  144:	54 e4       	ldi	r21, 0x44	; 68
  146:	0e 94 b5 00 	call	0x16a	; 0x16a <__addsf3>
  14a:	0e 94 21 01 	call	0x242	; 0x242 <__fixsfsi>
