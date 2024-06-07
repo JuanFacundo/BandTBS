@@ -1,0 +1,239 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Repositorio\BandTBS\Procesador\procesor parts\RAMCore2\simulation\modelsim
+Eramcore2
+Z1 w1717793205
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Repositorio\BandTBS\Procesador\procesor parts\RAMCore2\simulation\modelsim
+Z8 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMCore2.vhd
+Z9 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMCore2.vhd
+l0
+L8
+VAQOdKU_kQ_WMSh=1H;L?d3
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1717794293.203000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMCore2.vhd|
+Z13 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMCore2.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 87D==b8Hnoi<dX_cfG4Si3
+!i10b 1
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 ramcore2 0 22 AQOdKU_kQ_WMSh=1H;L?d3
+l112
+L33
+V>9_JcbznUkPMgGemPTQBn2
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 h4zS446E4oX5b5I72[khi2
+!i10b 1
+Eramdevice_16
+Z16 w1717780092
+Z17 DPx9 altera_mf 20 altera_mf_components 0 22 zh;bE09gCIPDVLK?MN49L3
+R5
+R6
+R7
+Z18 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_16.vhd
+Z19 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_16.vhd
+l0
+L42
+VH<>L^bdohV@Z]o2E[OWUP3
+R10
+31
+Z20 !s108 1717794293.075000
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_16.vhd|
+Z22 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_16.vhd|
+R14
+R15
+!s100 k@l6Rb=il6M:XlXM7eU0U2
+!i10b 1
+Asyn
+R17
+R5
+R6
+DEx4 work 12 ramdevice_16 0 22 H<>L^bdohV@Z]o2E[OWUP3
+l62
+L58
+VDEGl5VIK_XzRVPTiOn;e73
+R10
+31
+R20
+R21
+R22
+R14
+R15
+!s100 11d@`=Y0f^YGm<UF0e`Fn2
+!i10b 1
+Eramdevice_32
+Z23 w1717780023
+R17
+R5
+R6
+R7
+Z24 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_32.vhd
+Z25 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_32.vhd
+l0
+L42
+VookB;A9HdA]DmfX_gMHY<0
+R10
+31
+Z26 !s108 1717794292.957000
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_32.vhd|
+Z28 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_32.vhd|
+R14
+R15
+!s100 _T:_hSOV6B9m>M28P]H;]1
+!i10b 1
+Asyn
+R17
+R5
+R6
+DEx4 work 12 ramdevice_32 0 22 ookB;A9HdA]DmfX_gMHY<0
+l62
+L58
+VzNZ7FUF73d=1<>eKEzcEA0
+R10
+31
+R26
+R27
+R28
+R14
+R15
+!s100 4g4_Tbj_k6C4`L^K;:``_3
+!i10b 1
+Eramdevice_8
+Z29 w1717780127
+R17
+R5
+R6
+R7
+Z30 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_8.vhd
+Z31 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_8.vhd
+l0
+L42
+VTJ;^@ihlVa58]<XHo=U_z2
+R10
+31
+Z32 !s108 1717794292.829000
+Z33 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_8.vhd|
+Z34 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMdevice_8.vhd|
+R14
+R15
+!s100 `eB9QeHg>cA=_KbWYCCIa0
+!i10b 1
+Asyn
+R17
+R5
+R6
+DEx4 work 11 ramdevice_8 0 22 TJ;^@ihlVa58]<XHo=U_z2
+l62
+L58
+VcNL`APUKK=iMCB]NU3]8U0
+R10
+31
+R32
+R33
+R34
+R14
+R15
+!s100 `BC9F?D4B[O57iF6OmK1P0
+!i10b 1
+Erams_drive
+Z35 w1717792596
+R2
+R3
+R4
+R5
+R6
+R7
+Z36 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMs_drive.vhd
+Z37 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMs_drive.vhd
+l0
+L6
+VD;zdF46zGfF=E]0EeU7hL1
+!s100 5dgK19>ob^?HB=8a]IjEh1
+R10
+31
+!i10b 1
+Z38 !s108 1717794293.331000
+Z39 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMs_drive.vhd|
+Z40 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/RAMs_drive.vhd|
+R14
+R15
+Ashape
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 rams_drive 0 22 D;zdF46zGfF=E]0EeU7hL1
+l131
+L41
+Vl`od>NXAhiA<Md`<F9ho90
+!s100 00O_8iPib6K1HK7?D>K7I3
+R10
+31
+!i10b 1
+R38
+R39
+R40
+R14
+R15
+Evga_generator
+Z41 w1717176775
+R2
+R3
+R4
+R5
+R6
+R7
+Z42 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/VGA_generator.vhd
+Z43 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/VGA_generator.vhd
+l0
+L9
+V2Dc1eHT<AUoDV4Aee^<N<3
+R10
+31
+Z44 !s108 1717794292.699000
+Z45 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/VGA_generator.vhd|
+Z46 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/RAMCore2/VGA_generator.vhd|
+R14
+R15
+!s100 =`f`_b9zbzL<gV1WFWM[a0
+!i10b 1
+Abehaviour
+R2
+R3
+R4
+R5
+R6
+DEx4 work 13 vga_generator 0 22 2Dc1eHT<AUoDV4Aee^<N<3
+l32
+L26
+VzahQR[<n@I6TKIJYGd[n12
+R10
+31
+R44
+R45
+R46
+R14
+R15
+!s100 k_@MQfkdF=WSXmo?SMUnz1
+!i10b 1

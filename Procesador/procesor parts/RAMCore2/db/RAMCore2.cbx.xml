@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="RAMCore2">
-		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_tup3.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_sup3.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|RAMs_drive|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iup3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMCore2|pll1:CLK_24M|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMCore2|pll2:CLK25|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMCore2|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_hlq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMCore2|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_glq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RAMCore2|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6lq3.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
