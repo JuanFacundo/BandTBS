@@ -1,0 +1,134 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+
+entity RAMs_drive is
+	port(
+		clkWrite			: in std_logic;
+		clkRead			: in std_logic;
+		
+		D_in				: in std_logic_vector(3 downto 0);
+		
+		writeEna			: in std_logic;
+		readEna			: in std_logic;
+		
+		clear				: in std_logic;
+		rstCount16		: in std_logic;
+		rstCount19		: in std_logic;
+		
+		D_out				: out std_logic_vector(3 downto 0);
+		
+	);
+end entity;
+
+
+
+architecture shape of RAMs_drive is
+
+component RAMdevice_32 is
+	port(
+		data			: in std_logic_vector(3 downto 0);
+		rd_aclr		: in std_logic  := '0';						--High to clear?
+		rdaddress	: in std_logic_vector(15 downto 0);
+		rdclock		: in std_logic;
+		rden			: in std_logic  := '1';						--High to enable reading?
+		wraddress	: in std_logic_vector(15 downto 0);
+		wrclock		: in std_logic  := '1';
+		wren			: in std_logic  := '0';						--High to enable writing
+		q				: out std_logic_vector(3 downto 0)
+	);
+end component;
+
+component RAMdevice_32 is
+	port(
+		data			: in std_logic_vector(3 downto 0);
+		rd_aclr		: in std_logic  := '0';						--High to clear?
+		rdaddress	: in std_logic_vector(15 downto 0);
+		rdclock		: in std_logic;
+		rden			: in std_logic  := '1';						--High to enable reading?
+		wraddress	: in std_logic_vector(15 downto 0);
+		wrclock		: in std_logic  := '1';
+		wren			: in std_logic  := '0';						--High to enable writing
+		q				: out std_logic_vector(3 downto 0)
+	);
+end component;
+
+component RAMdevice_16 is
+	port(
+		data			: in std_logic_vector(3 downto 0);
+		rd_aclr		: in std_logic  := '0';						--High to clear?
+		rdaddress	: in std_logic_vector(14 downto 0);
+		rdclock		: in std_logic;
+		rden			: in std_logic  := '1';						--High to enable reading?
+		wraddress	: in std_logic_vector(14 downto 0);
+		wrclock		: in std_logic  := '1';
+		wren			: in std_logic  := '0';						--High to enable writing
+		q				: out std_logic_vector(3 downto 0)
+	);
+end component;
+
+component RAMdevice_8 is
+	port(
+		data			: in std_logic_vector(3 downto 0);
+		rd_aclr		: in std_logic  := '0';						--High to clear?
+		rdaddress	: in std_logic_vector(13 downto 0);
+		rdclock		: in std_logic;
+		rden			: in std_logic  := '1';						--High to enable reading?
+		wraddress	: in std_logic_vector(13 downto 0);
+		wrclock		: in std_logic  := '1';
+		wren			: in std_logic  := '0';						--High to enable writing
+		q				: out std_logic_vector(3 downto 0)
+	);
+end component;
+
+signal writeDir_32			: std_logic_vector(15 downto 0);
+signal readDir_32				: std_logic_vector(15 downto 0);
+
+signal writeDir_16			: std_logic_vector(14 downto 0);
+signal readDir_16				: std_logic_vector(14 downto 0);
+
+signal writeDir_8				: std_logic_vector(13 downto 0);
+signal readDir_8				: std_logic_vector(13 downto 0);
+
+begin
+
+	
+	RAMdev_32: RAMdevice_32 port map(
+		data			=> D_in,			--: in std_logic_vector(3 downto 0);
+		rd_aclr		=> clear,		--: in std_logic  := '0';						--High to clear?
+		rdaddress	=>	readDir_32,		--: in std_logic_vector(15 downto 0);
+		rdclock		=> clkRead,		--: in std_logic;
+		rden			=> readEna,		--: in std_logic  := '1';						--High to enable reading?
+		wraddress	=> writeDir_32,	--: in std_logic_vector(15 downto 0);
+		wrclock		=> clkWrite,	--: in std_logic  := '1';
+		wren			=> writeEna,	--: in std_logic  := '0';						--High to enable writing
+		q				=> D_out			--: out std_logic_vector(3 downto 0)
+	);
+	
+	RAMdev_16: RAMdevice_16 port map(
+		data			=> D_in,			--: in std_logic_vector(3 downto 0);
+		rd_aclr		=> clear,		--: in std_logic  := '0';						--High to clear?
+		rdaddress	=>	readDir_16,		--: in std_logic_vector(14 downto 0);
+		rdclock		=> clkRead,		--: in std_logic;
+		rden			=> readEna,		--: in std_logic  := '1';						--High to enable reading?
+		wraddress	=> writeDir_16,	--: in std_logic_vector(14 downto 0);
+		wrclock		=> clkWrite,	--: in std_logic  := '1';
+		wren			=> writeEna,	--: in std_logic  := '0';						--High to enable writing
+		q				=> D_out			--: out std_logic_vector(3 downto 0)
+	);
+	
+	RAMdev_8: RAMdevice_8 port map(
+		data			=> D_in,			--: in std_logic_vector(3 downto 0);
+		rd_aclr		=> clear,		--: in std_logic  := '0';						--High to clear?
+		rdaddress	=>	readDir_8,		--: in std_logic_vector(13 downto 0);
+		rdclock		=> clkRead,		--: in std_logic;
+		rden			=> readEna,		--: in std_logic  := '1';						--High to enable reading?
+		wraddress	=> writeDir_8,	--: in std_logic_vector(13 downto 0);
+		wrclock		=> clkWrite,	--: in std_logic  := '1';
+		wren			=> writeEna,	--: in std_logic  := '0';						--High to enable writing
+		q				=> D_out			--: out std_logic_vector(3 downto 0)
+	);
+	
+end shape;
