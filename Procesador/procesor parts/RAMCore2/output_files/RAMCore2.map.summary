@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jun 07 18:44:33 2024
+Analysis & Synthesis Status : Successful - Sat Jun 08 16:37:58 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : RAMCore2
 Top-level Entity Name : RAMCore2
 Family : Cyclone III
-Total logic elements : 1,554
-    Total combinational functions : 1,526
-    Dedicated logic registers : 83
-Total registers : 83
+Total logic elements : 449
+    Total combinational functions : 421
+    Dedicated logic registers : 78
+Total registers : 78
 Total pins : 22
 Total virtual pins : 0
-Total memory bits : 458,752
+Total memory bits : 262,144
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 2
