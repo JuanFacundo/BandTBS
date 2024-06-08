@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sat Jun 08 16:38:08 2024
+Fitter Status : Successful - Sat Jun 08 19:25:55 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : RAMCore2
 Top-level Entity Name : RAMCore2
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 432 / 15,408 ( 3 % )
-    Total combinational functions : 421 / 15,408 ( 3 % )
-    Dedicated logic registers : 78 / 15,408 ( < 1 % )
-Total registers : 78
+Total logic elements : 419 / 15,408 ( 3 % )
+    Total combinational functions : 411 / 15,408 ( 3 % )
+    Dedicated logic registers : 83 / 15,408 ( < 1 % )
+Total registers : 83
 Total pins : 22 / 347 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 262,144 / 516,096 ( 51 % )

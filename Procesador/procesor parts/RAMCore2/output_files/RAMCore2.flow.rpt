@@ -1,5 +1,5 @@
 Flow report for RAMCore2
-Sat Jun 08 16:38:16 2024
+Sat Jun 08 19:26:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun 08 16:38:16 2024      ;
+; Flow Status                        ; Successful - Sat Jun 08 19:26:06 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; RAMCore2                                   ;
 ; Top-level Entity Name              ; RAMCore2                                   ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 432 / 15,408 ( 3 % )                       ;
-;     Total combinational functions  ; 421 / 15,408 ( 3 % )                       ;
-;     Dedicated logic registers      ; 78 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 78                                         ;
+; Total logic elements               ; 419 / 15,408 ( 3 % )                       ;
+;     Total combinational functions  ; 411 / 15,408 ( 3 % )                       ;
+;     Dedicated logic registers      ; 83 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 83                                         ;
 ; Total pins                         ; 22 / 347 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144 / 516,096 ( 51 % )                 ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2024 16:37:53 ;
+; Start date & time ; 06/08/2024 19:25:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RAMCore2            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 279415871484.171787547306888          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 279415871484.171788553623616          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4699 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:09     ; 1.0                     ; 4974 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4585 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4626 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4546 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4694 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 4964 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4585 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4626 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4546 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -54,8 +54,21 @@ begin
 					Video_on_v <= '0';
 					
 		elsif rising_edge (clock_25MHz) and ena = '1' then
-        
-				
+					
+					-- Contador vertical 
+					if  (v_count >= 524) and (h_count = 799) then  
+						 v_count <= (others => '0');
+					elsif (h_count = 799) then
+							  v_count <= v_count + 1;
+					end if;
+	
+					-- Genera sincronismo vertical
+					if (v_count >= 493) and (v_count <= 494) then 
+						 Vsync_aux <= '0';
+					else 
+						 Vsync_aux <= '1';
+					end if;
+					
 					-- Contador horizontal
 					if (h_count = 799) then
 						 h_count <= (others => '0');
@@ -70,20 +83,7 @@ begin
 						 Hsync_aux <= '1';
 					end if;
 					
-					-- Contador vertical 
-					if  (v_count >= 524) and (h_count >= 699) then  
-						 v_count <= (others => '0');
-					elsif (h_count = 699) then
-							  v_count <= v_count + 1;
-					end if;
-					
-					-- Genera sincronismo vertical
-					if (v_count >= 493) and (v_count <= 494) then 
-						 Vsync_aux <= '0';
-					else 
-						 Vsync_aux <= '1';
-					end if;
-				  
+					--habilitacion de impresion en pantalla
 					if (h_count <= 639) then
 						 video_on_h <= '1';
 					else 

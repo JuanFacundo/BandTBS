@@ -110,12 +110,12 @@ signal Q_out_8					: std_logic_vector(3 downto 0);
 
 begin
 
-	write_couters: process (clkWrite,reset,enable)
+write_couters: process (clkWrite,reset,enable)
 	begin
 		
 		if reset = '1' then
-			h_count_write <= (others => '0');
-			v_count_write <= (others => '0');
+			h_count_write 		<= (others => '0');
+			v_count_write 		<= (others => '0');
 		
 		elsif falling_edge (clkWrite) and enable = '1' then
 			
@@ -209,12 +209,14 @@ begin
 	Par_Reg: process(v_count_write) --actualizo el PAR_Reg luego de completar la fila
    begin 
 		
-		if (v_count_write >= 3) and (v_count_write <= 10) then 
+		if (v_count_write >= 3) and (v_count_write <= 10) and reset = '0' then 
 			Parity_register(to_integer(v_count_write - 3 )) <= '0';
 		
-		elsif (v_count_write >= 11) and (v_count_write <= 18) then
+		elsif (v_count_write >= 11) and (v_count_write <= 18) and reset = '0' then
 			Parity_register(to_integer(v_count_write - 11)) <= '1';
-			
+		
+		elsif reset = '1' then 
+			Parity_register <= (others => '0');
       end if;
 		
 	end process;
@@ -291,7 +293,6 @@ begin
 		end if;
 		
 	end process;
-
 	
 	Checking_parity : parity_check <= '1' when (v_count_read <= 9  and v_count_read >= 2  and  Parity_register(to_integer(v_count_Read - 2))  = '0') or
 															 (v_count_read >= 10 and v_count_read <= 17 and  Parity_register(to_integer(v_count_Read - 10)) = '1') else

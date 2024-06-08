@@ -12,20 +12,20 @@ SW[3] => RAMs_drive:RAM_controller.D_in[0]
 SW[4] => RAMs_drive:RAM_controller.D_in[1]
 SW[5] => RAMs_drive:RAM_controller.D_in[2]
 SW[6] => RAMs_drive:RAM_controller.D_in[3]
-VGA_R[0] << VGA_generator:VGA_controller.red[0]
-VGA_R[1] << VGA_generator:VGA_controller.red[1]
-VGA_R[2] << VGA_generator:VGA_controller.red[2]
-VGA_R[3] << VGA_generator:VGA_controller.red[3]
-VGA_G[0] << VGA_generator:VGA_controller.green[0]
-VGA_G[1] << VGA_generator:VGA_controller.green[1]
-VGA_G[2] << VGA_generator:VGA_controller.green[2]
-VGA_G[3] << VGA_generator:VGA_controller.green[3]
-VGA_B[0] << VGA_generator:VGA_controller.blue[0]
-VGA_B[1] << VGA_generator:VGA_controller.blue[1]
-VGA_B[2] << VGA_generator:VGA_controller.blue[2]
-VGA_B[3] << VGA_generator:VGA_controller.blue[3]
-VGA_HS << VGA_HS.DB_MAX_OUTPUT_PORT_TYPE
-VGA_VS << comb.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[0] <= VGA_generator:VGA_controller.red[0]
+VGA_R[1] <= VGA_generator:VGA_controller.red[1]
+VGA_R[2] <= VGA_generator:VGA_controller.red[2]
+VGA_R[3] <= VGA_generator:VGA_controller.red[3]
+VGA_G[0] <= VGA_generator:VGA_controller.green[0]
+VGA_G[1] <= VGA_generator:VGA_controller.green[1]
+VGA_G[2] <= VGA_generator:VGA_controller.green[2]
+VGA_G[3] <= VGA_generator:VGA_controller.green[3]
+VGA_B[0] <= VGA_generator:VGA_controller.blue[0]
+VGA_B[1] <= VGA_generator:VGA_controller.blue[1]
+VGA_B[2] <= VGA_generator:VGA_controller.blue[2]
+VGA_B[3] <= VGA_generator:VGA_controller.blue[3]
+VGA_HS <= VGA_generator:VGA_controller.Hsync
+VGA_VS <= VGA_generator:VGA_controller.Vsync
 
 
 |RAMCore2|pll1:CLK_24M
@@ -308,10 +308,10 @@ rst => Hcount[6]~reg0.ACLR
 rst => Hcount[7]~reg0.ACLR
 rst => Hcount[8]~reg0.ACLR
 rst => Hcount[9]~reg0.ACLR
+ena => Hsync_aux.ENA
 ena => Vsync_aux.ENA
 ena => video_on_h.ENA
 ena => video_on_v.ENA
-ena => Hsync_aux.ENA
 ena => v_count[0].ENA
 ena => v_count[1].ENA
 ena => v_count[2].ENA
@@ -431,6 +431,14 @@ clkWrite => h_count_write[9].CLK
 clkRead => RAMdevice_32:RAMdev_32.rdclock
 clkRead => RAMdevice_16:RAMdev_16.rdclock
 clkRead => RAMdevice_8:RAMdev_8.rdclock
+reset => Parity_register[0].DATAA
+reset => Parity_register[1].DATAA
+reset => Parity_register[2].DATAA
+reset => Parity_register[3].DATAA
+reset => Parity_register[4].DATAA
+reset => Parity_register[5].DATAA
+reset => Parity_register[6].DATAA
+reset => Parity_register[7].DATAA
 reset => v_count_write[0].ACLR
 reset => v_count_write[1].ACLR
 reset => v_count_write[2].ACLR
@@ -452,6 +460,8 @@ reset => h_count_write[7].ACLR
 reset => h_count_write[8].ACLR
 reset => h_count_write[9].ACLR
 reset => ena_read.IN1
+reset => Par_Reg.IN1
+reset => Par_Reg.IN1
 reset => ena_write.IN1
 enable => writeEna.IN1
 enable => ReadEna.IN1

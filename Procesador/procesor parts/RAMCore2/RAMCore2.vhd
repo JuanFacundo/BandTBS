@@ -97,7 +97,7 @@ component RAMs_drive is
 	);
 end component;
 
-signal video_on,clk24M,clk25M		: std_logic;
+signal video_on,clk24M,clk25M,clk12M: std_logic;
 signal Hsync, Vsync					: std_logic;
 signal h_count, v_count        	: unsigned (9 downto 0) := (others => '0');
 signal data							 	: std_logic_vector(3 downto 0):= (others => '0');
@@ -118,7 +118,13 @@ begin
 		c0				=> clk25M
 	);
 	
-	
+	div_clk: process(clk24M)
+	begin
+		if rising_edge(clk24M) then
+			clk12M <= not(clk12M);
+		end if;
+	end process;
+
 	VGA_controller : VGA_generator port map(
 			clock_25MHz => clk25M, 
 			data_in 		=> data,
@@ -127,15 +133,15 @@ begin
 			red 			=> VGA_R, 
 			green 		=> VGA_G, 
 			blue 			=> VGA_B, 
-			Hsync 		=> Hsync, 
-			Vsync 		=> Vsync,
+			Hsync 		=> VGA_HS, 
+			Vsync 		=> VGA_VS,
 			Hcount		=> h_count,
 			Vcount		=> v_count,  
 			VideoOn	  	=> video_on
 		 );
 
 	 RAM_controller : Rams_drive port map(
-			clkWrite		 	=> clk24M,		-- : in std_logic;
+			clkWrite		 	=> clk12M,		-- : in std_logic;
 			clkRead		 	=> clk25M,		-- : in std_logic;
 			reset			 	=> SW(0),		--	: in std_logic;
 			enable		 	=> SW(2),		--	: in std_logic;
