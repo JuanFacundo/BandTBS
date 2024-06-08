@@ -86,7 +86,7 @@ signal h_count_read_aux				: unsigned (9 downto 0) := (others => '0');
 
 signal writeEna				: std_logic := '0';
 signal ReadEna					: std_logic := '0';
-signal Parity_register		: std_logic_vector (7 downto 0):= (others => '0');
+signal Parity_register		: std_logic_vector (237 downto 0):= (others => '0');
 signal parity_check			: std_logic;
 
 signal writeEna_32			: std_logic := '0';
@@ -139,10 +139,10 @@ write_couters: process (clkWrite,reset,enable)
 	
 	ena_write: process(h_count_write,reset,enable)
 	begin
-		if (h_count_write >= 80) and (h_count_write <= 559)  and (v_count_write >= 2)  and (v_count_write <= 17) and reset = '0' and enable = '1' then
+		if (h_count_write >= 80) and (h_count_write <= 559)  and (v_count_write >= 2)  and (v_count_write <= 477) and reset = '0' and enable = '1' then
 			writeEna <= '1';
 		else
-			writeEna 	<= '0';
+			writeEna <= '0';
 		end if;
 	end process;
 	
@@ -209,11 +209,11 @@ write_couters: process (clkWrite,reset,enable)
 	Par_Reg: process(v_count_write) --actualizo el PAR_Reg luego de completar la fila
    begin 
 		
-		if (v_count_write >= 3) and (v_count_write <= 10) and reset = '0' then 
+		if (v_count_write >= 3) and (v_count_write <= 240) and reset = '0' then 
 			Parity_register(to_integer(v_count_write - 3 )) <= '0';
 		
-		elsif (v_count_write >= 11) and (v_count_write <= 18) and reset = '0' then
-			Parity_register(to_integer(v_count_write - 11)) <= '1';
+		elsif (v_count_write >= 241) and (v_count_write <= 478) and reset = '0' then
+			Parity_register(to_integer(v_count_write - 241)) <= '1';
 		
 		elsif reset = '1' then 
 			Parity_register <= (others => '0');
@@ -294,8 +294,8 @@ write_couters: process (clkWrite,reset,enable)
 		
 	end process;
 	
-	Checking_parity : parity_check <= '1' when (v_count_read <= 9  and v_count_read >= 2  and  Parity_register(to_integer(v_count_Read - 2))  = '0') or
-															 (v_count_read >= 10 and v_count_read <= 17 and  Parity_register(to_integer(v_count_Read - 10)) = '1') else
+	Checking_parity : parity_check <= '1' when (v_count_read >= 2   and v_count_read <= 239 and  Parity_register(to_integer(v_count_Read - 2 ))  = '0') or
+															 (v_count_read >= 240 and v_count_read <= 477 and  Parity_register(to_integer(v_count_Read - 240)) = '1') else
 												 '0';
 												 
 	Select_output : D_out <= Q_out_32 when (v_count_read >= 2   and v_count_read <= 137  and parity_check = '1' and ReadEna = '1') else
