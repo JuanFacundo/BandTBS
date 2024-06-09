@@ -98,16 +98,16 @@ begin
 				end if;
 			
 				--- Genera cuadrado  de 480 x 480 y sus diagonales 
-				if (h_count = 80) or (h_count = 559)   then
+				if ( h_count = 80) or (h_count = 559)   then
 					set_color <= '1';
 					
-				elsif (v_count = 0) or (v_count = 479)	then
+				elsif ( ( v_count = 0 ) or ( v_count = 479  ) ) and ( h_count >= 80 ) and ( h_count <= 559 )then
+					set_color <= '1'; 
+					
+				elsif ( h_count - v_count  = 80  )  and (h_count >= 80) and (h_count <= 559) then
 					set_color <= '1';
 					
-				elsif (h_count + v_count - 80  = 0)  and (h_count >= 80) and (h_count <= 559) then
-					set_color <= '1';
-					
-				elsif (h_count - v_count - 560 = 0)  and (h_count >= 80) and (h_count <= 559) then
+				elsif ( h_count + v_count  = 559 )  and (h_count >= 80) and (h_count <= 559) then
 					set_color <= '1';
 					
 				else

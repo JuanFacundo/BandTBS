@@ -223,7 +223,7 @@ write_couters: process (clkWrite,reset,enable)
 	
 	not_clk_Read <= not(clkRead);
 	
-	h_count_read_aux <= h_count_Read + 1;
+	h_count_read_aux <= h_count_Read + 2;
 	
 	ena_read: process(h_count_read_aux,v_count_read,reset,enable)
 	begin
