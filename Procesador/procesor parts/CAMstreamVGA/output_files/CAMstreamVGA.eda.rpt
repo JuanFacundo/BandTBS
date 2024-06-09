@@ -1,5 +1,5 @@
 EDA Netlist Writer report for CAMstreamVGA
-Sat May 25 10:46:19 2024
+Sun Jun 09 12:44:31 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat May 25 10:46:19 2024 ;
+; EDA Netlist Writer Status ; Successful - Sun Jun 09 12:44:31 2024 ;
 ; Revision Name             ; CAMstreamVGA                          ;
 ; Top-level Entity Name     ; CAMstreamVGA                          ;
 ; Family                    ; Cyclone III                           ;
@@ -66,20 +66,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                                                                                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                                                                               ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_85c_slow.vho      ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_0c_slow.vho       ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_min_1200mv_0c_fast.vho     ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA.vho                        ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_85c_vhd_slow.sdo  ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_0c_vhd_slow.sdo   ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_min_1200mv_0c_vhd_fast.sdo ;
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_vhd.sdo                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                                                                         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_85c_slow.vho      ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_0c_slow.vho       ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_min_1200mv_0c_fast.vho     ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA.vho                        ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_85c_vhd_slow.sdo  ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_6_1200mv_0c_vhd_slow.sdo   ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_min_1200mv_0c_vhd_fast.sdo ;
+; C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/CAMstreamVGA_vhd.sdo                    ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,20 +88,20 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat May 25 10:46:18 2024
+    Info: Processing started: Sun Jun 09 12:44:31 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off CAMstreamVGA -c CAMstreamVGA
-Info (204019): Generated file CAMstreamVGA_6_1200mv_85c_slow.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_6_1200mv_0c_slow.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_min_1200mv_0c_fast.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA.vho in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file CAMstreamVGA_vhd.sdo in folder "C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_6_1200mv_85c_slow.vho in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_6_1200mv_0c_slow.vho in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_min_1200mv_0c_fast.vho in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA.vho in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file CAMstreamVGA_vhd.sdo in folder "C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4572 megabytes
-    Info: Processing ended: Sat May 25 10:46:19 2024
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4557 megabytes
+    Info: Processing ended: Sun Jun 09 12:44:31 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 
