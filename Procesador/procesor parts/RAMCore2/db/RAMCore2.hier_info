@@ -186,6 +186,7 @@ inclk[1] => pll1.CLK1
 
 
 |RAMCore2|VGA_generator:VGA_controller
+clock_25MHz => set_color.CLK
 clock_25MHz => video_on_v.CLK
 clock_25MHz => video_on_h.CLK
 clock_25MHz => Vsync_aux.CLK
@@ -308,12 +309,14 @@ rst => Hcount[6]~reg0.ACLR
 rst => Hcount[7]~reg0.ACLR
 rst => Hcount[8]~reg0.ACLR
 rst => Hcount[9]~reg0.ACLR
+rst => set_color.ENA
+ena => set_color.OUTPUTSELECT
+ena => v_count[1].ENA
+ena => v_count[0].ENA
 ena => Hsync_aux.ENA
 ena => Vsync_aux.ENA
 ena => video_on_h.ENA
 ena => video_on_v.ENA
-ena => v_count[0].ENA
-ena => v_count[1].ENA
 ena => v_count[2].ENA
 ena => v_count[3].ENA
 ena => v_count[4].ENA
