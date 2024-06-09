@@ -9,7 +9,7 @@ entity CAMstreamVGA is
 	port(
 		CLOCK_50		: in std_logic;
 		
-		SW				: in std_logic_vector(5 downto 0);
+		SW				: in std_logic_vector(10 downto 0);
 		LEDG			: out std_logic_vector(2 downto 0);
 		
 		GPIO0_D		: out std_logic_vector(3 downto 0);
@@ -71,38 +71,11 @@ component CAPdrive is
 		HREF		: in std_logic;
 		
 		D_out		: out std_logic_vector(3 downto 0);
+		Enable	: out std_logic;
 		outCLK	: out std_logic
 	);
 end component;
 
-component packer is
-	port(
-		rst		: in std_logic;
-		D_in		: in std_logic_vector(3 downto 0);
-		clk_in	: in std_logic;
-		
-		RAMpack	: out std_logic_vector(31 downto 0);
-		clk_out	: out std_logic
-	);
-end component;
-
-component RAMdrive is
-	port(
-		clkWrite			: in std_logic;
-		clkRead			: in std_logic;
-		
-		D_in				: in std_logic_vector(31 downto 0);
-		D_out				: out std_logic_vector(3 downto 0);
-		
-		writeEna			: in std_logic;
-		readEna			: in std_logic;
-		
-		clear				: in std_logic;
-		rstCount16		: in std_logic;
-		rstCount19		: in std_logic
-		
-	);
-end component;
 
 component pll1 is
 	port(
@@ -121,29 +94,69 @@ component pll2 is
 	);
 end component;
 
+component VGA_generator is
+    port(
+        clock_25MHz : in std_logic;
+        data_in	  : in std_logic_vector(3 downto 0);
+		  rst			  : in std_logic;
+		  ena			  : in std_logic;
+        red         : out std_logic_vector(3 downto 0);
+        green       : out std_logic_vector(3 downto 0);
+        blue        : out std_logic_vector(3 downto 0);
+        Hsync       : out std_logic;
+        Vsync       : out std_logic;
+		  Hcount		  : out unsigned (9 downto 0);
+		  Vcount		  : out unsigned (9 downto 0);
+		  VideoOn	  : out std_logic
+    );
+end component;
 
-signal clk24M			: std_logic;
-signal clk25M			: std_logic;
+component RAMs_drive is
+	port(
+		clkWrite			: in std_logic;
+		clkRead			: in std_logic;
+		
+		reset				: in std_logic;
+		enable			: in std_logic;
+		
+		h_count_read	: in unsigned (9 downto 0) := (others => '0');
+		v_count_read	: in unsigned (9 downto 0) := (others => '0');
+		
+		clear				: in std_logic;
+		
+		D_in				: in std_logic_vector(3 downto 0);
+		D_out				: out std_logic_vector(3 downto 0)
+	
+	);
+end component;
+
+signal clk24M,clk25M,clk12M,Enable	: std_logic;
+signal Hsync, Vsync						: std_logic;
+signal h_count, v_count        		: unsigned (9 downto 0) := (others => '0');
+signal data							 		: std_logic_vector(3 downto 0):= (others => '0');
+
 signal clk800k			: std_logic;
 signal rstMssg			: std_logic;
 signal weLIVE			: std_logic;
 
 signal rstCAP			: std_logic;
 signal BWPixel			: std_logic_vector(3 downto 0);
-signal MDR				: std_logic_vector(31 downto 0);
 
-signal sel				: std_logic;
-signal clkWriter		: std_logic;
-signal cleanUp			: std_logic;
-
-signal RAMin			: std_logic_vector(31 downto 0);
 
 begin
+
+	-- Uso de Switches:
+		-- SW(0) : Resetea PLL1, PLL2, RAMs_drive, el mensaje a enviar a la camara y E (Habilitación? ) o sea en '1' para programar la camara y dsp siempre en '0'
+		-- SW(1) : Clear CAPdrive y RAM (limpia en bajo). En alto dispara MCLK 
+		-- SW(2) : habilita VGA 
+		
+	-- Generación de MCLK para la cámara (24MHz)
+	CLK_24M: pll1 port map(areset => SW(0), inclk0 => CLOCK_50, c0 => clk24M, locked => open);
 	
-	CLK_24M: pll1 port map(areset => open, inclk0 => CLOCK_50, c0 => clk24M, locked => open);
+	GPIO0_D(2) <= clk24M and SW(1); -- GPIO0_D2	: MCLK 
 	
-	GPIO0_D(2) <= clk24M and SW(1);
 	
+	-- Programación de la camara 
 	rstMssg <= not(SW(0));
 	
 	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
@@ -151,79 +164,60 @@ begin
 	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
 
 	LEDG(0) <= weLIVE;
-	LEDG(1) <= GPIO1_D(9);
-	LEDG(2) <= GPIO1_D(10);
+	LEDG(1) <= GPIO1_D(9);	--GPIO1_D9	: HREF
+		
+	LEDG(2) <= GPIO1_D(10);	--GPIO1_D10	: VSYNC
 	
 	
-	
-	
+	-- Captura de datos de la camara
 	rstCAP <= not(SW(1));
-	CAPdriver: CAPdrive 
-		port map(
+	
+	CAPdriver: CAPdrive port map(
 			rst		=> rstCAP,
-			D_in		=> GPIO1_D(7 downto 0),
-			PCLK		=> GPIO1_D(8),
-			HREF		=> GPIO1_D(9),
+			D_in		=> GPIO1_D(7 downto 0), -- o bien poner SW (10 downto 3) para probar.  GPIO1_D: (D7,D6,D5,D4,D3,D2,D1 y D0)
+			PCLK		=> GPIO1_D(8), -- PCLK
+			HREF		=> GPIO1_D(9), -- Href
 			D_out		=> BWPixel,
-			outCLK	=> sel);
+			Enable	=> Enable,
+			outCLK	=> clk12M
+		);
 	
-	GPIO0_D(3) <= sel;
+	GPIO0_D(3) <= clk12M; --GPIO0_D3	: multipurpose
 	
-	
-	
-	
-	
-	
-	
-	packing: packer port map(
-		rst			=>	GPIO1_D(10),	--: in std_logic;
-		D_in			=> BWPixel,			--: in std_logic_vector(3 downto 0);
-		clk_in		=> sel,				--: in std_logic;
-		
-		RAMpack		=> RAMin,				--: out std_logic_vector(31 downto 0);
-		clk_out		=> clkWriter			--: out std_logic
-	);
-	
-	 
-	cleanUp <= not(SW(1));
-	RAMmy: RAMdrive port map(
-		clkWrite			=> clkWriter,		--: in std_logic;
-		clkRead			=> '0',				--: in std_logic;
-	
-		D_in				=>	RAMin,			--: in std_logic_vector(31 downto 0);
-		D_out				=> open,				--: out std_logic_vector(3 downto 0);
-		
-		writeEna			=> GPIO1_D(9),		--: in std_logic;
-		readEna			=> SW(1), 			--: in std_logic;
-		
-		clear				=> cleanUp,			--: in std_logic;
-		rstCount16		=> cleanUp,			--: in std_logic;
-		rstCount19		=> cleanUp			--: in std_logic
-	);
-	
-	
-	
+	-- Generación de MCLK para VGA (25.175 MHz)
 	CLK25: pll2 port map(
-		areset		=> SW(1),
+		areset		=> SW(0),
 		inclk0		=> CLOCK_50,
 		c0				=> clk25M
 	);
 	
+	-- Manejador de memoria RAM
+	RAM_controller : Rams_drive port map(
+			clkWrite		 	=> clk12M,			 -- : in std_logic;
+			clkRead		 	=> clk25M,			 -- : in std_logic;
+			reset			 	=> SW(0),			 -- : in std_logic;
+			enable		 	=> Enable,			 -- : in std_logic;
+			h_count_read 	=> h_count,			 -- : in unsigned (9 downto 0) := (others => '0');
+			v_count_read 	=> v_count,			 -- : in unsigned (9 downto 0) := (others => '0');
+			clear			 	=> rstCAP,			 -- : in std_logic;
+			D_in			 	=> BWPixel, 		 -- : in std_logic_vector(3 downto 0);
+			D_out				=> data				 -- : out std_logic_vector(3 downto 0);
+		);
 	
 	
-	
-	
-	
-	
-	
-	
-	VGA_R <= SW(5) & SW(4) & SW(3) & SW(2);
-	VGA_G <= BWPixel;
-	VGA_B <= BWPixel;
-	
-	
-	VGA_HS <= GPIO1_D(9);
-	VGA_VS <= GPIO1_D(10);
-	
+	VGA_controller : VGA_generator port map(
+			clock_25MHz => clk25M, 
+			data_in 		=> data,
+			rst			=> SW(0),
+			ena			=> SW(2),
+			red 			=> VGA_R, 
+			green 		=> VGA_G, 
+			blue 			=> VGA_B, 
+			Hsync 		=> VGA_HS, 
+			Vsync 		=> VGA_VS,
+			Hcount		=> h_count,
+			Vcount		=> v_count,  
+			VideoOn	  	=> open
+		 );
 	
 end shape;
