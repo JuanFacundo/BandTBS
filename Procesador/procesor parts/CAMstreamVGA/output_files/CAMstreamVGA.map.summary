@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Jun 09 12:44:14 2024
+Analysis & Synthesis Status : Successful - Sun Jun 09 18:33:37 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : CAMstreamVGA
 Top-level Entity Name : CAMstreamVGA
 Family : Cyclone III
-Total logic elements : 107
-    Total combinational functions : 89
-    Dedicated logic registers : 92
-Total registers : 92
-Total pins : 39
+Total logic elements : 2,030
+    Total combinational functions : 1,986
+    Dedicated logic registers : 180
+Total registers : 180
+Total pins : 44
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 458,752
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 1
+Total PLLs : 2

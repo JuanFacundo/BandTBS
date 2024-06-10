@@ -31,7 +31,7 @@ begin
 	Qd(1) <=
 		'0' when rst='1' else
 		Qd(0) when rising_edge(clk_in);
-	
+		
 	clk_out <= Qd(1);
 
 end shape;

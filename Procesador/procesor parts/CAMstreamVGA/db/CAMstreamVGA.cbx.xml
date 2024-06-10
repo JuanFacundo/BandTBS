@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="CAMstreamVGA">
-		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|RAMdrive:RAMmy|RAMdevice:RAMdev|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_c7q3.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|pll1:CLK_24M|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|pll2:CLK25|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_hlq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_glq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6lq3.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

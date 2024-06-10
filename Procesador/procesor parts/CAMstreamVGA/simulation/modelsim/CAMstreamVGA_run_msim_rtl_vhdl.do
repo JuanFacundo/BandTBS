@@ -5,6 +5,6 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/packer.vhd}
-vcom -93 -work work {C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/z_1.vhd}
+vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/Z_1.vhd}
+vcom -93 -work work {C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAPdrive.vhd}
 

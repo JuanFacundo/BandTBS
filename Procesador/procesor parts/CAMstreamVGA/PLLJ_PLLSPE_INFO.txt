@@ -3,3 +3,8 @@ PLLJITTER	29
 PLLSPEmax	84
 PLLSPEmin	-53
 
+PLL_Name	pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated|pll1
+PLLJITTER	20
+PLLSPEmax	84
+PLLSPEmin	-53
+

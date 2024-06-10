@@ -2,86 +2,82 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\CAMstreamVGA\simulation\modelsim
-Epacker
-Z1 w1716581624
-Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
-Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z7 dC:\Users\compu\Documents\1Juan\1Facultad\9 Semestre\E1225 Taller de Sistemas Digitales\0Repository\BandTBS\Procesador\procesor parts\CAMstreamVGA\simulation\modelsim
-Z8 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/packer.vhd
-Z9 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/packer.vhd
+Z0 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Repositorio\BandTBS\Procesador\procesor parts\CAMstreamVGA\simulation\modelsim
+Ecapdrive
+Z1 w1717962486
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\matez\OneDrive\Documentos\my-works\5to año\Taller de Sistemas Digitales\Repositorio\BandTBS\Procesador\procesor parts\CAMstreamVGA\simulation\modelsim
+Z6 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAPdrive.vhd
+Z7 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAPdrive.vhd
 l0
-L8
-V9Ji7<mkaSlQ_5^_FRBlPT3
-Z10 OV;C;10.1d;51
+L5
+V0DzeJ<L@oF?TJT8VSXeEU2
+!s100 j8GG7l]066mI7K@SS9e_;2
+Z8 OV;C;10.1d;51
 31
-Z11 !s108 1716581886.898000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/packer.vhd|
-Z13 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/packer.vhd|
-Z14 o-93 -work work -O0
-Z15 tExplicit 1
-!s100 nW7Q8WXA]7^4PgfUoC?8l2
 !i10b 1
+Z9 !s108 1717963143.477000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAPdrive.vhd|
+Z11 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/CAPdrive.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
 Ashape
 R2
 R3
 R4
-R5
-R6
-DEx4 work 6 packer 0 22 9Ji7<mkaSlQ_5^_FRBlPT3
-l36
-L21
-VZ^5RcL]QQ29bnBc;CORX>3
-R10
+DEx4 work 8 capdrive 0 22 0DzeJ<L@oF?TJT8VSXeEU2
+l39
+L17
+VNfa^LK<m8VYJFcYW;0zMJ3
+!s100 2LV5b^fAgB4;0B:<`KEnX1
+R8
 31
+!i10b 1
+R9
+R10
 R11
 R12
 R13
-R14
-R15
-!s100 0M9mdzG^azMEQ1V_KFeM60
-!i10b 1
 Ez_1
-Z16 w1716265839
+Z14 w1717963088
+Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 R2
 R3
 R4
 R5
-R6
-R7
-Z17 8C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/z_1.vhd
-Z18 FC:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/z_1.vhd
+Z17 8C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/Z_1.vhd
+Z18 FC:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/Z_1.vhd
 l0
 L6
 VU581Q6^^eTlEz>>_Og^B_0
-!s100 GcJ3NDTHeX@Wk@ik5?1G80
-R10
+R8
 31
+Z19 !s108 1717963143.313000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/Z_1.vhd|
+Z21 !s107 C:/Users/matez/OneDrive/Documentos/my-works/5to año/Taller de Sistemas Digitales/Repositorio/BandTBS/Procesador/procesor parts/CAMstreamVGA/Z_1.vhd|
+R12
+R13
+!s100 GcJ3NDTHeX@Wk@ik5?1G80
 !i10b 1
-Z19 !s108 1716581886.953000
-Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/z_1.vhd|
-Z21 !s107 C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/CAMstreamVGA/z_1.vhd|
-R14
-R15
 Ashape
+R15
+R16
 R2
 R3
 R4
-R5
-R6
 DEx4 work 3 z_1 0 22 U581Q6^^eTlEz>>_Og^B_0
 l21
 L16
-V88j;O8kUEz;jmUkokk4NS1
-!s100 56PT6=X7EF6XHNI;mgK=D1
-R10
+VaED3m2hA2;XT:^eHbTbCn0
+R8
 31
-!i10b 1
 R19
 R20
 R21
-R14
-R15
+R12
+R13
+!s100 nI2^3<QWB[Ci`PN@XJMAe2
+!i10b 1
