@@ -133,6 +133,7 @@ end component;
 signal clk24M,clk25M,clk12M,Enable	: std_logic;
 signal Hsync, Vsync						: std_logic;
 signal h_count, v_count        		: unsigned (9 downto 0) := (others => '0');
+signal h_countCAM, v_countCAM   		: unsigned (9 downto 0) := (others => '0');
 signal data							 		: std_logic_vector(3 downto 0):= (others => '0');
 
 signal clk800k			: std_logic;
@@ -146,9 +147,10 @@ signal BWPixel			: std_logic_vector(3 downto 0);
 begin
 
 	-- Uso de Switches:
-		-- SW(0) : Resetea PLL1, PLL2, RAMs_drive, el mensaje a enviar a la camara y E (Habilitación? ) o sea en '1' para programar la camara y dsp siempre en '0'
+		-- SW(0) : Resetea PLL1, PLL2, el mensaje a enviar a la camara y E (Habilitación? ) o sea en '1' para programar la camara y dsp siempre en '0'
 		-- SW(1) : Clear CAPdrive y RAM (limpia en bajo). En alto dispara MCLK 
 		-- SW(2) : habilita VGA 
+		-- SW(3) : Resetea RAMs_drive
 		
 	-- Generación de MCLK para la cámara (24MHz)
 	CLK_24M: pll1 port map(areset => SW(0), inclk0 => CLOCK_50, c0 => clk24M, locked => open);
@@ -193,15 +195,15 @@ begin
 	
 	-- Manejador de memoria RAM
 	RAM_controller : Rams_drive port map(
-			clkWrite		 	=> clk12M,			 -- : in std_logic;
-			clkRead		 	=> clk25M,			 -- : in std_logic;
-			reset			 	=> SW(0),			 -- : in std_logic;
-			enable		 	=> Enable,			 -- : in std_logic;
-			h_count_read 	=> h_count,			 -- : in unsigned (9 downto 0) := (others => '0');
-			v_count_read 	=> v_count,			 -- : in unsigned (9 downto 0) := (others => '0');
-			clear			 	=> rstCAP,			 -- : in std_logic;
-			D_in			 	=> BWPixel, 		 -- : in std_logic_vector(3 downto 0);
-			D_out				=> data				 -- : out std_logic_vector(3 downto 0);
+			clkWrite		 	=> clk12M,			-- : in std_logic;
+			clkRead		 	=> clk25M,			-- : in std_logic;
+			reset			 	=> SW(3),			-- : in std_logic;
+			enable		 	=> Enable,			-- : in std_logic;
+			h_count_read 	=> h_count,		-- : in unsigned (9 downto 0) := (others => '0');
+			v_count_read 	=> v_count,		-- : in unsigned (9 downto 0) := (others => '0');
+			clear			 	=> rstCAP,			-- : in std_logic;
+			D_in			 	=> BWPixel, 		-- : in std_logic_vector(3 downto 0);
+			D_out				=> data				-- : out std_logic_vector(3 downto 0);
 		);
 	
 	
@@ -219,5 +221,5 @@ begin
 			Vcount		=> v_count,  
 			VideoOn	  	=> open
 		 );
-	
+		 
 end shape;

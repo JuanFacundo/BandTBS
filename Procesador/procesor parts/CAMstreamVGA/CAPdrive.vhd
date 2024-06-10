@@ -55,7 +55,9 @@ begin
 								 
 	ADDed <= A + B;
 	
-	QaddReg <= (others => '0') when HREF='0' or rst= '1' else ADDed when rising_edge(dPCLK);
+	QaddReg <= 
+		(others => '0') when HREF='0' or rst= '1' else 
+		ADDed when rising_edge(dPCLK);
 	
 	DEPHASE: Z_1 port map(
 		rst => HRST,
@@ -64,13 +66,15 @@ begin
 	);
 	
 	
-	Chewed <= (others => '0') when HREF='0' or rst= '1' else std_logic_vector(QaddReg(5 downto 2)) when rising_edge(lateTurn);
+	Chewed <= 
+		(others => '0') when rst = '1' else--HREF='0' or rst= '1' else 
+		std_logic_vector(QaddReg(5 downto 2)) when rising_edge(lateTurn);
 	
 	D_out <= Chewed;
 	
 	Enable <= Href; -- Deberia en realidad retrasarlo pero outclk ya tiene incluido el retardo asi que creo que no hace falta !!
 	
-	outCLK <= lateTurn;
+	outCLK <= not(lateTurn);
 	
 	-- Asi como esta se pierde el ultimo pixel ¿Importa? 
 	

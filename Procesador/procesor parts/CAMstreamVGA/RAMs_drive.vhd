@@ -98,32 +98,56 @@ signal Q_out_8					: std_logic_vector(3 downto 0);
 
 begin
 
-write_couters: process (clkWrite,reset,enable)
+	write_couunters: process(clkWrite,reset,enable)
 	begin
-		
 		if reset = '1' then
-			h_count_write 		<= (others => '0');
-			v_count_write 		<= (others => '0');
+			
+			h_count_write <= (others => '0');
+			v_count_write <= (others => '0');
 		
-		elsif falling_edge (clkWrite) and enable = '1' then
+		elsif rising_edge(clkWrite) and enable = '1' then
+			
+			h_count_write <= h_count_write + 1;
+			
+			if h_count_write >= 640 then
+				
+				h_count_write <= (others => '0');
+				v_count_write <= v_count_write + 1;
+				
+				if v_count_write >= 480 then
+					v_count_write <= (others => '0');
+				end if;
+			
+			end if;
+		end if;
+	end process;
+
+	--write_couters: process (clkWrite,reset,enable)
+	--begin
+		
+	--	if reset = '1' then
+	--		h_count_write 		<= (others => '0');
+	--		v_count_write 		<= (others => '0');
+		
+	--	elsif falling_edge (clkWrite) and enable = '1' then
 			
 			-- Contador vertical 
-			if  (v_count_write = 479) and (h_count_write = 639) then 
-				v_count_write <= (others => '0');
-			elsif (h_count_write = 639) then 
-				v_count_write <= v_count_write + 1;
-			end if;
+	--		if  (v_count_write = 479) and (h_count_write = 639) then 
+	--			v_count_write <= (others => '0');
+	--		elsif (h_count_write = 639) then 
+	--			v_count_write <= v_count_write + 1;
+	--		end if;
 			
 			-- Contador horizontal
-			if (h_count_write = 639) then
-				h_count_write <= (others => '0');
-			else
-				h_count_write <= h_count_write + 1;
-			end if;
+	--		if (h_count_write = 639) then
+	--			h_count_write <= (others => '0');
+	--		else
+	--			h_count_write <= h_count_write + 1;
+	--		end if;
 			
-		end if;
+	--	end if;
 		
-	end process;
+	--end process;
 	
 	ena_write: process(h_count_write,reset,enable)
 	begin
@@ -215,7 +239,7 @@ write_couters: process (clkWrite,reset,enable)
 	
 	ena_read: process(h_count_read_aux,v_count_read,reset,enable)
 	begin
-		if (h_count_read_aux >= 80) and (h_count_read_aux <= 559) and (v_count_read >= 2) and (v_count_read <= 477) and reset = '0' and enable = '1' then --(v_count_read >= 2) and (v_count_read <= 477)
+		if (h_count_read_aux >= 80) and (h_count_read_aux <= 559) and (v_count_read >= 2) and (v_count_read <= 477) and enable = '1' then-- and reset = '0'  then --(v_count_read >= 2) and (v_count_read <= 477)
 			ReadEna <= '1';
 		else
 			ReadEna <= '0';
