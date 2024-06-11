@@ -147,7 +147,7 @@ signal BWPixel			: std_logic_vector(3 downto 0);
 begin
 
 	-- Uso de Switches:
-		-- SW(0) : Resetea PLL1, PLL2, el mensaje a enviar a la camara y E (Habilitación? ) o sea en '1' para programar la camara y dsp siempre en '0'
+		-- SW(0) : Resetea PLL1, PLL2, el mensaje a enviar a la camara y E (Habilitación?) o sea en '1' para programar la camara y dsp siempre en '0'
 		-- SW(1) : Clear CAPdrive y RAM (limpia en bajo). En alto dispara MCLK 
 		-- SW(2) : habilita VGA 
 		-- SW(3) : Resetea RAMs_drive
@@ -176,7 +176,7 @@ begin
 	
 	CAPdriver: CAPdrive port map(
 			rst		=> rstCAP,
-			D_in		=> GPIO1_D(7 downto 0), -- o bien poner SW (10 downto 3) para probar.  GPIO1_D: (D7,D6,D5,D4,D3,D2,D1 y D0)
+			D_in		=> '0' & SW(9 downto 3),--GPIO1_D(7 downto 0), -- o bien poner SW (10 downto 3) para probar.  GPIO1_D: (D7,D6,D5,D4,D3,D2,D1 y D0)
 			PCLK		=> GPIO1_D(8), -- PCLK
 			HREF		=> GPIO1_D(9), -- Href
 			D_out		=> BWPixel,
@@ -197,7 +197,7 @@ begin
 	RAM_controller : Rams_drive port map(
 			clkWrite		 	=> clk12M,			-- : in std_logic;
 			clkRead		 	=> clk25M,			-- : in std_logic;
-			reset			 	=> SW(3),			-- : in std_logic;
+			reset			 	=> SW(2),			-- : in std_logic;
 			enable		 	=> Enable,			-- : in std_logic;
 			h_count_read 	=> h_count,		-- : in unsigned (9 downto 0) := (others => '0');
 			v_count_read 	=> v_count,		-- : in unsigned (9 downto 0) := (others => '0');
@@ -211,7 +211,7 @@ begin
 			clock_25MHz => clk25M, 
 			data_in 		=> data,
 			rst			=> SW(0),
-			ena			=> SW(2),
+			ena			=> '1',
 			red 			=> VGA_R, 
 			green 		=> VGA_G, 
 			blue 			=> VGA_B, 

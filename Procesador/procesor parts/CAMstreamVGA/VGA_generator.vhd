@@ -58,9 +58,9 @@ begin
 					
 				-- Contador vertical 
 				if  (v_count >= 524) and (h_count = 799) then  
-					 v_count <= (others => '0');
+					v_count <= (others => '0');
 				elsif (h_count = 799) then
-						  v_count <= v_count + 1;
+					v_count <= v_count + 1;
 				end if;
 
 				-- Genera sincronismo vertical

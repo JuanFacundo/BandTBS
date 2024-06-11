@@ -95,6 +95,7 @@ signal readEna_8				: std_logic := '0';
 signal readDir_8				: std_logic_vector(13 downto 0):= (others => '0');
 signal Q_out_8					: std_logic_vector(3 downto 0);
 
+signal Rclk, Wclk				: std_logic;
 
 begin
 
@@ -227,7 +228,7 @@ begin
 		elsif (v_count_write >= 241) and (v_count_write <= 478) and reset = '0' then
 			Parity_register(to_integer(v_count_write - 241)) <= '1';
 		
-		elsif reset = '1' then 
+		elsif clear = '1' then 
 			Parity_register <= (others => '0');
       end if;
 		
@@ -318,14 +319,18 @@ begin
 									 Q_out_8	 when (v_count_read >= 444 and v_count_read <= 477  and parity_check = '1' and ReadEna = '1') else
 									 "0000";											 
 	
+	Wclk <= clkWrite and WriteEna;
+	
+	Rclk <= not_clk_Read and ReadEna;
+	
 	RAMdev_32: RAMdevice_32 port map(
 		data			=> D_in,				--: in std_logic_vector(3 downto 0);
 		rd_aclr		=> clear,			--: in std_logic  := '0';						--High to clear?
 		rdaddress	=>	readDir_32,		--: in std_logic_vector(15 downto 0);
-		rdclock		=> not_clk_Read ,	--: in std_logic;
+		rdclock		=> Rclk ,	--: in std_logic;
 		rden			=> readEna_32,		--: in std_logic  := '1';						--High to enable reading?
 		wraddress	=> writeDir_32,	--: in std_logic_vector(15 downto 0);
-		wrclock		=> clkWrite,		--: in std_logic  := '1';
+		wrclock		=> Wclk,		--: in std_logic  := '1';
 		wren			=> WriteEna_32,	--: in std_logic  := '0';						--High to enable writing
 		q				=> Q_out_32			--: out std_logic_vector(3 downto 0)
 	);
@@ -334,10 +339,10 @@ begin
 		data			=> D_in,				--: in std_logic_vector(3 downto 0);
 		rd_aclr		=> clear,			--: in std_logic  := '0';						--High to clear?
 		rdaddress	=>	readDir_16,		--: in std_logic_vector(14 downto 0);
-		rdclock		=> not_clk_Read ,	--: in std_logic;
+		rdclock		=> Rclk ,	--: in std_logic;
 		rden			=> readEna_16,		--: in std_logic  := '1';						--High to enable reading?
 		wraddress	=> writeDir_16,	--: in std_logic_vector(14 downto 0);
-		wrclock		=> clkWrite,		--: in std_logic  := '1';
+		wrclock		=> Wclk,		--: in std_logic  := '1';
 		wren			=> WriteEna_16,	--: in std_logic  := '0';						--High to enable writing
 		q				=> Q_out_16			--: out std_logic_vector(3 downto 0)
 	);
@@ -346,10 +351,10 @@ begin
 		data			=> D_in,				--: in std_logic_vector(3 downto 0);
 		rd_aclr		=> clear,			--: in std_logic  := '0';						--High to clear?
 		rdaddress	=>	readDir_8,		--: in std_logic_vector(13 downto 0);
-		rdclock		=> not_clk_Read ,	--: in std_logic;
+		rdclock		=> Rclk ,	--: in std_logic;
 		rden			=> readEna_8,		--: in std_logic  := '1';						--High to enable reading?
 		wraddress	=> writeDir_8,		--: in std_logic_vector(13 downto 0);
-		wrclock		=> clkWrite,		--: in std_logic  := '1';
+		wrclock		=> Wclk,		--: in std_logic  := '1';
 		wren			=> WriteEna_8,		--: in std_logic  := '0';						--High to enable writing
 		q				=> Q_out_8			--: out std_logic_vector(3 downto 0)
 	);

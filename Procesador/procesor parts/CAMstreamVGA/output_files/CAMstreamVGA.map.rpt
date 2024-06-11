@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CAMstreamVGA
-Mon Jun 10 12:59:50 2024
+Tue Jun 11 09:37:51 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -30,10 +30,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  22. altpll Parameter Settings by Entity Instance
  23. altsyncram Parameter Settings by Entity Instance
  24. Port Connectivity Checks: "VGA_generator:VGA_controller"
- 25. Port Connectivity Checks: "SCCBdrive:SCCBdriver|P2Sreg:REGS"
- 26. Port Connectivity Checks: "pll1:CLK_24M"
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+ 25. Port Connectivity Checks: "CAPdrive:CAPdriver"
+ 26. Port Connectivity Checks: "SCCBdrive:SCCBdriver|P2Sreg:REGS"
+ 27. Port Connectivity Checks: "pll1:CLK_24M"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +60,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 10 12:59:50 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 11 09:37:51 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; CAMstreamVGA                               ;
 ; Top-level Entity Name              ; CAMstreamVGA                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 2,023                                      ;
-;     Total combinational functions  ; 1,979                                      ;
-;     Dedicated logic registers      ; 180                                        ;
-; Total registers                    ; 180                                        ;
+; Total logic elements               ; 2,076                                      ;
+;     Total combinational functions  ; 2,033                                      ;
+;     Dedicated logic registers      ; 179                                        ;
+; Total registers                    ; 179                                        ;
 ; Total pins                         ; 44                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 458,752                                    ;
@@ -231,20 +232,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
-; Estimated Total logic elements              ; 2,023                               ;
+; Estimated Total logic elements              ; 2,076                               ;
 ;                                             ;                                     ;
-; Total combinational functions               ; 1979                                ;
+; Total combinational functions               ; 2033                                ;
 ; Logic element usage by number of LUT inputs ;                                     ;
-;     -- 4 input functions                    ; 881                                 ;
-;     -- 3 input functions                    ; 663                                 ;
-;     -- <=2 input functions                  ; 435                                 ;
+;     -- 4 input functions                    ; 952                                 ;
+;     -- 3 input functions                    ; 665                                 ;
+;     -- <=2 input functions                  ; 416                                 ;
 ;                                             ;                                     ;
 ; Logic elements by mode                      ;                                     ;
-;     -- normal mode                          ; 1628                                ;
+;     -- normal mode                          ; 1682                                ;
 ;     -- arithmetic mode                      ; 351                                 ;
 ;                                             ;                                     ;
-; Total registers                             ; 180                                 ;
-;     -- Dedicated logic registers            ; 180                                 ;
+; Total registers                             ; 179                                 ;
+;     -- Dedicated logic registers            ; 179                                 ;
 ;     -- I/O registers                        ; 0                                   ;
 ;                                             ;                                     ;
 ; I/O pins                                    ; 44                                  ;
@@ -254,9 +255,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 2                                   ;
 ;                                             ;                                     ;
 ; Maximum fan-out node                        ; RAMs_drive:RAM_controller|Par_Reg~5 ;
-; Maximum fan-out                             ; 289                                 ;
-; Total fan-out                               ; 8886                                ;
-; Average fan-out                             ; 3.86                                ;
+; Maximum fan-out                             ; 418                                 ;
+; Total fan-out                               ; 9086                                ;
+; Average fan-out                             ; 3.85                                ;
 +---------------------------------------------+-------------------------------------+
 
 
@@ -265,22 +266,22 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                    ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CAMstreamVGA                                ; 1979 (1)          ; 180 (0)      ; 458752      ; 0            ; 0       ; 0         ; 44   ; 0            ; |CAMstreamVGA                                                                                                                                          ; work         ;
-;    |CAPdrive:CAPdriver|                      ; 15 (14)           ; 22 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|CAPdrive:CAPdriver                                                                                                                       ; work         ;
+; |CAMstreamVGA                                ; 2033 (1)          ; 179 (0)      ; 458752      ; 0            ; 0       ; 0         ; 44   ; 0            ; |CAMstreamVGA                                                                                                                                          ; work         ;
+;    |CAPdrive:CAPdriver|                      ; 15 (14)           ; 21 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|CAPdrive:CAPdriver                                                                                                                       ; work         ;
 ;       |Z_1:DEPHASE|                          ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|CAPdrive:CAPdriver|Z_1:DEPHASE                                                                                                           ; work         ;
-;    |RAMs_drive:RAM_controller|               ; 1790 (1735)       ; 29 (20)      ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller                                                                                                                ; work         ;
-;       |RAMdevice_16:RAMdev_16|               ; 15 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16                                                                                         ; work         ;
-;          |altsyncram:altsyncram_component|   ; 15 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component                                                         ; work         ;
-;             |altsyncram_hlq3:auto_generated| ; 15 (2)            ; 3 (3)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated                          ; work         ;
+;    |RAMs_drive:RAM_controller|               ; 1846 (1788)       ; 29 (20)      ; 458752      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller                                                                                                                ; work         ;
+;       |RAMdevice_16:RAMdev_16|               ; 16 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16                                                                                         ; work         ;
+;          |altsyncram:altsyncram_component|   ; 16 (0)            ; 3 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component                                                         ; work         ;
+;             |altsyncram_hlq3:auto_generated| ; 16 (2)            ; 3 (3)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated                          ; work         ;
 ;                |decode_dra:decode2|          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated|decode_dra:decode2       ; work         ;
 ;                |decode_dra:rden_decode_b|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated|decode_dra:rden_decode_b ; work         ;
-;                |mux_plb:mux3|                ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated|mux_plb:mux3             ; work         ;
-;       |RAMdevice_32:RAMdev_32|               ; 35 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32                                                                                         ; work         ;
-;          |altsyncram:altsyncram_component|   ; 35 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component                                                         ; work         ;
-;             |altsyncram_glq3:auto_generated| ; 35 (4)            ; 4 (4)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated                          ; work         ;
+;                |mux_plb:mux3|                ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_16:RAMdev_16|altsyncram:altsyncram_component|altsyncram_hlq3:auto_generated|mux_plb:mux3             ; work         ;
+;       |RAMdevice_32:RAMdev_32|               ; 37 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32                                                                                         ; work         ;
+;          |altsyncram:altsyncram_component|   ; 37 (0)            ; 4 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component                                                         ; work         ;
+;             |altsyncram_glq3:auto_generated| ; 37 (4)            ; 4 (4)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated                          ; work         ;
 ;                |decode_ira:decode2|          ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2       ; work         ;
 ;                |decode_ira:rden_decode_b|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b ; work         ;
-;                |mux_ulb:mux3|                ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
+;                |mux_ulb:mux3|                ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
 ;       |RAMdevice_8:RAMdev_8|                 ; 5 (0)             ; 2 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8                                                                                           ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 5 (0)             ; 2 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component                                                           ; work         ;
 ;             |altsyncram_6lq3:auto_generated| ; 5 (1)             ; 2 (2)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component|altsyncram_6lq3:auto_generated                            ; work         ;
@@ -288,7 +289,7 @@ applicable agreement for further details.
 ;                |decode_ara:rden_decode_b|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|RAMs_drive:RAM_controller|RAMdevice_8:RAMdev_8|altsyncram:altsyncram_component|altsyncram_6lq3:auto_generated|decode_ara:rden_decode_b   ; work         ;
 ;    |SCCBdrive:SCCBdriver|                    ; 65 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver                                                                                                                     ; work         ;
 ;       |P2Sreg:REGS|                          ; 52 (52)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                                                         ; work         ;
-;    |VGA_generator:VGA_controller|            ; 102 (102)         ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|VGA_generator:VGA_controller                                                                                                             ; work         ;
+;    |VGA_generator:VGA_controller|            ; 100 (100)         ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|VGA_generator:VGA_controller                                                                                                             ; work         ;
 ;    |div800k:DIV800|                          ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|div800k:DIV800                                                                                                                           ; work         ;
 ;    |pll1:CLK_24M|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|pll1:CLK_24M                                                                                                                             ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAMstreamVGA|pll1:CLK_24M|altpll:altpll_component                                                                                                     ; work         ;
@@ -439,8 +440,9 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
+; CAPdrive:CAPdriver|QinReg[7]          ; Stuck at GND due to stuck port data_in ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -449,12 +451,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 180   ;
+; Total registers                              ; 179   ;
 ; Number of registers using Synchronous Clear  ; 21    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 170   ;
+; Number of registers using Asynchronous Clear ; 169   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Clock Enable       ; 35    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1506,8 +1508,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+; ena     ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; videoon ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "CAPdrive:CAPdriver" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; d_in[7] ; Input ; Info     ; Stuck at GND      ;
++---------+-------+----------+-------------------+
 
 
 +--------------------------------------------------------------+
@@ -1540,7 +1552,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1550,7 +1562,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 10 12:59:45 2024
+    Info: Processing started: Tue Jun 11 09:37:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CAMstreamVGA -c CAMstreamVGA
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file vga_generator.vhd
@@ -1759,345 +1771,345 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll2
     Info (12023): Found entity 1: pll2_altpll
 Info (12128): Elaborating entity "pll2_altpll" for hierarchy "pll2:CLK25|altpll:altpll_component|pll2_altpll:auto_generated"
 Info (12128): Elaborating entity "RAMs_drive" for hierarchy "RAMs_drive:RAM_controller"
-Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(154): signal "v_count_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(161): inferring latch(es) for signal or variable "writeDir_32", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(161): inferring latch(es) for signal or variable "writeDir_8", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(161): inferring latch(es) for signal or variable "writeDir_16", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(224): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(227): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(230): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(221): inferring latch(es) for signal or variable "Parity_register", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(249): inferring latch(es) for signal or variable "readDir_32", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(249): inferring latch(es) for signal or variable "readDir_8", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(249): inferring latch(es) for signal or variable "readDir_16", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "readDir_16[0]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[1]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[2]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[3]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[4]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[5]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[6]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[7]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[8]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[9]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[10]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[11]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[12]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[13]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_16[14]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[0]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[1]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[2]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[3]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[4]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[5]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[6]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[7]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[8]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[9]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[10]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[11]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[12]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_8[13]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[0]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[1]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[2]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[3]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[4]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[5]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[6]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[7]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[8]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[9]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[10]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[11]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[12]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[13]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[14]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "readDir_32[15]" at RAMs_drive.vhd(249)
-Info (10041): Inferred latch for "Parity_register[0]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[1]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[2]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[3]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[4]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[5]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[6]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[7]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[8]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[9]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[10]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[11]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[12]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[13]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[14]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[15]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[16]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[17]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[18]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[19]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[20]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[21]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[22]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[23]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[24]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[25]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[26]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[27]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[28]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[29]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[30]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[31]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[32]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[33]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[34]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[35]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[36]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[37]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[38]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[39]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[40]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[41]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[42]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[43]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[44]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[45]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[46]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[47]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[48]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[49]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[50]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[51]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[52]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[53]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[54]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[55]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[56]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[57]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[58]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[59]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[60]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[61]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[62]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[63]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[64]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[65]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[66]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[67]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[68]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[69]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[70]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[71]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[72]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[73]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[74]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[75]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[76]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[77]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[78]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[79]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[80]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[81]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[82]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[83]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[84]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[85]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[86]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[87]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[88]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[89]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[90]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[91]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[92]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[93]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[94]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[95]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[96]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[97]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[98]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[99]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[100]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[101]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[102]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[103]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[104]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[105]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[106]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[107]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[108]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[109]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[110]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[111]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[112]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[113]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[114]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[115]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[116]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[117]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[118]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[119]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[120]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[121]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[122]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[123]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[124]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[125]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[126]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[127]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[128]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[129]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[130]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[131]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[132]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[133]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[134]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[135]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[136]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[137]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[138]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[139]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[140]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[141]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[142]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[143]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[144]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[145]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[146]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[147]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[148]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[149]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[150]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[151]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[152]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[153]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[154]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[155]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[156]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[157]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[158]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[159]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[160]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[161]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[162]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[163]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[164]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[165]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[166]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[167]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[168]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[169]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[170]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[171]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[172]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[173]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[174]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[175]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[176]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[177]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[178]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[179]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[180]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[181]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[182]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[183]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[184]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[185]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[186]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[187]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[188]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[189]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[190]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[191]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[192]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[193]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[194]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[195]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[196]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[197]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[198]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[199]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[200]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[201]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[202]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[203]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[204]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[205]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[206]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[207]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[208]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[209]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[210]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[211]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[212]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[213]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[214]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[215]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[216]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[217]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[218]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[219]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[220]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[221]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[222]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[223]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[224]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[225]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[226]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[227]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[228]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[229]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[230]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[231]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[232]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[233]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[234]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[235]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[236]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "Parity_register[237]" at RAMs_drive.vhd(221)
-Info (10041): Inferred latch for "writeDir_16[0]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[1]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[2]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[3]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[4]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[5]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[6]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[7]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[8]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[9]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[10]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[11]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[12]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[13]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_16[14]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[0]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[1]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[2]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[3]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[4]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[5]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[6]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[7]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[8]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[9]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[10]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[11]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[12]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_8[13]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[0]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[1]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[2]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[3]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[4]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[5]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[6]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[7]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[8]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[9]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[10]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[11]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[12]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[13]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[14]" at RAMs_drive.vhd(161)
-Info (10041): Inferred latch for "writeDir_32[15]" at RAMs_drive.vhd(161)
+Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(155): signal "v_count_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(162): inferring latch(es) for signal or variable "writeDir_32", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(162): inferring latch(es) for signal or variable "writeDir_8", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(162): inferring latch(es) for signal or variable "writeDir_16", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(225): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(228): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at RAMs_drive.vhd(231): signal "clear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(222): inferring latch(es) for signal or variable "Parity_register", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(250): inferring latch(es) for signal or variable "readDir_32", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(250): inferring latch(es) for signal or variable "readDir_8", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at RAMs_drive.vhd(250): inferring latch(es) for signal or variable "readDir_16", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "readDir_16[0]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[1]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[2]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[3]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[4]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[5]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[6]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[7]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[8]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[9]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[10]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[11]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[12]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[13]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_16[14]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[0]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[1]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[2]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[3]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[4]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[5]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[6]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[7]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[8]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[9]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[10]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[11]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[12]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_8[13]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[0]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[1]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[2]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[3]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[4]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[5]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[6]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[7]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[8]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[9]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[10]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[11]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[12]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[13]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[14]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "readDir_32[15]" at RAMs_drive.vhd(250)
+Info (10041): Inferred latch for "Parity_register[0]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[1]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[2]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[3]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[4]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[5]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[6]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[7]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[8]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[9]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[10]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[11]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[12]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[13]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[14]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[15]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[16]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[17]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[18]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[19]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[20]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[21]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[22]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[23]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[24]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[25]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[26]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[27]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[28]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[29]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[30]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[31]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[32]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[33]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[34]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[35]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[36]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[37]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[38]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[39]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[40]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[41]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[42]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[43]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[44]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[45]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[46]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[47]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[48]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[49]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[50]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[51]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[52]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[53]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[54]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[55]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[56]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[57]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[58]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[59]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[60]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[61]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[62]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[63]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[64]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[65]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[66]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[67]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[68]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[69]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[70]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[71]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[72]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[73]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[74]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[75]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[76]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[77]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[78]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[79]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[80]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[81]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[82]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[83]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[84]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[85]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[86]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[87]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[88]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[89]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[90]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[91]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[92]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[93]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[94]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[95]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[96]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[97]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[98]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[99]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[100]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[101]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[102]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[103]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[104]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[105]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[106]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[107]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[108]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[109]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[110]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[111]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[112]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[113]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[114]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[115]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[116]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[117]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[118]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[119]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[120]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[121]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[122]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[123]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[124]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[125]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[126]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[127]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[128]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[129]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[130]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[131]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[132]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[133]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[134]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[135]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[136]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[137]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[138]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[139]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[140]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[141]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[142]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[143]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[144]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[145]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[146]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[147]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[148]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[149]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[150]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[151]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[152]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[153]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[154]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[155]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[156]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[157]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[158]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[159]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[160]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[161]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[162]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[163]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[164]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[165]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[166]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[167]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[168]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[169]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[170]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[171]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[172]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[173]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[174]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[175]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[176]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[177]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[178]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[179]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[180]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[181]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[182]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[183]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[184]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[185]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[186]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[187]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[188]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[189]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[190]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[191]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[192]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[193]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[194]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[195]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[196]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[197]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[198]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[199]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[200]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[201]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[202]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[203]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[204]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[205]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[206]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[207]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[208]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[209]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[210]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[211]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[212]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[213]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[214]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[215]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[216]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[217]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[218]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[219]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[220]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[221]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[222]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[223]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[224]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[225]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[226]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[227]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[228]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[229]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[230]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[231]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[232]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[233]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[234]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[235]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[236]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "Parity_register[237]" at RAMs_drive.vhd(222)
+Info (10041): Inferred latch for "writeDir_16[0]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[1]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[2]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[3]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[4]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[5]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[6]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[7]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[8]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[9]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[10]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[11]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[12]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[13]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_16[14]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[0]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[1]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[2]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[3]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[4]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[5]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[6]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[7]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[8]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[9]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[10]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[11]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[12]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_8[13]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[0]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[1]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[2]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[3]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[4]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[5]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[6]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[7]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[8]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[9]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[10]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[11]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[12]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[13]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[14]" at RAMs_drive.vhd(162)
+Info (10041): Inferred latch for "writeDir_32[15]" at RAMs_drive.vhd(162)
 Info (12128): Elaborating entity "RAMdevice_32" for hierarchy "RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "RAMs_drive:RAM_controller|RAMdevice_32:RAMdev_32|altsyncram:altsyncram_component"
@@ -2291,487 +2303,487 @@ Info (12128): Elaborating entity "VGA_generator" for hierarchy "VGA_generator:VG
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer SCCBdrive:SCCBdriver|C_Eedge~0
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[72] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[73] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[40] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[41] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[104] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[105] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[36] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[37] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[68] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[69] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[100] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[101] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[32] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[33] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[64] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[65] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[96] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[97] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[76] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[77] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[44] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[45] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[108] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[109] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[90] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[91] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[58] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[59] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[122] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[123] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[54] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[55] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[86] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[87] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[118] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[119] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[50] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[51] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[82] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[83] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[114] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[115] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[94] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[95] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[62] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[63] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[126] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[127] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[88] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[89] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[56] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[57] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[120] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[121] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[52] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[53] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[84] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[85] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[116] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[117] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[48] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[49] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[80] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[81] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[112] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[113] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[92] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[93] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[60] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[61] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[124] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[125] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[74] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[75] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[42] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[43] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[106] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[107] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[38] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[39] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[70] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[71] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[102] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[103] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[34] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[35] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[66] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[67] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[98] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[99] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[78] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[79] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[46] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[47] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[110] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[111] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[196] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[197] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[194] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[195] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[192] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[193] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[198] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[199] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[220] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[221] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[218] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[219] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[216] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[217] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[222] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[223] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[212] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[213] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[210] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[211] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[208] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[209] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[214] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[215] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[204] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[205] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[202] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[203] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[200] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[201] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[206] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[207] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[168] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[169] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[162] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[163] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[160] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[161] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[170] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[171] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[188] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[189] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[182] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[183] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[180] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[181] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[190] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[191] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[184] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[185] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[178] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[179] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[176] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[177] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[186] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[187] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[172] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[173] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[166] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[167] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[164] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[165] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[174] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[175] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[130] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[131] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[132] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[133] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[128] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[129] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[134] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[135] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[154] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[155] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[156] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[157] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[152] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[153] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[158] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[159] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[146] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[147] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[148] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[149] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[144] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[145] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[150] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[151] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[138] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[139] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[140] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[141] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[136] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[137] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[142] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[143] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[226] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[227] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[228] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[229] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[224] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[225] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[230] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[231] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[232] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[233] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[234] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[235] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[236] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|Parity_register[237] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_generator:VGA_controller|Vcount[8]
 Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[14] has unsafe behavior
@@ -2779,31 +2791,31 @@ Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[14] has unsafe behav
 Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[13] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_generator:VGA_controller|Vcount[8]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal RAMs_drive:RAM_controller|h_count_write[4]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|writeDir_32[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[2]
 Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal RAMs_drive:RAM_controller|ReadEna
 Warning (13012): Latch RAMs_drive:RAM_controller|readDir_32[1] has unsafe behavior
@@ -3004,24 +3016,26 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[10]"
-Info (21057): Implemented 2137 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "GPIO1_D[0]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[1]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[2]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[3]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[4]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[5]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[6]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[7]"
+Info (21057): Implemented 2190 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 2035 logic cells
+    Info (21061): Implemented 2088 logic cells
     Info (21064): Implemented 56 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 736 warnings
-    Info: Peak virtual memory: 4731 megabytes
-    Info: Processing ended: Mon Jun 10 12:59:50 2024
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 738 warnings
+    Info: Peak virtual memory: 4735 megabytes
+    Info: Processing ended: Tue Jun 11 09:37:51 2024
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

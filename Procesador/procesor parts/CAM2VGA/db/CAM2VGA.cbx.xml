@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="CAM2VGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAM2VGA|RAMx32:RAM32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_glq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CAM2VGA|pll2:CLK_25M|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>
