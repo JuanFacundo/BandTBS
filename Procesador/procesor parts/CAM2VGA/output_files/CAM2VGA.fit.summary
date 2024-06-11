@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue Jun 11 13:18:40 2024
+Fitter Status : Successful - Tue Jun 11 18:05:55 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : CAM2VGA
 Top-level Entity Name : CAM2VGA
 Family : Cyclone III
-Device : EP3C16U484C6
+Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 202 / 15,408 ( 1 % )
-    Total combinational functions : 198 / 15,408 ( 1 % )
-    Dedicated logic registers : 88 / 15,408 ( < 1 % )
-Total registers : 88
+Total logic elements : 377 / 15,408 ( 2 % )
+    Total combinational functions : 360 / 15,408 ( 2 % )
+    Dedicated logic registers : 213 / 15,408 ( 1 % )
+Total registers : 213
 Total pins : 45 / 347 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 262,144 / 516,096 ( 51 % )
 Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
-Total PLLs : 1 / 4 ( 25 % )
+Total PLLs : 2 / 4 ( 50 % )

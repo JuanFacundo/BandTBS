@@ -1,0 +1,169 @@
+|CAPdiez
+rst => v_count[0].ACLR
+rst => v_count[1].ACLR
+rst => v_count[2].ACLR
+rst => v_count[3].ACLR
+rst => v_count[4].ACLR
+rst => v_count[5].ACLR
+rst => v_count[6].ACLR
+rst => v_count[7].ACLR
+rst => v_count[8].ACLR
+rst => v_count[9].ACLR
+rst => h_count[0].ACLR
+rst => h_count[1].ACLR
+rst => h_count[2].ACLR
+rst => h_count[3].ACLR
+rst => h_count[4].ACLR
+rst => h_count[5].ACLR
+rst => h_count[6].ACLR
+rst => h_count[7].ACLR
+rst => h_count[8].ACLR
+rst => h_count[9].ACLR
+rst => QinReg[0].ACLR
+rst => QinReg[1].ACLR
+rst => QinReg[2].ACLR
+rst => QinReg[3].ACLR
+rst => QinReg[4].ACLR
+rst => QinReg[5].ACLR
+rst => QinReg[6].ACLR
+rst => QinReg[7].ACLR
+rst => RAM_adr[0].ENA
+rst => enawRAMclk.ENA
+rst => RAM_adr[15].ENA
+rst => RAM_adr[14].ENA
+rst => RAM_adr[13].ENA
+rst => RAM_adr[12].ENA
+rst => RAM_adr[11].ENA
+rst => RAM_adr[10].ENA
+rst => RAM_adr[9].ENA
+rst => RAM_adr[8].ENA
+rst => RAM_adr[7].ENA
+rst => RAM_adr[6].ENA
+rst => RAM_adr[5].ENA
+rst => RAM_adr[4].ENA
+rst => RAM_adr[3].ENA
+rst => RAM_adr[2].ENA
+rst => RAM_adr[1].ENA
+D_in[0] => QinReg[0].DATAIN
+D_in[1] => QinReg[1].DATAIN
+D_in[2] => QinReg[2].DATAIN
+D_in[3] => QinReg[3].DATAIN
+D_in[4] => QinReg[4].DATAIN
+D_in[5] => QinReg[5].DATAIN
+D_in[6] => QinReg[6].DATAIN
+D_in[7] => QinReg[7].DATAIN
+PCLK => Z_1:DEPHASE.clk_in
+PCLK => dPCLK.IN0
+HREF => dPCLK.IN1
+HREF => CAPclk.ACLR
+HREF => Z_1:DEPHASE.rst
+HREF => QaddReg[0].ACLR
+HREF => QaddReg[1].ACLR
+HREF => QaddReg[2].ACLR
+HREF => QaddReg[3].ACLR
+HREF => QaddReg[4].ACLR
+HREF => QaddReg[5].ACLR
+HREF => takeTurn.ACLR
+D_out[0] << QaddReg[2].DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] << QaddReg[3].DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] << QaddReg[4].DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] << QaddReg[5].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[0] << RAM_adr[0].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[1] << RAM_adr[1].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[2] << RAM_adr[2].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[3] << RAM_adr[3].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[4] << RAM_adr[4].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[5] << RAM_adr[5].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[6] << RAM_adr[6].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[7] << RAM_adr[7].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[8] << RAM_adr[8].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[9] << RAM_adr[9].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[10] << RAM_adr[10].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[11] << RAM_adr[11].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[12] << RAM_adr[12].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[13] << RAM_adr[13].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[14] << RAM_adr[14].DB_MAX_OUTPUT_PORT_TYPE
+RAMadr[15] << RAM_adr[15].DB_MAX_OUTPUT_PORT_TYPE
+outCLK << outCLK.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|Z_1:DEPHASE
+rst => Qd[1].ACLR
+rst => Qd[0].ACLR
+rst => Qt.ACLR
+clk_in => Qd[1].CLK
+clk_in => Qd[0].CLK
+clk_in => Qt.CLK
+clk_out <= Qd[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|FullAdd:\RipCar:0:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|FullAdd:\RipCar:1:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|FullAdd:\RipCar:2:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|FullAdd:\RipCar:3:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CAPdiez|FullAdd:\RipCar:4:FA
+dA => s.IN0
+dA => co.IN0
+dA => co.IN0
+dB => s.IN1
+dB => co.IN1
+dB => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+

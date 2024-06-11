@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/21/2024 01:58:58"
+-- DATE "06/11/2024 15:49:22"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -39,8 +39,8 @@ ENTITY 	CAPdrive IS
 	D_in : IN std_logic_vector(7 DOWNTO 0);
 	PCLK : IN std_logic;
 	HREF : IN std_logic;
-	D_out : OUT std_logic_vector(3 DOWNTO 0);
-	outCLK : OUT std_logic
+	D_out : BUFFER std_logic_vector(3 DOWNTO 0);
+	outCLK : BUFFER std_logic
 	);
 END CAPdrive;
 

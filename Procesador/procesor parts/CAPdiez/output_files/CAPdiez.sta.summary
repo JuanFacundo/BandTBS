@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CAPclk'
+Slack : -1.821
+TNS   : -47.382
+
+Type  : Slow 1200mV 85C Model Setup 'PCLK'
+Slack : -1.399
+TNS   : -7.120
+
+Type  : Slow 1200mV 85C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.138
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'PCLK'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CAPclk'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CAPclk'
+Slack : -1.000
+TNS   : -37.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Setup 'CAPclk'
+Slack : -1.545
+TNS   : -38.771
+
+Type  : Slow 1200mV 0C Model Setup 'PCLK'
+Slack : -1.171
+TNS   : -5.856
+
+Type  : Slow 1200mV 0C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.061
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'PCLK'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CAPclk'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CAPclk'
+Slack : -1.000
+TNS   : -37.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Setup 'CAPclk'
+Slack : -0.579
+TNS   : -10.713
+
+Type  : Fast 1200mV 0C Model Setup 'PCLK'
+Slack : -0.290
+TNS   : -1.124
+
+Type  : Fast 1200mV 0C Model Setup 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Z_1:DEPHASE|Qd[1]'
+Slack : 0.011
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PCLK'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CAPclk'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PCLK'
+Slack : -3.000
+TNS   : -21.957
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CAPclk'
+Slack : -1.000
+TNS   : -37.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Z_1:DEPHASE|Qd[1]'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------
