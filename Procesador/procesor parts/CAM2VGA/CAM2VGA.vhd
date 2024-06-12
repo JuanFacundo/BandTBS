@@ -14,7 +14,8 @@ entity CAM2VGA is
 		--GPIO0_D0	: SIO_C
 		--GPIO0_D1	: SIO_D
 		--GPIO0_D2	: MCLK
-		--GPIO0_D3	: multipurpose
+		--GPIO0_D3	: PWDN
+		--GPIO0_D4  : RST
 		
 		GPIO1_D		: in std_logic_vector(10 downto 0);
 		--GPIO1_D0	: D0
@@ -63,6 +64,7 @@ component VGA_generator is
 		data_in	  	: in std_logic_vector(3 downto 0);
 		rst			: in std_logic;
 		ena			: in std_logic;
+		enaSquare	: in std_logic;
 		red         : out std_logic_vector(3 downto 0);
 		green       : out std_logic_vector(3 downto 0);
 		blue        : out std_logic_vector(3 downto 0);
@@ -166,6 +168,7 @@ begin
 		data_in	  	=>	rRAM,					--: in std_logic_vector(3 downto 0);
 		rst			=> rstVGA,				--: in std_logic;
 		ena			=> enaVGA,				--: in std_logic;
+		enaSquare	=> SW(4),				--: in std_logic;
 		red         =>	VGA_R,				--: out std_logic_vector(3 downto 0);
 		green       => VGA_G,				--: out std_logic_vector(3 downto 0);
 		blue        => VGA_B,				--: out std_logic_vector(3 downto 0);
@@ -187,9 +190,9 @@ begin
 	--GPIO0_D(3) <= clk25M;
 	--GPIO0_D(4) <= enarRAMclk;
 	
-	rstVGA <= SW(0);
-	enaVGA <= not(SW(0));
-	rst25 <= SW(0);
+	rstVGA <= SW(1);
+	enaVGA <= not(SW(1));
+	rst25 <= SW(1);
 	
 	
 	rRAMclk <= not(clk25M) and enarRAMclk;
@@ -207,9 +210,11 @@ begin
 		q					=> rRAM										--: out std_logic_vector (3 downto 0)
 	);
 	
+	-----------------------------
+	
 	CAP10: CAPdiez port map(
-		rst		=> SW(0),						--: in std_logic;
-		D_in		=> SW(9 downto 2),--GPIO1_D(7 downto 0),		--: in std_logic_vector(7 downto 0);
+		rst		=> not(SW(3)),--GPIO1_D(10),						--: in std_logic;
+		D_in		=> GPIO1_D(7 downto 0),		--: in std_logic_vector(7 downto 0);
 		PCLK		=> GPIO1_D(8),					--: in std_logic;
 		HREF		=> GPIO1_D(9),					--: in std_logic;
 		
@@ -226,6 +231,9 @@ begin
 	
 	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
 	
-	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
+	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => LEDG(0));
+	
+	GPIO0_D(3) <= SW(2);		--PWDN
+	GPIO0_D(4) <= SW(3);		--RST
 	
 end shape;

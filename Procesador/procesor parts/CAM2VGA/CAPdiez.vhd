@@ -130,18 +130,19 @@ begin
 		if rst = '1' then
 			h_count <= (others => '0');
 			v_count <= (others => '0');
+			RAM_adr <= (others => '0');
 
 
 		elsif falling_edge(CAPclk) then
 
 			h_count <= h_count + 1;
 		
-			if h_count = 320 then
+			if h_count = 319 then------------------------------------------320
 				h_count <= (others => '0');
 			
 				v_count <= v_count + 1;
 			
-				if v_count = 480 then
+				if v_count = 479 then---------------------------------------480
 					v_count <= (others => '0');
 				end if;
 			
