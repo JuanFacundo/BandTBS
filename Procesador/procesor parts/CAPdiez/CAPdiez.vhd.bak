@@ -1,0 +1,115 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity CAPdrive is
+	port(
+		rst		: in std_logic;
+		D_in		: in std_logic_vector(7 downto 0);
+		PCLK		: in std_logic;
+		HREF		: in std_logic;
+		
+		D_out		: out std_logic_vector(3 downto 0);
+		outCLK	: out std_logic
+	);
+end entity;
+
+
+
+
+architecture shape of CAPdrive is
+
+component FullAdd is
+	port(
+		dA : in std_logic;
+		dB : in std_logic;
+		ci : in std_logic;
+		co : out std_logic;
+		s : out std_logic
+	);
+end component;
+
+component Z_1 is
+	port(
+		rst		: in std_logic;
+		clk_in	: in std_logic;
+		
+		clk_out	: out std_logic
+	);
+end component;
+
+
+signal QinReg			: std_logic_vector(7 downto 0);
+signal dPCLK			: std_logic;
+signal ADDed			: std_logic_vector(5 downto 0);
+signal A,B				: std_logic_vector(4 downto 0);
+signal Caux				: std_logic_vector(5 downto 0);
+signal takeTurn		: std_logic;
+signal QaddReg			: std_logic_vector(5 downto 0);
+signal HRST				: std_logic;
+signal CAPclk		: std_logic;
+signal Chewed			: std_logic_vector(3 downto 0);
+
+begin
+	HRST <= not(HREF);
+	
+	dPCLK	<= HREF and not(PCLK);
+	
+	
+	DEPHASE: Z_1 port map(
+		rst => HRST,
+		clk_in => takeTurn,
+		clk_out => CAPclk
+	);
+	
+	
+	
+	QinReg <= 
+		"00000000" when rst='1' else
+		D_in when falling_edge(dPCLK);
+		
+	
+	takeTurn <=
+		'0' when HREF='0' else
+		not(takeTurn) when falling_edge(dPCLK);
+	
+
+	Caux(0) <= '0';
+	
+	RipCar: for n in 0 to 4 generate
+		FA: FullAdd port map(
+			dA => A(n),
+			dB => B(n),
+			ci => Caux(n),
+			co => Caux(n+1),
+			s  => ADDed(n)
+		);
+	end generate;
+	
+	ADDed(5) <= Caux(5);
+	
+	A(3 downto 0) <= QinReg(7 downto 4);
+	A(4) <= '0';
+	
+	B(3 downto 0) <= 
+		QinReg(3 downto 0) when takeTurn='1' else
+		QaddReg(3 downto 0) when takeTurn='0';
+	B(4) <=
+		'0' when takeTurn='1' else
+		QaddReg(4) when takeTurn='0';
+
+	
+	QaddReg <=
+		"000000" when HREF='0' else
+		ADDed when rising_edge(dPCLK);
+		
+	Chewed <=
+		"0000" when HREF='0' else
+		QaddReg(5 downto 2) when rising_edge(lateTurn);
+		
+	D_out <= Chewed;
+	outCLK <= lateTurn;
+		
+end shape;
+

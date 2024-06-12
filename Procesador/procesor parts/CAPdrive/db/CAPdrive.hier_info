@@ -30,11 +30,11 @@ HREF => QaddReg[2].ACLR
 HREF => QaddReg[3].ACLR
 HREF => QaddReg[4].ACLR
 HREF => QaddReg[5].ACLR
-D_out[0] <= Chewed[0].DB_MAX_OUTPUT_PORT_TYPE
-D_out[1] <= Chewed[1].DB_MAX_OUTPUT_PORT_TYPE
-D_out[2] <= Chewed[2].DB_MAX_OUTPUT_PORT_TYPE
-D_out[3] <= Chewed[3].DB_MAX_OUTPUT_PORT_TYPE
-outCLK <= Z_1:DEPHASE.clk_out
+D_out[0] << Chewed[0].DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] << Chewed[1].DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] << Chewed[2].DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] << Chewed[3].DB_MAX_OUTPUT_PORT_TYPE
+outCLK << Z_1:DEPHASE.clk_out
 
 
 |CAPdrive|Z_1:DEPHASE

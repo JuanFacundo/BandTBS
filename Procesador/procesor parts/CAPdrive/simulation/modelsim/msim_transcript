@@ -54,88 +54,21 @@ wave create -driver freeze -pattern constant -value 00000000 -range 7 0 -startti
 wave create -driver freeze -pattern clock -initialvalue 0 -period 40ns -dutycycle 50 -starttime 0us -endtime 1000us sim:/capdrive/PCLK
 wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/capdrive/HREF
 add wave -position end  sim:/capdrive/D_out
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: compu  Hostname: MOORE01  ProcessID: 21228
+# 
+#           Attempting to use alternate WLF file "./wlftemg737".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftemg737
+# 
 add wave -position end  sim:/capdrive/outCLK
-wave edit invert -start 64306ps -end 94316ps Edit:/capdrive/rst
-add wave -position 5  sim:/capdrive/takeTurn
-wave edit invert -start 279273ps -end 3429665ps Edit:/capdrive/HREF
-wave edit change_value -start 510775ps -end 549971ps -value 11111111 Edit:/capdrive/D_in
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-wave edit change_value -start 889784ps -end 919181ps -value 11111111 Edit:/capdrive/D_in
-wave edit change_value -start 932655ps -end 960214ps -value 11110000 Edit:/capdrive/D_in
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-wave edit change_value -start 1247296ps -end 1278530ps -value 11111111 Edit:/capdrive/D_in
-wave edit change_value -start 1287717ps -end 1320176ps -value 11110000 Edit:/capdrive/D_in
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+add wave -position end  sim:/capdrive/takeTurn
+add wave -position end  sim:/capdrive/lateTurn
+wave edit invert -start 30622ps -end 61244ps Edit:/capdrive/rst
+wave edit invert -start 79617ps -end 554871ps Edit:/capdrive/HREF
+wave modify -driver freeze -pattern random -initialvalue 00000000 -period 40ns -random_type Uniform -seed 5 -range 7 0 -starttime 0us -endtime 1000us Edit:/capdrive/D_in
 run
 run
 run

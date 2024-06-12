@@ -43,39 +43,6 @@ end entity;
 architecture shape of CAM2VGA is
 
 
-
-component SCCBdrive is
-	port(
-		clk800	: in std_logic;
-		E			: in std_logic; --solo se envian mensajes mientras que este esté prendido
-		
-		SIO_C		: out std_logic;
-		SIO_D		: out std_logic;
-		LIVE		: out std_logic --El LIVE corta cuando se enviaron los tres mensajes y no vuelve a enviar hasta que se reinicie E
-	);
-end component;
-
-component div800k is
-	port(
-		rst			: in std_logic;
-		clk_800k		: out std_logic;
-		
-		clk_50M		: in std_logic
-	);
-end component;
-
-component CAPdrive is
-	port(
-		rst		: in std_logic;
-		D_in		: in std_logic_vector(7 downto 0);
-		PCLK		: in std_logic;
-		HREF		: in std_logic;
-		
-		D_out		: out std_logic_vector(3 downto 0);
-		outCLK	: out std_logic
-	);
-end component;
-
 component RAMx32 is
 	port(
 		data				: in std_logic_vector (3 downto 0);
@@ -117,6 +84,48 @@ component pll2 is
 	);
 end component;
 
+component CAPdiez is
+	port(
+		rst		: in std_logic;
+		D_in		: in std_logic_vector(7 downto 0);
+		PCLK		: in std_logic;
+		HREF		: in std_logic;
+		
+		D_out		: out std_logic_vector(3 downto 0);
+		RAMadr	: out std_logic_vector(15 downto 0);
+		outCLK	: out std_logic
+	);
+end component;
+
+component pll1 is
+	port(
+		areset		: in std_logic  := '0';
+		inclk0		: in std_logic  := '0';
+		c0				: out std_logic ;
+		locked		: out std_logic 
+	);
+end component;
+
+component SCCBdrive is
+	port(
+		clk800	: in std_logic;
+		E			: in std_logic; --solo se envian mensajes mientras que este esté prendido
+		
+		SIO_C		: out std_logic;
+		SIO_D		: out std_logic;
+		LIVE		: out std_logic --El LIVE corta cuando se enviaron los tres mensajes y no vuelve a enviar hasta que se reinicie E
+	);
+end component;
+
+component div800k is
+	port(
+		rst			: in std_logic;
+		clk_800k		: out std_logic;
+		
+		clk_50M		: in std_logic
+	);
+end component;
+
 --clocks
 signal clk25M				: std_logic;
 signal clk24M				: std_logic;
@@ -143,8 +152,12 @@ signal enarRAMclk			: std_logic;
 signal HvgaCnt				: unsigned (9 downto 0);
 signal VvgaCnt				: unsigned (9 downto 0);
 signal rRAMadr				: std_logic_vector(15 downto 0);
-signal wRAMadr				: unsigned (15 downto 0);
+signal wRAMadr				: std_logic_vector(15 downto 0);
 
+
+signal clk800k			: std_logic;
+signal rstMssg			: std_logic;
+signal weLIVE			: std_logic;
 
 begin
 	
@@ -171,8 +184,8 @@ begin
 		c0				=> clk25M				--: out std_logic
 	);
 	
-	GPIO0_D(3) <= clk25M;
-	GPIO0_D(4) <= enarRAMclk;
+	--GPIO0_D(3) <= clk25M;
+	--GPIO0_D(4) <= enarRAMclk;
 	
 	rstVGA <= SW(0);
 	enaVGA <= not(SW(0));
@@ -183,27 +196,36 @@ begin
 	
 	
 	RAM32: RAMx32 port map(
-		data				=> SW(9 downto 6),--wRAM,										--: in std_logic_vector (3 downto 0);
+		data				=> wRAM,										--: in std_logic_vector (3 downto 0);
 		rd_aclr			=> '0',--clcRAM,									--: in std_logic := '0';
 		rdaddress		=> rRAMadr,			--: in std_logic_vector (15 downto 0);
 		rdclock			=> rRAMclk,									--: in std_logic ;
 		rden				=> '1',--enarRAM,									--: in std_logic  := '1';
-		wraddress		=> "1001000000000000",--std_logic_vector(wRAMadr),			--: in std_logic_vector  (15 downto 0);
-		wrclock			=> clk25M,--wRAMclk,									--: in std_logic  := '1';
-		wren				=> SW(1),--enawRAM,									--: in std_logic  := '0';
+		wraddress		=> wRAMadr,			--: in std_logic_vector  (15 downto 0);
+		wrclock			=> wRAMclk,									--: in std_logic  := '1';
+		wren				=> '1',--enawRAM,									--: in std_logic  := '0';
 		q					=> rRAM										--: out std_logic_vector (3 downto 0)
 	);
 	
-	countborrador: process(clk25M)
-	begin
-		if rising_edge(clk25M) then
-			wRAMadr <= wRAMadr + 1;
-			
-			if wRAMadr = 57600 then
-				wRAMadr <= (others => '0');
-			end if;
+	CAP10: CAPdiez port map(
+		rst		=> SW(0),						--: in std_logic;
+		D_in		=> SW(9 downto 2),--GPIO1_D(7 downto 0),		--: in std_logic_vector(7 downto 0);
+		PCLK		=> GPIO1_D(8),					--: in std_logic;
+		HREF		=> GPIO1_D(9),					--: in std_logic;
 		
-		end if;
-	end process;
+		D_out		=> wRAM,							--: out std_logic_vector(3 downto 0);
+		RAMadr	=> wRAMadr,						--: out std_logic_vector(15 downto 0);
+		outCLK	=> wRAMclk						--: out std_logic
+	);
+	
+	CLK_24M: pll1 port map(areset => SW(1), inclk0 => CLOCK_50, c0 => clk24M, locked => open);
+	
+	GPIO0_D(2) <= clk24M;
+	
+	rstMssg <= not(SW(0));
+	
+	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
+	
+	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => weLIVE);
 	
 end shape;
