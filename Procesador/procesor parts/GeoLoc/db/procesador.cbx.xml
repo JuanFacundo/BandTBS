@@ -1,10 +1,12 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="procesador">
+		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|RAMx32:RAM32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_glq3.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_dgm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_h8m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_agm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_h8m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|pll1:CLK_24M|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|procesador|pll2:CLK_25M|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
 	</PROJECT>
 </LOG_ROOT>

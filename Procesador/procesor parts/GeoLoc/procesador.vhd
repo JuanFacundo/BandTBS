@@ -34,11 +34,58 @@ entity procesador is
 		HEX2_D 	: out std_logic_vector(6 downto 0);
 		HEX3_D 	: out std_logic_vector(6 downto 0);
 		-- puntito
-		HEX2_DP 	: out std_logic
+		HEX2_DP 	: out std_logic;
+		
+		VGA_R			: out std_logic_vector(3 downto 0);
+		VGA_G			: out std_logic_vector(3 downto 0);
+		VGA_B			: out std_logic_vector(3 downto 0);
+		VGA_HS		: out std_logic;
+		VGA_VS		: out std_logic
 	);
 end entity;
 
 architecture shape of procesador is
+component RAMx32 is
+	port(
+		data				: in std_logic_vector (3 downto 0);
+		rd_aclr			: in std_logic := '0';
+		rdaddress		: in std_logic_vector (15 downto 0);
+		rdclock			: in std_logic ;
+		rden				: in std_logic  := '1';
+		wraddress		: in std_logic_vector  (15 downto 0);
+		wrclock			: in std_logic  := '1';
+		wren				: in std_logic  := '0';
+		q					: out std_logic_vector (3 downto 0)
+	);
+end component;
+
+component VGA_generator is
+	port(
+		clock_25MHz : in std_logic;
+		data_in	  	: in std_logic_vector(3 downto 0);
+		rst			: in std_logic;
+		ena			: in std_logic;
+		enaSquare	: in std_logic;
+		red         : out std_logic_vector(3 downto 0);
+		green       : out std_logic_vector(3 downto 0);
+		blue        : out std_logic_vector(3 downto 0);
+		Hsync       : out std_logic;
+		Vsync       : out std_logic;
+		Hcount		: out unsigned (9 downto 0);
+		Vcount		: out unsigned (9 downto 0);
+		RAMadr		: out std_logic_vector (15 downto 0);
+		enarRAMclk	: out std_logic;
+		VideoOn	  	: out std_logic
+	);
+end component;
+
+component pll2 is
+	port(
+		areset		: in std_logic  := '0';
+		inclk0		: in std_logic  := '0';
+		c0				: out std_logic
+	);
+end component;
 
 component CAPdiez is
 	port(
@@ -104,11 +151,41 @@ component deco is
 	);
 end component;
 
+
+--clocks
+signal clk25M				: std_logic;
 signal clk24M				: std_logic;
+signal rRAMclk				: std_logic;
+signal wRAMclk				: std_logic;
+
+--vectors
+signal wRAM					: std_logic_vector(3 downto 0);
+signal rRAM					: std_logic_vector(3 downto 0);
+
+--ena & rst & flags
+signal rstVGA				: std_logic;
+signal enaVGA				: std_logic;
+signal vgaLive				: std_logic;
+signal rst25				: std_logic;
+signal clcRAM				: std_logic;
+signal rstRadr				: std_logic;
+signal IShcntPAR			: std_logic;
+signal enarRAM				: std_logic;
+signal enawRAM				: std_logic;
+signal enarRAMclk			: std_logic;
+
+--counters
+signal HvgaCnt				: unsigned (9 downto 0);
+signal VvgaCnt				: unsigned (9 downto 0);
+signal rRAMadr				: std_logic_vector(15 downto 0);
+signal wRAMadr				: std_logic_vector(15 downto 0);
+
+-- SCCB signals
 signal clk800k				: std_logic;
 signal rstMssg				: std_logic;
+signal weLIVE				: std_logic;
 
-signal pixel				: std_logic_vector(3 downto 0);
+-- GEOLoc signals 
 signal h_count				: std_logic_vector (9 downto 0);
 signal v_count				: std_logic_vector (9 downto 0);
 signal cap_clock			: std_logic;
@@ -138,18 +215,18 @@ begin
 		PCLK		=> GPIO1_D(8),					--: in std_logic;
 		HREF		=> GPIO1_D(9),					--: in std_logic;
 		
-		D_out		=> pixel,						--: out std_logic_vector(3 downto 0);
-		RAMadr	=> open,							--: out std_logic_vector(15 downto 0);
-		outCLK	=> cap_clock,					--: out std_logic
+		D_out		=> wRAM,							--: out std_logic_vector(3 downto 0);
+		RAMadr	=> wRAMadr,						--: out std_logic_vector(15 downto 0);
+		outCLK	=> wRAMclk,						--: out std_logic
 		Hcount	=> h_count,						--: out std_logic_vector (9 downto 0);
 		Vcount	=> v_count 						--: out std_logic_vector (9 downto 0);
 	);
 	
 	
 	Geo_Loc: GeoLoc port map(
-		clk		=> cap_clock,					--: in std_logic;
+		clk		=> wRAMclk,						--: in std_logic;
 		Vsync		=> GPIO1_D(10),				--: in std_logic;
-		Pixel		=> pixel,						--: in std_logic_vector(3 downto 0);
+		Pixel		=> wRAM,							--: in std_logic_vector(3 downto 0);
 		h_count	=> h_count,						--: in std_logic_vector(9 downto 0);
 		v_count	=> v_count,						--: in std_logic_vector(9 downto 0);
 		
@@ -168,5 +245,48 @@ begin
 	deco_centena	: deco port map(num=>centena, decoded=>HEX0_D);
 	deco_decena		: deco port map(num=>decena , decoded=>HEX1_D);
 	deco_unidad		: deco port map(num=>unidad , decoded=>HEX2_D);
+	
+	
+	VGApart: VGA_generator port map(
+		clock_25MHz => clk25M,				--: in std_logic;
+		data_in	  	=>	rRAM,					--: in std_logic_vector(3 downto 0);
+		rst			=> rstVGA,				--: in std_logic;
+		ena			=> enaVGA,				--: in std_logic;
+		enaSquare	=> SW(4),				--: in std_logic;
+		red         =>	VGA_R,				--: out std_logic_vector(3 downto 0);
+		green       => VGA_G,				--: out std_logic_vector(3 downto 0);
+		blue        => VGA_B,				--: out std_logic_vector(3 downto 0);
+		Hsync       => VGA_HS,				--: out std_logic;
+		Vsync       => VGA_VS,				--: out std_logic;
+		Hcount		=> HvgaCnt,				--: out unsigned (9 downto 0);
+		Vcount		=> VvgaCnt,				--: out unsigned (9 downto 0);
+		RAMadr		=> rRAMadr,				--: out unsigned (15 downto 0);
+		enarRAMclk	=> enarRAMclk,			--: out std_logic;
+		VideoOn	  	=> vgaLive				--: out std_logic
+	);
+
+	CLK_25M: pll2 port map(
+		areset		=> rst25,				--: in std_logic  := '0';
+		inclk0		=> CLOCK_50,			--: in std_logic  := '0';
+		c0				=> clk25M				--: out std_logic
+	);
+	
+	rstVGA <= SW(1);
+	enaVGA <= not(SW(1));
+	rst25 <= SW(1);
+	
+	rRAMclk <= not(clk25M) and enarRAMclk;
+	
+	RAM32: RAMx32 port map(
+		data				=> wRAM,				--: in std_logic_vector (3 downto 0);
+		rd_aclr			=> '0',				--: in std_logic := '0';
+		rdaddress		=> rRAMadr,			--: in std_logic_vector (15 downto 0);
+		rdclock			=> rRAMclk,			--: in std_logic ;
+		rden				=> '1',				--: in std_logic  := '1';
+		wraddress		=> wRAMadr,			--: in std_logic_vector  (15 downto 0);
+		wrclock			=> wRAMclk,			--: in std_logic  := '1';
+		wren				=> '1',--enawRAM	--: in std_logic  := '0';
+		q					=> rRAM				--: out std_logic_vector (3 downto 0)
+	);
 	
 end shape;
