@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Jun 13 12:13:59 2024
+Analysis & Synthesis Status : Successful - Mon Jun 17 13:59:29 2024
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : LoQritas
 Top-level Entity Name : LoQritas
 Family : Cyclone III
-Total logic elements : 364
-    Total combinational functions : 343
-    Dedicated logic registers : 206
-Total registers : 206
+Total logic elements : 346
+    Total combinational functions : 329
+    Dedicated logic registers : 195
+Total registers : 195
 Total pins : 44
 Total virtual pins : 0
 Total memory bits : 262,144
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 2
+Total PLLs : 3

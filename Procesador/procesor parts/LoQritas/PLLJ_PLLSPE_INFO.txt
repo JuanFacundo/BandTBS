@@ -8,3 +8,8 @@ PLLJITTER	20
 PLLSPEmax	84
 PLLSPEmin	-53
 
+PLL_Name	pll3:DIV800|altpll:altpll_component|pll3_altpll:auto_generated|pll1
+PLLJITTER	41
+PLLSPEmax	84
+PLLSPEmin	-53
+

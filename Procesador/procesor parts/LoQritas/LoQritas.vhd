@@ -120,6 +120,14 @@ component SCCBdrive is
 	);
 end component;
 
+component pll3 is
+	port(
+		areset		: in std_logic  := '0';
+		inclk0		: in std_logic  := '0';
+		c0				: out std_logic 
+	);
+end component;
+
 component div800k is
 	port(
 		rst			: in std_logic;
@@ -231,7 +239,7 @@ begin
 	
 	rstMssg <= not(SW(0));
 	
-	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
+	DIV800: pll3 port map(areset => rstMssg, inclk0 => CLOCK_50, c0 => clk800k);-------div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
 	
 	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => LEDG(0));
 	
