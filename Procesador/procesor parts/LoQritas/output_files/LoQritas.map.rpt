@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LoQritas
-Mon Jun 17 13:59:29 2024
+Mon Jun 17 23:28:29 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -62,15 +62,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 17 13:59:29 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 17 23:28:29 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 346                                        ;
+; Total logic elements               ; 345                                        ;
 ;     Total combinational functions  ; 329                                        ;
-;     Dedicated logic registers      ; 195                                        ;
-; Total registers                    ; 195                                        ;
+;     Dedicated logic registers      ; 194                                        ;
+; Total registers                    ; 194                                        ;
 ; Total pins                         ; 44                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144                                    ;
@@ -227,20 +227,20 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                            ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 346                                                                              ;
+; Estimated Total logic elements              ; 345                                                                              ;
 ;                                             ;                                                                                  ;
 ; Total combinational functions               ; 329                                                                              ;
 ; Logic element usage by number of LUT inputs ;                                                                                  ;
-;     -- 4 input functions                    ; 103                                                                              ;
+;     -- 4 input functions                    ; 101                                                                              ;
 ;     -- 3 input functions                    ; 68                                                                               ;
-;     -- <=2 input functions                  ; 158                                                                              ;
+;     -- <=2 input functions                  ; 160                                                                              ;
 ;                                             ;                                                                                  ;
 ; Logic elements by mode                      ;                                                                                  ;
 ;     -- normal mode                          ; 239                                                                              ;
 ;     -- arithmetic mode                      ; 90                                                                               ;
 ;                                             ;                                                                                  ;
-; Total registers                             ; 195                                                                              ;
-;     -- Dedicated logic registers            ; 195                                                                              ;
+; Total registers                             ; 194                                                                              ;
+;     -- Dedicated logic registers            ; 194                                                                              ;
 ;     -- I/O registers                        ; 0                                                                                ;
 ;                                             ;                                                                                  ;
 ; I/O pins                                    ; 44                                                                               ;
@@ -251,7 +251,7 @@ applicable agreement for further details.
 ;                                             ;                                                                                  ;
 ; Maximum fan-out node                        ; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 88                                                                               ;
-; Total fan-out                               ; 2591                                                                             ;
+; Total fan-out                               ; 2582                                                                             ;
 ; Average fan-out                             ; 4.00                                                                             ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -261,7 +261,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |LoQritas                                 ; 329 (1)           ; 195 (0)      ; 262144      ; 0            ; 0       ; 0         ; 44   ; 0            ; |LoQritas                                                                                                      ; work         ;
+; |LoQritas                                 ; 329 (1)           ; 194 (0)      ; 262144      ; 0            ; 0       ; 0         ; 44   ; 0            ; |LoQritas                                                                                                      ; work         ;
 ;    |CAPdiez:CAP10|                        ; 56 (55)           ; 41 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPdiez:CAP10                                                                                        ; work         ;
 ;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPdiez:CAP10|Z_1:DEPHASE                                                                            ; work         ;
 ;    |RAMx32:RAM32|                         ; 35 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32                                                                                         ; work         ;
@@ -270,8 +270,8 @@ applicable agreement for further details.
 ;             |decode_ira:decode2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2       ; work         ;
 ;             |decode_ira:rden_decode_b|    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b ; work         ;
 ;             |mux_ulb:mux3|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
-;    |SCCBdrive:SCCBdriver|                 ; 66 (13)           ; 65 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
-;       |P2Sreg:REGS|                       ; 53 (53)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
+;    |SCCBdrive:SCCBdriver|                 ; 66 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
+;       |P2Sreg:REGS|                       ; 53 (53)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
 ;    |VGA_generator:VGApart|                ; 171 (171)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
 ;    |pll1:CLK_24M|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M                                                                                         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component                                                                 ; work         ;
@@ -307,15 +307,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                            ;
-+------------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                            ; Reason for Removal ;
-+------------------------------------------------------------------------------------------+--------------------+
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|rden_b_store ; Lost fanout        ;
-; CAPdiez:CAP10|v_count[1..9]                                                              ; Lost fanout        ;
-; Total Number of Removed Registers = 10                                                   ;                    ;
-+------------------------------------------------------------------------------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                ;
++------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                            ; Reason for Removal                     ;
++------------------------------------------------------------------------------------------+----------------------------------------+
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|rden_b_store ; Lost fanout                            ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0]                                                    ; Stuck at GND due to stuck port data_in ;
+; CAPdiez:CAP10|v_count[1..9]                                                              ; Lost fanout                            ;
+; Total Number of Removed Registers = 11                                                   ;                                        ;
++------------------------------------------------------------------------------------------+----------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -334,10 +335,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 195   ;
+; Total registers                              ; 194   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 140   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 139   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 78    ;
 ; Number of registers using Preset             ; 0     ;
@@ -1604,12 +1605,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port         ; Type  ; Severity ; Details                    ;
 +--------------+-------+----------+----------------------------+
 ; mssg[24..21] ; Input ; Info     ; Stuck at GND               ;
+; mssg[19..18] ; Input ; Info     ; Stuck at GND               ;
+; mssg[10..9]  ; Input ; Info     ; Stuck at GND               ;
 ; mssg[26]     ; Input ; Info     ; Stuck at GND               ;
-; mssg[19]     ; Input ; Info     ; Stuck at GND               ;
-; mssg[16]     ; Input ; Info     ; Stuck at GND               ;
-; mssg[10]     ; Input ; Info     ; Stuck at GND               ;
+; mssg[15]     ; Input ; Info     ; Stuck at GND               ;
 ; mssg[6]      ; Input ; Info     ; Stuck at GND               ;
 ; mssg[4]      ; Input ; Info     ; Stuck at GND               ;
+; mssg[0]      ; Input ; Info     ; Stuck at GND               ;
 +--------------+-------+----------+----------------------------+
 
 
@@ -1706,7 +1708,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 17 13:59:24 2024
+    Info: Processing started: Mon Jun 17 23:28:26 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LoQritas -c LoQritas
 Warning (125092): Tcl Script File output_files/pll3.qip not found
     Info (125063): set_global_assignment -name QIP_FILE output_files/pll3.qip
@@ -2078,16 +2080,16 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO1_D[2]"
     Warning (15610): No output dependent on input pin "GPIO1_D[3]"
     Warning (15610): No output dependent on input pin "GPIO1_D[10]"
-Info (21057): Implemented 430 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 429 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 351 logic cells
+    Info (21061): Implemented 350 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 3 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 4691 megabytes
-    Info: Processing ended: Mon Jun 17 13:59:29 2024
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 4700 megabytes
+    Info: Processing ended: Mon Jun 17 23:28:29 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

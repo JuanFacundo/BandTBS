@@ -43,9 +43,9 @@ signal Q0,Q1,D0,D1			: std_logic;
 signal mssgCount				: integer;
 
 signal nullMssg				: std_logic_vector(26 downto 0) := "000000000000000000000000000";
-signal COM7 					: std_logic_vector(26 downto 0) := "010000101000100101000001011";---"010000100000100100000001010";
-signal COM15 					: std_logic_vector(26 downto 0) := "010000101001000001110100001";---"010000100001000000110100000";
-signal RGB444					: std_logic_vector(26 downto 0) := "010000101100011001000000111";---"010000100100011000000000110";
+signal COM7 					: std_logic_vector(26 downto 0) := "010000100000100100000001000";---"010000101000100101000001001";
+signal COM15 					: std_logic_vector(26 downto 0) := "010000100010000000110100000";---"010000101010000001110100001";
+signal RGB444					: std_logic_vector(26 downto 0) := "010000100100011000000000110";---"010000101100011001000000111";
 signal mailbox					: std_logic_vector(26 downto 0);
 
 signal clk400					: std_logic;

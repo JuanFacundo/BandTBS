@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "06/17/2024 13:59:45"
+-- DATE "06/17/2024 23:28:47"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,14 +37,14 @@ ENTITY 	LoQritas IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	SW : IN std_logic_vector(9 DOWNTO 0);
-	LEDG : OUT std_logic_vector(2 DOWNTO 0);
-	GPIO0_D : OUT std_logic_vector(4 DOWNTO 0);
+	LEDG : BUFFER std_logic_vector(2 DOWNTO 0);
+	GPIO0_D : BUFFER std_logic_vector(4 DOWNTO 0);
 	GPIO1_D : IN std_logic_vector(10 DOWNTO 0);
-	VGA_R : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_G : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_B : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_HS : OUT std_logic;
-	VGA_VS : OUT std_logic
+	VGA_R : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_G : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_B : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_HS : BUFFER std_logic;
+	VGA_VS : BUFFER std_logic
 	);
 END LoQritas;
 
@@ -53,11 +53,11 @@ END LoQritas;
 -- LEDG[0]	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LEDG[1]	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LEDG[2]	=>  Location: PIN_J3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO0_D[0]	=>  Location: PIN_AB16,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
--- GPIO0_D[1]	=>  Location: PIN_AA16,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
--- GPIO0_D[2]	=>  Location: PIN_AA15,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
--- GPIO0_D[3]	=>  Location: PIN_AB15,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
--- GPIO0_D[4]	=>  Location: PIN_AA14,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 2mA
+-- GPIO0_D[0]	=>  Location: PIN_AB16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- GPIO0_D[1]	=>  Location: PIN_AA16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- GPIO0_D[2]	=>  Location: PIN_AA15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- GPIO0_D[3]	=>  Location: PIN_AB15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
+-- GPIO0_D[4]	=>  Location: PIN_AA14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 8mA
 -- GPIO1_D[0]	=>  Location: PIN_AA20,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
 -- GPIO1_D[1]	=>  Location: PIN_AB20,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
 -- GPIO1_D[2]	=>  Location: PIN_AA19,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
@@ -313,19 +313,17 @@ SIGNAL \SCCBdriver|C_E~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|C_E~q\ : std_logic;
 SIGNAL \SCCBdriver|C_Esync~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|C_Esync~q\ : std_logic;
-SIGNAL \SCCBdriver|D1~0_combout\ : std_logic;
-SIGNAL \SCCBdriver|Q1~q\ : std_logic;
+SIGNAL \SCCBdriver|D0~0_combout\ : std_logic;
+SIGNAL \SCCBdriver|Q0~q\ : std_logic;
 SIGNAL \SCCBdriver|DeInd~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|DeInd~1_combout\ : std_logic;
 SIGNAL \SCCBdriver|eInd~q\ : std_logic;
-SIGNAL \SCCBdriver|D0~0_combout\ : std_logic;
-SIGNAL \SCCBdriver|Q0~q\ : std_logic;
+SIGNAL \SCCBdriver|D1~0_combout\ : std_logic;
+SIGNAL \SCCBdriver|Q1~q\ : std_logic;
 SIGNAL \SCCBdriver|LIVE~0_combout\ : std_logic;
 SIGNAL \SCCBdriver|LIVE~q\ : std_logic;
 SIGNAL \SCCBdriver|SIO_C~combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|Q[1]~feeder_combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|D[0]~25_combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|Q[0]~feeder_combout\ : std_logic;
+SIGNAL \SCCBdriver|REGS|D[17]~25_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[2]~24_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[3]~23_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|Q[3]~feeder_combout\ : std_logic;
@@ -335,19 +333,20 @@ SIGNAL \SCCBdriver|REGS|Q[5]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[6]~20_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[7]~19_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[8]~18_combout\ : std_logic;
+SIGNAL \SCCBdriver|REGS|Q[8]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[9]~17_combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|Q[9]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[10]~16_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[11]~15_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[12]~14_combout\ : std_logic;
+SIGNAL \SCCBdriver|REGS|Q[12]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[13]~13_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[14]~12_combout\ : std_logic;
+SIGNAL \SCCBdriver|REGS|Q[14]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[15]~11_combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|Q[15]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[16]~10_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[17]~9_combout\ : std_logic;
+SIGNAL \SCCBdriver|REGS|Q[17]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[18]~8_combout\ : std_logic;
-SIGNAL \SCCBdriver|REGS|Q[18]~feeder_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[19]~7_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|D[20]~6_combout\ : std_logic;
 SIGNAL \SCCBdriver|REGS|Q[20]~feeder_combout\ : std_logic;
@@ -367,15 +366,16 @@ SIGNAL \SW[3]~input_o\ : std_logic;
 SIGNAL \CLOCK_50~inputclkctrl_outclk\ : std_logic;
 SIGNAL \CLK_25M|altpll_component|auto_generated|wire_pll1_fbout\ : std_logic;
 SIGNAL \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
-SIGNAL \VGApart|Add0~13\ : std_logic;
-SIGNAL \VGApart|Add0~14_combout\ : std_logic;
+SIGNAL \VGApart|Add0~0_combout\ : std_logic;
 SIGNAL \VGApart|Add0~15\ : std_logic;
 SIGNAL \VGApart|Add0~16_combout\ : std_logic;
 SIGNAL \VGApart|h_count~0_combout\ : std_logic;
 SIGNAL \VGApart|Add0~17\ : std_logic;
 SIGNAL \VGApart|Add0~18_combout\ : std_logic;
 SIGNAL \VGApart|h_count~1_combout\ : std_logic;
-SIGNAL \VGApart|Add0~0_combout\ : std_logic;
+SIGNAL \VGApart|Equal0~1_combout\ : std_logic;
+SIGNAL \VGApart|Equal0~0_combout\ : std_logic;
+SIGNAL \VGApart|Equal0~2_combout\ : std_logic;
 SIGNAL \VGApart|h_count~3_combout\ : std_logic;
 SIGNAL \VGApart|Add0~1\ : std_logic;
 SIGNAL \VGApart|Add0~2_combout\ : std_logic;
@@ -385,24 +385,22 @@ SIGNAL \VGApart|Add0~5\ : std_logic;
 SIGNAL \VGApart|Add0~6_combout\ : std_logic;
 SIGNAL \VGApart|Add0~7\ : std_logic;
 SIGNAL \VGApart|Add0~8_combout\ : std_logic;
-SIGNAL \VGApart|Equal0~1_combout\ : std_logic;
-SIGNAL \VGApart|Equal0~0_combout\ : std_logic;
-SIGNAL \VGApart|Equal0~2_combout\ : std_logic;
 SIGNAL \VGApart|Add0~9\ : std_logic;
 SIGNAL \VGApart|Add0~10_combout\ : std_logic;
 SIGNAL \VGApart|h_count~2_combout\ : std_logic;
 SIGNAL \VGApart|Add0~11\ : std_logic;
 SIGNAL \VGApart|Add0~12_combout\ : std_logic;
+SIGNAL \VGApart|Add0~13\ : std_logic;
+SIGNAL \VGApart|Add0~14_combout\ : std_logic;
 SIGNAL \VGApart|LessThan10~0_combout\ : std_logic;
 SIGNAL \VGApart|process_0~6_combout\ : std_logic;
 SIGNAL \VGApart|LessThan6~0_combout\ : std_logic;
 SIGNAL \VGApart|process_0~7_combout\ : std_logic;
 SIGNAL \VGApart|isColor~q\ : std_logic;
-SIGNAL \VGApart|Add1~15\ : std_logic;
-SIGNAL \VGApart|Add1~16_combout\ : std_logic;
-SIGNAL \VGApart|Add1~17\ : std_logic;
-SIGNAL \VGApart|Add1~18_combout\ : std_logic;
-SIGNAL \VGApart|v_count~3_combout\ : std_logic;
+SIGNAL \VGApart|set_color~0_combout\ : std_logic;
+SIGNAL \VGApart|LessThan9~0_combout\ : std_logic;
+SIGNAL \VGApart|set_color~1_combout\ : std_logic;
+SIGNAL \SW[4]~input_o\ : std_logic;
 SIGNAL \VGApart|Add1~0_combout\ : std_logic;
 SIGNAL \VGApart|Add1~1\ : std_logic;
 SIGNAL \VGApart|Add1~2_combout\ : std_logic;
@@ -410,9 +408,6 @@ SIGNAL \VGApart|v_count~0_combout\ : std_logic;
 SIGNAL \VGApart|Add1~3\ : std_logic;
 SIGNAL \VGApart|Add1~4_combout\ : std_logic;
 SIGNAL \VGApart|v_count~1_combout\ : std_logic;
-SIGNAL \VGApart|Equal1~1_combout\ : std_logic;
-SIGNAL \VGApart|Equal1~0_combout\ : std_logic;
-SIGNAL \VGApart|Equal1~2_combout\ : std_logic;
 SIGNAL \VGApart|Add1~5\ : std_logic;
 SIGNAL \VGApart|Add1~6_combout\ : std_logic;
 SIGNAL \VGApart|v_count~2_combout\ : std_logic;
@@ -424,119 +419,81 @@ SIGNAL \VGApart|Add1~11\ : std_logic;
 SIGNAL \VGApart|Add1~12_combout\ : std_logic;
 SIGNAL \VGApart|Add1~13\ : std_logic;
 SIGNAL \VGApart|Add1~14_combout\ : std_logic;
-SIGNAL \VGApart|LessThan5~0_combout\ : std_logic;
-SIGNAL \VGApart|process_0~8_combout\ : std_logic;
-SIGNAL \VGApart|video_on~q\ : std_logic;
-SIGNAL \VGApart|green~0_combout\ : std_logic;
-SIGNAL \VGApart|set_color~9_combout\ : std_logic;
-SIGNAL \VGApart|set_color~8_combout\ : std_logic;
-SIGNAL \VGApart|set_color~10_combout\ : std_logic;
-SIGNAL \VGApart|set_color~11_combout\ : std_logic;
+SIGNAL \VGApart|Equal1~0_combout\ : std_logic;
+SIGNAL \VGApart|Add1~15\ : std_logic;
+SIGNAL \VGApart|Add1~16_combout\ : std_logic;
+SIGNAL \VGApart|Equal1~1_combout\ : std_logic;
+SIGNAL \VGApart|Equal1~2_combout\ : std_logic;
+SIGNAL \VGApart|Add1~17\ : std_logic;
+SIGNAL \VGApart|Add1~18_combout\ : std_logic;
+SIGNAL \VGApart|v_count~3_combout\ : std_logic;
 SIGNAL \VGApart|Add5~1\ : std_logic;
 SIGNAL \VGApart|Add5~3\ : std_logic;
 SIGNAL \VGApart|Add5~5\ : std_logic;
 SIGNAL \VGApart|Add5~7\ : std_logic;
 SIGNAL \VGApart|Add5~9\ : std_logic;
-SIGNAL \VGApart|Add5~10_combout\ : std_logic;
-SIGNAL \VGApart|Add5~8_combout\ : std_logic;
 SIGNAL \VGApart|Add5~11\ : std_logic;
 SIGNAL \VGApart|Add5~13\ : std_logic;
-SIGNAL \VGApart|Add5~14_combout\ : std_logic;
-SIGNAL \VGApart|Add5~12_combout\ : std_logic;
-SIGNAL \VGApart|set_color~6_combout\ : std_logic;
 SIGNAL \VGApart|Add5~15\ : std_logic;
-SIGNAL \VGApart|Add5~16_combout\ : std_logic;
 SIGNAL \VGApart|Add5~17\ : std_logic;
 SIGNAL \VGApart|Add5~18_combout\ : std_logic;
+SIGNAL \VGApart|Add5~16_combout\ : std_logic;
 SIGNAL \VGApart|Add5~6_combout\ : std_logic;
 SIGNAL \VGApart|Add5~2_combout\ : std_logic;
 SIGNAL \VGApart|Add5~4_combout\ : std_logic;
 SIGNAL \VGApart|Add5~0_combout\ : std_logic;
 SIGNAL \VGApart|set_color~5_combout\ : std_logic;
+SIGNAL \VGApart|Add5~10_combout\ : std_logic;
+SIGNAL \VGApart|Add5~14_combout\ : std_logic;
+SIGNAL \VGApart|Add5~8_combout\ : std_logic;
+SIGNAL \VGApart|Add5~12_combout\ : std_logic;
+SIGNAL \VGApart|set_color~6_combout\ : std_logic;
 SIGNAL \VGApart|set_color~7_combout\ : std_logic;
+SIGNAL \VGApart|set_color~9_combout\ : std_logic;
+SIGNAL \VGApart|set_color~8_combout\ : std_logic;
+SIGNAL \VGApart|set_color~10_combout\ : std_logic;
+SIGNAL \VGApart|set_color~11_combout\ : std_logic;
 SIGNAL \VGApart|Add4~1\ : std_logic;
 SIGNAL \VGApart|Add4~3\ : std_logic;
 SIGNAL \VGApart|Add4~5\ : std_logic;
 SIGNAL \VGApart|Add4~7\ : std_logic;
 SIGNAL \VGApart|Add4~9\ : std_logic;
 SIGNAL \VGApart|Add4~11\ : std_logic;
-SIGNAL \VGApart|Add4~13\ : std_logic;
-SIGNAL \VGApart|Add4~15\ : std_logic;
-SIGNAL \VGApart|Add4~17\ : std_logic;
-SIGNAL \VGApart|Add4~18_combout\ : std_logic;
-SIGNAL \VGApart|Add4~0_combout\ : std_logic;
-SIGNAL \VGApart|Add4~4_combout\ : std_logic;
-SIGNAL \VGApart|Add4~2_combout\ : std_logic;
-SIGNAL \VGApart|Add4~6_combout\ : std_logic;
-SIGNAL \VGApart|set_color~2_combout\ : std_logic;
-SIGNAL \VGApart|Add4~16_combout\ : std_logic;
-SIGNAL \VGApart|Add4~14_combout\ : std_logic;
+SIGNAL \VGApart|Add4~12_combout\ : std_logic;
 SIGNAL \VGApart|Add4~10_combout\ : std_logic;
 SIGNAL \VGApart|Add4~8_combout\ : std_logic;
-SIGNAL \VGApart|Add4~12_combout\ : std_logic;
+SIGNAL \VGApart|Add4~13\ : std_logic;
+SIGNAL \VGApart|Add4~14_combout\ : std_logic;
 SIGNAL \VGApart|set_color~3_combout\ : std_logic;
+SIGNAL \VGApart|Add4~6_combout\ : std_logic;
+SIGNAL \VGApart|Add4~0_combout\ : std_logic;
+SIGNAL \VGApart|Add4~2_combout\ : std_logic;
+SIGNAL \VGApart|Add4~4_combout\ : std_logic;
+SIGNAL \VGApart|set_color~2_combout\ : std_logic;
+SIGNAL \VGApart|Add4~15\ : std_logic;
+SIGNAL \VGApart|Add4~16_combout\ : std_logic;
+SIGNAL \VGApart|Add4~17\ : std_logic;
+SIGNAL \VGApart|Add4~18_combout\ : std_logic;
 SIGNAL \VGApart|set_color~4_combout\ : std_logic;
 SIGNAL \VGApart|set_color~12_combout\ : std_logic;
-SIGNAL \VGApart|set_color~0_combout\ : std_logic;
-SIGNAL \VGApart|LessThan9~0_combout\ : std_logic;
-SIGNAL \VGApart|set_color~1_combout\ : std_logic;
-SIGNAL \SW[4]~input_o\ : std_logic;
 SIGNAL \VGApart|set_color~13_combout\ : std_logic;
 SIGNAL \VGApart|set_color~q\ : std_logic;
+SIGNAL \VGApart|LessThan5~0_combout\ : std_logic;
+SIGNAL \VGApart|process_0~8_combout\ : std_logic;
+SIGNAL \VGApart|video_on~q\ : std_logic;
 SIGNAL \VGApart|red~0_combout\ : std_logic;
+SIGNAL \VGApart|green~0_combout\ : std_logic;
 SIGNAL \SW[6]~input_o\ : std_logic;
+SIGNAL \VGApart|LessThan5~1_combout\ : std_logic;
 SIGNAL \VGApart|process_0~11_combout\ : std_logic;
 SIGNAL \VGApart|LessThan9~1_combout\ : std_logic;
-SIGNAL \VGApart|LessThan5~1_combout\ : std_logic;
 SIGNAL \VGApart|process_0~10_combout\ : std_logic;
 SIGNAL \VGApart|process_0~12_combout\ : std_logic;
 SIGNAL \VGApart|enarRAMclk~q\ : std_logic;
 SIGNAL \rRAMclk~combout\ : std_logic;
 SIGNAL \rRAMclk~clkctrl_outclk\ : std_logic;
-SIGNAL \VGApart|Add3~0_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1[15]~1_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1[15]~2_combout\ : std_logic;
-SIGNAL \VGApart|Add3~1\ : std_logic;
-SIGNAL \VGApart|Add3~2_combout\ : std_logic;
-SIGNAL \VGApart|Add3~3\ : std_logic;
-SIGNAL \VGApart|Add3~4_combout\ : std_logic;
-SIGNAL \VGApart|Add3~5\ : std_logic;
-SIGNAL \VGApart|Add3~6_combout\ : std_logic;
-SIGNAL \VGApart|Add3~7\ : std_logic;
-SIGNAL \VGApart|Add3~8_combout\ : std_logic;
-SIGNAL \VGApart|Add3~9\ : std_logic;
-SIGNAL \VGApart|Add3~10_combout\ : std_logic;
-SIGNAL \VGApart|Add3~11\ : std_logic;
-SIGNAL \VGApart|Add3~12_combout\ : std_logic;
-SIGNAL \VGApart|Add3~13\ : std_logic;
-SIGNAL \VGApart|Add3~14_combout\ : std_logic;
-SIGNAL \VGApart|Add3~15\ : std_logic;
-SIGNAL \VGApart|Add3~16_combout\ : std_logic;
-SIGNAL \VGApart|Equal3~0_combout\ : std_logic;
-SIGNAL \VGApart|Equal3~2_combout\ : std_logic;
-SIGNAL \VGApart|Equal3~3_combout\ : std_logic;
-SIGNAL \VGApart|Equal3~1_combout\ : std_logic;
-SIGNAL \VGApart|Equal3~4_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1~5_combout\ : std_logic;
-SIGNAL \VGApart|Add3~17\ : std_logic;
-SIGNAL \VGApart|Add3~18_combout\ : std_logic;
-SIGNAL \VGApart|Add3~19\ : std_logic;
-SIGNAL \VGApart|Add3~20_combout\ : std_logic;
-SIGNAL \VGApart|Add3~21\ : std_logic;
-SIGNAL \VGApart|Add3~22_combout\ : std_logic;
-SIGNAL \VGApart|Add3~23\ : std_logic;
-SIGNAL \VGApart|Add3~24_combout\ : std_logic;
-SIGNAL \VGApart|Add3~25\ : std_logic;
-SIGNAL \VGApart|Add3~26_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1~4_combout\ : std_logic;
-SIGNAL \VGApart|Add3~27\ : std_logic;
-SIGNAL \VGApart|Add3~28_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1~3_combout\ : std_logic;
-SIGNAL \VGApart|Add3~29\ : std_logic;
-SIGNAL \VGApart|Add3~30_combout\ : std_logic;
-SIGNAL \VGApart|RAM_adr1~0_combout\ : std_logic;
-SIGNAL \VGApart|process_0~9_combout\ : std_logic;
 SIGNAL \VGApart|Add2~0_combout\ : std_logic;
+SIGNAL \VGApart|process_0~9_combout\ : std_logic;
 SIGNAL \VGApart|RAM_adr0[15]~6_combout\ : std_logic;
 SIGNAL \VGApart|Add2~1\ : std_logic;
 SIGNAL \VGApart|Add2~2_combout\ : std_logic;
@@ -554,11 +511,6 @@ SIGNAL \VGApart|Add2~13\ : std_logic;
 SIGNAL \VGApart|Add2~14_combout\ : std_logic;
 SIGNAL \VGApart|Add2~15\ : std_logic;
 SIGNAL \VGApart|Add2~16_combout\ : std_logic;
-SIGNAL \VGApart|Equal2~3_combout\ : std_logic;
-SIGNAL \VGApart|Equal2~1_combout\ : std_logic;
-SIGNAL \VGApart|Equal2~2_combout\ : std_logic;
-SIGNAL \VGApart|Equal2~0_combout\ : std_logic;
-SIGNAL \VGApart|Equal2~4_combout\ : std_logic;
 SIGNAL \VGApart|RAM_adr0~5_combout\ : std_logic;
 SIGNAL \VGApart|Add2~17\ : std_logic;
 SIGNAL \VGApart|Add2~18_combout\ : std_logic;
@@ -566,6 +518,7 @@ SIGNAL \VGApart|Add2~19\ : std_logic;
 SIGNAL \VGApart|Add2~20_combout\ : std_logic;
 SIGNAL \VGApart|Add2~21\ : std_logic;
 SIGNAL \VGApart|Add2~22_combout\ : std_logic;
+SIGNAL \VGApart|Equal2~2_combout\ : std_logic;
 SIGNAL \VGApart|Add2~23\ : std_logic;
 SIGNAL \VGApart|Add2~24_combout\ : std_logic;
 SIGNAL \VGApart|Add2~25\ : std_logic;
@@ -574,12 +527,57 @@ SIGNAL \VGApart|RAM_adr0~4_combout\ : std_logic;
 SIGNAL \VGApart|Add2~27\ : std_logic;
 SIGNAL \VGApart|Add2~28_combout\ : std_logic;
 SIGNAL \VGApart|RAM_adr0~3_combout\ : std_logic;
+SIGNAL \VGApart|Equal2~3_combout\ : std_logic;
+SIGNAL \VGApart|Equal2~1_combout\ : std_logic;
+SIGNAL \VGApart|Equal2~0_combout\ : std_logic;
+SIGNAL \VGApart|Equal2~4_combout\ : std_logic;
 SIGNAL \VGApart|Add2~29\ : std_logic;
 SIGNAL \VGApart|Add2~30_combout\ : std_logic;
 SIGNAL \VGApart|RAM_adr0~2_combout\ : std_logic;
+SIGNAL \VGApart|Add3~0_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1[15]~1_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1[15]~2_combout\ : std_logic;
+SIGNAL \VGApart|Add3~1\ : std_logic;
+SIGNAL \VGApart|Add3~2_combout\ : std_logic;
+SIGNAL \VGApart|Add3~3\ : std_logic;
+SIGNAL \VGApart|Add3~4_combout\ : std_logic;
+SIGNAL \VGApart|Add3~5\ : std_logic;
+SIGNAL \VGApart|Add3~6_combout\ : std_logic;
+SIGNAL \VGApart|Equal3~0_combout\ : std_logic;
+SIGNAL \VGApart|Add3~7\ : std_logic;
+SIGNAL \VGApart|Add3~8_combout\ : std_logic;
+SIGNAL \VGApart|Add3~9\ : std_logic;
+SIGNAL \VGApart|Add3~10_combout\ : std_logic;
+SIGNAL \VGApart|Add3~11\ : std_logic;
+SIGNAL \VGApart|Add3~12_combout\ : std_logic;
+SIGNAL \VGApart|Add3~13\ : std_logic;
+SIGNAL \VGApart|Add3~14_combout\ : std_logic;
+SIGNAL \VGApart|Equal3~1_combout\ : std_logic;
+SIGNAL \VGApart|Add3~15\ : std_logic;
+SIGNAL \VGApart|Add3~16_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1~5_combout\ : std_logic;
+SIGNAL \VGApart|Add3~17\ : std_logic;
+SIGNAL \VGApart|Add3~18_combout\ : std_logic;
+SIGNAL \VGApart|Add3~19\ : std_logic;
+SIGNAL \VGApart|Add3~20_combout\ : std_logic;
+SIGNAL \VGApart|Add3~21\ : std_logic;
+SIGNAL \VGApart|Add3~22_combout\ : std_logic;
+SIGNAL \VGApart|Add3~23\ : std_logic;
+SIGNAL \VGApart|Add3~24_combout\ : std_logic;
+SIGNAL \VGApart|Add3~25\ : std_logic;
+SIGNAL \VGApart|Add3~26_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1~4_combout\ : std_logic;
+SIGNAL \VGApart|Add3~27\ : std_logic;
+SIGNAL \VGApart|Add3~28_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1~3_combout\ : std_logic;
+SIGNAL \VGApart|Equal3~3_combout\ : std_logic;
+SIGNAL \VGApart|Equal3~2_combout\ : std_logic;
+SIGNAL \VGApart|Equal3~4_combout\ : std_logic;
+SIGNAL \VGApart|Add3~29\ : std_logic;
+SIGNAL \VGApart|Add3~30_combout\ : std_logic;
+SIGNAL \VGApart|RAM_adr1~0_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~0_combout\ : std_logic;
-SIGNAL \VGApart|RAMadr[2]~1_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|address_reg_b[2]~feeder_combout\ : std_logic;
+SIGNAL \VGApart|RAMadr[1]~1_combout\ : std_logic;
 SIGNAL \GPIO1_D[8]~input_o\ : std_logic;
 SIGNAL \GPIO1_D[8]~inputclkctrl_outclk\ : std_logic;
 SIGNAL \CAP10|DEPHASE|Qt~0_combout\ : std_logic;
@@ -628,7 +626,6 @@ SIGNAL \CAP10|Add2~3\ : std_logic;
 SIGNAL \CAP10|Add2~4_combout\ : std_logic;
 SIGNAL \CAP10|Add2~5\ : std_logic;
 SIGNAL \CAP10|Add2~6_combout\ : std_logic;
-SIGNAL \CAP10|Equal2~4_combout\ : std_logic;
 SIGNAL \CAP10|Add2~7\ : std_logic;
 SIGNAL \CAP10|Add2~8_combout\ : std_logic;
 SIGNAL \CAP10|Add2~9\ : std_logic;
@@ -637,9 +634,19 @@ SIGNAL \CAP10|Add2~11\ : std_logic;
 SIGNAL \CAP10|Add2~12_combout\ : std_logic;
 SIGNAL \CAP10|Add2~13\ : std_logic;
 SIGNAL \CAP10|Add2~14_combout\ : std_logic;
-SIGNAL \CAP10|Equal2~3_combout\ : std_logic;
 SIGNAL \CAP10|Add2~15\ : std_logic;
 SIGNAL \CAP10|Add2~16_combout\ : std_logic;
+SIGNAL \CAP10|Equal2~3_combout\ : std_logic;
+SIGNAL \CAP10|Add2~27\ : std_logic;
+SIGNAL \CAP10|Add2~28_combout\ : std_logic;
+SIGNAL \CAP10|Equal2~4_combout\ : std_logic;
+SIGNAL \CAP10|RAM_adr~5_combout\ : std_logic;
+SIGNAL \CAP10|Add2~29\ : std_logic;
+SIGNAL \CAP10|Add2~30_combout\ : std_logic;
+SIGNAL \CAP10|RAM_adr~0_combout\ : std_logic;
+SIGNAL \CAP10|Equal2~0_combout\ : std_logic;
+SIGNAL \CAP10|Equal2~1_combout\ : std_logic;
+SIGNAL \CAP10|Equal2~2_combout\ : std_logic;
 SIGNAL \CAP10|RAM_adr~7_combout\ : std_logic;
 SIGNAL \CAP10|Add2~17\ : std_logic;
 SIGNAL \CAP10|Add2~18_combout\ : std_logic;
@@ -649,31 +656,23 @@ SIGNAL \CAP10|Add2~21\ : std_logic;
 SIGNAL \CAP10|Add2~22_combout\ : std_logic;
 SIGNAL \CAP10|Add2~23\ : std_logic;
 SIGNAL \CAP10|Add2~24_combout\ : std_logic;
-SIGNAL \CAP10|Equal2~1_combout\ : std_logic;
-SIGNAL \CAP10|Equal2~2_combout\ : std_logic;
 SIGNAL \CAP10|Add2~25\ : std_logic;
 SIGNAL \CAP10|Add2~26_combout\ : std_logic;
 SIGNAL \CAP10|RAM_adr~6_combout\ : std_logic;
-SIGNAL \CAP10|Add2~27\ : std_logic;
-SIGNAL \CAP10|Add2~28_combout\ : std_logic;
-SIGNAL \CAP10|RAM_adr~5_combout\ : std_logic;
-SIGNAL \CAP10|Add2~29\ : std_logic;
-SIGNAL \CAP10|Add2~30_combout\ : std_logic;
-SIGNAL \CAP10|RAM_adr~0_combout\ : std_logic;
-SIGNAL \CAP10|Equal2~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\ : std_logic;
 SIGNAL \CAP10|enawRAMclk~0_combout\ : std_logic;
 SIGNAL \CAP10|enawRAMclk~q\ : std_logic;
 SIGNAL \CAP10|outCLK~combout\ : std_logic;
 SIGNAL \CAP10|outCLK~clkctrl_outclk\ : std_logic;
 SIGNAL \VGApart|RAMadr~2_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~3_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\ : std_logic;
 SIGNAL \CAP10|dPCLK~combout\ : std_logic;
 SIGNAL \CAP10|dPCLK~clkctrl_outclk\ : std_logic;
-SIGNAL \GPIO1_D[4]~input_o\ : std_logic;
-SIGNAL \CAP10|QinReg[4]~feeder_combout\ : std_logic;
 SIGNAL \CAP10|takeTurn~0_combout\ : std_logic;
 SIGNAL \CAP10|takeTurn~q\ : std_logic;
+SIGNAL \GPIO1_D[4]~input_o\ : std_logic;
+SIGNAL \CAP10|QinReg[4]~feeder_combout\ : std_logic;
 SIGNAL \CAP10|B[0]~0_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~4_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~5_combout\ : std_logic;
@@ -688,48 +687,49 @@ SIGNAL \VGApart|RAMadr~13_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~14_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~15_combout\ : std_logic;
 SIGNAL \VGApart|RAMadr~16_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a4~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|address_reg_b[0]~feeder_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a8~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\ : std_logic;
 SIGNAL \VGApart|red~1_combout\ : std_logic;
+SIGNAL \VGApart|red[0]~feeder_combout\ : std_logic;
 SIGNAL \SW[7]~input_o\ : std_logic;
 SIGNAL \GPIO1_D[5]~input_o\ : std_logic;
 SIGNAL \CAP10|QinReg[5]~feeder_combout\ : std_logic;
 SIGNAL \CAP10|B[1]~1_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a29~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a17~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a21~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\ : std_logic;
 SIGNAL \VGApart|red~2_combout\ : std_logic;
 SIGNAL \VGApart|red[1]~feeder_combout\ : std_logic;
@@ -737,38 +737,39 @@ SIGNAL \SW[8]~input_o\ : std_logic;
 SIGNAL \GPIO1_D[6]~input_o\ : std_logic;
 SIGNAL \CAP10|QinReg[6]~feeder_combout\ : std_logic;
 SIGNAL \CAP10|B[2]~2_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a26~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a30~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a14~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a6~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a10~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a2~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a26~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a30~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\ : std_logic;
 SIGNAL \VGApart|red~3_combout\ : std_logic;
 SIGNAL \VGApart|red[2]~feeder_combout\ : std_logic;
 SIGNAL \SW[9]~input_o\ : std_logic;
 SIGNAL \GPIO1_D[7]~input_o\ : std_logic;
 SIGNAL \CAP10|B[3]~3_combout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a31~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a27~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\ : std_logic;
-SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a7~portbdataout\ : std_logic;
+SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a11~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|ram_block1a3~portbdataout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~18_combout\ : std_logic;
 SIGNAL \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\ : std_logic;
 SIGNAL \VGApart|red~4_combout\ : std_logic;
+SIGNAL \VGApart|red[3]~feeder_combout\ : std_logic;
 SIGNAL \VGApart|green~1_combout\ : std_logic;
 SIGNAL \VGApart|green~2_combout\ : std_logic;
 SIGNAL \VGApart|green~3_combout\ : std_logic;
@@ -777,9 +778,9 @@ SIGNAL \VGApart|green~5_combout\ : std_logic;
 SIGNAL \VGApart|green~6_combout\ : std_logic;
 SIGNAL \VGApart|green~7_combout\ : std_logic;
 SIGNAL \VGApart|green~8_combout\ : std_logic;
-SIGNAL \VGApart|process_0~0_combout\ : std_logic;
 SIGNAL \VGApart|process_0~1_combout\ : std_logic;
 SIGNAL \VGApart|process_0~2_combout\ : std_logic;
+SIGNAL \VGApart|process_0~0_combout\ : std_logic;
 SIGNAL \VGApart|process_0~3_combout\ : std_logic;
 SIGNAL \VGApart|Hsync_aux~q\ : std_logic;
 SIGNAL \VGApart|process_0~4_combout\ : std_logic;
@@ -1592,7 +1593,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \DIV800|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\);
 
--- Location: LCCOMB_X23_Y16_N22
+-- Location: LCCOMB_X32_Y25_N18
 \SCCBdriver|EE~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|EE~feeder_combout\ = VCC
@@ -1605,7 +1606,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \SCCBdriver|EE~feeder_combout\);
 
--- Location: FF_X23_Y16_N23
+-- Location: FF_X32_Y25_N19
 \SCCBdriver|EE\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1620,22 +1621,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|EE~q\);
 
--- Location: LCCOMB_X23_Y16_N0
+-- Location: LCCOMB_X32_Y25_N26
 \SCCBdriver|clk400D\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|clk400D~combout\ = (!\SCCBdriver|clk400data~q\ & \SCCBdriver|C_Esync~q\)
+-- \SCCBdriver|clk400D~combout\ = (\SCCBdriver|C_Esync~q\ & !\SCCBdriver|clk400data~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000110000001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	datab => \SCCBdriver|C_Esync~q\,
 	datac => \SCCBdriver|clk400data~q\,
-	datad => \SCCBdriver|C_Esync~q\,
 	combout => \SCCBdriver|clk400D~combout\);
 
--- Location: FF_X23_Y16_N1
+-- Location: FF_X32_Y25_N27
 \SCCBdriver|clk400data\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1650,7 +1651,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|clk400data~q\);
 
--- Location: CLKCTRL_G10
+-- Location: CLKCTRL_G11
 \SCCBdriver|clk400data~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -1663,7 +1664,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \SCCBdriver|clk400data~clkctrl_outclk\);
 
--- Location: LCCOMB_X21_Y16_N24
+-- Location: LCCOMB_X36_Y25_N20
 \SCCBdriver|REGS|Esync~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Esync~feeder_combout\ = VCC
@@ -1676,7 +1677,7 @@ GENERIC MAP (
 PORT MAP (
 	combout => \SCCBdriver|REGS|Esync~feeder_combout\);
 
--- Location: FF_X21_Y16_N25
+-- Location: FF_X36_Y25_N21
 \SCCBdriver|REGS|Esync\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1691,21 +1692,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Esync~q\);
 
--- Location: LCCOMB_X27_Y15_N26
+-- Location: LCCOMB_X35_Y25_N10
 \SCCBdriver|REGS|cQ[0]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cQ[0]~0_combout\ = !\SCCBdriver|REGS|Esync~q\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011111111",
+	lut_mask => "0000111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cQ[0]~0_combout\);
 
--- Location: FF_X27_Y15_N27
+-- Location: FF_X35_Y25_N11
 \SCCBdriver|REGS|cQ[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1720,22 +1721,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(0));
 
--- Location: LCCOMB_X27_Y15_N24
+-- Location: LCCOMB_X35_Y25_N26
 \SCCBdriver|REGS|cD[1]~25\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[1]~25_combout\ = (\SCCBdriver|REGS|cQ\(0)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011111111",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|cQ\(0),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|cQ\(0),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[1]~25_combout\);
 
--- Location: FF_X27_Y15_N25
+-- Location: FF_X35_Y25_N27
 \SCCBdriver|REGS|cQ[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1750,22 +1751,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(1));
 
--- Location: LCCOMB_X27_Y15_N22
+-- Location: LCCOMB_X36_Y25_N14
 \SCCBdriver|REGS|cD[2]~24\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[2]~24_combout\ = (\SCCBdriver|REGS|cQ\(1)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1111000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(1),
+	datac => \SCCBdriver|REGS|cQ\(1),
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[2]~24_combout\);
 
--- Location: FF_X27_Y15_N23
+-- Location: FF_X36_Y25_N15
 \SCCBdriver|REGS|cQ[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1780,7 +1781,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(2));
 
--- Location: LCCOMB_X27_Y15_N8
+-- Location: LCCOMB_X36_Y25_N4
 \SCCBdriver|REGS|cD[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[3]~23_combout\ = (\SCCBdriver|REGS|cQ\(2)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1795,7 +1796,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[3]~23_combout\);
 
--- Location: FF_X27_Y15_N9
+-- Location: FF_X36_Y25_N5
 \SCCBdriver|REGS|cQ[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1810,7 +1811,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(3));
 
--- Location: LCCOMB_X27_Y15_N10
+-- Location: LCCOMB_X36_Y25_N12
 \SCCBdriver|REGS|cD[4]~22\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[4]~22_combout\ = (\SCCBdriver|REGS|cQ\(3)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -1825,7 +1826,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[4]~22_combout\);
 
--- Location: FF_X27_Y15_N11
+-- Location: FF_X36_Y25_N13
 \SCCBdriver|REGS|cQ[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1840,22 +1841,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(4));
 
--- Location: LCCOMB_X27_Y15_N20
+-- Location: LCCOMB_X35_Y25_N2
 \SCCBdriver|REGS|cD[5]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[5]~21_combout\ = (\SCCBdriver|REGS|cQ\(4)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011111111",
+	lut_mask => "1111010111110101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(4),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|cQ\(4),
 	combout => \SCCBdriver|REGS|cD[5]~21_combout\);
 
--- Location: FF_X27_Y15_N21
+-- Location: FF_X35_Y25_N3
 \SCCBdriver|REGS|cQ[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1870,22 +1871,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(5));
 
--- Location: LCCOMB_X27_Y15_N18
+-- Location: LCCOMB_X35_Y25_N16
 \SCCBdriver|REGS|cD[6]~20\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[6]~20_combout\ = (\SCCBdriver|REGS|cQ\(5)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \SCCBdriver|REGS|cQ\(5),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[6]~20_combout\);
 
--- Location: FF_X27_Y15_N19
+-- Location: FF_X35_Y25_N17
 \SCCBdriver|REGS|cQ[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1900,22 +1901,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(6));
 
--- Location: LCCOMB_X27_Y15_N12
+-- Location: LCCOMB_X35_Y25_N24
 \SCCBdriver|REGS|cD[7]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[7]~19_combout\ = (\SCCBdriver|REGS|cQ\(6)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \SCCBdriver|REGS|cQ\(6),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[7]~19_combout\);
 
--- Location: FF_X27_Y15_N13
+-- Location: FF_X35_Y25_N25
 \SCCBdriver|REGS|cQ[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1930,22 +1931,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(7));
 
--- Location: LCCOMB_X27_Y15_N2
+-- Location: LCCOMB_X35_Y25_N0
 \SCCBdriver|REGS|cD[8]~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[8]~18_combout\ = (\SCCBdriver|REGS|cQ\(7)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011111111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(7),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|cQ\(7),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[8]~18_combout\);
 
--- Location: FF_X27_Y15_N3
+-- Location: FF_X35_Y25_N1
 \SCCBdriver|REGS|cQ[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1960,22 +1961,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(8));
 
--- Location: LCCOMB_X27_Y15_N0
+-- Location: LCCOMB_X31_Y25_N0
 \SCCBdriver|REGS|cD[9]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[9]~17_combout\ = (\SCCBdriver|REGS|cQ\(8)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1111111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(8),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(8),
 	combout => \SCCBdriver|REGS|cD[9]~17_combout\);
 
--- Location: FF_X27_Y15_N1
+-- Location: FF_X31_Y25_N1
 \SCCBdriver|REGS|cQ[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1990,22 +1991,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(9));
 
--- Location: LCCOMB_X27_Y16_N6
+-- Location: LCCOMB_X31_Y25_N24
 \SCCBdriver|REGS|cD[10]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[10]~16_combout\ = (\SCCBdriver|REGS|cQ\(9)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1111111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(9),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|cQ\(9),
 	combout => \SCCBdriver|REGS|cD[10]~16_combout\);
 
--- Location: FF_X27_Y16_N7
+-- Location: FF_X31_Y25_N25
 \SCCBdriver|REGS|cQ[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2020,22 +2021,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(10));
 
--- Location: LCCOMB_X27_Y16_N28
+-- Location: LCCOMB_X35_Y25_N4
 \SCCBdriver|REGS|cD[11]~15\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[11]~15_combout\ = (\SCCBdriver|REGS|cQ\(10)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011111111",
+	lut_mask => "1111010111110101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|cQ\(10),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|cQ\(10),
 	combout => \SCCBdriver|REGS|cD[11]~15_combout\);
 
--- Location: FF_X27_Y16_N29
+-- Location: FF_X35_Y25_N5
 \SCCBdriver|REGS|cQ[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2050,22 +2051,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(11));
 
--- Location: LCCOMB_X27_Y16_N26
+-- Location: LCCOMB_X35_Y25_N18
 \SCCBdriver|REGS|cD[12]~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[12]~14_combout\ = (\SCCBdriver|REGS|cQ\(11)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111111",
+	lut_mask => "1111010111110101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|cQ\(11),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|cQ\(11),
 	combout => \SCCBdriver|REGS|cD[12]~14_combout\);
 
--- Location: FF_X27_Y16_N27
+-- Location: FF_X35_Y25_N19
 \SCCBdriver|REGS|cQ[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2080,22 +2081,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(12));
 
--- Location: LCCOMB_X21_Y16_N8
+-- Location: LCCOMB_X35_Y25_N20
 \SCCBdriver|REGS|cD[13]~13\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[13]~13_combout\ = (\SCCBdriver|REGS|cQ\(12)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	datab => \SCCBdriver|REGS|cQ\(12),
 	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(12),
 	combout => \SCCBdriver|REGS|cD[13]~13_combout\);
 
--- Location: FF_X21_Y16_N9
+-- Location: FF_X35_Y25_N21
 \SCCBdriver|REGS|cQ[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2110,22 +2111,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(13));
 
--- Location: LCCOMB_X21_Y16_N22
+-- Location: LCCOMB_X35_Y25_N12
 \SCCBdriver|REGS|cD[14]~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[14]~12_combout\ = (\SCCBdriver|REGS|cQ\(13)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010111110101",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Esync~q\,
-	datac => \SCCBdriver|REGS|cQ\(13),
+	datab => \SCCBdriver|REGS|cQ\(13),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[14]~12_combout\);
 
--- Location: FF_X21_Y16_N23
+-- Location: FF_X35_Y25_N13
 \SCCBdriver|REGS|cQ[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2140,22 +2141,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(14));
 
--- Location: LCCOMB_X21_Y16_N28
+-- Location: LCCOMB_X35_Y25_N22
 \SCCBdriver|REGS|cD[15]~11\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[15]~11_combout\ = (\SCCBdriver|REGS|cQ\(14)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010111110101",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Esync~q\,
-	datac => \SCCBdriver|REGS|cQ\(14),
+	dataa => \SCCBdriver|REGS|cQ\(14),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[15]~11_combout\);
 
--- Location: FF_X21_Y16_N29
+-- Location: FF_X35_Y25_N23
 \SCCBdriver|REGS|cQ[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2170,22 +2171,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(15));
 
--- Location: LCCOMB_X21_Y16_N30
+-- Location: LCCOMB_X35_Y25_N30
 \SCCBdriver|REGS|cD[16]~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[16]~10_combout\ = (\SCCBdriver|REGS|cQ\(15)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111101010101",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(15),
+	dataa => \SCCBdriver|REGS|cQ\(15),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[16]~10_combout\);
 
--- Location: FF_X21_Y16_N31
+-- Location: FF_X35_Y25_N31
 \SCCBdriver|REGS|cQ[16]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2200,22 +2201,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(16));
 
--- Location: LCCOMB_X21_Y16_N4
+-- Location: LCCOMB_X35_Y25_N28
 \SCCBdriver|REGS|cD[17]~9\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[17]~9_combout\ = (\SCCBdriver|REGS|cQ\(16)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010111110101",
+	lut_mask => "1010111110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Esync~q\,
-	datac => \SCCBdriver|REGS|cQ\(16),
+	dataa => \SCCBdriver|REGS|cQ\(16),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[17]~9_combout\);
 
--- Location: FF_X21_Y16_N5
+-- Location: FF_X35_Y25_N29
 \SCCBdriver|REGS|cQ[17]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2230,22 +2231,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(17));
 
--- Location: LCCOMB_X21_Y16_N14
+-- Location: LCCOMB_X35_Y25_N8
 \SCCBdriver|REGS|cD[18]~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[18]~8_combout\ = (\SCCBdriver|REGS|cQ\(17)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010111110101",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Esync~q\,
-	datac => \SCCBdriver|REGS|cQ\(17),
+	datab => \SCCBdriver|REGS|cQ\(17),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[18]~8_combout\);
 
--- Location: FF_X21_Y16_N15
+-- Location: FF_X35_Y25_N9
 \SCCBdriver|REGS|cQ[18]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2260,7 +2261,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(18));
 
--- Location: LCCOMB_X21_Y16_N2
+-- Location: LCCOMB_X35_Y25_N14
 \SCCBdriver|REGS|cD[19]~7\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[19]~7_combout\ = (\SCCBdriver|REGS|cQ\(18)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -2275,7 +2276,7 @@ PORT MAP (
 	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[19]~7_combout\);
 
--- Location: FF_X21_Y16_N3
+-- Location: FF_X35_Y25_N15
 \SCCBdriver|REGS|cQ[19]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2290,22 +2291,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(19));
 
--- Location: LCCOMB_X21_Y16_N10
+-- Location: LCCOMB_X36_Y25_N28
 \SCCBdriver|REGS|cD[20]~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[20]~6_combout\ = (\SCCBdriver|REGS|cQ\(19)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(19),
 	combout => \SCCBdriver|REGS|cD[20]~6_combout\);
 
--- Location: FF_X21_Y16_N11
+-- Location: FF_X36_Y25_N29
 \SCCBdriver|REGS|cQ[20]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2320,22 +2321,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(20));
 
--- Location: LCCOMB_X21_Y16_N12
+-- Location: LCCOMB_X36_Y25_N16
 \SCCBdriver|REGS|cD[21]~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[21]~5_combout\ = (\SCCBdriver|REGS|cQ\(20)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(20),
 	combout => \SCCBdriver|REGS|cD[21]~5_combout\);
 
--- Location: FF_X21_Y16_N13
+-- Location: FF_X36_Y25_N17
 \SCCBdriver|REGS|cQ[21]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2350,22 +2351,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(21));
 
--- Location: LCCOMB_X21_Y16_N20
+-- Location: LCCOMB_X36_Y25_N18
 \SCCBdriver|REGS|cD[22]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[22]~4_combout\ = (\SCCBdriver|REGS|cQ\(21)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(21),
+	datac => \SCCBdriver|REGS|cQ\(21),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[22]~4_combout\);
 
--- Location: FF_X21_Y16_N21
+-- Location: FF_X36_Y25_N19
 \SCCBdriver|REGS|cQ[22]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2380,22 +2381,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(22));
 
--- Location: LCCOMB_X21_Y16_N18
+-- Location: LCCOMB_X36_Y25_N6
 \SCCBdriver|REGS|cD[23]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[23]~3_combout\ = (\SCCBdriver|REGS|cQ\(22)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1100110011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(22),
+	datab => \SCCBdriver|REGS|cQ\(22),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[23]~3_combout\);
 
--- Location: FF_X21_Y16_N19
+-- Location: FF_X36_Y25_N7
 \SCCBdriver|REGS|cQ[23]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2410,22 +2411,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(23));
 
--- Location: LCCOMB_X21_Y16_N0
+-- Location: LCCOMB_X36_Y25_N0
 \SCCBdriver|REGS|cD[24]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[24]~2_combout\ = (\SCCBdriver|REGS|cQ\(23)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1010101011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
-	datad => \SCCBdriver|REGS|cQ\(23),
+	dataa => \SCCBdriver|REGS|cQ\(23),
+	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[24]~2_combout\);
 
--- Location: FF_X21_Y16_N1
+-- Location: FF_X36_Y25_N1
 \SCCBdriver|REGS|cQ[24]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2440,22 +2441,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(24));
 
--- Location: LCCOMB_X21_Y16_N26
+-- Location: LCCOMB_X36_Y25_N8
 \SCCBdriver|REGS|cD[25]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[25]~1_combout\ = (\SCCBdriver|REGS|cQ\(24)) # (!\SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1111111100110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
 	datad => \SCCBdriver|REGS|cQ\(24),
 	combout => \SCCBdriver|REGS|cD[25]~1_combout\);
 
--- Location: FF_X21_Y16_N27
+-- Location: FF_X36_Y25_N9
 \SCCBdriver|REGS|cQ[25]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2470,7 +2471,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(25));
 
--- Location: LCCOMB_X21_Y16_N6
+-- Location: LCCOMB_X36_Y25_N24
 \SCCBdriver|REGS|cD[26]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|cD[26]~0_combout\ = (\SCCBdriver|REGS|cQ\(25)) # (!\SCCBdriver|REGS|Esync~q\)
@@ -2485,7 +2486,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|cD[26]~0_combout\);
 
--- Location: FF_X21_Y16_N7
+-- Location: FF_X36_Y25_N25
 \SCCBdriver|REGS|cQ[26]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2500,22 +2501,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|cQ\(26));
 
--- Location: LCCOMB_X22_Y16_N16
+-- Location: LCCOMB_X32_Y25_N10
 \SCCBdriver|clkE\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|clkE~combout\ = (!\SCCBdriver|clk400~q\) # (!\SCCBdriver|eInd~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101111101011111",
+	lut_mask => "0011111100111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
+	datab => \SCCBdriver|eInd~q\,
 	datac => \SCCBdriver|clk400~q\,
 	combout => \SCCBdriver|clkE~combout\);
 
--- Location: FF_X22_Y16_N17
+-- Location: FF_X32_Y25_N11
 \SCCBdriver|clk400\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2530,10 +2531,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|clk400~q\);
 
--- Location: LCCOMB_X22_Y16_N12
+-- Location: LCCOMB_X32_Y25_N4
 \SCCBdriver|dataEedge\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|dataEedge~combout\ = LCELL((((\SCCBdriver|mssgGO~q\ & \SCCBdriver|REGS|cQ\(26))) # (!\SCCBdriver|clk400~q\)) # (!\SCCBdriver|clk400data~q\))
+-- \SCCBdriver|dataEedge~combout\ = LCELL((((\SCCBdriver|REGS|cQ\(26) & \SCCBdriver|mssgGO~q\)) # (!\SCCBdriver|clk400~q\)) # (!\SCCBdriver|clk400data~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2541,13 +2542,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|mssgGO~q\,
-	datab => \SCCBdriver|REGS|cQ\(26),
+	dataa => \SCCBdriver|REGS|cQ\(26),
+	datab => \SCCBdriver|mssgGO~q\,
 	datac => \SCCBdriver|clk400data~q\,
 	datad => \SCCBdriver|clk400~q\,
 	combout => \SCCBdriver|dataEedge~combout\);
 
--- Location: LCCOMB_X22_Y16_N30
+-- Location: LCCOMB_X35_Y25_N6
 \SCCBdriver|mssgGO~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|mssgGO~0_combout\ = !\SCCBdriver|mssgGO~q\
@@ -2561,7 +2562,7 @@ PORT MAP (
 	datac => \SCCBdriver|mssgGO~q\,
 	combout => \SCCBdriver|mssgGO~0_combout\);
 
--- Location: FF_X22_Y16_N31
+-- Location: FF_X35_Y25_N7
 \SCCBdriver|mssgGO\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2576,23 +2577,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|mssgGO~q\);
 
--- Location: LCCOMB_X23_Y16_N18
+-- Location: LCCOMB_X31_Y25_N2
 \SCCBdriver|C_Eedge\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|C_Eedge~combout\ = LCELL((\SCCBdriver|C_E~q\ & ((!\SCCBdriver|mssgGO~q\))) # (!\SCCBdriver|C_E~q\ & (\SCCBdriver|eInd~q\)))
+-- \SCCBdriver|C_Eedge~combout\ = LCELL((\SCCBdriver|C_E~q\ & (!\SCCBdriver|mssgGO~q\)) # (!\SCCBdriver|C_E~q\ & ((\SCCBdriver|eInd~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000101011111010",
+	lut_mask => "0011111100001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
-	datac => \SCCBdriver|C_E~q\,
-	datad => \SCCBdriver|mssgGO~q\,
+	datab => \SCCBdriver|C_E~q\,
+	datac => \SCCBdriver|mssgGO~q\,
+	datad => \SCCBdriver|eInd~q\,
 	combout => \SCCBdriver|C_Eedge~combout\);
 
--- Location: LCCOMB_X23_Y16_N8
+-- Location: LCCOMB_X30_Y25_N24
 \SCCBdriver|C_E~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|C_E~0_combout\ = !\SCCBdriver|C_E~q\
@@ -2606,7 +2607,7 @@ PORT MAP (
 	datac => \SCCBdriver|C_E~q\,
 	combout => \SCCBdriver|C_E~0_combout\);
 
--- Location: FF_X23_Y16_N19
+-- Location: FF_X30_Y25_N25
 \SCCBdriver|C_E\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2615,14 +2616,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|C_Eedge~combout\,
-	asdata => \SCCBdriver|C_E~0_combout\,
+	d => \SCCBdriver|C_E~0_combout\,
 	clrn => \SW[0]~input_o\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|C_E~q\);
 
--- Location: LCCOMB_X22_Y16_N14
+-- Location: LCCOMB_X30_Y25_N10
 \SCCBdriver|C_Esync~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|C_Esync~feeder_combout\ = \SCCBdriver|C_E~q\
@@ -2636,7 +2636,7 @@ PORT MAP (
 	datad => \SCCBdriver|C_E~q\,
 	combout => \SCCBdriver|C_Esync~feeder_combout\);
 
--- Location: FF_X22_Y16_N15
+-- Location: FF_X30_Y25_N11
 \SCCBdriver|C_Esync\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2651,89 +2651,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|C_Esync~q\);
 
--- Location: LCCOMB_X24_Y16_N12
-\SCCBdriver|D1~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|D1~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|Q1~q\) # ((!\SCCBdriver|eInd~q\ & \SCCBdriver|Q0~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
-	datab => \SCCBdriver|Q0~q\,
-	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|EE~q\,
-	combout => \SCCBdriver|D1~0_combout\);
-
--- Location: FF_X24_Y16_N13
-\SCCBdriver|Q1\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \DIV800|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \SCCBdriver|D1~0_combout\,
-	clrn => \SW[0]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \SCCBdriver|Q1~q\);
-
--- Location: LCCOMB_X22_Y16_N6
-\SCCBdriver|DeInd~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|DeInd~0_combout\ = (\SCCBdriver|Q0~q\ & (!\SCCBdriver|Q1~q\ & (\SCCBdriver|eInd~q\ $ (!\SCCBdriver|C_Esync~q\)))) # (!\SCCBdriver|Q0~q\ & (\SCCBdriver|eInd~q\ $ ((!\SCCBdriver|C_Esync~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000110100101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
-	datab => \SCCBdriver|Q0~q\,
-	datac => \SCCBdriver|C_Esync~q\,
-	datad => \SCCBdriver|Q1~q\,
-	combout => \SCCBdriver|DeInd~0_combout\);
-
--- Location: LCCOMB_X23_Y16_N30
-\SCCBdriver|DeInd~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|DeInd~1_combout\ = (\SCCBdriver|EE~q\ & \SCCBdriver|DeInd~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SCCBdriver|EE~q\,
-	datac => \SCCBdriver|DeInd~0_combout\,
-	combout => \SCCBdriver|DeInd~1_combout\);
-
--- Location: FF_X23_Y16_N31
-\SCCBdriver|eInd\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \DIV800|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \SCCBdriver|DeInd~1_combout\,
-	clrn => \SW[0]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \SCCBdriver|eInd~q\);
-
--- Location: LCCOMB_X24_Y16_N2
+-- Location: LCCOMB_X32_Y25_N24
 \SCCBdriver|D0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|D0~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|eInd~q\ & ((\SCCBdriver|Q0~q\) # (!\SCCBdriver|Q1~q\))) # (!\SCCBdriver|eInd~q\ & ((\SCCBdriver|Q1~q\) # (!\SCCBdriver|Q0~q\)))))
+-- \SCCBdriver|D0~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|Q1~q\ & ((\SCCBdriver|Q0~q\) # (!\SCCBdriver|eInd~q\))) # (!\SCCBdriver|Q1~q\ & ((\SCCBdriver|eInd~q\) # (!\SCCBdriver|Q0~q\)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2741,13 +2662,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|eInd~q\,
-	datab => \SCCBdriver|Q1~q\,
+	dataa => \SCCBdriver|Q1~q\,
+	datab => \SCCBdriver|eInd~q\,
 	datac => \SCCBdriver|Q0~q\,
 	datad => \SCCBdriver|EE~q\,
 	combout => \SCCBdriver|D0~0_combout\);
 
--- Location: FF_X24_Y16_N3
+-- Location: FF_X32_Y25_N25
 \SCCBdriver|Q0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2762,23 +2683,102 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|Q0~q\);
 
--- Location: LCCOMB_X22_Y16_N26
-\SCCBdriver|LIVE~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X32_Y25_N12
+\SCCBdriver|DeInd~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|LIVE~0_combout\ = (\SCCBdriver|eInd~q\) # (\SCCBdriver|Q0~q\ $ (\SCCBdriver|Q1~q\))
+-- \SCCBdriver|DeInd~0_combout\ = (\SCCBdriver|Q1~q\ & (!\SCCBdriver|Q0~q\ & (\SCCBdriver|C_Esync~q\ $ (!\SCCBdriver|eInd~q\)))) # (!\SCCBdriver|Q1~q\ & (\SCCBdriver|C_Esync~q\ $ ((!\SCCBdriver|eInd~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111011011110110",
+	lut_mask => "0100000111000011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
+	dataa => \SCCBdriver|Q1~q\,
+	datab => \SCCBdriver|C_Esync~q\,
 	datac => \SCCBdriver|eInd~q\,
+	datad => \SCCBdriver|Q0~q\,
+	combout => \SCCBdriver|DeInd~0_combout\);
+
+-- Location: LCCOMB_X31_Y25_N6
+\SCCBdriver|DeInd~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|DeInd~1_combout\ = (\SCCBdriver|DeInd~0_combout\ & \SCCBdriver|EE~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SCCBdriver|DeInd~0_combout\,
+	datad => \SCCBdriver|EE~q\,
+	combout => \SCCBdriver|DeInd~1_combout\);
+
+-- Location: FF_X31_Y25_N7
+\SCCBdriver|eInd\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \DIV800|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \SCCBdriver|DeInd~1_combout\,
+	clrn => \SW[0]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \SCCBdriver|eInd~q\);
+
+-- Location: LCCOMB_X32_Y25_N6
+\SCCBdriver|D1~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|D1~0_combout\ = (\SCCBdriver|EE~q\ & ((\SCCBdriver|Q1~q\) # ((!\SCCBdriver|eInd~q\ & \SCCBdriver|Q0~q\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010001010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SCCBdriver|EE~q\,
+	datab => \SCCBdriver|eInd~q\,
+	datac => \SCCBdriver|Q1~q\,
+	datad => \SCCBdriver|Q0~q\,
+	combout => \SCCBdriver|D1~0_combout\);
+
+-- Location: FF_X32_Y25_N7
+\SCCBdriver|Q1\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \DIV800|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \SCCBdriver|D1~0_combout\,
+	clrn => \SW[0]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \SCCBdriver|Q1~q\);
+
+-- Location: LCCOMB_X32_Y25_N30
+\SCCBdriver|LIVE~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|LIVE~0_combout\ = (\SCCBdriver|eInd~q\) # (\SCCBdriver|Q1~q\ $ (\SCCBdriver|Q0~q\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010111111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SCCBdriver|Q1~q\,
+	datac => \SCCBdriver|eInd~q\,
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|LIVE~0_combout\);
 
--- Location: FF_X22_Y16_N27
+-- Location: FF_X32_Y25_N31
 \SCCBdriver|LIVE\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2793,81 +2793,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|LIVE~q\);
 
--- Location: LCCOMB_X22_Y16_N24
+-- Location: LCCOMB_X31_Y25_N12
 \SCCBdriver|SIO_C\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|SIO_C~combout\ = (\SCCBdriver|clk400~q\) # (!\SCCBdriver|C_E~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100110011",
+	lut_mask => "1111001111110011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \SCCBdriver|C_E~q\,
-	datad => \SCCBdriver|clk400~q\,
+	datac => \SCCBdriver|clk400~q\,
 	combout => \SCCBdriver|SIO_C~combout\);
 
--- Location: LCCOMB_X24_Y16_N16
-\SCCBdriver|REGS|Q[1]~feeder\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X33_Y25_N30
+\SCCBdriver|REGS|D[17]~25\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|Q[1]~feeder_combout\ = \SCCBdriver|Q0~q\
+-- \SCCBdriver|REGS|D[17]~25_combout\ = (\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\ & !\SCCBdriver|REGS|Esync~q\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011001100",
+	lut_mask => "0000000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \SCCBdriver|Q0~q\,
-	combout => \SCCBdriver|REGS|Q[1]~feeder_combout\);
-
--- Location: LCCOMB_X24_Y16_N0
-\SCCBdriver|REGS|D[0]~25\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|REGS|D[0]~25_combout\ = (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q1~q\) # (\SCCBdriver|Q0~q\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SCCBdriver|Q1~q\,
-	datab => \SCCBdriver|Q0~q\,
+	datac => \SCCBdriver|Q1~q\,
 	datad => \SCCBdriver|REGS|Esync~q\,
-	combout => \SCCBdriver|REGS|D[0]~25_combout\);
+	combout => \SCCBdriver|REGS|D[17]~25_combout\);
 
--- Location: LCCOMB_X24_Y16_N22
-\SCCBdriver|REGS|Q[0]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|REGS|Q[0]~feeder_combout\ = \SCCBdriver|REGS|D[0]~25_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \SCCBdriver|REGS|D[0]~25_combout\,
-	combout => \SCCBdriver|REGS|Q[0]~feeder_combout\);
-
--- Location: FF_X24_Y16_N23
-\SCCBdriver|REGS|Q[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|Q[0]~feeder_combout\,
-	clrn => \SCCBdriver|mssgGO~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \SCCBdriver|REGS|Q\(0));
-
--- Location: FF_X24_Y16_N17
+-- Location: FF_X33_Y25_N1
 \SCCBdriver|REGS|Q[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2876,18 +2833,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|Q[1]~feeder_combout\,
-	asdata => \SCCBdriver|REGS|Q\(0),
+	asdata => \SCCBdriver|REGS|D[17]~25_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
-	sload => \SCCBdriver|REGS|Esync~q\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(1));
 
--- Location: LCCOMB_X26_Y16_N14
+-- Location: LCCOMB_X33_Y25_N0
 \SCCBdriver|REGS|D[2]~24\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[2]~24_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(1))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
+-- \SCCBdriver|REGS|D[2]~24_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(1))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q1~q\ & (\SCCBdriver|Q0~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2895,13 +2851,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
+	dataa => \SCCBdriver|Q1~q\,
+	datab => \SCCBdriver|Q0~q\,
 	datac => \SCCBdriver|REGS|Q\(1),
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[2]~24_combout\);
 
--- Location: FF_X26_Y16_N21
+-- Location: FF_X33_Y25_N23
 \SCCBdriver|REGS|Q[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2917,7 +2873,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(2));
 
--- Location: LCCOMB_X26_Y16_N20
+-- Location: LCCOMB_X33_Y25_N22
 \SCCBdriver|REGS|D[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[3]~23_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(2))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (!\SCCBdriver|Q1~q\)))
@@ -2934,21 +2890,21 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[3]~23_combout\);
 
--- Location: LCCOMB_X26_Y16_N26
+-- Location: LCCOMB_X33_Y25_N4
 \SCCBdriver|REGS|Q[3]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Q[3]~feeder_combout\ = \SCCBdriver|REGS|D[3]~23_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101010",
+	lut_mask => "1100110011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|D[3]~23_combout\,
+	datab => \SCCBdriver|REGS|D[3]~23_combout\,
 	combout => \SCCBdriver|REGS|Q[3]~feeder_combout\);
 
--- Location: FF_X26_Y16_N27
+-- Location: FF_X33_Y25_N5
 \SCCBdriver|REGS|Q[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2963,22 +2919,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(3));
 
--- Location: LCCOMB_X26_Y16_N24
+-- Location: LCCOMB_X33_Y25_N16
 \SCCBdriver|REGS|D[4]~22\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[4]~22_combout\ = (\SCCBdriver|REGS|Q\(3) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(3),
+	datab => \SCCBdriver|REGS|Q\(3),
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[4]~22_combout\);
 
--- Location: FF_X26_Y16_N25
+-- Location: FF_X33_Y25_N17
 \SCCBdriver|REGS|Q[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2993,38 +2949,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(4));
 
--- Location: LCCOMB_X22_Y16_N0
+-- Location: LCCOMB_X33_Y25_N18
 \SCCBdriver|REGS|D[5]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[5]~21_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(4))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000001000100",
+	lut_mask => "1111010000000100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SCCBdriver|Q0~q\,
 	datab => \SCCBdriver|Q1~q\,
-	datac => \SCCBdriver|REGS|Q\(4),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|Q\(4),
 	combout => \SCCBdriver|REGS|D[5]~21_combout\);
 
--- Location: LCCOMB_X21_Y16_N16
+-- Location: LCCOMB_X33_Y25_N6
 \SCCBdriver|REGS|Q[5]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Q[5]~feeder_combout\ = \SCCBdriver|REGS|D[5]~21_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1100110011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|D[5]~21_combout\,
+	datab => \SCCBdriver|REGS|D[5]~21_combout\,
 	combout => \SCCBdriver|REGS|Q[5]~feeder_combout\);
 
--- Location: FF_X21_Y16_N17
+-- Location: FF_X33_Y25_N7
 \SCCBdriver|REGS|Q[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3039,22 +2995,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(5));
 
--- Location: LCCOMB_X24_Y16_N26
+-- Location: LCCOMB_X33_Y25_N2
 \SCCBdriver|REGS|D[6]~20\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[6]~20_combout\ = (\SCCBdriver|REGS|Q\(5) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(5),
+	dataa => \SCCBdriver|REGS|Q\(5),
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[6]~20_combout\);
 
--- Location: FF_X24_Y16_N27
+-- Location: FF_X33_Y25_N3
 \SCCBdriver|REGS|Q[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3069,24 +3025,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(6));
 
--- Location: LCCOMB_X24_Y16_N8
+-- Location: LCCOMB_X33_Y25_N24
 \SCCBdriver|REGS|D[7]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[7]~19_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(6))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
+-- \SCCBdriver|REGS|D[7]~19_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(6))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000001100",
+	lut_mask => "1100110001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(6),
-	datab => \SCCBdriver|Q1~q\,
-	datac => \SCCBdriver|Q0~q\,
+	dataa => \SCCBdriver|Q0~q\,
+	datab => \SCCBdriver|REGS|Q\(6),
+	datac => \SCCBdriver|Q1~q\,
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[7]~19_combout\);
 
--- Location: FF_X26_Y16_N11
+-- Location: FF_X33_Y25_N21
 \SCCBdriver|REGS|Q[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3102,7 +3058,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(7));
 
--- Location: LCCOMB_X26_Y16_N10
+-- Location: LCCOMB_X33_Y25_N20
 \SCCBdriver|REGS|D[8]~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[8]~18_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(7))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
@@ -3119,7 +3075,21 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[8]~18_combout\);
 
--- Location: FF_X26_Y16_N29
+-- Location: LCCOMB_X33_Y25_N14
+\SCCBdriver|REGS|Q[8]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|REGS|Q[8]~feeder_combout\ = \SCCBdriver|REGS|D[8]~18_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SCCBdriver|REGS|D[8]~18_combout\,
+	combout => \SCCBdriver|REGS|Q[8]~feeder_combout\);
+
+-- Location: FF_X33_Y25_N15
 \SCCBdriver|REGS|Q[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3128,45 +3098,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	asdata => \SCCBdriver|REGS|D[8]~18_combout\,
+	d => \SCCBdriver|REGS|Q[8]~feeder_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(8));
 
--- Location: LCCOMB_X26_Y16_N28
+-- Location: LCCOMB_X33_Y25_N8
 \SCCBdriver|REGS|D[9]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[9]~17_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(8))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[9]~17_combout\ = (\SCCBdriver|REGS|Q\(8) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011101110",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
 	datac => \SCCBdriver|REGS|Q\(8),
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[9]~17_combout\);
 
--- Location: LCCOMB_X26_Y16_N22
-\SCCBdriver|REGS|Q[9]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|REGS|Q[9]~feeder_combout\ = \SCCBdriver|REGS|D[9]~17_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SCCBdriver|REGS|D[9]~17_combout\,
-	combout => \SCCBdriver|REGS|Q[9]~feeder_combout\);
-
--- Location: FF_X26_Y16_N23
+-- Location: FF_X33_Y25_N9
 \SCCBdriver|REGS|Q[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3175,13 +3128,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|Q[9]~feeder_combout\,
+	d => \SCCBdriver|REGS|D[9]~17_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(9));
 
--- Location: LCCOMB_X26_Y16_N2
+-- Location: LCCOMB_X33_Y25_N12
 \SCCBdriver|REGS|D[10]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[10]~16_combout\ = (\SCCBdriver|REGS|Q\(9) & \SCCBdriver|REGS|Esync~q\)
@@ -3196,7 +3149,7 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[10]~16_combout\);
 
--- Location: FF_X26_Y16_N3
+-- Location: FF_X33_Y25_N13
 \SCCBdriver|REGS|Q[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3211,24 +3164,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(10));
 
--- Location: LCCOMB_X26_Y16_N8
+-- Location: LCCOMB_X33_Y25_N10
 \SCCBdriver|REGS|D[11]~15\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[11]~15_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(10))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((!\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[11]~15_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(10))) # (!\SCCBdriver|REGS|Esync~q\ & (((!\SCCBdriver|Q1~q\ & \SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000001010",
+	lut_mask => "1010101000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|REGS|Q\(10),
-	datac => \SCCBdriver|Q1~q\,
+	dataa => \SCCBdriver|REGS|Q\(10),
+	datab => \SCCBdriver|Q1~q\,
+	datac => \SCCBdriver|Q0~q\,
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[11]~15_combout\);
 
--- Location: FF_X26_Y16_N13
+-- Location: FF_X33_Y25_N27
 \SCCBdriver|REGS|Q[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3244,7 +3197,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(11));
 
--- Location: LCCOMB_X26_Y16_N12
+-- Location: LCCOMB_X33_Y25_N26
 \SCCBdriver|REGS|D[12]~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[12]~14_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(11))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
@@ -3261,7 +3214,21 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[12]~14_combout\);
 
--- Location: FF_X26_Y16_N31
+-- Location: LCCOMB_X33_Y25_N28
+\SCCBdriver|REGS|Q[12]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|REGS|Q[12]~feeder_combout\ = \SCCBdriver|REGS|D[12]~14_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SCCBdriver|REGS|D[12]~14_combout\,
+	combout => \SCCBdriver|REGS|Q[12]~feeder_combout\);
+
+-- Location: FF_X33_Y25_N29
 \SCCBdriver|REGS|Q[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3270,31 +3237,30 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	asdata => \SCCBdriver|REGS|D[12]~14_combout\,
+	d => \SCCBdriver|REGS|Q[12]~feeder_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(12));
 
--- Location: LCCOMB_X26_Y16_N30
+-- Location: LCCOMB_X36_Y25_N30
 \SCCBdriver|REGS|D[13]~13\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[13]~13_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(12))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000010001000",
+	lut_mask => "1110110000100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
-	datac => \SCCBdriver|REGS|Q\(12),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|Q1~q\,
+	datad => \SCCBdriver|REGS|Q\(12),
 	combout => \SCCBdriver|REGS|D[13]~13_combout\);
 
--- Location: FF_X26_Y16_N1
+-- Location: FF_X36_Y25_N23
 \SCCBdriver|REGS|Q[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3310,7 +3276,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(13));
 
--- Location: LCCOMB_X26_Y16_N0
+-- Location: LCCOMB_X36_Y25_N22
 \SCCBdriver|REGS|D[14]~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[14]~12_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(13))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & (!\SCCBdriver|Q1~q\)))
@@ -3327,7 +3293,21 @@ PORT MAP (
 	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[14]~12_combout\);
 
--- Location: FF_X26_Y16_N7
+-- Location: LCCOMB_X36_Y25_N10
+\SCCBdriver|REGS|Q[14]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|REGS|Q[14]~feeder_combout\ = \SCCBdriver|REGS|D[14]~12_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SCCBdriver|REGS|D[14]~12_combout\,
+	combout => \SCCBdriver|REGS|Q[14]~feeder_combout\);
+
+-- Location: FF_X36_Y25_N11
 \SCCBdriver|REGS|Q[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3336,45 +3316,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	asdata => \SCCBdriver|REGS|D[14]~12_combout\,
+	d => \SCCBdriver|REGS|Q[14]~feeder_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(14));
 
--- Location: LCCOMB_X26_Y16_N6
+-- Location: LCCOMB_X37_Y25_N0
 \SCCBdriver|REGS|D[15]~11\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[15]~11_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(14))))) # (!\SCCBdriver|REGS|Esync~q\ & (!\SCCBdriver|Q0~q\ & (\SCCBdriver|Q1~q\)))
+-- \SCCBdriver|REGS|D[15]~11_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(14))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000001000100",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
-	datac => \SCCBdriver|REGS|Q\(14),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|Q\(14),
 	combout => \SCCBdriver|REGS|D[15]~11_combout\);
 
--- Location: LCCOMB_X26_Y16_N4
-\SCCBdriver|REGS|Q[15]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|REGS|Q[15]~feeder_combout\ = \SCCBdriver|REGS|D[15]~11_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SCCBdriver|REGS|D[15]~11_combout\,
-	combout => \SCCBdriver|REGS|Q[15]~feeder_combout\);
-
--- Location: FF_X26_Y16_N5
+-- Location: FF_X37_Y25_N1
 \SCCBdriver|REGS|Q[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3383,28 +3346,30 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|Q[15]~feeder_combout\,
+	d => \SCCBdriver|REGS|D[15]~11_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(15));
 
--- Location: LCCOMB_X27_Y16_N18
+-- Location: LCCOMB_X37_Y25_N30
 \SCCBdriver|REGS|D[16]~10\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[16]~10_combout\ = (\SCCBdriver|REGS|Q\(15) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[16]~10_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(15))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\ & !\SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1000100011011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(15),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Q\(15),
+	datac => \SCCBdriver|Q1~q\,
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|REGS|D[16]~10_combout\);
 
--- Location: FF_X27_Y16_N19
+-- Location: FF_X37_Y25_N11
 \SCCBdriver|REGS|Q[16]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3413,30 +3378,45 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|D[16]~10_combout\,
+	asdata => \SCCBdriver|REGS|D[16]~10_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(16));
 
--- Location: LCCOMB_X27_Y16_N0
+-- Location: LCCOMB_X37_Y25_N10
 \SCCBdriver|REGS|D[17]~9\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[17]~9_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(16))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q0~q\ & ((\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[17]~9_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(16))))) # (!\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|Q1~q\ & ((\SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110010100000",
+	lut_mask => "1110010010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|REGS|Q\(16),
-	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|Q1~q\,
+	datac => \SCCBdriver|REGS|Q\(16),
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|REGS|D[17]~9_combout\);
 
--- Location: FF_X27_Y16_N17
+-- Location: LCCOMB_X37_Y25_N12
+\SCCBdriver|REGS|Q[17]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \SCCBdriver|REGS|Q[17]~feeder_combout\ = \SCCBdriver|REGS|D[17]~9_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SCCBdriver|REGS|D[17]~9_combout\,
+	combout => \SCCBdriver|REGS|Q[17]~feeder_combout\);
+
+-- Location: FF_X37_Y25_N13
 \SCCBdriver|REGS|Q[17]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3445,45 +3425,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	asdata => \SCCBdriver|REGS|D[17]~9_combout\,
+	d => \SCCBdriver|REGS|Q[17]~feeder_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(17));
 
--- Location: LCCOMB_X27_Y16_N16
+-- Location: LCCOMB_X37_Y25_N26
 \SCCBdriver|REGS|D[18]~8\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[18]~8_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(17))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[18]~8_combout\ = (\SCCBdriver|REGS|Q\(17) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011101110",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
-	datab => \SCCBdriver|Q1~q\,
-	datac => \SCCBdriver|REGS|Q\(17),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Q\(17),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[18]~8_combout\);
 
--- Location: LCCOMB_X27_Y16_N14
-\SCCBdriver|REGS|Q[18]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \SCCBdriver|REGS|Q[18]~feeder_combout\ = \SCCBdriver|REGS|D[18]~8_combout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SCCBdriver|REGS|D[18]~8_combout\,
-	combout => \SCCBdriver|REGS|Q[18]~feeder_combout\);
-
--- Location: FF_X27_Y16_N15
+-- Location: FF_X37_Y25_N27
 \SCCBdriver|REGS|Q[18]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3492,28 +3455,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \SCCBdriver|clk400data~clkctrl_outclk\,
-	d => \SCCBdriver|REGS|Q[18]~feeder_combout\,
+	d => \SCCBdriver|REGS|D[18]~8_combout\,
 	clrn => \SCCBdriver|mssgGO~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(18));
 
--- Location: LCCOMB_X27_Y16_N24
+-- Location: LCCOMB_X37_Y25_N18
 \SCCBdriver|REGS|D[19]~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[19]~7_combout\ = (\SCCBdriver|REGS|Q\(18) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[19]~7_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(18))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datac => \SCCBdriver|REGS|Q\(18),
-	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[19]~7_combout\);
 
--- Location: FF_X27_Y16_N25
+-- Location: FF_X37_Y25_N19
 \SCCBdriver|REGS|Q[19]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3528,38 +3491,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(19));
 
--- Location: LCCOMB_X26_Y16_N18
+-- Location: LCCOMB_X37_Y25_N16
 \SCCBdriver|REGS|D[20]~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[20]~6_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(19))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[20]~6_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(19))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\) # (\SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111010",
+	lut_mask => "1101110111011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datab => \SCCBdriver|REGS|Q\(19),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|REGS|D[20]~6_combout\);
 
--- Location: LCCOMB_X26_Y16_N16
+-- Location: LCCOMB_X37_Y25_N28
 \SCCBdriver|REGS|Q[20]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Q[20]~feeder_combout\ = \SCCBdriver|REGS|D[20]~6_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011001100",
+	lut_mask => "1010101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SCCBdriver|REGS|D[20]~6_combout\,
+	dataa => \SCCBdriver|REGS|D[20]~6_combout\,
 	combout => \SCCBdriver|REGS|Q[20]~feeder_combout\);
 
--- Location: FF_X26_Y16_N17
+-- Location: FF_X37_Y25_N29
 \SCCBdriver|REGS|Q[20]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3574,22 +3537,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(20));
 
--- Location: LCCOMB_X27_Y16_N22
+-- Location: LCCOMB_X37_Y25_N22
 \SCCBdriver|REGS|D[21]~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[21]~5_combout\ = (\SCCBdriver|REGS|Q\(20) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(20),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Q\(20),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[21]~5_combout\);
 
--- Location: FF_X27_Y16_N23
+-- Location: FF_X37_Y25_N23
 \SCCBdriver|REGS|Q[21]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3604,22 +3567,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(21));
 
--- Location: LCCOMB_X27_Y16_N8
+-- Location: LCCOMB_X37_Y25_N20
 \SCCBdriver|REGS|D[22]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[22]~4_combout\ = (\SCCBdriver|REGS|Q\(21) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[22]~4_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(21))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datac => \SCCBdriver|REGS|Q\(21),
-	datad => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[22]~4_combout\);
 
--- Location: FF_X27_Y16_N9
+-- Location: FF_X37_Y25_N21
 \SCCBdriver|REGS|Q[22]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3634,22 +3597,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(22));
 
--- Location: LCCOMB_X27_Y16_N10
+-- Location: LCCOMB_X37_Y25_N14
 \SCCBdriver|REGS|D[23]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|D[23]~3_combout\ = (\SCCBdriver|REGS|Q\(22) & \SCCBdriver|REGS|Esync~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(22),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Q\(22),
+	datac => \SCCBdriver|REGS|Esync~q\,
 	combout => \SCCBdriver|REGS|D[23]~3_combout\);
 
--- Location: FF_X27_Y16_N11
+-- Location: FF_X37_Y25_N15
 \SCCBdriver|REGS|Q[23]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3664,22 +3627,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(23));
 
--- Location: LCCOMB_X27_Y16_N2
+-- Location: LCCOMB_X37_Y25_N2
 \SCCBdriver|REGS|D[24]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[24]~2_combout\ = (\SCCBdriver|REGS|Q\(23) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[24]~2_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(23))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|Q\(23),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
+	datac => \SCCBdriver|REGS|Q\(23),
 	combout => \SCCBdriver|REGS|D[24]~2_combout\);
 
--- Location: FF_X27_Y16_N3
+-- Location: FF_X37_Y25_N3
 \SCCBdriver|REGS|Q[24]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3694,38 +3657,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(24));
 
--- Location: LCCOMB_X27_Y16_N20
+-- Location: LCCOMB_X37_Y25_N24
 \SCCBdriver|REGS|D[25]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[25]~1_combout\ = (\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|REGS|Q\(24))))) # (!\SCCBdriver|REGS|Esync~q\ & ((\SCCBdriver|Q0~q\) # ((\SCCBdriver|Q1~q\))))
+-- \SCCBdriver|REGS|D[25]~1_combout\ = (\SCCBdriver|REGS|Esync~q\ & (\SCCBdriver|REGS|Q\(24))) # (!\SCCBdriver|REGS|Esync~q\ & (((\SCCBdriver|Q1~q\) # (\SCCBdriver|Q0~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011111010",
+	lut_mask => "1101110111011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|Q0~q\,
+	dataa => \SCCBdriver|REGS|Esync~q\,
 	datab => \SCCBdriver|REGS|Q\(24),
 	datac => \SCCBdriver|Q1~q\,
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|Q0~q\,
 	combout => \SCCBdriver|REGS|D[25]~1_combout\);
 
--- Location: LCCOMB_X27_Y16_N4
+-- Location: LCCOMB_X37_Y25_N4
 \SCCBdriver|REGS|Q[25]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|REGS|Q[25]~feeder_combout\ = \SCCBdriver|REGS|D[25]~1_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101010",
+	lut_mask => "1100110011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|REGS|D[25]~1_combout\,
+	datab => \SCCBdriver|REGS|D[25]~1_combout\,
 	combout => \SCCBdriver|REGS|Q[25]~feeder_combout\);
 
--- Location: FF_X27_Y16_N5
+-- Location: FF_X37_Y25_N5
 \SCCBdriver|REGS|Q[25]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3740,22 +3703,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(25));
 
--- Location: LCCOMB_X27_Y16_N12
+-- Location: LCCOMB_X36_Y25_N2
 \SCCBdriver|REGS|D[26]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \SCCBdriver|REGS|D[26]~0_combout\ = (\SCCBdriver|REGS|Q\(25) & \SCCBdriver|REGS|Esync~q\)
+-- \SCCBdriver|REGS|D[26]~0_combout\ = (\SCCBdriver|REGS|Esync~q\ & \SCCBdriver|REGS|Q\(25))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SCCBdriver|REGS|Q\(25),
-	datad => \SCCBdriver|REGS|Esync~q\,
+	datab => \SCCBdriver|REGS|Esync~q\,
+	datad => \SCCBdriver|REGS|Q\(25),
 	combout => \SCCBdriver|REGS|D[26]~0_combout\);
 
--- Location: FF_X27_Y16_N13
+-- Location: FF_X36_Y25_N3
 \SCCBdriver|REGS|Q[26]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3770,18 +3733,18 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \SCCBdriver|REGS|Q\(26));
 
--- Location: LCCOMB_X27_Y16_N30
+-- Location: LCCOMB_X36_Y25_N26
 \SCCBdriver|SIO_D\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \SCCBdriver|SIO_D~combout\ = (\SCCBdriver|REGS|Q\(26)) # (!\SCCBdriver|mssgGO~q\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111101010101",
+	lut_mask => "1111111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SCCBdriver|mssgGO~q\,
+	datac => \SCCBdriver|mssgGO~q\,
 	datad => \SCCBdriver|REGS|Q\(26),
 	combout => \SCCBdriver|SIO_D~combout\);
 
@@ -4043,25 +4006,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\);
 
--- Location: LCCOMB_X16_Y19_N18
-\VGApart|Add0~12\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X20_Y13_N6
+\VGApart|Add0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add0~12_combout\ = (\VGApart|h_count\(6) & (\VGApart|Add0~11\ $ (GND))) # (!\VGApart|h_count\(6) & (!\VGApart|Add0~11\ & VCC))
--- \VGApart|Add0~13\ = CARRY((\VGApart|h_count\(6) & !\VGApart|Add0~11\))
+-- \VGApart|Add0~0_combout\ = \VGApart|h_count\(0) $ (VCC)
+-- \VGApart|Add0~1\ = CARRY(\VGApart|h_count\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|h_count\(6),
+	datab => \VGApart|h_count\(0),
 	datad => VCC,
-	cin => \VGApart|Add0~11\,
-	combout => \VGApart|Add0~12_combout\,
-	cout => \VGApart|Add0~13\);
+	combout => \VGApart|Add0~0_combout\,
+	cout => \VGApart|Add0~1\);
 
--- Location: LCCOMB_X16_Y19_N20
+-- Location: LCCOMB_X20_Y13_N20
 \VGApart|Add0~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~14_combout\ = (\VGApart|h_count\(7) & (!\VGApart|Add0~13\)) # (!\VGApart|h_count\(7) & ((\VGApart|Add0~13\) # (GND)))
@@ -4079,22 +4041,7 @@ PORT MAP (
 	combout => \VGApart|Add0~14_combout\,
 	cout => \VGApart|Add0~15\);
 
--- Location: FF_X16_Y19_N21
-\VGApart|h_count[7]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add0~14_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|h_count\(7));
-
--- Location: LCCOMB_X16_Y19_N22
+-- Location: LCCOMB_X20_Y13_N22
 \VGApart|Add0~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~16_combout\ = (\VGApart|h_count\(8) & (\VGApart|Add0~15\ $ (GND))) # (!\VGApart|h_count\(8) & (!\VGApart|Add0~15\ & VCC))
@@ -4112,7 +4059,7 @@ PORT MAP (
 	combout => \VGApart|Add0~16_combout\,
 	cout => \VGApart|Add0~17\);
 
--- Location: LCCOMB_X16_Y19_N4
+-- Location: LCCOMB_X20_Y13_N0
 \VGApart|h_count~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|h_count~0_combout\ = (!\VGApart|Equal0~2_combout\ & \VGApart|Add0~16_combout\)
@@ -4127,7 +4074,7 @@ PORT MAP (
 	datac => \VGApart|Add0~16_combout\,
 	combout => \VGApart|h_count~0_combout\);
 
--- Location: FF_X16_Y19_N5
+-- Location: FF_X20_Y13_N1
 \VGApart|h_count[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4142,7 +4089,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(8));
 
--- Location: LCCOMB_X16_Y19_N24
+-- Location: LCCOMB_X20_Y13_N24
 \VGApart|Add0~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~18_combout\ = \VGApart|Add0~17\ $ (\VGApart|h_count\(9))
@@ -4157,22 +4104,22 @@ PORT MAP (
 	cin => \VGApart|Add0~17\,
 	combout => \VGApart|Add0~18_combout\);
 
--- Location: LCCOMB_X16_Y19_N2
+-- Location: LCCOMB_X21_Y13_N0
 \VGApart|h_count~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|h_count~1_combout\ = (!\VGApart|Equal0~2_combout\ & \VGApart|Add0~18_combout\)
+-- \VGApart|h_count~1_combout\ = (\VGApart|Add0~18_combout\ & !\VGApart|Equal0~2_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \VGApart|Equal0~2_combout\,
-	datad => \VGApart|Add0~18_combout\,
+	datab => \VGApart|Add0~18_combout\,
+	datad => \VGApart|Equal0~2_combout\,
 	combout => \VGApart|h_count~1_combout\);
 
--- Location: FF_X16_Y19_N3
+-- Location: FF_X21_Y13_N1
 \VGApart|h_count[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4187,39 +4134,73 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(9));
 
--- Location: LCCOMB_X16_Y19_N6
-\VGApart|Add0~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X21_Y13_N4
+\VGApart|Equal0~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add0~0_combout\ = \VGApart|h_count\(0) $ (VCC)
--- \VGApart|Add0~1\ = CARRY(\VGApart|h_count\(0))
+-- \VGApart|Equal0~1_combout\ = (\VGApart|h_count\(5) & (!\VGApart|h_count\(6) & (!\VGApart|h_count\(4) & \VGApart|h_count\(9))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010110101010",
+	lut_mask => "0000001000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(0),
-	datad => VCC,
-	combout => \VGApart|Add0~0_combout\,
-	cout => \VGApart|Add0~1\);
+	dataa => \VGApart|h_count\(5),
+	datab => \VGApart|h_count\(6),
+	datac => \VGApart|h_count\(4),
+	datad => \VGApart|h_count\(9),
+	combout => \VGApart|Equal0~1_combout\);
 
--- Location: LCCOMB_X16_Y19_N26
+-- Location: LCCOMB_X22_Y13_N28
+\VGApart|Equal0~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal0~0_combout\ = (!\VGApart|h_count\(3) & (!\VGApart|h_count\(1) & (!\VGApart|h_count\(0) & !\VGApart|h_count\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|h_count\(3),
+	datab => \VGApart|h_count\(1),
+	datac => \VGApart|h_count\(0),
+	datad => \VGApart|h_count\(2),
+	combout => \VGApart|Equal0~0_combout\);
+
+-- Location: LCCOMB_X21_Y13_N30
+\VGApart|Equal0~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal0~2_combout\ = (!\VGApart|h_count\(7) & (\VGApart|h_count\(8) & (\VGApart|Equal0~1_combout\ & \VGApart|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|h_count\(7),
+	datab => \VGApart|h_count\(8),
+	datac => \VGApart|Equal0~1_combout\,
+	datad => \VGApart|Equal0~0_combout\,
+	combout => \VGApart|Equal0~2_combout\);
+
+-- Location: LCCOMB_X20_Y13_N4
 \VGApart|h_count~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|h_count~3_combout\ = (!\VGApart|Equal0~2_combout\ & \VGApart|Add0~0_combout\)
+-- \VGApart|h_count~3_combout\ = (\VGApart|Add0~0_combout\ & !\VGApart|Equal0~2_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000101000001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \VGApart|Add0~0_combout\,
 	datac => \VGApart|Equal0~2_combout\,
-	datad => \VGApart|Add0~0_combout\,
 	combout => \VGApart|h_count~3_combout\);
 
--- Location: FF_X16_Y19_N27
+-- Location: FF_X20_Y13_N5
 \VGApart|h_count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4234,7 +4215,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(0));
 
--- Location: LCCOMB_X16_Y19_N8
+-- Location: LCCOMB_X20_Y13_N8
 \VGApart|Add0~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~2_combout\ = (\VGApart|h_count\(1) & (!\VGApart|Add0~1\)) # (!\VGApart|h_count\(1) & ((\VGApart|Add0~1\) # (GND)))
@@ -4252,7 +4233,7 @@ PORT MAP (
 	combout => \VGApart|Add0~2_combout\,
 	cout => \VGApart|Add0~3\);
 
--- Location: FF_X16_Y19_N9
+-- Location: FF_X20_Y13_N9
 \VGApart|h_count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4267,7 +4248,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(1));
 
--- Location: LCCOMB_X16_Y19_N10
+-- Location: LCCOMB_X20_Y13_N10
 \VGApart|Add0~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~4_combout\ = (\VGApart|h_count\(2) & (\VGApart|Add0~3\ $ (GND))) # (!\VGApart|h_count\(2) & (!\VGApart|Add0~3\ & VCC))
@@ -4275,17 +4256,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(2),
+	datab => \VGApart|h_count\(2),
 	datad => VCC,
 	cin => \VGApart|Add0~3\,
 	combout => \VGApart|Add0~4_combout\,
 	cout => \VGApart|Add0~5\);
 
--- Location: FF_X16_Y19_N11
+-- Location: FF_X20_Y13_N11
 \VGApart|h_count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4300,7 +4281,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(2));
 
--- Location: LCCOMB_X16_Y19_N12
+-- Location: LCCOMB_X20_Y13_N12
 \VGApart|Add0~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~6_combout\ = (\VGApart|h_count\(3) & (!\VGApart|Add0~5\)) # (!\VGApart|h_count\(3) & ((\VGApart|Add0~5\) # (GND)))
@@ -4318,7 +4299,7 @@ PORT MAP (
 	combout => \VGApart|Add0~6_combout\,
 	cout => \VGApart|Add0~7\);
 
--- Location: FF_X16_Y19_N13
+-- Location: FF_X20_Y13_N13
 \VGApart|h_count[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4333,7 +4314,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(3));
 
--- Location: LCCOMB_X16_Y19_N14
+-- Location: LCCOMB_X20_Y13_N14
 \VGApart|Add0~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~8_combout\ = (\VGApart|h_count\(4) & (\VGApart|Add0~7\ $ (GND))) # (!\VGApart|h_count\(4) & (!\VGApart|Add0~7\ & VCC))
@@ -4351,7 +4332,7 @@ PORT MAP (
 	combout => \VGApart|Add0~8_combout\,
 	cout => \VGApart|Add0~9\);
 
--- Location: FF_X16_Y19_N15
+-- Location: FF_X20_Y13_N15
 \VGApart|h_count[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4366,58 +4347,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(4));
 
--- Location: LCCOMB_X16_Y21_N18
-\VGApart|Equal0~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal0~1_combout\ = (\VGApart|h_count\(9) & (\VGApart|h_count\(5) & (!\VGApart|h_count\(4) & !\VGApart|h_count\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(9),
-	datab => \VGApart|h_count\(5),
-	datac => \VGApart|h_count\(4),
-	datad => \VGApart|h_count\(6),
-	combout => \VGApart|Equal0~1_combout\);
-
--- Location: LCCOMB_X16_Y21_N22
-\VGApart|Equal0~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal0~0_combout\ = (!\VGApart|h_count\(2) & (!\VGApart|h_count\(0) & (!\VGApart|h_count\(1) & !\VGApart|h_count\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(2),
-	datab => \VGApart|h_count\(0),
-	datac => \VGApart|h_count\(1),
-	datad => \VGApart|h_count\(3),
-	combout => \VGApart|Equal0~0_combout\);
-
--- Location: LCCOMB_X16_Y21_N14
-\VGApart|Equal0~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal0~2_combout\ = (\VGApart|h_count\(8) & (\VGApart|Equal0~1_combout\ & (\VGApart|Equal0~0_combout\ & !\VGApart|h_count\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(8),
-	datab => \VGApart|Equal0~1_combout\,
-	datac => \VGApart|Equal0~0_combout\,
-	datad => \VGApart|h_count\(7),
-	combout => \VGApart|Equal0~2_combout\);
-
--- Location: LCCOMB_X16_Y19_N16
+-- Location: LCCOMB_X20_Y13_N16
 \VGApart|Add0~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add0~10_combout\ = (\VGApart|h_count\(5) & (!\VGApart|Add0~9\)) # (!\VGApart|h_count\(5) & ((\VGApart|Add0~9\) # (GND)))
@@ -4425,32 +4355,32 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|h_count\(5),
+	dataa => \VGApart|h_count\(5),
 	datad => VCC,
 	cin => \VGApart|Add0~9\,
 	combout => \VGApart|Add0~10_combout\,
 	cout => \VGApart|Add0~11\);
 
--- Location: LCCOMB_X16_Y19_N28
+-- Location: LCCOMB_X20_Y13_N30
 \VGApart|h_count~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|h_count~2_combout\ = (!\VGApart|Equal0~2_combout\ & \VGApart|Add0~10_combout\)
+-- \VGApart|h_count~2_combout\ = (\VGApart|Add0~10_combout\ & !\VGApart|Equal0~2_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000110000001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	datab => \VGApart|Add0~10_combout\,
 	datac => \VGApart|Equal0~2_combout\,
-	datad => \VGApart|Add0~10_combout\,
 	combout => \VGApart|h_count~2_combout\);
 
--- Location: FF_X16_Y19_N29
+-- Location: FF_X20_Y13_N31
 \VGApart|h_count[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4465,7 +4395,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(5));
 
--- Location: FF_X16_Y19_N19
+-- Location: LCCOMB_X20_Y13_N18
+\VGApart|Add0~12\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add0~12_combout\ = (\VGApart|h_count\(6) & (\VGApart|Add0~11\ $ (GND))) # (!\VGApart|h_count\(6) & (!\VGApart|Add0~11\ & VCC))
+-- \VGApart|Add0~13\ = CARRY((\VGApart|h_count\(6) & !\VGApart|Add0~11\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|h_count\(6),
+	datad => VCC,
+	cin => \VGApart|Add0~11\,
+	combout => \VGApart|Add0~12_combout\,
+	cout => \VGApart|Add0~13\);
+
+-- Location: FF_X20_Y13_N19
 \VGApart|h_count[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4480,72 +4428,87 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|h_count\(6));
 
--- Location: LCCOMB_X16_Y21_N20
+-- Location: FF_X20_Y13_N21
+\VGApart|h_count[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add0~14_combout\,
+	clrn => \ALT_INV_SW[1]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|h_count\(7));
+
+-- Location: LCCOMB_X23_Y14_N30
 \VGApart|LessThan10~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|LessThan10~0_combout\ = (!\VGApart|h_count\(8) & !\VGApart|h_count\(7))
+-- \VGApart|LessThan10~0_combout\ = (!\VGApart|h_count\(7) & !\VGApart|h_count\(8))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000001010101",
+	lut_mask => "0000010100000101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(8),
-	datad => \VGApart|h_count\(7),
+	dataa => \VGApart|h_count\(7),
+	datac => \VGApart|h_count\(8),
 	combout => \VGApart|LessThan10~0_combout\);
 
--- Location: LCCOMB_X16_Y21_N30
+-- Location: LCCOMB_X21_Y13_N8
 \VGApart|process_0~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~6_combout\ = (!\VGApart|h_count\(6) & (\VGApart|LessThan10~0_combout\ & ((!\VGApart|h_count\(4)) # (!\VGApart|h_count\(5)))))
+-- \VGApart|process_0~6_combout\ = (!\VGApart|h_count\(6) & (\VGApart|LessThan10~0_combout\ & ((!\VGApart|h_count\(5)) # (!\VGApart|h_count\(4)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001010100000000",
+	lut_mask => "0001001100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(6),
-	datab => \VGApart|h_count\(5),
-	datac => \VGApart|h_count\(4),
+	dataa => \VGApart|h_count\(4),
+	datab => \VGApart|h_count\(6),
+	datac => \VGApart|h_count\(5),
 	datad => \VGApart|LessThan10~0_combout\,
 	combout => \VGApart|process_0~6_combout\);
 
--- Location: LCCOMB_X15_Y21_N10
+-- Location: LCCOMB_X21_Y13_N12
 \VGApart|LessThan6~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|LessThan6~0_combout\ = (\VGApart|h_count\(6) & ((\VGApart|h_count\(5)) # (\VGApart|h_count\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110010001000",
+	lut_mask => "1100110011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(5),
 	datab => \VGApart|h_count\(6),
+	datac => \VGApart|h_count\(5),
 	datad => \VGApart|h_count\(4),
 	combout => \VGApart|LessThan6~0_combout\);
 
--- Location: LCCOMB_X15_Y21_N2
+-- Location: LCCOMB_X21_Y13_N6
 \VGApart|process_0~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~7_combout\ = (\VGApart|h_count\(9) & (!\VGApart|process_0~6_combout\)) # (!\VGApart|h_count\(9) & (((\VGApart|LessThan10~0_combout\ & !\VGApart|LessThan6~0_combout\))))
+-- \VGApart|process_0~7_combout\ = (\VGApart|h_count\(9) & (((!\VGApart|process_0~6_combout\)))) # (!\VGApart|h_count\(9) & (\VGApart|LessThan10~0_combout\ & ((!\VGApart|LessThan6~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100010001110100",
+	lut_mask => "0000110000101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|process_0~6_combout\,
+	dataa => \VGApart|LessThan10~0_combout\,
 	datab => \VGApart|h_count\(9),
-	datac => \VGApart|LessThan10~0_combout\,
+	datac => \VGApart|process_0~6_combout\,
 	datad => \VGApart|LessThan6~0_combout\,
 	combout => \VGApart|process_0~7_combout\);
 
--- Location: FF_X15_Y21_N11
+-- Location: FF_X21_Y13_N7
 \VGApart|isColor\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4554,112 +4517,76 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	asdata => \VGApart|process_0~7_combout\,
-	sload => VCC,
+	d => \VGApart|process_0~7_combout\,
 	ena => \ALT_INV_SW[1]~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|isColor~q\);
 
--- Location: LCCOMB_X14_Y19_N18
-\VGApart|Add1~14\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X21_Y13_N10
+\VGApart|set_color~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add1~14_combout\ = (\VGApart|v_count\(7) & (!\VGApart|Add1~13\)) # (!\VGApart|v_count\(7) & ((\VGApart|Add1~13\) # (GND)))
--- \VGApart|Add1~15\ = CARRY((!\VGApart|Add1~13\) # (!\VGApart|v_count\(7)))
+-- \VGApart|set_color~0_combout\ = (!\VGApart|h_count\(5) & (\VGApart|h_count\(6) & (!\VGApart|h_count\(9) & \VGApart|h_count\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|v_count\(7),
-	datad => VCC,
-	cin => \VGApart|Add1~13\,
-	combout => \VGApart|Add1~14_combout\,
-	cout => \VGApart|Add1~15\);
-
--- Location: LCCOMB_X14_Y19_N20
-\VGApart|Add1~16\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add1~16_combout\ = (\VGApart|v_count\(8) & (\VGApart|Add1~15\ $ (GND))) # (!\VGApart|v_count\(8) & (!\VGApart|Add1~15\ & VCC))
--- \VGApart|Add1~17\ = CARRY((\VGApart|v_count\(8) & !\VGApart|Add1~15\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|v_count\(8),
-	datad => VCC,
-	cin => \VGApart|Add1~15\,
-	combout => \VGApart|Add1~16_combout\,
-	cout => \VGApart|Add1~17\);
-
--- Location: FF_X14_Y19_N21
-\VGApart|v_count[8]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add1~16_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \VGApart|Equal0~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|v_count\(8));
-
--- Location: LCCOMB_X14_Y19_N22
-\VGApart|Add1~18\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add1~18_combout\ = \VGApart|Add1~17\ $ (\VGApart|v_count\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \VGApart|v_count\(9),
-	cin => \VGApart|Add1~17\,
-	combout => \VGApart|Add1~18_combout\);
-
--- Location: LCCOMB_X14_Y19_N26
-\VGApart|v_count~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|v_count~3_combout\ = (!\VGApart|Equal1~2_combout\ & \VGApart|Add1~18_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000001010000",
+	lut_mask => "0000010000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|Equal1~2_combout\,
-	datac => \VGApart|Add1~18_combout\,
-	combout => \VGApart|v_count~3_combout\);
+	dataa => \VGApart|h_count\(5),
+	datab => \VGApart|h_count\(6),
+	datac => \VGApart|h_count\(9),
+	datad => \VGApart|h_count\(4),
+	combout => \VGApart|set_color~0_combout\);
 
--- Location: FF_X14_Y19_N27
-\VGApart|v_count[9]\ : dffeas
+-- Location: LCCOMB_X20_Y13_N2
+\VGApart|LessThan9~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|LessThan9~0_combout\ = (\VGApart|h_count\(1) & (\VGApart|h_count\(3) & (\VGApart|h_count\(0) & \VGApart|h_count\(2))))
+
 -- pragma translate_off
 GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|v_count~3_combout\,
-	clrn => \ALT_INV_SW[1]~input_o\,
-	ena => \VGApart|Equal0~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|v_count\(9));
+	dataa => \VGApart|h_count\(1),
+	datab => \VGApart|h_count\(3),
+	datac => \VGApart|h_count\(0),
+	datad => \VGApart|h_count\(2),
+	combout => \VGApart|LessThan9~0_combout\);
 
--- Location: LCCOMB_X14_Y19_N4
+-- Location: LCCOMB_X21_Y13_N24
+\VGApart|set_color~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~1_combout\ = (\VGApart|set_color~0_combout\ & ((\VGApart|Equal0~0_combout\) # ((\VGApart|Equal0~1_combout\ & \VGApart|LessThan9~0_combout\)))) # (!\VGApart|set_color~0_combout\ & (((\VGApart|Equal0~1_combout\ & 
+-- \VGApart|LessThan9~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111100010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|set_color~0_combout\,
+	datab => \VGApart|Equal0~0_combout\,
+	datac => \VGApart|Equal0~1_combout\,
+	datad => \VGApart|LessThan9~0_combout\,
+	combout => \VGApart|set_color~1_combout\);
+
+-- Location: IOIBUF_X0_Y27_N22
+\SW[4]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(4),
+	o => \SW[4]~input_o\);
+
+-- Location: LCCOMB_X22_Y12_N4
 \VGApart|Add1~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~0_combout\ = \VGApart|v_count\(0) $ (VCC)
@@ -4676,7 +4603,7 @@ PORT MAP (
 	combout => \VGApart|Add1~0_combout\,
 	cout => \VGApart|Add1~1\);
 
--- Location: FF_X14_Y19_N5
+-- Location: FF_X22_Y12_N5
 \VGApart|v_count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4692,7 +4619,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(0));
 
--- Location: LCCOMB_X14_Y19_N6
+-- Location: LCCOMB_X22_Y12_N6
 \VGApart|Add1~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~2_combout\ = (\VGApart|v_count\(1) & (!\VGApart|Add1~1\)) # (!\VGApart|v_count\(1) & ((\VGApart|Add1~1\) # (GND)))
@@ -4710,7 +4637,7 @@ PORT MAP (
 	combout => \VGApart|Add1~2_combout\,
 	cout => \VGApart|Add1~3\);
 
--- Location: LCCOMB_X14_Y19_N0
+-- Location: LCCOMB_X22_Y12_N0
 \VGApart|v_count~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|v_count~0_combout\ = (!\VGApart|Equal1~2_combout\ & \VGApart|Add1~2_combout\)
@@ -4725,7 +4652,7 @@ PORT MAP (
 	datad => \VGApart|Add1~2_combout\,
 	combout => \VGApart|v_count~0_combout\);
 
--- Location: FF_X14_Y19_N1
+-- Location: FF_X22_Y12_N1
 \VGApart|v_count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4741,7 +4668,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(1));
 
--- Location: LCCOMB_X14_Y19_N8
+-- Location: LCCOMB_X22_Y12_N8
 \VGApart|Add1~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~4_combout\ = (\VGApart|v_count\(2) & (\VGApart|Add1~3\ $ (GND))) # (!\VGApart|v_count\(2) & (!\VGApart|Add1~3\ & VCC))
@@ -4759,7 +4686,7 @@ PORT MAP (
 	combout => \VGApart|Add1~4_combout\,
 	cout => \VGApart|Add1~5\);
 
--- Location: LCCOMB_X14_Y19_N2
+-- Location: LCCOMB_X22_Y12_N26
 \VGApart|v_count~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|v_count~1_combout\ = (!\VGApart|Equal1~2_combout\ & \VGApart|Add1~4_combout\)
@@ -4774,7 +4701,7 @@ PORT MAP (
 	datac => \VGApart|Add1~4_combout\,
 	combout => \VGApart|v_count~1_combout\);
 
--- Location: FF_X14_Y19_N3
+-- Location: FF_X22_Y12_N27
 \VGApart|v_count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4790,58 +4717,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(2));
 
--- Location: LCCOMB_X14_Y19_N28
-\VGApart|Equal1~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal1~1_combout\ = (\VGApart|v_count\(2) & (!\VGApart|v_count\(5) & (\VGApart|v_count\(0) & \VGApart|v_count\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(2),
-	datab => \VGApart|v_count\(5),
-	datac => \VGApart|v_count\(0),
-	datad => \VGApart|v_count\(3),
-	combout => \VGApart|Equal1~1_combout\);
-
--- Location: LCCOMB_X15_Y19_N30
-\VGApart|Equal1~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal1~0_combout\ = (!\VGApart|v_count\(4) & (!\VGApart|v_count\(7) & (!\VGApart|v_count\(1) & !\VGApart|v_count\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(4),
-	datab => \VGApart|v_count\(7),
-	datac => \VGApart|v_count\(1),
-	datad => \VGApart|v_count\(6),
-	combout => \VGApart|Equal1~0_combout\);
-
--- Location: LCCOMB_X14_Y19_N30
-\VGApart|Equal1~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal1~2_combout\ = (\VGApart|v_count\(9) & (\VGApart|Equal1~1_combout\ & (\VGApart|Equal1~0_combout\ & !\VGApart|v_count\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(9),
-	datab => \VGApart|Equal1~1_combout\,
-	datac => \VGApart|Equal1~0_combout\,
-	datad => \VGApart|v_count\(8),
-	combout => \VGApart|Equal1~2_combout\);
-
--- Location: LCCOMB_X14_Y19_N10
+-- Location: LCCOMB_X22_Y12_N10
 \VGApart|Add1~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~6_combout\ = (\VGApart|v_count\(3) & (!\VGApart|Add1~5\)) # (!\VGApart|v_count\(3) & ((\VGApart|Add1~5\) # (GND)))
@@ -4849,17 +4725,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(3),
+	datab => \VGApart|v_count\(3),
 	datad => VCC,
 	cin => \VGApart|Add1~5\,
 	combout => \VGApart|Add1~6_combout\,
 	cout => \VGApart|Add1~7\);
 
--- Location: LCCOMB_X14_Y19_N24
+-- Location: LCCOMB_X22_Y12_N24
 \VGApart|v_count~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|v_count~2_combout\ = (!\VGApart|Equal1~2_combout\ & \VGApart|Add1~6_combout\)
@@ -4874,7 +4750,7 @@ PORT MAP (
 	datad => \VGApart|Add1~6_combout\,
 	combout => \VGApart|v_count~2_combout\);
 
--- Location: FF_X14_Y19_N25
+-- Location: FF_X22_Y12_N25
 \VGApart|v_count[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4890,7 +4766,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(3));
 
--- Location: LCCOMB_X14_Y19_N12
+-- Location: LCCOMB_X22_Y12_N12
 \VGApart|Add1~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~8_combout\ = (\VGApart|v_count\(4) & (\VGApart|Add1~7\ $ (GND))) # (!\VGApart|v_count\(4) & (!\VGApart|Add1~7\ & VCC))
@@ -4908,7 +4784,7 @@ PORT MAP (
 	combout => \VGApart|Add1~8_combout\,
 	cout => \VGApart|Add1~9\);
 
--- Location: FF_X14_Y19_N13
+-- Location: FF_X22_Y12_N13
 \VGApart|v_count[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4924,7 +4800,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(4));
 
--- Location: LCCOMB_X14_Y19_N14
+-- Location: LCCOMB_X22_Y12_N14
 \VGApart|Add1~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~10_combout\ = (\VGApart|v_count\(5) & (!\VGApart|Add1~9\)) # (!\VGApart|v_count\(5) & ((\VGApart|Add1~9\) # (GND)))
@@ -4942,7 +4818,7 @@ PORT MAP (
 	combout => \VGApart|Add1~10_combout\,
 	cout => \VGApart|Add1~11\);
 
--- Location: FF_X14_Y19_N15
+-- Location: FF_X22_Y12_N15
 \VGApart|v_count[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4958,7 +4834,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(5));
 
--- Location: LCCOMB_X14_Y19_N16
+-- Location: LCCOMB_X22_Y12_N16
 \VGApart|Add1~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add1~12_combout\ = (\VGApart|v_count\(6) & (\VGApart|Add1~11\ $ (GND))) # (!\VGApart|v_count\(6) & (!\VGApart|Add1~11\ & VCC))
@@ -4966,17 +4842,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(6),
+	datab => \VGApart|v_count\(6),
 	datad => VCC,
 	cin => \VGApart|Add1~11\,
 	combout => \VGApart|Add1~12_combout\,
 	cout => \VGApart|Add1~13\);
 
--- Location: FF_X14_Y19_N17
+-- Location: FF_X22_Y12_N17
 \VGApart|v_count[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4992,7 +4868,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(6));
 
--- Location: FF_X14_Y19_N19
+-- Location: LCCOMB_X22_Y12_N18
+\VGApart|Add1~14\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add1~14_combout\ = (\VGApart|v_count\(7) & (!\VGApart|Add1~13\)) # (!\VGApart|v_count\(7) & ((\VGApart|Add1~13\) # (GND)))
+-- \VGApart|Add1~15\ = CARRY((!\VGApart|Add1~13\) # (!\VGApart|v_count\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|v_count\(7),
+	datad => VCC,
+	cin => \VGApart|Add1~13\,
+	combout => \VGApart|Add1~14_combout\,
+	cout => \VGApart|Add1~15\);
+
+-- Location: FF_X22_Y12_N19
 \VGApart|v_count[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5008,42 +4902,43 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|v_count\(7));
 
--- Location: LCCOMB_X15_Y21_N24
-\VGApart|LessThan5~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X23_Y14_N16
+\VGApart|Equal1~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|LessThan5~0_combout\ = (\VGApart|v_count\(7) & (\VGApart|v_count\(8) & (\VGApart|v_count\(6) & \VGApart|v_count\(5))))
+-- \VGApart|Equal1~0_combout\ = (!\VGApart|v_count\(6) & (!\VGApart|v_count\(7) & (!\VGApart|v_count\(1) & !\VGApart|v_count\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000000000000",
+	lut_mask => "0000000000000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(7),
+	dataa => \VGApart|v_count\(6),
+	datab => \VGApart|v_count\(7),
+	datac => \VGApart|v_count\(1),
+	datad => \VGApart|v_count\(4),
+	combout => \VGApart|Equal1~0_combout\);
+
+-- Location: LCCOMB_X22_Y12_N20
+\VGApart|Add1~16\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add1~16_combout\ = (\VGApart|v_count\(8) & (\VGApart|Add1~15\ $ (GND))) # (!\VGApart|v_count\(8) & (!\VGApart|Add1~15\ & VCC))
+-- \VGApart|Add1~17\ = CARRY((\VGApart|v_count\(8) & !\VGApart|Add1~15\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
 	datab => \VGApart|v_count\(8),
-	datac => \VGApart|v_count\(6),
-	datad => \VGApart|v_count\(5),
-	combout => \VGApart|LessThan5~0_combout\);
+	datad => VCC,
+	cin => \VGApart|Add1~15\,
+	combout => \VGApart|Add1~16_combout\,
+	cout => \VGApart|Add1~17\);
 
--- Location: LCCOMB_X15_Y21_N0
-\VGApart|process_0~8\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|process_0~8_combout\ = (!\VGApart|LessThan5~0_combout\ & (!\VGApart|v_count\(9) & ((\VGApart|LessThan10~0_combout\) # (!\VGApart|h_count\(9)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|LessThan10~0_combout\,
-	datab => \VGApart|LessThan5~0_combout\,
-	datac => \VGApart|v_count\(9),
-	datad => \VGApart|h_count\(9),
-	combout => \VGApart|process_0~8_combout\);
-
--- Location: FF_X15_Y21_N1
-\VGApart|video_on\ : dffeas
+-- Location: FF_X22_Y12_N21
+\VGApart|v_count[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -5051,99 +4946,98 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|process_0~8_combout\,
+	d => \VGApart|Add1~16_combout\,
 	clrn => \ALT_INV_SW[1]~input_o\,
+	ena => \VGApart|Equal0~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \VGApart|video_on~q\);
+	q => \VGApart|v_count\(8));
 
--- Location: LCCOMB_X23_Y22_N20
-\VGApart|green~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X22_Y12_N28
+\VGApart|Equal1~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|green~0_combout\ = (\VGApart|isColor~q\ & \VGApart|video_on~q\)
+-- \VGApart|Equal1~1_combout\ = (\VGApart|v_count\(2) & (!\VGApart|v_count\(5) & (\VGApart|v_count\(0) & \VGApart|v_count\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \VGApart|isColor~q\,
-	datad => \VGApart|video_on~q\,
-	combout => \VGApart|green~0_combout\);
-
--- Location: LCCOMB_X15_Y19_N20
-\VGApart|set_color~9\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~9_combout\ = (\VGApart|v_count\(2) & (((\VGApart|v_count\(0) & \VGApart|v_count\(3))) # (!\VGApart|v_count\(8)))) # (!\VGApart|v_count\(2) & (!\VGApart|v_count\(8) & ((\VGApart|v_count\(0)) # (\VGApart|v_count\(3)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011001100110010",
+	lut_mask => "0010000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|v_count\(2),
-	datab => \VGApart|v_count\(8),
+	datab => \VGApart|v_count\(5),
 	datac => \VGApart|v_count\(0),
 	datad => \VGApart|v_count\(3),
-	combout => \VGApart|set_color~9_combout\);
+	combout => \VGApart|Equal1~1_combout\);
 
--- Location: LCCOMB_X15_Y21_N28
-\VGApart|set_color~8\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X22_Y12_N30
+\VGApart|Equal1~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~8_combout\ = (\VGApart|v_count\(4) & (\VGApart|v_count\(1) & (\VGApart|v_count\(6) & \VGApart|v_count\(7))))
+-- \VGApart|Equal1~2_combout\ = (\VGApart|Equal1~0_combout\ & (!\VGApart|v_count\(8) & (\VGApart|Equal1~1_combout\ & \VGApart|v_count\(9))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(4),
-	datab => \VGApart|v_count\(1),
-	datac => \VGApart|v_count\(6),
-	datad => \VGApart|v_count\(7),
-	combout => \VGApart|set_color~8_combout\);
-
--- Location: LCCOMB_X15_Y21_N18
-\VGApart|set_color~10\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~10_combout\ = (\VGApart|set_color~9_combout\ & (((\VGApart|v_count\(8) & \VGApart|set_color~8_combout\)))) # (!\VGApart|set_color~9_combout\ & (\VGApart|Equal1~0_combout\ & (!\VGApart|v_count\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001000000010",
+	lut_mask => "0010000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|Equal1~0_combout\,
-	datab => \VGApart|set_color~9_combout\,
-	datac => \VGApart|v_count\(8),
-	datad => \VGApart|set_color~8_combout\,
-	combout => \VGApart|set_color~10_combout\);
+	datab => \VGApart|v_count\(8),
+	datac => \VGApart|Equal1~1_combout\,
+	datad => \VGApart|v_count\(9),
+	combout => \VGApart|Equal1~2_combout\);
 
--- Location: LCCOMB_X15_Y21_N12
-\VGApart|set_color~11\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X22_Y12_N22
+\VGApart|Add1~18\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~11_combout\ = (!\VGApart|v_count\(5) & (!\VGApart|v_count\(9) & \VGApart|set_color~10_combout\))
+-- \VGApart|Add1~18_combout\ = \VGApart|Add1~17\ $ (\VGApart|v_count\(9))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000010100000000",
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \VGApart|v_count\(9),
+	cin => \VGApart|Add1~17\,
+	combout => \VGApart|Add1~18_combout\);
+
+-- Location: LCCOMB_X22_Y12_N2
+\VGApart|v_count~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|v_count~3_combout\ = (!\VGApart|Equal1~2_combout\ & \VGApart|Add1~18_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(5),
-	datac => \VGApart|v_count\(9),
-	datad => \VGApart|set_color~10_combout\,
-	combout => \VGApart|set_color~11_combout\);
+	dataa => \VGApart|Equal1~2_combout\,
+	datac => \VGApart|Add1~18_combout\,
+	combout => \VGApart|v_count~3_combout\);
 
--- Location: LCCOMB_X15_Y19_N0
+-- Location: FF_X22_Y12_N3
+\VGApart|v_count[9]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|v_count~3_combout\,
+	clrn => \ALT_INV_SW[1]~input_o\,
+	ena => \VGApart|Equal0~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|v_count\(9));
+
+-- Location: LCCOMB_X22_Y13_N0
 \VGApart|Add5~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add5~0_combout\ = (\VGApart|h_count\(0) & (\VGApart|v_count\(0) $ (VCC))) # (!\VGApart|h_count\(0) & (\VGApart|v_count\(0) & VCC))
--- \VGApart|Add5~1\ = CARRY((\VGApart|h_count\(0) & \VGApart|v_count\(0)))
+-- \VGApart|Add5~0_combout\ = (\VGApart|v_count\(0) & (\VGApart|h_count\(0) $ (VCC))) # (!\VGApart|v_count\(0) & (\VGApart|h_count\(0) & VCC))
+-- \VGApart|Add5~1\ = CARRY((\VGApart|v_count\(0) & \VGApart|h_count\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5151,13 +5045,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(0),
-	datab => \VGApart|v_count\(0),
+	dataa => \VGApart|v_count\(0),
+	datab => \VGApart|h_count\(0),
 	datad => VCC,
 	combout => \VGApart|Add5~0_combout\,
 	cout => \VGApart|Add5~1\);
 
--- Location: LCCOMB_X15_Y19_N2
+-- Location: LCCOMB_X22_Y13_N2
 \VGApart|Add5~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~2_combout\ = (\VGApart|v_count\(1) & ((\VGApart|h_count\(1) & (\VGApart|Add5~1\ & VCC)) # (!\VGApart|h_count\(1) & (!\VGApart|Add5~1\)))) # (!\VGApart|v_count\(1) & ((\VGApart|h_count\(1) & (!\VGApart|Add5~1\)) # (!\VGApart|h_count\(1) & 
@@ -5177,7 +5071,7 @@ PORT MAP (
 	combout => \VGApart|Add5~2_combout\,
 	cout => \VGApart|Add5~3\);
 
--- Location: LCCOMB_X15_Y19_N4
+-- Location: LCCOMB_X22_Y13_N4
 \VGApart|Add5~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~4_combout\ = ((\VGApart|v_count\(2) $ (\VGApart|h_count\(2) $ (!\VGApart|Add5~3\)))) # (GND)
@@ -5196,12 +5090,12 @@ PORT MAP (
 	combout => \VGApart|Add5~4_combout\,
 	cout => \VGApart|Add5~5\);
 
--- Location: LCCOMB_X15_Y19_N6
+-- Location: LCCOMB_X22_Y13_N6
 \VGApart|Add5~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add5~6_combout\ = (\VGApart|v_count\(3) & ((\VGApart|h_count\(3) & (\VGApart|Add5~5\ & VCC)) # (!\VGApart|h_count\(3) & (!\VGApart|Add5~5\)))) # (!\VGApart|v_count\(3) & ((\VGApart|h_count\(3) & (!\VGApart|Add5~5\)) # (!\VGApart|h_count\(3) & 
+-- \VGApart|Add5~6_combout\ = (\VGApart|h_count\(3) & ((\VGApart|v_count\(3) & (\VGApart|Add5~5\ & VCC)) # (!\VGApart|v_count\(3) & (!\VGApart|Add5~5\)))) # (!\VGApart|h_count\(3) & ((\VGApart|v_count\(3) & (!\VGApart|Add5~5\)) # (!\VGApart|v_count\(3) & 
 -- ((\VGApart|Add5~5\) # (GND)))))
--- \VGApart|Add5~7\ = CARRY((\VGApart|v_count\(3) & (!\VGApart|h_count\(3) & !\VGApart|Add5~5\)) # (!\VGApart|v_count\(3) & ((!\VGApart|Add5~5\) # (!\VGApart|h_count\(3)))))
+-- \VGApart|Add5~7\ = CARRY((\VGApart|h_count\(3) & (!\VGApart|v_count\(3) & !\VGApart|Add5~5\)) # (!\VGApart|h_count\(3) & ((!\VGApart|Add5~5\) # (!\VGApart|v_count\(3)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5209,14 +5103,14 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(3),
-	datab => \VGApart|h_count\(3),
+	dataa => \VGApart|h_count\(3),
+	datab => \VGApart|v_count\(3),
 	datad => VCC,
 	cin => \VGApart|Add5~5\,
 	combout => \VGApart|Add5~6_combout\,
 	cout => \VGApart|Add5~7\);
 
--- Location: LCCOMB_X15_Y19_N8
+-- Location: LCCOMB_X22_Y13_N8
 \VGApart|Add5~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~8_combout\ = ((\VGApart|v_count\(4) $ (\VGApart|h_count\(4) $ (!\VGApart|Add5~7\)))) # (GND)
@@ -5235,7 +5129,7 @@ PORT MAP (
 	combout => \VGApart|Add5~8_combout\,
 	cout => \VGApart|Add5~9\);
 
--- Location: LCCOMB_X15_Y19_N10
+-- Location: LCCOMB_X22_Y13_N10
 \VGApart|Add5~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~10_combout\ = (\VGApart|v_count\(5) & ((\VGApart|h_count\(5) & (\VGApart|Add5~9\ & VCC)) # (!\VGApart|h_count\(5) & (!\VGApart|Add5~9\)))) # (!\VGApart|v_count\(5) & ((\VGApart|h_count\(5) & (!\VGApart|Add5~9\)) # (!\VGApart|h_count\(5) & 
@@ -5255,7 +5149,7 @@ PORT MAP (
 	combout => \VGApart|Add5~10_combout\,
 	cout => \VGApart|Add5~11\);
 
--- Location: LCCOMB_X15_Y19_N12
+-- Location: LCCOMB_X22_Y13_N12
 \VGApart|Add5~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~12_combout\ = ((\VGApart|h_count\(6) $ (\VGApart|v_count\(6) $ (!\VGApart|Add5~11\)))) # (GND)
@@ -5274,7 +5168,7 @@ PORT MAP (
 	combout => \VGApart|Add5~12_combout\,
 	cout => \VGApart|Add5~13\);
 
--- Location: LCCOMB_X15_Y19_N14
+-- Location: LCCOMB_X22_Y13_N14
 \VGApart|Add5~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add5~14_combout\ = (\VGApart|h_count\(7) & ((\VGApart|v_count\(7) & (\VGApart|Add5~13\ & VCC)) # (!\VGApart|v_count\(7) & (!\VGApart|Add5~13\)))) # (!\VGApart|h_count\(7) & ((\VGApart|v_count\(7) & (!\VGApart|Add5~13\)) # (!\VGApart|v_count\(7) & 
@@ -5294,28 +5188,11 @@ PORT MAP (
 	combout => \VGApart|Add5~14_combout\,
 	cout => \VGApart|Add5~15\);
 
--- Location: LCCOMB_X15_Y19_N22
-\VGApart|set_color~6\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~6_combout\ = (\VGApart|Add5~10_combout\ & (!\VGApart|Add5~8_combout\ & (!\VGApart|Add5~14_combout\ & !\VGApart|Add5~12_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Add5~10_combout\,
-	datab => \VGApart|Add5~8_combout\,
-	datac => \VGApart|Add5~14_combout\,
-	datad => \VGApart|Add5~12_combout\,
-	combout => \VGApart|set_color~6_combout\);
-
--- Location: LCCOMB_X15_Y19_N16
+-- Location: LCCOMB_X22_Y13_N16
 \VGApart|Add5~16\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add5~16_combout\ = ((\VGApart|h_count\(8) $ (\VGApart|v_count\(8) $ (!\VGApart|Add5~15\)))) # (GND)
--- \VGApart|Add5~17\ = CARRY((\VGApart|h_count\(8) & ((\VGApart|v_count\(8)) # (!\VGApart|Add5~15\))) # (!\VGApart|h_count\(8) & (\VGApart|v_count\(8) & !\VGApart|Add5~15\)))
+-- \VGApart|Add5~16_combout\ = ((\VGApart|v_count\(8) $ (\VGApart|h_count\(8) $ (!\VGApart|Add5~15\)))) # (GND)
+-- \VGApart|Add5~17\ = CARRY((\VGApart|v_count\(8) & ((\VGApart|h_count\(8)) # (!\VGApart|Add5~15\))) # (!\VGApart|v_count\(8) & (\VGApart|h_count\(8) & !\VGApart|Add5~15\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5323,17 +5200,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(8),
-	datab => \VGApart|v_count\(8),
+	dataa => \VGApart|v_count\(8),
+	datab => \VGApart|h_count\(8),
 	datad => VCC,
 	cin => \VGApart|Add5~15\,
 	combout => \VGApart|Add5~16_combout\,
 	cout => \VGApart|Add5~17\);
 
--- Location: LCCOMB_X15_Y19_N18
+-- Location: LCCOMB_X22_Y13_N18
 \VGApart|Add5~18\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add5~18_combout\ = \VGApart|v_count\(9) $ (\VGApart|Add5~17\ $ (\VGApart|h_count\(9)))
+-- \VGApart|Add5~18_combout\ = \VGApart|h_count\(9) $ (\VGApart|Add5~17\ $ (\VGApart|v_count\(9)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5341,12 +5218,12 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(9),
-	datad => \VGApart|h_count\(9),
+	dataa => \VGApart|h_count\(9),
+	datad => \VGApart|v_count\(9),
 	cin => \VGApart|Add5~17\,
 	combout => \VGApart|Add5~18_combout\);
 
--- Location: LCCOMB_X15_Y19_N28
+-- Location: LCCOMB_X22_Y13_N26
 \VGApart|set_color~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|set_color~5_combout\ = (\VGApart|Add5~6_combout\ & (\VGApart|Add5~2_combout\ & (\VGApart|Add5~4_combout\ & \VGApart|Add5~0_combout\)))
@@ -5363,10 +5240,27 @@ PORT MAP (
 	datad => \VGApart|Add5~0_combout\,
 	combout => \VGApart|set_color~5_combout\);
 
--- Location: LCCOMB_X15_Y19_N24
+-- Location: LCCOMB_X22_Y13_N20
+\VGApart|set_color~6\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~6_combout\ = (\VGApart|Add5~10_combout\ & (!\VGApart|Add5~14_combout\ & (!\VGApart|Add5~8_combout\ & !\VGApart|Add5~12_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|Add5~10_combout\,
+	datab => \VGApart|Add5~14_combout\,
+	datac => \VGApart|Add5~8_combout\,
+	datad => \VGApart|Add5~12_combout\,
+	combout => \VGApart|set_color~6_combout\);
+
+-- Location: LCCOMB_X22_Y13_N22
 \VGApart|set_color~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~7_combout\ = (\VGApart|set_color~6_combout\ & (!\VGApart|Add5~16_combout\ & (\VGApart|Add5~18_combout\ & \VGApart|set_color~5_combout\)))
+-- \VGApart|set_color~7_combout\ = (\VGApart|Add5~18_combout\ & (!\VGApart|Add5~16_combout\ & (\VGApart|set_color~5_combout\ & \VGApart|set_color~6_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5374,13 +5268,80 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~6_combout\,
+	dataa => \VGApart|Add5~18_combout\,
 	datab => \VGApart|Add5~16_combout\,
-	datac => \VGApart|Add5~18_combout\,
-	datad => \VGApart|set_color~5_combout\,
+	datac => \VGApart|set_color~5_combout\,
+	datad => \VGApart|set_color~6_combout\,
 	combout => \VGApart|set_color~7_combout\);
 
--- Location: LCCOMB_X14_Y21_N6
+-- Location: LCCOMB_X23_Y14_N10
+\VGApart|set_color~9\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~9_combout\ = (\VGApart|v_count\(0) & (((\VGApart|v_count\(2) & \VGApart|v_count\(3))) # (!\VGApart|v_count\(8)))) # (!\VGApart|v_count\(0) & (!\VGApart|v_count\(8) & ((\VGApart|v_count\(2)) # (\VGApart|v_count\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000111100001110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|v_count\(0),
+	datab => \VGApart|v_count\(2),
+	datac => \VGApart|v_count\(8),
+	datad => \VGApart|v_count\(3),
+	combout => \VGApart|set_color~9_combout\);
+
+-- Location: LCCOMB_X22_Y14_N24
+\VGApart|set_color~8\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~8_combout\ = (\VGApart|v_count\(4) & (\VGApart|v_count\(6) & (\VGApart|v_count\(7) & \VGApart|v_count\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|v_count\(4),
+	datab => \VGApart|v_count\(6),
+	datac => \VGApart|v_count\(7),
+	datad => \VGApart|v_count\(1),
+	combout => \VGApart|set_color~8_combout\);
+
+-- Location: LCCOMB_X23_Y14_N24
+\VGApart|set_color~10\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~10_combout\ = (\VGApart|set_color~9_combout\ & (\VGApart|set_color~8_combout\ & (\VGApart|v_count\(8)))) # (!\VGApart|set_color~9_combout\ & (((!\VGApart|v_count\(8) & \VGApart|Equal1~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010110000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|set_color~9_combout\,
+	datab => \VGApart|set_color~8_combout\,
+	datac => \VGApart|v_count\(8),
+	datad => \VGApart|Equal1~0_combout\,
+	combout => \VGApart|set_color~10_combout\);
+
+-- Location: LCCOMB_X23_Y14_N26
+\VGApart|set_color~11\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~11_combout\ = (!\VGApart|v_count\(5) & (!\VGApart|v_count\(9) & \VGApart|set_color~10_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|v_count\(5),
+	datac => \VGApart|v_count\(9),
+	datad => \VGApart|set_color~10_combout\,
+	combout => \VGApart|set_color~11_combout\);
+
+-- Location: LCCOMB_X23_Y13_N6
 \VGApart|Add4~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~0_combout\ = (\VGApart|h_count\(0) & ((GND) # (!\VGApart|v_count\(0)))) # (!\VGApart|h_count\(0) & (\VGApart|v_count\(0) $ (GND)))
@@ -5398,46 +5359,46 @@ PORT MAP (
 	combout => \VGApart|Add4~0_combout\,
 	cout => \VGApart|Add4~1\);
 
--- Location: LCCOMB_X14_Y21_N8
+-- Location: LCCOMB_X23_Y13_N8
 \VGApart|Add4~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add4~2_combout\ = (\VGApart|h_count\(1) & ((\VGApart|v_count\(1) & (!\VGApart|Add4~1\)) # (!\VGApart|v_count\(1) & (\VGApart|Add4~1\ & VCC)))) # (!\VGApart|h_count\(1) & ((\VGApart|v_count\(1) & ((\VGApart|Add4~1\) # (GND))) # 
--- (!\VGApart|v_count\(1) & (!\VGApart|Add4~1\))))
--- \VGApart|Add4~3\ = CARRY((\VGApart|h_count\(1) & (\VGApart|v_count\(1) & !\VGApart|Add4~1\)) # (!\VGApart|h_count\(1) & ((\VGApart|v_count\(1)) # (!\VGApart|Add4~1\))))
+-- \VGApart|Add4~2_combout\ = (\VGApart|v_count\(1) & ((\VGApart|h_count\(1) & (!\VGApart|Add4~1\)) # (!\VGApart|h_count\(1) & ((\VGApart|Add4~1\) # (GND))))) # (!\VGApart|v_count\(1) & ((\VGApart|h_count\(1) & (\VGApart|Add4~1\ & VCC)) # 
+-- (!\VGApart|h_count\(1) & (!\VGApart|Add4~1\))))
+-- \VGApart|Add4~3\ = CARRY((\VGApart|v_count\(1) & ((!\VGApart|Add4~1\) # (!\VGApart|h_count\(1)))) # (!\VGApart|v_count\(1) & (!\VGApart|h_count\(1) & !\VGApart|Add4~1\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110100101001101",
+	lut_mask => "0110100100101011",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(1),
-	datab => \VGApart|v_count\(1),
+	dataa => \VGApart|v_count\(1),
+	datab => \VGApart|h_count\(1),
 	datad => VCC,
 	cin => \VGApart|Add4~1\,
 	combout => \VGApart|Add4~2_combout\,
 	cout => \VGApart|Add4~3\);
 
--- Location: LCCOMB_X14_Y21_N10
+-- Location: LCCOMB_X23_Y13_N10
 \VGApart|Add4~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add4~4_combout\ = ((\VGApart|h_count\(2) $ (\VGApart|v_count\(2) $ (\VGApart|Add4~3\)))) # (GND)
--- \VGApart|Add4~5\ = CARRY((\VGApart|h_count\(2) & ((!\VGApart|Add4~3\) # (!\VGApart|v_count\(2)))) # (!\VGApart|h_count\(2) & (!\VGApart|v_count\(2) & !\VGApart|Add4~3\)))
+-- \VGApart|Add4~4_combout\ = ((\VGApart|v_count\(2) $ (\VGApart|h_count\(2) $ (\VGApart|Add4~3\)))) # (GND)
+-- \VGApart|Add4~5\ = CARRY((\VGApart|v_count\(2) & (\VGApart|h_count\(2) & !\VGApart|Add4~3\)) # (!\VGApart|v_count\(2) & ((\VGApart|h_count\(2)) # (!\VGApart|Add4~3\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001011000101011",
+	lut_mask => "1001011001001101",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(2),
-	datab => \VGApart|v_count\(2),
+	dataa => \VGApart|v_count\(2),
+	datab => \VGApart|h_count\(2),
 	datad => VCC,
 	cin => \VGApart|Add4~3\,
 	combout => \VGApart|Add4~4_combout\,
 	cout => \VGApart|Add4~5\);
 
--- Location: LCCOMB_X14_Y21_N12
+-- Location: LCCOMB_X23_Y13_N12
 \VGApart|Add4~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~6_combout\ = (\VGApart|v_count\(3) & ((\VGApart|h_count\(3) & (!\VGApart|Add4~5\)) # (!\VGApart|h_count\(3) & ((\VGApart|Add4~5\) # (GND))))) # (!\VGApart|v_count\(3) & ((\VGApart|h_count\(3) & (\VGApart|Add4~5\ & VCC)) # 
@@ -5457,26 +5418,26 @@ PORT MAP (
 	combout => \VGApart|Add4~6_combout\,
 	cout => \VGApart|Add4~7\);
 
--- Location: LCCOMB_X14_Y21_N14
+-- Location: LCCOMB_X23_Y13_N14
 \VGApart|Add4~8\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add4~8_combout\ = ((\VGApart|v_count\(4) $ (\VGApart|h_count\(4) $ (\VGApart|Add4~7\)))) # (GND)
--- \VGApart|Add4~9\ = CARRY((\VGApart|v_count\(4) & (\VGApart|h_count\(4) & !\VGApart|Add4~7\)) # (!\VGApart|v_count\(4) & ((\VGApart|h_count\(4)) # (!\VGApart|Add4~7\))))
+-- \VGApart|Add4~8_combout\ = ((\VGApart|h_count\(4) $ (\VGApart|v_count\(4) $ (\VGApart|Add4~7\)))) # (GND)
+-- \VGApart|Add4~9\ = CARRY((\VGApart|h_count\(4) & ((!\VGApart|Add4~7\) # (!\VGApart|v_count\(4)))) # (!\VGApart|h_count\(4) & (!\VGApart|v_count\(4) & !\VGApart|Add4~7\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001011001001101",
+	lut_mask => "1001011000101011",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(4),
-	datab => \VGApart|h_count\(4),
+	dataa => \VGApart|h_count\(4),
+	datab => \VGApart|v_count\(4),
 	datad => VCC,
 	cin => \VGApart|Add4~7\,
 	combout => \VGApart|Add4~8_combout\,
 	cout => \VGApart|Add4~9\);
 
--- Location: LCCOMB_X14_Y21_N16
+-- Location: LCCOMB_X23_Y13_N16
 \VGApart|Add4~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~10_combout\ = (\VGApart|v_count\(5) & ((\VGApart|h_count\(5) & (!\VGApart|Add4~9\)) # (!\VGApart|h_count\(5) & ((\VGApart|Add4~9\) # (GND))))) # (!\VGApart|v_count\(5) & ((\VGApart|h_count\(5) & (\VGApart|Add4~9\ & VCC)) # 
@@ -5496,7 +5457,7 @@ PORT MAP (
 	combout => \VGApart|Add4~10_combout\,
 	cout => \VGApart|Add4~11\);
 
--- Location: LCCOMB_X14_Y21_N18
+-- Location: LCCOMB_X23_Y13_N18
 \VGApart|Add4~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~12_combout\ = ((\VGApart|v_count\(6) $ (\VGApart|h_count\(6) $ (\VGApart|Add4~11\)))) # (GND)
@@ -5515,27 +5476,61 @@ PORT MAP (
 	combout => \VGApart|Add4~12_combout\,
 	cout => \VGApart|Add4~13\);
 
--- Location: LCCOMB_X14_Y21_N20
+-- Location: LCCOMB_X23_Y13_N20
 \VGApart|Add4~14\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|Add4~14_combout\ = (\VGApart|h_count\(7) & ((\VGApart|v_count\(7) & (!\VGApart|Add4~13\)) # (!\VGApart|v_count\(7) & (\VGApart|Add4~13\ & VCC)))) # (!\VGApart|h_count\(7) & ((\VGApart|v_count\(7) & ((\VGApart|Add4~13\) # (GND))) # 
--- (!\VGApart|v_count\(7) & (!\VGApart|Add4~13\))))
--- \VGApart|Add4~15\ = CARRY((\VGApart|h_count\(7) & (\VGApart|v_count\(7) & !\VGApart|Add4~13\)) # (!\VGApart|h_count\(7) & ((\VGApart|v_count\(7)) # (!\VGApart|Add4~13\))))
+-- \VGApart|Add4~14_combout\ = (\VGApart|v_count\(7) & ((\VGApart|h_count\(7) & (!\VGApart|Add4~13\)) # (!\VGApart|h_count\(7) & ((\VGApart|Add4~13\) # (GND))))) # (!\VGApart|v_count\(7) & ((\VGApart|h_count\(7) & (\VGApart|Add4~13\ & VCC)) # 
+-- (!\VGApart|h_count\(7) & (!\VGApart|Add4~13\))))
+-- \VGApart|Add4~15\ = CARRY((\VGApart|v_count\(7) & ((!\VGApart|Add4~13\) # (!\VGApart|h_count\(7)))) # (!\VGApart|v_count\(7) & (!\VGApart|h_count\(7) & !\VGApart|Add4~13\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110100101001101",
+	lut_mask => "0110100100101011",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(7),
-	datab => \VGApart|v_count\(7),
+	dataa => \VGApart|v_count\(7),
+	datab => \VGApart|h_count\(7),
 	datad => VCC,
 	cin => \VGApart|Add4~13\,
 	combout => \VGApart|Add4~14_combout\,
 	cout => \VGApart|Add4~15\);
 
--- Location: LCCOMB_X14_Y21_N22
+-- Location: LCCOMB_X23_Y13_N26
+\VGApart|set_color~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~3_combout\ = (\VGApart|Add4~12_combout\ & (!\VGApart|Add4~10_combout\ & (\VGApart|Add4~8_combout\ & !\VGApart|Add4~14_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|Add4~12_combout\,
+	datab => \VGApart|Add4~10_combout\,
+	datac => \VGApart|Add4~8_combout\,
+	datad => \VGApart|Add4~14_combout\,
+	combout => \VGApart|set_color~3_combout\);
+
+-- Location: LCCOMB_X23_Y13_N0
+\VGApart|set_color~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|set_color~2_combout\ = (!\VGApart|Add4~6_combout\ & (!\VGApart|Add4~0_combout\ & (!\VGApart|Add4~2_combout\ & !\VGApart|Add4~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|Add4~6_combout\,
+	datab => \VGApart|Add4~0_combout\,
+	datac => \VGApart|Add4~2_combout\,
+	datad => \VGApart|Add4~4_combout\,
+	combout => \VGApart|set_color~2_combout\);
+
+-- Location: LCCOMB_X23_Y13_N22
 \VGApart|Add4~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~16_combout\ = ((\VGApart|v_count\(8) $ (\VGApart|h_count\(8) $ (\VGApart|Add4~15\)))) # (GND)
@@ -5554,7 +5549,7 @@ PORT MAP (
 	combout => \VGApart|Add4~16_combout\,
 	cout => \VGApart|Add4~17\);
 
--- Location: LCCOMB_X14_Y21_N24
+-- Location: LCCOMB_X23_Y13_N24
 \VGApart|Add4~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add4~18_combout\ = \VGApart|v_count\(9) $ (\VGApart|Add4~17\ $ (!\VGApart|h_count\(9)))
@@ -5570,155 +5565,58 @@ PORT MAP (
 	cin => \VGApart|Add4~17\,
 	combout => \VGApart|Add4~18_combout\);
 
--- Location: LCCOMB_X14_Y21_N2
-\VGApart|set_color~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~2_combout\ = (!\VGApart|Add4~0_combout\ & (!\VGApart|Add4~4_combout\ & (!\VGApart|Add4~2_combout\ & !\VGApart|Add4~6_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Add4~0_combout\,
-	datab => \VGApart|Add4~4_combout\,
-	datac => \VGApart|Add4~2_combout\,
-	datad => \VGApart|Add4~6_combout\,
-	combout => \VGApart|set_color~2_combout\);
-
--- Location: LCCOMB_X14_Y21_N28
-\VGApart|set_color~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~3_combout\ = (!\VGApart|Add4~14_combout\ & (!\VGApart|Add4~10_combout\ & (\VGApart|Add4~8_combout\ & \VGApart|Add4~12_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Add4~14_combout\,
-	datab => \VGApart|Add4~10_combout\,
-	datac => \VGApart|Add4~8_combout\,
-	datad => \VGApart|Add4~12_combout\,
-	combout => \VGApart|set_color~3_combout\);
-
--- Location: LCCOMB_X14_Y21_N26
+-- Location: LCCOMB_X23_Y13_N4
 \VGApart|set_color~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~4_combout\ = (!\VGApart|Add4~18_combout\ & (\VGApart|set_color~2_combout\ & (!\VGApart|Add4~16_combout\ & \VGApart|set_color~3_combout\)))
+-- \VGApart|set_color~4_combout\ = (\VGApart|set_color~3_combout\ & (\VGApart|set_color~2_combout\ & (!\VGApart|Add4~16_combout\ & !\VGApart|Add4~18_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000010000000000",
+	lut_mask => "0000000000001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|Add4~18_combout\,
+	dataa => \VGApart|set_color~3_combout\,
 	datab => \VGApart|set_color~2_combout\,
 	datac => \VGApart|Add4~16_combout\,
-	datad => \VGApart|set_color~3_combout\,
+	datad => \VGApart|Add4~18_combout\,
 	combout => \VGApart|set_color~4_combout\);
 
--- Location: LCCOMB_X15_Y21_N26
+-- Location: LCCOMB_X22_Y13_N24
 \VGApart|set_color~12\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~12_combout\ = (!\VGApart|process_0~7_combout\ & ((\VGApart|set_color~11_combout\) # ((\VGApart|set_color~7_combout\) # (\VGApart|set_color~4_combout\))))
+-- \VGApart|set_color~12_combout\ = (!\VGApart|process_0~7_combout\ & ((\VGApart|set_color~7_combout\) # ((\VGApart|set_color~11_combout\) # (\VGApart|set_color~4_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011111110",
+	lut_mask => "0000111100001110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~11_combout\,
-	datab => \VGApart|set_color~7_combout\,
-	datac => \VGApart|set_color~4_combout\,
-	datad => \VGApart|process_0~7_combout\,
+	dataa => \VGApart|set_color~7_combout\,
+	datab => \VGApart|set_color~11_combout\,
+	datac => \VGApart|process_0~7_combout\,
+	datad => \VGApart|set_color~4_combout\,
 	combout => \VGApart|set_color~12_combout\);
 
--- Location: LCCOMB_X16_Y21_N4
-\VGApart|set_color~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~0_combout\ = (!\VGApart|h_count\(9) & (!\VGApart|h_count\(5) & (\VGApart|h_count\(4) & \VGApart|h_count\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(9),
-	datab => \VGApart|h_count\(5),
-	datac => \VGApart|h_count\(4),
-	datad => \VGApart|h_count\(6),
-	combout => \VGApart|set_color~0_combout\);
-
--- Location: LCCOMB_X16_Y21_N24
-\VGApart|LessThan9~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|LessThan9~0_combout\ = (\VGApart|h_count\(2) & (\VGApart|h_count\(0) & (\VGApart|h_count\(1) & \VGApart|h_count\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(2),
-	datab => \VGApart|h_count\(0),
-	datac => \VGApart|h_count\(1),
-	datad => \VGApart|h_count\(3),
-	combout => \VGApart|LessThan9~0_combout\);
-
--- Location: LCCOMB_X16_Y21_N28
-\VGApart|set_color~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|set_color~1_combout\ = (\VGApart|Equal0~0_combout\ & ((\VGApart|set_color~0_combout\) # ((\VGApart|Equal0~1_combout\ & \VGApart|LessThan9~0_combout\)))) # (!\VGApart|Equal0~0_combout\ & (\VGApart|Equal0~1_combout\ & 
--- ((\VGApart|LessThan9~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110110010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Equal0~0_combout\,
-	datab => \VGApart|Equal0~1_combout\,
-	datac => \VGApart|set_color~0_combout\,
-	datad => \VGApart|LessThan9~0_combout\,
-	combout => \VGApart|set_color~1_combout\);
-
--- Location: IOIBUF_X0_Y27_N22
-\SW[4]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_SW(4),
-	o => \SW[4]~input_o\);
-
--- Location: LCCOMB_X15_Y21_N6
+-- Location: LCCOMB_X21_Y13_N14
 \VGApart|set_color~13\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|set_color~13_combout\ = (\SW[4]~input_o\ & ((\VGApart|set_color~12_combout\) # ((\VGApart|set_color~1_combout\ & \VGApart|LessThan10~0_combout\))))
+-- \VGApart|set_color~13_combout\ = (\SW[4]~input_o\ & ((\VGApart|set_color~12_combout\) # ((\VGApart|LessThan10~0_combout\ & \VGApart|set_color~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110101000000000",
+	lut_mask => "1111000010000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~12_combout\,
+	dataa => \VGApart|LessThan10~0_combout\,
 	datab => \VGApart|set_color~1_combout\,
-	datac => \VGApart|LessThan10~0_combout\,
-	datad => \SW[4]~input_o\,
+	datac => \SW[4]~input_o\,
+	datad => \VGApart|set_color~12_combout\,
 	combout => \VGApart|set_color~13_combout\);
 
--- Location: FF_X15_Y21_N7
+-- Location: FF_X21_Y13_N15
 \VGApart|set_color\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5733,21 +5631,85 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|set_color~q\);
 
--- Location: LCCOMB_X23_Y22_N0
-\VGApart|red~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X23_Y12_N24
+\VGApart|LessThan5~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|red~0_combout\ = (!\VGApart|set_color~q\ & (!\VGApart|isColor~q\ & \VGApart|video_on~q\))
+-- \VGApart|LessThan5~0_combout\ = (\VGApart|v_count\(8) & (\VGApart|v_count\(7) & (\VGApart|v_count\(6) & \VGApart|v_count\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000100000000",
+	lut_mask => "1000000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~q\,
+	dataa => \VGApart|v_count\(8),
+	datab => \VGApart|v_count\(7),
+	datac => \VGApart|v_count\(6),
+	datad => \VGApart|v_count\(5),
+	combout => \VGApart|LessThan5~0_combout\);
+
+-- Location: LCCOMB_X23_Y14_N22
+\VGApart|process_0~8\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|process_0~8_combout\ = (!\VGApart|v_count\(9) & (!\VGApart|LessThan5~0_combout\ & ((\VGApart|LessThan10~0_combout\) # (!\VGApart|h_count\(9)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000000010001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|v_count\(9),
+	datab => \VGApart|LessThan5~0_combout\,
+	datac => \VGApart|LessThan10~0_combout\,
+	datad => \VGApart|h_count\(9),
+	combout => \VGApart|process_0~8_combout\);
+
+-- Location: FF_X23_Y14_N23
+\VGApart|video_on\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|process_0~8_combout\,
+	clrn => \ALT_INV_SW[1]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|video_on~q\);
+
+-- Location: LCCOMB_X17_Y17_N26
+\VGApart|red~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|red~0_combout\ = (!\VGApart|isColor~q\ & (!\VGApart|set_color~q\ & \VGApart|video_on~q\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
 	datab => \VGApart|isColor~q\,
+	datac => \VGApart|set_color~q\,
 	datad => \VGApart|video_on~q\,
 	combout => \VGApart|red~0_combout\);
+
+-- Location: LCCOMB_X17_Y17_N16
+\VGApart|green~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|green~0_combout\ = (\VGApart|isColor~q\ & \VGApart|video_on~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \VGApart|isColor~q\,
+	datad => \VGApart|video_on~q\,
+	combout => \VGApart|green~0_combout\);
 
 -- Location: IOIBUF_X0_Y25_N15
 \SW[6]~input\ : cycloneiii_io_ibuf
@@ -5760,40 +5722,7 @@ PORT MAP (
 	i => ww_SW(6),
 	o => \SW[6]~input_o\);
 
--- Location: LCCOMB_X16_Y21_N26
-\VGApart|process_0~11\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|process_0~11_combout\ = (!\VGApart|h_count\(8) & (!\VGApart|h_count\(9) & !\VGApart|h_count\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(8),
-	datac => \VGApart|h_count\(9),
-	datad => \VGApart|h_count\(7),
-	combout => \VGApart|process_0~11_combout\);
-
--- Location: LCCOMB_X16_Y21_N0
-\VGApart|LessThan9~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|LessThan9~1_combout\ = (\VGApart|h_count\(9) & (((\VGApart|LessThan9~0_combout\ & \VGApart|h_count\(5))) # (!\VGApart|process_0~6_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(9),
-	datab => \VGApart|LessThan9~0_combout\,
-	datac => \VGApart|h_count\(5),
-	datad => \VGApart|process_0~6_combout\,
-	combout => \VGApart|LessThan9~1_combout\);
-
--- Location: LCCOMB_X15_Y21_N8
+-- Location: LCCOMB_X23_Y14_N12
 \VGApart|LessThan5~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|LessThan5~1_combout\ = (\VGApart|v_count\(9)) # (\VGApart|LessThan5~0_combout\)
@@ -5808,41 +5737,74 @@ PORT MAP (
 	datad => \VGApart|LessThan5~0_combout\,
 	combout => \VGApart|LessThan5~1_combout\);
 
--- Location: LCCOMB_X16_Y21_N8
+-- Location: LCCOMB_X21_Y13_N18
+\VGApart|process_0~11\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|process_0~11_combout\ = (!\VGApart|h_count\(7) & (!\VGApart|h_count\(8) & !\VGApart|h_count\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|h_count\(7),
+	datab => \VGApart|h_count\(8),
+	datad => \VGApart|h_count\(9),
+	combout => \VGApart|process_0~11_combout\);
+
+-- Location: LCCOMB_X21_Y13_N26
+\VGApart|LessThan9~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|LessThan9~1_combout\ = (\VGApart|h_count\(9) & (((\VGApart|h_count\(5) & \VGApart|LessThan9~0_combout\)) # (!\VGApart|process_0~6_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|h_count\(5),
+	datab => \VGApart|h_count\(9),
+	datac => \VGApart|process_0~6_combout\,
+	datad => \VGApart|LessThan9~0_combout\,
+	combout => \VGApart|LessThan9~1_combout\);
+
+-- Location: LCCOMB_X21_Y13_N2
 \VGApart|process_0~10\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~10_combout\ = (\VGApart|h_count\(6) & ((\VGApart|h_count\(5)) # ((\VGApart|h_count\(4)) # (\VGApart|LessThan9~0_combout\))))
+-- \VGApart|process_0~10_combout\ = (\VGApart|h_count\(6) & ((\VGApart|LessThan9~0_combout\) # ((\VGApart|h_count\(5)) # (\VGApart|h_count\(4)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101000",
+	lut_mask => "1100110011001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(6),
-	datab => \VGApart|h_count\(5),
-	datac => \VGApart|h_count\(4),
-	datad => \VGApart|LessThan9~0_combout\,
+	dataa => \VGApart|LessThan9~0_combout\,
+	datab => \VGApart|h_count\(6),
+	datac => \VGApart|h_count\(5),
+	datad => \VGApart|h_count\(4),
 	combout => \VGApart|process_0~10_combout\);
 
--- Location: LCCOMB_X19_Y25_N0
+-- Location: LCCOMB_X21_Y13_N28
 \VGApart|process_0~12\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~12_combout\ = (!\VGApart|LessThan9~1_combout\ & (!\VGApart|LessThan5~1_combout\ & ((\VGApart|process_0~10_combout\) # (!\VGApart|process_0~11_combout\))))
+-- \VGApart|process_0~12_combout\ = (!\VGApart|LessThan5~1_combout\ & (!\VGApart|LessThan9~1_combout\ & ((\VGApart|process_0~10_combout\) # (!\VGApart|process_0~11_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000001100000001",
+	lut_mask => "0000010100000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|process_0~11_combout\,
-	datab => \VGApart|LessThan9~1_combout\,
-	datac => \VGApart|LessThan5~1_combout\,
+	dataa => \VGApart|LessThan5~1_combout\,
+	datab => \VGApart|process_0~11_combout\,
+	datac => \VGApart|LessThan9~1_combout\,
 	datad => \VGApart|process_0~10_combout\,
 	combout => \VGApart|process_0~12_combout\);
 
--- Location: FF_X19_Y25_N1
+-- Location: FF_X21_Y13_N29
 \VGApart|enarRAMclk\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -5857,7 +5819,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|enarRAMclk~q\);
 
--- Location: LCCOMB_X19_Y25_N2
+-- Location: LCCOMB_X21_Y13_N16
 rRAMclk : cycloneiii_lcell_comb
 -- Equation(s):
 -- \rRAMclk~combout\ = LCELL((!GLOBAL(\CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\) & \VGApart|enarRAMclk~q\))
@@ -5872,7 +5834,7 @@ PORT MAP (
 	datad => \VGApart|enarRAMclk~q\,
 	combout => \rRAMclk~combout\);
 
--- Location: CLKCTRL_G11
+-- Location: CLKCTRL_G15
 \rRAMclk~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -5885,724 +5847,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \rRAMclk~clkctrl_outclk\);
 
--- Location: LCCOMB_X14_Y20_N0
-\VGApart|Add3~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~0_combout\ = \VGApart|RAM_adr1\(0) $ (VCC)
--- \VGApart|Add3~1\ = CARRY(\VGApart|RAM_adr1\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(0),
-	datad => VCC,
-	combout => \VGApart|Add3~0_combout\,
-	cout => \VGApart|Add3~1\);
-
--- Location: LCCOMB_X15_Y21_N14
-\VGApart|RAM_adr1[15]~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1[15]~1_combout\ = (\VGApart|h_count\(0) & !\SW[1]~input_o\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|h_count\(0),
-	datac => \SW[1]~input_o\,
-	combout => \VGApart|RAM_adr1[15]~1_combout\);
-
--- Location: LCCOMB_X15_Y21_N4
-\VGApart|RAM_adr1[15]~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1[15]~2_combout\ = (\VGApart|v_count\(0) & (!\VGApart|LessThan5~1_combout\ & (\VGApart|RAM_adr1[15]~1_combout\ & !\VGApart|process_0~7_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(0),
-	datab => \VGApart|LessThan5~1_combout\,
-	datac => \VGApart|RAM_adr1[15]~1_combout\,
-	datad => \VGApart|process_0~7_combout\,
-	combout => \VGApart|RAM_adr1[15]~2_combout\);
-
--- Location: FF_X14_Y20_N1
-\VGApart|RAM_adr1[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~0_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(0));
-
--- Location: LCCOMB_X14_Y20_N2
-\VGApart|Add3~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~2_combout\ = (\VGApart|RAM_adr1\(1) & (!\VGApart|Add3~1\)) # (!\VGApart|RAM_adr1\(1) & ((\VGApart|Add3~1\) # (GND)))
--- \VGApart|Add3~3\ = CARRY((!\VGApart|Add3~1\) # (!\VGApart|RAM_adr1\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(1),
-	datad => VCC,
-	cin => \VGApart|Add3~1\,
-	combout => \VGApart|Add3~2_combout\,
-	cout => \VGApart|Add3~3\);
-
--- Location: FF_X14_Y20_N3
-\VGApart|RAM_adr1[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~2_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(1));
-
--- Location: LCCOMB_X14_Y20_N4
-\VGApart|Add3~4\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~4_combout\ = (\VGApart|RAM_adr1\(2) & (\VGApart|Add3~3\ $ (GND))) # (!\VGApart|RAM_adr1\(2) & (!\VGApart|Add3~3\ & VCC))
--- \VGApart|Add3~5\ = CARRY((\VGApart|RAM_adr1\(2) & !\VGApart|Add3~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(2),
-	datad => VCC,
-	cin => \VGApart|Add3~3\,
-	combout => \VGApart|Add3~4_combout\,
-	cout => \VGApart|Add3~5\);
-
--- Location: FF_X14_Y20_N5
-\VGApart|RAM_adr1[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~4_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(2));
-
--- Location: LCCOMB_X14_Y20_N6
-\VGApart|Add3~6\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~6_combout\ = (\VGApart|RAM_adr1\(3) & (!\VGApart|Add3~5\)) # (!\VGApart|RAM_adr1\(3) & ((\VGApart|Add3~5\) # (GND)))
--- \VGApart|Add3~7\ = CARRY((!\VGApart|Add3~5\) # (!\VGApart|RAM_adr1\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(3),
-	datad => VCC,
-	cin => \VGApart|Add3~5\,
-	combout => \VGApart|Add3~6_combout\,
-	cout => \VGApart|Add3~7\);
-
--- Location: FF_X14_Y20_N7
-\VGApart|RAM_adr1[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~6_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(3));
-
--- Location: LCCOMB_X14_Y20_N8
-\VGApart|Add3~8\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~8_combout\ = (\VGApart|RAM_adr1\(4) & (\VGApart|Add3~7\ $ (GND))) # (!\VGApart|RAM_adr1\(4) & (!\VGApart|Add3~7\ & VCC))
--- \VGApart|Add3~9\ = CARRY((\VGApart|RAM_adr1\(4) & !\VGApart|Add3~7\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(4),
-	datad => VCC,
-	cin => \VGApart|Add3~7\,
-	combout => \VGApart|Add3~8_combout\,
-	cout => \VGApart|Add3~9\);
-
--- Location: FF_X14_Y20_N9
-\VGApart|RAM_adr1[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~8_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(4));
-
--- Location: LCCOMB_X14_Y20_N10
-\VGApart|Add3~10\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~10_combout\ = (\VGApart|RAM_adr1\(5) & (!\VGApart|Add3~9\)) # (!\VGApart|RAM_adr1\(5) & ((\VGApart|Add3~9\) # (GND)))
--- \VGApart|Add3~11\ = CARRY((!\VGApart|Add3~9\) # (!\VGApart|RAM_adr1\(5)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(5),
-	datad => VCC,
-	cin => \VGApart|Add3~9\,
-	combout => \VGApart|Add3~10_combout\,
-	cout => \VGApart|Add3~11\);
-
--- Location: FF_X14_Y20_N11
-\VGApart|RAM_adr1[5]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~10_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(5));
-
--- Location: LCCOMB_X14_Y20_N12
-\VGApart|Add3~12\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~12_combout\ = (\VGApart|RAM_adr1\(6) & (\VGApart|Add3~11\ $ (GND))) # (!\VGApart|RAM_adr1\(6) & (!\VGApart|Add3~11\ & VCC))
--- \VGApart|Add3~13\ = CARRY((\VGApart|RAM_adr1\(6) & !\VGApart|Add3~11\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(6),
-	datad => VCC,
-	cin => \VGApart|Add3~11\,
-	combout => \VGApart|Add3~12_combout\,
-	cout => \VGApart|Add3~13\);
-
--- Location: FF_X14_Y20_N13
-\VGApart|RAM_adr1[6]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~12_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(6));
-
--- Location: LCCOMB_X14_Y20_N14
-\VGApart|Add3~14\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~14_combout\ = (\VGApart|RAM_adr1\(7) & (!\VGApart|Add3~13\)) # (!\VGApart|RAM_adr1\(7) & ((\VGApart|Add3~13\) # (GND)))
--- \VGApart|Add3~15\ = CARRY((!\VGApart|Add3~13\) # (!\VGApart|RAM_adr1\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(7),
-	datad => VCC,
-	cin => \VGApart|Add3~13\,
-	combout => \VGApart|Add3~14_combout\,
-	cout => \VGApart|Add3~15\);
-
--- Location: FF_X14_Y20_N15
-\VGApart|RAM_adr1[7]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~14_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(7));
-
--- Location: LCCOMB_X14_Y20_N16
-\VGApart|Add3~16\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~16_combout\ = (\VGApart|RAM_adr1\(8) & (\VGApart|Add3~15\ $ (GND))) # (!\VGApart|RAM_adr1\(8) & (!\VGApart|Add3~15\ & VCC))
--- \VGApart|Add3~17\ = CARRY((\VGApart|RAM_adr1\(8) & !\VGApart|Add3~15\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(8),
-	datad => VCC,
-	cin => \VGApart|Add3~15\,
-	combout => \VGApart|Add3~16_combout\,
-	cout => \VGApart|Add3~17\);
-
--- Location: LCCOMB_X15_Y20_N10
-\VGApart|Equal3~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal3~0_combout\ = (\VGApart|RAM_adr1\(0) & (\VGApart|RAM_adr1\(3) & (\VGApart|RAM_adr1\(2) & \VGApart|RAM_adr1\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(0),
-	datab => \VGApart|RAM_adr1\(3),
-	datac => \VGApart|RAM_adr1\(2),
-	datad => \VGApart|RAM_adr1\(1),
-	combout => \VGApart|Equal3~0_combout\);
-
--- Location: LCCOMB_X15_Y20_N0
-\VGApart|Equal3~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal3~2_combout\ = (!\VGApart|RAM_adr1\(11) & (!\VGApart|RAM_adr1\(10) & (!\VGApart|RAM_adr1\(8) & !\VGApart|RAM_adr1\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(11),
-	datab => \VGApart|RAM_adr1\(10),
-	datac => \VGApart|RAM_adr1\(8),
-	datad => \VGApart|RAM_adr1\(9),
-	combout => \VGApart|Equal3~2_combout\);
-
--- Location: LCCOMB_X15_Y20_N14
-\VGApart|Equal3~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal3~3_combout\ = (\VGApart|RAM_adr1\(15) & (!\VGApart|RAM_adr1\(12) & (\VGApart|RAM_adr1\(14) & \VGApart|RAM_adr1\(13))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(15),
-	datab => \VGApart|RAM_adr1\(12),
-	datac => \VGApart|RAM_adr1\(14),
-	datad => \VGApart|RAM_adr1\(13),
-	combout => \VGApart|Equal3~3_combout\);
-
--- Location: LCCOMB_X17_Y20_N10
-\VGApart|Equal3~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal3~1_combout\ = (\VGApart|RAM_adr1\(5) & (\VGApart|RAM_adr1\(6) & (\VGApart|RAM_adr1\(7) & \VGApart|RAM_adr1\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(5),
-	datab => \VGApart|RAM_adr1\(6),
-	datac => \VGApart|RAM_adr1\(7),
-	datad => \VGApart|RAM_adr1\(4),
-	combout => \VGApart|Equal3~1_combout\);
-
--- Location: LCCOMB_X15_Y20_N24
-\VGApart|Equal3~4\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal3~4_combout\ = (\VGApart|Equal3~0_combout\ & (\VGApart|Equal3~2_combout\ & (\VGApart|Equal3~3_combout\ & \VGApart|Equal3~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Equal3~0_combout\,
-	datab => \VGApart|Equal3~2_combout\,
-	datac => \VGApart|Equal3~3_combout\,
-	datad => \VGApart|Equal3~1_combout\,
-	combout => \VGApart|Equal3~4_combout\);
-
--- Location: LCCOMB_X15_Y20_N4
-\VGApart|RAM_adr1~5\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1~5_combout\ = (\VGApart|Add3~16_combout\ & !\VGApart|Equal3~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \VGApart|Add3~16_combout\,
-	datad => \VGApart|Equal3~4_combout\,
-	combout => \VGApart|RAM_adr1~5_combout\);
-
--- Location: FF_X15_Y20_N5
-\VGApart|RAM_adr1[8]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|RAM_adr1~5_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(8));
-
--- Location: LCCOMB_X14_Y20_N18
-\VGApart|Add3~18\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~18_combout\ = (\VGApart|RAM_adr1\(9) & (!\VGApart|Add3~17\)) # (!\VGApart|RAM_adr1\(9) & ((\VGApart|Add3~17\) # (GND)))
--- \VGApart|Add3~19\ = CARRY((!\VGApart|Add3~17\) # (!\VGApart|RAM_adr1\(9)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(9),
-	datad => VCC,
-	cin => \VGApart|Add3~17\,
-	combout => \VGApart|Add3~18_combout\,
-	cout => \VGApart|Add3~19\);
-
--- Location: FF_X14_Y20_N19
-\VGApart|RAM_adr1[9]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~18_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(9));
-
--- Location: LCCOMB_X14_Y20_N20
-\VGApart|Add3~20\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~20_combout\ = (\VGApart|RAM_adr1\(10) & (\VGApart|Add3~19\ $ (GND))) # (!\VGApart|RAM_adr1\(10) & (!\VGApart|Add3~19\ & VCC))
--- \VGApart|Add3~21\ = CARRY((\VGApart|RAM_adr1\(10) & !\VGApart|Add3~19\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(10),
-	datad => VCC,
-	cin => \VGApart|Add3~19\,
-	combout => \VGApart|Add3~20_combout\,
-	cout => \VGApart|Add3~21\);
-
--- Location: FF_X14_Y20_N21
-\VGApart|RAM_adr1[10]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~20_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(10));
-
--- Location: LCCOMB_X14_Y20_N22
-\VGApart|Add3~22\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~22_combout\ = (\VGApart|RAM_adr1\(11) & (!\VGApart|Add3~21\)) # (!\VGApart|RAM_adr1\(11) & ((\VGApart|Add3~21\) # (GND)))
--- \VGApart|Add3~23\ = CARRY((!\VGApart|Add3~21\) # (!\VGApart|RAM_adr1\(11)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(11),
-	datad => VCC,
-	cin => \VGApart|Add3~21\,
-	combout => \VGApart|Add3~22_combout\,
-	cout => \VGApart|Add3~23\);
-
--- Location: FF_X14_Y20_N23
-\VGApart|RAM_adr1[11]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~22_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(11));
-
--- Location: LCCOMB_X14_Y20_N24
-\VGApart|Add3~24\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~24_combout\ = (\VGApart|RAM_adr1\(12) & (\VGApart|Add3~23\ $ (GND))) # (!\VGApart|RAM_adr1\(12) & (!\VGApart|Add3~23\ & VCC))
--- \VGApart|Add3~25\ = CARRY((\VGApart|RAM_adr1\(12) & !\VGApart|Add3~23\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(12),
-	datad => VCC,
-	cin => \VGApart|Add3~23\,
-	combout => \VGApart|Add3~24_combout\,
-	cout => \VGApart|Add3~25\);
-
--- Location: FF_X14_Y20_N25
-\VGApart|RAM_adr1[12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|Add3~24_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(12));
-
--- Location: LCCOMB_X14_Y20_N26
-\VGApart|Add3~26\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~26_combout\ = (\VGApart|RAM_adr1\(13) & (!\VGApart|Add3~25\)) # (!\VGApart|RAM_adr1\(13) & ((\VGApart|Add3~25\) # (GND)))
--- \VGApart|Add3~27\ = CARRY((!\VGApart|Add3~25\) # (!\VGApart|RAM_adr1\(13)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr1\(13),
-	datad => VCC,
-	cin => \VGApart|Add3~25\,
-	combout => \VGApart|Add3~26_combout\,
-	cout => \VGApart|Add3~27\);
-
--- Location: LCCOMB_X15_Y20_N2
-\VGApart|RAM_adr1~4\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1~4_combout\ = (\VGApart|Add3~26_combout\ & !\VGApart|Equal3~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \VGApart|Add3~26_combout\,
-	datad => \VGApart|Equal3~4_combout\,
-	combout => \VGApart|RAM_adr1~4_combout\);
-
--- Location: FF_X15_Y20_N3
-\VGApart|RAM_adr1[13]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|RAM_adr1~4_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(13));
-
--- Location: LCCOMB_X14_Y20_N28
-\VGApart|Add3~28\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~28_combout\ = (\VGApart|RAM_adr1\(14) & (\VGApart|Add3~27\ $ (GND))) # (!\VGApart|RAM_adr1\(14) & (!\VGApart|Add3~27\ & VCC))
--- \VGApart|Add3~29\ = CARRY((\VGApart|RAM_adr1\(14) & !\VGApart|Add3~27\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|RAM_adr1\(14),
-	datad => VCC,
-	cin => \VGApart|Add3~27\,
-	combout => \VGApart|Add3~28_combout\,
-	cout => \VGApart|Add3~29\);
-
--- Location: LCCOMB_X15_Y20_N8
-\VGApart|RAM_adr1~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1~3_combout\ = (\VGApart|Add3~28_combout\ & !\VGApart|Equal3~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|Add3~28_combout\,
-	datad => \VGApart|Equal3~4_combout\,
-	combout => \VGApart|RAM_adr1~3_combout\);
-
--- Location: FF_X15_Y20_N9
-\VGApart|RAM_adr1[14]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|RAM_adr1~3_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(14));
-
--- Location: LCCOMB_X14_Y20_N30
-\VGApart|Add3~30\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Add3~30_combout\ = \VGApart|Add3~29\ $ (\VGApart|RAM_adr1\(15))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \VGApart|RAM_adr1\(15),
-	cin => \VGApart|Add3~29\,
-	combout => \VGApart|Add3~30_combout\);
-
--- Location: LCCOMB_X15_Y20_N6
-\VGApart|RAM_adr1~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|RAM_adr1~0_combout\ = (\VGApart|Add3~30_combout\ & !\VGApart|Equal3~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \VGApart|Add3~30_combout\,
-	datad => \VGApart|Equal3~4_combout\,
-	combout => \VGApart|RAM_adr1~0_combout\);
-
--- Location: FF_X15_Y20_N7
-\VGApart|RAM_adr1[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	d => \VGApart|RAM_adr1~0_combout\,
-	ena => \VGApart|RAM_adr1[15]~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \VGApart|RAM_adr1\(15));
-
--- Location: LCCOMB_X15_Y21_N20
-\VGApart|process_0~9\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|process_0~9_combout\ = (\VGApart|v_count\(0)) # ((\VGApart|v_count\(9)) # (\VGApart|LessThan5~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|v_count\(0),
-	datac => \VGApart|v_count\(9),
-	datad => \VGApart|LessThan5~0_combout\,
-	combout => \VGApart|process_0~9_combout\);
-
--- Location: LCCOMB_X16_Y20_N0
+-- Location: LCCOMB_X21_Y16_N0
 \VGApart|Add2~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~0_combout\ = \VGApart|RAM_adr0\(0) $ (VCC)
@@ -6619,10 +5864,26 @@ PORT MAP (
 	combout => \VGApart|Add2~0_combout\,
 	cout => \VGApart|Add2~1\);
 
--- Location: LCCOMB_X15_Y21_N22
+-- Location: LCCOMB_X23_Y14_N0
+\VGApart|process_0~9\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|process_0~9_combout\ = (\VGApart|v_count\(9)) # ((\VGApart|LessThan5~0_combout\) # (\VGApart|v_count\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|v_count\(9),
+	datab => \VGApart|LessThan5~0_combout\,
+	datad => \VGApart|v_count\(0),
+	combout => \VGApart|process_0~9_combout\);
+
+-- Location: LCCOMB_X23_Y14_N18
 \VGApart|RAM_adr0[15]~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAM_adr0[15]~6_combout\ = (!\VGApart|process_0~9_combout\ & (!\SW[1]~input_o\ & (\VGApart|h_count\(0) & !\VGApart|process_0~7_combout\)))
+-- \VGApart|RAM_adr0[15]~6_combout\ = (!\SW[1]~input_o\ & (!\VGApart|process_0~7_combout\ & (\VGApart|h_count\(0) & !\VGApart|process_0~9_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6630,13 +5891,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|process_0~9_combout\,
-	datab => \SW[1]~input_o\,
+	dataa => \SW[1]~input_o\,
+	datab => \VGApart|process_0~7_combout\,
 	datac => \VGApart|h_count\(0),
-	datad => \VGApart|process_0~7_combout\,
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAM_adr0[15]~6_combout\);
 
--- Location: FF_X16_Y20_N1
+-- Location: FF_X21_Y16_N1
 \VGApart|RAM_adr0[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6651,7 +5912,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(0));
 
--- Location: LCCOMB_X16_Y20_N2
+-- Location: LCCOMB_X21_Y16_N2
 \VGApart|Add2~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~2_combout\ = (\VGApart|RAM_adr0\(1) & (!\VGApart|Add2~1\)) # (!\VGApart|RAM_adr0\(1) & ((\VGApart|Add2~1\) # (GND)))
@@ -6669,7 +5930,7 @@ PORT MAP (
 	combout => \VGApart|Add2~2_combout\,
 	cout => \VGApart|Add2~3\);
 
--- Location: FF_X16_Y20_N3
+-- Location: FF_X21_Y16_N3
 \VGApart|RAM_adr0[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6684,7 +5945,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(1));
 
--- Location: LCCOMB_X16_Y20_N4
+-- Location: LCCOMB_X21_Y16_N4
 \VGApart|Add2~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~4_combout\ = (\VGApart|RAM_adr0\(2) & (\VGApart|Add2~3\ $ (GND))) # (!\VGApart|RAM_adr0\(2) & (!\VGApart|Add2~3\ & VCC))
@@ -6702,7 +5963,7 @@ PORT MAP (
 	combout => \VGApart|Add2~4_combout\,
 	cout => \VGApart|Add2~5\);
 
--- Location: FF_X16_Y20_N5
+-- Location: FF_X21_Y16_N5
 \VGApart|RAM_adr0[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6717,7 +5978,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(2));
 
--- Location: LCCOMB_X16_Y20_N6
+-- Location: LCCOMB_X21_Y16_N6
 \VGApart|Add2~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~6_combout\ = (\VGApart|RAM_adr0\(3) & (!\VGApart|Add2~5\)) # (!\VGApart|RAM_adr0\(3) & ((\VGApart|Add2~5\) # (GND)))
@@ -6735,7 +5996,7 @@ PORT MAP (
 	combout => \VGApart|Add2~6_combout\,
 	cout => \VGApart|Add2~7\);
 
--- Location: FF_X16_Y20_N7
+-- Location: FF_X21_Y16_N7
 \VGApart|RAM_adr0[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6750,7 +6011,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(3));
 
--- Location: LCCOMB_X16_Y20_N8
+-- Location: LCCOMB_X21_Y16_N8
 \VGApart|Add2~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~8_combout\ = (\VGApart|RAM_adr0\(4) & (\VGApart|Add2~7\ $ (GND))) # (!\VGApart|RAM_adr0\(4) & (!\VGApart|Add2~7\ & VCC))
@@ -6768,7 +6029,7 @@ PORT MAP (
 	combout => \VGApart|Add2~8_combout\,
 	cout => \VGApart|Add2~9\);
 
--- Location: FF_X16_Y20_N9
+-- Location: FF_X21_Y16_N9
 \VGApart|RAM_adr0[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6783,7 +6044,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(4));
 
--- Location: LCCOMB_X16_Y20_N10
+-- Location: LCCOMB_X21_Y16_N10
 \VGApart|Add2~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~10_combout\ = (\VGApart|RAM_adr0\(5) & (!\VGApart|Add2~9\)) # (!\VGApart|RAM_adr0\(5) & ((\VGApart|Add2~9\) # (GND)))
@@ -6801,7 +6062,7 @@ PORT MAP (
 	combout => \VGApart|Add2~10_combout\,
 	cout => \VGApart|Add2~11\);
 
--- Location: FF_X16_Y20_N11
+-- Location: FF_X21_Y16_N11
 \VGApart|RAM_adr0[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6816,7 +6077,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(5));
 
--- Location: LCCOMB_X16_Y20_N12
+-- Location: LCCOMB_X21_Y16_N12
 \VGApart|Add2~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~12_combout\ = (\VGApart|RAM_adr0\(6) & (\VGApart|Add2~11\ $ (GND))) # (!\VGApart|RAM_adr0\(6) & (!\VGApart|Add2~11\ & VCC))
@@ -6834,7 +6095,7 @@ PORT MAP (
 	combout => \VGApart|Add2~12_combout\,
 	cout => \VGApart|Add2~13\);
 
--- Location: FF_X16_Y20_N13
+-- Location: FF_X21_Y16_N13
 \VGApart|RAM_adr0[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6849,7 +6110,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(6));
 
--- Location: LCCOMB_X16_Y20_N14
+-- Location: LCCOMB_X21_Y16_N14
 \VGApart|Add2~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~14_combout\ = (\VGApart|RAM_adr0\(7) & (!\VGApart|Add2~13\)) # (!\VGApart|RAM_adr0\(7) & ((\VGApart|Add2~13\) # (GND)))
@@ -6867,7 +6128,7 @@ PORT MAP (
 	combout => \VGApart|Add2~14_combout\,
 	cout => \VGApart|Add2~15\);
 
--- Location: FF_X16_Y20_N15
+-- Location: FF_X21_Y16_N15
 \VGApart|RAM_adr0[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6882,7 +6143,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(7));
 
--- Location: LCCOMB_X16_Y20_N16
+-- Location: LCCOMB_X21_Y16_N16
 \VGApart|Add2~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~16_combout\ = (\VGApart|RAM_adr0\(8) & (\VGApart|Add2~15\ $ (GND))) # (!\VGApart|RAM_adr0\(8) & (!\VGApart|Add2~15\ & VCC))
@@ -6890,117 +6151,32 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAM_adr0\(8),
+	datab => \VGApart|RAM_adr0\(8),
 	datad => VCC,
 	cin => \VGApart|Add2~15\,
 	combout => \VGApart|Add2~16_combout\,
 	cout => \VGApart|Add2~17\);
 
--- Location: LCCOMB_X17_Y20_N12
-\VGApart|Equal2~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal2~3_combout\ = (\VGApart|RAM_adr0\(13) & (!\VGApart|RAM_adr0\(12) & (\VGApart|RAM_adr0\(15) & \VGApart|RAM_adr0\(14))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr0\(13),
-	datab => \VGApart|RAM_adr0\(12),
-	datac => \VGApart|RAM_adr0\(15),
-	datad => \VGApart|RAM_adr0\(14),
-	combout => \VGApart|Equal2~3_combout\);
-
--- Location: LCCOMB_X17_Y20_N2
-\VGApart|Equal2~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal2~1_combout\ = (\VGApart|RAM_adr0\(7) & (\VGApart|RAM_adr0\(5) & (\VGApart|RAM_adr0\(6) & \VGApart|RAM_adr0\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr0\(7),
-	datab => \VGApart|RAM_adr0\(5),
-	datac => \VGApart|RAM_adr0\(6),
-	datad => \VGApart|RAM_adr0\(4),
-	combout => \VGApart|Equal2~1_combout\);
-
--- Location: LCCOMB_X15_Y20_N18
-\VGApart|Equal2~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal2~2_combout\ = (!\VGApart|RAM_adr0\(8) & (!\VGApart|RAM_adr0\(11) & (!\VGApart|RAM_adr0\(10) & !\VGApart|RAM_adr0\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr0\(8),
-	datab => \VGApart|RAM_adr0\(11),
-	datac => \VGApart|RAM_adr0\(10),
-	datad => \VGApart|RAM_adr0\(9),
-	combout => \VGApart|Equal2~2_combout\);
-
--- Location: LCCOMB_X17_Y20_N0
-\VGApart|Equal2~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal2~0_combout\ = (\VGApart|RAM_adr0\(0) & (\VGApart|RAM_adr0\(2) & (\VGApart|RAM_adr0\(3) & \VGApart|RAM_adr0\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAM_adr0\(0),
-	datab => \VGApart|RAM_adr0\(2),
-	datac => \VGApart|RAM_adr0\(3),
-	datad => \VGApart|RAM_adr0\(1),
-	combout => \VGApart|Equal2~0_combout\);
-
--- Location: LCCOMB_X17_Y20_N18
-\VGApart|Equal2~4\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|Equal2~4_combout\ = (\VGApart|Equal2~3_combout\ & (\VGApart|Equal2~1_combout\ & (\VGApart|Equal2~2_combout\ & \VGApart|Equal2~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|Equal2~3_combout\,
-	datab => \VGApart|Equal2~1_combout\,
-	datac => \VGApart|Equal2~2_combout\,
-	datad => \VGApart|Equal2~0_combout\,
-	combout => \VGApart|Equal2~4_combout\);
-
--- Location: LCCOMB_X17_Y20_N20
+-- Location: LCCOMB_X21_Y15_N20
 \VGApart|RAM_adr0~5\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAM_adr0~5_combout\ = (\VGApart|Add2~16_combout\ & !\VGApart|Equal2~4_combout\)
+-- \VGApart|RAM_adr0~5_combout\ = (!\VGApart|Equal2~4_combout\ & \VGApart|Add2~16_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \VGApart|Add2~16_combout\,
-	datad => \VGApart|Equal2~4_combout\,
+	datac => \VGApart|Equal2~4_combout\,
+	datad => \VGApart|Add2~16_combout\,
 	combout => \VGApart|RAM_adr0~5_combout\);
 
--- Location: FF_X17_Y20_N21
+-- Location: FF_X21_Y15_N21
 \VGApart|RAM_adr0[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7015,7 +6191,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(8));
 
--- Location: LCCOMB_X16_Y20_N18
+-- Location: LCCOMB_X21_Y16_N18
 \VGApart|Add2~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~18_combout\ = (\VGApart|RAM_adr0\(9) & (!\VGApart|Add2~17\)) # (!\VGApart|RAM_adr0\(9) & ((\VGApart|Add2~17\) # (GND)))
@@ -7033,7 +6209,7 @@ PORT MAP (
 	combout => \VGApart|Add2~18_combout\,
 	cout => \VGApart|Add2~19\);
 
--- Location: FF_X16_Y20_N19
+-- Location: FF_X21_Y16_N19
 \VGApart|RAM_adr0[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7048,7 +6224,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(9));
 
--- Location: LCCOMB_X16_Y20_N20
+-- Location: LCCOMB_X21_Y16_N20
 \VGApart|Add2~20\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~20_combout\ = (\VGApart|RAM_adr0\(10) & (\VGApart|Add2~19\ $ (GND))) # (!\VGApart|RAM_adr0\(10) & (!\VGApart|Add2~19\ & VCC))
@@ -7066,7 +6242,7 @@ PORT MAP (
 	combout => \VGApart|Add2~20_combout\,
 	cout => \VGApart|Add2~21\);
 
--- Location: FF_X16_Y20_N21
+-- Location: FF_X21_Y16_N21
 \VGApart|RAM_adr0[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7081,7 +6257,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(10));
 
--- Location: LCCOMB_X16_Y20_N22
+-- Location: LCCOMB_X21_Y16_N22
 \VGApart|Add2~22\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~22_combout\ = (\VGApart|RAM_adr0\(11) & (!\VGApart|Add2~21\)) # (!\VGApart|RAM_adr0\(11) & ((\VGApart|Add2~21\) # (GND)))
@@ -7099,7 +6275,7 @@ PORT MAP (
 	combout => \VGApart|Add2~22_combout\,
 	cout => \VGApart|Add2~23\);
 
--- Location: FF_X16_Y20_N23
+-- Location: FF_X21_Y16_N23
 \VGApart|RAM_adr0[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7114,7 +6290,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(11));
 
--- Location: LCCOMB_X16_Y20_N24
+-- Location: LCCOMB_X19_Y15_N22
+\VGApart|Equal2~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal2~2_combout\ = (!\VGApart|RAM_adr0\(11) & (!\VGApart|RAM_adr0\(10) & (!\VGApart|RAM_adr0\(8) & !\VGApart|RAM_adr0\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr0\(11),
+	datab => \VGApart|RAM_adr0\(10),
+	datac => \VGApart|RAM_adr0\(8),
+	datad => \VGApart|RAM_adr0\(9),
+	combout => \VGApart|Equal2~2_combout\);
+
+-- Location: LCCOMB_X21_Y16_N24
 \VGApart|Add2~24\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~24_combout\ = (\VGApart|RAM_adr0\(12) & (\VGApart|Add2~23\ $ (GND))) # (!\VGApart|RAM_adr0\(12) & (!\VGApart|Add2~23\ & VCC))
@@ -7132,7 +6325,7 @@ PORT MAP (
 	combout => \VGApart|Add2~24_combout\,
 	cout => \VGApart|Add2~25\);
 
--- Location: FF_X16_Y20_N25
+-- Location: FF_X21_Y16_N25
 \VGApart|RAM_adr0[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7147,7 +6340,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(12));
 
--- Location: LCCOMB_X16_Y20_N26
+-- Location: LCCOMB_X21_Y16_N26
 \VGApart|Add2~26\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~26_combout\ = (\VGApart|RAM_adr0\(13) & (!\VGApart|Add2~25\)) # (!\VGApart|RAM_adr0\(13) & ((\VGApart|Add2~25\) # (GND)))
@@ -7165,22 +6358,22 @@ PORT MAP (
 	combout => \VGApart|Add2~26_combout\,
 	cout => \VGApart|Add2~27\);
 
--- Location: LCCOMB_X17_Y20_N6
+-- Location: LCCOMB_X20_Y16_N8
 \VGApart|RAM_adr0~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAM_adr0~4_combout\ = (\VGApart|Add2~26_combout\ & !\VGApart|Equal2~4_combout\)
+-- \VGApart|RAM_adr0~4_combout\ = (!\VGApart|Equal2~4_combout\ & \VGApart|Add2~26_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \VGApart|Add2~26_combout\,
-	datad => \VGApart|Equal2~4_combout\,
+	datac => \VGApart|Equal2~4_combout\,
+	datad => \VGApart|Add2~26_combout\,
 	combout => \VGApart|RAM_adr0~4_combout\);
 
--- Location: FF_X17_Y20_N7
+-- Location: FF_X20_Y16_N9
 \VGApart|RAM_adr0[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7195,7 +6388,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(13));
 
--- Location: LCCOMB_X16_Y20_N28
+-- Location: LCCOMB_X21_Y16_N28
 \VGApart|Add2~28\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~28_combout\ = (\VGApart|RAM_adr0\(14) & (\VGApart|Add2~27\ $ (GND))) # (!\VGApart|RAM_adr0\(14) & (!\VGApart|Add2~27\ & VCC))
@@ -7213,22 +6406,22 @@ PORT MAP (
 	combout => \VGApart|Add2~28_combout\,
 	cout => \VGApart|Add2~29\);
 
--- Location: LCCOMB_X17_Y20_N16
+-- Location: LCCOMB_X20_Y16_N6
 \VGApart|RAM_adr0~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAM_adr0~3_combout\ = (\VGApart|Add2~28_combout\ & !\VGApart|Equal2~4_combout\)
+-- \VGApart|RAM_adr0~3_combout\ = (!\VGApart|Equal2~4_combout\ & \VGApart|Add2~28_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|Add2~28_combout\,
-	datad => \VGApart|Equal2~4_combout\,
+	datac => \VGApart|Equal2~4_combout\,
+	datad => \VGApart|Add2~28_combout\,
 	combout => \VGApart|RAM_adr0~3_combout\);
 
--- Location: FF_X17_Y20_N17
+-- Location: FF_X20_Y16_N7
 \VGApart|RAM_adr0[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7243,7 +6436,75 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(14));
 
--- Location: LCCOMB_X16_Y20_N30
+-- Location: LCCOMB_X20_Y16_N30
+\VGApart|Equal2~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal2~3_combout\ = (\VGApart|RAM_adr0\(15) & (!\VGApart|RAM_adr0\(12) & (\VGApart|RAM_adr0\(13) & \VGApart|RAM_adr0\(14))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr0\(15),
+	datab => \VGApart|RAM_adr0\(12),
+	datac => \VGApart|RAM_adr0\(13),
+	datad => \VGApart|RAM_adr0\(14),
+	combout => \VGApart|Equal2~3_combout\);
+
+-- Location: LCCOMB_X21_Y15_N4
+\VGApart|Equal2~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal2~1_combout\ = (\VGApart|RAM_adr0\(6) & (\VGApart|RAM_adr0\(5) & (\VGApart|RAM_adr0\(4) & \VGApart|RAM_adr0\(7))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr0\(6),
+	datab => \VGApart|RAM_adr0\(5),
+	datac => \VGApart|RAM_adr0\(4),
+	datad => \VGApart|RAM_adr0\(7),
+	combout => \VGApart|Equal2~1_combout\);
+
+-- Location: LCCOMB_X21_Y15_N18
+\VGApart|Equal2~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal2~0_combout\ = (\VGApart|RAM_adr0\(1) & (\VGApart|RAM_adr0\(2) & (\VGApart|RAM_adr0\(3) & \VGApart|RAM_adr0\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr0\(1),
+	datab => \VGApart|RAM_adr0\(2),
+	datac => \VGApart|RAM_adr0\(3),
+	datad => \VGApart|RAM_adr0\(0),
+	combout => \VGApart|Equal2~0_combout\);
+
+-- Location: LCCOMB_X21_Y15_N14
+\VGApart|Equal2~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal2~4_combout\ = (\VGApart|Equal2~2_combout\ & (\VGApart|Equal2~3_combout\ & (\VGApart|Equal2~1_combout\ & \VGApart|Equal2~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|Equal2~2_combout\,
+	datab => \VGApart|Equal2~3_combout\,
+	datac => \VGApart|Equal2~1_combout\,
+	datad => \VGApart|Equal2~0_combout\,
+	combout => \VGApart|Equal2~4_combout\);
+
+-- Location: LCCOMB_X21_Y16_N30
 \VGApart|Add2~30\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|Add2~30_combout\ = \VGApart|Add2~29\ $ (\VGApart|RAM_adr0\(15))
@@ -7258,22 +6519,22 @@ PORT MAP (
 	cin => \VGApart|Add2~29\,
 	combout => \VGApart|Add2~30_combout\);
 
--- Location: LCCOMB_X17_Y20_N26
+-- Location: LCCOMB_X20_Y16_N12
 \VGApart|RAM_adr0~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAM_adr0~2_combout\ = (\VGApart|Add2~30_combout\ & !\VGApart|Equal2~4_combout\)
+-- \VGApart|RAM_adr0~2_combout\ = (!\VGApart|Equal2~4_combout\ & \VGApart|Add2~30_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "0011000000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|Add2~30_combout\,
-	datad => \VGApart|Equal2~4_combout\,
+	datab => \VGApart|Equal2~4_combout\,
+	datac => \VGApart|Add2~30_combout\,
 	combout => \VGApart|RAM_adr0~2_combout\);
 
--- Location: FF_X17_Y20_N27
+-- Location: FF_X20_Y16_N13
 \VGApart|RAM_adr0[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7288,39 +6549,740 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|RAM_adr0\(15));
 
--- Location: LCCOMB_X19_Y20_N0
+-- Location: LCCOMB_X20_Y15_N0
+\VGApart|Add3~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~0_combout\ = \VGApart|RAM_adr1\(0) $ (VCC)
+-- \VGApart|Add3~1\ = CARRY(\VGApart|RAM_adr1\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(0),
+	datad => VCC,
+	combout => \VGApart|Add3~0_combout\,
+	cout => \VGApart|Add3~1\);
+
+-- Location: LCCOMB_X23_Y14_N6
+\VGApart|RAM_adr1[15]~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1[15]~1_combout\ = (!\SW[1]~input_o\ & \VGApart|h_count\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000001010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW[1]~input_o\,
+	datac => \VGApart|h_count\(0),
+	combout => \VGApart|RAM_adr1[15]~1_combout\);
+
+-- Location: LCCOMB_X23_Y14_N20
+\VGApart|RAM_adr1[15]~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1[15]~2_combout\ = (!\VGApart|LessThan5~1_combout\ & (!\VGApart|process_0~7_combout\ & (\VGApart|RAM_adr1[15]~1_combout\ & \VGApart|v_count\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|LessThan5~1_combout\,
+	datab => \VGApart|process_0~7_combout\,
+	datac => \VGApart|RAM_adr1[15]~1_combout\,
+	datad => \VGApart|v_count\(0),
+	combout => \VGApart|RAM_adr1[15]~2_combout\);
+
+-- Location: FF_X20_Y15_N1
+\VGApart|RAM_adr1[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~0_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(0));
+
+-- Location: LCCOMB_X20_Y15_N2
+\VGApart|Add3~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~2_combout\ = (\VGApart|RAM_adr1\(1) & (!\VGApart|Add3~1\)) # (!\VGApart|RAM_adr1\(1) & ((\VGApart|Add3~1\) # (GND)))
+-- \VGApart|Add3~3\ = CARRY((!\VGApart|Add3~1\) # (!\VGApart|RAM_adr1\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(1),
+	datad => VCC,
+	cin => \VGApart|Add3~1\,
+	combout => \VGApart|Add3~2_combout\,
+	cout => \VGApart|Add3~3\);
+
+-- Location: FF_X20_Y15_N3
+\VGApart|RAM_adr1[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~2_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(1));
+
+-- Location: LCCOMB_X20_Y15_N4
+\VGApart|Add3~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~4_combout\ = (\VGApart|RAM_adr1\(2) & (\VGApart|Add3~3\ $ (GND))) # (!\VGApart|RAM_adr1\(2) & (!\VGApart|Add3~3\ & VCC))
+-- \VGApart|Add3~5\ = CARRY((\VGApart|RAM_adr1\(2) & !\VGApart|Add3~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(2),
+	datad => VCC,
+	cin => \VGApart|Add3~3\,
+	combout => \VGApart|Add3~4_combout\,
+	cout => \VGApart|Add3~5\);
+
+-- Location: FF_X20_Y15_N5
+\VGApart|RAM_adr1[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~4_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(2));
+
+-- Location: LCCOMB_X20_Y15_N6
+\VGApart|Add3~6\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~6_combout\ = (\VGApart|RAM_adr1\(3) & (!\VGApart|Add3~5\)) # (!\VGApart|RAM_adr1\(3) & ((\VGApart|Add3~5\) # (GND)))
+-- \VGApart|Add3~7\ = CARRY((!\VGApart|Add3~5\) # (!\VGApart|RAM_adr1\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(3),
+	datad => VCC,
+	cin => \VGApart|Add3~5\,
+	combout => \VGApart|Add3~6_combout\,
+	cout => \VGApart|Add3~7\);
+
+-- Location: FF_X20_Y15_N7
+\VGApart|RAM_adr1[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~6_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(3));
+
+-- Location: LCCOMB_X21_Y15_N6
+\VGApart|Equal3~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal3~0_combout\ = (\VGApart|RAM_adr1\(0) & (\VGApart|RAM_adr1\(3) & (\VGApart|RAM_adr1\(2) & \VGApart|RAM_adr1\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(0),
+	datab => \VGApart|RAM_adr1\(3),
+	datac => \VGApart|RAM_adr1\(2),
+	datad => \VGApart|RAM_adr1\(1),
+	combout => \VGApart|Equal3~0_combout\);
+
+-- Location: LCCOMB_X20_Y15_N8
+\VGApart|Add3~8\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~8_combout\ = (\VGApart|RAM_adr1\(4) & (\VGApart|Add3~7\ $ (GND))) # (!\VGApart|RAM_adr1\(4) & (!\VGApart|Add3~7\ & VCC))
+-- \VGApart|Add3~9\ = CARRY((\VGApart|RAM_adr1\(4) & !\VGApart|Add3~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(4),
+	datad => VCC,
+	cin => \VGApart|Add3~7\,
+	combout => \VGApart|Add3~8_combout\,
+	cout => \VGApart|Add3~9\);
+
+-- Location: FF_X20_Y15_N9
+\VGApart|RAM_adr1[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~8_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(4));
+
+-- Location: LCCOMB_X20_Y15_N10
+\VGApart|Add3~10\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~10_combout\ = (\VGApart|RAM_adr1\(5) & (!\VGApart|Add3~9\)) # (!\VGApart|RAM_adr1\(5) & ((\VGApart|Add3~9\) # (GND)))
+-- \VGApart|Add3~11\ = CARRY((!\VGApart|Add3~9\) # (!\VGApart|RAM_adr1\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(5),
+	datad => VCC,
+	cin => \VGApart|Add3~9\,
+	combout => \VGApart|Add3~10_combout\,
+	cout => \VGApart|Add3~11\);
+
+-- Location: FF_X20_Y15_N11
+\VGApart|RAM_adr1[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~10_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(5));
+
+-- Location: LCCOMB_X20_Y15_N12
+\VGApart|Add3~12\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~12_combout\ = (\VGApart|RAM_adr1\(6) & (\VGApart|Add3~11\ $ (GND))) # (!\VGApart|RAM_adr1\(6) & (!\VGApart|Add3~11\ & VCC))
+-- \VGApart|Add3~13\ = CARRY((\VGApart|RAM_adr1\(6) & !\VGApart|Add3~11\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(6),
+	datad => VCC,
+	cin => \VGApart|Add3~11\,
+	combout => \VGApart|Add3~12_combout\,
+	cout => \VGApart|Add3~13\);
+
+-- Location: FF_X20_Y15_N13
+\VGApart|RAM_adr1[6]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~12_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(6));
+
+-- Location: LCCOMB_X20_Y15_N14
+\VGApart|Add3~14\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~14_combout\ = (\VGApart|RAM_adr1\(7) & (!\VGApart|Add3~13\)) # (!\VGApart|RAM_adr1\(7) & ((\VGApart|Add3~13\) # (GND)))
+-- \VGApart|Add3~15\ = CARRY((!\VGApart|Add3~13\) # (!\VGApart|RAM_adr1\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(7),
+	datad => VCC,
+	cin => \VGApart|Add3~13\,
+	combout => \VGApart|Add3~14_combout\,
+	cout => \VGApart|Add3~15\);
+
+-- Location: FF_X20_Y15_N15
+\VGApart|RAM_adr1[7]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~14_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(7));
+
+-- Location: LCCOMB_X21_Y15_N0
+\VGApart|Equal3~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal3~1_combout\ = (\VGApart|RAM_adr1\(6) & (\VGApart|RAM_adr1\(7) & (\VGApart|RAM_adr1\(4) & \VGApart|RAM_adr1\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(6),
+	datab => \VGApart|RAM_adr1\(7),
+	datac => \VGApart|RAM_adr1\(4),
+	datad => \VGApart|RAM_adr1\(5),
+	combout => \VGApart|Equal3~1_combout\);
+
+-- Location: LCCOMB_X20_Y15_N16
+\VGApart|Add3~16\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~16_combout\ = (\VGApart|RAM_adr1\(8) & (\VGApart|Add3~15\ $ (GND))) # (!\VGApart|RAM_adr1\(8) & (!\VGApart|Add3~15\ & VCC))
+-- \VGApart|Add3~17\ = CARRY((\VGApart|RAM_adr1\(8) & !\VGApart|Add3~15\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(8),
+	datad => VCC,
+	cin => \VGApart|Add3~15\,
+	combout => \VGApart|Add3~16_combout\,
+	cout => \VGApart|Add3~17\);
+
+-- Location: LCCOMB_X19_Y15_N6
+\VGApart|RAM_adr1~5\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1~5_combout\ = (!\VGApart|Equal3~4_combout\ & \VGApart|Add3~16_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \VGApart|Equal3~4_combout\,
+	datad => \VGApart|Add3~16_combout\,
+	combout => \VGApart|RAM_adr1~5_combout\);
+
+-- Location: FF_X19_Y15_N7
+\VGApart|RAM_adr1[8]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|RAM_adr1~5_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(8));
+
+-- Location: LCCOMB_X20_Y15_N18
+\VGApart|Add3~18\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~18_combout\ = (\VGApart|RAM_adr1\(9) & (!\VGApart|Add3~17\)) # (!\VGApart|RAM_adr1\(9) & ((\VGApart|Add3~17\) # (GND)))
+-- \VGApart|Add3~19\ = CARRY((!\VGApart|Add3~17\) # (!\VGApart|RAM_adr1\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(9),
+	datad => VCC,
+	cin => \VGApart|Add3~17\,
+	combout => \VGApart|Add3~18_combout\,
+	cout => \VGApart|Add3~19\);
+
+-- Location: FF_X20_Y15_N19
+\VGApart|RAM_adr1[9]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~18_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(9));
+
+-- Location: LCCOMB_X20_Y15_N20
+\VGApart|Add3~20\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~20_combout\ = (\VGApart|RAM_adr1\(10) & (\VGApart|Add3~19\ $ (GND))) # (!\VGApart|RAM_adr1\(10) & (!\VGApart|Add3~19\ & VCC))
+-- \VGApart|Add3~21\ = CARRY((\VGApart|RAM_adr1\(10) & !\VGApart|Add3~19\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(10),
+	datad => VCC,
+	cin => \VGApart|Add3~19\,
+	combout => \VGApart|Add3~20_combout\,
+	cout => \VGApart|Add3~21\);
+
+-- Location: FF_X20_Y15_N21
+\VGApart|RAM_adr1[10]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~20_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(10));
+
+-- Location: LCCOMB_X20_Y15_N22
+\VGApart|Add3~22\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~22_combout\ = (\VGApart|RAM_adr1\(11) & (!\VGApart|Add3~21\)) # (!\VGApart|RAM_adr1\(11) & ((\VGApart|Add3~21\) # (GND)))
+-- \VGApart|Add3~23\ = CARRY((!\VGApart|Add3~21\) # (!\VGApart|RAM_adr1\(11)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(11),
+	datad => VCC,
+	cin => \VGApart|Add3~21\,
+	combout => \VGApart|Add3~22_combout\,
+	cout => \VGApart|Add3~23\);
+
+-- Location: FF_X20_Y15_N23
+\VGApart|RAM_adr1[11]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~22_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(11));
+
+-- Location: LCCOMB_X20_Y15_N24
+\VGApart|Add3~24\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~24_combout\ = (\VGApart|RAM_adr1\(12) & (\VGApart|Add3~23\ $ (GND))) # (!\VGApart|RAM_adr1\(12) & (!\VGApart|Add3~23\ & VCC))
+-- \VGApart|Add3~25\ = CARRY((\VGApart|RAM_adr1\(12) & !\VGApart|Add3~23\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(12),
+	datad => VCC,
+	cin => \VGApart|Add3~23\,
+	combout => \VGApart|Add3~24_combout\,
+	cout => \VGApart|Add3~25\);
+
+-- Location: FF_X20_Y15_N25
+\VGApart|RAM_adr1[12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|Add3~24_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(12));
+
+-- Location: LCCOMB_X20_Y15_N26
+\VGApart|Add3~26\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~26_combout\ = (\VGApart|RAM_adr1\(13) & (!\VGApart|Add3~25\)) # (!\VGApart|RAM_adr1\(13) & ((\VGApart|Add3~25\) # (GND)))
+-- \VGApart|Add3~27\ = CARRY((!\VGApart|Add3~25\) # (!\VGApart|RAM_adr1\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(13),
+	datad => VCC,
+	cin => \VGApart|Add3~25\,
+	combout => \VGApart|Add3~26_combout\,
+	cout => \VGApart|Add3~27\);
+
+-- Location: LCCOMB_X19_Y15_N16
+\VGApart|RAM_adr1~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1~4_combout\ = (!\VGApart|Equal3~4_combout\ & \VGApart|Add3~26_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \VGApart|Equal3~4_combout\,
+	datad => \VGApart|Add3~26_combout\,
+	combout => \VGApart|RAM_adr1~4_combout\);
+
+-- Location: FF_X19_Y15_N17
+\VGApart|RAM_adr1[13]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|RAM_adr1~4_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(13));
+
+-- Location: LCCOMB_X20_Y15_N28
+\VGApart|Add3~28\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~28_combout\ = (\VGApart|RAM_adr1\(14) & (\VGApart|Add3~27\ $ (GND))) # (!\VGApart|RAM_adr1\(14) & (!\VGApart|Add3~27\ & VCC))
+-- \VGApart|Add3~29\ = CARRY((\VGApart|RAM_adr1\(14) & !\VGApart|Add3~27\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|RAM_adr1\(14),
+	datad => VCC,
+	cin => \VGApart|Add3~27\,
+	combout => \VGApart|Add3~28_combout\,
+	cout => \VGApart|Add3~29\);
+
+-- Location: LCCOMB_X19_Y15_N18
+\VGApart|RAM_adr1~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1~3_combout\ = (!\VGApart|Equal3~4_combout\ & \VGApart|Add3~28_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \VGApart|Equal3~4_combout\,
+	datad => \VGApart|Add3~28_combout\,
+	combout => \VGApart|RAM_adr1~3_combout\);
+
+-- Location: FF_X19_Y15_N19
+\VGApart|RAM_adr1[14]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|RAM_adr1~3_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(14));
+
+-- Location: LCCOMB_X19_Y15_N26
+\VGApart|Equal3~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal3~3_combout\ = (\VGApart|RAM_adr1\(14) & (\VGApart|RAM_adr1\(15) & (!\VGApart|RAM_adr1\(12) & \VGApart|RAM_adr1\(13))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(14),
+	datab => \VGApart|RAM_adr1\(15),
+	datac => \VGApart|RAM_adr1\(12),
+	datad => \VGApart|RAM_adr1\(13),
+	combout => \VGApart|Equal3~3_combout\);
+
+-- Location: LCCOMB_X19_Y15_N24
+\VGApart|Equal3~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal3~2_combout\ = (!\VGApart|RAM_adr1\(8) & (!\VGApart|RAM_adr1\(11) & (!\VGApart|RAM_adr1\(10) & !\VGApart|RAM_adr1\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAM_adr1\(8),
+	datab => \VGApart|RAM_adr1\(11),
+	datac => \VGApart|RAM_adr1\(10),
+	datad => \VGApart|RAM_adr1\(9),
+	combout => \VGApart|Equal3~2_combout\);
+
+-- Location: LCCOMB_X19_Y15_N8
+\VGApart|Equal3~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Equal3~4_combout\ = (\VGApart|Equal3~0_combout\ & (\VGApart|Equal3~1_combout\ & (\VGApart|Equal3~3_combout\ & \VGApart|Equal3~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|Equal3~0_combout\,
+	datab => \VGApart|Equal3~1_combout\,
+	datac => \VGApart|Equal3~3_combout\,
+	datad => \VGApart|Equal3~2_combout\,
+	combout => \VGApart|Equal3~4_combout\);
+
+-- Location: LCCOMB_X20_Y15_N30
+\VGApart|Add3~30\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|Add3~30_combout\ = \VGApart|Add3~29\ $ (\VGApart|RAM_adr1\(15))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \VGApart|RAM_adr1\(15),
+	cin => \VGApart|Add3~29\,
+	combout => \VGApart|Add3~30_combout\);
+
+-- Location: LCCOMB_X19_Y15_N28
+\VGApart|RAM_adr1~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|RAM_adr1~0_combout\ = (!\VGApart|Equal3~4_combout\ & \VGApart|Add3~30_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \VGApart|Equal3~4_combout\,
+	datac => \VGApart|Add3~30_combout\,
+	combout => \VGApart|RAM_adr1~0_combout\);
+
+-- Location: FF_X19_Y15_N29
+\VGApart|RAM_adr1[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
+	d => \VGApart|RAM_adr1~0_combout\,
+	ena => \VGApart|RAM_adr1[15]~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \VGApart|RAM_adr1\(15));
+
+-- Location: LCCOMB_X19_Y15_N0
 \VGApart|RAMadr~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~0_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(15))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(15))))
+-- \VGApart|RAMadr~0_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(15)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(15)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAM_adr1\(15),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(15),
+	dataa => \VGApart|RAM_adr0\(15),
+	datab => \VGApart|RAM_adr1\(15),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~0_combout\);
 
--- Location: LCCOMB_X15_Y21_N30
-\VGApart|RAMadr[2]~1\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X23_Y14_N14
+\VGApart|RAMadr[1]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr[2]~1_combout\ = (!\VGApart|v_count\(9) & (!\SW[1]~input_o\ & !\VGApart|LessThan5~0_combout\))
+-- \VGApart|RAMadr[1]~1_combout\ = (!\VGApart|v_count\(9) & (!\SW[1]~input_o\ & !\VGApart|LessThan5~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000011",
+	lut_mask => "0000000000000101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|v_count\(9),
+	dataa => \VGApart|v_count\(9),
 	datac => \SW[1]~input_o\,
 	datad => \VGApart|LessThan5~0_combout\,
-	combout => \VGApart|RAMadr[2]~1_combout\);
+	combout => \VGApart|RAMadr[1]~1_combout\);
 
--- Location: FF_X19_Y20_N1
+-- Location: FF_X19_Y15_N1
 \VGApart|RAMadr[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7330,26 +7292,12 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~0_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(15));
 
--- Location: LCCOMB_X22_Y22_N2
-\RAM32|altsyncram_component|auto_generated|address_reg_b[2]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|address_reg_b[2]~feeder_combout\ = \VGApart|RAMadr\(15)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|address_reg_b[2]~feeder_combout\);
-
--- Location: FF_X22_Y22_N3
+-- Location: FF_X21_Y17_N23
 \RAM32|altsyncram_component|auto_generated|address_reg_b[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7358,7 +7306,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \rRAMclk~clkctrl_outclk\,
-	d => \RAM32|altsyncram_component|auto_generated|address_reg_b[2]~feeder_combout\,
+	asdata => \VGApart|RAMadr\(15),
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2));
@@ -7387,7 +7336,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \GPIO1_D[8]~inputclkctrl_outclk\);
 
--- Location: LCCOMB_X21_Y2_N18
+-- Location: LCCOMB_X2_Y14_N0
 \CAP10|DEPHASE|Qt~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|DEPHASE|Qt~0_combout\ = !\CAP10|DEPHASE|Qt~q\
@@ -7412,7 +7361,7 @@ PORT MAP (
 	i => ww_GPIO1_D(9),
 	o => \GPIO1_D[9]~input_o\);
 
--- Location: FF_X21_Y2_N19
+-- Location: FF_X2_Y14_N1
 \CAP10|DEPHASE|Qt\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7427,7 +7376,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|DEPHASE|Qt~q\);
 
--- Location: LCCOMB_X21_Y2_N0
+-- Location: LCCOMB_X2_Y14_N18
 \CAP10|DEPHASE|Qd[0]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|DEPHASE|Qd[0]~feeder_combout\ = \CAP10|DEPHASE|Qt~q\
@@ -7441,7 +7390,7 @@ PORT MAP (
 	datad => \CAP10|DEPHASE|Qt~q\,
 	combout => \CAP10|DEPHASE|Qd[0]~feeder_combout\);
 
--- Location: FF_X21_Y2_N1
+-- Location: FF_X2_Y14_N19
 \CAP10|DEPHASE|Qd[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7456,7 +7405,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|DEPHASE|Qd\(0));
 
--- Location: LCCOMB_X21_Y2_N6
+-- Location: LCCOMB_X2_Y14_N4
 \CAP10|DEPHASE|Qd[1]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|DEPHASE|Qd[1]~feeder_combout\ = \CAP10|DEPHASE|Qd\(0)
@@ -7470,7 +7419,7 @@ PORT MAP (
 	datad => \CAP10|DEPHASE|Qd\(0),
 	combout => \CAP10|DEPHASE|Qd[1]~feeder_combout\);
 
--- Location: FF_X21_Y2_N7
+-- Location: FF_X2_Y14_N5
 \CAP10|DEPHASE|Qd[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7485,35 +7434,35 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|DEPHASE|Qd\(1));
 
--- Location: LCCOMB_X22_Y2_N26
+-- Location: LCCOMB_X1_Y14_N20
 \CAP10|CAPclk~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|CAPclk~0_combout\ = !\CAP10|CAPclk~q\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010101010101",
+	lut_mask => "0000111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|CAPclk~q\,
+	datac => \CAP10|CAPclk~q\,
 	combout => \CAP10|CAPclk~0_combout\);
 
--- Location: LCCOMB_X22_Y2_N30
+-- Location: LCCOMB_X1_Y14_N28
 \CAP10|CAPclk~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|CAPclk~feeder_combout\ = \CAP10|CAPclk~0_combout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101010101010",
+	lut_mask => "1100110011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|CAPclk~0_combout\,
+	datab => \CAP10|CAPclk~0_combout\,
 	combout => \CAP10|CAPclk~feeder_combout\);
 
--- Location: FF_X22_Y2_N31
+-- Location: FF_X1_Y14_N29
 \CAP10|CAPclk\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7528,7 +7477,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|CAPclk~q\);
 
--- Location: CLKCTRL_G16
+-- Location: CLKCTRL_G0
 \CAP10|CAPclk~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -7558,7 +7507,7 @@ PORT MAP (
 	combout => \CAP10|Add2~0_combout\,
 	cout => \CAP10|Add2~1\);
 
--- Location: LCCOMB_X22_Y14_N10
+-- Location: LCCOMB_X10_Y16_N10
 \CAP10|Add0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~0_combout\ = \CAP10|h_count\(0) $ (VCC)
@@ -7575,7 +7524,7 @@ PORT MAP (
 	combout => \CAP10|Add0~0_combout\,
 	cout => \CAP10|Add0~1\);
 
--- Location: FF_X22_Y14_N11
+-- Location: FF_X10_Y16_N11
 \CAP10|h_count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7590,7 +7539,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(0));
 
--- Location: LCCOMB_X22_Y14_N12
+-- Location: LCCOMB_X10_Y16_N12
 \CAP10|Add0~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~2_combout\ = (\CAP10|h_count\(1) & (!\CAP10|Add0~1\)) # (!\CAP10|h_count\(1) & ((\CAP10|Add0~1\) # (GND)))
@@ -7608,7 +7557,7 @@ PORT MAP (
 	combout => \CAP10|Add0~2_combout\,
 	cout => \CAP10|Add0~3\);
 
--- Location: FF_X22_Y14_N13
+-- Location: FF_X10_Y16_N13
 \CAP10|h_count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7623,7 +7572,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(1));
 
--- Location: LCCOMB_X22_Y14_N14
+-- Location: LCCOMB_X10_Y16_N14
 \CAP10|Add0~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~4_combout\ = (\CAP10|h_count\(2) & (\CAP10|Add0~3\ $ (GND))) # (!\CAP10|h_count\(2) & (!\CAP10|Add0~3\ & VCC))
@@ -7641,7 +7590,7 @@ PORT MAP (
 	combout => \CAP10|Add0~4_combout\,
 	cout => \CAP10|Add0~5\);
 
--- Location: FF_X22_Y14_N15
+-- Location: FF_X10_Y16_N15
 \CAP10|h_count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7656,7 +7605,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(2));
 
--- Location: LCCOMB_X22_Y14_N16
+-- Location: LCCOMB_X10_Y16_N16
 \CAP10|Add0~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~6_combout\ = (\CAP10|h_count\(3) & (!\CAP10|Add0~5\)) # (!\CAP10|h_count\(3) & ((\CAP10|Add0~5\) # (GND)))
@@ -7674,7 +7623,7 @@ PORT MAP (
 	combout => \CAP10|Add0~6_combout\,
 	cout => \CAP10|Add0~7\);
 
--- Location: FF_X22_Y14_N17
+-- Location: FF_X10_Y16_N17
 \CAP10|h_count[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7689,7 +7638,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(3));
 
--- Location: LCCOMB_X22_Y14_N18
+-- Location: LCCOMB_X10_Y16_N18
 \CAP10|Add0~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~8_combout\ = (\CAP10|h_count\(4) & (\CAP10|Add0~7\ $ (GND))) # (!\CAP10|h_count\(4) & (!\CAP10|Add0~7\ & VCC))
@@ -7707,7 +7656,7 @@ PORT MAP (
 	combout => \CAP10|Add0~8_combout\,
 	cout => \CAP10|Add0~9\);
 
--- Location: FF_X22_Y14_N19
+-- Location: FF_X10_Y16_N19
 \CAP10|h_count[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7722,7 +7671,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(4));
 
--- Location: LCCOMB_X22_Y14_N20
+-- Location: LCCOMB_X10_Y16_N20
 \CAP10|Add0~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~10_combout\ = (\CAP10|h_count\(5) & (!\CAP10|Add0~9\)) # (!\CAP10|h_count\(5) & ((\CAP10|Add0~9\) # (GND)))
@@ -7740,7 +7689,7 @@ PORT MAP (
 	combout => \CAP10|Add0~10_combout\,
 	cout => \CAP10|Add0~11\);
 
--- Location: FF_X22_Y14_N21
+-- Location: FF_X10_Y16_N21
 \CAP10|h_count[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7755,7 +7704,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(5));
 
--- Location: LCCOMB_X22_Y14_N22
+-- Location: LCCOMB_X10_Y16_N22
 \CAP10|Add0~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~12_combout\ = (\CAP10|h_count\(6) & (\CAP10|Add0~11\ $ (GND))) # (!\CAP10|h_count\(6) & (!\CAP10|Add0~11\ & VCC))
@@ -7763,17 +7712,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|h_count\(6),
+	datab => \CAP10|h_count\(6),
 	datad => VCC,
 	cin => \CAP10|Add0~11\,
 	combout => \CAP10|Add0~12_combout\,
 	cout => \CAP10|Add0~13\);
 
--- Location: LCCOMB_X22_Y14_N26
+-- Location: LCCOMB_X10_Y16_N26
 \CAP10|Add0~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~16_combout\ = (\CAP10|h_count\(8) & (\CAP10|Add0~15\ $ (GND))) # (!\CAP10|h_count\(8) & (!\CAP10|Add0~15\ & VCC))
@@ -7781,17 +7730,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \CAP10|h_count\(8),
+	dataa => \CAP10|h_count\(8),
 	datad => VCC,
 	cin => \CAP10|Add0~15\,
 	combout => \CAP10|Add0~16_combout\,
 	cout => \CAP10|Add0~17\);
 
--- Location: LCCOMB_X22_Y14_N28
+-- Location: LCCOMB_X10_Y16_N28
 \CAP10|Add0~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~18_combout\ = \CAP10|Add0~17\ $ (\CAP10|h_count\(9))
@@ -7806,7 +7755,7 @@ PORT MAP (
 	cin => \CAP10|Add0~17\,
 	combout => \CAP10|Add0~18_combout\);
 
--- Location: FF_X22_Y14_N29
+-- Location: FF_X10_Y16_N29
 \CAP10|h_count[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7821,10 +7770,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(9));
 
--- Location: LCCOMB_X23_Y14_N24
+-- Location: LCCOMB_X11_Y16_N28
 \CAP10|Equal0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|Equal0~0_combout\ = (\CAP10|h_count\(8) & (!\CAP10|h_count\(9) & (!\CAP10|h_count\(6) & !\CAP10|h_count\(7))))
+-- \CAP10|Equal0~0_combout\ = (\CAP10|h_count\(8) & (!\CAP10|h_count\(7) & (!\CAP10|h_count\(6) & !\CAP10|h_count\(9))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7833,15 +7782,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \CAP10|h_count\(8),
-	datab => \CAP10|h_count\(9),
+	datab => \CAP10|h_count\(7),
 	datac => \CAP10|h_count\(6),
-	datad => \CAP10|h_count\(7),
+	datad => \CAP10|h_count\(9),
 	combout => \CAP10|Equal0~0_combout\);
 
--- Location: LCCOMB_X22_Y14_N4
+-- Location: LCCOMB_X10_Y16_N6
 \CAP10|Equal0~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|Equal0~1_combout\ = (\CAP10|h_count\(4) & (\CAP10|h_count\(5) & (\CAP10|h_count\(2) & \CAP10|h_count\(3))))
+-- \CAP10|Equal0~1_combout\ = (\CAP10|h_count\(5) & (\CAP10|h_count\(4) & (\CAP10|h_count\(2) & \CAP10|h_count\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7849,16 +7798,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|h_count\(4),
-	datab => \CAP10|h_count\(5),
+	dataa => \CAP10|h_count\(5),
+	datab => \CAP10|h_count\(4),
 	datac => \CAP10|h_count\(2),
 	datad => \CAP10|h_count\(3),
 	combout => \CAP10|Equal0~1_combout\);
 
--- Location: LCCOMB_X22_Y14_N2
+-- Location: LCCOMB_X11_Y16_N26
 \CAP10|Equal0~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|Equal0~2_combout\ = (\CAP10|h_count\(1) & (\CAP10|Equal0~0_combout\ & (\CAP10|Equal0~1_combout\ & \CAP10|h_count\(0))))
+-- \CAP10|Equal0~2_combout\ = (\CAP10|h_count\(0) & (\CAP10|Equal0~0_combout\ & (\CAP10|Equal0~1_combout\ & \CAP10|h_count\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7866,13 +7815,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|h_count\(1),
+	dataa => \CAP10|h_count\(0),
 	datab => \CAP10|Equal0~0_combout\,
 	datac => \CAP10|Equal0~1_combout\,
-	datad => \CAP10|h_count\(0),
+	datad => \CAP10|h_count\(1),
 	combout => \CAP10|Equal0~2_combout\);
 
--- Location: LCCOMB_X22_Y14_N6
+-- Location: LCCOMB_X10_Y16_N4
 \CAP10|h_count~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|h_count~1_combout\ = (\CAP10|Add0~12_combout\ & !\CAP10|Equal0~2_combout\)
@@ -7887,7 +7836,7 @@ PORT MAP (
 	datad => \CAP10|Equal0~2_combout\,
 	combout => \CAP10|h_count~1_combout\);
 
--- Location: FF_X22_Y14_N7
+-- Location: FF_X10_Y16_N5
 \CAP10|h_count[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7902,7 +7851,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(6));
 
--- Location: LCCOMB_X22_Y14_N24
+-- Location: LCCOMB_X10_Y16_N24
 \CAP10|Add0~14\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add0~14_combout\ = (\CAP10|h_count\(7) & (!\CAP10|Add0~13\)) # (!\CAP10|h_count\(7) & ((\CAP10|Add0~13\) # (GND)))
@@ -7920,7 +7869,7 @@ PORT MAP (
 	combout => \CAP10|Add0~14_combout\,
 	cout => \CAP10|Add0~15\);
 
--- Location: FF_X22_Y14_N25
+-- Location: FF_X10_Y16_N25
 \CAP10|h_count[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7935,7 +7884,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(7));
 
--- Location: LCCOMB_X22_Y14_N8
+-- Location: LCCOMB_X10_Y16_N2
 \CAP10|h_count~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|h_count~0_combout\ = (\CAP10|Add0~16_combout\ & !\CAP10|Equal0~2_combout\)
@@ -7950,7 +7899,7 @@ PORT MAP (
 	datad => \CAP10|Equal0~2_combout\,
 	combout => \CAP10|h_count~0_combout\);
 
--- Location: FF_X22_Y14_N9
+-- Location: FF_X10_Y16_N3
 \CAP10|h_count[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -7965,7 +7914,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|h_count\(8));
 
--- Location: LCCOMB_X23_Y14_N0
+-- Location: LCCOMB_X11_Y16_N0
 \CAP10|Add1~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|Add1~0_combout\ = !\CAP10|v_count\(0)
@@ -7979,23 +7928,23 @@ PORT MAP (
 	datac => \CAP10|v_count\(0),
 	combout => \CAP10|Add1~0_combout\);
 
--- Location: LCCOMB_X23_Y14_N30
+-- Location: LCCOMB_X11_Y16_N12
 \CAP10|v_count[0]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|v_count[0]~0_combout\ = (\CAP10|Equal0~2_combout\ & (\CAP10|Add1~0_combout\)) # (!\CAP10|Equal0~2_combout\ & ((\CAP10|v_count\(0))))
+-- \CAP10|v_count[0]~0_combout\ = (\CAP10|Equal0~2_combout\ & ((\CAP10|Add1~0_combout\))) # (!\CAP10|Equal0~2_combout\ & (\CAP10|v_count\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011110000",
+	lut_mask => "1111101000001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \CAP10|Add1~0_combout\,
-	datac => \CAP10|v_count\(0),
-	datad => \CAP10|Equal0~2_combout\,
+	dataa => \CAP10|v_count\(0),
+	datac => \CAP10|Equal0~2_combout\,
+	datad => \CAP10|Add1~0_combout\,
 	combout => \CAP10|v_count[0]~0_combout\);
 
--- Location: FF_X23_Y14_N31
+-- Location: FF_X10_Y16_N9
 \CAP10|v_count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8004,13 +7953,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CAP10|ALT_INV_CAPclk~clkctrl_outclk\,
-	d => \CAP10|v_count[0]~0_combout\,
+	asdata => \CAP10|v_count[0]~0_combout\,
 	clrn => \SW[3]~input_o\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \CAP10|v_count\(0));
 
--- Location: LCCOMB_X22_Y14_N0
+-- Location: LCCOMB_X10_Y16_N30
 \CAP10|RAM_adr[15]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|RAM_adr[15]~1_combout\ = (\CAP10|h_count\(3) & ((\CAP10|h_count\(0)) # ((\CAP10|h_count\(2)) # (\CAP10|h_count\(1)))))
@@ -8027,10 +7977,10 @@ PORT MAP (
 	datad => \CAP10|h_count\(1),
 	combout => \CAP10|RAM_adr[15]~1_combout\);
 
--- Location: LCCOMB_X22_Y14_N30
+-- Location: LCCOMB_X10_Y16_N0
 \CAP10|RAM_adr[15]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|RAM_adr[15]~2_combout\ = (\CAP10|h_count\(4) & ((\CAP10|h_count\(5)) # ((\CAP10|h_count\(8) & \CAP10|RAM_adr[15]~1_combout\)))) # (!\CAP10|h_count\(4) & (\CAP10|h_count\(5) & ((\CAP10|h_count\(8)) # (\CAP10|RAM_adr[15]~1_combout\))))
+-- \CAP10|RAM_adr[15]~2_combout\ = (\CAP10|h_count\(8) & ((\CAP10|h_count\(5)) # ((\CAP10|RAM_adr[15]~1_combout\ & \CAP10|h_count\(4))))) # (!\CAP10|h_count\(8) & (\CAP10|h_count\(5) & ((\CAP10|RAM_adr[15]~1_combout\) # (\CAP10|h_count\(4)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8038,29 +7988,29 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|h_count\(4),
+	dataa => \CAP10|h_count\(8),
 	datab => \CAP10|h_count\(5),
-	datac => \CAP10|h_count\(8),
-	datad => \CAP10|RAM_adr[15]~1_combout\,
+	datac => \CAP10|RAM_adr[15]~1_combout\,
+	datad => \CAP10|h_count\(4),
 	combout => \CAP10|RAM_adr[15]~2_combout\);
 
--- Location: LCCOMB_X23_Y14_N28
+-- Location: LCCOMB_X10_Y16_N8
 \CAP10|RAM_adr[15]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|RAM_adr[15]~3_combout\ = (\CAP10|h_count\(7)) # ((\CAP10|h_count\(6)) # (\CAP10|RAM_adr[15]~2_combout\))
+-- \CAP10|RAM_adr[15]~3_combout\ = (\CAP10|h_count\(6)) # ((\CAP10|h_count\(7)) # (\CAP10|RAM_adr[15]~2_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111111100",
+	lut_mask => "1111111111101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \CAP10|h_count\(6),
 	datab => \CAP10|h_count\(7),
-	datac => \CAP10|h_count\(6),
 	datad => \CAP10|RAM_adr[15]~2_combout\,
 	combout => \CAP10|RAM_adr[15]~3_combout\);
 
--- Location: LCCOMB_X23_Y14_N2
+-- Location: LCCOMB_X11_Y16_N10
 \CAP10|RAM_adr[15]~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|RAM_adr[15]~4_combout\ = (!\CAP10|h_count\(9) & (!\CAP10|v_count\(0) & (\CAP10|h_count\(8) $ (\CAP10|RAM_adr[15]~3_combout\))))
@@ -8194,23 +8144,6 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \CAP10|RAM_adr\(3));
-
--- Location: LCCOMB_X24_Y19_N22
-\CAP10|Equal2~4\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Equal2~4_combout\ = (\CAP10|RAM_adr\(3) & (\CAP10|RAM_adr\(2) & (\CAP10|RAM_adr\(0) & \CAP10|RAM_adr\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAP10|RAM_adr\(3),
-	datab => \CAP10|RAM_adr\(2),
-	datac => \CAP10|RAM_adr\(0),
-	datad => \CAP10|RAM_adr\(1),
-	combout => \CAP10|Equal2~4_combout\);
 
 -- Location: LCCOMB_X23_Y19_N8
 \CAP10|Add2~8\ : cycloneiii_lcell_comb
@@ -8348,23 +8281,6 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|RAM_adr\(7));
 
--- Location: LCCOMB_X24_Y19_N0
-\CAP10|Equal2~3\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Equal2~3_combout\ = (\CAP10|RAM_adr\(4) & (\CAP10|RAM_adr\(6) & (\CAP10|RAM_adr\(7) & \CAP10|RAM_adr\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAP10|RAM_adr\(4),
-	datab => \CAP10|RAM_adr\(6),
-	datac => \CAP10|RAM_adr\(7),
-	datad => \CAP10|RAM_adr\(5),
-	combout => \CAP10|Equal2~3_combout\);
-
 -- Location: LCCOMB_X23_Y19_N16
 \CAP10|Add2~16\ : cycloneiii_lcell_comb
 -- Equation(s):
@@ -8383,21 +8299,221 @@ PORT MAP (
 	combout => \CAP10|Add2~16_combout\,
 	cout => \CAP10|Add2~17\);
 
--- Location: LCCOMB_X24_Y19_N16
-\CAP10|RAM_adr~7\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X24_Y19_N0
+\CAP10|Equal2~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|RAM_adr~7_combout\ = (\CAP10|Add2~16_combout\ & (((!\CAP10|Equal2~2_combout\) # (!\CAP10|Equal2~3_combout\)) # (!\CAP10|Equal2~4_combout\)))
+-- \CAP10|Equal2~3_combout\ = (\CAP10|RAM_adr\(4) & (\CAP10|RAM_adr\(6) & (\CAP10|RAM_adr\(7) & \CAP10|RAM_adr\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111000011110000",
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|RAM_adr\(4),
+	datab => \CAP10|RAM_adr\(6),
+	datac => \CAP10|RAM_adr\(7),
+	datad => \CAP10|RAM_adr\(5),
+	combout => \CAP10|Equal2~3_combout\);
+
+-- Location: LCCOMB_X23_Y19_N26
+\CAP10|Add2~26\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Add2~26_combout\ = (\CAP10|RAM_adr\(13) & (!\CAP10|Add2~25\)) # (!\CAP10|RAM_adr\(13) & ((\CAP10|Add2~25\) # (GND)))
+-- \CAP10|Add2~27\ = CARRY((!\CAP10|Add2~25\) # (!\CAP10|RAM_adr\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|RAM_adr\(13),
+	datad => VCC,
+	cin => \CAP10|Add2~25\,
+	combout => \CAP10|Add2~26_combout\,
+	cout => \CAP10|Add2~27\);
+
+-- Location: LCCOMB_X23_Y19_N28
+\CAP10|Add2~28\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Add2~28_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|Add2~27\ $ (GND))) # (!\CAP10|RAM_adr\(14) & (!\CAP10|Add2~27\ & VCC))
+-- \CAP10|Add2~29\ = CARRY((\CAP10|RAM_adr\(14) & !\CAP10|Add2~27\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(14),
+	datad => VCC,
+	cin => \CAP10|Add2~27\,
+	combout => \CAP10|Add2~28_combout\,
+	cout => \CAP10|Add2~29\);
+
+-- Location: LCCOMB_X24_Y19_N10
+\CAP10|Equal2~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Equal2~4_combout\ = (\CAP10|RAM_adr\(0) & (\CAP10|RAM_adr\(3) & (\CAP10|RAM_adr\(2) & \CAP10|RAM_adr\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|RAM_adr\(0),
+	datab => \CAP10|RAM_adr\(3),
+	datac => \CAP10|RAM_adr\(2),
+	datad => \CAP10|RAM_adr\(1),
+	combout => \CAP10|Equal2~4_combout\);
+
+-- Location: LCCOMB_X24_Y19_N14
+\CAP10|RAM_adr~5\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|RAM_adr~5_combout\ = (\CAP10|Add2~28_combout\ & (((!\CAP10|Equal2~4_combout\) # (!\CAP10|Equal2~2_combout\)) # (!\CAP10|Equal2~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|Add2~28_combout\,
+	datab => \CAP10|Equal2~3_combout\,
+	datac => \CAP10|Equal2~2_combout\,
+	datad => \CAP10|Equal2~4_combout\,
+	combout => \CAP10|RAM_adr~5_combout\);
+
+-- Location: FF_X24_Y19_N15
+\CAP10|RAM_adr[14]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAP10|ALT_INV_CAPclk~clkctrl_outclk\,
+	d => \CAP10|RAM_adr~5_combout\,
+	clrn => \SW[3]~input_o\,
+	ena => \CAP10|RAM_adr[15]~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAP10|RAM_adr\(14));
+
+-- Location: LCCOMB_X23_Y19_N30
+\CAP10|Add2~30\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Add2~30_combout\ = \CAP10|Add2~29\ $ (\CAP10|RAM_adr\(15))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \CAP10|RAM_adr\(15),
+	cin => \CAP10|Add2~29\,
+	combout => \CAP10|Add2~30_combout\);
+
+-- Location: LCCOMB_X24_Y19_N4
+\CAP10|RAM_adr~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|RAM_adr~0_combout\ = (\CAP10|Add2~30_combout\ & (((!\CAP10|Equal2~2_combout\) # (!\CAP10|Equal2~3_combout\)) # (!\CAP10|Equal2~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \CAP10|Equal2~4_combout\,
 	datab => \CAP10|Equal2~3_combout\,
-	datac => \CAP10|Add2~16_combout\,
-	datad => \CAP10|Equal2~2_combout\,
+	datac => \CAP10|Equal2~2_combout\,
+	datad => \CAP10|Add2~30_combout\,
+	combout => \CAP10|RAM_adr~0_combout\);
+
+-- Location: FF_X24_Y19_N5
+\CAP10|RAM_adr[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAP10|ALT_INV_CAPclk~clkctrl_outclk\,
+	d => \CAP10|RAM_adr~0_combout\,
+	clrn => \SW[3]~input_o\,
+	ena => \CAP10|RAM_adr[15]~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAP10|RAM_adr\(15));
+
+-- Location: LCCOMB_X24_Y19_N30
+\CAP10|Equal2~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Equal2~0_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(15) & \CAP10|RAM_adr\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(14),
+	datac => \CAP10|RAM_adr\(15),
+	datad => \CAP10|RAM_adr\(13),
+	combout => \CAP10|Equal2~0_combout\);
+
+-- Location: LCCOMB_X24_Y19_N12
+\CAP10|Equal2~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Equal2~1_combout\ = (!\CAP10|RAM_adr\(9) & (!\CAP10|RAM_adr\(10) & (!\CAP10|RAM_adr\(11) & !\CAP10|RAM_adr\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|RAM_adr\(9),
+	datab => \CAP10|RAM_adr\(10),
+	datac => \CAP10|RAM_adr\(11),
+	datad => \CAP10|RAM_adr\(8),
+	combout => \CAP10|Equal2~1_combout\);
+
+-- Location: LCCOMB_X24_Y19_N2
+\CAP10|Equal2~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|Equal2~2_combout\ = (!\CAP10|RAM_adr\(12) & (\CAP10|Equal2~0_combout\ & \CAP10|Equal2~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(12),
+	datac => \CAP10|Equal2~0_combout\,
+	datad => \CAP10|Equal2~1_combout\,
+	combout => \CAP10|Equal2~2_combout\);
+
+-- Location: LCCOMB_X24_Y19_N16
+\CAP10|RAM_adr~7\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|RAM_adr~7_combout\ = (\CAP10|Add2~16_combout\ & (((!\CAP10|Equal2~4_combout\) # (!\CAP10|Equal2~2_combout\)) # (!\CAP10|Equal2~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \CAP10|Add2~16_combout\,
+	datab => \CAP10|Equal2~3_combout\,
+	datac => \CAP10|Equal2~2_combout\,
+	datad => \CAP10|Equal2~4_combout\,
 	combout => \CAP10|RAM_adr~7_combout\);
 
 -- Location: FF_X24_Y19_N17
@@ -8552,75 +8668,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|RAM_adr\(12));
 
--- Location: LCCOMB_X24_Y19_N12
-\CAP10|Equal2~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Equal2~1_combout\ = (!\CAP10|RAM_adr\(8) & (!\CAP10|RAM_adr\(10) & (!\CAP10|RAM_adr\(9) & !\CAP10|RAM_adr\(11))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAP10|RAM_adr\(8),
-	datab => \CAP10|RAM_adr\(10),
-	datac => \CAP10|RAM_adr\(9),
-	datad => \CAP10|RAM_adr\(11),
-	combout => \CAP10|Equal2~1_combout\);
-
--- Location: LCCOMB_X24_Y19_N2
-\CAP10|Equal2~2\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Equal2~2_combout\ = (!\CAP10|RAM_adr\(12) & (\CAP10|Equal2~0_combout\ & \CAP10|Equal2~1_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(12),
-	datac => \CAP10|Equal2~0_combout\,
-	datad => \CAP10|Equal2~1_combout\,
-	combout => \CAP10|Equal2~2_combout\);
-
--- Location: LCCOMB_X23_Y19_N26
-\CAP10|Add2~26\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Add2~26_combout\ = (\CAP10|RAM_adr\(13) & (!\CAP10|Add2~25\)) # (!\CAP10|RAM_adr\(13) & ((\CAP10|Add2~25\) # (GND)))
--- \CAP10|Add2~27\ = CARRY((!\CAP10|Add2~25\) # (!\CAP10|RAM_adr\(13)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(13),
-	datad => VCC,
-	cin => \CAP10|Add2~25\,
-	combout => \CAP10|Add2~26_combout\,
-	cout => \CAP10|Add2~27\);
-
--- Location: LCCOMB_X24_Y19_N8
+-- Location: LCCOMB_X24_Y19_N24
 \CAP10|RAM_adr~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|RAM_adr~6_combout\ = (\CAP10|Add2~26_combout\ & (((!\CAP10|Equal2~2_combout\) # (!\CAP10|Equal2~3_combout\)) # (!\CAP10|Equal2~4_combout\)))
+-- \CAP10|RAM_adr~6_combout\ = (\CAP10|Add2~26_combout\ & (((!\CAP10|Equal2~4_combout\) # (!\CAP10|Equal2~2_combout\)) # (!\CAP10|Equal2~3_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111000011110000",
+	lut_mask => "0010101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|Equal2~4_combout\,
+	dataa => \CAP10|Add2~26_combout\,
 	datab => \CAP10|Equal2~3_combout\,
-	datac => \CAP10|Add2~26_combout\,
-	datad => \CAP10|Equal2~2_combout\,
+	datac => \CAP10|Equal2~2_combout\,
+	datad => \CAP10|Equal2~4_combout\,
 	combout => \CAP10|RAM_adr~6_combout\);
 
--- Location: FF_X24_Y19_N9
+-- Location: FF_X24_Y19_N25
 \CAP10|RAM_adr[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8636,122 +8701,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|RAM_adr\(13));
 
--- Location: LCCOMB_X23_Y19_N28
-\CAP10|Add2~28\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X24_Y19_N20
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|Add2~28_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|Add2~27\ $ (GND))) # (!\CAP10|RAM_adr\(14) & (!\CAP10|Add2~27\ & VCC))
--- \CAP10|Add2~29\ = CARRY((\CAP10|RAM_adr\(14) & !\CAP10|Add2~27\))
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\ = (\CAP10|RAM_adr\(13) & (!\CAP10|RAM_adr\(14) & !\CAP10|RAM_adr\(15)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(14),
-	datad => VCC,
-	cin => \CAP10|Add2~27\,
-	combout => \CAP10|Add2~28_combout\,
-	cout => \CAP10|Add2~29\);
-
--- Location: LCCOMB_X24_Y19_N14
-\CAP10|RAM_adr~5\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|RAM_adr~5_combout\ = (\CAP10|Add2~28_combout\ & (((!\CAP10|Equal2~2_combout\) # (!\CAP10|Equal2~3_combout\)) # (!\CAP10|Equal2~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111111100000000",
+	lut_mask => "0000000000001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \CAP10|Equal2~4_combout\,
-	datab => \CAP10|Equal2~3_combout\,
-	datac => \CAP10|Equal2~2_combout\,
-	datad => \CAP10|Add2~28_combout\,
-	combout => \CAP10|RAM_adr~5_combout\);
-
--- Location: FF_X24_Y19_N15
-\CAP10|RAM_adr[14]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CAP10|ALT_INV_CAPclk~clkctrl_outclk\,
-	d => \CAP10|RAM_adr~5_combout\,
-	clrn => \SW[3]~input_o\,
-	ena => \CAP10|RAM_adr[15]~4_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAP10|RAM_adr\(14));
-
--- Location: LCCOMB_X23_Y19_N30
-\CAP10|Add2~30\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Add2~30_combout\ = \CAP10|Add2~29\ $ (\CAP10|RAM_adr\(15))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
+	datab => \CAP10|RAM_adr\(13),
+	datac => \CAP10|RAM_adr\(14),
 	datad => \CAP10|RAM_adr\(15),
-	cin => \CAP10|Add2~29\,
-	combout => \CAP10|Add2~30_combout\);
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\);
 
--- Location: LCCOMB_X24_Y19_N24
-\CAP10|RAM_adr~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|RAM_adr~0_combout\ = (\CAP10|Add2~30_combout\ & (((!\CAP10|Equal2~2_combout\) # (!\CAP10|Equal2~3_combout\)) # (!\CAP10|Equal2~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAP10|Equal2~4_combout\,
-	datab => \CAP10|Equal2~3_combout\,
-	datac => \CAP10|Equal2~2_combout\,
-	datad => \CAP10|Add2~30_combout\,
-	combout => \CAP10|RAM_adr~0_combout\);
-
--- Location: FF_X24_Y19_N25
-\CAP10|RAM_adr[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CAP10|ALT_INV_CAPclk~clkctrl_outclk\,
-	d => \CAP10|RAM_adr~0_combout\,
-	clrn => \SW[3]~input_o\,
-	ena => \CAP10|RAM_adr[15]~4_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAP10|RAM_adr\(15));
-
--- Location: LCCOMB_X24_Y19_N6
-\CAP10|Equal2~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|Equal2~0_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(13) & \CAP10|RAM_adr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(14),
-	datac => \CAP10|RAM_adr\(13),
-	datad => \CAP10|RAM_adr\(15),
-	combout => \CAP10|Equal2~0_combout\);
-
--- Location: LCCOMB_X22_Y2_N20
+-- Location: LCCOMB_X1_Y14_N8
 \CAP10|enawRAMclk~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|enawRAMclk~0_combout\ = !\CAP10|v_count\(0)
@@ -8765,7 +8731,7 @@ PORT MAP (
 	datad => \CAP10|v_count\(0),
 	combout => \CAP10|enawRAMclk~0_combout\);
 
--- Location: FF_X22_Y2_N21
+-- Location: FF_X1_Y14_N9
 \CAP10|enawRAMclk\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8780,10 +8746,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|enawRAMclk~q\);
 
--- Location: LCCOMB_X22_Y2_N28
+-- Location: LCCOMB_X1_Y14_N16
 \CAP10|outCLK\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|outCLK~combout\ = LCELL((\CAP10|CAPclk~q\ & \CAP10|enawRAMclk~q\))
+-- \CAP10|outCLK~combout\ = LCELL((\CAP10|enawRAMclk~q\ & \CAP10|CAPclk~q\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8791,11 +8757,11 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \CAP10|CAPclk~q\,
-	datad => \CAP10|enawRAMclk~q\,
+	datac => \CAP10|enawRAMclk~q\,
+	datad => \CAP10|CAPclk~q\,
 	combout => \CAP10|outCLK~combout\);
 
--- Location: CLKCTRL_G17
+-- Location: CLKCTRL_G2
 \CAP10|outCLK~clkctrl\ : cycloneiii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -8808,23 +8774,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \CAP10|outCLK~clkctrl_outclk\);
 
--- Location: LCCOMB_X19_Y20_N6
+-- Location: LCCOMB_X19_Y15_N30
 \VGApart|RAMadr~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~2_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(14))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(14))))
+-- \VGApart|RAMadr~2_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(14)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(14)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAM_adr1\(14),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(14),
+	dataa => \VGApart|RAM_adr0\(14),
+	datab => \VGApart|RAM_adr1\(14),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~2_combout\);
 
--- Location: FF_X19_Y20_N7
+-- Location: FF_X19_Y15_N31
 \VGApart|RAMadr[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8834,28 +8800,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~2_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(14));
 
--- Location: LCCOMB_X17_Y20_N24
+-- Location: LCCOMB_X19_Y15_N12
 \VGApart|RAMadr~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~3_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(13))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(13))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1100110011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAM_adr1\(13),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(13),
+	datab => \VGApart|RAM_adr1\(13),
+	datac => \VGApart|RAM_adr0\(13),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~3_combout\);
 
--- Location: FF_X17_Y20_N25
+-- Location: FF_X19_Y15_N13
 \VGApart|RAMadr[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8865,26 +8831,26 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~3_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(13));
 
--- Location: LCCOMB_X19_Y20_N26
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X19_Y16_N8
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000000000000",
+	lut_mask => "0000000001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|RAMadr\(14),
 	datac => \VGApart|RAMadr\(13),
 	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\);
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\);
 
 -- Location: LCCOMB_X36_Y15_N0
 \CAP10|dPCLK\ : cycloneiii_lcell_comb
@@ -8914,47 +8880,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \CAP10|dPCLK~clkctrl_outclk\);
 
--- Location: IOIBUF_X32_Y0_N1
-\GPIO1_D[4]~input\ : cycloneiii_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_GPIO1_D(4),
-	o => \GPIO1_D[4]~input_o\);
-
--- Location: LCCOMB_X17_Y14_N20
-\CAP10|QinReg[4]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \CAP10|QinReg[4]~feeder_combout\ = \GPIO1_D[4]~input_o\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \GPIO1_D[4]~input_o\,
-	combout => \CAP10|QinReg[4]~feeder_combout\);
-
--- Location: FF_X17_Y14_N21
-\CAP10|QinReg[4]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \CAP10|ALT_INV_dPCLK~clkctrl_outclk\,
-	d => \CAP10|QinReg[4]~feeder_combout\,
-	clrn => \SW[3]~input_o\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \CAP10|QinReg\(4));
-
--- Location: LCCOMB_X17_Y14_N6
+-- Location: LCCOMB_X17_Y14_N14
 \CAP10|takeTurn~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|takeTurn~0_combout\ = !\CAP10|takeTurn~q\
@@ -8968,7 +8894,7 @@ PORT MAP (
 	datac => \CAP10|takeTurn~q\,
 	combout => \CAP10|takeTurn~0_combout\);
 
--- Location: FF_X17_Y14_N7
+-- Location: FF_X17_Y14_N15
 \CAP10|takeTurn\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -8983,22 +8909,62 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|takeTurn~q\);
 
--- Location: LCCOMB_X17_Y14_N24
-\CAP10|B[0]~0\ : cycloneiii_lcell_comb
+-- Location: IOIBUF_X32_Y0_N1
+\GPIO1_D[4]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_GPIO1_D(4),
+	o => \GPIO1_D[4]~input_o\);
+
+-- Location: LCCOMB_X17_Y14_N28
+\CAP10|QinReg[4]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|B[0]~0_combout\ = (\CAP10|QinReg\(4) & !\CAP10|takeTurn~q\)
+-- \CAP10|QinReg[4]~feeder_combout\ = \GPIO1_D[4]~input_o\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \CAP10|QinReg\(4),
-	datad => \CAP10|takeTurn~q\,
+	datad => \GPIO1_D[4]~input_o\,
+	combout => \CAP10|QinReg[4]~feeder_combout\);
+
+-- Location: FF_X17_Y14_N29
+\CAP10|QinReg[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CAP10|ALT_INV_dPCLK~clkctrl_outclk\,
+	d => \CAP10|QinReg[4]~feeder_combout\,
+	clrn => \SW[3]~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \CAP10|QinReg\(4));
+
+-- Location: LCCOMB_X17_Y14_N16
+\CAP10|B[0]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \CAP10|B[0]~0_combout\ = (!\CAP10|takeTurn~q\ & \CAP10|QinReg\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \CAP10|takeTurn~q\,
+	datad => \CAP10|QinReg\(4),
 	combout => \CAP10|B[0]~0_combout\);
 
--- Location: FF_X17_Y14_N25
+-- Location: FF_X17_Y14_N17
 \CAP10|QaddReg[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9013,23 +8979,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QaddReg\(0));
 
--- Location: LCCOMB_X17_Y20_N30
+-- Location: LCCOMB_X21_Y15_N8
 \VGApart|RAMadr~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~4_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(0)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(0)))
+-- \VGApart|RAMadr~4_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(0))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101001010000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr0\(0),
-	datad => \VGApart|RAM_adr1\(0),
+	dataa => \VGApart|RAM_adr1\(0),
+	datab => \VGApart|RAM_adr0\(0),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~4_combout\);
 
--- Location: FF_X17_Y20_N31
+-- Location: FF_X21_Y15_N9
 \VGApart|RAMadr[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9039,28 +9005,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~4_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(0));
 
--- Location: LCCOMB_X15_Y20_N28
+-- Location: LCCOMB_X21_Y15_N30
 \VGApart|RAMadr~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~5_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(1))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101110001000",
+	lut_mask => "1010101011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|RAM_adr1\(1),
-	datab => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(1),
+	datac => \VGApart|RAM_adr0\(1),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~5_combout\);
 
--- Location: FF_X15_Y20_N29
+-- Location: FF_X21_Y15_N31
 \VGApart|RAMadr[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9070,28 +9036,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~5_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(1));
 
--- Location: LCCOMB_X15_Y20_N30
+-- Location: LCCOMB_X21_Y15_N24
 \VGApart|RAMadr~6\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~6_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(2))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(2))))
+-- \VGApart|RAMadr~6_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(2)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(2)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111000000",
+	lut_mask => "1111000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
+	datab => \VGApart|RAM_adr0\(2),
 	datac => \VGApart|RAM_adr1\(2),
-	datad => \VGApart|RAM_adr0\(2),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~6_combout\);
 
--- Location: FF_X15_Y20_N31
+-- Location: FF_X21_Y15_N25
 \VGApart|RAMadr[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9101,28 +9067,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~6_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(2));
 
--- Location: LCCOMB_X17_Y20_N4
+-- Location: LCCOMB_X21_Y15_N26
 \VGApart|RAMadr~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~7_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(3))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(3))))
+-- \VGApart|RAMadr~7_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(3)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101100011011000",
+	lut_mask => "1111000010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|process_0~9_combout\,
-	datab => \VGApart|RAM_adr1\(3),
-	datac => \VGApart|RAM_adr0\(3),
+	dataa => \VGApart|RAM_adr0\(3),
+	datac => \VGApart|RAM_adr1\(3),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~7_combout\);
 
--- Location: FF_X17_Y20_N5
+-- Location: FF_X21_Y15_N27
 \VGApart|RAMadr[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9132,28 +9098,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~7_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(3));
 
--- Location: LCCOMB_X17_Y20_N14
+-- Location: LCCOMB_X21_Y15_N28
 \VGApart|RAMadr~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~8_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(4))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1100110011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAM_adr1\(4),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(4),
+	datab => \VGApart|RAM_adr1\(4),
+	datac => \VGApart|RAM_adr0\(4),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~8_combout\);
 
--- Location: FF_X17_Y20_N15
+-- Location: FF_X21_Y15_N29
 \VGApart|RAMadr[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9163,28 +9129,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~8_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(4));
 
--- Location: LCCOMB_X17_Y20_N28
+-- Location: LCCOMB_X21_Y15_N22
 \VGApart|RAMadr~9\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~9_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(5))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|RAM_adr1\(5),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(5),
+	datab => \VGApart|RAM_adr0\(5),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~9_combout\);
 
--- Location: FF_X17_Y20_N29
+-- Location: FF_X21_Y15_N23
 \VGApart|RAMadr[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9194,28 +9160,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~9_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(5));
 
--- Location: LCCOMB_X17_Y20_N22
+-- Location: LCCOMB_X21_Y15_N12
 \VGApart|RAMadr~10\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~10_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(6))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(6))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111000000",
+	lut_mask => "1010101011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|RAM_adr1\(6),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(6),
+	dataa => \VGApart|RAM_adr1\(6),
+	datac => \VGApart|RAM_adr0\(6),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~10_combout\);
 
--- Location: FF_X17_Y20_N23
+-- Location: FF_X21_Y15_N13
 \VGApart|RAMadr[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9225,28 +9191,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~10_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(6));
 
--- Location: LCCOMB_X17_Y20_N8
+-- Location: LCCOMB_X21_Y15_N10
 \VGApart|RAMadr~11\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~11_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(7))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(7))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111111000000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|RAM_adr1\(7),
-	datac => \VGApart|process_0~9_combout\,
-	datad => \VGApart|RAM_adr0\(7),
+	dataa => \VGApart|RAM_adr1\(7),
+	datab => \VGApart|RAM_adr0\(7),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~11_combout\);
 
--- Location: FF_X17_Y20_N9
+-- Location: FF_X21_Y15_N11
 \VGApart|RAMadr[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9256,28 +9222,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~11_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(7));
 
--- Location: LCCOMB_X15_Y20_N16
+-- Location: LCCOMB_X19_Y15_N2
 \VGApart|RAMadr~12\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|RAMadr~12_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(8))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(8))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111000000",
+	lut_mask => "1010101011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr1\(8),
-	datad => \VGApart|RAM_adr0\(8),
+	dataa => \VGApart|RAM_adr1\(8),
+	datac => \VGApart|RAM_adr0\(8),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~12_combout\);
 
--- Location: FF_X15_Y20_N17
+-- Location: FF_X19_Y15_N3
 \VGApart|RAMadr[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9287,28 +9253,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~12_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(8));
 
--- Location: LCCOMB_X15_Y20_N22
+-- Location: LCCOMB_X19_Y15_N4
 \VGApart|RAMadr~13\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~13_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(9))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(9))))
+-- \VGApart|RAMadr~13_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(9)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(9)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111000000",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr1\(9),
-	datad => \VGApart|RAM_adr0\(9),
+	dataa => \VGApart|RAM_adr0\(9),
+	datab => \VGApart|RAM_adr1\(9),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~13_combout\);
 
--- Location: FF_X15_Y20_N23
+-- Location: FF_X19_Y15_N5
 \VGApart|RAMadr[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9318,28 +9284,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~13_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(9));
 
--- Location: LCCOMB_X15_Y20_N12
+-- Location: LCCOMB_X19_Y15_N14
 \VGApart|RAMadr~14\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~14_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(10)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(10)))
+-- \VGApart|RAMadr~14_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(10))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(10))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111110000110000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr0\(10),
-	datad => \VGApart|RAM_adr1\(10),
+	dataa => \VGApart|RAM_adr1\(10),
+	datab => \VGApart|RAM_adr0\(10),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~14_combout\);
 
--- Location: FF_X15_Y20_N13
+-- Location: FF_X19_Y15_N15
 \VGApart|RAMadr[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9349,28 +9315,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~14_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(10));
 
--- Location: LCCOMB_X15_Y20_N26
+-- Location: LCCOMB_X19_Y15_N20
 \VGApart|RAMadr~15\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~15_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(11))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(11))))
+-- \VGApart|RAMadr~15_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(11)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(11)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111000000",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr1\(11),
-	datad => \VGApart|RAM_adr0\(11),
+	dataa => \VGApart|RAM_adr0\(11),
+	datab => \VGApart|RAM_adr1\(11),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~15_combout\);
 
--- Location: FF_X15_Y20_N27
+-- Location: FF_X19_Y15_N21
 \VGApart|RAMadr[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9380,28 +9346,28 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~15_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(11));
 
--- Location: LCCOMB_X15_Y20_N20
+-- Location: LCCOMB_X19_Y15_N10
 \VGApart|RAMadr~16\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|RAMadr~16_combout\ = (\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr1\(12)))) # (!\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr0\(12)))
+-- \VGApart|RAMadr~16_combout\ = (\VGApart|process_0~9_combout\ & (\VGApart|RAM_adr1\(12))) # (!\VGApart|process_0~9_combout\ & ((\VGApart|RAM_adr0\(12))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111110000110000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \VGApart|process_0~9_combout\,
-	datac => \VGApart|RAM_adr0\(12),
-	datad => \VGApart|RAM_adr1\(12),
+	dataa => \VGApart|RAM_adr1\(12),
+	datab => \VGApart|RAM_adr0\(12),
+	datad => \VGApart|process_0~9_combout\,
 	combout => \VGApart|RAMadr~16_combout\);
 
--- Location: FF_X15_Y20_N21
+-- Location: FF_X19_Y15_N11
 \VGApart|RAMadr[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9411,505 +9377,12 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
 	d => \VGApart|RAMadr~16_combout\,
-	ena => \VGApart|RAMadr[2]~1_combout\,
+	ena => \VGApart|RAMadr[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|RAMadr\(12));
 
--- Location: M9K_X25_Y12_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a28\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \CAP10|Equal2~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \CAP10|Equal2~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTBDATAOUT_bus\);
-
--- Location: FF_X22_Y22_N21
-\RAM32|altsyncram_component|auto_generated|address_reg_b[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \rRAMclk~clkctrl_outclk\,
-	asdata => \VGApart|RAMadr\(14),
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1));
-
--- Location: LCCOMB_X24_Y19_N26
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(15) & !\CAP10|RAM_adr\(13)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \CAP10|RAM_adr\(14),
-	datab => \CAP10|RAM_adr\(15),
-	datad => \CAP10|RAM_adr\(13),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\);
-
--- Location: LCCOMB_X19_Y20_N28
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\);
-
--- Location: M9K_X25_Y11_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a24\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTBDATAOUT_bus\);
-
--- Location: FF_X24_Y22_N1
-\RAM32|altsyncram_component|auto_generated|address_reg_b[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \rRAMclk~clkctrl_outclk\,
-	asdata => \VGApart|RAMadr\(13),
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0));
-
--- Location: LCCOMB_X24_Y19_N30
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\ = (!\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(13) & \CAP10|RAM_adr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(14),
-	datac => \CAP10|RAM_adr\(13),
-	datad => \CAP10|RAM_adr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\);
-
--- Location: LCCOMB_X19_Y20_N2
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\);
-
--- Location: M9K_X13_Y14_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a20\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X24_Y19_N28
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\ = (!\CAP10|RAM_adr\(14) & (!\CAP10|RAM_adr\(13) & \CAP10|RAM_adr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(14),
-	datac => \CAP10|RAM_adr\(13),
-	datad => \CAP10|RAM_adr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\);
-
--- Location: LCCOMB_X19_Y20_N24
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\);
-
 -- Location: M9K_X13_Y22_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a16\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X22_Y22_N6
-\RAM32|altsyncram_component|auto_generated|mux3|_~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(1)) # 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011100110101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\);
-
--- Location: LCCOMB_X22_Y22_N4
-\RAM32|altsyncram_component|auto_generated|mux3|_~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ & 
--- (\RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\))))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011101111000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\);
-
--- Location: LCCOMB_X24_Y19_N10
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\ = (!\CAP10|RAM_adr\(15) & (\CAP10|RAM_adr\(13) & \CAP10|RAM_adr\(14)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(15),
-	datac => \CAP10|RAM_adr\(13),
-	datad => \CAP10|RAM_adr\(14),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\);
-
--- Location: LCCOMB_X19_Y20_N10
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\);
-
--- Location: M9K_X13_Y20_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a12\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X24_Y19_N20
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\ = (!\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(13) & !\CAP10|RAM_adr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \CAP10|RAM_adr\(14),
-	datac => \CAP10|RAM_adr\(13),
-	datad => \CAP10|RAM_adr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\);
-
--- Location: LCCOMB_X19_Y20_N4
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\);
-
--- Location: M9K_X13_Y13_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a4\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -9962,95 +9435,53 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a4_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X24_Y19_N18
-\RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X21_Y17_N8
+\RAM32|altsyncram_component|auto_generated|address_reg_b[0]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\ = (!\CAP10|RAM_adr\(13) & (\CAP10|RAM_adr\(14) & !\CAP10|RAM_adr\(15)))
+-- \RAM32|altsyncram_component|auto_generated|address_reg_b[0]~feeder_combout\ = \VGApart|RAMadr\(13)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \CAP10|RAM_adr\(13),
-	datac => \CAP10|RAM_adr\(14),
-	datad => \CAP10|RAM_adr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\);
+	datad => \VGApart|RAMadr\(13),
+	combout => \RAM32|altsyncram_component|auto_generated|address_reg_b[0]~feeder_combout\);
 
--- Location: LCCOMB_X19_Y20_N30
-\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
-
+-- Location: FF_X21_Y17_N9
+\RAM32|altsyncram_component|auto_generated|address_reg_b[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000001010",
-	sum_lutc_input => "datac")
+	is_wysiwyg => "true",
+	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|RAMadr\(14),
-	datac => \VGApart|RAMadr\(13),
-	datad => \VGApart|RAMadr\(15),
-	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\);
-
--- Location: M9K_X25_Y20_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a8\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 0,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 0,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTBADDR_bus\,
+	clk => \rRAMclk~clkctrl_outclk\,
+	d => \RAM32|altsyncram_component|auto_generated|address_reg_b[0]~feeder_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTBDATAOUT_bus\);
+	q => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0));
 
--- Location: LCCOMB_X24_Y19_N4
+-- Location: FF_X21_Y17_N3
+\RAM32|altsyncram_component|auto_generated|address_reg_b[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \rRAMclk~clkctrl_outclk\,
+	asdata => \VGApart|RAMadr\(14),
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1));
+
+-- Location: LCCOMB_X24_Y19_N8
 \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w[3]\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3) = (!\CAP10|RAM_adr\(13) & (!\CAP10|RAM_adr\(14) & !\CAP10|RAM_adr\(15)))
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3) = (!\CAP10|RAM_adr\(15) & (!\CAP10|RAM_adr\(14) & !\CAP10|RAM_adr\(13)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -10058,12 +9489,12 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \CAP10|RAM_adr\(13),
+	datab => \CAP10|RAM_adr\(15),
 	datac => \CAP10|RAM_adr\(14),
-	datad => \CAP10|RAM_adr\(15),
+	datad => \CAP10|RAM_adr\(13),
 	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3));
 
--- Location: LCCOMB_X19_Y20_N8
+-- Location: LCCOMB_X19_Y16_N12
 \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w[3]\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3) = (!\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
@@ -10079,7 +9510,7 @@ PORT MAP (
 	datad => \VGApart|RAMadr\(15),
 	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3));
 
--- Location: M9K_X13_Y16_N0
+-- Location: M9K_X13_Y8_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a0\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -10132,80 +9563,625 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a0_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X22_Y22_N18
-\RAM32|altsyncram_component|auto_generated|mux3|_~2\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X24_Y19_N22
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) 
--- & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|ram_block1a8~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\)))))
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\ = (!\CAP10|RAM_adr\(15) & (\CAP10|RAM_adr\(14) & !\CAP10|RAM_adr\(13)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101100111001000",
+	lut_mask => "0000000000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a8~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\,
+	datab => \CAP10|RAM_adr\(15),
+	datac => \CAP10|RAM_adr\(14),
+	datad => \CAP10|RAM_adr\(13),
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\);
+
+-- Location: LCCOMB_X19_Y16_N10
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\);
+
+-- Location: M9K_X13_Y21_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a8\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a8_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X17_Y17_N14
+\RAM32|altsyncram_component|auto_generated|mux3|_~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0)) # 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a8~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101010011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a0~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a8~portbdataout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\);
 
--- Location: LCCOMB_X22_Y22_N24
+-- Location: LCCOMB_X24_Y19_N18
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\ = (!\CAP10|RAM_adr\(15) & (\CAP10|RAM_adr\(14) & \CAP10|RAM_adr\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(15),
+	datac => \CAP10|RAM_adr\(14),
+	datad => \CAP10|RAM_adr\(13),
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\);
+
+-- Location: LCCOMB_X19_Y16_N30
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & !\VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\);
+
+-- Location: M9K_X13_Y19_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a12\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a12_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X17_Y17_N8
 \RAM32|altsyncram_component|auto_generated|mux3|_~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ & 
--- (\RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a4~portbdataout\))))) # 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\ & (\RAM32|altsyncram_component|auto_generated|ram_block1a4~portbdataout\)))) # 
 -- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101110110100000",
+	lut_mask => "1111100000111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\,
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a4~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\,
+	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a4~portbdataout\,
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~2_combout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a12~portbdataout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\);
 
--- Location: LCCOMB_X22_Y22_N12
-\RAM32|altsyncram_component|auto_generated|mux3|_~4\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X24_Y19_N26
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\)) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) 
--- & ((\RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\)))
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\ = (\CAP10|RAM_adr\(14) & (\CAP10|RAM_adr\(15) & !\CAP10|RAM_adr\(13)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111001111000000",
+	lut_mask => "0000000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(14),
+	datac => \CAP10|RAM_adr\(15),
+	datad => \CAP10|RAM_adr\(13),
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\);
+
+-- Location: LCCOMB_X19_Y16_N28
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\);
+
+-- Location: M9K_X13_Y18_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a24\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a24_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X19_Y16_N14
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\ = (\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\);
+
+-- Location: M9K_X13_Y10_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a28\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \CAP10|Equal2~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \CAP10|Equal2~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a28_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X24_Y19_N28
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\ = (!\CAP10|RAM_adr\(13) & (!\CAP10|RAM_adr\(14) & \CAP10|RAM_adr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(13),
+	datac => \CAP10|RAM_adr\(14),
+	datad => \CAP10|RAM_adr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\);
+
+-- Location: LCCOMB_X19_Y16_N24
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (!\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\);
+
+-- Location: M9K_X13_Y20_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a16\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a16_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X24_Y19_N6
+\RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\ = (\CAP10|RAM_adr\(15) & (!\CAP10|RAM_adr\(14) & \CAP10|RAM_adr\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \CAP10|RAM_adr\(15),
+	datac => \CAP10|RAM_adr\(14),
+	datad => \CAP10|RAM_adr\(13),
+	combout => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\);
+
+-- Location: LCCOMB_X19_Y16_N6
+\RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\ = (!\VGApart|RAMadr\(14) & (\VGApart|RAMadr\(13) & \VGApart|RAMadr\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|RAMadr\(14),
+	datac => \VGApart|RAMadr\(13),
+	datad => \VGApart|RAMadr\(15),
+	combout => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\);
+
+-- Location: M9K_X25_Y23_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a20\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 0,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 0,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a20_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X17_Y17_N2
+\RAM32|altsyncram_component|auto_generated|mux3|_~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) 
+-- & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110010011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a16~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a20~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\);
+
+-- Location: LCCOMB_X17_Y17_N12
+\RAM32|altsyncram_component|auto_generated|mux3|_~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ & 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\ & (\RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\)))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010110001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a24~portbdataout\,
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a28~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~0_combout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\);
+
+-- Location: LCCOMB_X17_Y17_N18
+\RAM32|altsyncram_component|auto_generated|mux3|_~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2),
-	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~3_combout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~1_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\);
 
--- Location: LCCOMB_X23_Y22_N30
+-- Location: LCCOMB_X17_Y17_N28
 \VGApart|red~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|red~1_combout\ = (\VGApart|green~0_combout\ & ((\SW[6]~input_o\) # ((\VGApart|red~0_combout\ & \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\)))) # (!\VGApart|green~0_combout\ & (\VGApart|red~0_combout\ & 
--- ((\RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\))))
+-- \VGApart|red~1_combout\ = (\VGApart|red~0_combout\ & ((\RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\) # ((\VGApart|green~0_combout\ & \SW[6]~input_o\)))) # (!\VGApart|red~0_combout\ & (\VGApart|green~0_combout\ & (\SW[6]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110110010100000",
+	lut_mask => "1110101011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|green~0_combout\,
-	datab => \VGApart|red~0_combout\,
+	dataa => \VGApart|red~0_combout\,
+	datab => \VGApart|green~0_combout\,
 	datac => \SW[6]~input_o\,
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\,
 	combout => \VGApart|red~1_combout\);
 
--- Location: FF_X23_Y22_N1
+-- Location: LCCOMB_X17_Y17_N24
+\VGApart|red[0]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|red[0]~feeder_combout\ = \VGApart|red~1_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \VGApart|red~1_combout\,
+	combout => \VGApart|red[0]~feeder_combout\);
+
+-- Location: FF_X17_Y17_N25
 \VGApart|red[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -10214,9 +10190,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	asdata => \VGApart|red~1_combout\,
+	d => \VGApart|red[0]~feeder_combout\,
 	clrn => \ALT_INV_SW[1]~input_o\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|red\(0));
@@ -10272,7 +10247,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QinReg\(5));
 
--- Location: LCCOMB_X17_Y14_N22
+-- Location: LCCOMB_X17_Y14_N18
 \CAP10|B[1]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|B[1]~1_combout\ = (\CAP10|QinReg\(5) & !\CAP10|takeTurn~q\)
@@ -10287,7 +10262,7 @@ PORT MAP (
 	datad => \CAP10|takeTurn~q\,
 	combout => \CAP10|B[1]~1_combout\);
 
--- Location: FF_X17_Y14_N23
+-- Location: FF_X17_Y14_N19
 \CAP10|QaddReg[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -10302,8 +10277,8 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QaddReg\(1));
 
--- Location: M9K_X25_Y15_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a25\ : cycloneiii_ram_block
+-- Location: M9K_X25_Y14_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a13\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -10341,21 +10316,218 @@ GENERIC MAP (
 	ram_block_type => "M9K")
 -- pragma translate_on
 PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
 	portbre => VCC,
 	clk0 => \CAP10|outCLK~clkctrl_outclk\,
 	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
 	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTBADDR_bus\,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTBDATAOUT_bus\);
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTBDATAOUT_bus\);
 
--- Location: M9K_X13_Y15_N0
+-- Location: M9K_X13_Y13_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a5\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 1,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 1,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y13_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a1\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 1,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 1,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3),
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y18_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a9\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 1,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 1,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X21_Y17_N18
+\RAM32|altsyncram_component|auto_generated|mux3|_~7\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0)) # 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101010011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\);
+
+-- Location: LCCOMB_X21_Y17_N4
+\RAM32|altsyncram_component|auto_generated|mux3|_~8\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\))))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\,
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\);
+
+-- Location: M9K_X25_Y8_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a29\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -10461,7 +10633,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a17_PORTBDATAOUT_bus\);
 
--- Location: M9K_X25_Y18_N0
+-- Location: M9K_X25_Y20_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a21\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -10514,7 +10686,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a21_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X24_Y22_N18
+-- Location: LCCOMB_X22_Y17_N12
 \RAM32|altsyncram_component|auto_generated|mux3|_~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) 
@@ -10533,311 +10705,113 @@ PORT MAP (
 	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a21~portbdataout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\);
 
--- Location: LCCOMB_X24_Y22_N8
+-- Location: M9K_X13_Y12_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a25\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 1,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 1,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a25_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X21_Y17_N16
 \RAM32|altsyncram_component|auto_generated|mux3|_~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\ & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a29~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\ & (\RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\)))) # 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a29~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\))))) # 
 -- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010110001000",
+	lut_mask => "1101101011010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\,
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a29~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\,
+	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a29~portbdataout\,
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~5_combout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a25~portbdataout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\);
 
--- Location: M9K_X13_Y18_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a5\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 1,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 1,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a5_PORTBDATAOUT_bus\);
-
--- Location: M9K_X13_Y17_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a13\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 1,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 1,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a13_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y14_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a9\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 1,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 1,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a9_PORTBDATAOUT_bus\);
-
--- Location: M9K_X13_Y12_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a1\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 1,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 1,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3),
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a1_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X24_Y22_N6
-\RAM32|altsyncram_component|auto_generated|mux3|_~7\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0)) # 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011100110101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a9~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a1~portbdataout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\);
-
--- Location: LCCOMB_X23_Y22_N6
-\RAM32|altsyncram_component|auto_generated|mux3|_~8\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\ & (\RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\)))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111001110001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a5~portbdataout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a13~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~7_combout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\);
-
--- Location: LCCOMB_X23_Y22_N12
+-- Location: LCCOMB_X21_Y17_N26
 \RAM32|altsyncram_component|auto_generated|mux3|_~9\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\)) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) 
--- & ((\RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\)))
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010110100000",
+	lut_mask => "1111101001010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2),
-	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~8_combout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~6_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\);
 
--- Location: LCCOMB_X23_Y22_N16
+-- Location: LCCOMB_X20_Y17_N18
 \VGApart|red~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|red~2_combout\ = (\VGApart|green~0_combout\ & ((\SW[7]~input_o\) # ((\VGApart|red~0_combout\ & \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\)))) # (!\VGApart|green~0_combout\ & (((\VGApart|red~0_combout\ & 
--- \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\))))
+-- \VGApart|red~2_combout\ = (\VGApart|red~0_combout\ & ((\RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\) # ((\VGApart|green~0_combout\ & \SW[7]~input_o\)))) # (!\VGApart|red~0_combout\ & (\VGApart|green~0_combout\ & (\SW[7]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111100010001000",
+	lut_mask => "1110101011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|green~0_combout\,
-	datab => \SW[7]~input_o\,
-	datac => \VGApart|red~0_combout\,
+	dataa => \VGApart|red~0_combout\,
+	datab => \VGApart|green~0_combout\,
+	datac => \SW[7]~input_o\,
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\,
 	combout => \VGApart|red~2_combout\);
 
--- Location: LCCOMB_X23_Y22_N14
+-- Location: LCCOMB_X20_Y17_N4
 \VGApart|red[1]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|red[1]~feeder_combout\ = \VGApart|red~2_combout\
@@ -10851,7 +10825,7 @@ PORT MAP (
 	datad => \VGApart|red~2_combout\,
 	combout => \VGApart|red[1]~feeder_combout\);
 
--- Location: FF_X23_Y22_N15
+-- Location: FF_X20_Y17_N5
 \VGApart|red[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -10888,7 +10862,7 @@ PORT MAP (
 	i => ww_GPIO1_D(6),
 	o => \GPIO1_D[6]~input_o\);
 
--- Location: LCCOMB_X17_Y14_N26
+-- Location: LCCOMB_X17_Y14_N30
 \CAP10|QinReg[6]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \CAP10|QinReg[6]~feeder_combout\ = \GPIO1_D[6]~input_o\
@@ -10902,7 +10876,7 @@ PORT MAP (
 	datad => \GPIO1_D[6]~input_o\,
 	combout => \CAP10|QinReg[6]~feeder_combout\);
 
--- Location: FF_X17_Y14_N27
+-- Location: FF_X17_Y14_N31
 \CAP10|QinReg[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -10917,22 +10891,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QinReg\(6));
 
--- Location: LCCOMB_X17_Y14_N16
+-- Location: LCCOMB_X17_Y14_N24
 \CAP10|B[2]~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|B[2]~2_combout\ = (\CAP10|QinReg\(6) & !\CAP10|takeTurn~q\)
+-- \CAP10|B[2]~2_combout\ = (!\CAP10|takeTurn~q\ & \CAP10|QinReg\(6))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \CAP10|QinReg\(6),
-	datad => \CAP10|takeTurn~q\,
+	datac => \CAP10|takeTurn~q\,
+	datad => \CAP10|QinReg\(6),
 	combout => \CAP10|B[2]~2_combout\);
 
--- Location: FF_X17_Y14_N17
+-- Location: FF_X17_Y14_N25
 \CAP10|QaddReg[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -10947,257 +10921,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QaddReg\(2));
 
--- Location: M9K_X13_Y25_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a14\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTBDATAOUT_bus\);
-
--- Location: M9K_X13_Y23_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a6\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y23_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a10\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y21_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a2\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3),
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X24_Y22_N24
-\RAM32|altsyncram_component|auto_generated|mux3|_~12\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0)) # 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a10~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a2~portbdataout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011100110101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a10~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a2~portbdataout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\);
-
--- Location: LCCOMB_X23_Y22_N22
-\RAM32|altsyncram_component|auto_generated|mux3|_~13\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ & 
--- (\RAM32|altsyncram_component|auto_generated|ram_block1a14~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a6~portbdataout\))))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011101111000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a14~portbdataout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a6~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\);
-
--- Location: M9K_X25_Y13_N0
+-- Location: M9K_X25_Y19_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a26\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -11250,132 +10974,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a26_PORTBDATAOUT_bus\);
 
--- Location: M9K_X13_Y19_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a22\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTBDATAOUT_bus\);
-
--- Location: M9K_X13_Y26_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a18\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 2,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 2,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTBDATAOUT_bus\);
-
--- Location: LCCOMB_X22_Y22_N26
-\RAM32|altsyncram_component|auto_generated|mux3|_~10\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(1)) # 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & 
--- ((\RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011100110101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\);
-
--- Location: M9K_X13_Y24_N0
+-- Location: M9K_X13_Y16_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a30\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -11428,7 +11027,132 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a30_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X22_Y22_N8
+-- Location: M9K_X13_Y15_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a18\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode369w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode369w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a18_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y21_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a22\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a22_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X21_Y17_N0
+\RAM32|altsyncram_component|auto_generated|mux3|_~10\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (\RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110010011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a18~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a22~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\);
+
+-- Location: LCCOMB_X21_Y17_N30
 \RAM32|altsyncram_component|auto_generated|mux3|_~11\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\ & 
@@ -11437,34 +11161,284 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111100000111000",
+	lut_mask => "1111010110001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a26~portbdataout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a30~portbdataout\,
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a26~portbdataout\,
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a30~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~10_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\);
 
--- Location: LCCOMB_X23_Y22_N28
-\RAM32|altsyncram_component|auto_generated|mux3|_~14\ : cycloneiii_lcell_comb
+-- Location: M9K_X13_Y11_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a14\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a14_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y9_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a6\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode339w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode339w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a6_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X13_Y17_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a10\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode349w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode349w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a10_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X13_Y23_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a2\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 2,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 2,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode322w\(3),
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\(3),
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a2_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X21_Y17_N28
+\RAM32|altsyncram_component|auto_generated|mux3|_~12\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\))
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0)) # 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a10~portbdataout\)))) # (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a2~portbdataout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101001010000",
+	lut_mask => "1011100110101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a10~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a2~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\);
+
+-- Location: LCCOMB_X21_Y17_N10
+\RAM32|altsyncram_component|auto_generated|mux3|_~13\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a14~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a6~portbdataout\))))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a14~portbdataout\,
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a6~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~12_combout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\);
+
+-- Location: LCCOMB_X21_Y17_N20
+\RAM32|altsyncram_component|auto_generated|mux3|_~14\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\)) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010110100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2),
-	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~11_combout\,
+	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~13_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\);
 
--- Location: LCCOMB_X23_Y22_N18
+-- Location: LCCOMB_X22_Y17_N28
 \VGApart|red~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|red~3_combout\ = (\VGApart|green~0_combout\ & ((\SW[8]~input_o\) # ((\VGApart|red~0_combout\ & \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\)))) # (!\VGApart|green~0_combout\ & (\VGApart|red~0_combout\ & 
@@ -11482,7 +11456,7 @@ PORT MAP (
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\,
 	combout => \VGApart|red~3_combout\);
 
--- Location: LCCOMB_X23_Y22_N24
+-- Location: LCCOMB_X22_Y17_N0
 \VGApart|red[2]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|red[2]~feeder_combout\ = \VGApart|red~3_combout\
@@ -11496,7 +11470,7 @@ PORT MAP (
 	datad => \VGApart|red~3_combout\,
 	combout => \VGApart|red[2]~feeder_combout\);
 
--- Location: FF_X23_Y22_N25
+-- Location: FF_X22_Y17_N1
 \VGApart|red[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -11549,22 +11523,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QinReg\(7));
 
--- Location: LCCOMB_X17_Y14_N30
+-- Location: LCCOMB_X17_Y14_N10
 \CAP10|B[3]~3\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \CAP10|B[3]~3_combout\ = (\CAP10|QinReg\(7) & !\CAP10|takeTurn~q\)
+-- \CAP10|B[3]~3_combout\ = (!\CAP10|takeTurn~q\ & \CAP10|QinReg\(7))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \CAP10|QinReg\(7),
-	datad => \CAP10|takeTurn~q\,
+	datac => \CAP10|takeTurn~q\,
+	datad => \CAP10|QinReg\(7),
 	combout => \CAP10|B[3]~3_combout\);
 
--- Location: FF_X17_Y14_N31
+-- Location: FF_X17_Y14_N11
 \CAP10|QaddReg[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -11579,166 +11553,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \CAP10|QaddReg\(3));
 
--- Location: M9K_X13_Y21_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a31\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 3,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 3,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \CAP10|Equal2~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \CAP10|Equal2~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y19_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a27\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 3,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 3,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y22_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a23\ : cycloneiii_ram_block
--- pragma translate_off
-GENERIC MAP (
-	clk0_core_clock_enable => "ena0",
-	clk1_core_clock_enable => "ena1",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "dont_care",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 13,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 3,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 65536,
-	port_a_logical_ram_width => 4,
-	port_a_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_address_clear => "clear1",
-	port_b_address_clock => "clock1",
-	port_b_address_width => 13,
-	port_b_data_out_clear => "clear1",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 3,
-	port_b_last_address => 8191,
-	port_b_logical_ram_depth => 65536,
-	port_b_logical_ram_width => 4,
-	port_b_read_during_write_mode => "new_data_with_nbe_read",
-	port_b_read_enable_clock => "clock1",
-	ram_block_type => "M9K")
--- pragma translate_on
-PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	portbre => VCC,
-	clk0 => \CAP10|outCLK~clkctrl_outclk\,
-	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
-	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTBDATAOUT_bus\);
-
--- Location: M9K_X25_Y24_N0
+-- Location: M9K_X25_Y15_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a19\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -11791,46 +11606,8 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a19_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X24_Y22_N14
-\RAM32|altsyncram_component|auto_generated|mux3|_~15\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (\RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\)) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101100111001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\);
-
--- Location: LCCOMB_X22_Y22_N22
-\RAM32|altsyncram_component|auto_generated|mux3|_~16\ : cycloneiii_lcell_comb
--- Equation(s):
--- \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ & 
--- (\RAM32|altsyncram_component|auto_generated|ram_block1a31~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a27~portbdataout\))))) # 
--- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011101111000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a31~portbdataout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a27~portbdataout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\,
-	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\);
-
--- Location: M9K_X25_Y16_N0
-\RAM32|altsyncram_component|auto_generated|ram_block1a15\ : cycloneiii_ram_block
+-- Location: M9K_X25_Y10_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a23\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	clk0_core_clock_enable => "ena0",
@@ -11868,21 +11645,165 @@ GENERIC MAP (
 	ram_block_type => "M9K")
 -- pragma translate_on
 PORT MAP (
-	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
 	portbre => VCC,
 	clk0 => \CAP10|outCLK~clkctrl_outclk\,
 	clk1 => \rRAMclk~clkctrl_outclk\,
-	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
-	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode379w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode379w[3]~0_combout\,
 	clr1 => GND,
-	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTADATAIN_bus\,
-	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTAADDR_bus\,
-	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTBADDR_bus\,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTBADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTBDATAOUT_bus\);
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a23_PORTBDATAOUT_bus\);
 
--- Location: M9K_X25_Y25_N0
+-- Location: LCCOMB_X21_Y17_N14
+\RAM32|altsyncram_component|auto_generated|mux3|_~15\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (\RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110010011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a19~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a23~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\);
+
+-- Location: M9K_X13_Y9_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a31\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 3,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 3,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \CAP10|Equal2~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \CAP10|Equal2~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode399w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a31_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y12_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a27\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 3,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 3,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode389w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode389w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a27_PORTBDATAOUT_bus\);
+
+-- Location: LCCOMB_X21_Y17_N24
+\RAM32|altsyncram_component|auto_generated|mux3|_~16\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ & 
+-- (\RAM32|altsyncram_component|auto_generated|ram_block1a31~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a27~portbdataout\))))) # 
+-- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(1) & (\RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110011011000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
+	datab => \RAM32|altsyncram_component|auto_generated|mux3|_~15_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a31~portbdataout\,
+	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a27~portbdataout\,
+	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\);
+
+-- Location: M9K_X25_Y22_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a7\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -11935,7 +11856,60 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a7_PORTBDATAOUT_bus\);
 
--- Location: M9K_X13_Y11_N0
+-- Location: M9K_X25_Y11_N0
+\RAM32|altsyncram_component|auto_generated|ram_block1a15\ : cycloneiii_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	clk0_core_clock_enable => "ena0",
+	clk1_core_clock_enable => "ena1",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	logical_ram_name => "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "dont_care",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 13,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 3,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 65536,
+	port_a_logical_ram_width => 4,
+	port_a_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_address_clear => "clear1",
+	port_b_address_clock => "clock1",
+	port_b_address_width => 13,
+	port_b_data_out_clear => "clear1",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 3,
+	port_b_last_address => 8191,
+	port_b_logical_ram_depth => 65536,
+	port_b_logical_ram_width => 4,
+	port_b_read_during_write_mode => "new_data_with_nbe_read",
+	port_b_read_enable_clock => "clock1",
+	ram_block_type => "M9K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	portbre => VCC,
+	clk0 => \CAP10|outCLK~clkctrl_outclk\,
+	clk1 => \rRAMclk~clkctrl_outclk\,
+	ena0 => \RAM32|altsyncram_component|auto_generated|decode2|w_anode359w[3]~0_combout\,
+	ena1 => \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode359w[3]~0_combout\,
+	clr1 => GND,
+	portadatain => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTADATAIN_bus\,
+	portaaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTAADDR_bus\,
+	portbaddr => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a15_PORTBDATAOUT_bus\);
+
+-- Location: M9K_X25_Y16_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a11\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -11988,7 +11962,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a11_PORTBDATAOUT_bus\);
 
--- Location: M9K_X25_Y26_N0
+-- Location: M9K_X13_Y14_N0
 \RAM32|altsyncram_component|auto_generated|ram_block1a3\ : cycloneiii_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -12041,7 +12015,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \RAM32|altsyncram_component|auto_generated|ram_block1a3_PORTBDATAOUT_bus\);
 
--- Location: LCCOMB_X22_Y22_N20
+-- Location: LCCOMB_X21_Y17_N2
 \RAM32|altsyncram_component|auto_generated|mux3|_~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|address_reg_b\(1))))) # 
@@ -12050,36 +12024,36 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110010111100000",
+	lut_mask => "1110001111100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a11~portbdataout\,
+	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a11~portbdataout\,
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
 	datac => \RAM32|altsyncram_component|auto_generated|address_reg_b\(1),
 	datad => \RAM32|altsyncram_component|auto_generated|ram_block1a3~portbdataout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\);
 
--- Location: LCCOMB_X22_Y22_N16
+-- Location: LCCOMB_X21_Y17_N6
 \RAM32|altsyncram_component|auto_generated|mux3|_~18\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~18_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & ((\RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\ & 
--- (\RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\)) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\ & ((\RAM32|altsyncram_component|auto_generated|ram_block1a7~portbdataout\))))) # 
+-- ((\RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\))) # (!\RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\ & (\RAM32|altsyncram_component|auto_generated|ram_block1a7~portbdataout\)))) # 
 -- (!\RAM32|altsyncram_component|auto_generated|address_reg_b\(0) & (((\RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101110110100000",
+	lut_mask => "1111001110001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
-	datab => \RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\,
-	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a7~portbdataout\,
+	dataa => \RAM32|altsyncram_component|auto_generated|ram_block1a7~portbdataout\,
+	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(0),
+	datac => \RAM32|altsyncram_component|auto_generated|ram_block1a15~portbdataout\,
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~17_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~18_combout\);
 
--- Location: LCCOMB_X22_Y22_N28
+-- Location: LCCOMB_X21_Y17_N22
 \RAM32|altsyncram_component|auto_generated|mux3|_~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\ = (\RAM32|altsyncram_component|auto_generated|address_reg_b\(2) & (\RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\)) # 
@@ -12087,16 +12061,16 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101110001000",
+	lut_mask => "1100111111000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\,
-	datab => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2),
+	datab => \RAM32|altsyncram_component|auto_generated|mux3|_~16_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|address_reg_b\(2),
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~18_combout\,
 	combout => \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\);
 
--- Location: LCCOMB_X22_Y22_N30
+-- Location: LCCOMB_X22_Y17_N2
 \VGApart|red~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|red~4_combout\ = (\VGApart|green~0_combout\ & ((\SW[9]~input_o\) # ((\VGApart|red~0_combout\ & \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\)))) # (!\VGApart|green~0_combout\ & (\VGApart|red~0_combout\ & 
@@ -12114,7 +12088,21 @@ PORT MAP (
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\,
 	combout => \VGApart|red~4_combout\);
 
--- Location: FF_X22_Y22_N29
+-- Location: LCCOMB_X22_Y17_N10
+\VGApart|red[3]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|red[3]~feeder_combout\ = \VGApart|red~4_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \VGApart|red~4_combout\,
+	combout => \VGApart|red[3]~feeder_combout\);
+
+-- Location: FF_X22_Y17_N11
 \VGApart|red[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12123,14 +12111,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK_25M|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\,
-	asdata => \VGApart|red~4_combout\,
+	d => \VGApart|red[3]~feeder_combout\,
 	clrn => \ALT_INV_SW[1]~input_o\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \VGApart|red\(3));
 
--- Location: LCCOMB_X23_Y22_N10
+-- Location: LCCOMB_X17_Y17_N4
 \VGApart|green~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~1_combout\ = (\VGApart|video_on~q\ & ((\VGApart|set_color~q\) # ((\SW[6]~input_o\ & \VGApart|isColor~q\))))
@@ -12147,24 +12134,24 @@ PORT MAP (
 	datad => \VGApart|video_on~q\,
 	combout => \VGApart|green~1_combout\);
 
--- Location: LCCOMB_X22_Y22_N14
+-- Location: LCCOMB_X17_Y17_N22
 \VGApart|green~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|green~2_combout\ = (\VGApart|green~1_combout\) # ((!\VGApart|isColor~q\ & (\VGApart|video_on~q\ & \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\)))
+-- \VGApart|green~2_combout\ = (\VGApart|green~1_combout\) # ((\VGApart|video_on~q\ & (!\VGApart|isColor~q\ & \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010011110000",
+	lut_mask => "1010111010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|isColor~q\,
+	dataa => \VGApart|green~1_combout\,
 	datab => \VGApart|video_on~q\,
-	datac => \VGApart|green~1_combout\,
+	datac => \VGApart|isColor~q\,
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~4_combout\,
 	combout => \VGApart|green~2_combout\);
 
--- Location: FF_X22_Y22_N15
+-- Location: FF_X17_Y17_N23
 \VGApart|green[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12179,41 +12166,41 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|green\(0));
 
--- Location: LCCOMB_X23_Y22_N4
+-- Location: LCCOMB_X17_Y17_N10
 \VGApart|green~3\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~3_combout\ = (\VGApart|video_on~q\ & ((\VGApart|set_color~q\) # ((\SW[7]~input_o\ & \VGApart|isColor~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110101000000000",
+	lut_mask => "1110110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~q\,
-	datab => \SW[7]~input_o\,
+	dataa => \SW[7]~input_o\,
+	datab => \VGApart|set_color~q\,
 	datac => \VGApart|isColor~q\,
 	datad => \VGApart|video_on~q\,
 	combout => \VGApart|green~3_combout\);
 
--- Location: LCCOMB_X23_Y22_N2
+-- Location: LCCOMB_X21_Y17_N12
 \VGApart|green~4\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~4_combout\ = (\VGApart|green~3_combout\) # ((!\VGApart|isColor~q\ & (\VGApart|video_on~q\ & \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010011110000",
+	lut_mask => "1111111101000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|isColor~q\,
 	datab => \VGApart|video_on~q\,
-	datac => \VGApart|green~3_combout\,
-	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\,
+	datac => \RAM32|altsyncram_component|auto_generated|mux3|_~9_combout\,
+	datad => \VGApart|green~3_combout\,
 	combout => \VGApart|green~4_combout\);
 
--- Location: FF_X23_Y22_N3
+-- Location: FF_X21_Y17_N13
 \VGApart|green[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12228,24 +12215,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|green\(1));
 
--- Location: LCCOMB_X23_Y22_N26
+-- Location: LCCOMB_X22_Y17_N26
 \VGApart|green~5\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~5_combout\ = (\VGApart|video_on~q\ & ((\VGApart|set_color~q\) # ((\SW[8]~input_o\ & \VGApart|isColor~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110101000000000",
+	lut_mask => "1110110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~q\,
-	datab => \SW[8]~input_o\,
+	dataa => \SW[8]~input_o\,
+	datab => \VGApart|set_color~q\,
 	datac => \VGApart|isColor~q\,
 	datad => \VGApart|video_on~q\,
 	combout => \VGApart|green~5_combout\);
 
--- Location: LCCOMB_X23_Y22_N8
+-- Location: LCCOMB_X22_Y17_N24
 \VGApart|green~6\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~6_combout\ = (\VGApart|green~5_combout\) # ((\VGApart|video_on~q\ & (!\VGApart|isColor~q\ & \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\)))
@@ -12262,7 +12249,7 @@ PORT MAP (
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~14_combout\,
 	combout => \VGApart|green~6_combout\);
 
--- Location: FF_X23_Y22_N9
+-- Location: FF_X22_Y17_N25
 \VGApart|green[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12277,41 +12264,41 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|green\(2));
 
--- Location: LCCOMB_X22_Y22_N10
+-- Location: LCCOMB_X22_Y17_N4
 \VGApart|green~7\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|green~7_combout\ = (\VGApart|video_on~q\ & ((\VGApart|set_color~q\) # ((\VGApart|isColor~q\ & \SW[9]~input_o\))))
+-- \VGApart|green~7_combout\ = (\VGApart|video_on~q\ & ((\VGApart|set_color~q\) # ((\SW[9]~input_o\ & \VGApart|isColor~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110101000000000",
+	lut_mask => "1110110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|set_color~q\,
-	datab => \VGApart|isColor~q\,
-	datac => \SW[9]~input_o\,
+	dataa => \SW[9]~input_o\,
+	datab => \VGApart|set_color~q\,
+	datac => \VGApart|isColor~q\,
 	datad => \VGApart|video_on~q\,
 	combout => \VGApart|green~7_combout\);
 
--- Location: LCCOMB_X22_Y22_N0
+-- Location: LCCOMB_X22_Y17_N18
 \VGApart|green~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \VGApart|green~8_combout\ = (\VGApart|green~7_combout\) # ((\VGApart|video_on~q\ & (!\VGApart|isColor~q\ & \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111010101010",
+	lut_mask => "1111001011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|green~7_combout\,
-	datab => \VGApart|video_on~q\,
-	datac => \VGApart|isColor~q\,
+	dataa => \VGApart|video_on~q\,
+	datab => \VGApart|isColor~q\,
+	datac => \VGApart|green~7_combout\,
 	datad => \RAM32|altsyncram_component|auto_generated|mux3|_~19_combout\,
 	combout => \VGApart|green~8_combout\);
 
--- Location: FF_X22_Y22_N1
+-- Location: FF_X22_Y17_N19
 \VGApart|green[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12326,7 +12313,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|green\(3));
 
--- Location: FF_X23_Y22_N31
+-- Location: FF_X17_Y17_N29
 \VGApart|blue[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12341,7 +12328,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|blue\(0));
 
--- Location: FF_X23_Y22_N17
+-- Location: FF_X20_Y17_N19
 \VGApart|blue[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12356,7 +12343,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|blue\(1));
 
--- Location: FF_X23_Y22_N19
+-- Location: FF_X22_Y17_N29
 \VGApart|blue[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12371,7 +12358,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|blue\(2));
 
--- Location: FF_X22_Y22_N31
+-- Location: FF_X22_Y17_N3
 \VGApart|blue[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12386,73 +12373,73 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|blue\(3));
 
--- Location: LCCOMB_X16_Y21_N2
-\VGApart|process_0~0\ : cycloneiii_lcell_comb
--- Equation(s):
--- \VGApart|process_0~0_combout\ = (!\VGApart|h_count\(8) & (\VGApart|h_count\(9) & \VGApart|h_count\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \VGApart|h_count\(8),
-	datac => \VGApart|h_count\(9),
-	datad => \VGApart|h_count\(7),
-	combout => \VGApart|process_0~0_combout\);
-
--- Location: LCCOMB_X16_Y21_N16
+-- Location: LCCOMB_X20_Y13_N26
 \VGApart|process_0~1\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~1_combout\ = (\VGApart|h_count\(3)) # ((\VGApart|h_count\(1) & (!\VGApart|h_count\(5) & \VGApart|h_count\(0))))
+-- \VGApart|process_0~1_combout\ = (\VGApart|h_count\(3)) # ((!\VGApart|h_count\(5) & (\VGApart|h_count\(0) & \VGApart|h_count\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111010101010",
+	lut_mask => "1111010011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(3),
-	datab => \VGApart|h_count\(1),
-	datac => \VGApart|h_count\(5),
-	datad => \VGApart|h_count\(0),
+	dataa => \VGApart|h_count\(5),
+	datab => \VGApart|h_count\(0),
+	datac => \VGApart|h_count\(3),
+	datad => \VGApart|h_count\(1),
 	combout => \VGApart|process_0~1_combout\);
 
--- Location: LCCOMB_X16_Y21_N10
+-- Location: LCCOMB_X20_Y13_N28
 \VGApart|process_0~2\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~2_combout\ = (\VGApart|h_count\(4) & ((\VGApart|h_count\(2)) # (\VGApart|process_0~1_combout\)))
+-- \VGApart|process_0~2_combout\ = (\VGApart|h_count\(4) & ((\VGApart|process_0~1_combout\) # (\VGApart|h_count\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110010001000",
+	lut_mask => "1110000011100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(2),
-	datab => \VGApart|h_count\(4),
-	datad => \VGApart|process_0~1_combout\,
+	dataa => \VGApart|process_0~1_combout\,
+	datab => \VGApart|h_count\(2),
+	datac => \VGApart|h_count\(4),
 	combout => \VGApart|process_0~2_combout\);
 
--- Location: LCCOMB_X16_Y21_N12
-\VGApart|process_0~3\ : cycloneiii_lcell_comb
+-- Location: LCCOMB_X21_Y13_N20
+\VGApart|process_0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~3_combout\ = ((\VGApart|h_count\(6) & (\VGApart|h_count\(5) & \VGApart|process_0~2_combout\)) # (!\VGApart|h_count\(6) & (!\VGApart|h_count\(5) & !\VGApart|process_0~2_combout\))) # (!\VGApart|process_0~0_combout\)
+-- \VGApart|process_0~0_combout\ = (\VGApart|h_count\(7) & (!\VGApart|h_count\(8) & \VGApart|h_count\(9)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011001100110111",
+	lut_mask => "0010001000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|h_count\(6),
-	datab => \VGApart|process_0~0_combout\,
+	dataa => \VGApart|h_count\(7),
+	datab => \VGApart|h_count\(8),
+	datad => \VGApart|h_count\(9),
+	combout => \VGApart|process_0~0_combout\);
+
+-- Location: LCCOMB_X21_Y13_N22
+\VGApart|process_0~3\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VGApart|process_0~3_combout\ = ((\VGApart|process_0~2_combout\ & (\VGApart|h_count\(6) & \VGApart|h_count\(5))) # (!\VGApart|process_0~2_combout\ & (!\VGApart|h_count\(6) & !\VGApart|h_count\(5)))) # (!\VGApart|process_0~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VGApart|process_0~2_combout\,
+	datab => \VGApart|h_count\(6),
 	datac => \VGApart|h_count\(5),
-	datad => \VGApart|process_0~2_combout\,
+	datad => \VGApart|process_0~0_combout\,
 	combout => \VGApart|process_0~3_combout\);
 
--- Location: FF_X16_Y21_N13
+-- Location: FF_X21_Y13_N23
 \VGApart|Hsync_aux\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -12467,41 +12454,41 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \VGApart|Hsync_aux~q\);
 
--- Location: LCCOMB_X14_Y21_N0
+-- Location: LCCOMB_X23_Y14_N28
 \VGApart|process_0~4\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~4_combout\ = ((\VGApart|v_count\(1) $ (!\VGApart|v_count\(0))) # (!\VGApart|v_count\(2))) # (!\VGApart|v_count\(3))
+-- \VGApart|process_0~4_combout\ = ((\VGApart|v_count\(0) $ (!\VGApart|v_count\(1))) # (!\VGApart|v_count\(3))) # (!\VGApart|v_count\(2))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101111101111111",
+	lut_mask => "1011011111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \VGApart|v_count\(3),
-	datab => \VGApart|v_count\(1),
-	datac => \VGApart|v_count\(2),
-	datad => \VGApart|v_count\(0),
+	dataa => \VGApart|v_count\(0),
+	datab => \VGApart|v_count\(2),
+	datac => \VGApart|v_count\(1),
+	datad => \VGApart|v_count\(3),
 	combout => \VGApart|process_0~4_combout\);
 
--- Location: LCCOMB_X15_Y21_N16
+-- Location: LCCOMB_X23_Y14_N8
 \VGApart|process_0~5\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \VGApart|process_0~5_combout\ = (\VGApart|v_count\(4)) # ((\VGApart|v_count\(9)) # ((\VGApart|process_0~4_combout\) # (!\VGApart|LessThan5~0_combout\)))
+-- \VGApart|process_0~5_combout\ = (\VGApart|v_count\(4)) # (((\VGApart|v_count\(9)) # (\VGApart|process_0~4_combout\)) # (!\VGApart|LessThan5~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111011111111",
+	lut_mask => "1111111111111011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \VGApart|v_count\(4),
-	datab => \VGApart|v_count\(9),
-	datac => \VGApart|process_0~4_combout\,
-	datad => \VGApart|LessThan5~0_combout\,
+	datab => \VGApart|LessThan5~0_combout\,
+	datac => \VGApart|v_count\(9),
+	datad => \VGApart|process_0~4_combout\,
 	combout => \VGApart|process_0~5_combout\);
 
--- Location: FF_X15_Y21_N17
+-- Location: FF_X23_Y14_N9
 \VGApart|Vsync_aux\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
