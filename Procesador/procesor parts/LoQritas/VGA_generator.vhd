@@ -133,7 +133,7 @@ begin
 						
 			--- Genera cuadrado  de 480 x 480 y sus diagonales 
 			if (enaSquare = '1') then
-				if ( h_count = 80) or (h_count = 559)   then
+				if ( h_count = 80) or (h_count = 559) or (h_count = unsigned(c_X))   then
 					set_color <= '1';
 				
 				elsif ( (( v_count = 0 ) or ( v_count = 479 )) or ( v_count = unsigned(c_Y) ) ) and ( h_count >= 80 ) and ( h_count <= 559 )then

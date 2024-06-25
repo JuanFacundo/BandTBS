@@ -129,7 +129,7 @@ component centroID is
 		newPix						: in std_logic_vector(3 downto 0);
 		pixCLK						: in std_logic;
 		HREF							: in std_logic;
-		h_count						: in std_logic_vector(9 downto 0);
+		h_cnt							: in std_logic_vector(9 downto 0);
 		v_count						: in std_logic_vector(9 downto 0);
 		
 		c_X							: out std_logic_vector(9 downto 0);
@@ -347,7 +347,7 @@ begin
 		newPix	=> wRAM,							--: in std_logic_vector(3 downto 0);
 		pixCLK	=> wRAMclk,						--: in std_logic;
 		HREF		=> camHREF,						--: in std_logic;
-		h_count	=> h_count,						--: in std_logic_vector(9 downto 0);
+		h_cnt		=> h_count,						--: in std_logic_vector(9 downto 0);
 		v_count	=> v_count,						--: in std_logic_vector(9 downto 0);
 		
 		c_X		=> c_X,							--: out std_logic_vector(9 downto 0);
