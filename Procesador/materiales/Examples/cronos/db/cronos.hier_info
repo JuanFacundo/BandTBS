@@ -1,0 +1,435 @@
+|cronos
+CLOCK_50 => Ttype:TFFg:0:TFF0.clk
+CLOCK_50 => Ttype:TFFg:1:TFF0.clk
+CLOCK_50 => Ttype:TFFg:2:TFF0.clk
+CLOCK_50 => Ttype:TFFg:3:TFF0.clk
+CLOCK_50 => Ttype:TFFg:4:TFF0.clk
+CLOCK_50 => Ttype:TFFg:5:TFF0.clk
+CLOCK_50 => Ttype:TFFg:6:TFF0.clk
+CLOCK_50 => Ttype:TFFg:7:TFF0.clk
+CLOCK_50 => Ttype:TFFg:8:TFF0.clk
+CLOCK_50 => Ttype:TFFg:9:TFF0.clk
+CLOCK_50 => Ttype:TFFg:10:TFF0.clk
+CLOCK_50 => Ttype:TFFg:11:TFF0.clk
+CLOCK_50 => Ttype:TFFg:12:TFF0.clk
+CLOCK_50 => Ttype:TFFg:13:TFF0.clk
+CLOCK_50 => Ttype:TFFg:14:TFF0.clk
+CLOCK_50 => Ttype:TFFg:15:TFF0.clk
+CLOCK_50 => Ttype:TFFg:16:TFF0.clk
+CLOCK_50 => Ttype:TFFg:17:TFF0.clk
+CLOCK_50 => Ttype:TFFg:18:TFF0.clk
+CLOCK_50 => GPIO0_D[0].DATAIN
+SW[0] => Ttype:TFFg:0:TFF0.rst
+SW[0] => desec[0].ACLR
+SW[0] => desec[1].ACLR
+SW[0] => desec[2].ACLR
+SW[0] => desec[3].ACLR
+SW[0] => sec[0].ACLR
+SW[0] => sec[1].ACLR
+SW[0] => sec[2].ACLR
+SW[0] => sec[3].ACLR
+SW[0] => dec[0].ACLR
+SW[0] => dec[1].ACLR
+SW[0] => dec[2].ACLR
+SW[0] => dec[3].ACLR
+SW[0] => cent[0].ACLR
+SW[0] => cent[1].ACLR
+SW[0] => cent[2].ACLR
+SW[0] => cent[3].ACLR
+SW[0] => Ttype:TFFg:1:TFF0.rst
+SW[0] => Ttype:TFFg:2:TFF0.rst
+SW[0] => Ttype:TFFg:3:TFF0.rst
+SW[0] => Ttype:TFFg:4:TFF0.rst
+SW[0] => Ttype:TFFg:5:TFF0.rst
+SW[0] => Ttype:TFFg:6:TFF0.rst
+SW[0] => Ttype:TFFg:7:TFF0.rst
+SW[0] => Ttype:TFFg:8:TFF0.rst
+SW[0] => Ttype:TFFg:9:TFF0.rst
+SW[0] => Ttype:TFFg:10:TFF0.rst
+SW[0] => Ttype:TFFg:11:TFF0.rst
+SW[0] => Ttype:TFFg:12:TFF0.rst
+SW[0] => Ttype:TFFg:13:TFF0.rst
+SW[0] => Ttype:TFFg:14:TFF0.rst
+SW[0] => Ttype:TFFg:15:TFF0.rst
+SW[0] => Ttype:TFFg:16:TFF0.rst
+SW[0] => Ttype:TFFg:17:TFF0.rst
+SW[0] => Ttype:TFFg:18:TFF0.rst
+SW[1] => Ttype:TFFg:0:TFF0.ena
+SW[1] => Ttype:TFFg:1:TFF0.ena
+SW[1] => Ttype:TFFg:2:TFF0.ena
+SW[1] => Ttype:TFFg:3:TFF0.ena
+SW[1] => Ttype:TFFg:4:TFF0.ena
+SW[1] => Ttype:TFFg:5:TFF0.ena
+SW[1] => Ttype:TFFg:6:TFF0.ena
+SW[1] => Ttype:TFFg:7:TFF0.ena
+SW[1] => Ttype:TFFg:8:TFF0.ena
+SW[1] => Ttype:TFFg:9:TFF0.ena
+SW[1] => Ttype:TFFg:10:TFF0.ena
+SW[1] => Ttype:TFFg:11:TFF0.ena
+SW[1] => Ttype:TFFg:12:TFF0.ena
+SW[1] => Ttype:TFFg:13:TFF0.ena
+SW[1] => Ttype:TFFg:14:TFF0.ena
+SW[1] => Ttype:TFFg:15:TFF0.ena
+SW[1] => Ttype:TFFg:16:TFF0.ena
+SW[1] => Ttype:TFFg:17:TFF0.ena
+SW[1] => Ttype:TFFg:18:TFF0.ena
+SW[1] => desec[0].ENA
+SW[1] => cent[3].ENA
+SW[1] => cent[2].ENA
+SW[1] => cent[1].ENA
+SW[1] => cent[0].ENA
+SW[1] => dec[3].ENA
+SW[1] => dec[2].ENA
+SW[1] => dec[1].ENA
+SW[1] => dec[0].ENA
+SW[1] => sec[3].ENA
+SW[1] => sec[2].ENA
+SW[1] => sec[1].ENA
+SW[1] => sec[0].ENA
+SW[1] => desec[3].ENA
+SW[1] => desec[2].ENA
+SW[1] => desec[1].ENA
+HEX0_D[0] << deco:deco_cent.decoded[0]
+HEX0_D[1] << deco:deco_cent.decoded[1]
+HEX0_D[2] << deco:deco_cent.decoded[2]
+HEX0_D[3] << deco:deco_cent.decoded[3]
+HEX0_D[4] << deco:deco_cent.decoded[4]
+HEX0_D[5] << deco:deco_cent.decoded[5]
+HEX0_D[6] << deco:deco_cent.decoded[6]
+HEX1_D[0] << deco:deco_dec.decoded[0]
+HEX1_D[1] << deco:deco_dec.decoded[1]
+HEX1_D[2] << deco:deco_dec.decoded[2]
+HEX1_D[3] << deco:deco_dec.decoded[3]
+HEX1_D[4] << deco:deco_dec.decoded[4]
+HEX1_D[5] << deco:deco_dec.decoded[5]
+HEX1_D[6] << deco:deco_dec.decoded[6]
+HEX2_D[0] << deco:deco_sec.decoded[0]
+HEX2_D[1] << deco:deco_sec.decoded[1]
+HEX2_D[2] << deco:deco_sec.decoded[2]
+HEX2_D[3] << deco:deco_sec.decoded[3]
+HEX2_D[4] << deco:deco_sec.decoded[4]
+HEX2_D[5] << deco:deco_sec.decoded[5]
+HEX2_D[6] << deco:deco_sec.decoded[6]
+HEX3_D[0] << deco:deco_desec.decoded[0]
+HEX3_D[1] << deco:deco_desec.decoded[1]
+HEX3_D[2] << deco:deco_desec.decoded[2]
+HEX3_D[3] << deco:deco_desec.decoded[3]
+HEX3_D[4] << deco:deco_desec.decoded[4]
+HEX3_D[5] << deco:deco_desec.decoded[5]
+HEX3_D[6] << deco:deco_desec.decoded[6]
+HEX2_DP << <GND>
+GPIO0_D[0] << CLOCK_50.DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[1] << <GND>
+
+
+|cronos|deco:deco_cent
+num[0] => Mux0.IN19
+num[0] => Mux1.IN19
+num[0] => Mux2.IN10
+num[0] => Mux3.IN19
+num[0] => Mux4.IN10
+num[0] => Mux5.IN10
+num[0] => Mux6.IN19
+num[1] => Mux0.IN18
+num[1] => Mux1.IN18
+num[1] => Mux2.IN9
+num[1] => Mux3.IN18
+num[1] => Mux4.IN9
+num[1] => Mux5.IN9
+num[1] => Mux6.IN18
+num[2] => Mux0.IN17
+num[2] => Mux1.IN17
+num[2] => Mux2.IN8
+num[2] => Mux3.IN17
+num[2] => Mux4.IN8
+num[2] => Mux5.IN8
+num[2] => Mux6.IN17
+num[3] => Mux0.IN16
+num[3] => Mux1.IN16
+num[3] => Mux3.IN16
+num[3] => Mux6.IN16
+decoded[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoded[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoded[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoded[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoded[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoded[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoded[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|deco:deco_dec
+num[0] => Mux0.IN19
+num[0] => Mux1.IN19
+num[0] => Mux2.IN10
+num[0] => Mux3.IN19
+num[0] => Mux4.IN10
+num[0] => Mux5.IN10
+num[0] => Mux6.IN19
+num[1] => Mux0.IN18
+num[1] => Mux1.IN18
+num[1] => Mux2.IN9
+num[1] => Mux3.IN18
+num[1] => Mux4.IN9
+num[1] => Mux5.IN9
+num[1] => Mux6.IN18
+num[2] => Mux0.IN17
+num[2] => Mux1.IN17
+num[2] => Mux2.IN8
+num[2] => Mux3.IN17
+num[2] => Mux4.IN8
+num[2] => Mux5.IN8
+num[2] => Mux6.IN17
+num[3] => Mux0.IN16
+num[3] => Mux1.IN16
+num[3] => Mux3.IN16
+num[3] => Mux6.IN16
+decoded[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoded[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoded[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoded[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoded[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoded[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoded[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|deco:deco_sec
+num[0] => Mux0.IN19
+num[0] => Mux1.IN19
+num[0] => Mux2.IN10
+num[0] => Mux3.IN19
+num[0] => Mux4.IN10
+num[0] => Mux5.IN10
+num[0] => Mux6.IN19
+num[1] => Mux0.IN18
+num[1] => Mux1.IN18
+num[1] => Mux2.IN9
+num[1] => Mux3.IN18
+num[1] => Mux4.IN9
+num[1] => Mux5.IN9
+num[1] => Mux6.IN18
+num[2] => Mux0.IN17
+num[2] => Mux1.IN17
+num[2] => Mux2.IN8
+num[2] => Mux3.IN17
+num[2] => Mux4.IN8
+num[2] => Mux5.IN8
+num[2] => Mux6.IN17
+num[3] => Mux0.IN16
+num[3] => Mux1.IN16
+num[3] => Mux3.IN16
+num[3] => Mux6.IN16
+decoded[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoded[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoded[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoded[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoded[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoded[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoded[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|deco:deco_desec
+num[0] => Mux0.IN19
+num[0] => Mux1.IN19
+num[0] => Mux2.IN10
+num[0] => Mux3.IN19
+num[0] => Mux4.IN10
+num[0] => Mux5.IN10
+num[0] => Mux6.IN19
+num[1] => Mux0.IN18
+num[1] => Mux1.IN18
+num[1] => Mux2.IN9
+num[1] => Mux3.IN18
+num[1] => Mux4.IN9
+num[1] => Mux5.IN9
+num[1] => Mux6.IN18
+num[2] => Mux0.IN17
+num[2] => Mux1.IN17
+num[2] => Mux2.IN8
+num[2] => Mux3.IN17
+num[2] => Mux4.IN8
+num[2] => Mux5.IN8
+num[2] => Mux6.IN17
+num[3] => Mux0.IN16
+num[3] => Mux1.IN16
+num[3] => Mux3.IN16
+num[3] => Mux6.IN16
+decoded[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoded[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoded[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoded[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoded[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoded[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoded[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:0:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:1:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:2:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:3:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:4:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:5:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:6:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:7:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:8:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:9:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:10:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:11:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:12:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:13:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:14:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:15:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:16:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:17:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cronos|Ttype:\TFFg:18:TFF0
+clk => Qaux.CLK
+sync_rst => Qaux.OUTPUTSELECT
+rst => Qaux.ACLR
+ena => Taux.OUTPUTSELECT
+T => Taux.DATAB
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+

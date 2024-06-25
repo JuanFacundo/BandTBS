@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for CAM2VGA
-Wed Jun 12 15:20:31 2024
+Thu Jun 13 10:59:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -4744,8 +4744,8 @@ No synchronizer chains to report.
 ; 5.807 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a11~portb_address_reg0 ; VGA_generator:VGApart|red[3]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.532     ; 2.570      ;
 ; 5.808 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a11~portb_address_reg0 ; VGA_generator:VGApart|green[3] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.532     ; 2.569      ;
 ; 5.817 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.534     ; 2.558      ;
-; 5.820 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|red[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.534     ; 2.555      ;
 ; 5.820 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a24~portb_address_reg0 ; VGA_generator:VGApart|green[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.529     ; 2.560      ;
+; 5.820 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|red[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.534     ; 2.555      ;
 ; 5.821 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a24~portb_address_reg0 ; VGA_generator:VGApart|red[0]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.529     ; 2.559      ;
 ; 5.840 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a9~portb_address_reg0  ; VGA_generator:VGApart|blue[1]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.526     ; 2.543      ;
 ; 5.854 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a31~portb_address_reg0 ; VGA_generator:VGApart|green[3] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.540     ; 2.515      ;
@@ -4786,9 +4786,9 @@ No synchronizer chains to report.
 ; 5.979 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a11~portb_address_reg0 ; VGA_generator:VGApart|blue[3]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.532     ; 2.398      ;
 ; 5.990 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|blue[2]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.534     ; 2.385      ;
 ; 5.991 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a2~portb_address_reg0  ; VGA_generator:VGApart|red[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.539     ; 2.379      ;
-; 5.992 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a2~portb_address_reg0  ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.539     ; 2.378      ;
-; 5.992 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a30~portb_address_reg0 ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.545     ; 2.372      ;
 ; 5.992 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a24~portb_address_reg0 ; VGA_generator:VGApart|blue[0]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.529     ; 2.388      ;
+; 5.992 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a30~portb_address_reg0 ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.545     ; 2.372      ;
+; 5.992 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a2~portb_address_reg0  ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.539     ; 2.378      ;
 ; 5.995 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a30~portb_address_reg0 ; VGA_generator:VGApart|red[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.545     ; 2.369      ;
 ; 6.005 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a26~portb_address_reg0 ; VGA_generator:VGApart|green[2] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.537     ; 2.367      ;
 ; 6.008 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a26~portb_address_reg0 ; VGA_generator:VGApart|red[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.537     ; 2.364      ;
@@ -6630,7 +6630,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jun 12 15:20:29 2024
+    Info: Processing started: Thu Jun 13 10:59:04 2024
 Info: Command: quartus_sta CAM2VGA -c CAM2VGA
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
@@ -6878,8 +6878,8 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 4696 megabytes
-    Info: Processing ended: Wed Jun 12 15:20:31 2024
+    Info: Peak virtual memory: 4701 megabytes
+    Info: Processing ended: Thu Jun 13 10:59:06 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
