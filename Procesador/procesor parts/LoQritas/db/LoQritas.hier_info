@@ -8,10 +8,11 @@ SW[1] => pll1:CLK_24M.areset
 SW[1] => VGA_generator:VGApart.rst
 SW[1] => pll2:CLK_25M.areset
 SW[1] => VGA_generator:VGApart.ena
-SW[2] => GPIO0_D[3].DATAIN
-SW[3] => GPIO0_D[4].DATAIN
-SW[3] => CAPdiez:CAP10.rst
+SW[2] => GPIO0_D[15].DATAIN
+SW[3] => GPIO0_D[14].DATAIN
+SW[3] => CAPonce:CAP11.rst
 SW[4] => VGA_generator:VGApart.enaSquare
+SW[4] => centroID:cID.rst
 SW[5] => ~NO_FANOUT~
 SW[6] => VGA_generator:VGApart.color[0]
 SW[7] => VGA_generator:VGApart.color[1]
@@ -21,21 +22,68 @@ LEDG[0] << SCCBdrive:SCCBdriver.LIVE
 LEDG[1] << <GND>
 LEDG[2] << <GND>
 GPIO0_D[0] << SCCBdrive:SCCBdriver.SIO_C
-GPIO0_D[1] << SCCBdrive:SCCBdriver.SIO_D
-GPIO0_D[2] << pll1:CLK_24M.c0
-GPIO0_D[3] << SW[2].DB_MAX_OUTPUT_PORT_TYPE
-GPIO0_D[4] << SW[3].DB_MAX_OUTPUT_PORT_TYPE
-GPIO1_D[0] => CAPdiez:CAP10.D_in[0]
-GPIO1_D[1] => CAPdiez:CAP10.D_in[1]
-GPIO1_D[2] => CAPdiez:CAP10.D_in[2]
-GPIO1_D[3] => CAPdiez:CAP10.D_in[3]
-GPIO1_D[4] => CAPdiez:CAP10.D_in[4]
-GPIO1_D[5] => CAPdiez:CAP10.D_in[5]
-GPIO1_D[6] => CAPdiez:CAP10.D_in[6]
-GPIO1_D[7] => CAPdiez:CAP10.D_in[7]
-GPIO1_D[8] => CAPdiez:CAP10.PCLK
-GPIO1_D[9] => CAPdiez:CAP10.HREF
-GPIO1_D[10] => ~NO_FANOUT~
+GPIO0_D[1] << <GND>
+GPIO0_D[2] << <GND>
+GPIO0_D[3] << <GND>
+GPIO0_D[4] << <GND>
+GPIO0_D[5] << <GND>
+GPIO0_D[6] << <GND>
+GPIO0_D[7] << <GND>
+GPIO0_D[8] << <GND>
+GPIO0_D[9] << <GND>
+GPIO0_D[10] << <GND>
+GPIO0_D[11] << <GND>
+GPIO0_D[12] << <GND>
+GPIO0_D[13] << <GND>
+GPIO0_D[14] << SW[3].DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[15] << SW[2].DB_MAX_OUTPUT_PORT_TYPE
+GPIO0_D[16] << <GND>
+GPIO0_D[17] << pll1:CLK_24M.c0
+GPIO0_D[18] << <GND>
+GPIO0_D[19] << <GND>
+GPIO0_D[20] << <GND>
+GPIO0_D[21] << <GND>
+GPIO0_D[22] << <GND>
+GPIO0_D[23] << <GND>
+GPIO0_D[24] << <GND>
+GPIO0_D[25] << <GND>
+GPIO0_D[26] << <GND>
+GPIO0_D[27] << <GND>
+GPIO0_D[28] << <GND>
+GPIO0_D[29] << SCCBdrive:SCCBdriver.SIO_D
+GPIO0_D[30] << <GND>
+GPIO1_D[0] => ~NO_FANOUT~
+GPIO1_D[1] => ~NO_FANOUT~
+GPIO1_D[2] => ~NO_FANOUT~
+GPIO1_D[3] => ~NO_FANOUT~
+GPIO1_D[4] => CAPonce:CAP11.PCLK
+GPIO1_D[5] => ~NO_FANOUT~
+GPIO1_D[6] => CAPonce:CAP11.D_in[7]
+GPIO1_D[7] => ~NO_FANOUT~
+GPIO1_D[8] => CAPonce:CAP11.D_in[5]
+GPIO1_D[9] => ~NO_FANOUT~
+GPIO1_D[10] => CAPonce:CAP11.D_in[1]
+GPIO1_D[11] => ~NO_FANOUT~
+GPIO1_D[12] => ~NO_FANOUT~
+GPIO1_D[13] => ~NO_FANOUT~
+GPIO1_D[14] => ~NO_FANOUT~
+GPIO1_D[15] => ~NO_FANOUT~
+GPIO1_D[16] => ~NO_FANOUT~
+GPIO1_D[17] => ~NO_FANOUT~
+GPIO1_D[18] => ~NO_FANOUT~
+GPIO1_D[19] => ~NO_FANOUT~
+GPIO1_D[20] => ~NO_FANOUT~
+GPIO1_D[21] => ~NO_FANOUT~
+GPIO1_D[22] => CAPonce:CAP11.D_in[0]
+GPIO1_D[23] => ~NO_FANOUT~
+GPIO1_D[24] => CAPonce:CAP11.D_in[2]
+GPIO1_D[25] => ~NO_FANOUT~
+GPIO1_D[26] => CAPonce:CAP11.D_in[4]
+GPIO1_D[27] => ~NO_FANOUT~
+GPIO1_D[28] => CAPonce:CAP11.D_in[6]
+GPIO1_D[29] => ~NO_FANOUT~
+GPIO1_D[30] => CAPonce:CAP11.HREF
+GPIO1_D[30] => centroID:cID.HREF
 VGA_R[0] << VGA_generator:VGApart.red[0]
 VGA_R[1] << VGA_generator:VGApart.red[1]
 VGA_R[2] << VGA_generator:VGApart.red[2]
@@ -178,12 +226,12 @@ rst => red[1]~reg0.ACLR
 rst => red[2]~reg0.ACLR
 rst => red[3]~reg0.ACLR
 rst => video_on.ACLR
+rst => RAM_adr1[2].ENA
 rst => RAM_adr1[1].ENA
 rst => RAM_adr1[0].ENA
 rst => enarRAMclk~reg0.ENA
 rst => set_color.ENA
 rst => isColor.ENA
-rst => RAM_adr1[2].ENA
 rst => RAM_adr1[3].ENA
 rst => RAM_adr1[4].ENA
 rst => RAM_adr1[5].ENA
@@ -320,6 +368,26 @@ color[0] => red.IN1
 color[1] => red.IN1
 color[2] => red.IN1
 color[3] => red.IN1
+c_X[0] => ~NO_FANOUT~
+c_X[1] => ~NO_FANOUT~
+c_X[2] => ~NO_FANOUT~
+c_X[3] => ~NO_FANOUT~
+c_X[4] => ~NO_FANOUT~
+c_X[5] => ~NO_FANOUT~
+c_X[6] => ~NO_FANOUT~
+c_X[7] => ~NO_FANOUT~
+c_X[8] => ~NO_FANOUT~
+c_X[9] => ~NO_FANOUT~
+c_Y[0] => Equal8.IN9
+c_Y[1] => Equal8.IN8
+c_Y[2] => Equal8.IN7
+c_Y[3] => Equal8.IN6
+c_Y[4] => Equal8.IN5
+c_Y[5] => Equal8.IN4
+c_Y[6] => Equal8.IN3
+c_Y[7] => Equal8.IN2
+c_Y[8] => Equal8.IN1
+c_Y[9] => Equal8.IN0
 red[0] <= red[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 red[1] <= red[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 red[2] <= red[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1865,7 +1933,7 @@ sel[2] => result_node[0].IN0
 sel[2] => _.IN0
 
 
-|LoQritas|CAPdiez:CAP10
+|LoQritas|CAPonce:CAP11
 rst => RAM_adr[0].ACLR
 rst => RAM_adr[1].ACLR
 rst => RAM_adr[2].ACLR
@@ -1946,10 +2014,30 @@ RAMadr[12] <= RAM_adr[12].DB_MAX_OUTPUT_PORT_TYPE
 RAMadr[13] <= RAM_adr[13].DB_MAX_OUTPUT_PORT_TYPE
 RAMadr[14] <= RAM_adr[14].DB_MAX_OUTPUT_PORT_TYPE
 RAMadr[15] <= RAM_adr[15].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[0] <= h_count[0].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[1] <= h_count[1].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[2] <= h_count[2].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[3] <= h_count[3].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[4] <= h_count[4].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[5] <= h_count[5].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[6] <= h_count[6].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[7] <= h_count[7].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[8] <= h_count[8].DB_MAX_OUTPUT_PORT_TYPE
+Hcount[9] <= h_count[9].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[0] <= v_count[0].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[1] <= v_count[1].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[2] <= v_count[2].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[3] <= v_count[3].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[4] <= v_count[4].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[5] <= v_count[5].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[6] <= v_count[6].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[7] <= v_count[7].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[8] <= v_count[8].DB_MAX_OUTPUT_PORT_TYPE
+Vcount[9] <= v_count[9].DB_MAX_OUTPUT_PORT_TYPE
 outCLK <= outCLK.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|Z_1:DEPHASE
+|LoQritas|CAPonce:CAP11|Z_1:DEPHASE
 rst => Qd[1].ACLR
 rst => Qd[0].ACLR
 rst => Qt.ACLR
@@ -1959,7 +2047,7 @@ clk_in => Qt.CLK
 clk_out <= Qd[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|FullAdd:\RipCar:0:FA
+|LoQritas|CAPonce:CAP11|FullAdd:\RipCar:0:FA
 dA => s.IN0
 dA => co.IN0
 dA => co.IN0
@@ -1973,7 +2061,7 @@ co <= co.DB_MAX_OUTPUT_PORT_TYPE
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|FullAdd:\RipCar:1:FA
+|LoQritas|CAPonce:CAP11|FullAdd:\RipCar:1:FA
 dA => s.IN0
 dA => co.IN0
 dA => co.IN0
@@ -1987,7 +2075,7 @@ co <= co.DB_MAX_OUTPUT_PORT_TYPE
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|FullAdd:\RipCar:2:FA
+|LoQritas|CAPonce:CAP11|FullAdd:\RipCar:2:FA
 dA => s.IN0
 dA => co.IN0
 dA => co.IN0
@@ -2001,7 +2089,7 @@ co <= co.DB_MAX_OUTPUT_PORT_TYPE
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|FullAdd:\RipCar:3:FA
+|LoQritas|CAPonce:CAP11|FullAdd:\RipCar:3:FA
 dA => s.IN0
 dA => co.IN0
 dA => co.IN0
@@ -2015,7 +2103,7 @@ co <= co.DB_MAX_OUTPUT_PORT_TYPE
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|LoQritas|CAPdiez:CAP10|FullAdd:\RipCar:4:FA
+|LoQritas|CAPonce:CAP11|FullAdd:\RipCar:4:FA
 dA => s.IN0
 dA => co.IN0
 dA => co.IN0
@@ -2027,6 +2115,140 @@ ci => co.IN1
 ci => co.IN1
 co <= co.DB_MAX_OUTPUT_PORT_TYPE
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LoQritas|centroID:cID
+rst => lastLoc[0].ACLR
+rst => lastLoc[1].ACLR
+rst => lastLoc[2].ACLR
+rst => lastLoc[3].ACLR
+rst => lastLoc[4].ACLR
+rst => lastLoc[5].ACLR
+rst => lastLoc[6].ACLR
+rst => lastLoc[7].ACLR
+rst => lastLoc[8].ACLR
+rst => lastLoc[9].ACLR
+rst => mostLoc[0].ACLR
+rst => mostLoc[1].ACLR
+rst => mostLoc[2].ACLR
+rst => mostLoc[3].ACLR
+rst => mostLoc[4].ACLR
+rst => mostLoc[5].ACLR
+rst => mostLoc[6].ACLR
+rst => mostLoc[7].ACLR
+rst => mostLoc[8].ACLR
+rst => mostLoc[9].ACLR
+rst => mostCount[0].ACLR
+rst => mostCount[1].ACLR
+rst => mostCount[2].ACLR
+rst => mostCount[3].ACLR
+rst => mostCount[4].ACLR
+rst => mostCount[5].ACLR
+rst => mostCount[6].ACLR
+rst => mostCount[7].ACLR
+rst => mostCount[8].ACLR
+rst => whiteCount[0].ACLR
+rst => whiteCount[1].ACLR
+rst => whiteCount[2].ACLR
+rst => whiteCount[3].ACLR
+rst => whiteCount[4].ACLR
+rst => whiteCount[5].ACLR
+rst => whiteCount[6].ACLR
+rst => whiteCount[7].ACLR
+rst => whiteCount[8].ACLR
+newPix[0] => LessThan0.IN8
+newPix[1] => LessThan0.IN7
+newPix[2] => LessThan0.IN6
+newPix[3] => LessThan0.IN5
+pixCLK => lastLoc[0].CLK
+pixCLK => lastLoc[1].CLK
+pixCLK => lastLoc[2].CLK
+pixCLK => lastLoc[3].CLK
+pixCLK => lastLoc[4].CLK
+pixCLK => lastLoc[5].CLK
+pixCLK => lastLoc[6].CLK
+pixCLK => lastLoc[7].CLK
+pixCLK => lastLoc[8].CLK
+pixCLK => lastLoc[9].CLK
+pixCLK => mostLoc[0].CLK
+pixCLK => mostLoc[1].CLK
+pixCLK => mostLoc[2].CLK
+pixCLK => mostLoc[3].CLK
+pixCLK => mostLoc[4].CLK
+pixCLK => mostLoc[5].CLK
+pixCLK => mostLoc[6].CLK
+pixCLK => mostLoc[7].CLK
+pixCLK => mostLoc[8].CLK
+pixCLK => mostLoc[9].CLK
+pixCLK => mostCount[0].CLK
+pixCLK => mostCount[1].CLK
+pixCLK => mostCount[2].CLK
+pixCLK => mostCount[3].CLK
+pixCLK => mostCount[4].CLK
+pixCLK => mostCount[5].CLK
+pixCLK => mostCount[6].CLK
+pixCLK => mostCount[7].CLK
+pixCLK => mostCount[8].CLK
+pixCLK => whiteCount[0].CLK
+pixCLK => whiteCount[1].CLK
+pixCLK => whiteCount[2].CLK
+pixCLK => whiteCount[3].CLK
+pixCLK => whiteCount[4].CLK
+pixCLK => whiteCount[5].CLK
+pixCLK => whiteCount[6].CLK
+pixCLK => whiteCount[7].CLK
+pixCLK => whiteCount[8].CLK
+HREF => ~NO_FANOUT~
+h_count[0] => LessThan1.IN20
+h_count[1] => LessThan1.IN19
+h_count[2] => LessThan1.IN18
+h_count[3] => LessThan1.IN17
+h_count[4] => LessThan1.IN16
+h_count[5] => LessThan1.IN15
+h_count[6] => LessThan1.IN14
+h_count[7] => LessThan1.IN13
+h_count[8] => LessThan1.IN12
+h_count[9] => LessThan1.IN11
+v_count[0] => mostLoc.DATAB
+v_count[0] => LessThan3.IN20
+v_count[1] => mostLoc.DATAB
+v_count[1] => LessThan3.IN19
+v_count[2] => mostLoc.DATAB
+v_count[2] => LessThan3.IN18
+v_count[3] => mostLoc.DATAB
+v_count[3] => LessThan3.IN17
+v_count[4] => mostLoc.DATAB
+v_count[4] => LessThan3.IN16
+v_count[5] => mostLoc.DATAB
+v_count[5] => LessThan3.IN15
+v_count[6] => mostLoc.DATAB
+v_count[6] => LessThan3.IN14
+v_count[7] => mostLoc.DATAB
+v_count[7] => LessThan3.IN13
+v_count[8] => mostLoc.DATAB
+v_count[8] => LessThan3.IN12
+v_count[9] => mostLoc.DATAB
+v_count[9] => LessThan3.IN11
+c_X[0] <= <GND>
+c_X[1] <= <GND>
+c_X[2] <= <GND>
+c_X[3] <= <GND>
+c_X[4] <= <GND>
+c_X[5] <= <GND>
+c_X[6] <= <GND>
+c_X[7] <= <GND>
+c_X[8] <= <GND>
+c_X[9] <= <GND>
+c_Y[0] <= lastLoc[0].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[1] <= lastLoc[1].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[2] <= lastLoc[2].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[3] <= lastLoc[3].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[4] <= lastLoc[4].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[5] <= lastLoc[5].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[6] <= lastLoc[6].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[7] <= lastLoc[7].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[8] <= lastLoc[8].DB_MAX_OUTPUT_PORT_TYPE
+c_Y[9] <= lastLoc[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |LoQritas|pll1:CLK_24M

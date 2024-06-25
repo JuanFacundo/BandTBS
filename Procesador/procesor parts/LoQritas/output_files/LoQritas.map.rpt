@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LoQritas
-Mon Jun 17 23:28:29 2024
+Mon Jun 24 02:12:43 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -28,15 +28,16 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  20. altsyncram Parameter Settings by Entity Instance
  21. Port Connectivity Checks: "SCCBdrive:SCCBdriver|P2Sreg:REGS"
  22. Port Connectivity Checks: "pll1:CLK_24M"
- 23. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:4:FA"
- 24. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:3:FA"
- 25. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:2:FA"
- 26. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:1:FA"
- 27. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:0:FA"
- 28. Port Connectivity Checks: "RAMx32:RAM32"
- 29. Port Connectivity Checks: "VGA_generator:VGApart"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+ 23. Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:4:FA"
+ 24. Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:3:FA"
+ 25. Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:2:FA"
+ 26. Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:1:FA"
+ 27. Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:0:FA"
+ 28. Port Connectivity Checks: "CAPonce:CAP11"
+ 29. Port Connectivity Checks: "RAMx32:RAM32"
+ 30. Port Connectivity Checks: "VGA_generator:VGApart"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +63,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 17 23:28:29 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 02:12:43 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 345                                        ;
-;     Total combinational functions  ; 329                                        ;
-;     Dedicated logic registers      ; 194                                        ;
-; Total registers                    ; 194                                        ;
-; Total pins                         ; 44                                         ;
+; Total logic elements               ; 414                                        ;
+;     Total combinational functions  ; 389                                        ;
+;     Dedicated logic registers      ; 239                                        ;
+; Total registers                    ; 239                                        ;
+; Total pins                         ; 90                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -184,42 +185,43 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                                                                                                         ; Library ;
-+----------------------------------+-----------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; LoQritas.vhd                     ; yes             ; User VHDL File                    ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/LoQritas.vhd           ;         ;
-; vga_generator.vhd                ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/vga_generator.vhd      ;         ;
-; pll2.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll2.vhd               ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                            ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                                        ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                                       ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                                     ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                                     ;         ;
-; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll2_altpll.v       ;         ;
-; ramx32.vhd                       ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/ramx32.vhd             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                                 ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                                                        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                                                                                            ;         ;
-; altram.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                                                                                            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                                                                                          ;         ;
-; db/altsyncram_glq3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/altsyncram_glq3.tdf ;         ;
-; db/decode_ira.tdf                ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/decode_ira.tdf      ;         ;
-; db/mux_ulb.tdf                   ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/mux_ulb.tdf         ;         ;
-; capdiez.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/capdiez.vhd            ;         ;
-; z_1.vhd                          ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/z_1.vhd                ;         ;
-; fulladd.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/fulladd.vhd            ;         ;
-; pll1.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll1.vhd               ;         ;
-; db/pll1_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll1_altpll.v       ;         ;
-; pll3.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll3.vhd               ;         ;
-; db/pll3_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll3_altpll.v       ;         ;
-; sccbdrive.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/sccbdrive.vhd          ;         ;
-; p2sreg.vhd                       ; yes             ; Auto-Found VHDL File              ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/p2sreg.vhd             ;         ;
-+----------------------------------+-----------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; RAMx32.vhd                       ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/RAMx32.vhd             ;         ;
+; pll3.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll3.vhd               ;         ;
+; Z_1.vhd                          ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/Z_1.vhd                ;         ;
+; VGA_generator.vhd                ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/VGA_generator.vhd      ;         ;
+; SCCBdrive.vhd                    ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/SCCBdrive.vhd          ;         ;
+; pll2.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll2.vhd               ;         ;
+; pll1.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll1.vhd               ;         ;
+; P2Sreg.vhd                       ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/P2Sreg.vhd             ;         ;
+; FullAdd.vhd                      ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/FullAdd.vhd            ;         ;
+; CAPonce.vhd                      ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/CAPonce.vhd            ;         ;
+; LoQritas.vhd                     ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/LoQritas.vhd           ;         ;
+; centroID.vhd                     ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/centroID.vhd           ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                            ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                                        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                                       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                                     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                                     ;         ;
+; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll2_altpll.v       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                                 ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                                                        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                                                                                            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                                                                                            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                                                                                          ;         ;
+; db/altsyncram_glq3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/altsyncram_glq3.tdf ;         ;
+; db/decode_ira.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/decode_ira.tdf      ;         ;
+; db/mux_ulb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/mux_ulb.tdf         ;         ;
+; db/pll1_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll1_altpll.v       ;         ;
+; db/pll3_altpll.v                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/db/pll3_altpll.v       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------+
@@ -227,23 +229,23 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                            ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 345                                                                              ;
+; Estimated Total logic elements              ; 414                                                                              ;
 ;                                             ;                                                                                  ;
-; Total combinational functions               ; 329                                                                              ;
+; Total combinational functions               ; 389                                                                              ;
 ; Logic element usage by number of LUT inputs ;                                                                                  ;
-;     -- 4 input functions                    ; 101                                                                              ;
-;     -- 3 input functions                    ; 68                                                                               ;
-;     -- <=2 input functions                  ; 160                                                                              ;
+;     -- 4 input functions                    ; 112                                                                              ;
+;     -- 3 input functions                    ; 79                                                                               ;
+;     -- <=2 input functions                  ; 198                                                                              ;
 ;                                             ;                                                                                  ;
 ; Logic elements by mode                      ;                                                                                  ;
-;     -- normal mode                          ; 239                                                                              ;
-;     -- arithmetic mode                      ; 90                                                                               ;
+;     -- normal mode                          ; 273                                                                              ;
+;     -- arithmetic mode                      ; 116                                                                              ;
 ;                                             ;                                                                                  ;
-; Total registers                             ; 194                                                                              ;
-;     -- Dedicated logic registers            ; 194                                                                              ;
+; Total registers                             ; 239                                                                              ;
+;     -- Dedicated logic registers            ; 239                                                                              ;
 ;     -- I/O registers                        ; 0                                                                                ;
 ;                                             ;                                                                                  ;
-; I/O pins                                    ; 44                                                                               ;
+; I/O pins                                    ; 90                                                                               ;
 ; Total memory bits                           ; 262144                                                                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                ;
 ; Total PLLs                                  ; 3                                                                                ;
@@ -251,8 +253,8 @@ applicable agreement for further details.
 ;                                             ;                                                                                  ;
 ; Maximum fan-out node                        ; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 88                                                                               ;
-; Total fan-out                               ; 2582                                                                             ;
-; Average fan-out                             ; 4.00                                                                             ;
+; Total fan-out                               ; 2996                                                                             ;
+; Average fan-out                             ; 3.55                                                                             ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
 
 
@@ -261,9 +263,9 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |LoQritas                                 ; 329 (1)           ; 194 (0)      ; 262144      ; 0            ; 0       ; 0         ; 44   ; 0            ; |LoQritas                                                                                                      ; work         ;
-;    |CAPdiez:CAP10|                        ; 56 (55)           ; 41 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPdiez:CAP10                                                                                        ; work         ;
-;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPdiez:CAP10|Z_1:DEPHASE                                                                            ; work         ;
+; |LoQritas                                 ; 389 (1)           ; 239 (0)      ; 262144      ; 0            ; 0       ; 0         ; 90   ; 0            ; |LoQritas                                                                                                      ; work         ;
+;    |CAPonce:CAP11|                        ; 72 (71)           ; 50 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPonce:CAP11                                                                                        ; work         ;
+;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPonce:CAP11|Z_1:DEPHASE                                                                            ; work         ;
 ;    |RAMx32:RAM32|                         ; 35 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32                                                                                         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 35 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component                                                         ; work         ;
 ;          |altsyncram_glq3:auto_generated| ; 35 (0)            ; 3 (3)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated                          ; work         ;
@@ -272,7 +274,8 @@ applicable agreement for further details.
 ;             |mux_ulb:mux3|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
 ;    |SCCBdrive:SCCBdriver|                 ; 66 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
 ;       |P2Sreg:REGS|                       ; 53 (53)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
-;    |VGA_generator:VGApart|                ; 171 (171)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
+;    |VGA_generator:VGApart|                ; 179 (179)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
+;    |centroID:cID|                         ; 36 (36)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|centroID:cID                                                                                         ; work         ;
 ;    |pll1:CLK_24M|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M                                                                                         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component                                                                 ; work         ;
 ;          |pll1_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated                                      ; work         ;
@@ -303,7 +306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LoQritas|pll1:CLK_24M ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll1.vhd   ;
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LoQritas|pll2:CLK_25M ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll2.vhd   ;
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LoQritas|pll3:DIV800  ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll3.vhd   ;
-; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |LoQritas|RAMx32:RAM32 ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/ramx32.vhd ;
+; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |LoQritas|RAMx32:RAM32 ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/RAMx32.vhd ;
 +--------+--------------+---------+--------------+--------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -314,20 +317,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+----------------------------------------+
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|rden_b_store ; Lost fanout                            ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0]                                                    ; Stuck at GND due to stuck port data_in ;
-; CAPdiez:CAP10|v_count[1..9]                                                              ; Lost fanout                            ;
-; Total Number of Removed Registers = 11                                                   ;                                        ;
+; centroID:cID|mostLoc[9]                                                                  ; Stuck at GND due to stuck port data_in ;
+; centroID:cID|lastLoc[9]                                                                  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4                                                    ;                                        ;
 +------------------------------------------------------------------------------------------+----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                   ;
-+--------------------------+--------------------+-------------------------------------------------------------------------------+
-; Register name            ; Reason for Removal ; Registers Removed due to This Register                                        ;
-+--------------------------+--------------------+-------------------------------------------------------------------------------+
-; CAPdiez:CAP10|v_count[9] ; Lost Fanouts       ; CAPdiez:CAP10|v_count[8], CAPdiez:CAP10|v_count[7], CAPdiez:CAP10|v_count[6], ;
-;                          ;                    ; CAPdiez:CAP10|v_count[5], CAPdiez:CAP10|v_count[4], CAPdiez:CAP10|v_count[3], ;
-;                          ;                    ; CAPdiez:CAP10|v_count[2], CAPdiez:CAP10|v_count[1]                            ;
-+--------------------------+--------------------+-------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                  ;
++-------------------------+---------------------------+----------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------+---------------------------+----------------------------------------+
+; centroID:cID|mostLoc[9] ; Stuck at GND              ; centroID:cID|lastLoc[9]                ;
+;                         ; due to stuck port data_in ;                                        ;
++-------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -335,23 +338,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 194   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 139   ;
+; Total registers                              ; 239   ;
+; Number of registers using Synchronous Clear  ; 19    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 184   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 78    ;
+; Number of registers using Clock Enable       ; 124   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |LoQritas|VGA_generator:VGApart|RAMadr[9] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|mostLoc[1]          ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |LoQritas|centroID:cID|whiteCount[3]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |LoQritas|VGA_generator:VGApart|RAMadr[10] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -1625,7 +1630,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:4:FA"                                                 ;
+; Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:4:FA"                                                 ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1635,7 +1640,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------+
-; Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:3:FA" ;
+; Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:3:FA" ;
 +------+-------+----------+--------------------------------------+
 ; Port ; Type  ; Severity ; Details                              ;
 +------+-------+----------+--------------------------------------+
@@ -1644,7 +1649,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------+
-; Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:2:FA" ;
+; Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:2:FA" ;
 +------+-------+----------+--------------------------------------+
 ; Port ; Type  ; Severity ; Details                              ;
 +------+-------+----------+--------------------------------------+
@@ -1653,7 +1658,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------+
-; Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:1:FA" ;
+; Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:1:FA" ;
 +------+-------+----------+--------------------------------------+
 ; Port ; Type  ; Severity ; Details                              ;
 +------+-------+----------+--------------------------------------+
@@ -1662,13 +1667,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------+
-; Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:0:FA" ;
+; Port Connectivity Checks: "CAPonce:CAP11|FullAdd:\RipCar:0:FA" ;
 +------+-------+----------+--------------------------------------+
 ; Port ; Type  ; Severity ; Details                              ;
 +------+-------+----------+--------------------------------------+
 ; da   ; Input ; Info     ; Stuck at GND                         ;
 ; ci   ; Input ; Info     ; Stuck at GND                         ;
 +------+-------+----------+--------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "CAPonce:CAP11" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; d_in[3] ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
 
 
 +-------------------------------------------+
@@ -1708,26 +1722,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 17 23:28:26 2024
+    Info: Processing started: Mon Jun 24 02:12:40 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LoQritas -c LoQritas
 Warning (125092): Tcl Script File output_files/pll3.qip not found
     Info (125063): set_global_assignment -name QIP_FILE output_files/pll3.qip
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file ramx32.vhd
+    Info (12022): Found design unit 1: ramx32-SYN
+    Info (12023): Found entity 1: RAMx32
+Info (12021): Found 2 design units, including 1 entities, in source file pll3.vhd
+    Info (12022): Found design unit 1: pll3-SYN
+    Info (12023): Found entity 1: pll3
+Info (12021): Found 2 design units, including 1 entities, in source file z_1.vhd
+    Info (12022): Found design unit 1: Z_1-shape
+    Info (12023): Found entity 1: Z_1
+Info (12021): Found 2 design units, including 1 entities, in source file vga_generator.vhd
+    Info (12022): Found design unit 1: VGA_generator-behaviour
+    Info (12023): Found entity 1: VGA_generator
+Info (12021): Found 2 design units, including 1 entities, in source file sccbdrive.vhd
+    Info (12022): Found design unit 1: SCCBdrive-shape
+    Info (12023): Found entity 1: SCCBdrive
+Info (12021): Found 2 design units, including 1 entities, in source file pll2.vhd
+    Info (12022): Found design unit 1: pll2-SYN
+    Info (12023): Found entity 1: pll2
+Info (12021): Found 2 design units, including 1 entities, in source file pll1.vhd
+    Info (12022): Found design unit 1: pll1-SYN
+    Info (12023): Found entity 1: pll1
+Info (12021): Found 2 design units, including 1 entities, in source file p2sreg.vhd
+    Info (12022): Found design unit 1: P2Sreg-shape
+    Info (12023): Found entity 1: P2Sreg
+Info (12021): Found 2 design units, including 1 entities, in source file fulladd.vhd
+    Info (12022): Found design unit 1: FullAdd-shape
+    Info (12023): Found entity 1: FullAdd
+Info (12021): Found 2 design units, including 1 entities, in source file div800k.vhd
+    Info (12022): Found design unit 1: div800k-shape
+    Info (12023): Found entity 1: div800k
+Info (12021): Found 2 design units, including 1 entities, in source file caponce.vhd
+    Info (12022): Found design unit 1: CAPonce-shape
+    Info (12023): Found entity 1: CAPonce
+Info (12021): Found 2 design units, including 1 entities, in source file capdiez.vhd
+    Info (12022): Found design unit 1: CAPdiez-shape
+    Info (12023): Found entity 1: CAPdiez
 Info (12021): Found 2 design units, including 1 entities, in source file loqritas.vhd
     Info (12022): Found design unit 1: LoQritas-shape
     Info (12023): Found entity 1: LoQritas
+Info (12021): Found 2 design units, including 1 entities, in source file geoloc.vhd
+    Info (12022): Found design unit 1: GeoLoc-shape
+    Info (12023): Found entity 1: GeoLoc
+Info (12021): Found 2 design units, including 1 entities, in source file centroid.vhd
+    Info (12022): Found design unit 1: centroID-shape
+    Info (12023): Found entity 1: centroID
 Info (12127): Elaborating entity "LoQritas" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(153): object "vgaLive" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(163): object "HvgaCnt" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(164): object "VvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(197): object "camVsync" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(213): object "vgaLive" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(223): object "HvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(224): object "VvgaCnt" assigned a value but never read
 Warning (10873): Using initial value X (don't care) for net "LEDG[2..1]" at LoQritas.vhd(11)
-Warning (12125): Using design file vga_generator.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: VGA_generator-behaviour
-    Info (12023): Found entity 1: VGA_generator
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[30]" at LoQritas.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[28..18]" at LoQritas.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[16]" at LoQritas.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[13..1]" at LoQritas.vhd(13)
 Info (12128): Elaborating entity "VGA_generator" for hierarchy "VGA_generator:VGApart"
-Warning (12125): Using design file pll2.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: pll2-SYN
-    Info (12023): Found entity 1: pll2
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:CLK_25M"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll2:CLK_25M|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pll2:CLK_25M|altpll:altpll_component"
@@ -1789,9 +1844,6 @@ Info (12133): Instantiated megafunction "pll2:CLK_25M|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll2_altpll.v
     Info (12023): Found entity 1: pll2_altpll
 Info (12128): Elaborating entity "pll2_altpll" for hierarchy "pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated"
-Warning (12125): Using design file ramx32.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ramx32-SYN
-    Info (12023): Found entity 1: RAMx32
 Info (12128): Elaborating entity "RAMx32" for hierarchy "RAMx32:RAM32"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "RAMx32:RAM32|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "RAMx32:RAM32|altsyncram:altsyncram_component"
@@ -1855,21 +1907,10 @@ Info (12128): Elaborating entity "decode_ira" for hierarchy "RAMx32:RAM32|altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ulb.tdf
     Info (12023): Found entity 1: mux_ulb
 Info (12128): Elaborating entity "mux_ulb" for hierarchy "RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3"
-Warning (12125): Using design file capdiez.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: CAPdiez-shape
-    Info (12023): Found entity 1: CAPdiez
-Info (12128): Elaborating entity "CAPdiez" for hierarchy "CAPdiez:CAP10"
-Warning (12125): Using design file z_1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: Z_1-shape
-    Info (12023): Found entity 1: Z_1
-Info (12128): Elaborating entity "Z_1" for hierarchy "CAPdiez:CAP10|Z_1:DEPHASE"
-Warning (12125): Using design file fulladd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: FullAdd-shape
-    Info (12023): Found entity 1: FullAdd
-Info (12128): Elaborating entity "FullAdd" for hierarchy "CAPdiez:CAP10|FullAdd:\RipCar:0:FA"
-Warning (12125): Using design file pll1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: pll1-SYN
-    Info (12023): Found entity 1: pll1
+Info (12128): Elaborating entity "CAPonce" for hierarchy "CAPonce:CAP11"
+Info (12128): Elaborating entity "Z_1" for hierarchy "CAPonce:CAP11|Z_1:DEPHASE"
+Info (12128): Elaborating entity "FullAdd" for hierarchy "CAPonce:CAP11|FullAdd:\RipCar:0:FA"
+Info (12128): Elaborating entity "centroID" for hierarchy "centroID:cID"
 Info (12128): Elaborating entity "pll1" for hierarchy "pll1:CLK_24M"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll1:CLK_24M|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pll1:CLK_24M|altpll:altpll_component"
@@ -1932,9 +1973,6 @@ Info (12133): Instantiated megafunction "pll1:CLK_24M|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll1_altpll.v
     Info (12023): Found entity 1: pll1_altpll
 Info (12128): Elaborating entity "pll1_altpll" for hierarchy "pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated"
-Warning (12125): Using design file pll3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: pll3-SYN
-    Info (12023): Found entity 1: pll3
 Info (12128): Elaborating entity "pll3" for hierarchy "pll3:DIV800"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll3:DIV800|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pll3:DIV800|altpll:altpll_component"
@@ -1996,9 +2034,6 @@ Info (12133): Instantiated megafunction "pll3:DIV800|altpll:altpll_component" wi
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll3_altpll.v
     Info (12023): Found entity 1: pll3_altpll
 Info (12128): Elaborating entity "pll3_altpll" for hierarchy "pll3:DIV800|altpll:altpll_component|pll3_altpll:auto_generated"
-Warning (12125): Using design file sccbdrive.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: SCCBdrive-shape
-    Info (12023): Found entity 1: SCCBdrive
 Info (12128): Elaborating entity "SCCBdrive" for hierarchy "SCCBdrive:SCCBdriver"
 Warning (10540): VHDL Signal Declaration warning at sccbdrive.vhd(45): used explicit default value for signal "nullMssg" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at sccbdrive.vhd(46): used explicit default value for signal "COM7" because signal was never assigned a value
@@ -2031,19 +2066,40 @@ Info (10041): Inferred latch for "mailbox[23]" at sccbdrive.vhd(84)
 Info (10041): Inferred latch for "mailbox[24]" at sccbdrive.vhd(84)
 Info (10041): Inferred latch for "mailbox[25]" at sccbdrive.vhd(84)
 Info (10041): Inferred latch for "mailbox[26]" at sccbdrive.vhd(84)
-Warning (12125): Using design file p2sreg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: P2Sreg-shape
-    Info (12023): Found entity 1: P2Sreg
 Info (12128): Elaborating entity "P2Sreg" for hierarchy "SCCBdrive:SCCBdriver|P2Sreg:REGS"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer SCCBdrive:SCCBdriver|C_Eedge~0
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[1]" is stuck at GND
     Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[1]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[2]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[3]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[4]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[5]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[6]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[7]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[8]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[9]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[10]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[11]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[12]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[13]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[16]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[18]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[19]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[20]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[21]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[22]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[23]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[24]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[25]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[26]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[27]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[28]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[30]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
-Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "CAPdiez:CAP10|Add1~0"
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity DE0_Default -section_id "Root Region" was ignored
     Warning (20014): Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity DE0_Default -section_id "Root Region" was ignored
@@ -2073,22 +2129,42 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 3 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
+Warning (21074): Design contains 26 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "GPIO1_D[0]"
     Warning (15610): No output dependent on input pin "GPIO1_D[1]"
     Warning (15610): No output dependent on input pin "GPIO1_D[2]"
     Warning (15610): No output dependent on input pin "GPIO1_D[3]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[5]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[7]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[9]"
     Warning (15610): No output dependent on input pin "GPIO1_D[10]"
-Info (21057): Implemented 429 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 350 logic cells
+    Warning (15610): No output dependent on input pin "GPIO1_D[11]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[12]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[13]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[14]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[15]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[16]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[17]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[18]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[19]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[20]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[21]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[22]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[23]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[24]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[25]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[27]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[29]"
+Info (21057): Implemented 544 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 42 input pins
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 419 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 3 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 4700 megabytes
-    Info: Processing ended: Mon Jun 17 23:28:29 2024
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 99 warnings
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Mon Jun 24 02:12:43 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

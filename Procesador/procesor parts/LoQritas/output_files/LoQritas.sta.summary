@@ -2,83 +2,83 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CAPdiez:CAP10|CAPclk'
-Slack : -3.174
-TNS   : -283.379
+Type  : Slow 1200mV 85C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -4.075
+TNS   : -4.075
+
+Type  : Slow 1200mV 85C Model Setup 'CAPonce:CAP11|CAPclk'
+Slack : -3.460
+TNS   : -447.102
 
 Type  : Slow 1200mV 85C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -1.809
-TNS   : -33.594
+Slack : -1.536
+TNS   : -28.464
 
-Type  : Slow 1200mV 85C Model Setup 'GPIO1_D[8]'
-Slack : -0.088
-TNS   : -0.336
+Type  : Slow 1200mV 85C Model Setup 'GPIO1_D[4]'
+Slack : -0.051
+TNS   : -0.197
 
-Type  : Slow 1200mV 85C Model Setup 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.092
+Type  : Slow 1200mV 85C Model Setup 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : -0.024
+TNS   : -0.024
+
+Type  : Slow 1200mV 85C Model Setup 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.101
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'SCCBdrive:SCCBdriver|clk400'
-Slack : 0.146
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Setup 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.243
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.210
+Slack : 0.139
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.600
-TNS   : -1.748
+Slack : -0.602
+TNS   : -1.612
 
 Type  : Slow 1200mV 85C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -0.291
-TNS   : -2.189
+Slack : -0.156
+TNS   : -1.087
 
-Type  : Slow 1200mV 85C Model Hold 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.045
+Type  : Slow 1200mV 85C Model Hold 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : 0.137
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'GPIO1_D[8]'
-Slack : 0.361
+Type  : Slow 1200mV 85C Model Hold 'GPIO1_D[4]'
+Slack : 0.362
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'SCCBdrive:SCCBdriver|clk400'
 Slack : 0.385
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CAPdiez:CAP10|CAPclk'
-Slack : 0.390
+Type  : Slow 1200mV 85C Model Hold 'CAPonce:CAP11|CAPclk'
+Slack : 0.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.568
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -1.500
-TNS   : -2.800
+Slack : -1.659
+TNS   : -12.410
 
 Type  : Slow 1200mV 85C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
-Slack : 0.014
+Slack : 0.309
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO1_D[8]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO1_D[4]'
 Slack : -3.000
-TNS   : -15.324
+TNS   : -15.540
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CAPdiez:CAP10|CAPclk'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CAPonce:CAP11|CAPclk'
 Slack : -2.174
-TNS   : -236.704
+TNS   : -281.704
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
 Slack : -1.000
 TNS   : -55.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
 Slack : -1.000
 TNS   : -1.000
 
@@ -87,62 +87,62 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
-Slack : 0.393
+Slack : 0.472
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 4.815
+Slack : 4.817
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 9.647
+Slack : 9.650
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 312.253
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'CAPdiez:CAP10|CAPclk'
-Slack : -2.919
-TNS   : -249.555
+Type  : Slow 1200mV 0C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.649
+TNS   : -3.649
+
+Type  : Slow 1200mV 0C Model Setup 'CAPonce:CAP11|CAPclk'
+Slack : -3.073
+TNS   : -390.447
 
 Type  : Slow 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -1.530
-TNS   : -24.623
+Slack : -1.256
+TNS   : -19.865
 
-Type  : Slow 1200mV 0C Model Setup 'GPIO1_D[8]'
-Slack : -0.015
-TNS   : -0.056
+Type  : Slow 1200mV 0C Model Setup 'GPIO1_D[4]'
+Slack : -0.010
+TNS   : -0.034
 
-Type  : Slow 1200mV 0C Model Setup 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.153
+Type  : Slow 1200mV 0C Model Setup 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : 0.039
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400'
-Slack : 0.239
+Slack : 0.232
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.372
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.110
+Slack : 0.251
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.636
-TNS   : -1.882
+Slack : -0.639
+TNS   : -1.752
 
 Type  : Slow 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -0.172
-TNS   : -0.917
+Slack : -0.053
+TNS   : -0.114
 
-Type  : Slow 1200mV 0C Model Hold 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.017
+Type  : Slow 1200mV 0C Model Hold 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : 0.116
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'GPIO1_D[8]'
+Type  : Slow 1200mV 0C Model Hold 'GPIO1_D[4]'
 Slack : 0.320
 TNS   : 0.000
 
@@ -150,35 +150,35 @@ Type  : Slow 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400'
 Slack : 0.341
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CAPdiez:CAP10|CAPclk'
-Slack : 0.347
+Type  : Slow 1200mV 0C Model Hold 'CAPonce:CAP11|CAPclk'
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.510
+Slack : 0.363
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -1.291
-TNS   : -1.654
+Slack : -1.438
+TNS   : -9.864
 
 Type  : Slow 1200mV 0C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
-Slack : 0.069
+Slack : 0.351
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO1_D[8]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO1_D[4]'
 Slack : -3.000
-TNS   : -15.132
+TNS   : -15.112
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CAPdiez:CAP10|CAPclk'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CAPonce:CAP11|CAPclk'
 Slack : -2.174
-TNS   : -236.704
+TNS   : -281.704
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
 Slack : -1.000
 TNS   : -55.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
 Slack : -1.000
 TNS   : -1.000
 
@@ -187,7 +187,7 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
-Slack : 0.444
+Slack : 0.483
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
@@ -195,59 +195,59 @@ Slack : 4.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 9.677
+Slack : 9.676
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 312.248
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'CAPdiez:CAP10|CAPclk'
-Slack : -2.101
-TNS   : -148.416
+Type  : Fast 1200mV 0C Model Setup 'CAPonce:CAP11|CAPclk'
+Slack : -2.317
+TNS   : -236.424
+
+Type  : Fast 1200mV 0C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.282
+TNS   : -2.282
 
 Type  : Fast 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -0.643
-TNS   : -6.460
+Slack : -0.473
+TNS   : -3.507
 
-Type  : Fast 1200mV 0C Model Setup 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.273
+Type  : Fast 1200mV 0C Model Setup 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.320
+Slack : 0.239
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'SCCBdrive:SCCBdriver|clk400'
-Slack : 0.529
+Slack : 0.525
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'GPIO1_D[8]'
-Slack : 0.577
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 5.142
+Type  : Fast 1200mV 0C Model Setup 'GPIO1_D[4]'
+Slack : 0.590
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'DIV800|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.411
-TNS   : -1.169
+Slack : -0.413
+TNS   : -1.104
 
 Type  : Fast 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -0.326
-TNS   : -3.454
+Slack : -0.245
+TNS   : -2.761
 
-Type  : Fast 1200mV 0C Model Hold 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
-Slack : 0.020
+Type  : Fast 1200mV 0C Model Hold 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
+Slack : 0.051
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'GPIO1_D[8]'
-Slack : 0.050
+Type  : Fast 1200mV 0C Model Hold 'GPIO1_D[4]'
+Slack : 0.068
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'CAPdiez:CAP10|CAPclk'
-Slack : 0.203
+Type  : Fast 1200mV 0C Model Hold 'CAPonce:CAP11|CAPclk'
+Slack : 0.205
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'SCCBdrive:SCCBdriver|clk400'
@@ -255,30 +255,30 @@ Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.304
+Slack : 0.210
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'SCCBdrive:SCCBdriver|clk400data'
-Slack : -0.623
-TNS   : -0.623
+Slack : -0.714
+TNS   : -0.714
 
 Type  : Fast 1200mV 0C Model Removal 'SCCBdrive:SCCBdriver|clk400data'
-Slack : 0.114
+Slack : 0.309
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO1_D[8]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO1_D[4]'
 Slack : -3.000
-TNS   : -20.869
+TNS   : -22.550
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CAPdiez:CAP10|CAPclk'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CAPonce:CAP11|CAPclk'
 Slack : -1.000
-TNS   : -124.000
+TNS   : -169.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|clk400data'
 Slack : -1.000
 TNS   : -55.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CAPdiez:CAP10|Z_1:DEPHASE|Qd[1]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CAPonce:CAP11|Z_1:DEPHASE|Qd[1]'
 Slack : -1.000
 TNS   : -1.000
 
@@ -287,7 +287,7 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCCBdrive:SCCBdriver|C_E'
-Slack : 0.395
+Slack : 0.472
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
@@ -295,7 +295,7 @@ Slack : 4.585
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_25M|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 9.654
+Slack : 9.636
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DIV800|altpll_component|auto_generated|pll1|clk[0]'

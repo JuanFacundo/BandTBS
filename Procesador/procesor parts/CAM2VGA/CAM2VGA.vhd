@@ -10,14 +10,14 @@ entity CAM2VGA is
 		SW				: in std_logic_vector(10 downto 0);
 		LEDG			: out std_logic_vector(2 downto 0);
 		
-		GPIO0_D		: out std_logic_vector(4 downto 0);
+		GPIO0_D		: out std_logic_vector(30 downto 0);
 		--GPIO0_D0	: SIO_C
 		--GPIO0_D1	: SIO_D
 		--GPIO0_D2	: MCLK
 		--GPIO0_D3	: PWDN
 		--GPIO0_D4  : RST
 		
-		GPIO1_D		: in std_logic_vector(10 downto 0);
+		GPIO1_D		: in std_logic_vector(30 downto 0);
 		--GPIO1_D0	: D0
 		--GPIO1_D1	: D1
 		--GPIO1_D2	: D2
@@ -128,6 +128,22 @@ component div800k is
 	);
 end component;
 
+
+
+--IO signals
+--out signals
+signal SIO_C				: std_logic;	--GPIO0_D0	: SIO_C
+signal SIO_D				: std_logic;	--GPIO0_D29	: SIO_D
+signal MCLK					: std_logic;	--GPIO0_D17	: MCLK
+signal PWDN					: std_logic;	--GPIO0_D15	: PWDN
+signal camRST				: std_logic;	--GPIO0_D13 : RST
+--in signals
+signal camData				: std_logic_vector(7 downto 0);  --6 28 8 26 open 24 10 22
+signal camPCLK				: std_logic;	--GPIO1_D4
+signal camHREF				: std_logic;	--GPIO1_D30
+signal camVsync			: std_logic;	--GPIO1_D2
+
+
 --clocks
 signal clk25M				: std_logic;
 signal clk24M				: std_logic;
@@ -162,6 +178,18 @@ signal rstMssg			: std_logic;
 signal weLIVE			: std_logic;
 
 begin
+	
+	--out signals
+	GPIO0_D(0) <= SIO_C;
+	GPIO0_D(29) <= SIO_D;
+	GPIO0_D(17) <= MCLK;
+	GPIO0_D(15) <= PWDN;
+	GPIO0_D(14) <= camRST;
+	--in signals
+	camData	<= GPIO1_D(6) & GPIO1_D(28) & GPIO1_D(8) & GPIO1_D(26) & '0' & GPIO1_D(24) & GPIO1_D(10) & GPIO1_D(22);  --6 28 8 26 open 24 10 22
+	camPCLK	<=	GPIO1_D(4);
+	camHREF	<=	GPIO1_D(30);
+	camVsync	<= GPIO1_D(2);
 	
 	VGApart: VGA_generator port map(
 		clock_25MHz => clk25M,				--: in std_logic;
@@ -214,9 +242,9 @@ begin
 	
 	CAP10: CAPdiez port map(
 		rst		=> not(SW(3)),--GPIO1_D(10),						--: in std_logic;
-		D_in		=> GPIO1_D(7 downto 0),		--: in std_logic_vector(7 downto 0);
-		PCLK		=> GPIO1_D(8),					--: in std_logic;
-		HREF		=> GPIO1_D(9),					--: in std_logic;
+		D_in		=> camData,		--: in std_logic_vector(7 downto 0);
+		PCLK		=> camPCLK,					--: in std_logic;
+		HREF		=> camHREF,					--: in std_logic;
 		
 		D_out		=> wRAM,							--: out std_logic_vector(3 downto 0);
 		RAMadr	=> wRAMadr,						--: out std_logic_vector(15 downto 0);
@@ -225,15 +253,15 @@ begin
 	
 	CLK_24M: pll1 port map(areset => SW(1), inclk0 => CLOCK_50, c0 => clk24M, locked => open);
 	
-	GPIO0_D(2) <= clk24M;
+	MCLK <= clk24M;
 	
 	rstMssg <= not(SW(0));
 	
 	DIV800: div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
 	
-	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => GPIO0_D(0), SIO_D => GPIO0_D(1), LIVE => LEDG(0));
+	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => SIO_C, SIO_D => SIO_D, LIVE => LEDG(0));
 	
-	GPIO0_D(3) <= SW(2);		--PWDN
-	GPIO0_D(4) <= SW(3);		--RST
+	PWDN <= SW(2);		--PWDN
+	camRST <= SW(3);		--RST
 	
 end shape;

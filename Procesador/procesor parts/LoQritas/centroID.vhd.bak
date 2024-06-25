@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity centroID is
+	port(
+		newPix						: in std_logic_vector(3 downto 0);
+		pixCLK						: in std_logic;
+		HREF							: in std_logic;
+		h_count						: in std_logic_vector(9 downto 0);
+		v_count						: in std_logic_vector(9 downto 0);
+		
+		c_X							: out std_logic_vector(9 downto 0);
+		c_Y							: out std_logic_vector(9 downto 0)
+	);
+end entity;
+
+
+
+
+
+
+architecture shape of centroID is

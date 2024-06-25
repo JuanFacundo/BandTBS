@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CAM2VGA
-Thu Jun 13 10:58:52 2024
+Sun Jun 23 10:44:55 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -29,10 +29,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  21. Port Connectivity Checks: "pll1:CLK_24M"
  22. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:4:FA"
  23. Port Connectivity Checks: "CAPdiez:CAP10|FullAdd:\RipCar:0:FA"
- 24. Port Connectivity Checks: "RAMx32:RAM32"
- 25. Port Connectivity Checks: "VGA_generator:VGApart"
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 24. Port Connectivity Checks: "CAPdiez:CAP10"
+ 25. Port Connectivity Checks: "RAMx32:RAM32"
+ 26. Port Connectivity Checks: "VGA_generator:VGApart"
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -58,16 +59,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 13 10:58:52 2024      ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 23 10:44:55 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; CAM2VGA                                    ;
 ; Top-level Entity Name              ; CAM2VGA                                    ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 361                                        ;
-;     Total combinational functions  ; 340                                        ;
-;     Dedicated logic registers      ; 205                                        ;
-; Total registers                    ; 205                                        ;
-; Total pins                         ; 45                                         ;
+; Total logic elements               ; 359                                        ;
+;     Total combinational functions  ; 339                                        ;
+;     Dedicated logic registers      ; 204                                        ;
+; Total registers                    ; 204                                        ;
+; Total pins                         ; 91                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -171,12 +172,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-8         ;   0.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -222,23 +223,23 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                            ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 361                                                                              ;
+; Estimated Total logic elements              ; 359                                                                              ;
 ;                                             ;                                                                                  ;
-; Total combinational functions               ; 340                                                                              ;
+; Total combinational functions               ; 339                                                                              ;
 ; Logic element usage by number of LUT inputs ;                                                                                  ;
 ;     -- 4 input functions                    ; 102                                                                              ;
 ;     -- 3 input functions                    ; 76                                                                               ;
-;     -- <=2 input functions                  ; 162                                                                              ;
+;     -- <=2 input functions                  ; 161                                                                              ;
 ;                                             ;                                                                                  ;
 ; Logic elements by mode                      ;                                                                                  ;
-;     -- normal mode                          ; 250                                                                              ;
+;     -- normal mode                          ; 249                                                                              ;
 ;     -- arithmetic mode                      ; 90                                                                               ;
 ;                                             ;                                                                                  ;
-; Total registers                             ; 205                                                                              ;
-;     -- Dedicated logic registers            ; 205                                                                              ;
+; Total registers                             ; 204                                                                              ;
+;     -- Dedicated logic registers            ; 204                                                                              ;
 ;     -- I/O registers                        ; 0                                                                                ;
 ;                                             ;                                                                                  ;
-; I/O pins                                    ; 45                                                                               ;
+; I/O pins                                    ; 91                                                                               ;
 ; Total memory bits                           ; 262144                                                                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                ;
 ; Total PLLs                                  ; 2                                                                                ;
@@ -246,8 +247,8 @@ applicable agreement for further details.
 ;                                             ;                                                                                  ;
 ; Maximum fan-out node                        ; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 87                                                                               ;
-; Total fan-out                               ; 2640                                                                             ;
-; Average fan-out                             ; 3.95                                                                             ;
+; Total fan-out                               ; 2681                                                                             ;
+; Average fan-out                             ; 3.53                                                                             ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
 
 
@@ -256,13 +257,13 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |CAM2VGA                                  ; 340 (1)           ; 205 (0)      ; 262144      ; 0            ; 0       ; 0         ; 45   ; 0            ; |CAM2VGA                                                                                                      ; work         ;
-;    |CAPdiez:CAP10|                        ; 66 (56)           ; 47 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10                                                                                        ; work         ;
+; |CAM2VGA                                  ; 339 (1)           ; 204 (0)      ; 262144      ; 0            ; 0       ; 0         ; 91   ; 0            ; |CAM2VGA                                                                                                      ; work         ;
+;    |CAPdiez:CAP10|                        ; 65 (54)           ; 46 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10                                                                                        ; work         ;
 ;       |FullAdd:\RipCar:0:FA|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:0:FA                                                                   ; work         ;
 ;       |FullAdd:\RipCar:1:FA|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:1:FA                                                                   ; work         ;
 ;       |FullAdd:\RipCar:2:FA|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:2:FA                                                                   ; work         ;
-;       |FullAdd:\RipCar:3:FA|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:3:FA                                                                   ; work         ;
-;       |FullAdd:\RipCar:4:FA|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:4:FA                                                                   ; work         ;
+;       |FullAdd:\RipCar:3:FA|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:3:FA                                                                   ; work         ;
+;       |FullAdd:\RipCar:4:FA|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|FullAdd:\RipCar:4:FA                                                                   ; work         ;
 ;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|CAPdiez:CAP10|Z_1:DEPHASE                                                                            ; work         ;
 ;    |RAMx32:RAM32|                         ; 31 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|RAMx32:RAM32                                                                                         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 31 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CAM2VGA|RAMx32:RAM32|altsyncram:altsyncram_component                                                         ; work         ;
@@ -309,10 +310,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+----------------------------------------+
 ; Register name                                                                            ; Reason for Removal                     ;
 +------------------------------------------------------------------------------------------+----------------------------------------+
+; CAPdiez:CAP10|QinReg[3]                                                                  ; Stuck at GND due to stuck port data_in ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|rden_b_store ; Lost fanout                            ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[0]                                                    ; Stuck at GND due to stuck port data_in ;
 ; CAPdiez:CAP10|v_count[1..9]                                                              ; Lost fanout                            ;
-; Total Number of Removed Registers = 11                                                   ;                                        ;
+; Total Number of Removed Registers = 12                                                   ;                                        ;
 +------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -332,10 +334,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 205   ;
+; Total registers                              ; 204   ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 151   ;
+; Number of registers using Asynchronous Clear ; 150   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 77    ;
 ; Number of registers using Preset             ; 0     ;
@@ -1258,6 +1260,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------+
+; Port Connectivity Checks: "CAPdiez:CAP10" ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; d_in[3] ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------------------+
 ; Port Connectivity Checks: "RAMx32:RAM32"  ;
 +---------+-------+----------+--------------+
 ; Port    ; Type  ; Severity ; Details      ;
@@ -1294,7 +1305,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 13 10:58:44 2024
+    Info: Processing started: Sun Jun 23 10:44:53 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CAM2VGA -c CAM2VGA
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file z_1.vhd
@@ -1317,10 +1328,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file ramx32.
     Info (12022): Found design unit 1: ramx32-SYN
     Info (12023): Found entity 1: RAMx32
 Info (12127): Elaborating entity "CAM2VGA" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(144): object "vgaLive" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(154): object "HvgaCnt" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(155): object "VvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(144): object "camVsync" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(160): object "vgaLive" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(170): object "HvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at CAM2VGA.vhd(171): object "VvgaCnt" assigned a value but never read
 Warning (10873): Using initial value X (don't care) for net "LEDG[2..1]" at CAM2VGA.vhd(11)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[30]" at CAM2VGA.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[28..18]" at CAM2VGA.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[16]" at CAM2VGA.vhd(13)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[13..1]" at CAM2VGA.vhd(13)
 Info (12128): Elaborating entity "VGA_generator" for hierarchy "VGA_generator:VGApart"
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:CLK_25M"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll2:CLK_25M|altpll:altpll_component"
@@ -1565,6 +1581,32 @@ Warning (19016): Clock multiplexers are found and protected
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[1]" is stuck at GND
     Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[1]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[2]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[3]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[4]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[5]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[6]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[7]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[8]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[9]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[10]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[11]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[12]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[13]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[16]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[18]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[19]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[20]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[21]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[22]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[23]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[24]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[25]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[26]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[27]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[28]" is stuck at GND
+    Warning (13410): Pin "GPIO0_D[30]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 10 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
@@ -1598,24 +1640,45 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
+Warning (21074): Design contains 28 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[10]"
-    Warning (15610): No output dependent on input pin "GPIO1_D[10]"
-Info (21057): Implemented 444 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 365 logic cells
+    Warning (15610): No output dependent on input pin "GPIO1_D[0]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[1]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[2]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[3]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[5]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[7]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[9]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[11]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[12]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[13]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[14]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[15]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[16]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[17]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[18]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[19]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[20]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[21]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[23]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[25]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[27]"
+    Warning (15610): No output dependent on input pin "GPIO1_D[29]"
+Info (21057): Implemented 488 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 43 input pins
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 363 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 4706 megabytes
-    Info: Processing ended: Thu Jun 13 10:58:52 2024
-    Info: Elapsed time: 00:00:08
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 106 warnings
+    Info: Peak virtual memory: 4723 megabytes
+    Info: Processing ended: Sun Jun 23 10:44:55 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
