@@ -96,9 +96,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :      
 GPIO0_D[15]                  : AA4       : output : 3.3-V LVCMOS      :         : 3         : Y              
 GPIO0_D[13]                  : AA5       : output : 3.3-V LVCMOS      :         : 3         : Y              
 VCCIO3                       : AA6       : power  :                   : 3.3V    : 3         :                
-GPIO1_D[16]                  : AA7       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 3         :                
 GPIO0_D[11]                  : AA8       : output : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[15]                  : AA9       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 3         :                
 GPIO0_D[9]                   : AA10      : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : AA11      :        :                   :         : 3         :                
 GND+                         : AA12      :        :                   :         : 4         :                
@@ -106,10 +106,10 @@ GPIO0_D[7]                   : AA13      : output : 3.3-V LVCMOS      :         
 GPIO0_D[4]                   : AA14      : output : 3.3-V LVCMOS      :         : 4         : Y              
 GPIO0_D[2]                   : AA15      : output : 3.3-V LVCMOS      :         : 4         : Y              
 GPIO0_D[1]                   : AA16      : output : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[6]                   : AA17      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[5]                   : AA18      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[2]                   : AA19      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[0]                   : AA20      : input  : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D6                      : AA17      : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4         :                
+GPIO1D2                      : AA19      : input  : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D0                      : AA20      : output : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 5         :                
 GND                          : AB1       : gnd    :                   :         :           :                
@@ -118,9 +118,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :      
 GPIO0_D[14]                  : AB4       : output : 3.3-V LVCMOS      :         : 3         : Y              
 GPIO0_D[12]                  : AB5       : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND                          : AB6       : gnd    :                   :         :           :                
-GPIO1_D[17]                  : AB7       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB7       :        :                   :         : 3         :                
 GPIO0_D[10]                  : AB8       : output : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[14]                  : AB9       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
 GPIO0_D[8]                   : AB10      : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : AB11      :        :                   :         : 3         :                
 GND+                         : AB12      :        :                   :         : 4         :                
@@ -128,10 +128,10 @@ GPIO0_D[6]                   : AB13      : output : 3.3-V LVCMOS      :         
 GPIO0_D[5]                   : AB14      : output : 3.3-V LVCMOS      :         : 4         : Y              
 GPIO0_D[3]                   : AB15      : output : 3.3-V LVCMOS      :         : 4         : Y              
 GPIO0_D[0]                   : AB16      : output : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[7]                   : AB17      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[4]                   : AB18      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[3]                   : AB19      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[1]                   : AB20      : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4         :                
+GPIO1D4                      : AB18      : input  : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D3                      : AB19      : output : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D1                      : AB20      : output : 3.3-V LVCMOS      :         : 4         : Y              
 VCCIO4                       : AB21      : power  :                   : 3.3V    : 4         :                
 GND                          : AB22      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
@@ -430,10 +430,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : R8        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 3         :                
 GPIO0_D[22]                  : R10       : output : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[22]                  : R11       : input  : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[23]                  : R12       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+GPIO1D22                     : R11       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 4         :                
-GPIO1_D[19]                  : R14       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R17       :        :                   :         : 5         :                
@@ -450,13 +450,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :      
 VCCA1                        : T6        : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 2         :                
 GPIO0_D[26]                  : T8        : output : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[27]                  : T9        : input  : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[25]                  : T10       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 3         :                
-GPIO1_D[21]                  : T12       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
 VCCINT                       : T13       : power  :                   : 1.2V    :           :                
-GPIO1_D[18]                  : T14       : input  : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[11]                  : T15       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T17       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T18       :        :                   :         : 5         :                
@@ -471,14 +471,14 @@ VCCIO2                       : U4        : power  :                   : 2.5V    
 GNDA1                        : U5        : gnd    :                   :         :           :                
 VCCD_PLL1                    : U6        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 3         :                
-GPIO1_D[29]                  : U8        : input  : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[26]                  : U9        : input  : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[24]                  : U10       : input  : 3.3-V LVCMOS      :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 3         :                
+GPIO1D26                     : U9        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+GPIO1D24                     : U10       : input  : 3.3-V LVCMOS      :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U11       :        :                   :         : 3         :                
-GPIO1_D[20]                  : U12       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 4         :                
 GPIO0_D[20]                  : U13       : output : 3.3-V LVCMOS      :         : 4         : Y              
 GPIO0_D[17]                  : U14       : output : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[10]                  : U15       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D10                     : U15       : input  : 3.3-V LVCMOS      :         : 4         : Y              
 VCCINT                       : U16       : power  :                   : 1.2V    :           :                
 VCCINT                       : U17       : power  :                   : 1.2V    :           :                
 VCCA4                        : U18       : power  :                   : 2.5V    :           :                
@@ -491,7 +491,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : V2        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : V3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
 GPIO0_D[30]                  : V5        : output : 3.3-V LVCMOS      :         : 3         : Y              
-GPIO1_D[30]                  : V6        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+GPIO1D30                     : V6        : input  : 3.3-V LVCMOS      :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3         :                
 GPIO0_D[27]                  : V8        : output : 3.3-V LVCMOS      :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 3         :                
@@ -500,7 +500,7 @@ GPIO0_D[23]                  : V11       : output : 3.3-V LVCMOS      :         
 GPIO0_D[21]                  : V12       : output : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
 GPIO0_D[16]                  : V14       : output : 3.3-V LVCMOS      :         : 4         : Y              
-GPIO1_D[13]                  : V15       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4         :                
 VCCD_PLL4                    : V17       : power  :                   : 1.2V    :           :                
 GNDA4                        : V18       : gnd    :                   :         :           :                
@@ -522,9 +522,9 @@ VCCIO3                       : W11       : power  :                   : 3.3V    
 VCCIO4                       : W12       : power  :                   : 3.3V    : 4         :                
 GPIO0_D[19]                  : W13       : output : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 4         :                
-GPIO1_D[12]                  : W15       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 4         :                
 VCCIO4                       : W16       : power  :                   : 3.3V    : 4         :                
-GPIO1_D[9]                   : W17       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4         :                
 VCCIO4                       : W18       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W19       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 5         :                
@@ -536,7 +536,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 3         :                
 GND                          : Y5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 3         :                
-GPIO1_D[28]                  : Y7        : input  : 3.3-V LVCMOS      :         : 3         : Y              
+GPIO1D28                     : Y7        : input  : 3.3-V LVCMOS      :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
 GPIO0_D[24]                  : Y10       : output : 3.3-V LVCMOS      :         : 3         : Y              
@@ -546,7 +546,7 @@ GPIO0_D[18]                  : Y13       : output : 3.3-V LVCMOS      :         
 VCCIO4                       : Y14       : power  :                   : 3.3V    : 4         :                
 GND                          : Y15       : gnd    :                   :         :           :                
 GND                          : Y16       : gnd    :                   :         :           :                
-GPIO1_D[8]                   : Y17       : input  : 3.3-V LVCMOS      :         : 4         : Y              
+GPIO1D8                      : Y17       : input  : 3.3-V LVCMOS      :         : 4         : Y              
 GND                          : Y18       : gnd    :                   :         :           :                
 VCCIO5                       : Y19       : power  :                   : 2.5V    : 5         :                
 GND                          : Y20       : gnd    :                   :         :           :                

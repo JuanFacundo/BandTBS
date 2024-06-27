@@ -17,7 +17,19 @@ entity LoQritas is
 		--GPIO0_D	: PWDN
 		--GPIO0_D  : RST
 		
-		GPIO1_D		: in std_logic_vector(30 downto 0);
+		GPIO1D0		: out std_logic;
+		GPIO1D1		: out std_logic;
+		GPIO1D2		: in std_logic;
+		GPIO1D3		: out std_logic;
+		GPIO1D4		: in std_logic;
+		GPIO1D6		: in std_logic;
+		GPIO1D8		: in std_logic;
+		GPIO1D10		: in std_logic;
+		GPIO1D22		: in std_logic;
+		GPIO1D24		: in std_logic;
+		GPIO1D26		: in std_logic;
+		GPIO1D28		: in std_logic;
+		GPIO1D30		: in std_logic;
 		--GPIO1_D	: D0
 		--GPIO1_D	: D1
 		--GPIO1_D	: D2
@@ -171,6 +183,7 @@ end component;
 
 
 --IO signals
+--signal GPIO1_D				: std_logic_vector(30 downto 0);
 --out signals
 signal SIO_C				: std_logic;	--GPIO0_D0	: SIO_C
 signal SIO_D				: std_logic;	--GPIO0_D29	: SIO_D
@@ -243,11 +256,14 @@ begin
 	GPIO0_D(17) <= MCLK;
 	GPIO0_D(15) <= PWDN;
 	GPIO0_D(14) <= camRST;
+	GPIO1D0 <= MCLK;
+	GPIO1D1 <= MCLK;
+	GPIO1D3 <= MCLK;
 	--in signals
-	camData(7 downto 0)	<= GPIO1_D(6) & GPIO1_D(28) & GPIO1_D(8) & GPIO1_D(26) & '0' & GPIO1_D(24) & GPIO1_D(10) & GPIO1_D(22);  --6 28 8 26 open 24 10 22
-	camPCLK	<=	GPIO1_D(4);
-	camHREF	<=	GPIO1_D(30);
-	camVsync	<= GPIO1_D(2);
+	camData(7 downto 0)	<= GPIO1D6 & GPIO1D28 & GPIO1D8 & GPIO1D26 & '0' & GPIO1D24 & GPIO1D10 & GPIO1D22;  --6 28 8 26 open 24 10 22
+	camPCLK	<=	GPIO1D4;
+	camHREF	<=	GPIO1D30;
+	camVsync	<= GPIO1D2;
 	
 	
 	

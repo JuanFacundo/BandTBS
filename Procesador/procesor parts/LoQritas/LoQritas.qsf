@@ -210,15 +210,10 @@ set_location_assignment PIN_AB11 -to GPIO1_CLKIN[0]
 set_location_assignment PIN_T16 -to GPIO1_CLKOUT[1]
 set_location_assignment PIN_R16 -to GPIO1_CLKOUT[0]
 set_location_assignment PIN_V7 -to GPIO1_D[31]
-set_location_assignment PIN_V6 -to GPIO1_D[30]
-set_location_assignment PIN_U8 -to GPIO1_D[29]
-set_location_assignment PIN_Y7 -to GPIO1_D[28]
+set_location_assignment PIN_AA19 -to GPIO1_D[29]
 set_location_assignment PIN_T9 -to GPIO1_D[27]
-set_location_assignment PIN_U9 -to GPIO1_D[26]
 set_location_assignment PIN_T10 -to GPIO1_D[25]
-set_location_assignment PIN_U10 -to GPIO1_D[24]
 set_location_assignment PIN_R12 -to GPIO1_D[23]
-set_location_assignment PIN_R11 -to GPIO1_D[22]
 set_location_assignment PIN_T12 -to GPIO1_D[21]
 set_location_assignment PIN_U12 -to GPIO1_D[20]
 set_location_assignment PIN_R14 -to GPIO1_D[19]
@@ -230,19 +225,10 @@ set_location_assignment PIN_AB9 -to GPIO1_D[14]
 set_location_assignment PIN_V15 -to GPIO1_D[13]
 set_location_assignment PIN_W15 -to GPIO1_D[12]
 set_location_assignment PIN_T15 -to GPIO1_D[11]
-set_location_assignment PIN_U15 -to GPIO1_D[10]
 set_location_assignment PIN_W17 -to GPIO1_D[9]
-set_location_assignment PIN_Y17 -to GPIO1_D[8]
 set_location_assignment PIN_AB17 -to GPIO1_D[7]
-set_location_assignment PIN_AA17 -to GPIO1_D[6]
 set_location_assignment PIN_AA18 -to GPIO1_D[5]
-set_location_assignment PIN_AB18 -to GPIO1_D[4]
-set_location_assignment PIN_AB19 -to GPIO1_D[3]
-set_location_assignment PIN_AA19 -to GPIO1_D[2]
-set_location_assignment PIN_AB20 -to GPIO1_D[1]
-set_location_assignment PIN_AA20 -to GPIO1_D[0]
-set_location_assignment PIN_P22 -to PS2_KBCLK
-set_location_assignment PIN_P21 -to PS2_KBDAT
+set_location_assignment PIN_AB20 -to PS2_KBDAT
 set_location_assignment PIN_R21 -to PS2_MSCLK
 set_location_assignment PIN_R22 -to PS2_MSDAT
 set_location_assignment PIN_U22 -to UART_RXD
@@ -311,7 +297,7 @@ set_location_assignment PIN_B19 -to HEX3_D[3]
 set_location_assignment PIN_A19 -to HEX3_D[2]
 set_location_assignment PIN_F15 -to HEX3_D[1]
 set_location_assignment PIN_B18 -to HEX3_D[0]
-set_location_assignment PIN_G16 -to HEX3_DP
+set_location_assignment PIN_AA20 -to HEX3_DP
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -321,17 +307,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[10]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[0]
 set_global_assignment -name QIP_FILE RAMx32.qip
 set_global_assignment -name QIP_FILE pll3.qip
 set_global_assignment -name VHDL_FILE Z_1.vhd
@@ -377,15 +355,10 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[30]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[29]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[28]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[27]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[26]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[25]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[24]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[23]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[22]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[21]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[20]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[19]
@@ -398,4 +371,30 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[13]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[12]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[11]
 set_global_assignment -name VHDL_FILE centroID.vhd
+set_location_assignment PIN_AA20 -to GPIO1D0
+set_location_assignment PIN_AB20 -to GPIO1D1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D6
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D8
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D10
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D22
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D24
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D26
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D28
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1D30
+set_location_assignment PIN_AA19 -to GPIO1D2
+set_location_assignment PIN_AB19 -to GPIO1D3
+set_location_assignment PIN_AB18 -to GPIO1D4
+set_location_assignment PIN_AA17 -to GPIO1D6
+set_location_assignment PIN_Y17 -to GPIO1D8
+set_location_assignment PIN_U15 -to GPIO1D10
+set_location_assignment PIN_R11 -to GPIO1D22
+set_location_assignment PIN_U10 -to GPIO1D24
+set_location_assignment PIN_U9 -to GPIO1D26
+set_location_assignment PIN_Y7 -to GPIO1D28
+set_location_assignment PIN_V6 -to GPIO1D30
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
