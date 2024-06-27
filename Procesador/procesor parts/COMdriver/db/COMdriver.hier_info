@@ -1,0 +1,121 @@
+|COMdriver
+rst => com_serie:COM_X.reset
+rst => com_serie:COM_Y.reset
+clk50M => div_clk:DIV.Clk_In
+coord_x[0] => com_serie:COM_X.data_in[0]
+coord_x[1] => com_serie:COM_X.data_in[1]
+coord_x[2] => com_serie:COM_X.data_in[2]
+coord_x[3] => com_serie:COM_X.data_in[3]
+coord_x[4] => com_serie:COM_X.data_in[4]
+coord_x[5] => com_serie:COM_X.data_in[5]
+coord_x[6] => com_serie:COM_X.data_in[6]
+coord_x[7] => com_serie:COM_X.data_in[7]
+coord_y[0] => com_serie:COM_Y.data_in[0]
+coord_y[1] => com_serie:COM_Y.data_in[1]
+coord_y[2] => com_serie:COM_Y.data_in[2]
+coord_y[3] => com_serie:COM_Y.data_in[3]
+coord_y[4] => com_serie:COM_Y.data_in[4]
+coord_y[5] => com_serie:COM_Y.data_in[5]
+coord_y[6] => com_serie:COM_Y.data_in[6]
+coord_y[7] => com_serie:COM_Y.data_in[7]
+outSerial[0] <= outSerial[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outSerial[1] <= com_serie:COM_X.data_out
+outSerial[2] <= com_serie:COM_Y.data_out
+
+
+|COMdriver|div_clk:DIV
+Clk_In => Clk_aux.CLK
+Clk_In => counter[0].CLK
+Clk_In => counter[1].CLK
+Clk_In => counter[2].CLK
+Clk_In => counter[3].CLK
+Clk_In => counter[4].CLK
+Clk_In => counter[5].CLK
+Clk_In => counter[6].CLK
+Clk_In => counter[7].CLK
+Clk_In => counter[8].CLK
+Clk_In => counter[9].CLK
+Clk_In => counter[10].CLK
+Clk_Out <= Clk_aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|COMdriver|com_serie:COM_X
+clk => sending.CLK
+clk => data_out~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => shift_reg[4].CLK
+clk => shift_reg[5].CLK
+clk => shift_reg[6].CLK
+clk => shift_reg[7].CLK
+clk => bit_counter[0].CLK
+clk => bit_counter[1].CLK
+clk => bit_counter[2].CLK
+reset => sending.ACLR
+reset => data_out~reg0.ACLR
+reset => shift_reg[0].ACLR
+reset => shift_reg[1].ACLR
+reset => shift_reg[2].ACLR
+reset => shift_reg[3].ACLR
+reset => shift_reg[4].ACLR
+reset => shift_reg[5].ACLR
+reset => shift_reg[6].ACLR
+reset => shift_reg[7].ACLR
+reset => bit_counter[0].ACLR
+reset => bit_counter[1].ACLR
+reset => bit_counter[2].ACLR
+data_in[0] => shift_reg[0].DATAIN
+data_in[1] => shift_reg[1].DATAIN
+data_in[2] => shift_reg[2].DATAIN
+data_in[3] => shift_reg[3].DATAIN
+data_in[4] => shift_reg[4].DATAIN
+data_in[5] => shift_reg[5].DATAIN
+data_in[6] => shift_reg[6].DATAIN
+data_in[7] => shift_reg[7].DATAIN
+send => process_0.IN1
+send => process_0.IN1
+data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|COMdriver|com_serie:COM_Y
+clk => sending.CLK
+clk => data_out~reg0.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => shift_reg[4].CLK
+clk => shift_reg[5].CLK
+clk => shift_reg[6].CLK
+clk => shift_reg[7].CLK
+clk => bit_counter[0].CLK
+clk => bit_counter[1].CLK
+clk => bit_counter[2].CLK
+reset => sending.ACLR
+reset => data_out~reg0.ACLR
+reset => shift_reg[0].ACLR
+reset => shift_reg[1].ACLR
+reset => shift_reg[2].ACLR
+reset => shift_reg[3].ACLR
+reset => shift_reg[4].ACLR
+reset => shift_reg[5].ACLR
+reset => shift_reg[6].ACLR
+reset => shift_reg[7].ACLR
+reset => bit_counter[0].ACLR
+reset => bit_counter[1].ACLR
+reset => bit_counter[2].ACLR
+data_in[0] => shift_reg[0].DATAIN
+data_in[1] => shift_reg[1].DATAIN
+data_in[2] => shift_reg[2].DATAIN
+data_in[3] => shift_reg[3].DATAIN
+data_in[4] => shift_reg[4].DATAIN
+data_in[5] => shift_reg[5].DATAIN
+data_in[6] => shift_reg[6].DATAIN
+data_in[7] => shift_reg[7].DATAIN
+send => process_0.IN1
+send => process_0.IN1
+data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

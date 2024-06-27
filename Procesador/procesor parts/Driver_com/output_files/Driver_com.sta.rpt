@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Driver_com
-Thu Jun 27 18:31:01 2024
+Thu Jun 27 18:48:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -2382,7 +2382,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 27 18:30:59 2024
+    Info: Processing started: Thu Jun 27 18:48:05 2024
 Info: Command: quartus_sta Driver_com -c Driver_com
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
@@ -2491,8 +2491,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 31 warnings
     Info: Peak virtual memory: 4675 megabytes
-    Info: Processing ended: Thu Jun 27 18:31:01 2024
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Thu Jun 27 18:48:06 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

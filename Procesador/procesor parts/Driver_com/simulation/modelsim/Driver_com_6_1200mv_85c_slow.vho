@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "06/27/2024 18:31:02"
+-- DATE "06/27/2024 18:48:08"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -36,7 +36,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	Driver_com IS
     PORT (
 	CLOCK_50 : IN std_logic;
-	GPIO1_D : OUT std_logic_vector(3 DOWNTO 0)
+	GPIO1_D : BUFFER std_logic_vector(3 DOWNTO 0)
 	);
 END Driver_com;
 

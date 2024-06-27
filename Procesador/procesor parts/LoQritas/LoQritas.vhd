@@ -61,6 +61,16 @@ end entity;
 
 architecture shape of LoQritas is
 
+component COMdriver is
+	port(
+		rst				: in std_logic;
+		clk50M			: in std_logic;
+		coord_x  		: in std_logic_vector(7 downto 0);
+		coord_y  		: in std_logic_vector(7 downto 0);
+		
+		outSerial		: out std_logic_vector(2 downto 0)
+	);
+end component;
 
 component RAMx32 is
 	port(
@@ -190,6 +200,7 @@ signal SIO_D				: std_logic;	--GPIO0_D29	: SIO_D
 signal MCLK					: std_logic;	--GPIO0_D17	: MCLK
 signal PWDN					: std_logic;	--GPIO0_D15	: PWDN
 signal camRST				: std_logic;	--GPIO0_D13 : RST
+signal outSerial			: std_logic_vector(2 downto 0);
 --in signals
 signal camData				: std_logic_vector(7 downto 0);  --6 28 8 26 open 24 10 22
 signal camPCLK				: std_logic;	--GPIO1_D4
@@ -245,8 +256,13 @@ signal weLIVE			: std_logic;
 signal rstID				: std_logic;
 signal c_X					: std_logic_vector(9 downto 0);
 signal c_Y					: std_logic_vector(9 downto 0);
+signal c_Xaux				: std_logic_vector(9 downto 0);
 
-signal counter_aux		: std_logic_vector (25 downto 0);
+
+--signal counter_aux		: std_logic_vector (25 downto 0);
+
+
+
 
 begin
 	
@@ -256,9 +272,9 @@ begin
 	GPIO0_D(17) <= MCLK;
 	GPIO0_D(15) <= PWDN;
 	GPIO0_D(14) <= camRST;
-	GPIO1D0 <= MCLK;
-	GPIO1D1 <= MCLK;
-	GPIO1D3 <= MCLK;
+	GPIO1D0 <= outSerial(0);
+	GPIO1D1 <= outSerial(1);
+	GPIO1D3 <= outSerial(2);
 	--in signals
 	camData(7 downto 0)	<= GPIO1D6 & GPIO1D28 & GPIO1D8 & GPIO1D26 & '0' & GPIO1D24 & GPIO1D10 & GPIO1D22;  --6 28 8 26 open 24 10 22
 	camPCLK	<=	GPIO1D4;
@@ -267,6 +283,20 @@ begin
 	
 	
 	
+	
+	
+	c_Xaux <= 
+		c_X - 40 when (c_X > 39) else
+		(others => '0');
+	
+	uCOM: COMdriver port map(
+		rst				=> SW(1),								--: in std_logic;
+		clk50M			=> CLOCK_50,							--: in std_logic;
+		coord_x  		=> c_Xaux(7 downto 0),				--: in std_logic_vector(7 downto 0);
+		coord_y  		=> c_Y(7 downto 0),					--: in std_logic_vector(7 downto 0);
+		
+		outSerial		=> outSerial							--: out std_logic_vector(2 downto 0)
+	);
 	
 	--interconections from screen to cam
 	VGApart: VGA_generator port map(
