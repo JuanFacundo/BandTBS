@@ -1,5 +1,5 @@
 Flow report for Driver_com
-Tue May 28 17:29:49 2024
+Thu Jun 27 16:28:02 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue May 28 17:29:49 2024      ;
+; Flow Status                        ; Successful - Thu Jun 27 16:28:02 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Driver_com                                 ;
 ; Top-level Entity Name              ; Driver_com                                 ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 23 / 15,408 ( < 1 % )                      ;
-;     Total combinational functions  ; 22 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 17 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 17                                         ;
+; Total logic elements               ; 71 / 15,408 ( < 1 % )                      ;
+;     Total combinational functions  ; 69 / 15,408 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 40 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 40                                         ;
 ; Total pins                         ; 4 / 347 ( 1 % )                            ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
@@ -64,29 +64,28 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/28/2024 17:29:34 ;
+; Start date & time ; 06/27/2024 16:27:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Driver_com          ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273184162905132.171692817426920 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 14622752                        ; --            ; DE0_Default ; Top            ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; DE0_Default ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                 ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 273184162905132.171951645125208 ; --            ; --          ; --         ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 14622752                        ; --            ; DE0_Default ; Top        ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; DE0_Default ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -94,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4693 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 5341 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4588 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4672 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4545 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4686 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 5351 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4588 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4675 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4546 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
