@@ -13,7 +13,7 @@ entity Driver_com is
 		CLOCK_50		: in std_logic;
 		--coord_x  : in std_logic_vector(DATA_WIDTH downto 0)
 		--coord_y  : in std_logic_vector(DATA_WIDTH downto 0)
-		GPIO0_D		: out std_logic_vector(2 downto 0)
+		GPIO1_D		: out std_logic_vector(3 downto 0)
 	);
 end entity;
 
@@ -57,17 +57,17 @@ begin
 	     port map (Clk_In => CLOCK_50, Clk_Out => clk_20K);
 		  
    COM_X: com_serie generic map (DATA_WIDTH => 8) 
-	     port map (clk => clk_20K, reset => rst, data_in => coord_x, send => send_aux, data_out => GPIO0_D(1));
+	     port map (clk => clk_20K, reset => rst, data_in => coord_x, send => send_aux, data_out => GPIO1_D(1));
 		  
 	COM_Y: com_serie generic map (DATA_WIDTH => 8) 
-	     port map (clk => clk_20K, reset => rst, data_in => coord_y, send => send_aux, data_out => GPIO0_D(2));
+	     port map (clk => clk_20K, reset => rst, data_in => coord_y, send => send_aux, data_out => GPIO1_D(3));
 		  
   process(clk_20K)
     begin
         if rising_edge(clk_20K) then
 				if bit_counter = 0 then
 					send_aux <= '1';
-					GPIO0_D(0) <= '1';
+					GPIO1_D(0) <= '1';
 				end if;
 				
 				if bit_counter = 3 then
@@ -75,7 +75,7 @@ begin
 				end if;
 				
 				if bit_counter = DATA_WIDTH+2 then
-					GPIO0_D(0) <= '0';
+					GPIO1_D(0) <= '0';
 				end if;
 				
 				if bit_counter = 25000 then

@@ -1,8 +1,9 @@
 |Driver_com
 CLOCK_50 => div_clk:DIV.Clk_In
-GPIO0_D[0] <= GPIO0_D[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-GPIO0_D[1] <= com_serie:COM_X.data_out
-GPIO0_D[2] <= com_serie:COM_Y.data_out
+GPIO1_D[0] <= GPIO1_D[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+GPIO1_D[1] <= com_serie:COM_X.data_out
+GPIO1_D[2] <= <GND>
+GPIO1_D[3] <= com_serie:COM_Y.data_out
 
 
 |Driver_com|div_clk:DIV
