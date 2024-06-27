@@ -1,5 +1,5 @@
 Flow report for LoQritas
-Tue Jun 25 11:30:24 2024
+Thu Jun 27 00:20:09 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 25 11:30:24 2024      ;
+; Flow Status                        ; Successful - Thu Jun 27 00:20:09 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 467 / 15,408 ( 3 % )                       ;
-;     Total combinational functions  ; 441 / 15,408 ( 3 % )                       ;
-;     Dedicated logic registers      ; 278 / 15,408 ( 2 % )                       ;
-; Total registers                    ; 278                                        ;
+; Total logic elements               ; 494 / 15,408 ( 3 % )                       ;
+;     Total combinational functions  ; 447 / 15,408 ( 3 % )                       ;
+;     Dedicated logic registers      ; 298 / 15,408 ( 2 % )                       ;
+; Total registers                    ; 298                                        ;
 ; Total pins                         ; 90 / 347 ( 26 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144 / 516,096 ( 51 % )                 ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/25/2024 11:29:59 ;
+; Start date & time ; 06/27/2024 00:19:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; LoQritas            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 119384633149492.171932579910492       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 119384633149492.171945839107436       ; --            ; --          ; --         ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4699 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:10     ; 1.7                     ; 5356 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4604 MB             ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4692 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4566 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4699 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 5368 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4604 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4696 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4557 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:07                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

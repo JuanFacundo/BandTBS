@@ -110,26 +110,13 @@ component CAPonce is
 	);
 end component;
 
---component GeoLoc is
---	port(
---		clk		: in std_logic;
---		Vsync		: in std_logic;
---		Pixel		: in std_logic_vector(3 downto 0);
---		h_count	: in std_logic_vector(9 downto 0);
---		v_count	: in std_logic_vector(9 downto 0);
---		
---		X_loc		: out std_logic_vector(7 downto 0);
---		Y_loc		: out std_logic_vector(7 downto 0)
---	);
---end component;
-
 component centroID is
 	port(
 		rst							: in std_logic;
 		newPix						: in std_logic_vector(3 downto 0);
 		pixCLK						: in std_logic;
 		HREF							: in std_logic;
-		h_cnt							: in std_logic_vector(9 downto 0);
+		h_count							: in std_logic_vector(9 downto 0);
 		v_count						: in std_logic_vector(9 downto 0);
 		
 		c_X							: out std_logic_vector(9 downto 0);
@@ -303,26 +290,25 @@ begin
 	
 	rRAMclk <= not(clk25M) and enarRAMclk;
 	
-	
 	RAM32: RAMx32 port map(
 		data				=> wRAM,										--: in std_logic_vector (3 downto 0);
-		rd_aclr			=> '0',--clcRAM,									--: in std_logic := '0';
-		rdaddress		=> rRAMadr,			--: in std_logic_vector (15 downto 0);
+		rd_aclr			=> '0',--clcRAM,							--: in std_logic := '0';
+		rdaddress		=> rRAMadr,									--: in std_logic_vector (15 downto 0);
 		rdclock			=> rRAMclk,									--: in std_logic ;
-		rden				=> '1',--enarRAM,									--: in std_logic  := '1';
-		wraddress		=> wRAMadr,			--: in std_logic_vector  (15 downto 0);
+		rden				=> '1',--enarRAM,							--: in std_logic  := '1';
+		wraddress		=> wRAMadr,									--: in std_logic_vector  (15 downto 0);
 		wrclock			=> wRAMclk,									--: in std_logic  := '1';
-		wren				=> '1',--enawRAM,									--: in std_logic  := '0';
+		wren				=> '1',--enawRAM,							--: in std_logic  := '0';
 		q					=> rRAM										--: out std_logic_vector (3 downto 0)
 	);
 	
 	-----------------------------
 	
 	CAP11: CAPonce port map(
-		rst		=> not(SW(3)),					--: in std_logic;
-		D_in		=> camData,		--: in std_logic_vector(7 downto 0);
-		PCLK		=> camPCLK,					--: in std_logic;
-		HREF		=> camHREF,					--: in std_logic;
+		rst		=> not(SW(3)) or SW(2),		--: in std_logic;
+		D_in		=> camData,						--: in std_logic_vector(7 downto 0);
+		PCLK		=> camPCLK,						--: in std_logic;
+		HREF		=> camHREF,						--: in std_logic;
 		
 		D_out		=> wRAM,							--: out std_logic_vector(3 downto 0);
 		RAMadr	=> wRAMadr,						--: out std_logic_vector(15 downto 0);
@@ -347,7 +333,7 @@ begin
 		newPix	=> wRAM,							--: in std_logic_vector(3 downto 0);
 		pixCLK	=> wRAMclk,						--: in std_logic;
 		HREF		=> camHREF,						--: in std_logic;
-		h_cnt		=> h_count,						--: in std_logic_vector(9 downto 0);
+		h_count	=> h_count,						--: in std_logic_vector(9 downto 0);
 		v_count	=> v_count,						--: in std_logic_vector(9 downto 0);
 		
 		c_X		=> c_X,							--: out std_logic_vector(9 downto 0);
@@ -384,17 +370,26 @@ begin
 	--deco_unidad		: deco port map(num=>unidad , decoded=>HEX2_D);
 	
 	
-	CLK_24M: pll1 port map(areset => SW(1), inclk0 => CLOCK_50, c0 => clk24M, locked => open);
+	CLK_24M: pll1 port map(
+		areset => SW(1), 
+		inclk0 => CLOCK_50, 
+		c0 => clk24M, 
+		locked => open
+	);
 	
 	MCLK <= clk24M;
 	
 	rstMssg <= not(SW(0));
 	
-	DIV800: pll3 port map(areset => rstMssg, inclk0 => CLOCK_50, c0 => clk800k);-------div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
+	DIV800: pll3 port map(
+		areset => rstMssg,
+		inclk0 => CLOCK_50, 
+		c0 => clk800k
+	);-------div800k port map(rst => rstMssg, clk_800k => clk800k, clk_50M => CLOCK_50);
 	
 	SCCBdriver: SCCBdrive port map(clk800 => clk800k, E => SW(0), SIO_C => SIO_C, SIO_D => SIO_D, LIVE => LEDG(0));
 	
 	PWDN <= SW(2);		--PWDN
-	camRST <= SW(3);		--RST
+	camRST <= SW(3);	--RST
 	
 end shape;
