@@ -1,5 +1,5 @@
 Fitter report for LoQritas
-Thu Jun 27 13:11:49 2024
+Thu Jun 27 16:14:57 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -72,7 +72,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jun 27 13:11:49 2024      ;
+; Fitter Status                      ; Successful - Thu Jun 27 16:14:56 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
@@ -80,9 +80,9 @@ applicable agreement for further details.
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
 ; Total logic elements               ; 493 / 15,408 ( 3 % )                       ;
-;     Total combinational functions  ; 446 / 15,408 ( 3 % )                       ;
-;     Dedicated logic registers      ; 298 / 15,408 ( 2 % )                       ;
-; Total registers                    ; 298                                        ;
+;     Total combinational functions  ; 467 / 15,408 ( 3 % )                       ;
+;     Dedicated logic registers      ; 297 / 15,408 ( 2 % )                       ;
+; Total registers                    ; 297                                        ;
 ; Total pins                         ; 90 / 347 ( 26 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144 / 516,096 ( 51 % )                 ;
@@ -403,8 +403,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 976 ) ; 0.00 % ( 0 / 976 )         ; 0.00 % ( 0 / 976 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 976 ) ; 0.00 % ( 0 / 976 )         ; 0.00 % ( 0 / 976 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 996 ) ; 0.00 % ( 0 / 996 )         ; 0.00 % ( 0 / 996 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 996 ) ; 0.00 % ( 0 / 996 )         ; 0.00 % ( 0 / 996 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -427,7 +427,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 962 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 982 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 14 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -444,22 +444,22 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; Resource                                    ; Usage                      ;
 +---------------------------------------------+----------------------------+
 ; Total logic elements                        ; 493 / 15,408 ( 3 % )       ;
-;     -- Combinational with no register       ; 195                        ;
-;     -- Register only                        ; 47                         ;
-;     -- Combinational with a register        ; 251                        ;
+;     -- Combinational with no register       ; 196                        ;
+;     -- Register only                        ; 26                         ;
+;     -- Combinational with a register        ; 271                        ;
 ;                                             ;                            ;
 ; Logic element usage by number of LUT inputs ;                            ;
-;     -- 4 input functions                    ; 135                        ;
-;     -- 3 input functions                    ; 117                        ;
-;     -- <=2 input functions                  ; 194                        ;
-;     -- Register only                        ; 47                         ;
+;     -- 4 input functions                    ; 139                        ;
+;     -- 3 input functions                    ; 121                        ;
+;     -- <=2 input functions                  ; 207                        ;
+;     -- Register only                        ; 26                         ;
 ;                                             ;                            ;
 ; Logic elements by mode                      ;                            ;
-;     -- normal mode                          ; 303                        ;
+;     -- normal mode                          ; 324                        ;
 ;     -- arithmetic mode                      ; 143                        ;
 ;                                             ;                            ;
-; Total registers*                            ; 298 / 17,068 ( 2 % )       ;
-;     -- Dedicated logic registers            ; 298 / 15,408 ( 2 % )       ;
+; Total registers*                            ; 297 / 17,068 ( 2 % )       ;
+;     -- Dedicated logic registers            ; 297 / 15,408 ( 2 % )       ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )          ;
 ;                                             ;                            ;
 ; Total LABs:  partially or completely used   ; 41 / 963 ( 4 % )           ;
@@ -480,11 +480,11 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
 ; Average interconnect usage (total/H/V)      ; 2% / 2% / 2%               ;
-; Peak interconnect usage (total/H/V)         ; 8% / 7% / 10%              ;
-; Maximum fan-out                             ; 127                        ;
-; Highest non-global fan-out                  ; 87                         ;
-; Total fan-out                               ; 3500                       ;
-; Average fan-out                             ; 3.43                       ;
+; Peak interconnect usage (total/H/V)         ; 9% / 9% / 10%              ;
+; Maximum fan-out                             ; 126                        ;
+; Highest non-global fan-out                  ; 86                         ;
+; Total fan-out                               ; 3529                       ;
+; Average fan-out                             ; 3.46                       ;
 +---------------------------------------------+----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -498,22 +498,22 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; Difficulty Clustering Region                ; Low                 ; Low                            ;
 ;                                             ;                     ;                                ;
 ; Total logic elements                        ; 493 / 15408 ( 3 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 195                 ; 0                              ;
-;     -- Register only                        ; 47                  ; 0                              ;
-;     -- Combinational with a register        ; 251                 ; 0                              ;
+;     -- Combinational with no register       ; 196                 ; 0                              ;
+;     -- Register only                        ; 26                  ; 0                              ;
+;     -- Combinational with a register        ; 271                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 135                 ; 0                              ;
-;     -- 3 input functions                    ; 117                 ; 0                              ;
-;     -- <=2 input functions                  ; 194                 ; 0                              ;
-;     -- Register only                        ; 47                  ; 0                              ;
+;     -- 4 input functions                    ; 139                 ; 0                              ;
+;     -- 3 input functions                    ; 121                 ; 0                              ;
+;     -- <=2 input functions                  ; 207                 ; 0                              ;
+;     -- Register only                        ; 26                  ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 303                 ; 0                              ;
+;     -- normal mode                          ; 324                 ; 0                              ;
 ;     -- arithmetic mode                      ; 143                 ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total registers                             ; 298                 ; 0                              ;
-;     -- Dedicated logic registers            ; 298 / 15408 ( 2 % ) ; 0 / 15408 ( 0 % )              ;
+; Total registers                             ; 297                 ; 0                              ;
+;     -- Dedicated logic registers            ; 297 / 15408 ( 2 % ) ; 0 / 15408 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Total LABs:  partially or completely used   ; 41 / 963 ( 4 % )    ; 0 / 963 ( 0 % )                ;
@@ -534,8 +534,8 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 3522                ; 112                            ;
-;     -- Registered Connections               ; 1896                ; 0                              ;
+;     -- Total Connections                    ; 3551                ; 112                            ;
+;     -- Registered Connections               ; 1893                ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
 ;     -- Top                                  ; 0                   ; 102                            ;
@@ -603,7 +603,7 @@ The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Seme
 ; SW[1]       ; H5    ; 1        ; 0            ; 27           ; 0            ; 43                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[2]       ; H6    ; 1        ; 0            ; 25           ; 21           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[3]       ; G4    ; 1        ; 0            ; 23           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[4]       ; G5    ; 1        ; 0            ; 27           ; 21           ; 87                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[4]       ; G5    ; 1        ; 0            ; 27           ; 21           ; 86                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[5]       ; J7    ; 1        ; 0            ; 22           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[6]       ; H7    ; 1        ; 0            ; 25           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SW[7]       ; E3    ; 1        ; 0            ; 26           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
@@ -1259,19 +1259,19 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |LoQritas                                 ; 493 (2)     ; 298 (0)                   ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 90   ; 0            ; 195 (2)      ; 47 (0)            ; 251 (0)          ; |LoQritas                                                                                                      ; work         ;
-;    |CAPonce:CAP11|                        ; 84 (81)     ; 50 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (34)      ; 7 (5)             ; 43 (42)          ; |LoQritas|CAPonce:CAP11                                                                                        ; work         ;
+; |LoQritas                                 ; 493 (1)     ; 297 (0)                   ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 90   ; 0            ; 196 (1)      ; 26 (0)            ; 271 (1)          ; |LoQritas                                                                                                      ; work         ;
+;    |CAPonce:CAP11|                        ; 85 (82)     ; 50 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (35)      ; 8 (6)             ; 42 (41)          ; |LoQritas|CAPonce:CAP11                                                                                        ; work         ;
 ;       |Z_1:DEPHASE|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 1 (1)            ; |LoQritas|CAPonce:CAP11|Z_1:DEPHASE                                                                            ; work         ;
-;    |RAMx32:RAM32|                         ; 37 (0)      ; 3 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (0)       ; 1 (0)             ; 3 (0)            ; |LoQritas|RAMx32:RAM32                                                                                         ; work         ;
-;       |altsyncram:altsyncram_component|   ; 37 (0)      ; 3 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (0)       ; 1 (0)             ; 3 (0)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component                                                         ; work         ;
-;          |altsyncram_glq3:auto_generated| ; 37 (3)      ; 3 (3)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (0)       ; 1 (1)             ; 3 (1)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated                          ; work         ;
+;    |RAMx32:RAM32|                         ; 36 (0)      ; 3 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 0 (0)             ; 5 (0)            ; |LoQritas|RAMx32:RAM32                                                                                         ; work         ;
+;       |altsyncram:altsyncram_component|   ; 36 (0)      ; 3 (0)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 0 (0)             ; 5 (0)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component                                                         ; work         ;
+;          |altsyncram_glq3:auto_generated| ; 36 (3)      ; 3 (3)                     ; 0 (0)         ; 262144      ; 32   ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 0 (0)             ; 5 (1)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated                          ; work         ;
 ;             |decode_ira:decode2|          ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2       ; work         ;
-;             |decode_ira:rden_decode_b|    ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b ; work         ;
-;             |mux_ulb:mux3|                ; 20 (20)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 2 (2)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
-;    |SCCBdrive:SCCBdriver|                 ; 75 (15)     ; 64 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (5)       ; 7 (1)             ; 57 (9)           ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
-;       |P2Sreg:REGS|                       ; 60 (60)     ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 6 (6)             ; 48 (48)          ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
-;    |VGA_generator:VGApart|                ; 191 (191)   ; 86 (86)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 93 (93)      ; 4 (4)             ; 94 (94)          ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
-;    |centroID:cID|                         ; 118 (118)   ; 95 (95)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 28 (28)           ; 68 (68)          ; |LoQritas|centroID:cID                                                                                         ; work         ;
+;             |decode_ira:rden_decode_b|    ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 1 (1)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b ; work         ;
+;             |mux_ulb:mux3|                ; 20 (20)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 3 (3)            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
+;    |SCCBdrive:SCCBdriver|                 ; 77 (17)     ; 64 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (6)       ; 9 (3)             ; 55 (8)           ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
+;       |P2Sreg:REGS|                       ; 61 (61)     ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 6 (6)             ; 48 (48)          ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
+;    |VGA_generator:VGApart|                ; 189 (189)   ; 86 (86)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 90 (90)      ; 2 (2)             ; 97 (97)          ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
+;    |centroID:cID|                         ; 120 (120)   ; 94 (94)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 7 (7)             ; 87 (87)          ; |LoQritas|centroID:cID                                                                                         ; work         ;
 ;    |pll1:CLK_24M|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |LoQritas|pll1:CLK_24M                                                                                         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component                                                                 ; work         ;
 ;          |pll1_altpll:auto_generated|     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated                                      ; work         ;
@@ -1370,16 +1370,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[1]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; CLOCK_50    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; SW[6]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[7]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[7]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[8]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SW[9]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[9]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[4]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; GPIO1_D[30] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[26] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[4]  ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
-; GPIO1_D[8]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[30] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[26] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[4]  ; Input    ; --            ; (0) 0 ps      ; --                    ; --  ; --   ;
+; GPIO1_D[8]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; GPIO1_D[28] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; GPIO1_D[6]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; GPIO1_D[6]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1483,14 +1483,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - VGA_generator:VGApart|red~1                                          ; 1                 ; 6       ;
 ;      - VGA_generator:VGApart|green~1                                        ; 1                 ; 6       ;
 ; SW[7]                                                                       ;                   ;         ;
-;      - VGA_generator:VGApart|red~2                                          ; 0                 ; 6       ;
-;      - VGA_generator:VGApart|green~3                                        ; 0                 ; 6       ;
+;      - VGA_generator:VGApart|red~2                                          ; 1                 ; 6       ;
+;      - VGA_generator:VGApart|green~3                                        ; 1                 ; 6       ;
 ; SW[8]                                                                       ;                   ;         ;
 ;      - VGA_generator:VGApart|red~3                                          ; 0                 ; 6       ;
 ;      - VGA_generator:VGApart|green~5                                        ; 0                 ; 6       ;
 ; SW[9]                                                                       ;                   ;         ;
-;      - VGA_generator:VGApart|red~4                                          ; 0                 ; 6       ;
-;      - VGA_generator:VGApart|green~7                                        ; 0                 ; 6       ;
+;      - VGA_generator:VGApart|red~4                                          ; 1                 ; 6       ;
+;      - VGA_generator:VGApart|green~7                                        ; 1                 ; 6       ;
 ; SW[4]                                                                       ;                   ;         ;
 ;      - centroID:cID|lastLocY[0]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|lastLocY[1]                                             ; 1                 ; 6       ;
@@ -1575,34 +1575,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - centroID:cID|firstRow[0]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|firstRow[5]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|firstRow[6]                                             ; 1                 ; 6       ;
-;      - centroID:cID|firstRow[9]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|firstRow[8]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|firstRow[7]                                             ; 1                 ; 6       ;
 ;      - centroID:cID|lastRow[9]~1                                            ; 1                 ; 6       ;
 ; GPIO1_D[30]                                                                 ;                   ;         ;
-;      - CAPonce:CAP11|CAPclk                                                 ; 0                 ; 6       ;
-;      - CAPonce:CAP11|QaddReg[0]                                             ; 0                 ; 6       ;
-;      - CAPonce:CAP11|QaddReg[1]                                             ; 0                 ; 6       ;
-;      - CAPonce:CAP11|QaddReg[2]                                             ; 0                 ; 6       ;
-;      - CAPonce:CAP11|QaddReg[3]                                             ; 0                 ; 6       ;
-;      - CAPonce:CAP11|takeTurn                                               ; 0                 ; 6       ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                      ; 0                 ; 6       ;
-;      - CAPonce:CAP11|dPCLK                                                  ; 0                 ; 6       ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[0]                                      ; 0                 ; 6       ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qt                                         ; 0                 ; 6       ;
+;      - CAPonce:CAP11|CAPclk                                                 ; 1                 ; 6       ;
+;      - CAPonce:CAP11|QaddReg[0]                                             ; 1                 ; 6       ;
+;      - CAPonce:CAP11|QaddReg[1]                                             ; 1                 ; 6       ;
+;      - CAPonce:CAP11|QaddReg[2]                                             ; 1                 ; 6       ;
+;      - CAPonce:CAP11|QaddReg[3]                                             ; 1                 ; 6       ;
+;      - CAPonce:CAP11|takeTurn                                               ; 1                 ; 6       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                      ; 1                 ; 6       ;
+;      - CAPonce:CAP11|dPCLK                                                  ; 1                 ; 6       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[0]                                      ; 1                 ; 6       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qt                                         ; 1                 ; 6       ;
 ; GPIO1_D[26]                                                                 ;                   ;         ;
-;      - CAPonce:CAP11|QinReg[4]                                              ; 0                 ; 6       ;
+;      - CAPonce:CAP11|QinReg[4]                                              ; 1                 ; 6       ;
 ; GPIO1_D[4]                                                                  ;                   ;         ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                      ; 0                 ; 0       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                      ; 1                 ; 0       ;
 ;      - CAPonce:CAP11|dPCLK                                                  ; 1                 ; 0       ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[0]                                      ; 0                 ; 0       ;
-;      - CAPonce:CAP11|Z_1:DEPHASE|Qt                                         ; 0                 ; 0       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qd[0]                                      ; 1                 ; 0       ;
+;      - CAPonce:CAP11|Z_1:DEPHASE|Qt                                         ; 1                 ; 0       ;
 ; GPIO1_D[8]                                                                  ;                   ;         ;
-;      - CAPonce:CAP11|QinReg[5]~feeder                                       ; 0                 ; 6       ;
+;      - CAPonce:CAP11|QinReg[5]~feeder                                       ; 1                 ; 6       ;
 ; GPIO1_D[28]                                                                 ;                   ;         ;
 ;      - CAPonce:CAP11|QinReg[6]~feeder                                       ; 0                 ; 6       ;
 ; GPIO1_D[6]                                                                  ;                   ;         ;
-;      - CAPonce:CAP11|QinReg[7]                                              ; 1                 ; 6       ;
+;      - CAPonce:CAP11|QinReg[7]                                              ; 0                 ; 6       ;
 +-----------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1611,77 +1610,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                                  ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CAPonce:CAP11|CAPclk                                                                                                  ; FF_X2_Y3_N25       ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; CAPonce:CAP11|CAPclk                                                                                                  ; FF_X2_Y3_N25       ; 36      ; Clock                      ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; CAPonce:CAP11|Equal0~3                                                                                                ; LCCOMB_X15_Y22_N28 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CAPonce:CAP11|Equal2~0                                                                                                ; LCCOMB_X17_Y15_N14 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; CAPonce:CAP11|RAM_adr[15]~6                                                                                           ; LCCOMB_X16_Y20_N30 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                                                                       ; FF_X2_Y3_N21       ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; CAPonce:CAP11|dPCLK                                                                                                   ; LCCOMB_X1_Y14_N14  ; 9       ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; CAPonce:CAP11|outCLK                                                                                                  ; LCCOMB_X2_Y3_N4    ; 127     ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; CAPonce:CAP11|CAPclk                                                                                                  ; FF_X1_Y1_N7        ; 36      ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; CAPonce:CAP11|CAPclk                                                                                                  ; FF_X1_Y1_N7        ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; CAPonce:CAP11|Equal0~4                                                                                                ; LCCOMB_X17_Y17_N14 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CAPonce:CAP11|Equal2~0                                                                                                ; LCCOMB_X21_Y15_N6  ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; CAPonce:CAP11|RAM_adr[15]~4                                                                                           ; LCCOMB_X23_Y17_N4  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                                                                       ; FF_X1_Y1_N25       ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; CAPonce:CAP11|dPCLK                                                                                                   ; LCCOMB_X1_Y14_N14  ; 9       ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; CAPonce:CAP11|outCLK                                                                                                  ; LCCOMB_X1_Y1_N30   ; 126     ; Clock                      ; yes    ; Global Clock         ; GCLK1            ; --                        ;
 ; CLOCK_50                                                                                                              ; PIN_G21            ; 1       ; Clock                      ; yes    ; Global Clock         ; GCLK9            ; --                        ;
 ; CLOCK_50                                                                                                              ; PIN_G21            ; 3       ; Clock                      ; no     ; --                   ; --               ; --                        ;
 ; GPIO1_D[30]                                                                                                           ; PIN_V6             ; 10      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
 ; GPIO1_D[4]                                                                                                            ; PIN_AB18           ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode322w[3]         ; LCCOMB_X17_Y15_N8  ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode339w[3]~0       ; LCCOMB_X17_Y15_N20 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode349w[3]~0       ; LCCOMB_X17_Y15_N18 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode359w[3]~0       ; LCCOMB_X17_Y15_N30 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode369w[3]~0       ; LCCOMB_X17_Y15_N16 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode379w[3]~0       ; LCCOMB_X17_Y15_N26 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode389w[3]~0       ; LCCOMB_X17_Y15_N2  ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode322w[3]   ; LCCOMB_X20_Y14_N20 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode339w[3]~0 ; LCCOMB_X20_Y14_N28 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode349w[3]~0 ; LCCOMB_X20_Y14_N10 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode359w[3]~0 ; LCCOMB_X20_Y14_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode369w[3]~0 ; LCCOMB_X20_Y14_N12 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode379w[3]~0 ; LCCOMB_X20_Y14_N18 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode389w[3]~0 ; LCCOMB_X20_Y14_N24 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode399w[3]~0 ; LCCOMB_X20_Y14_N30 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|C_Eedge                                                                                          ; LCCOMB_X5_Y23_N8   ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data                                                                                       ; FF_X4_Y23_N27      ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data                                                                                       ; FF_X4_Y23_N27      ; 53      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; SCCBdrive:SCCBdriver|dataEedge                                                                                        ; LCCOMB_X4_Y23_N28  ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; SCCBdrive:SCCBdriver|mssgGO                                                                                           ; FF_X4_Y23_N7       ; 58      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode322w[3]         ; LCCOMB_X21_Y15_N16 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode339w[3]~0       ; LCCOMB_X21_Y15_N8  ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode349w[3]~0       ; LCCOMB_X21_Y15_N18 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode359w[3]~0       ; LCCOMB_X21_Y15_N2  ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode369w[3]~0       ; LCCOMB_X21_Y15_N20 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode379w[3]~0       ; LCCOMB_X21_Y15_N30 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode389w[3]~0       ; LCCOMB_X21_Y15_N26 ; 4       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode322w[3]   ; LCCOMB_X16_Y14_N14 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode339w[3]~0 ; LCCOMB_X16_Y14_N20 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode349w[3]~0 ; LCCOMB_X16_Y15_N26 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode359w[3]~0 ; LCCOMB_X17_Y13_N0  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode369w[3]~0 ; LCCOMB_X16_Y14_N30 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode379w[3]~0 ; LCCOMB_X17_Y13_N28 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode389w[3]~0 ; LCCOMB_X16_Y13_N16 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode399w[3]~0 ; LCCOMB_X17_Y13_N14 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|C_Eedge                                                                                          ; LCCOMB_X19_Y9_N28  ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data                                                                                       ; FF_X20_Y9_N31      ; 53      ; Clock                      ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data                                                                                       ; FF_X20_Y9_N31      ; 4       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|dataEedge                                                                                        ; LCCOMB_X20_Y9_N26  ; 1       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; SCCBdrive:SCCBdriver|mssgGO                                                                                           ; FF_X20_Y9_N7       ; 58      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
 ; SW[0]                                                                                                                 ; PIN_J6             ; 11      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
 ; SW[1]                                                                                                                 ; PIN_H5             ; 43      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; SW[4]                                                                                                                 ; PIN_G5             ; 87      ; Async. clear, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; VGA_generator:VGApart|Equal0~2                                                                                        ; LCCOMB_X15_Y18_N0  ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; VGA_generator:VGApart|RAM_adr0[15]~6                                                                                  ; LCCOMB_X17_Y18_N0  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; VGA_generator:VGApart|RAM_adr1[15]~2                                                                                  ; LCCOMB_X17_Y18_N4  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; VGA_generator:VGApart|RAMadr[12]~1                                                                                    ; LCCOMB_X16_Y18_N26 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|LessThan3~1                                                                                              ; LCCOMB_X15_Y22_N6  ; 39      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|LessThan4~0                                                                                              ; LCCOMB_X15_Y21_N18 ; 11      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|LessThan5~1                                                                                              ; LCCOMB_X14_Y22_N30 ; 30      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|firstRow[0]~3                                                                                            ; LCCOMB_X15_Y22_N22 ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|firstWhite[7]~11                                                                                         ; LCCOMB_X20_Y20_N22 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|lastLocY[2]~0                                                                                            ; LCCOMB_X15_Y22_N26 ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|lastRow[9]~1                                                                                             ; LCCOMB_X17_Y20_N28 ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|lastWhite[7]~30                                                                                          ; LCCOMB_X16_Y20_N0  ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; centroID:cID|mostLocX[9]~30                                                                                           ; LCCOMB_X14_Y20_N0  ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; comb~0                                                                                                                ; LCCOMB_X3_Y3_N12   ; 40      ; Async. clear               ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; SW[4]                                                                                                                 ; PIN_G5             ; 86      ; Async. clear, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; VGA_generator:VGApart|Equal0~2                                                                                        ; LCCOMB_X16_Y14_N10 ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; VGA_generator:VGApart|RAM_adr0[15]~6                                                                                  ; LCCOMB_X19_Y14_N26 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; VGA_generator:VGApart|RAM_adr1[15]~2                                                                                  ; LCCOMB_X19_Y14_N20 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; VGA_generator:VGApart|RAMadr[12]~1                                                                                    ; LCCOMB_X19_Y14_N4  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|LessThan3~2                                                                                              ; LCCOMB_X21_Y17_N14 ; 39      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|LessThan4~0                                                                                              ; LCCOMB_X21_Y16_N18 ; 11      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|LessThan5~0                                                                                              ; LCCOMB_X22_Y17_N28 ; 49      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|firstRow[0]~4                                                                                            ; LCCOMB_X23_Y17_N20 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|firstWhite[6]~10                                                                                         ; LCCOMB_X21_Y17_N18 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|lastLocY[2]~0                                                                                            ; LCCOMB_X21_Y14_N2  ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|lastRow[9]~1                                                                                             ; LCCOMB_X22_Y17_N22 ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|mostLocX[9]~30                                                                                           ; LCCOMB_X21_Y18_N0  ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; centroID:cID|whiteCount[4]~12                                                                                         ; LCCOMB_X20_Y17_N30 ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; comb~0                                                                                                                ; LCCOMB_X3_Y1_N24   ; 40      ; Async. clear               ; yes    ; Global Clock         ; GCLK16           ; --                        ;
 ; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0]                                      ; PLL_1              ; 87      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; pll3:DIV800|altpll:altpll_component|pll3_altpll:auto_generated|wire_pll1_clk[0]                                       ; PLL_4              ; 8       ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; rRAMclk                                                                                                               ; LCCOMB_X17_Y18_N24 ; 35      ; Clock                      ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; rRAMclk                                                                                                               ; LCCOMB_X1_Y14_N16  ; 35      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 +-----------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                                                                  ;
-+----------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                                                             ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CAPonce:CAP11|CAPclk                                                             ; FF_X2_Y3_N25       ; 36      ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
-; CAPonce:CAP11|dPCLK                                                              ; LCCOMB_X1_Y14_N14  ; 9       ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
-; CAPonce:CAP11|outCLK                                                             ; LCCOMB_X2_Y3_N4    ; 127     ; 21                                   ; Global Clock         ; GCLK4            ; --                        ;
-; CLOCK_50                                                                         ; PIN_G21            ; 1       ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; SCCBdrive:SCCBdriver|clk400data                                                  ; FF_X4_Y23_N27      ; 53      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
-; comb~0                                                                           ; LCCOMB_X3_Y3_N12   ; 40      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
-; pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 1       ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
-; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 87      ; 11                                   ; Global Clock         ; GCLK3            ; --                        ;
-; pll3:DIV800|altpll:altpll_component|pll3_altpll:auto_generated|wire_pll1_clk[0]  ; PLL_4              ; 8       ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; rRAMclk                                                                          ; LCCOMB_X17_Y18_N24 ; 35      ; 0                                    ; Global Clock         ; GCLK13           ; --                        ;
-+----------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                                             ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CAPonce:CAP11|CAPclk                                                             ; FF_X1_Y1_N7       ; 36      ; 4                                    ; Global Clock         ; GCLK0            ; --                        ;
+; CAPonce:CAP11|dPCLK                                                              ; LCCOMB_X1_Y14_N14 ; 9       ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; CAPonce:CAP11|outCLK                                                             ; LCCOMB_X1_Y1_N30  ; 126     ; 51                                   ; Global Clock         ; GCLK1            ; --                        ;
+; CLOCK_50                                                                         ; PIN_G21           ; 1       ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; SCCBdrive:SCCBdriver|clk400data                                                  ; FF_X20_Y9_N31     ; 53      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; comb~0                                                                           ; LCCOMB_X3_Y1_N24  ; 40      ; 0                                    ; Global Clock         ; GCLK16           ; --                        ;
+; pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2             ; 1       ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
+; pll2:CLK_25M|altpll:altpll_component|pll2_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1             ; 87      ; 10                                   ; Global Clock         ; GCLK3            ; --                        ;
+; pll3:DIV800|altpll:altpll_component|pll3_altpll:auto_generated|wire_pll1_clk[0]  ; PLL_4             ; 8       ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
+; rRAMclk                                                                          ; LCCOMB_X1_Y14_N16 ; 35      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
++----------------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -1689,11 +1688,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                                  ; Fan-Out ;
 +-----------------------------------------------------------------------------------------------------------------------+---------+
-; SW[4]~input                                                                                                           ; 87      ;
+; SW[4]~input                                                                                                           ; 86      ;
 ; SCCBdrive:SCCBdriver|mssgGO                                                                                           ; 58      ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync                                                                                ; 53      ;
+; centroID:cID|LessThan5~0                                                                                              ; 49      ;
 ; SW[1]~input                                                                                                           ; 43      ;
-; centroID:cID|LessThan3~1                                                                                              ; 39      ;
+; centroID:cID|LessThan3~2                                                                                              ; 39      ;
 ; CAPonce:CAP11|RAM_adr[12]                                                                                             ; 34      ;
 ; CAPonce:CAP11|RAM_adr[11]                                                                                             ; 34      ;
 ; CAPonce:CAP11|RAM_adr[10]                                                                                             ; 34      ;
@@ -1720,48 +1720,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|RAMadr[2]                                                                                       ; 32      ;
 ; VGA_generator:VGApart|RAMadr[1]                                                                                       ; 32      ;
 ; VGA_generator:VGApart|RAMadr[0]                                                                                       ; 32      ;
-; centroID:cID|LessThan5~1                                                                                              ; 30      ;
-; centroID:cID|lastWhite[7]~30                                                                                          ; 19      ;
+; CAPonce:CAP11|h_count[9]                                                                                              ; 28      ;
+; centroID:cID|LessThan3~1                                                                                              ; 22      ;
+; centroID:cID|whiteCount[4]~12                                                                                         ; 19      ;
 ; centroID:cID|lastLocY[2]~0                                                                                            ; 19      ;
-; CAPonce:CAP11|h_count[8]                                                                                              ; 19      ;
 ; SCCBdrive:SCCBdriver|Q1                                                                                               ; 18      ;
 ; SCCBdrive:SCCBdriver|Q0                                                                                               ; 18      ;
-; VGA_generator:VGApart|process_0~14                                                                                    ; 17      ;
-; CAPonce:CAP11|h_count[9]                                                                                              ; 17      ;
+; VGA_generator:VGApart|process_0~15                                                                                    ; 17      ;
 ; VGA_generator:VGApart|RAM_adr0[15]~6                                                                                  ; 16      ;
-; CAPonce:CAP11|RAM_adr[15]~6                                                                                           ; 16      ;
 ; VGA_generator:VGApart|RAM_adr1[15]~2                                                                                  ; 16      ;
 ; VGA_generator:VGApart|RAMadr[12]~1                                                                                    ; 16      ;
+; CAPonce:CAP11|RAM_adr[15]~4                                                                                           ; 16      ;
 ; VGA_generator:VGApart|Equal0~2                                                                                        ; 14      ;
-; centroID:cID|LessThan3~0                                                                                              ; 13      ;
-; CAPonce:CAP11|Equal0~3                                                                                                ; 12      ;
-; VGA_generator:VGApart|h_count[5]                                                                                      ; 12      ;
+; VGA_generator:VGApart|h_count[9]                                                                                      ; 13      ;
+; CAPonce:CAP11|Equal0~4                                                                                                ; 12      ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|address_reg_b[0]                          ; 12      ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|address_reg_b[1]                          ; 12      ;
 ; SW[0]~input                                                                                                           ; 11      ;
-; VGA_generator:VGApart|h_count[9]                                                                                      ; 11      ;
+; CAPonce:CAP11|QaddReg[3]                                                                                              ; 11      ;
+; CAPonce:CAP11|QaddReg[2]                                                                                              ; 11      ;
+; CAPonce:CAP11|QaddReg[1]                                                                                              ; 11      ;
 ; centroID:cID|LessThan4~0                                                                                              ; 11      ;
 ; GPIO1_D[30]~input                                                                                                     ; 10      ;
-; centroID:cID|firstRow[0]~3                                                                                            ; 10      ;
 ; centroID:cID|lastRow[9]~1                                                                                             ; 10      ;
 ; centroID:cID|mostLocX[9]~30                                                                                           ; 10      ;
-; CAPonce:CAP11|QaddReg[3]                                                                                              ; 10      ;
-; CAPonce:CAP11|QaddReg[2]                                                                                              ; 10      ;
-; CAPonce:CAP11|QaddReg[1]                                                                                              ; 10      ;
+; CAPonce:CAP11|h_count[8]                                                                                              ; 10      ;
 ; CAPonce:CAP11|RAM_adr[13]                                                                                             ; 10      ;
 ; CAPonce:CAP11|RAM_adr[14]                                                                                             ; 10      ;
 ; CAPonce:CAP11|RAM_adr[15]                                                                                             ; 10      ;
 ; VGA_generator:VGApart|v_count[9]                                                                                      ; 10      ;
-; VGA_generator:VGApart|v_count[0]                                                                                      ; 10      ;
-; VGA_generator:VGApart|h_count[4]                                                                                      ; 10      ;
-; VGA_generator:VGApart|h_count[6]                                                                                      ; 10      ;
+; VGA_generator:VGApart|h_count[5]                                                                                      ; 10      ;
 ; VGA_generator:VGApart|video_on                                                                                        ; 10      ;
 ; VGA_generator:VGApart|isColor                                                                                         ; 10      ;
-; centroID:cID|firstWhite[7]~11                                                                                         ; 9       ;
+; centroID:cID|firstRow[0]~4                                                                                            ; 9       ;
+; centroID:cID|firstWhite[6]~10                                                                                         ; 9       ;
 ; VGA_generator:VGApart|RAMadr[13]                                                                                      ; 9       ;
 ; VGA_generator:VGApart|RAMadr[14]                                                                                      ; 9       ;
 ; VGA_generator:VGApart|RAMadr[15]                                                                                      ; 9       ;
+; VGA_generator:VGApart|v_count[0]                                                                                      ; 9       ;
 ; VGA_generator:VGApart|h_count[0]                                                                                      ; 9       ;
+; VGA_generator:VGApart|h_count[4]                                                                                      ; 9       ;
+; VGA_generator:VGApart|h_count[6]                                                                                      ; 9       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode359w[3]~0       ; 8       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode322w[3]         ; 8       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode349w[3]~0       ; 8       ;
@@ -1771,31 +1770,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode379w[3]~0       ; 8       ;
 ; CAPonce:CAP11|QaddReg[0]                                                                                              ; 8       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:decode2|w_anode389w[3]~0       ; 8       ;
-; VGA_generator:VGApart|v_count[8]                                                                                      ; 8       ;
-; VGA_generator:VGApart|v_count[3]                                                                                      ; 8       ;
-; VGA_generator:VGApart|v_count[2]                                                                                      ; 8       ;
 ; VGA_generator:VGApart|h_count[7]                                                                                      ; 8       ;
 ; VGA_generator:VGApart|h_count[8]                                                                                      ; 8       ;
 ; CAPonce:CAP11|h_count[6]                                                                                              ; 7       ;
+; CAPonce:CAP11|h_count[5]                                                                                              ; 7       ;
+; VGA_generator:VGApart|v_count[8]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|v_count[7]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|v_count[6]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|v_count[5]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|v_count[4]                                                                                      ; 7       ;
+; VGA_generator:VGApart|v_count[3]                                                                                      ; 7       ;
+; VGA_generator:VGApart|v_count[2]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|v_count[1]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|h_count[3]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|h_count[1]                                                                                      ; 7       ;
 ; VGA_generator:VGApart|h_count[2]                                                                                      ; 7       ;
-; CAPonce:CAP11|v_count[9]                                                                                              ; 6       ;
-; CAPonce:CAP11|h_count[7]                                                                                              ; 6       ;
 ; CAPonce:CAP11|h_count[4]                                                                                              ; 6       ;
-; CAPonce:CAP11|h_count[5]                                                                                              ; 6       ;
 ; CAPonce:CAP11|v_count[0]                                                                                              ; 6       ;
 ; SCCBdrive:SCCBdriver|eInd                                                                                             ; 6       ;
-; CAPonce:CAP11|v_count[5]                                                                                              ; 5       ;
+; CAPonce:CAP11|v_count[9]                                                                                              ; 5       ;
 ; CAPonce:CAP11|v_count[6]                                                                                              ; 5       ;
 ; CAPonce:CAP11|v_count[7]                                                                                              ; 5       ;
 ; CAPonce:CAP11|v_count[8]                                                                                              ; 5       ;
+; CAPonce:CAP11|v_count[5]                                                                                              ; 5       ;
 ; CAPonce:CAP11|takeTurn                                                                                                ; 5       ;
+; CAPonce:CAP11|h_count[7]                                                                                              ; 5       ;
 ; CAPonce:CAP11|h_count[0]                                                                                              ; 5       ;
 ; CAPonce:CAP11|h_count[1]                                                                                              ; 5       ;
 ; VGA_generator:VGApart|LessThan5~0                                                                                     ; 5       ;
@@ -1809,7 +1808,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; centroID:cID|whiteCount[7]                                                                                            ; 5       ;
 ; VGA_generator:VGApart|set_color                                                                                       ; 5       ;
 ; GPIO1_D[4]~input                                                                                                      ; 4       ;
-; CAPonce:CAP11|Equal1~2                                                                                                ; 4       ;
+; CAPonce:CAP11|Equal1~3                                                                                                ; 4       ;
 ; VGA_generator:VGApart|Equal2~4                                                                                        ; 4       ;
 ; VGA_generator:VGApart|Equal3~4                                                                                        ; 4       ;
 ; CAPonce:CAP11|v_count[1]                                                                                              ; 4       ;
@@ -1820,7 +1819,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CAPonce:CAP11|h_count[3]                                                                                              ; 4       ;
 ; CAPonce:CAP11|Equal2~5                                                                                                ; 4       ;
 ; VGA_generator:VGApart|Equal1~3                                                                                        ; 4       ;
-; VGA_generator:VGApart|process_0~6                                                                                     ; 4       ;
+; VGA_generator:VGApart|process_0~7                                                                                     ; 4       ;
 ; VGA_generator:VGApart|LessThan10~0                                                                                    ; 4       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode359w[3]~0 ; 4       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|decode_ira:rden_decode_b|w_anode322w[3]   ; 4       ;
@@ -1837,6 +1836,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; centroID:cID|whiteCount[8]                                                                                            ; 4       ;
 ; SW[2]~input                                                                                                           ; 3       ;
 ; SW[3]~input                                                                                                           ; 3       ;
+; CAPonce:CAP11|Equal0~0                                                                                                ; 3       ;
+; centroID:cID|LessThan3~0                                                                                              ; 3       ;
 ; VGA_generator:VGApart|RAM_adr0[12]                                                                                    ; 3       ;
 ; VGA_generator:VGApart|RAM_adr1[12]                                                                                    ; 3       ;
 ; VGA_generator:VGApart|RAM_adr0[11]                                                                                    ; 3       ;
@@ -1869,10 +1870,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|RAM_adr1[14]                                                                                    ; 3       ;
 ; VGA_generator:VGApart|RAM_adr0[15]                                                                                    ; 3       ;
 ; VGA_generator:VGApart|RAM_adr1[15]                                                                                    ; 3       ;
-; CAPonce:CAP11|process_0~3                                                                                             ; 3       ;
+; CAPonce:CAP11|RAM_adr[15]~3                                                                                           ; 3       ;
+; CAPonce:CAP11|process_0~0                                                                                             ; 3       ;
 ; CAPonce:CAP11|LessThan0~0                                                                                             ; 3       ;
 ; CAPonce:CAP11|CAPclk                                                                                                  ; 3       ;
-; VGA_generator:VGApart|LessThan9~0                                                                                     ; 3       ;
 ; SCCBdrive:SCCBdriver|EE                                                                                               ; 3       ;
 ; SCCBdrive:SCCBdriver|clk400data                                                                                       ; 3       ;
 ; SCCBdrive:SCCBdriver|clk400                                                                                           ; 3       ;
@@ -1881,9 +1882,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[7]~input                                                                                                           ; 2       ;
 ; SW[6]~input                                                                                                           ; 2       ;
 ; CLOCK_50~input                                                                                                        ; 2       ;
-; CAPonce:CAP11|process_0~6                                                                                             ; 2       ;
 ; CAPonce:CAP11|Z_1:DEPHASE|Qt                                                                                          ; 2       ;
-; centroID:cID|lastRow[9]~0                                                                                             ; 2       ;
+; centroID:cID|firstWhite[6]~4                                                                                          ; 2       ;
 ; centroID:cID|firstWhite[0]                                                                                            ; 2       ;
 ; centroID:cID|firstWhite[1]                                                                                            ; 2       ;
 ; centroID:cID|firstWhite[2]                                                                                            ; 2       ;
@@ -1894,14 +1894,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; centroID:cID|firstWhite[7]                                                                                            ; 2       ;
 ; centroID:cID|firstWhite[8]                                                                                            ; 2       ;
 ; VGA_generator:VGApart|LessThan5~1                                                                                     ; 2       ;
+; CAPonce:CAP11|Equal0~3                                                                                                ; 2       ;
+; CAPonce:CAP11|Equal0~2                                                                                                ; 2       ;
 ; CAPonce:CAP11|Equal0~1                                                                                                ; 2       ;
+; CAPonce:CAP11|Equal1~1                                                                                                ; 2       ;
 ; CAPonce:CAP11|Equal1~0                                                                                                ; 2       ;
 ; CAPonce:CAP11|enawRAMclk                                                                                              ; 2       ;
-; CAPonce:CAP11|process_0~5                                                                                             ; 2       ;
-; VGA_generator:VGApart|Equal1~0                                                                                        ; 2       ;
+; VGA_generator:VGApart|Equal1~2                                                                                        ; 2       ;
+; VGA_generator:VGApart|Equal1~1                                                                                        ; 2       ;
 ; VGA_generator:VGApart|Equal0~1                                                                                        ; 2       ;
 ; VGA_generator:VGApart|Equal0~0                                                                                        ; 2       ;
-; VGA_generator:VGApart|LessThan7~0                                                                                     ; 2       ;
+; VGA_generator:VGApart|set_color~0                                                                                     ; 2       ;
 ; SCCBdrive:SCCBdriver|C_Esync                                                                                          ; 2       ;
 ; VGA_generator:VGApart|red~4                                                                                           ; 2       ;
 ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3|_~19                         ; 2       ;
@@ -1934,7 +1937,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|C_E~0                                                                                            ; 1       ;
 ; VGA_generator:VGApart|set_color~15                                                                                    ; 1       ;
 ; VGA_generator:VGApart|set_color~14                                                                                    ; 1       ;
-; centroID:cID|firstWhite[7]~20                                                                                         ; 1       ;
+; centroID:cID|whiteCount[4]~31                                                                                         ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cD[1]~25                                                                             ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[0]                                                                                ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cD[2]~24                                                                             ; 1       ;
@@ -2022,10 +2025,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[22]                                                                               ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|D[21]~5                                                                              ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[20]                                                                                ; 1       ;
-; centroID:cID|firstRow[0]~2                                                                                            ; 1       ;
-; centroID:cID|firstRow[0]~1                                                                                            ; 1       ;
-; centroID:cID|firstRow[0]~0                                                                                            ; 1       ;
-; centroID:cID|firstWhite~19                                                                                            ; 1       ;
+; centroID:cID|firstRow~12                                                                                              ; 1       ;
+; centroID:cID|lastRow~10                                                                                               ; 1       ;
+; centroID:cID|firstRow~11                                                                                              ; 1       ;
+; centroID:cID|lastRow~9                                                                                                ; 1       ;
+; centroID:cID|lastRow~8                                                                                                ; 1       ;
+; centroID:cID|firstRow~10                                                                                              ; 1       ;
+; centroID:cID|lastRow~7                                                                                                ; 1       ;
+; centroID:cID|firstRow~9                                                                                               ; 1       ;
+; centroID:cID|lastRow~6                                                                                                ; 1       ;
+; centroID:cID|lastRow~5                                                                                                ; 1       ;
+; centroID:cID|firstRow~8                                                                                               ; 1       ;
+; centroID:cID|firstRow~7                                                                                               ; 1       ;
+; centroID:cID|lastRow~4                                                                                                ; 1       ;
+; centroID:cID|firstRow~6                                                                                               ; 1       ;
+; centroID:cID|lastRow~3                                                                                                ; 1       ;
+; centroID:cID|firstRow~5                                                                                               ; 1       ;
+; centroID:cID|lastRow~2                                                                                                ; 1       ;
+; centroID:cID|firstRow[1]~3                                                                                            ; 1       ;
+; centroID:cID|firstRow[1]~2                                                                                            ; 1       ;
+; centroID:cID|firstRow[1]~1                                                                                            ; 1       ;
+; centroID:cID|firstRow~0                                                                                               ; 1       ;
+; centroID:cID|lastRow~0                                                                                                ; 1       ;
 ; centroID:cID|firstWhite~18                                                                                            ; 1       ;
 ; centroID:cID|firstWhite~17                                                                                            ; 1       ;
 ; centroID:cID|firstWhite~16                                                                                            ; 1       ;
@@ -2033,13 +2054,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; centroID:cID|firstWhite~14                                                                                            ; 1       ;
 ; centroID:cID|firstWhite~13                                                                                            ; 1       ;
 ; centroID:cID|firstWhite~12                                                                                            ; 1       ;
-; centroID:cID|firstWhite[7]~10                                                                                         ; 1       ;
-; centroID:cID|firstWhite[7]~9                                                                                          ; 1       ;
-; centroID:cID|firstWhite[7]~8                                                                                          ; 1       ;
-; centroID:cID|firstWhite[7]~7                                                                                          ; 1       ;
-; centroID:cID|firstWhite[7]~6                                                                                          ; 1       ;
-; centroID:cID|firstWhite[7]~5                                                                                          ; 1       ;
-; centroID:cID|firstWhite~4                                                                                             ; 1       ;
+; centroID:cID|firstWhite~11                                                                                            ; 1       ;
+; centroID:cID|firstWhite[6]~9                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~8                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~7                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~6                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~5                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~3                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~2                                                                                          ; 1       ;
+; centroID:cID|firstWhite[6]~1                                                                                          ; 1       ;
+; centroID:cID|firstWhite~0                                                                                             ; 1       ;
+; centroID:cID|whiteCount[4]~11                                                                                         ; 1       ;
 ; CAPonce:CAP11|Z_1:DEPHASE|Qd[0]                                                                                       ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cD[24]~2                                                                             ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[23]                                                                               ; 1       ;
@@ -2049,7 +2074,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; centroID:cID|lastRow[7]                                                                                               ; 1       ;
 ; centroID:cID|firstRow[8]                                                                                              ; 1       ;
 ; centroID:cID|lastRow[8]                                                                                               ; 1       ;
-; centroID:cID|firstRow[9]                                                                                              ; 1       ;
 ; centroID:cID|lastRow[9]                                                                                               ; 1       ;
 ; centroID:cID|firstRow[6]                                                                                              ; 1       ;
 ; centroID:cID|lastRow[6]                                                                                               ; 1       ;
@@ -2069,7 +2093,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CAPonce:CAP11|v_count~2                                                                                               ; 1       ;
 ; CAPonce:CAP11|v_count~1                                                                                               ; 1       ;
 ; CAPonce:CAP11|v_count~0                                                                                               ; 1       ;
-; CAPonce:CAP11|Equal1~1                                                                                                ; 1       ;
+; CAPonce:CAP11|Equal1~2                                                                                                ; 1       ;
 ; VGA_generator:VGApart|RAM_adr0~5                                                                                      ; 1       ;
 ; VGA_generator:VGApart|RAM_adr1~5                                                                                      ; 1       ;
 ; VGA_generator:VGApart|RAM_adr0~4                                                                                      ; 1       ;
@@ -2087,14 +2111,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|Equal3~2                                                                                        ; 1       ;
 ; VGA_generator:VGApart|Equal3~1                                                                                        ; 1       ;
 ; VGA_generator:VGApart|Equal3~0                                                                                        ; 1       ;
+; VGA_generator:VGApart|process_0~19                                                                                    ; 1       ;
+; VGA_generator:VGApart|process_0~18                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~17                                                                                    ; 1       ;
-; VGA_generator:VGApart|LessThan9~1                                                                                     ; 1       ;
 ; VGA_generator:VGApart|process_0~16                                                                                    ; 1       ;
-; VGA_generator:VGApart|process_0~15                                                                                    ; 1       ;
 ; CAPonce:CAP11|enawRAMclk~0                                                                                            ; 1       ;
 ; CAPonce:CAP11|h_count~1                                                                                               ; 1       ;
 ; CAPonce:CAP11|h_count~0                                                                                               ; 1       ;
-; CAPonce:CAP11|Equal0~2                                                                                                ; 1       ;
 ; CAPonce:CAP11|Z_1:DEPHASE|Qd[1]                                                                                       ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cD[25]~1                                                                             ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[24]                                                                               ; 1       ;
@@ -2106,7 +2129,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CAPonce:CAP11|QinReg[6]                                                                                               ; 1       ;
 ; CAPonce:CAP11|B[1]~1                                                                                                  ; 1       ;
 ; CAPonce:CAP11|QinReg[5]                                                                                               ; 1       ;
-; centroID:cID|LessThan5~0                                                                                              ; 1       ;
 ; VGA_generator:VGApart|RAMadr~16                                                                                       ; 1       ;
 ; VGA_generator:VGApart|RAMadr~15                                                                                       ; 1       ;
 ; VGA_generator:VGApart|RAMadr~14                                                                                       ; 1       ;
@@ -2120,19 +2142,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|RAMadr~6                                                                                        ; 1       ;
 ; VGA_generator:VGApart|RAMadr~5                                                                                        ; 1       ;
 ; VGA_generator:VGApart|RAMadr~4                                                                                        ; 1       ;
-; CAPonce:CAP11|RAM_adr~5                                                                                               ; 1       ;
+; CAPonce:CAP11|RAM_adr~7                                                                                               ; 1       ;
 ; CAPonce:CAP11|B[0]~0                                                                                                  ; 1       ;
 ; CAPonce:CAP11|QinReg[4]                                                                                               ; 1       ;
 ; VGA_generator:VGApart|RAMadr~3                                                                                        ; 1       ;
 ; VGA_generator:VGApart|RAMadr~2                                                                                        ; 1       ;
 ; VGA_generator:VGApart|RAMadr~0                                                                                        ; 1       ;
 ; VGA_generator:VGApart|enarRAMclk                                                                                      ; 1       ;
-; CAPonce:CAP11|RAM_adr~4                                                                                               ; 1       ;
-; CAPonce:CAP11|RAM_adr~3                                                                                               ; 1       ;
-; CAPonce:CAP11|process_0~4                                                                                             ; 1       ;
-; CAPonce:CAP11|Equal0~0                                                                                                ; 1       ;
-; CAPonce:CAP11|process_0~2                                                                                             ; 1       ;
-; CAPonce:CAP11|RAM_adr~2                                                                                               ; 1       ;
+; CAPonce:CAP11|RAM_adr~6                                                                                               ; 1       ;
+; CAPonce:CAP11|RAM_adr~5                                                                                               ; 1       ;
+; CAPonce:CAP11|RAM_adr[15]~2                                                                                           ; 1       ;
+; CAPonce:CAP11|RAM_adr[15]~1                                                                                           ; 1       ;
+; CAPonce:CAP11|RAM_adr~0                                                                                               ; 1       ;
 ; CAPonce:CAP11|Equal2~4                                                                                                ; 1       ;
 ; CAPonce:CAP11|Equal2~3                                                                                                ; 1       ;
 ; CAPonce:CAP11|Equal2~2                                                                                                ; 1       ;
@@ -2145,7 +2166,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|v_count~2                                                                                       ; 1       ;
 ; VGA_generator:VGApart|v_count~1                                                                                       ; 1       ;
 ; VGA_generator:VGApart|v_count~0                                                                                       ; 1       ;
-; VGA_generator:VGApart|Equal1~2                                                                                        ; 1       ;
 ; VGA_generator:VGApart|h_count~3                                                                                       ; 1       ;
 ; VGA_generator:VGApart|h_count~2                                                                                       ; 1       ;
 ; VGA_generator:VGApart|h_count~1                                                                                       ; 1       ;
@@ -2153,31 +2173,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|set_color~13                                                                                    ; 1       ;
 ; VGA_generator:VGApart|set_color~12                                                                                    ; 1       ;
 ; VGA_generator:VGApart|set_color~11                                                                                    ; 1       ;
-; VGA_generator:VGApart|Equal1~1                                                                                        ; 1       ;
 ; VGA_generator:VGApart|set_color~10                                                                                    ; 1       ;
+; VGA_generator:VGApart|Equal1~0                                                                                        ; 1       ;
 ; VGA_generator:VGApart|set_color~9                                                                                     ; 1       ;
 ; VGA_generator:VGApart|set_color~8                                                                                     ; 1       ;
 ; VGA_generator:VGApart|set_color~7                                                                                     ; 1       ;
-; VGA_generator:VGApart|set_color~6                                                                                     ; 1       ;
 ; centroID:cID|lastLocY[6]                                                                                              ; 1       ;
 ; centroID:cID|lastLocY[7]                                                                                              ; 1       ;
 ; centroID:cID|lastLocY[8]                                                                                              ; 1       ;
-; VGA_generator:VGApart|set_color~5                                                                                     ; 1       ;
+; VGA_generator:VGApart|set_color~6                                                                                     ; 1       ;
 ; centroID:cID|lastLocY[0]                                                                                              ; 1       ;
 ; centroID:cID|lastLocY[1]                                                                                              ; 1       ;
-; VGA_generator:VGApart|set_color~4                                                                                     ; 1       ;
+; VGA_generator:VGApart|set_color~5                                                                                     ; 1       ;
 ; centroID:cID|lastLocY[5]                                                                                              ; 1       ;
 ; centroID:cID|lastLocY[4]                                                                                              ; 1       ;
-; VGA_generator:VGApart|set_color~3                                                                                     ; 1       ;
+; VGA_generator:VGApart|set_color~4                                                                                     ; 1       ;
 ; centroID:cID|lastLocY[2]                                                                                              ; 1       ;
 ; centroID:cID|lastLocY[3]                                                                                              ; 1       ;
+; VGA_generator:VGApart|process_0~14                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~13                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~12                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~11                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~10                                                                                    ; 1       ;
 ; VGA_generator:VGApart|process_0~9                                                                                     ; 1       ;
-; VGA_generator:VGApart|process_0~8                                                                                     ; 1       ;
-; VGA_generator:VGApart|set_color~2                                                                                     ; 1       ;
+; VGA_generator:VGApart|set_color~3                                                                                     ; 1       ;
 ; VGA_generator:VGApart|Equal6~5                                                                                        ; 1       ;
 ; VGA_generator:VGApart|Equal6~4                                                                                        ; 1       ;
 ; centroID:cID|lastLocX[6]                                                                                              ; 1       ;
@@ -2194,10 +2213,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_generator:VGApart|Equal6~0                                                                                        ; 1       ;
 ; centroID:cID|lastLocX[8]                                                                                              ; 1       ;
 ; centroID:cID|lastLocX[9]                                                                                              ; 1       ;
+; VGA_generator:VGApart|set_color~2                                                                                     ; 1       ;
 ; VGA_generator:VGApart|set_color~1                                                                                     ; 1       ;
-; VGA_generator:VGApart|set_color~0                                                                                     ; 1       ;
-; VGA_generator:VGApart|process_0~7                                                                                     ; 1       ;
-; VGA_generator:VGApart|LessThan6~0                                                                                     ; 1       ;
+; VGA_generator:VGApart|process_0~8                                                                                     ; 1       ;
+; VGA_generator:VGApart|process_0~6                                                                                     ; 1       ;
 ; SCCBdrive:SCCBdriver|dataEedge                                                                                        ; 1       ;
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|cQ[26]                                                                               ; 1       ;
 ; SCCBdrive:SCCBdriver|clk400D                                                                                          ; 1       ;
@@ -2260,23 +2279,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[26]                                                                                ; 1       ;
 ; SCCBdrive:SCCBdriver|SIO_C                                                                                            ; 1       ;
 ; SCCBdrive:SCCBdriver|LIVE                                                                                             ; 1       ;
-; centroID:cID|whiteCount[8]~25                                                                                         ; 1       ;
-; centroID:cID|whiteCount[7]~24                                                                                         ; 1       ;
-; centroID:cID|whiteCount[7]~23                                                                                         ; 1       ;
-; centroID:cID|whiteCount[6]~22                                                                                         ; 1       ;
-; centroID:cID|whiteCount[6]~21                                                                                         ; 1       ;
-; centroID:cID|whiteCount[5]~20                                                                                         ; 1       ;
-; centroID:cID|whiteCount[5]~19                                                                                         ; 1       ;
-; centroID:cID|whiteCount[4]~18                                                                                         ; 1       ;
-; centroID:cID|whiteCount[4]~17                                                                                         ; 1       ;
-; centroID:cID|whiteCount[3]~16                                                                                         ; 1       ;
-; centroID:cID|whiteCount[3]~15                                                                                         ; 1       ;
-; centroID:cID|whiteCount[2]~14                                                                                         ; 1       ;
-; centroID:cID|whiteCount[2]~13                                                                                         ; 1       ;
-; centroID:cID|whiteCount[1]~12                                                                                         ; 1       ;
-; centroID:cID|whiteCount[1]~11                                                                                         ; 1       ;
-; centroID:cID|whiteCount[0]~10                                                                                         ; 1       ;
-; centroID:cID|whiteCount[0]~9                                                                                          ; 1       ;
+; centroID:cID|whiteCount[8]~29                                                                                         ; 1       ;
+; centroID:cID|whiteCount[7]~28                                                                                         ; 1       ;
+; centroID:cID|whiteCount[7]~27                                                                                         ; 1       ;
+; centroID:cID|whiteCount[6]~26                                                                                         ; 1       ;
+; centroID:cID|whiteCount[6]~25                                                                                         ; 1       ;
+; centroID:cID|whiteCount[5]~24                                                                                         ; 1       ;
+; centroID:cID|whiteCount[5]~23                                                                                         ; 1       ;
+; centroID:cID|whiteCount[4]~22                                                                                         ; 1       ;
+; centroID:cID|whiteCount[4]~21                                                                                         ; 1       ;
+; centroID:cID|whiteCount[3]~20                                                                                         ; 1       ;
+; centroID:cID|whiteCount[3]~19                                                                                         ; 1       ;
+; centroID:cID|whiteCount[2]~18                                                                                         ; 1       ;
+; centroID:cID|whiteCount[2]~17                                                                                         ; 1       ;
+; centroID:cID|whiteCount[1]~16                                                                                         ; 1       ;
+; centroID:cID|whiteCount[1]~15                                                                                         ; 1       ;
+; centroID:cID|whiteCount[0]~14                                                                                         ; 1       ;
+; centroID:cID|whiteCount[0]~13                                                                                         ; 1       ;
 ; centroID:cID|lastWhite[9]~28                                                                                          ; 1       ;
 ; centroID:cID|lastWhite[8]~27                                                                                          ; 1       ;
 ; centroID:cID|lastWhite[8]~26                                                                                          ; 1       ;
@@ -2625,13 +2644,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
-; Name                                                                                   ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; Fits in MLABs ;
-+----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
-; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; Dual Clocks ; 65536        ; 4            ; 65536        ; 4            ; yes                    ; no                      ; yes                    ; no                      ; 262144 ; 65536                       ; 4                           ; 65536                       ; 4                           ; 262144              ; 32   ; None ; M9K_X25_Y20_N0, M9K_X25_Y6_N0, M9K_X25_Y16_N0, M9K_X25_Y7_N0, M9K_X25_Y19_N0, M9K_X25_Y17_N0, M9K_X25_Y14_N0, M9K_X25_Y18_N0, M9K_X13_Y20_N0, M9K_X13_Y10_N0, M9K_X13_Y16_N0, M9K_X13_Y8_N0, M9K_X13_Y21_N0, M9K_X13_Y15_N0, M9K_X13_Y11_N0, M9K_X13_Y18_N0, M9K_X13_Y9_N0, M9K_X13_Y7_N0, M9K_X13_Y13_N0, M9K_X13_Y6_N0, M9K_X13_Y19_N0, M9K_X13_Y17_N0, M9K_X13_Y14_N0, M9K_X13_Y12_N0, M9K_X25_Y9_N0, M9K_X25_Y10_N0, M9K_X25_Y13_N0, M9K_X25_Y8_N0, M9K_X25_Y21_N0, M9K_X25_Y15_N0, M9K_X25_Y11_N0, M9K_X25_Y12_N0 ; Don't care           ; Old data        ; Old data        ; Yes           ;
-+----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
+; Name                                                                                   ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; Fits in MLABs ;
++----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
+; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; Dual Clocks ; 65536        ; 4            ; 65536        ; 4            ; yes                    ; no                      ; yes                    ; no                      ; 262144 ; 65536                       ; 4                           ; 65536                       ; 4                           ; 262144              ; 32   ; None ; M9K_X13_Y17_N0, M9K_X13_Y16_N0, M9K_X13_Y15_N0, M9K_X25_Y17_N0, M9K_X13_Y13_N0, M9K_X13_Y20_N0, M9K_X13_Y14_N0, M9K_X25_Y20_N0, M9K_X25_Y10_N0, M9K_X13_Y4_N0, M9K_X13_Y5_N0, M9K_X25_Y5_N0, M9K_X25_Y9_N0, M9K_X13_Y8_N0, M9K_X13_Y9_N0, M9K_X25_Y15_N0, M9K_X25_Y13_N0, M9K_X25_Y8_N0, M9K_X13_Y6_N0, M9K_X25_Y6_N0, M9K_X25_Y12_N0, M9K_X13_Y18_N0, M9K_X13_Y12_N0, M9K_X25_Y18_N0, M9K_X25_Y11_N0, M9K_X13_Y11_N0, M9K_X13_Y7_N0, M9K_X25_Y7_N0, M9K_X25_Y14_N0, M9K_X13_Y19_N0, M9K_X13_Y10_N0, M9K_X25_Y16_N0 ; Don't care           ; Old data        ; Old data        ; Yes           ;
++----------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -2640,14 +2659,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 1,544 / 47,787 ( 3 % ) ;
-; C16 interconnects     ; 51 / 1,804 ( 3 % )     ;
+; Block interconnects   ; 1,563 / 47,787 ( 3 % ) ;
+; C16 interconnects     ; 48 / 1,804 ( 3 % )     ;
 ; C4 interconnects      ; 693 / 31,272 ( 2 % )   ;
-; Direct links          ; 138 / 47,787 ( < 1 % ) ;
+; Direct links          ; 142 / 47,787 ( < 1 % ) ;
 ; Global clocks         ; 10 / 20 ( 50 % )       ;
-; Local interconnects   ; 278 / 15,408 ( 2 % )   ;
-; R24 interconnects     ; 45 / 1,775 ( 3 % )     ;
-; R4 interconnects      ; 880 / 41,310 ( 2 % )   ;
+; Local interconnects   ; 294 / 15,408 ( 2 % )   ;
+; R24 interconnects     ; 56 / 1,775 ( 3 % )     ;
+; R4 interconnects      ; 895 / 41,310 ( 2 % )   ;
 +-----------------------+------------------------+
 
 
@@ -2656,36 +2675,36 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +---------------------------------------------+------------------------------+
 ; Number of Logic Elements  (Average = 12.02) ; Number of LABs  (Total = 41) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 3                            ;
-; 2                                           ; 1                            ;
+; 1                                           ; 2                            ;
+; 2                                           ; 3                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 2                            ;
-; 6                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 3                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
+; 8                                           ; 0                            ;
 ; 9                                           ; 1                            ;
 ; 10                                          ; 2                            ;
 ; 11                                          ; 2                            ;
-; 12                                          ; 4                            ;
-; 13                                          ; 3                            ;
-; 14                                          ; 5                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 16                           ;
+; 12                                          ; 2                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 3                            ;
+; 16                                          ; 18                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.02) ; Number of LABs  (Total = 41) ;
+; LAB-wide Signals  (Average = 2.10) ; Number of LABs  (Total = 41) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 25                           ;
-; 1 Clock                            ; 30                           ;
-; 1 Clock enable                     ; 12                           ;
+; 1 Clock                            ; 31                           ;
+; 1 Clock enable                     ; 15                           ;
 ; 1 Sync. clear                      ; 6                            ;
 ; 2 Async. clears                    ; 2                            ;
-; 2 Clock enables                    ; 3                            ;
+; 2 Clock enables                    ; 2                            ;
 ; 2 Clocks                           ; 5                            ;
 +------------------------------------+------------------------------+
 
@@ -2696,102 +2715,102 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Number of Signals Sourced  (Average = 19.15) ; Number of LABs  (Total = 41) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
-; 2                                            ; 1                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 3                            ;
 ; 3                                            ; 1                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 1                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 2                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 2                            ;
 ; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
+; 20                                           ; 4                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 0                            ;
 ; 23                                           ; 2                            ;
-; 24                                           ; 4                            ;
-; 25                                           ; 3                            ;
-; 26                                           ; 2                            ;
-; 27                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 5                            ;
+; 26                                           ; 3                            ;
+; 27                                           ; 2                            ;
 ; 28                                           ; 4                            ;
-; 29                                           ; 2                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 1                            ;
 ; 31                                           ; 0                            ;
-; 32                                           ; 1                            ;
+; 32                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.41) ; Number of LABs  (Total = 41) ;
+; Number of Signals Sourced Out  (Average = 7.73) ; Number of LABs  (Total = 41) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 5                            ;
+; 1                                               ; 4                            ;
 ; 2                                               ; 6                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 3                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 3                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 3                            ;
+; 3                                               ; 2                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 5                            ;
+; 6                                               ; 2                            ;
+; 7                                               ; 0                            ;
+; 8                                               ; 0                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 7                            ;
 ; 11                                              ; 2                            ;
 ; 12                                              ; 3                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 1                            ;
+; 13                                              ; 1                            ;
+; 14                                              ; 0                            ;
 ; 15                                              ; 1                            ;
-; 16                                              ; 3                            ;
+; 16                                              ; 5                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 12.95) ; Number of LABs  (Total = 41) ;
+; Number of Distinct Inputs  (Average = 13.44) ; Number of LABs  (Total = 41) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 3                            ;
-; 4                                            ; 7                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 6                            ;
-; 7                                            ; 2                            ;
+; 3                                            ; 2                            ;
+; 4                                            ; 3                            ;
+; 5                                            ; 4                            ;
+; 6                                            ; 4                            ;
+; 7                                            ; 4                            ;
 ; 8                                            ; 1                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 1                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 0                            ;
 ; 13                                           ; 2                            ;
-; 14                                           ; 1                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 2                            ;
-; 17                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
 ; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 2                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 1                            ;
-; 30                                           ; 3                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2991,9 +3010,8 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +------------------------------------------------------------------------------------+---------------------------------+-------------------+
 ; Source Clock(s)                                                                    ; Destination Clock(s)            ; Delay Added in ns ;
 +------------------------------------------------------------------------------------+---------------------------------+-------------------+
-; DIV800|altpll_component|auto_generated|pll1|clk[0]                                 ; SCCBdrive:SCCBdriver|clk400data ; 24.9              ;
-; DIV800|altpll_component|auto_generated|pll1|clk[0],SCCBdrive:SCCBdriver|clk400data ; SCCBdrive:SCCBdriver|clk400data ; 11.2              ;
-; SCCBdrive:SCCBdriver|clk400,SCCBdrive:SCCBdriver|clk400data                        ; SCCBdrive:SCCBdriver|clk400data ; 1.3               ;
+; DIV800|altpll_component|auto_generated|pll1|clk[0]                                 ; SCCBdrive:SCCBdriver|clk400data ; 24.3              ;
+; DIV800|altpll_component|auto_generated|pll1|clk[0],SCCBdrive:SCCBdriver|clk400data ; SCCBdrive:SCCBdriver|clk400data ; 10.4              ;
 +------------------------------------------------------------------------------------+---------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -3004,29 +3022,29 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------------+----------------------------------------+-------------------+
 ; Source Register                        ; Destination Register                   ; Delay Added in ns ;
 +----------------------------------------+----------------------------------------+-------------------+
-; SCCBdrive:SCCBdriver|Q0                ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[8]  ; 1.916             ;
-; SCCBdrive:SCCBdriver|Q1                ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[14] ; 1.916             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[24] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[25] ; 0.860             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[25] ; 0.860             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[7]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[8]  ; 0.855             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[13] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[14] ; 0.855             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[19] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[20] ; 0.808             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[3]  ; 0.803             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[4]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[5]  ; 0.803             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[11] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[12] ; 0.800             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[12] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[13] ; 0.800             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[6]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[7]  ; 0.794             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[10] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[11] ; 0.794             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[1]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]  ; 0.747             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[16] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[17] ; 0.747             ;
-; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[15] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[16] ; 0.742             ;
-; SCCBdrive:SCCBdriver|mssgGO            ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[6]  ; 0.462             ;
+; SCCBdrive:SCCBdriver|Q1                ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[3]  ; 1.932             ;
+; SCCBdrive:SCCBdriver|Q0                ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[17] ; 1.599             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[16] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[17] ; 0.801             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Esync ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[17] ; 0.801             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[19] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[20] ; 0.788             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[13] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[14] ; 0.784             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[15] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[16] ; 0.766             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[4]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[5]  ; 0.763             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[7]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[8]  ; 0.763             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[11] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[12] ; 0.741             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[12] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[13] ; 0.741             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[24] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[25] ; 0.727             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[10] ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[11] ; 0.723             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[3]  ; 0.722             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[6]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[7]  ; 0.700             ;
+; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[1]  ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[2]  ; 0.673             ;
+; SCCBdrive:SCCBdriver|mssgGO            ; SCCBdrive:SCCBdriver|P2Sreg:REGS|Q[1]  ; 0.224             ;
 ; CAPonce:CAP11|CAPclk                   ; CAPonce:CAP11|CAPclk                   ; 0.222             ;
-; SCCBdrive:SCCBdriver|C_E               ; SCCBdrive:SCCBdriver|clk400data        ; 0.141             ;
-; CAPonce:CAP11|QinReg[5]                ; CAPonce:CAP11|QaddReg[1]               ; 0.140             ;
-; CAPonce:CAP11|QinReg[6]                ; CAPonce:CAP11|QaddReg[2]               ; 0.140             ;
-; CAPonce:CAP11|QinReg[7]                ; CAPonce:CAP11|QaddReg[3]               ; 0.140             ;
-; CAPonce:CAP11|takeTurn                 ; CAPonce:CAP11|QaddReg[1]               ; 0.063             ;
+; CAPonce:CAP11|QinReg[5]                ; CAPonce:CAP11|QaddReg[1]               ; 0.138             ;
+; CAPonce:CAP11|QinReg[6]                ; CAPonce:CAP11|QaddReg[2]               ; 0.138             ;
+; CAPonce:CAP11|QinReg[7]                ; CAPonce:CAP11|QaddReg[3]               ; 0.138             ;
+; SCCBdrive:SCCBdriver|C_E               ; SCCBdrive:SCCBdriver|clk400data        ; 0.130             ;
+; CAPonce:CAP11|takeTurn                 ; CAPonce:CAP11|QaddReg[1]               ; 0.061             ;
 +----------------------------------------+----------------------------------------+-------------------+
 Note: This table only shows the top 23 path(s) that have the largest delay added for hold.
 
@@ -3284,11 +3302,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 2% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 7% of the available device resources in the region that extends from location X10_Y10 to location X20_Y19
+    Info (170196): Router estimated peak interconnect usage is 8% of the available device resources in the region that extends from location X10_Y10 to location X20_Y19
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3329,8 +3347,8 @@ Warning (169177): 31 pins must meet Altera requirements for 3.3-, 3.0-, and 2.5-
     Info (169178): Pin GPIO1_D[6] uses I/O standard 3.3-V LVCMOS at AA17
 Info (144001): Generated suppressed messages file C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/output_files/LoQritas.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 185 warnings
-    Info: Peak virtual memory: 5356 megabytes
-    Info: Processing ended: Thu Jun 27 13:11:50 2024
+    Info: Peak virtual memory: 5365 megabytes
+    Info: Processing ended: Thu Jun 27 16:14:57 2024
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:03
 

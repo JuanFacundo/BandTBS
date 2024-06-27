@@ -67,7 +67,9 @@ begin
 			end if;
 			
 			if (h_count >= 319) then
+			
 				mostLocY <= firstRow + lastRow;
+				
 				if (whiteCount > mostCount) then
 					if (mostCount = 0) then
 						firstRow <= v_count;
@@ -88,6 +90,8 @@ begin
 					mostLocX <= (others => '0');
 					lastLocY <= '0' & mostLocY(9 downto 1);		--divide by 2
 					mostLocY <= (others => '0');
+					firstRow <= (others => '0');
+					lastRow <= (others => '0');
 					
 					mostCount <= (others => '0');
 			
