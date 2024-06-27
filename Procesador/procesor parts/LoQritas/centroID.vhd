@@ -50,6 +50,7 @@ begin
 			lastLocY <= (others => '0');
 			firstWhite <= (others => '0');
 			lastWhite <= (others => '0');
+			firstRow <= (others => '0');
 
 			
 		elsif rising_edge(pixCLK) then
@@ -66,6 +67,7 @@ begin
 			end if;
 			
 			if (h_count >= 319) then
+				mostLocY <= firstRow + lastRow;
 				if (whiteCount > mostCount) then
 					if (mostCount = 0) then
 						firstRow <= v_count;
@@ -73,13 +75,13 @@ begin
 					
 					mostCount <= whiteCount;
 					mostLocX <= firstWhite + lastWhite;
-					mostLocY <= firstRow + lastRow;
 					
 				end if;
 			
 				whiteCount <= (others => '0');
 				firstWhite <= (others => '0');
 				lastWhite <= (others => '0');
+
 			
 				if (v_count >= 478) then
 					lastLocX <= mostLocX;
