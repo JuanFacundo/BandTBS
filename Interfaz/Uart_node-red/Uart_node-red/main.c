@@ -79,10 +79,8 @@ int main(void)
 			uint16_t pulse_widthy = (int)(y_value*(2000.0/1023.0) + 2000);
 			setPWM(pulse_widthx,pulse_widthy);
 			
-			if(flag == 1)
-			{
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,5);
-			}
+			
+			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,5);
 			
 			USART_print(buffer);
 			
