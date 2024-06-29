@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("D:/altera/13.1/taller de sistemas digitales/Driver_com/output_files/") File("Driver_com.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Driver_com/output_files/") File("Driver_com.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

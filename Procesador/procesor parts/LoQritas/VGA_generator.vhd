@@ -14,6 +14,8 @@ entity VGA_generator is
 		  ena			  	: in std_logic;
 		  enaSquare		: in std_logic;
 		  color			: in std_logic_vector(3 downto 0);
+		  c_X				: in std_logic_vector(9 downto 0);
+		  c_Y				: in std_logic_vector(9 downto 0);
         red         	: out std_logic_vector(3 downto 0);
         green       	: out std_logic_vector(3 downto 0);
         blue        	: out std_logic_vector(3 downto 0);
@@ -131,10 +133,10 @@ begin
 						
 			--- Genera cuadrado  de 480 x 480 y sus diagonales 
 			if (enaSquare = '1') then
-				if ( h_count = 80) or (h_count = 559)   then
+				if ( h_count = 80) or (h_count = 559) or (h_count = unsigned(c_X)-2)   then
 					set_color <= '1';
 				
-				elsif ( ( v_count = 0 ) or ( v_count = 479 ) ) and ( h_count >= 80 ) and ( h_count <= 559 )then
+				elsif ( (( v_count = 0 ) or ( v_count = 479 )) or ( v_count = unsigned(c_Y) ) ) and ( h_count >= 80 ) and ( h_count <= 559 )then
 					set_color <= '1'; 
 				
 				elsif ( h_count - v_count  = 80  )  and (h_count >= 80) and (h_count <= 559) then

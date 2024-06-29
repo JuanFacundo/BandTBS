@@ -94,12 +94,12 @@ begin
 	
 	ADDed(5) <= Caux(5);
 	
-	A(3 downto 0) <= QinReg(7 downto 4);
+	A(3 downto 0) <= "0000";---------------------------------QinReg(7 downto 4);
 	A(4) <= '0';
 	
 	B(3 downto 0) <= 
-		QinReg(3 downto 0) when takeTurn='1' else
-		QaddReg(3 downto 0) when takeTurn='0';
+		"0000" when takeTurn='1' else------------------------QinReg(3 downto 0) when takeTurn='1' else
+		QinReg(7 downto 4) when takeTurn='0';-----------------------------QaddReg(3 downto 0) when takeTurn='0';
 	B(4) <=
 		'0' when takeTurn='1' else
 		QaddReg(4) when takeTurn='0';
@@ -109,7 +109,7 @@ begin
 		"000000" when HREF='0' else
 		ADDed when rising_edge(dPCLK);
 		
-	D_out <= QaddReg(5 downto 2);
+	D_out <= QaddReg(3 downto 0);---------------------------D_out <= QaddReg(5 downto 2);
 	
 	CAPclk <= 
 		'0' when HRST = '1' else

@@ -1,5 +1,5 @@
 Fitter report for Driver_com
-Thu Jun 27 16:27:48 2024
+Thu Jun 27 18:48:02 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jun 27 16:27:48 2024      ;
+; Fitter Status                      ; Successful - Thu Jun 27 18:48:02 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Driver_com                                 ;
 ; Top-level Entity Name              ; Driver_com                                 ;
@@ -80,7 +80,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 69 / 15,408 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 40 / 15,408 ( < 1 % )                      ;
 ; Total registers                    ; 40                                         ;
-; Total pins                         ; 4 / 347 ( 1 % )                            ;
+; Total pins                         ; 5 / 347 ( 1 % )                            ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -170,9 +170,10 @@ applicable agreement for further details.
 +------------+-------------------------------+
 ; Pin Name   ; Reason                        ;
 +------------+-------------------------------+
-; GPIO0_D[0] ; Incomplete set of assignments ;
-; GPIO0_D[1] ; Incomplete set of assignments ;
-; GPIO0_D[2] ; Incomplete set of assignments ;
+; GPIO1_D[0] ; Incomplete set of assignments ;
+; GPIO1_D[1] ; Incomplete set of assignments ;
+; GPIO1_D[2] ; Incomplete set of assignments ;
+; GPIO1_D[3] ; Incomplete set of assignments ;
 ; CLOCK_50   ; Incomplete set of assignments ;
 +------------+-------------------------------+
 
@@ -274,6 +275,7 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO0_CLKIN[1]  ; PIN_AA12      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_CLKOUT[0] ; PIN_AB3       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_CLKOUT[1] ; PIN_AA3       ; QSF Assignment ;
+; Location ;                ;              ; GPIO0_D[0]      ; PIN_AB16      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[10]     ; PIN_AB8       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[11]     ; PIN_AA8       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[12]     ; PIN_AB5       ; QSF Assignment ;
@@ -284,6 +286,7 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO0_D[17]     ; PIN_U14       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[18]     ; PIN_Y13       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[19]     ; PIN_W13       ; QSF Assignment ;
+; Location ;                ;              ; GPIO0_D[1]      ; PIN_AA16      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[20]     ; PIN_U13       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[21]     ; PIN_V12       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[22]     ; PIN_R10       ; QSF Assignment ;
@@ -294,6 +297,7 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO0_D[27]     ; PIN_V8        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[28]     ; PIN_W7        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[29]     ; PIN_W6        ; QSF Assignment ;
+; Location ;                ;              ; GPIO0_D[2]      ; PIN_AA15      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[30]     ; PIN_V5        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[31]     ; PIN_U7        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO0_D[3]      ; PIN_AB15      ; QSF Assignment ;
@@ -307,7 +311,6 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO1_CLKIN[1]  ; PIN_AA11      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_CLKOUT[0] ; PIN_R16       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_CLKOUT[1] ; PIN_T16       ; QSF Assignment ;
-; Location ;                ;              ; GPIO1_D[0]      ; PIN_AA20      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[10]     ; PIN_U15       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[11]     ; PIN_T15       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[12]     ; PIN_W15       ; QSF Assignment ;
@@ -318,7 +321,6 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO1_D[17]     ; PIN_AB7       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[18]     ; PIN_T14       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[19]     ; PIN_R14       ; QSF Assignment ;
-; Location ;                ;              ; GPIO1_D[1]      ; PIN_AB20      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[20]     ; PIN_U12       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[21]     ; PIN_T12       ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[22]     ; PIN_R11       ; QSF Assignment ;
@@ -329,10 +331,8 @@ applicable agreement for further details.
 ; Location ;                ;              ; GPIO1_D[27]     ; PIN_T9        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[28]     ; PIN_Y7        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[29]     ; PIN_U8        ; QSF Assignment ;
-; Location ;                ;              ; GPIO1_D[2]      ; PIN_AA19      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[30]     ; PIN_V6        ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[31]     ; PIN_V7        ; QSF Assignment ;
-; Location ;                ;              ; GPIO1_D[3]      ; PIN_AB19      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[4]      ; PIN_AB18      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[5]      ; PIN_AA18      ; QSF Assignment ;
 ; Location ;                ;              ; GPIO1_D[6]      ; PIN_AA17      ; QSF Assignment ;
@@ -441,8 +441,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 130 ) ; 0.00 % ( 0 / 130 )         ; 0.00 % ( 0 / 130 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 130 ) ; 0.00 % ( 0 / 130 )         ; 0.00 % ( 0 / 130 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 132 ) ; 0.00 % ( 0 / 132 )         ; 0.00 % ( 0 / 132 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 132 ) ; 0.00 % ( 0 / 132 )         ; 0.00 % ( 0 / 132 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -465,7 +465,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 120 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 122 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -473,7 +473,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Driver_com/output_files/Driver_com.pin.
+The pin-out file can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Driver_com/output_files/Driver_com.pin.
 
 
 +---------------------------------------------------------------------+
@@ -500,9 +500,9 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ;     -- Dedicated logic registers            ; 40 / 15,408 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )     ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 6 / 963 ( < 1 % )     ;
+; Total LABs:  partially or completely used   ; 7 / 963 ( < 1 % )     ;
 ; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 4 / 347 ( 1 % )       ;
+; I/O pins                                    ; 5 / 347 ( 1 % )       ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
 ;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )         ;
 ;                                             ;                       ;
@@ -521,8 +521,8 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
 ; Maximum fan-out                             ; 28                    ;
 ; Highest non-global fan-out                  ; 9                     ;
-; Total fan-out                               ; 294                   ;
-; Average fan-out                             ; 2.26                  ;
+; Total fan-out                               ; 296                   ;
+; Average fan-out                             ; 2.23                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -554,10 +554,10 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ;     -- Dedicated logic registers            ; 40 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 6 / 963 ( < 1 % )    ; 0 / 963 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 7 / 963 ( < 1 % )    ; 0 / 963 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 4                    ; 0                              ;
+; I/O pins                                    ; 5                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )      ; 0 / 112 ( 0 % )                ;
 ; Total memory bits                           ; 0                    ; 0                              ;
 ; Total RAM block bits                        ; 0                    ; 0                              ;
@@ -570,7 +570,7 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 289                  ; 5                              ;
+;     -- Total Connections                    ; 291                  ; 5                              ;
 ;     -- Registered Connections               ; 109                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -579,7 +579,7 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ;                                             ;                      ;                                ;
 ; Partition Interface                         ;                      ;                                ;
 ;     -- Input Ports                          ; 1                    ; 0                              ;
-;     -- Output Ports                         ; 3                    ; 0                              ;
+;     -- Output Ports                         ; 4                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Registered Ports                            ;                      ;                                ;
@@ -612,9 +612,10 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 +------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; GPIO0_D[0] ; AB16  ; 4        ; 28           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; GPIO0_D[1] ; AA16  ; 4        ; 28           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; GPIO0_D[2] ; AA15  ; 4        ; 26           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; GPIO1_D[0] ; AA20  ; 4        ; 37           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; GPIO1_D[1] ; AB20  ; 4        ; 37           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; GPIO1_D[2] ; AA19  ; 4        ; 35           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; GPIO1_D[3] ; AB19  ; 4        ; 35           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -647,7 +648,7 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ; 1        ; 4 / 33 ( 12 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 48 ( 0 % )  ; 2.5V          ; --           ;
 ; 3        ; 0 / 46 ( 0 % )  ; 2.5V          ; --           ;
-; 4        ; 3 / 41 ( 7 % )  ; 2.5V          ; --           ;
+; 4        ; 4 / 41 ( 10 % ) ; 2.5V          ; --           ;
 ; 5        ; 0 / 46 ( 0 % )  ; 2.5V          ; --           ;
 ; 6        ; 2 / 43 ( 5 % )  ; 2.5V          ; --           ;
 ; 7        ; 0 / 47 ( 0 % )  ; 2.5V          ; --           ;
@@ -696,12 +697,12 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ; AA12     ; 136        ; 4        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AA13     ; 138        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA14     ; 140        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA15     ; 145        ; 4        ; GPIO0_D[2]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; AA16     ; 149        ; 4        ; GPIO0_D[1]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AA15     ; 145        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AA16     ; 149        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA17     ; 151        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA18     ; 163        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA19     ; 164        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA20     ; 169        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AA19     ; 164        ; 4        ; GPIO1_D[2]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AA20     ; 169        ; 4        ; GPIO1_D[0]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AA21     ; 179        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA22     ; 178        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB1      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -719,11 +720,11 @@ The pin-out file can be found in D:/altera/13.1/taller de sistemas digitales/Dri
 ; AB13     ; 139        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB14     ; 141        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB15     ; 146        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB16     ; 150        ; 4        ; GPIO0_D[0]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AB16     ; 150        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB17     ; 152        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB18     ; 162        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB19     ; 165        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB20     ; 170        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AB19     ; 165        ; 4        ; GPIO1_D[3]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AB20     ; 170        ; 4        ; GPIO1_D[1]                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AB21     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AB22     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B1       ; 2          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1153,9 +1154,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------+--------------+
-; |Driver_com                ; 71 (38)     ; 40 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 4    ; 0            ; 31 (17)      ; 2 (0)             ; 38 (21)          ; |Driver_com                 ; work         ;
-;    |com_serie:COM_X|       ; 10 (10)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 6 (6)            ; |Driver_com|com_serie:COM_X ; work         ;
-;    |com_serie:COM_Y|       ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; |Driver_com|com_serie:COM_Y ; work         ;
+; |Driver_com                ; 71 (38)     ; 40 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 5    ; 0            ; 31 (17)      ; 2 (0)             ; 38 (21)          ; |Driver_com                 ; work         ;
+;    |com_serie:COM_X|       ; 11 (11)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 1 (1)             ; 6 (6)            ; |Driver_com|com_serie:COM_X ; work         ;
+;    |com_serie:COM_Y|       ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |Driver_com|com_serie:COM_Y ; work         ;
 ;    |div_clk:DIV|           ; 21 (21)     ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 11 (11)          ; |Driver_com|div_clk:DIV     ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1166,9 +1167,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------+----------+---------------+---------------+-----------------------+-----+------+
 ; Name       ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +------------+----------+---------------+---------------+-----------------------+-----+------+
-; GPIO0_D[0] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; GPIO0_D[1] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; GPIO0_D[2] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[0] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[1] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[2] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; GPIO1_D[3] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; CLOCK_50   ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -1188,8 +1190,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                       ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                   ; PIN_G21           ; 12      ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; com_serie:COM_X|data_out~5 ; LCCOMB_X28_Y7_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; div_clk:DIV|Clk_aux        ; FF_X40_Y26_N23    ; 28      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; com_serie:COM_X|data_out~5 ; LCCOMB_X19_Y6_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; div_clk:DIV|Clk_aux        ; FF_X33_Y13_N31    ; 28      ; Clock        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
 +----------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1199,7 +1201,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; CLOCK_50            ; PIN_G21        ; 12      ; 1                                    ; Global Clock         ; GCLK9            ; --                        ;
-; div_clk:DIV|Clk_aux ; FF_X40_Y26_N23 ; 28      ; 4                                    ; Global Clock         ; GCLK6            ; --                        ;
+; div_clk:DIV|Clk_aux ; FF_X33_Y13_N31 ; 28      ; 5                                    ; Global Clock         ; GCLK7            ; --                        ;
 +---------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1228,7 +1230,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bit_counter[5]                   ; 3       ;
 ; bit_counter[7]                   ; 3       ;
 ; bit_counter[8]                   ; 3       ;
-; GPIO0_D[0]~reg0                  ; 3       ;
+; GPIO1_D[0]~reg0                  ; 3       ;
 ; com_serie:COM_X|bit_counter[2]~3 ; 2       ;
 ; div_clk:DIV|counter[9]           ; 2       ;
 ; div_clk:DIV|counter[8]           ; 2       ;
@@ -1251,10 +1253,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bit_counter[12]                  ; 2       ;
 ; bit_counter[11]                  ; 2       ;
 ; bit_counter[10]                  ; 2       ;
+; bit_counter[9]                   ; 2       ;
 ; bit_counter[2]                   ; 2       ;
 ; bit_counter[4]                   ; 2       ;
 ; bit_counter[6]                   ; 2       ;
-; bit_counter[9]                   ; 2       ;
 ; com_serie:COM_X|bit_counter[1]~5 ; 1       ;
 ; com_serie:COM_X|data_out~6       ; 1       ;
 ; div_clk:DIV|counter~4            ; 1       ;
@@ -1279,9 +1281,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; com_serie:COM_Y|data_out~0       ; 1       ;
 ; com_serie:COM_X|data_out~4       ; 1       ;
 ; div_clk:DIV|Clk_aux              ; 1       ;
-; GPIO0_D~2                        ; 1       ;
-; GPIO0_D~1                        ; 1       ;
-; GPIO0_D~0                        ; 1       ;
+; GPIO1_D~2                        ; 1       ;
+; GPIO1_D~1                        ; 1       ;
+; GPIO1_D~0                        ; 1       ;
 ; Equal0~2                         ; 1       ;
 ; Equal0~1                         ; 1       ;
 ; Equal0~0                         ; 1       ;
@@ -1353,69 +1355,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------+
 ; Routing Resource Type ; Usage                 ;
 +-----------------------+-----------------------+
-; Block interconnects   ; 45 / 47,787 ( < 1 % ) ;
-; C16 interconnects     ; 1 / 1,804 ( < 1 % )   ;
-; C4 interconnects      ; 18 / 31,272 ( < 1 % ) ;
-; Direct links          ; 24 / 47,787 ( < 1 % ) ;
+; Block interconnects   ; 53 / 47,787 ( < 1 % ) ;
+; C16 interconnects     ; 0 / 1,804 ( 0 % )     ;
+; C4 interconnects      ; 22 / 31,272 ( < 1 % ) ;
+; Direct links          ; 26 / 47,787 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )       ;
-; Local interconnects   ; 63 / 15,408 ( < 1 % ) ;
-; R24 interconnects     ; 0 / 1,775 ( 0 % )     ;
-; R4 interconnects      ; 6 / 41,310 ( < 1 % )  ;
+; Local interconnects   ; 64 / 15,408 ( < 1 % ) ;
+; R24 interconnects     ; 3 / 1,775 ( < 1 % )   ;
+; R4 interconnects      ; 18 / 41,310 ( < 1 % ) ;
 +-----------------------+-----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 11.83) ; Number of LABs  (Total = 6) ;
+; Number of Logic Elements  (Average = 10.14) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 1                                           ; 0                           ;
 ; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
+; 3                                           ; 1                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 1                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
+; 8                                           ; 1                           ;
+; 9                                           ; 0                           ;
 ; 10                                          ; 1                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
+; 14                                          ; 1                           ;
 ; 15                                          ; 1                           ;
-; 16                                          ; 2                           ;
+; 16                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 6) ;
+; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 7) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 6                           ;
+; 1 Clock                            ; 7                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 18.33) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced  (Average = 15.86) ; Number of LABs  (Total = 7) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
-; 5                                            ; 1                           ;
-; 6                                            ; 0                           ;
+; 5                                            ; 0                           ;
+; 6                                            ; 2                           ;
 ; 7                                            ; 0                           ;
 ; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
+; 9                                            ; 1                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
-; 13                                           ; 1                           ;
+; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 1                           ;
 ; 16                                           ; 0                           ;
@@ -1426,8 +1428,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 21                                           ; 0                           ;
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
-; 24                                           ; 0                           ;
-; 25                                           ; 2                           ;
+; 24                                           ; 2                           ;
+; 25                                           ; 0                           ;
 ; 26                                           ; 0                           ;
 ; 27                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
@@ -1436,19 +1438,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 5.67) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced Out  (Average = 5.57) ; Number of LABs  (Total = 7) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 0                           ;
 ; 2                                               ; 0                           ;
-; 3                                               ; 2                           ;
+; 3                                               ; 3                           ;
 ; 4                                               ; 1                           ;
 ; 5                                               ; 1                           ;
 ; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
-; 8                                               ; 1                           ;
+; 8                                               ; 0                           ;
 ; 9                                               ; 0                           ;
-; 10                                              ; 0                           ;
+; 10                                              ; 1                           ;
 ; 11                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
@@ -1456,22 +1458,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 6.50) ; Number of LABs  (Total = 6) ;
+; Number of Distinct Inputs  (Average = 6.71) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
 ; 2                                           ; 1                           ;
-; 3                                           ; 1                           ;
-; 4                                           ; 1                           ;
+; 3                                           ; 2                           ;
+; 4                                           ; 0                           ;
 ; 5                                           ; 1                           ;
 ; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
+; 7                                           ; 1                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 1                           ;
-; 13                                          ; 1                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1532,13 +1536,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 4         ; 0            ; 4         ; 0            ; 0            ; 4         ; 4         ; 0            ; 4         ; 4         ; 0            ; 3            ; 0            ; 0            ; 1            ; 0            ; 3            ; 1            ; 0            ; 0            ; 0            ; 3            ; 0            ; 0            ; 0            ; 0            ; 0            ; 4         ; 0            ; 0            ;
+; Total Pass         ; 5         ; 0            ; 5         ; 0            ; 0            ; 5         ; 5         ; 0            ; 5         ; 5         ; 0            ; 4            ; 0            ; 0            ; 1            ; 0            ; 4            ; 1            ; 0            ; 0            ; 0            ; 4            ; 0            ; 0            ; 0            ; 0            ; 0            ; 5         ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 4            ; 0         ; 4            ; 4            ; 0         ; 0         ; 4            ; 0         ; 0         ; 4            ; 1            ; 4            ; 4            ; 3            ; 4            ; 1            ; 3            ; 4            ; 4            ; 4            ; 1            ; 4            ; 4            ; 4            ; 4            ; 4            ; 0         ; 4            ; 4            ;
+; Total Inapplicable ; 0         ; 5            ; 0         ; 5            ; 5            ; 0         ; 0         ; 5            ; 0         ; 0         ; 5            ; 1            ; 5            ; 5            ; 4            ; 5            ; 1            ; 4            ; 5            ; 5            ; 5            ; 1            ; 5            ; 5            ; 5            ; 5            ; 5            ; 0         ; 5            ; 5            ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; GPIO0_D[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO0_D[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; GPIO0_D[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; GPIO1_D[3]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
@@ -1596,7 +1601,7 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------+----------------------+-------------------+
 ; Source Register         ; Destination Register ; Delay Added in ns ;
 +-------------------------+----------------------+-------------------+
-; div_clk:DIV|Clk_aux     ; div_clk:DIV|Clk_aux  ; 1.999             ;
+; div_clk:DIV|Clk_aux     ; div_clk:DIV|Clk_aux  ; 1.991             ;
 ; div_clk:DIV|counter[10] ; div_clk:DIV|Clk_aux  ; 0.302             ;
 ; div_clk:DIV|counter[8]  ; div_clk:DIV|Clk_aux  ; 0.302             ;
 ; div_clk:DIV|counter[7]  ; div_clk:DIV|Clk_aux  ; 0.302             ;
@@ -1739,6 +1744,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO0_CLKIN[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_CLKOUT[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_CLKOUT[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "GPIO0_D[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[10]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[11]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[12]" is assigned to location or region, but does not exist in design
@@ -1749,6 +1755,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO0_D[17]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[18]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[19]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "GPIO0_D[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[20]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[21]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[22]" is assigned to location or region, but does not exist in design
@@ -1759,6 +1766,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO0_D[27]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[28]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[29]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "GPIO0_D[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[30]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[31]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO0_D[3]" is assigned to location or region, but does not exist in design
@@ -1772,7 +1780,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO1_CLKIN[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_CLKOUT[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_CLKOUT[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO1_D[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[10]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[11]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[12]" is assigned to location or region, but does not exist in design
@@ -1783,7 +1790,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO1_D[17]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[18]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[19]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO1_D[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[20]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[21]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[22]" is assigned to location or region, but does not exist in design
@@ -1794,10 +1800,8 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "GPIO1_D[27]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[28]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[29]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO1_D[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[30]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[31]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO1_D[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO1_D[6]" is assigned to location or region, but does not exist in design
@@ -1897,36 +1901,36 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y0 to location X30_Y9
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X10_Y0 to location X20_Y9
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file D:/altera/13.1/taller de sistemas digitales/Driver_com/output_files/Driver_com.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 255 warnings
+Info (144001): Generated suppressed messages file C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Driver_com/output_files/Driver_com.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 254 warnings
     Info: Peak virtual memory: 5351 megabytes
-    Info: Processing ended: Thu Jun 27 16:27:49 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Thu Jun 27 18:48:02 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/altera/13.1/taller de sistemas digitales/Driver_com/output_files/Driver_com.fit.smsg.
+The suppressed messages can be found in C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/Driver_com/output_files/Driver_com.fit.smsg.
 
 
