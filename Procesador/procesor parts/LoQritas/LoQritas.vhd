@@ -15,7 +15,7 @@ entity LoQritas is
 		--GPIO0_D	: SIO_D
 		--GPIO0_D	: MCLK
 		--GPIO0_D	: PWDN
-		--GPIO0_D  : RST
+		--GPIO0_D 	: RST
 		
 		GPIO1D0		: out std_logic;
 		GPIO1D1		: out std_logic;
@@ -273,8 +273,8 @@ begin
 	GPIO0_D(15) <= PWDN;
 	GPIO0_D(14) <= camRST;
 	GPIO1D0 <= outSerial(0);
-	GPIO1D1 <= outSerial(1);
-	GPIO1D3 <= outSerial(2);
+	GPIO1D3 <= outSerial(1);
+	GPIO1D1 <= outSerial(2);
 	--in signals
 	camData(7 downto 0)	<= GPIO1D6 & GPIO1D28 & GPIO1D8 & GPIO1D26 & '0' & GPIO1D24 & GPIO1D10 & GPIO1D22;  --6 28 8 26 open 24 10 22
 	camPCLK	<=	GPIO1D4;
@@ -286,14 +286,14 @@ begin
 	
 	
 	c_Xaux <= 
-		c_X - 40 when (c_X > 39) else
+		c_X - 80 when (c_X > 79) else
 		(others => '0');
 	
 	uCOM: COMdriver port map(
 		rst				=> SW(1),								--: in std_logic;
 		clk50M			=> CLOCK_50,							--: in std_logic;
-		coord_x  		=> c_Xaux(7 downto 0),				--: in std_logic_vector(7 downto 0);
-		coord_y  		=> c_Y(7 downto 0),					--: in std_logic_vector(7 downto 0);
+		coord_x  		=> c_Xaux(8 downto 1),				--: in std_logic_vector(7 downto 0);
+		coord_y  		=> c_Y(8 downto 1),					--: in std_logic_vector(7 downto 0);
 		
 		outSerial		=> outSerial							--: out std_logic_vector(2 downto 0)
 	);
