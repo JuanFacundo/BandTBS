@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LoQritas
-Fri Jun 28 18:27:40 2024
+Thu Jul 04 15:21:16 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -65,16 +65,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 28 18:27:40 2024      ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 04 15:21:16 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 588                                        ;
-;     Total combinational functions  ; 545                                        ;
+; Total logic elements               ; 589                                        ;
+;     Total combinational functions  ; 546                                        ;
 ;     Dedicated logic registers      ; 343                                        ;
 ; Total registers                    ; 343                                        ;
-; Total pins                         ; 72                                         ;
+; Total pins                         ; 73                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 262,144                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -194,6 +194,9 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; RAMx32.vhd                       ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/RAMx32.vhd             ;         ;
 ; pll3.vhd                         ; yes             ; User Wizard-Generated File   ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/pll3.vhd               ;         ;
+; div_clk.vhd                      ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/div_clk.vhd            ;         ;
+; com_serie.vhd                    ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/com_serie.vhd          ;         ;
+; COMdriver.vhd                    ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/COMdriver.vhd          ;         ;
 ; Z_1.vhd                          ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/Z_1.vhd                ;         ;
 ; VGA_generator.vhd                ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/VGA_generator.vhd      ;         ;
 ; SCCBdrive.vhd                    ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/SCCBdrive.vhd          ;         ;
@@ -204,9 +207,6 @@ applicable agreement for further details.
 ; CAPonce.vhd                      ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/CAPonce.vhd            ;         ;
 ; LoQritas.vhd                     ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/LoQritas.vhd           ;         ;
 ; centroID.vhd                     ; yes             ; User VHDL File               ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/centroID.vhd           ;         ;
-; comdriver.vhd                    ; yes             ; Auto-Found VHDL File         ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/comdriver.vhd          ;         ;
-; div_clk.vhd                      ; yes             ; Auto-Found VHDL File         ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/div_clk.vhd            ;         ;
-; com_serie.vhd                    ; yes             ; Auto-Found VHDL File         ; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/com_serie.vhd          ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                                            ;         ;
 ; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                                        ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                                       ;         ;
@@ -234,23 +234,23 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 588                  ;
+; Estimated Total logic elements              ; 589                  ;
 ;                                             ;                      ;
-; Total combinational functions               ; 545                  ;
+; Total combinational functions               ; 546                  ;
 ; Logic element usage by number of LUT inputs ;                      ;
 ;     -- 4 input functions                    ; 178                  ;
 ;     -- 3 input functions                    ; 127                  ;
-;     -- <=2 input functions                  ; 240                  ;
+;     -- <=2 input functions                  ; 241                  ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 371                  ;
+;     -- normal mode                          ; 372                  ;
 ;     -- arithmetic mode                      ; 174                  ;
 ;                                             ;                      ;
 ; Total registers                             ; 343                  ;
 ;     -- Dedicated logic registers            ; 343                  ;
 ;     -- I/O registers                        ; 0                    ;
 ;                                             ;                      ;
-; I/O pins                                    ; 72                   ;
+; I/O pins                                    ; 73                   ;
 ; Total memory bits                           ; 262144               ;
 ; Embedded Multiplier 9-bit elements          ; 0                    ;
 ; Total PLLs                                  ; 3                    ;
@@ -258,8 +258,8 @@ applicable agreement for further details.
 ;                                             ;                      ;
 ; Maximum fan-out node                        ; CAPonce:CAP11|outCLK ;
 ; Maximum fan-out                             ; 126                  ;
-; Total fan-out                               ; 3853                 ;
-; Average fan-out                             ; 3.61                 ;
+; Total fan-out                               ; 3846                 ;
+; Average fan-out                             ; 3.59                 ;
 +---------------------------------------------+----------------------+
 
 
@@ -268,12 +268,12 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |LoQritas                                 ; 545 (7)           ; 343 (0)      ; 262144      ; 0            ; 0       ; 0         ; 72   ; 0            ; |LoQritas                                                                                                      ; work         ;
+; |LoQritas                                 ; 546 (7)           ; 343 (0)      ; 262144      ; 0            ; 0       ; 0         ; 73   ; 0            ; |LoQritas                                                                                                      ; work         ;
 ;    |CAPonce:CAP11|                        ; 76 (75)           ; 50 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPonce:CAP11                                                                                        ; work         ;
 ;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|CAPonce:CAP11|Z_1:DEPHASE                                                                            ; work         ;
 ;    |COMdriver:uCOM|                       ; 68 (23)           ; 46 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM                                                                                       ; work         ;
-;       |com_serie:COM_X|                   ; 19 (19)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM|com_serie:COM_X                                                                       ; work         ;
-;       |com_serie:COM_Y|                   ; 6 (6)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM|com_serie:COM_Y                                                                       ; work         ;
+;       |com_serie:COM_X|                   ; 20 (20)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM|com_serie:COM_X                                                                       ; work         ;
+;       |com_serie:COM_Y|                   ; 5 (5)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM|com_serie:COM_Y                                                                       ; work         ;
 ;       |div_clk:DIV|                       ; 20 (20)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|COMdriver:uCOM|div_clk:DIV                                                                           ; work         ;
 ;    |RAMx32:RAM32|                         ; 35 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32                                                                                         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 35 (0)            ; 3 (0)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component                                                         ; work         ;
@@ -283,7 +283,7 @@ applicable agreement for further details.
 ;             |mux_ulb:mux3|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|mux_ulb:mux3             ; work         ;
 ;    |SCCBdrive:SCCBdriver|                 ; 66 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver                                                                                 ; work         ;
 ;       |P2Sreg:REGS|                       ; 53 (53)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
-;    |VGA_generator:VGApart|                ; 192 (192)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
+;    |VGA_generator:VGApart|                ; 193 (193)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|VGA_generator:VGApart                                                                                ; work         ;
 ;    |centroID:cID|                         ; 101 (101)         ; 94 (94)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|centroID:cID                                                                                         ; work         ;
 ;    |pll1:CLK_24M|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M                                                                                         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoQritas|pll1:CLK_24M|altpll:altpll_component                                                                 ; work         ;
@@ -345,9 +345,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 343   ;
 ; Number of registers using Synchronous Clear  ; 53    ;
 ; Number of registers using Synchronous Load   ; 9     ;
-; Number of registers using Asynchronous Clear ; 254   ;
+; Number of registers using Asynchronous Clear ; 219   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 199   ;
+; Number of registers using Clock Enable       ; 224   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -357,14 +357,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|mostLocX[6]                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|mostLocX[7]                      ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |LoQritas|COMdriver:uCOM|com_serie:COM_X|bit_counter[2] ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|firstRow[0]                      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|firstRow[7]                      ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |LoQritas|VGA_generator:VGApart|RAMadr[11]              ;
-; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |LoQritas|centroID:cID|lastWhite[2]                     ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |LoQritas|centroID:cID|firstWhite[3]                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|lastRow[9]                       ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |LoQritas|COMdriver:uCOM|com_serie:COM_Y|data_out       ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |LoQritas|centroID:cID|whiteCount[6]                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |LoQritas|centroID:cID|firstWhite[1]                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |LoQritas|centroID:cID|lastRow[1]                       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |LoQritas|COMdriver:uCOM|com_serie:COM_X|data_out       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
@@ -1740,6 +1740,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+; rst     ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; hcount  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; vcount  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; videoon ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
@@ -1751,7 +1752,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1761,7 +1762,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 28 18:27:36 2024
+    Info: Processing started: Thu Jul 04 15:21:14 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LoQritas -c LoQritas
 Warning (125092): Tcl Script File output_files/pll3.qip not found
     Info (125063): set_global_assignment -name QIP_FILE output_files/pll3.qip
@@ -1772,6 +1773,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file ramx32.
 Info (12021): Found 2 design units, including 1 entities, in source file pll3.vhd
     Info (12022): Found design unit 1: pll3-SYN
     Info (12023): Found entity 1: pll3
+Info (12021): Found 2 design units, including 1 entities, in source file ttype.vhd
+    Info (12022): Found design unit 1: Ttype-shape
+    Info (12023): Found entity 1: Ttype
+Info (12021): Found 2 design units, including 1 entities, in source file div_clk.vhd
+    Info (12022): Found design unit 1: div_clk-Behavioral
+    Info (12023): Found entity 1: div_clk
+Info (12021): Found 2 design units, including 1 entities, in source file deco.vhd
+    Info (12022): Found design unit 1: deco-shape
+    Info (12023): Found entity 1: deco
+Info (12021): Found 2 design units, including 1 entities, in source file com_serie.vhd
+    Info (12022): Found design unit 1: com_serie-Behavioral
+    Info (12023): Found entity 1: com_serie
+Info (12021): Found 2 design units, including 1 entities, in source file comdriver.vhd
+    Info (12022): Found design unit 1: COMdriver-shape
+    Info (12023): Found entity 1: COMdriver
 Info (12021): Found 2 design units, including 1 entities, in source file z_1.vhd
     Info (12022): Found design unit 1: Z_1-shape
     Info (12023): Found entity 1: Z_1
@@ -1812,26 +1828,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file centroi
     Info (12022): Found design unit 1: centroID-shape
     Info (12023): Found entity 1: centroID
 Info (12127): Elaborating entity "LoQritas" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(208): object "camVsync" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(224): object "vgaLive" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(234): object "HvgaCnt" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(235): object "VvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(211): object "camVsync" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(227): object "vgaLive" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(237): object "HvgaCnt" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at LoQritas.vhd(238): object "VvgaCnt" assigned a value but never read
 Warning (10873): Using initial value X (don't care) for net "LEDG[2..1]" at LoQritas.vhd(11)
-Warning (10873): Using initial value X (don't care) for net "GPIO0_D[30]" at LoQritas.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "GPIO0_D[28..18]" at LoQritas.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "GPIO0_D[16]" at LoQritas.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "GPIO0_D[13..1]" at LoQritas.vhd(13)
-Warning (12125): Using design file comdriver.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: COMdriver-shape
-    Info (12023): Found entity 1: COMdriver
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[30]" at LoQritas.vhd(14)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[28..18]" at LoQritas.vhd(14)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[16]" at LoQritas.vhd(14)
+Warning (10873): Using initial value X (don't care) for net "GPIO0_D[13..1]" at LoQritas.vhd(14)
 Info (12128): Elaborating entity "COMdriver" for hierarchy "COMdriver:uCOM"
-Warning (12125): Using design file div_clk.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: div_clk-Behavioral
-    Info (12023): Found entity 1: div_clk
 Info (12128): Elaborating entity "div_clk" for hierarchy "COMdriver:uCOM|div_clk:DIV"
-Warning (12125): Using design file com_serie.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: com_serie-Behavioral
-    Info (12023): Found entity 1: com_serie
 Info (12128): Elaborating entity "com_serie" for hierarchy "COMdriver:uCOM|com_serie:COM_X"
 Info (12128): Elaborating entity "VGA_generator" for hierarchy "VGA_generator:VGApart"
 Info (12128): Elaborating entity "pll2" for hierarchy "pll2:CLK_25M"
@@ -2180,22 +2187,23 @@ Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 3 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "GPIO1D2"
     Warning (15610): No output dependent on input pin "GPIO1D10"
     Warning (15610): No output dependent on input pin "GPIO1D22"
     Warning (15610): No output dependent on input pin "GPIO1D24"
-Info (21057): Implemented 700 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
+    Warning (15610): No output dependent on input pin "GPIO1D13"
+Info (21057): Implemented 702 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
     Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 593 logic cells
+    Info (21061): Implemented 594 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 3 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 4696 megabytes
-    Info: Processing ended: Fri Jun 28 18:27:40 2024
-    Info: Elapsed time: 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 4699 megabytes
+    Info: Processing ended: Thu Jul 04 15:21:16 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

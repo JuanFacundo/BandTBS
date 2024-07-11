@@ -40,7 +40,7 @@ architecture shape of COMdriver is
 	
 	component div_clk 
 		 generic (
-			  DIVIDER_VALUE : integer :=  2500  	-- Valor del divisor 
+			  DIVIDER_VALUE : integer :=  1250  	-- Valor del divisor 
 		 );
 		 port (
 			  Clk_In		: in  std_logic;  		-- Reloj de entrada

@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 
 entity com_serie is
     generic (
-        DATA_WIDTH : integer := 4 -- Ancho del dato a enviar, por defecto 8 bits
+        DATA_WIDTH : integer := 8 -- Ancho del dato a enviar, por defecto 8 bits
     );
     port (
         clk       : in std_logic;

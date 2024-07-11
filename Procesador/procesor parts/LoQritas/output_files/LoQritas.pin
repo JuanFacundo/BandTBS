@@ -500,7 +500,7 @@ GPIO0_D[23]                  : V11       : output : 3.3-V LVCMOS      :         
 GPIO0_D[21]                  : V12       : output : 3.3-V LVCMOS      :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
 GPIO0_D[16]                  : V14       : output : 3.3-V LVCMOS      :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V15       :        :                   :         : 4         :                
+GPIO1D13                     : V15       : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4         :                
 VCCD_PLL4                    : V17       : power  :                   : 1.2V    :           :                
 GNDA4                        : V18       : gnd    :                   :         :           :                
