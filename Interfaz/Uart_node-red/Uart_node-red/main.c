@@ -129,7 +129,7 @@ ISR(TIMER0_COMPA_vect) {
 	if (timer_ticks < 1){
 		timer_ticks++;
 	}
-	else if (bit_counter > DATA_WIDTH + 1){
+	else if (bit_counter > DATA_WIDTH){
 		TIMSK0 &= ~(1 << OCIE0A);
 		aux_x = 0;
 		flag = 1;
