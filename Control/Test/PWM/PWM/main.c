@@ -13,7 +13,7 @@ void setup()
 	ICR1 = 39999;                                               // Para una frecuencia de PWM de 50Hz (20ms periodo)
 
 	// Configurar el ciclo de trabajo inicial
-	OCR1A = 2500*2;                               
+	OCR1A = 1500*2;                               
 	OCR1B = 1500*2;                               
 }
 

@@ -10,6 +10,7 @@ entity LoQritas is
 		SW				: in std_logic_vector(9 downto 0);
 		LEDG			: out std_logic_vector(2 downto 0);
 		
+		--GPIO0D0		: out std_logic
 		GPIO0_D		: out std_logic_vector(30 downto 0);
 		--GPIO0_D	: SIO_C
 		--GPIO0_D	: SIO_D
@@ -30,6 +31,8 @@ entity LoQritas is
 		GPIO1D26		: in std_logic;
 		GPIO1D28		: in std_logic;
 		GPIO1D30		: in std_logic;
+		
+		GPIO1D13		: in std_logic;
 		--GPIO1_D	: D0
 		--GPIO1_D	: D1
 		--GPIO1_D	: D2
@@ -272,9 +275,9 @@ begin
 	GPIO0_D(17) <= MCLK;
 	GPIO0_D(15) <= PWDN;
 	GPIO0_D(14) <= camRST;
-	GPIO1D0 <= outSerial(0);
-	GPIO1D3 <= outSerial(1);
-	GPIO1D1 <= outSerial(2);
+	GPIO1D0 <= outSerial(2); -- coord y PD4
+	GPIO1D3 <= outSerial(0); -- Alert PD2
+	GPIO1D1 <= outSerial(1); -- coord x PD3
 	--in signals
 	camData(7 downto 0)	<= GPIO1D6 & GPIO1D28 & GPIO1D8 & GPIO1D26 & '0' & GPIO1D24 & GPIO1D10 & GPIO1D22;  --6 28 8 26 open 24 10 22
 	camPCLK	<=	GPIO1D4;
@@ -329,7 +332,7 @@ begin
 	--GPIO0_D(3) <= clk25M;
 	--GPIO0_D(4) <= enarRAMclk;
 	
-	rstVGA <= SW(1);
+	rstVGA <= '0';--SW(1);
 	enaVGA <= not(SW(1));
 	rst25 <= SW(1);
 	
