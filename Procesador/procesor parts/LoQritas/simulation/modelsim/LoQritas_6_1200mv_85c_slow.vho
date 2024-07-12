@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "07/04/2024 15:21:32"
+-- DATE "07/11/2024 14:05:53"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,12 +37,12 @@ ENTITY 	LoQritas IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	SW : IN std_logic_vector(9 DOWNTO 0);
-	LEDG : OUT std_logic_vector(2 DOWNTO 0);
-	GPIO0_D : OUT std_logic_vector(30 DOWNTO 0);
-	GPIO1D0 : OUT std_logic;
-	GPIO1D1 : OUT std_logic;
+	LEDG : BUFFER std_logic_vector(2 DOWNTO 0);
+	GPIO0_D : BUFFER std_logic_vector(30 DOWNTO 0);
+	GPIO1D0 : BUFFER std_logic;
+	GPIO1D1 : BUFFER std_logic;
 	GPIO1D2 : IN std_logic;
-	GPIO1D3 : OUT std_logic;
+	GPIO1D3 : BUFFER std_logic;
 	GPIO1D4 : IN std_logic;
 	GPIO1D6 : IN std_logic;
 	GPIO1D8 : IN std_logic;
@@ -53,11 +53,11 @@ ENTITY 	LoQritas IS
 	GPIO1D28 : IN std_logic;
 	GPIO1D30 : IN std_logic;
 	GPIO1D13 : IN std_logic;
-	VGA_R : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_G : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_B : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_HS : OUT std_logic;
-	VGA_VS : OUT std_logic
+	VGA_R : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_G : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_B : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_HS : BUFFER std_logic;
+	VGA_VS : BUFFER std_logic
 	);
 END LoQritas;
 
