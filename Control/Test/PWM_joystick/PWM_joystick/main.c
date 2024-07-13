@@ -39,7 +39,7 @@ int main(void)
 
 		uint16_t pulse_widthy = (int)(y_value*(2000.0/1023.0) + 2000);
 
-		setPWM(pulse_widthx,pulse_widthy);
+		setPWM(500,500);
 		
 		
 

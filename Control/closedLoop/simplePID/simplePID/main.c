@@ -20,10 +20,10 @@ uint8_t aux_x = 0;
 uint8_t aux_y = 0;
 
 //------PID variables------//
-#define Kp 0.7244//0.7999//
-//#define Kih 0//
-#define Kd1 0.6987//0.9772//
-#define Kd2 0.9420//0.933//
+#define Kp 0.7//0.7999//
+#define Kih 0.005//
+#define Kd1 12//0.9772//
+//#define Kd2 0.9420//0.933//
 
 float Ix_z = 0.0;
 float Iy_z = 0.0;
@@ -36,7 +36,7 @@ float Dy = 0.0;
 
 
 
-void actCalc(uint8_t, uint8_t, uint8_t);
+void actCalc(uint8_t, uint8_t, int16_t);
 void init_interrupt();
 void init_timer0();
 
@@ -90,7 +90,7 @@ int main(void)
 
 		if (received_char == '1')
 		{
-			
+			// manual
 			uint16_t x_value = ADC_read(0);
 			uint16_t y_value = ADC_read(1);
 			uint16_t uart_valuex =  (int)(x_value * (180.0 / 1023.0));
@@ -100,32 +100,24 @@ int main(void)
 			uint16_t pulse_widthy = (int)(y_value*(2000.0/1023.0) + 2000);
 			setPWM(pulse_widthx,pulse_widthy);
 			
-			
-			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,5);
-			
-			USART_print(buffer);
-			
+			if(flag == 1)
+			{
+				flag = 0;
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,13);
+				USART_print(buffer);		
+			}
+		
 			_delay_ms(500);
 		}
 		else
 		{
 			// control
-			
-
-			// Configurar los anchos de pulso PWM
-			//setPWM(pulse_widthx, pulse_widthy);
-
-			//uint16_t uart_valuex =  (int)((pulse_widthx-2000.0) * 0.09);
-			//uint16_t uart_valuey =  (int)((pulse_widthy-2000.0) * 0.09);
-			
 			if(flag == 1)
 			{
-				
-				//snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,5);
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 1, 1,coord_x,coord_y,5);
+				flag = 0;
+				actCalc(coord_x, coord_y, 0);
 			}
-			
-			USART_print(buffer);
+		
 		}
 		
 	}
@@ -185,11 +177,12 @@ void init_timer0() {
 	OCR0A = 99;
 }
 
-void actCalc(uint8_t posX, uint8_t posY, uint8_t r){
+void actCalc(uint8_t posX, uint8_t posY, int16_t r){
+	char buffer[50];
 	float x = (posX)/8.0 - 15;
 	float y = -(posY)/8.0 + 15;
-	//float e_x = r - x;
-	//float e_y = r - y;
+	float e_x = r - x;
+	float e_y = r - y;
 	
 	float Px = Kp * (1*r - x); //el 1 es el b del filtro de ref
 	float Py = Kp * (1*r - y); //el 1 es el b del filtro de ref
@@ -201,27 +194,31 @@ void actCalc(uint8_t posX, uint8_t posY, uint8_t r){
 	
 	int16_t ux_sat = 0;
 	if ( (ux>-90.0) && (ux<90.0) ){
-		Ix_z = 0.0;//Ix_z + e_x/Kih;
-		ux_sat = (uint16_t)((100/9)*(ux-90) + 2500);
+		Ix_z = Ix_z + e_x*Kih;
+		ux_sat = (uint16_t)((-4000/180) * ux + 3000);
 		} else if(ux <= -90.0){
-		ux_sat = 500;
+		ux_sat = 5000;
 		} else {
-		ux_sat = 2500;
+		ux_sat = 1000;
 	}
 	x_z = x;
 	
 	int16_t uy_sat = 0;
 	if ( (uy>-90.0) && (uy<90.0) ){
-		Iy_z = 0.0;//Iy_z + e_y/Kih;
-		uy_sat = (uint16_t)((100/9)*(uy-90) + 2500);
+		Iy_z = Iy_z + e_y*Kih;
+		uy_sat = (uint16_t)((-4000/180) * uy + 3000);
 	} else if(uy <= -90.0){
-		uy_sat = 500;
+		uy_sat = 5000;
 	} else {
-		uy_sat = 2500;
+		uy_sat = 1000;
 	}
 	
 	y_z = y;
 	
+	uint16_t uart_valuex =  (int)(ux+90);//_sat * (180.0 / 2000.0) - 45.0);
+	uint16_t uart_valuey =  (int)(uy+90);//_sat * (180.0 / 2000.0) - 45.0);
 	
-	setPWM(ux_sat, uy_sat);
+	setPWM(ux_sat, uy_sat); 
+	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,13);
+	USART_print(buffer);
 }
