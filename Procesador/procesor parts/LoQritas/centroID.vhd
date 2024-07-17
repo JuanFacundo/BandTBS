@@ -34,6 +34,7 @@ signal firstWhite			: std_logic_vector(9 downto 0);
 signal lastWhite			: std_logic_vector(9 downto 0);
 signal firstRow			: std_logic_vector(9 downto 0);
 signal lastRow				: std_logic_vector(9 downto 0);
+signal theresWhite		: std_logic;
 
 
 begin
@@ -51,6 +52,7 @@ begin
 			firstWhite <= (others => '0');
 			lastWhite <= (others => '0');
 			firstRow <= (others => '0');
+			theresWhite <= '0';
 
 			
 		elsif rising_edge(pixCLK) then
@@ -58,6 +60,7 @@ begin
 				
 				if (newPix >= 14) then
 					whiteCount <= whiteCount + 1;
+					theresWhite <= '1';
 					if (whiteCount = 1) then
 						firstWhite <= h_count;
 					end if;
@@ -86,14 +89,20 @@ begin
 
 			
 				if (v_count >= 478) then
-					lastLocX <= mostLocX;
+					if (theresWhite = '1') then
+						lastLocX <= mostLocX;
+						lastLocY <= '0' & mostLocY(9 downto 1);		--divide by 2
+					else
+						lastLocX <= (others => '1');
+						lastLocY <= (others => '1');
+					end if;
 					mostLocX <= (others => '0');
-					lastLocY <= '0' & mostLocY(9 downto 1);		--divide by 2
 					mostLocY <= (others => '0');
 					firstRow <= (others => '0');
 					lastRow <= (others => '0');
 					
 					mostCount <= (others => '0');
+					theresWhite <= '0';
 			
 				end if;
 			
