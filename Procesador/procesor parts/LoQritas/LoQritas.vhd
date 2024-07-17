@@ -289,8 +289,8 @@ begin
 	
 	
 	c_Xaux <= 
-		c_X - 80 when (c_X > 79) else
-		(others => '0');
+		c_X - 80 when (c_X > 79) and (c_X < 559) else
+		(others => '1');
 	
 	uCOM: COMdriver port map(
 		rst				=> SW(1),								--: in std_logic;
