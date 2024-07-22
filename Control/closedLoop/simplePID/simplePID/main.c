@@ -68,6 +68,10 @@ int main(void)
 	init_interrupt();
 	
 	// Configura los pines de entrada para los datos y la alerta
+	DDRB &= ~(1 << 3);
+	DDRB |= (1 << 5);
+	PORTB &= ~(1 << 5);
+	PORTB |= (1 << 3);
 	DDRD &= ~((1 << 2) | (1 << 3) | (1 << 4)); // PD2 (INT0), PD3 (data_out1), PD4 (data_out2)
 	DDRD |= (1 << 5);
 	DDRD |= (1 << 6);
@@ -79,6 +83,7 @@ int main(void)
 	char coord_x_str[5], coord_y_str[5];
 	char buffer[50];
 	char received_char = 0;
+	uint8_t CtrlPW = 0;
 
 	while (1)
 	{
@@ -91,7 +96,7 @@ int main(void)
 		if (received_char == '1')
 		{
 			// manual
-			uint16_t x_value = ADC_read(0);
+			uint16_t x_value = ADC_read(0) + 9;
 			uint16_t y_value = ADC_read(1);
 			uint16_t uart_valuex =  (int)(x_value * (180.0 / 1023.0));
 			uint16_t uart_valuey =  (int)(y_value * (180.0 / 1023.0));
@@ -108,6 +113,7 @@ int main(void)
 			}
 		
 			_delay_ms(500);
+			CtrlPW = 0;
 		}
 		else
 		{
@@ -115,12 +121,46 @@ int main(void)
 			if(flag == 1)
 			{
 				flag = 0;
-				actCalc(coord_x, coord_y, 0);
+				if ((coord_x == 255) && (coord_y == 255)){
+					setPWM(3000,3000);
+					Ix_z = 0.0;
+					Iy_z = 0.0;
+					snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,13);
+					USART_print(buffer);	
+				} else {
+					if ((PINB & 0x08) == 0x00){
+						if(CtrlPW == 0){
+							CtrlPW = 1;
+							actCalc(coord_x, coord_y, 0);
+						} else {
+							CtrlPW = 0;
+							setPWM(3000,3000);
+							Ix_z = 0.0;
+							Iy_z = 0.0;
+							snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,13);
+							USART_print(buffer);
+						}
+					} else {
+						if (CtrlPW == 1){
+							actCalc(coord_x, coord_y, 0);
+						} else {
+							setPWM(3000,3000);
+							Ix_z = 0.0;
+							Iy_z = 0.0;
+							snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,13);
+							USART_print(buffer);
+						}
+						
+					}
+					
+				}
+				
 			}
 		
 		}
 		
 	}
+	
 }
 
 
