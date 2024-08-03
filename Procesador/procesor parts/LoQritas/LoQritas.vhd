@@ -402,7 +402,7 @@ begin
    --     end if;
    -- end process;
 	 
-	-- Descomposición del valor y_loc
+	-- Descomposicion del valor y_loc
 	--process(clk_aux)
    --begin
 	
