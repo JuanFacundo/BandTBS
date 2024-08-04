@@ -1,5 +1,5 @@
 Assembler report for LOCVIEW
-Sun Aug 04 14:12:36 2024
+Sun Aug 04 14:29:26 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof
+  5. Assembler Device Options: C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Aug 04 14:12:36 2024 ;
+; Assembler Status      ; Successful - Sun Aug 04 14:29:26 2024 ;
 ; Revision Name         ; LOCVIEW                               ;
 ; Top-level Entity Name ; LOCVIEW                               ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                                          ;
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                          ;
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof ;
++----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                                                        ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP3C16F484C6                                                                                                                                                                   ;
-; JTAG usercode  ; 0x00146C5F                                                                                                                                                                     ;
-; Checksum       ; 0x00146C5F                                                                                                                                                                     ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/output_files/LOCVIEW.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                                     ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP3C16F484C6                                                                                                                                                ;
+; JTAG usercode  ; 0x00146C5F                                                                                                                                                  ;
+; Checksum       ; 0x00146C5F                                                                                                                                                  ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Aug 04 14:12:35 2024
+    Info: Processing started: Sun Aug 04 14:29:24 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off LOCVIEW -c LOCVIEW
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4612 megabytes
-    Info: Processing ended: Sun Aug 04 14:12:36 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Sun Aug 04 14:29:26 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -848,9 +848,9 @@ void actCalc(uint8_t posX, uint8_t posY, int r_x,int r_y){
      664:	b7 01       	movw	r22, r14
      666:	c8 01       	movw	r24, r16
      668:	0e 94 7f 00 	call	0xfe	; 0xfe <setPWM>
-	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,20);
+	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,25);
      66c:	1f 92       	push	r1
-     66e:	84 e1       	ldi	r24, 0x14	; 20
+     66e:	89 e1       	ldi	r24, 0x19	; 25
      670:	8f 93       	push	r24
      672:	80 91 65 01 	lds	r24, 0x0165	; 0x800165 <coord_y>
      676:	1f 92       	push	r1
@@ -1135,9 +1135,9 @@ int main(void)
      84a:	10 92 5a 01 	sts	0x015A, r1	; 0x80015a <Iy_z+0x1>
      84e:	10 92 5b 01 	sts	0x015B, r1	; 0x80015b <Iy_z+0x2>
      852:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <Iy_z+0x3>
-			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,20);
+			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,25);
      856:	1f 92       	push	r1
-     858:	84 e1       	ldi	r24, 0x14	; 20
+     858:	89 e1       	ldi	r24, 0x19	; 25
      85a:	8f 93       	push	r24
      85c:	80 91 65 01 	lds	r24, 0x0165	; 0x800165 <coord_y>
      860:	1f 92       	push	r1
@@ -1304,9 +1304,9 @@ int main(void)
 				flag = 0;
      9ce:	10 92 66 01 	sts	0x0166, r1	; 0x800166 <flag>
 				
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,20);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,25);
      9d2:	1f 92       	push	r1
-     9d4:	84 e1       	ldi	r24, 0x14	; 20
+     9d4:	89 e1       	ldi	r24, 0x19	; 25
      9d6:	8f 93       	push	r24
      9d8:	80 91 65 01 	lds	r24, 0x0165	; 0x800165 <coord_y>
      9dc:	1f 92       	push	r1
@@ -1420,9 +1420,9 @@ int main(void)
      aae:	9f ce       	rjmp	.-706    	; 0x7ee <main+0x56>
 				flag = 0;
      ab0:	10 92 66 01 	sts	0x0166, r1	; 0x800166 <flag>
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,20);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,25);
      ab4:	1f 92       	push	r1
-     ab6:	84 e1       	ldi	r24, 0x14	; 20
+     ab6:	89 e1       	ldi	r24, 0x19	; 25
      ab8:	8f 93       	push	r24
      aba:	80 91 65 01 	lds	r24, 0x0165	; 0x800165 <coord_y>
      abe:	1f 92       	push	r1

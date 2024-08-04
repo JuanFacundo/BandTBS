@@ -120,7 +120,7 @@ int main(void)
 			setPWM(3000,3000);
 			Ix_z = 0.0;
 			Iy_z = 0.0;
-			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,20);
+			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,25);
 			USART_print(buffer);
 		}
 		switch(state){
@@ -146,7 +146,7 @@ int main(void)
 			else if (flag == 1){
 				flag = 0;
 				
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,20);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,25);
 				USART_print(buffer);
 			}
 			break;
@@ -183,7 +183,7 @@ int main(void)
 			}*/
 			else if (flag == 1){
 				flag = 0;
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,20);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,25);
 			}
 			break;
 			
@@ -319,7 +319,7 @@ void actCalc(uint8_t posX, uint8_t posY, int r_x,int r_y){
 	uint16_t uart_valuey =  (int)(uy+90);//_sat * (180.0 / 2000.0) - 45.0);
 	
 	setPWM(ux_sat, uy_sat);
-	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,20);
+	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,25);
 	USART_print(buffer);
 }
 
