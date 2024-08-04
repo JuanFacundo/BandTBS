@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for LoQritas
-Sat Aug 03 20:33:41 2024
+Sun Aug 04 11:57:07 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -5704,8 +5704,8 @@ No synchronizer chains to report.
 ; Slack ; From Node                       ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.590 ; CAPonce:CAP11|takeTurn          ; CAPonce:CAP11|takeTurn          ; GPIO1D4      ; GPIO1D4     ; 1.000        ; -0.038     ; 0.359      ;
-; 0.591 ; CAPonce:CAP11|Z_1:DEPHASE|Qt    ; CAPonce:CAP11|Z_1:DEPHASE|Qd[0] ; GPIO1D4      ; GPIO1D4     ; 1.000        ; -0.024     ; 0.372      ;
 ; 0.591 ; CAPonce:CAP11|Z_1:DEPHASE|Qd[0] ; CAPonce:CAP11|Z_1:DEPHASE|Qd[1] ; GPIO1D4      ; GPIO1D4     ; 1.000        ; -0.024     ; 0.372      ;
+; 0.591 ; CAPonce:CAP11|Z_1:DEPHASE|Qt    ; CAPonce:CAP11|Z_1:DEPHASE|Qd[0] ; GPIO1D4      ; GPIO1D4     ; 1.000        ; -0.024     ; 0.372      ;
 ; 0.606 ; CAPonce:CAP11|Z_1:DEPHASE|Qt    ; CAPonce:CAP11|Z_1:DEPHASE|Qt    ; GPIO1D4      ; GPIO1D4     ; 1.000        ; -0.022     ; 0.359      ;
 ; 0.631 ; CAPonce:CAP11|QinReg[4]         ; CAPonce:CAP11|QaddReg[0]        ; GPIO1D4      ; GPIO1D4     ; 0.500        ; 0.596      ; 0.452      ;
 ; 0.631 ; CAPonce:CAP11|QinReg[5]         ; CAPonce:CAP11|QaddReg[1]        ; GPIO1D4      ; GPIO1D4     ; 0.500        ; 0.596      ; 0.452      ;
@@ -7951,7 +7951,7 @@ Warning (125092): Tcl Script File output_files/pll3.qip not found
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Aug 03 20:33:37 2024
+    Info: Processing started: Sun Aug 04 11:57:02 2024
 Info: Command: quartus_sta LoQritas -c LoQritas
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
@@ -8173,8 +8173,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 44 warnings
     Info: Peak virtual memory: 4695 megabytes
-    Info: Processing ended: Sat Aug 03 20:33:41 2024
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Sun Aug 04 11:57:07 2024
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:03
 
 

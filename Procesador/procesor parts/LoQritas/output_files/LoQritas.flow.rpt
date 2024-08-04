@@ -1,5 +1,5 @@
 Flow report for LoQritas
-Sat Aug 03 20:33:45 2024
+Sun Aug 04 11:57:11 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sat Aug 03 20:33:45 2024      ;
+; Flow Status                        ; Successful - Sun Aug 04 11:57:11 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LoQritas                                   ;
 ; Top-level Entity Name              ; LoQritas                                   ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/03/2024 20:33:07 ;
+; Start date & time ; 08/04/2024 11:56:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; LoQritas            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 141812767255440.172272798716012       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 141812767255440.172278338001368       ; --            ; --          ; --         ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                                ; --            ; --          ; --         ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4695 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:14     ; 1.9                     ; 5369 MB             ; 00:00:09                           ;
+; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 4699 MB             ; 00:00:07                           ;
+; Fitter                    ; 00:00:21     ; 1.4                     ; 5391 MB             ; 00:00:15                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 4604 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4695 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4571 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:31     ; --                      ; --                  ; 00:00:18                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4695 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4571 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:41     ; --                      ; --                  ; 00:00:28                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

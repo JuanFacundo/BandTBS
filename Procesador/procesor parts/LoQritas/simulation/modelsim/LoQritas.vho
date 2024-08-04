@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "08/03/2024 20:33:44"
+-- DATE "08/04/2024 11:57:10"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -37,12 +37,12 @@ ENTITY 	LoQritas IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	SW : IN std_logic_vector(9 DOWNTO 0);
-	LEDG : OUT std_logic_vector(2 DOWNTO 0);
-	GPIO0_D : OUT std_logic_vector(30 DOWNTO 0);
-	GPIO1D0 : OUT std_logic;
-	GPIO1D1 : OUT std_logic;
+	LEDG : BUFFER std_logic_vector(2 DOWNTO 0);
+	GPIO0_D : BUFFER std_logic_vector(30 DOWNTO 0);
+	GPIO1D0 : BUFFER std_logic;
+	GPIO1D1 : BUFFER std_logic;
 	GPIO1D2 : IN std_logic;
-	GPIO1D3 : OUT std_logic;
+	GPIO1D3 : BUFFER std_logic;
 	GPIO1D4 : IN std_logic;
 	GPIO1D6 : IN std_logic;
 	GPIO1D8 : IN std_logic;
@@ -53,11 +53,11 @@ ENTITY 	LoQritas IS
 	GPIO1D28 : IN std_logic;
 	GPIO1D30 : IN std_logic;
 	GPIO1D13 : IN std_logic;
-	VGA_R : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_G : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_B : OUT std_logic_vector(3 DOWNTO 0);
-	VGA_HS : OUT std_logic;
-	VGA_VS : OUT std_logic
+	VGA_R : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_G : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_B : BUFFER std_logic_vector(3 DOWNTO 0);
+	VGA_HS : BUFFER std_logic;
+	VGA_VS : BUFFER std_logic
 	);
 END LoQritas;
 
@@ -1176,6 +1176,8 @@ SIGNAL \VGApart|Hsync_aux~q\ : std_logic;
 SIGNAL \VGApart|process_0~4_combout\ : std_logic;
 SIGNAL \VGApart|process_0~5_combout\ : std_logic;
 SIGNAL \VGApart|Vsync_aux~q\ : std_logic;
+SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
+SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \uCOM|COM_Y|shift_reg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \RAM32|altsyncram_component|auto_generated|rden_decode_b|w_anode322w\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \uCOM|outSerial\ : std_logic_vector(2 DOWNTO 0);
@@ -1212,8 +1214,6 @@ SIGNAL \cID|firstWhite\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \cID|firstRow\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \DIV800|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
-SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \DIV800|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_comb~0clkctrl_outclk\ : std_logic;
 SIGNAL \uCOM|DIV|ALT_INV_Clk_aux~clkctrl_outclk\ : std_logic;
