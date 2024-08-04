@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "07/17/2024 18:53:24"
+-- DATE "08/03/2024 20:33:44"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -1212,8 +1212,8 @@ SIGNAL \cID|firstWhite\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \cID|firstRow\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \CLK_24M|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \DIV800|altpll_component|auto_generated|wire_pll1_clk\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \SCCBdriver|REGS|Q\ : std_logic_vector(26 DOWNTO 0);
+SIGNAL \SCCBdriver|REGS|cQ\ : std_logic_vector(26 DOWNTO 0);
 SIGNAL \DIV800|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_comb~0clkctrl_outclk\ : std_logic;
 SIGNAL \uCOM|DIV|ALT_INV_Clk_aux~clkctrl_outclk\ : std_logic;

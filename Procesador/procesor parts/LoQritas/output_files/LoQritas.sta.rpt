@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for LoQritas
-Wed Jul 17 18:53:22 2024
+Sat Aug 03 20:33:41 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -401,8 +401,8 @@ HTML report is unavailable in plain text report export.
 ; 2.012  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a12~portb_address_reg0 ; VGA_generator:VGApart|blue[0]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.980     ; 4.925      ;
 ; 2.031  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a26~portb_address_reg0 ; VGA_generator:VGApart|red[2]    ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.943     ; 4.943      ;
 ; 2.034  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a27~portb_address_reg0 ; VGA_generator:VGApart|blue[3]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.946     ; 4.937      ;
-; 2.035  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a27~portb_address_reg0 ; VGA_generator:VGApart|green[3]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.946     ; 4.936      ;
 ; 2.035  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a5~portb_address_reg0  ; VGA_generator:VGApart|red[1]    ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.976     ; 4.906      ;
+; 2.035  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a27~portb_address_reg0 ; VGA_generator:VGApart|green[3]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.946     ; 4.936      ;
 ; 2.053  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|green[2]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.951     ; 4.913      ;
 ; 2.054  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|blue[2]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.951     ; 4.912      ;
 ; 2.065  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a15~portb_address_reg0 ; VGA_generator:VGApart|blue[3]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -2.957     ; 4.895      ;
@@ -5267,8 +5267,8 @@ No synchronizer chains to report.
 ; 5.389  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a20~portb_address_reg0 ; VGA_generator:VGApart|blue[0]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.737     ; 2.783      ;
 ; 5.389  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a20~portb_address_reg0 ; VGA_generator:VGApart|green[0]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.737     ; 2.783      ;
 ; 5.414  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a12~portb_address_reg0 ; VGA_generator:VGApart|red[0]    ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.734     ; 2.761      ;
-; 5.416  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|red[2]    ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.719     ; 2.774      ;
 ; 5.416  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a19~portb_address_reg0 ; VGA_generator:VGApart|blue[3]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.727     ; 2.766      ;
+; 5.416  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a18~portb_address_reg0 ; VGA_generator:VGApart|red[2]    ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.719     ; 2.774      ;
 ; 5.417  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a19~portb_address_reg0 ; VGA_generator:VGApart|green[3]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.727     ; 2.765      ;
 ; 5.425  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a16~portb_address_reg0 ; VGA_generator:VGApart|blue[0]   ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.740     ; 2.744      ;
 ; 5.425  ; RAMx32:RAM32|altsyncram:altsyncram_component|altsyncram_glq3:auto_generated|ram_block1a16~portb_address_reg0 ; VGA_generator:VGApart|green[0]  ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; CLK_25M|altpll_component|auto_generated|pll1|clk[0] ; 9.932        ; -1.740     ; 2.744      ;
@@ -7951,7 +7951,7 @@ Warning (125092): Tcl Script File output_files/pll3.qip not found
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 17 18:53:19 2024
+    Info: Processing started: Sat Aug 03 20:33:37 2024
 Info: Command: quartus_sta LoQritas -c LoQritas
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_Default" -- entity does not exist in design
@@ -8173,8 +8173,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 44 warnings
     Info: Peak virtual memory: 4695 megabytes
-    Info: Processing ended: Wed Jul 17 18:53:22 2024
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Sat Aug 03 20:33:41 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

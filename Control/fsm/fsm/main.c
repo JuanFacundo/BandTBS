@@ -36,7 +36,7 @@ char char_aux = '0';
 
 //------PID variables------//
 int Kp  = 70;//0.7999//
-int Ki = 50;//
+int Ki = 65;//
 int Kd = 1200;//0.9772//
 
 
@@ -46,13 +46,13 @@ float x_z = 0.0;
 float y_z = 0.0;
 float Dx = 0.0;
 float Dy = 0.0;
-float r_x = 0.0;
-float r_y = 0.0;
+int r_x = 0;
+int r_y = 0;
 //------/PID variables-----//
 typedef enum {Manual, Auto_PWOFF, Auto_PWON} state_t;
 state_t state = Manual;
 
-void actCalc(uint8_t posX, uint8_t posY, float r_x,float r_y);
+void actCalc(uint8_t posX, uint8_t posY, int r_x,int r_y);
 void init_interrupt();
 void init_timer0();
 void procesar_mensaje(char *mensaje);
@@ -120,7 +120,7 @@ int main(void)
 			setPWM(3000,3000);
 			Ix_z = 0.0;
 			Iy_z = 0.0;
-			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,13);
+			snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,15);
 			USART_print(buffer);
 		}
 		switch(state){
@@ -146,7 +146,7 @@ int main(void)
 			else if (flag == 1){
 				flag = 0;
 				
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,13);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey,coord_x,coord_y,15);
 				USART_print(buffer);
 			}
 			break;
@@ -159,41 +159,47 @@ int main(void)
 				state = Manual;
 				break;
 			}		
-			/*if (char_aux == 'P'){
+			if (char_aux == 'P'){
 				char_aux = 'x';
 				cli();
 				USART_receive_string(mensaje);
 				procesar_mensaje(mensaje);
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, Kp,Kd,13);
-				USART_print(buffer);
 				sei();
-			}*/
-				
+			}	
+			
+			if (char_aux == 't'){
+				char_aux = 'x';
+				state = Auto_PWON;
+			} 
 
-			if ((PINB & 0x08) == 0x00){
+			/*if ((PINB & 0x08) == 0x00){
 					state = Auto_PWON;
-					_delay_ms(200);
+					_delay_ms(500);
 					//CtrlPW = 1;
-			}
+			}*/
 
 			/*else if (CtrlPW == 1){
 				state = Auto_PWON;
 			}*/
 			else if (flag == 1){
 				flag = 0;
-				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,13);
+				snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", 90, 90, coord_x, coord_y,15);
 			}
 			break;
 			
 			case Auto_PWON:
 			
-			if ((PINB & 0x08) == 0x00){
+			/*if ((PINB & 0x08) == 0x00){
 				//CtrlPW = 0;
 				state = Auto_PWOFF;
 				setPWM(3000,3000);
 				Ix_z = 0.0;
 				Iy_z = 0.0;
-				_delay_ms(200);
+				_delay_ms(500);
+			}*/
+			if (char_aux == 'f'){
+				char_aux = 'x';
+				state = Auto_PWOFF;
 			}
 			
 			if (received_char == '1'){
@@ -270,17 +276,17 @@ void init_timer0() {
 	OCR0A = 99;
 }
 
-void actCalc(uint8_t posX, uint8_t posY, float r_x,float r_y){
+void actCalc(uint8_t posX, uint8_t posY, int r_x,int r_y){
 	char buffer[50];
 	float x = (posX)/8.0 - 15;
 	float y = -(posY)/8.0 + 15;
-	float e_x = r_x - x;
-	float e_y = r_y - y;
+	float e_x = ((float) r_x) - x;
+	float e_y = ((float) r_y) - y;
 	
-	float Px = /*(float)(Kp/100)*/ 0.7 * (r_x - x); //el 1 es el b del filtro de ref
-	float Py = /*(float)(Kp/100)*/ 0.7 * (r_y - y); //el 1 es el b del filtro de ref
-	Dx = (x_z - x)* 12; /*(float)(Kd/100)*/;// + Dx * Kd2;
-	Dy = (y_z - y)* 12; /*(float)(Kd/100)*/;// + Dy * Kd2;
+	float Px = ((float)Kp) / 100 *  (((float)r_x) - x); //el 1 es el b del filtro de ref
+	float Py = ((float)Kp) / 100 *  (((float)r_y) - y); //el 1 es el b del filtro de ref
+	Dx = (x_z - x)* ((float)Kd)/100;// + Dx * Kd2;
+	Dy = (y_z - y)* ((float)Kd)/100;// + Dy * Kd2;
 	
 	float ux = Px  + Dx  + Ix_z;
 	float uy = Py  + Dy  + Iy_z;
@@ -288,7 +294,7 @@ void actCalc(uint8_t posX, uint8_t posY, float r_x,float r_y){
 	int16_t ux_sat = 0;
 	if ( (ux>-90.0) && (ux<90.0) ){
 		//
-		Ix_z = Ix_z + e_x*0.005;   /*((float)(Ki/10000));*/
+		Ix_z = Ix_z + e_x*((float)Ki)/10000;
 		ux_sat = (uint16_t)((4000/180) * ux + 3000);
 		} else if(ux <= -90.0){
 		ux_sat = 5000;
@@ -299,7 +305,7 @@ void actCalc(uint8_t posX, uint8_t posY, float r_x,float r_y){
 	
 	int16_t uy_sat = 0;
 	if ( (uy>-90.0) && (uy<90.0) ){
-		Iy_z = Iy_z + e_y* 0.005;   /*((float)(Ki/10000));*/
+		Iy_z = Iy_z + e_y* ((float)Ki)/10000;
 		uy_sat = (uint16_t)((-4000/180) * uy + 3000);
 		} else if(uy <= -90.0){
 		uy_sat = 5000;
@@ -313,7 +319,7 @@ void actCalc(uint8_t posX, uint8_t posY, float r_x,float r_y){
 	uint16_t uart_valuey =  (int)(uy+90);//_sat * (180.0 / 2000.0) - 45.0);
 	
 	setPWM(ux_sat, uy_sat);
-	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,13);
+	snprintf(buffer, sizeof(buffer), "[%u=%u]{\"x\":%d,\"y\":%d,\"r\":%d}\n", uart_valuex, uart_valuey, coord_x, coord_y,15);
 	USART_print(buffer);
 }
 
