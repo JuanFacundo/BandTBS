@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("C:/Users/compu/Documents/1Juan/1Facultad/9 Semestre/E1225 Taller de Sistemas Digitales/0Repository/BandTBS/Procesador/procesor parts/LoQritas/output_files/") File("LoQritas.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LoQritas/output_files/") File("LoQritas.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

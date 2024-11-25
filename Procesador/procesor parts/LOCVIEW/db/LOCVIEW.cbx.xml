@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="LOCVIEW">
+		<CBX_INST_ENTRY INSTANCE_NAME="|LOCVIEW|RAMx32:RAM32|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_glq3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LOCVIEW|pll1:CLK_24M|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LOCVIEW|pll2:CLK_25M|altpll:altpll_component" CBX_FILE_NAME="pll2_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LOCVIEW|pll3:DIV800|altpll:altpll_component" CBX_FILE_NAME="pll3_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>
