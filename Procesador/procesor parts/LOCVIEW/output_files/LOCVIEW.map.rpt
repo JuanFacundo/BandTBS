@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LOCVIEW
-Sun Aug 04 14:29:04 2024
+Wed Dec 04 13:03:57 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 04 14:29:04 2024      ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 04 13:03:56 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; LOCVIEW                                    ;
 ; Top-level Entity Name              ; LOCVIEW                                    ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 599                                        ;
-;     Total combinational functions  ; 575                                        ;
+; Total logic elements               ; 596                                        ;
+;     Total combinational functions  ; 572                                        ;
 ;     Dedicated logic registers      ; 345                                        ;
 ; Total registers                    ; 345                                        ;
 ; Total pins                         ; 73                                         ;
@@ -178,55 +178,54 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                              ;
-+----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                                                                                     ; Library ;
-+----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; LOCVIEW.vhd                      ; yes             ; User VHDL File                    ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/LOCVIEW.vhd            ;         ;
-; comdriver.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/comdriver.vhd          ;         ;
-; div_clk.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/div_clk.vhd            ;         ;
-; com_serie.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/com_serie.vhd          ;         ;
-; vga_generator.vhd                ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/vga_generator.vhd      ;         ;
-; pll2.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll2.vhd               ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                        ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                                    ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                                   ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                                 ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                                 ;         ;
-; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll2_altpll.v       ;         ;
-; ramx32.vhd                       ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/ramx32.vhd             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                                    ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                             ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                       ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                                    ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                     ;         ;
-; altrom.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                                                                        ;         ;
-; altram.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                                                                        ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                                                                      ;         ;
-; db/altsyncram_glq3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/altsyncram_glq3.tdf ;         ;
-; db/decode_ira.tdf                ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/decode_ira.tdf      ;         ;
-; db/mux_ulb.tdf                   ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/mux_ulb.tdf         ;         ;
-; caponce.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/caponce.vhd            ;         ;
-; z_1.vhd                          ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/z_1.vhd                ;         ;
-; fulladd.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/fulladd.vhd            ;         ;
-; centroid.vhd                     ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/centroid.vhd           ;         ;
-; pll1.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll1.vhd               ;         ;
-; db/pll1_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll1_altpll.v       ;         ;
-; pll3.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll3.vhd               ;         ;
-; db/pll3_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll3_altpll.v       ;         ;
-; sccbdrive.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/sccbdrive.vhd          ;         ;
-; p2sreg.vhd                       ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/p2sreg.vhd             ;         ;
-+----------------------------------+-----------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                         ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                                                                                ; Library ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; LOCVIEW.vhd                      ; yes             ; User VHDL File                    ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/LOCVIEW.vhd            ;         ;
+; comdriver.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/comdriver.vhd          ;         ;
+; div_clk.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/div_clk.vhd            ;         ;
+; com_serie.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/com_serie.vhd          ;         ;
+; vga_generator.vhd                ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/vga_generator.vhd      ;         ;
+; pll2.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll2.vhd               ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altpll.tdf                                                                                   ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                               ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_pll.inc                                                                              ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratixii_pll.inc                                                                            ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                                            ;         ;
+; db/pll2_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll2_altpll.v       ;         ;
+; ramx32.vhd                       ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/ramx32.vhd             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                                                                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                                                                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                                                                 ;         ;
+; db/altsyncram_glq3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/altsyncram_glq3.tdf ;         ;
+; db/decode_ira.tdf                ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/decode_ira.tdf      ;         ;
+; db/mux_ulb.tdf                   ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/mux_ulb.tdf         ;         ;
+; caponce.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/caponce.vhd            ;         ;
+; z_1.vhd                          ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/z_1.vhd                ;         ;
+; fulladd.vhd                      ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/fulladd.vhd            ;         ;
+; centroid.vhd                     ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/centroid.vhd           ;         ;
+; pll1.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll1.vhd               ;         ;
+; db/pll1_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll1_altpll.v       ;         ;
+; pll3.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll3.vhd               ;         ;
+; db/pll3_altpll.v                 ; yes             ; Auto-Generated Megafunction       ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/db/pll3_altpll.v       ;         ;
+; sccbdrive.vhd                    ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/sccbdrive.vhd          ;         ;
+; p2sreg.vhd                       ; yes             ; Auto-Found VHDL File              ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/p2sreg.vhd             ;         ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------+
@@ -234,16 +233,16 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 599                  ;
+; Estimated Total logic elements              ; 596                  ;
 ;                                             ;                      ;
-; Total combinational functions               ; 575                  ;
+; Total combinational functions               ; 572                  ;
 ; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 179                  ;
-;     -- 3 input functions                    ; 128                  ;
-;     -- <=2 input functions                  ; 268                  ;
+;     -- 4 input functions                    ; 183                  ;
+;     -- 3 input functions                    ; 123                  ;
+;     -- <=2 input functions                  ; 266                  ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 401                  ;
+;     -- normal mode                          ; 398                  ;
 ;     -- arithmetic mode                      ; 174                  ;
 ;                                             ;                      ;
 ; Total registers                             ; 345                  ;
@@ -258,8 +257,8 @@ applicable agreement for further details.
 ;                                             ;                      ;
 ; Maximum fan-out node                        ; CAPonce:CAP11|outCLK ;
 ; Maximum fan-out                             ; 128                  ;
-; Total fan-out                               ; 3913                 ;
-; Average fan-out                             ; 3.55                 ;
+; Total fan-out                               ; 3910                 ;
+; Average fan-out                             ; 3.56                 ;
 +---------------------------------------------+----------------------+
 
 
@@ -268,7 +267,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |LOCVIEW                                  ; 575 (9)           ; 345 (0)      ; 262144      ; 0            ; 0       ; 0         ; 73   ; 0            ; |LOCVIEW                                                                                                      ; work         ;
+; |LOCVIEW                                  ; 572 (9)           ; 345 (0)      ; 262144      ; 0            ; 0       ; 0         ; 73   ; 0            ; |LOCVIEW                                                                                                      ; work         ;
 ;    |CAPonce:CAP11|                        ; 78 (77)           ; 50 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|CAPonce:CAP11                                                                                        ; work         ;
 ;       |Z_1:DEPHASE|                       ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|CAPonce:CAP11|Z_1:DEPHASE                                                                            ; work         ;
 ;    |COMdriver:uCOM|                       ; 68 (23)           ; 46 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|COMdriver:uCOM                                                                                       ; work         ;
@@ -284,7 +283,7 @@ applicable agreement for further details.
 ;    |SCCBdrive:SCCBdriver|                 ; 66 (13)           ; 64 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|SCCBdrive:SCCBdriver                                                                                 ; work         ;
 ;       |P2Sreg:REGS|                       ; 53 (53)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|SCCBdrive:SCCBdriver|P2Sreg:REGS                                                                     ; work         ;
 ;    |VGA_generator:VGApart|                ; 196 (196)         ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|VGA_generator:VGApart                                                                                ; work         ;
-;    |centroID:cID|                         ; 123 (123)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|centroID:cID                                                                                         ; work         ;
+;    |centroID:cID|                         ; 120 (120)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|centroID:cID                                                                                         ; work         ;
 ;    |pll1:CLK_24M|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|pll1:CLK_24M                                                                                         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|pll1:CLK_24M|altpll:altpll_component                                                                 ; work         ;
 ;          |pll1_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LOCVIEW|pll1:CLK_24M|altpll:altpll_component|pll1_altpll:auto_generated                                      ; work         ;
@@ -307,16 +306,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                        ;
-+--------+--------------+---------+--------------+--------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance       ; IP Include File                                                                                                                      ;
-+--------+--------------+---------+--------------+--------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll1:CLK_24M ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll1.vhd   ;
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll2:CLK_25M ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll2.vhd   ;
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll3:DIV800  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll3.vhd   ;
-; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |LOCVIEW|RAMx32:RAM32 ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/2024/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/ramx32.vhd ;
-+--------+--------------+---------+--------------+--------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance       ; IP Include File                                                                                                                 ;
++--------+--------------+---------+--------------+--------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll1:CLK_24M ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll1.vhd   ;
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll2:CLK_25M ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll2.vhd   ;
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |LOCVIEW|pll3:DIV800  ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/pll3.vhd   ;
+; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |LOCVIEW|RAMx32:RAM32 ; C:/Users/delfi/OneDrive/Documentos/1 Facultad/Taller de Sistemas Digitales/BandTBS/Procesador/procesor parts/LOCVIEW/ramx32.vhd ;
++--------+--------------+---------+--------------+--------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1761,7 +1760,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Aug 04 14:28:55 2024
+    Info: Processing started: Wed Dec 04 13:03:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LOCVIEW -c LOCVIEW
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file locview.vhd
@@ -2201,16 +2200,16 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO1D13"
     Warning (15610): No output dependent on input pin "GPIO1D22"
     Warning (15610): No output dependent on input pin "GPIO1D24"
-Info (21057): Implemented 712 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 709 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 604 logic cells
+    Info (21061): Implemented 601 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 3 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 117 warnings
-    Info: Peak virtual memory: 4711 megabytes
-    Info: Processing ended: Sun Aug 04 14:29:04 2024
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4704 megabytes
+    Info: Processing ended: Wed Dec 04 13:03:57 2024
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:03
 
 

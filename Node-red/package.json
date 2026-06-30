@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "node-red-dashboard": "github:node-red/node-red-dashboard"
+  }
+}

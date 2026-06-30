@@ -58,7 +58,7 @@ begin
 		elsif rising_edge(pixCLK) then
 			if (h_count > 40) and (h_count <= 280) then
 				
-				if (newPix >= 14) then
+				if (newPix >= 15) then
 					whiteCount <= whiteCount + 1;
 					theresWhite <= '1';
 					if (whiteCount = 1) then
